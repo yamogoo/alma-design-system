@@ -1,5 +1,5 @@
 // footers
-export * from "./MainFooter";
+export * from "./mainFooter";
 
 // headers
-export * from "./MainHeader";
+export * from "./mainHeader";

@@ -1,11 +1,11 @@
 // Portions of this file were developed with the assistance of AI tools (ChatGPT).
 
 import fs from "node:fs/promises";
-import * as path from "node:path";
+import nodePath from "node:path";
 import { readFileSync } from "node:fs";
 import * as _ from "lodash-es";
 
-import { JSONBuilder, type JSONBuilderOptions } from "./JSONBuilder";
+import { JSONBuilder, type JSONBuilderOptions } from "./JSONBuilder.js";
 
 /* * * Common Types * * */
 
@@ -229,22 +229,22 @@ export class SCSSParser extends Parser {
       const buildRoot = this.tokensParser.opts.build;
       if (buildRoot && fileName) {
         try {
-          candidates.push(path.resolve(buildRoot, `${fileName}.json`));
+          candidates.push(nodePath.resolve(buildRoot, `${fileName}.json`));
         } catch {}
       }
 
       const sourceRoot = this.tokensParser.opts.source;
       if (sourceRoot && fileName) {
         try {
-          candidates.push(path.resolve(sourceRoot, `${fileName}.json`));
+          candidates.push(nodePath.resolve(sourceRoot, `${fileName}.json`));
         } catch {}
       }
 
-      const paths = this.tokensParser.opts.paths ?? [];
-      for (const p of paths) {
+      const pathsArray = this.tokensParser.opts.paths ?? [];
+      for (const p of pathsArray) {
         if (fileName) {
           try {
-            candidates.push(path.resolve(p, `${fileName}.json`));
+            candidates.push(nodePath.resolve(p, `${fileName}.json`));
           } catch {}
         }
       }
@@ -823,7 +823,7 @@ export class TokensParser {
   // --- Theming --- //
 
   async writeCSSFile(filePath: string, cssContent: string) {
-    await fs.mkdir(path.dirname(filePath), { recursive: true });
+    await fs.mkdir(nodePath.dirname(filePath), { recursive: true });
     await fs.writeFile(filePath, cssContent, "utf-8");
   }
 
@@ -837,13 +837,13 @@ export class TokensParser {
 
     for (const file of files) {
       if (!file.endsWith(".json")) continue;
-      const themeName = path.basename(file, ".json");
-      const raw = await fs.readFile(path.join(inputDir, file), "utf-8");
+      const themeName = nodePath.basename(file, ".json");
+      const raw = await fs.readFile(nodePath.join(inputDir, file), "utf-8");
       themes[themeName] = JSON.parse(raw);
     }
 
     const css = this.generateThemesBlockFromObject(themes, includeRequired);
-    await fs.mkdir(path.dirname(outputPath), { recursive: true });
+    await fs.mkdir(nodePath.dirname(outputPath), { recursive: true });
     await fs.writeFile(outputPath, css, "utf-8");
   }
 
@@ -856,7 +856,7 @@ export class TokensParser {
     const themes = JSON.parse(raw);
 
     const css = this.generateThemesBlockFromObject(themes, includeRequired);
-    await fs.mkdir(path.dirname(outputPath), { recursive: true });
+    await fs.mkdir(nodePath.dirname(outputPath), { recursive: true });
     await fs.writeFile(outputPath, css, "utf-8");
   }
 
@@ -1009,12 +1009,12 @@ export class TokensParser {
           kebabKey && kebabKey.length > 0
             ? [kebabKey]
             : parseMapOptions.fileName
-              ? [
-                  parseMapOptions.convertCase
-                    ? this.toKebabCase(parseMapOptions.fileName)
-                    : parseMapOptions.fileName,
-                ]
-              : [];
+            ? [
+                parseMapOptions.convertCase
+                  ? this.toKebabCase(parseMapOptions.fileName)
+                  : parseMapOptions.fileName,
+              ]
+            : [];
 
         const str = `${keyLine}${this.parser.parseMap(
           map,
@@ -1215,15 +1215,15 @@ export class TokensParser {
       const files = await fs.readdir(build);
       const jsonFiles = files.filter((f: string) => f.endsWith(".json"));
 
-      const relativeImportPath = path.relative(
-        path.dirname(entryFilePath),
+      const relativeImportPath = nodePath.relative(
+        nodePath.dirname(entryFilePath),
         build
       );
 
       const imports = jsonFiles
         .map((file: string) => {
           const name = file.replace(".json", "");
-          let importPath = path
+          let importPath = nodePath
             .join(relativeImportPath, file)
             .replace(/\\/g, "/");
           if (!importPath.startsWith(".") && !importPath.startsWith("/"))
@@ -1241,7 +1241,7 @@ export class TokensParser {
         .map((name: string) => `...${name}`)
         .join(",\n  ")}\n};\n\nexport default module;\n`;
 
-      const entryDir = path.dirname(entryFilePath);
+      const entryDir = nodePath.dirname(entryFilePath);
       await fs.mkdir(entryDir, { recursive: true });
       await fs.writeFile(entryFilePath, content, "utf-8");
       console.log(`✅ TypeScript entry file generated at ${entryFilePath}`);
@@ -1262,20 +1262,20 @@ export class TokensParser {
       if (currentParts.length === 0) return undefined;
 
       const fileName = `${currentParts[0]}.json`;
-      const filePath = path.join(currentDir, fileName);
+      const filePath = nodePath.join(currentDir, fileName);
       if (await this.isFile(filePath)) {
         const content = JSON.parse(await fs.readFile(filePath, "utf-8"));
         if (currentParts.length === 1) return content;
         return this.getNestedValue(content, currentParts.slice(1));
       }
 
-      const dirPath = path.join(currentDir, currentParts[0]);
+      const dirPath = nodePath.join(currentDir, currentParts[0]);
       if (await this.isDir(dirPath)) {
         return tryResolve(currentParts.slice(1), dirPath);
       }
 
       for (let i = currentParts.length; i > 0; i--) {
-        const joinedFile = path.join(
+        const joinedFile = nodePath.join(
           currentDir,
           currentParts.slice(0, i).join("/") + ".json"
         );
@@ -1289,7 +1289,7 @@ export class TokensParser {
     };
 
     for (const rootPath of this.opts.paths ?? ["./"]) {
-      const absRoot = path.resolve(rootPath);
+      const absRoot = nodePath.resolve(rootPath);
       const res = await tryResolve(pathParts, absRoot);
       if (res !== undefined) return res;
     }

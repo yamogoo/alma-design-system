@@ -2,3 +2,4 @@ packages:
   - client
   - log-server
   - server
+  - packages/*

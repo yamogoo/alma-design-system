@@ -1,8 +1,8 @@
 // Portions of this file were developed with the assistance of AI tools (ChatGPT).
 
 import { Plugin } from "vite";
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 
 type Token = {
   value?: any;
@@ -121,7 +121,7 @@ function lintToken(token: any, pathArr: string[] = [], filePath?: string) {
 
     if (token.value !== undefined) {
       if (Array.isArray(token.value)) {
-        token.value.forEach((v, i) => {
+        token.value.forEach((v: any, i: number) => {
           if (
             typeof v !== "number" &&
             typeof v !== "string" &&

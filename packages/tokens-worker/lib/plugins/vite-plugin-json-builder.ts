@@ -3,7 +3,7 @@
 import type { Plugin } from "vite";
 import path from "node:path";
 import { watch } from "chokidar";
-import { JSONBuilder, JSONBuilderOptions } from "./JSONBuilder";
+import { JSONBuilder, JSONBuilderOptions } from "../parsers/JSONBuilder.js";
 
 export interface ViteJSONBuilderPluginOptions extends JSONBuilderOptions {
   watch?: boolean;

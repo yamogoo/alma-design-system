@@ -6,7 +6,7 @@ import chokidar from "chokidar";
 import {
   FlattenTokensParser,
   FlattenTokensParserOptions,
-} from "./FlattenTokensParser";
+} from "../parsers/FlattenTokensParser.js";
 
 export function FlattenTokensParserPlugin(
   options: FlattenTokensParserOptions

@@ -1,7 +1,7 @@
 // Portions of this file were developed with the assistance of AI tools (ChatGPT).
 
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 
 export interface FlattenTokensParserOptions {
   source: string;

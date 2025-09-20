@@ -12,11 +12,12 @@ import packageJson from "./package.json";
 import vueRouter from "unplugin-vue-router/vite";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 
-import ColorsGeneratorPlugin from "./plugins/vite-plugin-colors-generator";
-import { TokensParserPlugin } from "./plugins/vite-plugin-tokens-parser";
-import { VitePluginTokenLinter } from "./plugins/vite-plugin-token-linter.ts";
-import { JSONBuilderPlugin } from "./plugins/vite-plugin-json-builder";
-// import { FlattenTokensParserPlugin } from "./plugins/vite-plugin-flatten-tokens-parser";
+import {
+  ColorsGeneratorPlugin,
+  TokensParserPlugin,
+  VitePluginTokenLinter,
+  JSONBuilderPlugin,
+} from "tokens-worker";
 
 import VueRouterPlugin from "unplugin-vue-router/vite";
 
