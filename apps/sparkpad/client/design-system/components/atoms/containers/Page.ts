@@ -1,6 +1,11 @@
-import type { TransitionType, UIElementColor } from "@/typings";
+import type {
+  TransitionType,
+  UIElementColor,
+  UIElementOrientation,
+} from "@/typings";
 
-export type PageColor = Extract<UIElementColor, "primary" | "accent">;
+export type PageTone = Extract<UIElementColor, "primary" | "accent">;
+export type PageOrientations = UIElementOrientation;
 
 export interface PageProps {
   isFooterShown?: boolean;
@@ -8,5 +13,6 @@ export interface PageProps {
   useGlobalTransition?: boolean;
   transitionInType?: TransitionType;
   transitionOutType?: TransitionType;
-  color?: PageColor;
+  tone?: PageTone;
+  orientation?: PageOrientations;
 }

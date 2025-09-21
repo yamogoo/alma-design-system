@@ -14,7 +14,8 @@ const props = withDefaults(defineProps<PageProps>(), {
   useGlobalTransition: true,
   transitionInType: "fade",
   transitionOutType: "fade",
-  color: "primary",
+  tone: "primary",
+  orientation: "horizontal",
 });
 
 const emit = defineEmits<{
@@ -453,7 +454,12 @@ onUnmounted(() => {
     <div
       v-if="isMounted"
       class="page"
-      :class="[{ [`page_${color}`]: !!color }]"
+      :class="[
+        {
+          [`page_orientation-${orientation}`]: !!orientation,
+          [`page_mode-${tone}`]: !!tone,
+        },
+      ]"
       ref="root"
       @pointerdown="onPointerDown"
     >
@@ -484,6 +490,20 @@ onUnmounted(() => {
   @include box(100%);
   overflow: hidden;
 
+  &_orientation {
+    &-horizontal {
+      .page__body {
+        flex-direction: row;
+      }
+    }
+
+    &-vertical {
+      .page__body {
+        flex-direction: column;
+      }
+    }
+  }
+
   &__header {
     position: relative;
     width: 100%;
@@ -495,7 +515,6 @@ onUnmounted(() => {
   &__body {
     position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     @include box(100%);
@@ -506,19 +525,5 @@ onUnmounted(() => {
     position: relative;
     z-index: 4;
   }
-
-  /* * * themes * * */
-
-  /* &_primary {
-    @include themify($themes) {
-      background-color: themed("background", "base");
-    }
-  }
-
-  &_accent {
-    @include themify($themes) {
-      background-color: themed("background", "accent");
-    }
-  } */
 }
 </style>
