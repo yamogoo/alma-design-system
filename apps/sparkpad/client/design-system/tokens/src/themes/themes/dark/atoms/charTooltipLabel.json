@@ -3,7 +3,7 @@
     "self": {
       "background": {
         "normal": {
-          "value": "{themes.themes.dark.abstracts.background.primaryInversed.value}",
+          "value": "{themes.themes.dark.abstracts.surface.neutral.inversed.value}",
           "type": "color",
           "unit": "hex",
           "meta": {

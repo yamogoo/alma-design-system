@@ -4,20 +4,6 @@
 $themes:(
   dark: (
   abstracts: (
-  background: (
-  base: #15191C,
-  primary: #101315,
-  primary-transparental: rgba(#101315, .75),
-  primary-inversed: #EAEDEF,
-  secondary: #1A1F23,
-  secondary-transparental: rgba(#1A1F23, .75),
-  tertiary: #2F383F,
-  accent: #013CFE,
-  accept: #FFB531,
-  accent-yellow: #FFF700,
-  accent-green: #04FB23,
-  accent-blue: #013CFE
-),
   border: (
   primary: #242B31,
   secondary: #39444C,
@@ -68,6 +54,47 @@ $themes:(
 ),
   shadow: (
   primary: rgba(#586976, .035)
+),
+  surface: (
+  neutral: (
+  base: #15191C,
+  primary: #101315,
+  secondary: #1A1F23,
+  tertiary: #2F383F,
+  disabled: #586976,
+  inversed: #EAEDEF
+),
+  accent: (
+  base: #013CFE,
+  primary: #013CFE,
+  secondary: #0130CE,
+  tertiary: #01259D,
+  disabled: #001A6D,
+  inversed: #92ABFF
+),
+  info: (
+  base: #3161FE,
+  primary: #3161FE,
+  secondary: #013CFE,
+  tertiary: #6286FE,
+  disabled: #013CFE
+),
+  warning: (
+  base: #FFB531,
+  primary: #FFB531,
+  secondary: #FFA400,
+  tertiary: #FFC761,
+  disabled: #FFA400,
+  inversed: #CE8500
+),
+  error: (
+  base: #E96B6B,
+  primary: #E96B6B,
+  secondary: #DE2121,
+  tertiary: #F1A0A0,
+  disabled: #DE2121,
+  inversed: #941616
+)
 )
 ),
   atoms: (
@@ -775,11 +802,11 @@ $themes:(
 ),
   form: (
   primary: (
-  background: rgba(#101315, .75),
+  background: #101315,
   shadow: rgba(#586976, .035)
 ),
   secondary: (
-  background: rgba(#1A1F23, .75),
+  background: #1A1F23,
   shadow: rgba(#586976, .035)
 )
 ),
@@ -901,20 +928,6 @@ $themes:(
 ),
   light: (
   abstracts: (
-  background: (
-  base: #EAEDEF,
-  primary: #F8F9FA,
-  primary-transparental: rgba(#F8F9FA, 0.75),
-  primary-inversed: #101315,
-  secondary: #DCE1E5,
-  secondary-transparental: rgba(#e5e9f1, 0.75),
-  tertiary: #A5B1BC,
-  accent: #013CFE,
-  accept: #FFB531,
-  accent-yellow: #FFF700,
-  accent-green: #03CC1C,
-  accent-blue: #0136E6
-),
   border: (
   primary: #D5DBE0,
   secondary: #C7CFD5,
@@ -965,6 +978,47 @@ $themes:(
 ),
   shadow: (
   primary: rgba(#060606, 0.075)
+),
+  surface: (
+  neutral: (
+  base: #EAEDEF,
+  primary: #F8F9FA,
+  secondary: #DCE1E5,
+  tertiary: #A5B1BC,
+  disabled: #C0C9D0,
+  inversed: #101315
+),
+  accent: (
+  base: #013CFE,
+  primary: #013CFE,
+  secondary: #0130CE,
+  tertiary: #01259D,
+  disabled: #001A6D,
+  inversed: #92ABFF
+),
+  info: (
+  base: #3161FE,
+  primary: #3161FE,
+  secondary: #013CFE,
+  tertiary: #6286FE,
+  disabled: #013CFE
+),
+  warning: (
+  base: #FFB531,
+  primary: #FFB531,
+  secondary: #FFA400,
+  tertiary: #FFC761,
+  disabled: #FFA400,
+  inversed: #CE8500
+),
+  error: (
+  base: #E96B6B,
+  primary: #E96B6B,
+  secondary: #DE2121,
+  tertiary: #F1A0A0,
+  disabled: #DE2121,
+  inversed: #941616
+)
 )
 ),
   atoms: (
@@ -1672,11 +1726,11 @@ $themes:(
 ),
   form: (
   primary: (
-  background: rgba(#F8F9FA, 0.75),
+  background: #F8F9FA,
   shadow: rgba(#060606, 0.075)
 ),
   secondary: (
-  background: rgba(#e5e9f1, 0.75),
+  background: #DCE1E5,
   shadow: rgba(#060606, 0.075)
 )
 ),

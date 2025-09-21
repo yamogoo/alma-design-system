@@ -1,7 +1,7 @@
 {
   "primary": {
     "background": {
-      "value": "{themes.themes.light.abstracts.background.primary.value}",
+      "value": "{themes.themes.light.abstracts.surface.neutral.primary.value}",
       "type": "color",
       "unit": "hex",
       "meta": {
@@ -10,7 +10,7 @@
     },
     "primaryInversed": {
       "background": {
-        "value": "{themes.themes.light.abstracts.background.primaryInversed.value}",
+        "value": "{themes.themes.light.abstracts.surface.neutral.inversed.value}",
         "type": "color",
         "unit": "hex",
         "meta": {

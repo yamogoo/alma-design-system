@@ -2,7 +2,7 @@
   "primary": {
     "self": {
       "background": {
-        "value": "{themes.themes.dark.abstracts.background.primary.value}"
+        "value": "{themes.themes.dark.abstracts.surface.neutral.primary.value}"
       },
       "divider": {
         "value": "{themes.themes.dark.atoms.divider.neutral.primary.self.border.value}",
@@ -14,7 +14,7 @@
   "secondary": {
     "self": {
       "background": {
-        "value": "{themes.themes.dark.abstracts.background.secondary.value}"
+        "value": "{themes.themes.dark.abstracts.surface.neutral.secondary.value}"
       },
       "divider": {
         "value": "{themes.themes.dark.atoms.divider.neutral.secondary.self.border.value}",

@@ -1,13 +1,13 @@
 import tokens from "@/tokens";
 
-export type AbstractBackgroundMode =
-  keyof typeof tokens.themes.light.abstracts.background;
-export const abstracBackgroundModes = Object.keys(
-  tokens.themes.light.abstracts.background
-) as AbstractBackgroundMode[];
+export type AbstractSurfaceMode =
+  keyof typeof tokens.themes.light.abstracts.surface;
+export const abstracSurfaceModes = Object.keys(
+  tokens.themes.light.abstracts.surface
+) as AbstractSurfaceMode[];
 
-// export type AbstractLabelTone =
-//   keyof typeof tokens.themes.light.abstracts.label.neutral;
-// export const abstractLabelTones = Object.keys(
-//   tokens.themes.light.abstracts.label.neutral
-// ) as AbstractLabelTone[];
+export type AbstractSurfaceTone =
+  keyof typeof tokens.themes.light.abstracts.surface.neutral;
+export const abstractSurfaceTones = Object.keys(
+  tokens.themes.light.abstracts.surface.neutral
+) as AbstractSurfaceTone[];

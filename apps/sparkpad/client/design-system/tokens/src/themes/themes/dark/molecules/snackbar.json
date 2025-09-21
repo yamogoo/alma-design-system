@@ -3,7 +3,7 @@
     "primary": {
       "self": {
         "background": {
-          "value": "{themes.themes.dark.abstracts.background.primary.value}",
+          "value": "{themes.themes.dark.abstracts.surface.neutral.primary.value}",
           "type": "color",
           "unit": "",
           "meta": {
@@ -39,7 +39,7 @@
     "inversed": {
       "self": {
         "background": {
-          "value": "{themes.themes.dark.abstracts.background.primaryInversed.value}",
+          "value": "{themes.themes.dark.abstracts.surface.neutral.inversed.value}",
           "type": "color",
           "unit": "",
           "meta": {
@@ -77,7 +77,7 @@
     "primary": {
       "self": {
         "background": {
-          "value": "{themes.themes.dark.abstracts.background.accent.value}",
+          "value": "{themes.themes.dark.abstracts.surface.accent.primary.value}",
           "type": "color",
           "unit": "",
           "meta": {
@@ -113,7 +113,7 @@
     "inversed": {
       "self": {
         "background": {
-          "value": "{themes.themes.dark.abstracts.background.accent.value}",
+          "value": "{themes.themes.dark.abstracts.surface.accent.primary.value}",
           "type": "color",
           "unit": "",
           "meta": {

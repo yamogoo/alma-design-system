@@ -4,7 +4,7 @@
       "self": {
         "background": {
           "normal": {
-            "value": "{themes.themes.light.abstracts.background.primary.value}",
+            "value": "{themes.themes.light.abstracts.surface.neutral.primary.value}",
             "type": "color",
             "unit": "hex",
             "meta": {
@@ -14,7 +14,7 @@
         },
         "border": {
           "normal": {
-            "value": "rgba({themes.themes.light.abstracts.background.primary.value},0)",
+            "value": "rgba({themes.themes.light.abstracts.surface.neutral.primary.value},0)",
             "type": "color",
             "unit": "hex",
             "meta": {
@@ -30,7 +30,7 @@
       "self": {
         "background": {
           "normal": {
-            "value": "{themes.themes.light.abstracts.background.accent.value}",
+            "value": "{themes.themes.light.abstracts.surface.accent.primary.value}",
             "type": "color",
             "unit": "hex",
             "meta": {
@@ -40,7 +40,7 @@
         },
         "border": {
           "normal": {
-            "value": "rgba({themes.themes.light.abstracts.background.accent.value},0)",
+            "value": "rgba({themes.themes.light.abstracts.surface.accent.primary.value},0)",
             "type": "color",
             "unit": "hex",
             "meta": {

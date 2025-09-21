@@ -1,7 +1,7 @@
 {
   "primary": {
     "background": {
-      "value": "{themes.themes.dark.abstracts.background.primary.value}"
+      "value": "{themes.themes.dark.abstracts.surface.neutral.primary.value}"
     },
     "border": {
       "value": "{themes.themes.dark.abstracts.border.primary.value}"
@@ -9,7 +9,7 @@
   },
   "secondary": {
     "background": {
-      "value": "{themes.themes.dark.abstracts.background.secondary.value}"
+      "value": "{themes.themes.dark.abstracts.surface.neutral.secondary.value}"
     },
     "border": {
       "value": "{themes.themes.dark.abstracts.border.primary.value}"
