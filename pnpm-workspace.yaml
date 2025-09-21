@@ -1,5 +1,3 @@
 packages:
-  - client
-  - log-server
-  - server
+  - apps/sparkpad/*
   - packages/*
