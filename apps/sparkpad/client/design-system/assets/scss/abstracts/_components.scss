@@ -5,14 +5,14 @@ $atoms:(
   action-sheet: (
   default: (
   lg: (
-  self: (
+  root: (
   min-height: 32px,
   border-radius: 16px,
   padding: 48px 24px 24px 24px
 )
 ),
   md: (
-  self: (
+  root: (
   min-height: 32px,
   border-radius: 12px,
   padding: 24px 24px
@@ -23,7 +23,7 @@ $atoms:(
   button: (
   default: (
   lg: (
-  self: (
+  root: (
   size: 56px,
   gap: 12px,
   padding: 0px 32px 0px 32px,
@@ -40,7 +40,7 @@ $atoms:(
 )
 ),
   md: (
-  self: (
+  root: (
   size: 44px,
   gap: 12px,
   padding: 0px 24px 0px 24px,
@@ -57,7 +57,7 @@ $atoms:(
 )
 ),
   sm: (
-  self: (
+  root: (
   size: 40px,
   gap: 12px,
   padding: 0px 12px 0px 12px,
@@ -74,7 +74,7 @@ $atoms:(
 )
 ),
   xs: (
-  self: (
+  root: (
   size: 36px,
   gap: 12px,
   padding: 0px 12px,
@@ -93,7 +93,7 @@ $atoms:(
 ),
   rounded: (
   lg: (
-  self: (
+  root: (
   size: 56px,
   gap: 12px,
   padding: 0px 0px 0px 0px,
@@ -110,7 +110,7 @@ $atoms:(
 )
 ),
   md: (
-  self: (
+  root: (
   size: 44px,
   gap: 12px,
   padding: 0px 0px 0px 0px,
@@ -127,7 +127,7 @@ $atoms:(
 )
 ),
   sm: (
-  self: (
+  root: (
   size: 32px,
   gap: 12px,
   padding: 0px 24px 0px 24px,
@@ -144,7 +144,7 @@ $atoms:(
 )
 ),
   xs: (
-  self: (
+  root: (
   size: 24px,
   gap: 12px,
   padding: 0px 24px 0px 24px,
@@ -179,7 +179,7 @@ $atoms:(
   char-tooltip-label: (
   default: (
   lg: (
-  self: (
+  root: (
   gap: 12px,
   padding: 8px 12px,
   border-radius: 8px
@@ -193,7 +193,7 @@ $atoms:(
   control-wrapper: (
   default: (
   md: (
-  self: (
+  root: (
   gap: 12px,
   padding-v: 4px,
   padding-h: 4px
@@ -204,25 +204,25 @@ $atoms:(
   divider: (
   default: (
   lg: (
-  self: (
+  root: (
   border-width: 1px,
   padding: 16px
 )
 ),
   md: (
-  self: (
+  root: (
   border-width: 1px,
   padding: 12px
 )
 ),
   sm: (
-  self: (
+  root: (
   border-width: 1px,
   padding: 8px
 )
 ),
   xs: (
-  self: (
+  root: (
   border-width: 1px,
   padding: 0px
 )
@@ -232,7 +232,7 @@ $atoms:(
   group: (
   default: (
   lg: (
-  self: (
+  root: (
   gap: 24px,
   padding: 0px,
   border-radius: 0px,
@@ -240,7 +240,7 @@ $atoms:(
 )
 ),
   md: (
-  self: (
+  root: (
   gap: 16px,
   padding: 0px,
   border-radius: 0px,
@@ -248,7 +248,7 @@ $atoms:(
 )
 ),
   sm: (
-  self: (
+  root: (
   gap: 12px,
   padding: 0px,
   border-radius: 0px,
@@ -258,7 +258,7 @@ $atoms:(
 ),
   block: (
   lg: (
-  self: (
+  root: (
   gap: 24px,
   padding: 4px,
   border-radius: 16px,
@@ -266,7 +266,7 @@ $atoms:(
 )
 ),
   md: (
-  self: (
+  root: (
   gap: 12px,
   padding: 4px,
   border-radius: 12px,
@@ -274,7 +274,7 @@ $atoms:(
 )
 ),
   sm: (
-  self: (
+  root: (
   gap: 8px,
   padding: 4px,
   border-radius: 8px,
@@ -286,37 +286,37 @@ $atoms:(
   icon: (
   default: (
   xxs: (
-  self: (
+  root: (
   size: 12px
 )
 ),
   xs: (
-  self: (
+  root: (
   size: 16px
 )
 ),
   sm: (
-  self: (
+  root: (
   size: 20px
 )
 ),
   md: (
-  self: (
+  root: (
   size: 24px
 )
 ),
   lg: (
-  self: (
+  root: (
   size: 32px
 )
 ),
   xl: (
-  self: (
+  root: (
   size: 48px
 )
 ),
   xxl: (
-  self: (
+  root: (
   size: 56px
 )
 )
@@ -325,7 +325,7 @@ $atoms:(
   input: (
   default: (
   md: (
-  self: (
+  root: (
   height: 44px,
   whole-height: 60px,
   padding: 8px 16px,
@@ -344,7 +344,7 @@ $atoms:(
 )
 ),
   lg: (
-  self: (
+  root: (
   height: 52px,
   whole-height: 68px,
   padding: 8px 16px 8px 16px,
@@ -367,7 +367,7 @@ $atoms:(
   logo-with-descriptor: (
   default: (
   md: (
-  self: (
+  root: (
   gap: 12px
 ),
   label: (
@@ -378,7 +378,7 @@ $atoms:(
 ),
   main-container: (
   default: (
-  self: (
+  root: (
   border-radius: 16px,
   media: (
   lg: (
@@ -414,13 +414,13 @@ $atoms:(
   progressbar: (
   default: (
   lg: (
-  self: (
+  root: (
   height: 10px,
   border-radius: 5px
 )
 ),
   md: (
-  self: (
+  root: (
   height: 8px,
   border-radius: 4px
 )
@@ -429,7 +429,7 @@ $atoms:(
 ),
   resizer: (
   default: (
-  self: (
+  root: (
   active-area-width: 20px
 ),
   knob: (
@@ -450,7 +450,7 @@ $atoms:(
   sheet: (
   default: (
   lg: (
-  self: (
+  root: (
   min-height: 32px,
   border-radius: 16px,
   gap: 32px,
@@ -461,7 +461,7 @@ $atoms:(
 )
 ),
   md: (
-  self: (
+  root: (
   min-height: 32px,
   border-radius: 16px,
   gap: 16px,
@@ -476,7 +476,7 @@ $atoms:(
   simple-menu: (
   default: (
   lg: (
-  self: (
+  root: (
   gap: 16px,
   padding: 0px
 ),
@@ -488,7 +488,7 @@ $atoms:(
 )
 ),
   md: (
-  self: (
+  root: (
   gap: 16px,
   padding: 0px
 ),
@@ -520,7 +520,7 @@ $atoms:(
   switch: (
   default: (
   lg: (
-  self: (
+  root: (
   width: 40px,
   height: 20px,
   gap: 10px
@@ -534,7 +534,7 @@ $atoms:(
 )
 ),
   md: (
-  self: (
+  root: (
   width: 36px,
   height: 18px,
   gap: 10px
@@ -548,7 +548,7 @@ $atoms:(
 )
 ),
   sm: (
-  self: (
+  root: (
   width: 32px,
   height: 16px,
   gap: 10px
@@ -568,12 +568,12 @@ $molecules:(
   dropdown: (
   default: (
   lg: (
-  self: (
+  root: (
   min-width: 76px,
   height: 56px
 ),
   current-value: (
-  self: (
+  root: (
   gap: 8px,
   padding: 8px 12px 8px 12px,
   border-radius: 8px
@@ -595,12 +595,12 @@ $molecules:(
 )
 ),
   md: (
-  self: (
+  root: (
   min-width: 76px,
   height: 44px
 ),
   current-value: (
-  self: (
+  root: (
   gap: 8px,
   padding: 8px 12px 8px 12px,
   border-radius: 8px
@@ -626,7 +626,7 @@ $molecules:(
   form: (
   default: (
   md: (
-  self: (
+  root: (
   border-radius: 20px
 ),
   body: (
@@ -639,7 +639,7 @@ $molecules:(
   form-wrapper: (
   default: (
   lg: (
-  self: (
+  root: (
   padding: 16px 24px,
   border-radius: 20px,
   border-width: 0px
@@ -653,7 +653,7 @@ $molecules:(
   snackbar: (
   default: (
   lg: (
-  self: (
+  root: (
   gap: 12px,
   padding-h: 24px,
   padding-v: 16px,
@@ -670,7 +670,7 @@ $molecules:(
 )
 ),
   md: (
-  self: (
+  root: (
   gap: 8px,
   padding-h: 16px,
   padding-v: 12px,
@@ -693,17 +693,17 @@ $templates:(
   main-footer: (
   default: (
   lg: (
-  self: (
+  root: (
   padding: 16px
 )
 ),
   md: (
-  self: (
+  root: (
   padding: 12px
 )
 ),
   sm: (
-  self: (
+  root: (
   padding: 8px
 )
 )
@@ -712,17 +712,17 @@ $templates:(
   main-header: (
   default: (
   lg: (
-  self: (
+  root: (
   padding: 16px
 )
 ),
   md: (
-  self: (
+  root: (
   padding: 12px
 )
 ),
   sm: (
-  self: (
+  root: (
   padding: 8px
 )
 )

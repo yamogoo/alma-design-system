@@ -3,155 +3,242 @@
     "base": {
       "$value": "{colors.gray-925}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "primary": {
       "$value": "{colors.gray-950}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "secondary": {
       "$value": "{colors.gray-900}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "tertiary": {
       "$value": "{colors.gray-800}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "disabled": {
       "$value": "{colors.gray-600}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "inversed": {
       "$value": "{colors.gray-50}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     }
   },
   "accent": {
     "base": {
       "$value": "{colors.blue-500}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "primary": {
       "$value": "{themes.themes.dark.abstracts.surface.accent.base.$value}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "secondary": {
       "$value": "{colors.blue-600}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "tertiary": {
       "$value": "{colors.blue-700}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "disabled": {
       "$value": "{colors.blue-800}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "inversed": {
       "$value": "{colors.blue-200}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     }
   },
   "info": {
     "base": {
       "$value": "{colors.blue-400}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "primary": {
       "$value": "{themes.themes.dark.abstracts.surface.info.base.$value}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "secondary": {
       "$value": "{colors.blue-500}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "tertiary": {
       "$value": "{colors.blue-300}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "disabled": {
       "$value": "{colors.blue-500}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     }
   },
   "warning": {
     "base": {
       "$value": "{colors.orange-400}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "primary": {
       "$value": "{themes.themes.dark.abstracts.surface.warning.base.$value}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "secondary": {
       "$value": "{colors.orange-500}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "tertiary": {
       "$value": "{colors.orange-300}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "disabled": {
       "$value": "{colors.orange-500}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "inversed": {
       "$value": "{colors.orange-600}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     }
   },
   "error": {
     "base": {
       "$value": "{colors.red-325}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "primary": {
       "$value": "{themes.themes.dark.abstracts.surface.error.base.$value}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "secondary": {
       "$value": "{colors.red-500}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "tertiary": {
       "$value": "{colors.red-200}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "disabled": {
       "$value": "{colors.red-500}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     },
     "inversed": {
       "$value": "{colors.red-675}",
       "$type": "color",
-      "$unit": "hex"
+      "$unit": "hex",
+      "$meta": {
+        "category": "surface"
+      }
     }
   }
 }

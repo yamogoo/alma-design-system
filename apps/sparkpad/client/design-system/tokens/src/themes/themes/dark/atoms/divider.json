@@ -1,27 +1,25 @@
 {
   "neutral": {
     "primary": {
-      "self": {
+      "root": {
         "border": {
           "$value": "{themes.themes.dark.abstracts.border.primary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
-            "category": "border",
-            "description": "Primary border color for divider"
+            "category": "divider"
           }
         }
       }
     },
     "secondary": {
-      "self": {
+      "root": {
         "border": {
           "$value": "{themes.themes.dark.abstracts.border.secondary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
-            "category": "border",
-            "description": "Secondary border color for divider"
+            "category": "divider"
           }
         }
       }

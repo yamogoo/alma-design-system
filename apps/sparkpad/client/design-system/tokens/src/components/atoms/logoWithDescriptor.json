@@ -1,7 +1,7 @@
 {
   "default": {
     "md": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",

@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "borderWidth": {
           "$value": "{tokens.stroke.sm.$value}",
           "$type": "border",
@@ -24,7 +24,7 @@
       "$type": "component"
     },
     "md": {
-      "self": {
+      "root": {
         "borderWidth": {
           "$value": "{tokens.stroke.sm.$value}",
           "$type": "border",
@@ -47,7 +47,7 @@
       "$type": "component"
     },
     "sm": {
-      "self": {
+      "root": {
         "borderWidth": {
           "$value": "{tokens.stroke.sm.$value}",
           "$type": "border",
@@ -70,7 +70,7 @@
       "$type": "component"
     },
     "xs": {
-      "self": {
+      "root": {
         "borderWidth": {
           "$value": "{tokens.stroke.sm.$value}",
           "$type": "border",

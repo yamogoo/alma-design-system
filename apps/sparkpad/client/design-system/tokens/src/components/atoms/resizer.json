@@ -1,6 +1,6 @@
 {
   "default": {
-    "self": {
+    "root": {
       "activeAreaWidth": {
         "$value": 20,
         "$type": "number",

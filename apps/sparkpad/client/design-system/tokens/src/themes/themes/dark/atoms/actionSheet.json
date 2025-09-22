@@ -3,13 +3,21 @@
     "background": {
       "normal": {
         "$value": "{themes.themes.dark.abstracts.surface.neutral.primary.$value}",
-        "$type": "color"
+        "$type": "color",
+        "unit": "hex",
+        "$meta": {
+          "category": "action sheet"
+        }
       }
     },
     "shadow": {
       "normal": {
         "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}",
-        "$type": "color"
+        "$type": "color",
+        "unit": "hex",
+        "$meta": {
+          "category": "action sheet"
+        }
       }
     }
   },
@@ -17,13 +25,21 @@
     "background": {
       "normal": {
         "$value": "{themes.themes.dark.abstracts.surface.neutral.secondary.$value}",
-        "$type": "color"
+        "$type": "color",
+        "unit": "hex",
+        "$meta": {
+          "category": "action sheet"
+        }
       }
     },
     "shadow": {
       "normal": {
         "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}",
-        "$type": "color"
+        "$type": "color",
+        "unit": "hex",
+        "$meta": {
+          "category": "action sheet"
+        }
       }
     }
   },
@@ -31,13 +47,21 @@
     "background": {
       "normal": {
         "$value": "{themes.themes.dark.abstracts.surface.accent.primary.$value}",
-        "$type": "color"
+        "$type": "color",
+        "unit": "hex",
+        "$meta": {
+          "category": "action sheet"
+        }
       }
     },
     "shadow": {
       "normal": {
         "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}",
-        "$type": "color"
+        "$type": "color",
+        "unit": "hex",
+        "$meta": {
+          "category": "action sheet"
+        }
       }
     }
   },
@@ -45,13 +69,21 @@
     "background": {
       "normal": {
         "$value": "rgba({themes.themes.dark.abstracts.surface.neutral.primary.$value}, 0)",
-        "$type": "color"
+        "$type": "color",
+        "unit": "hex",
+        "$meta": {
+          "category": "action sheet"
+        }
       }
     },
     "shadow": {
       "normal": {
         "$value": "rgba({themes.themes.dark.abstracts.shadow.primary.$value}, 0)",
-        "$type": "color"
+        "$type": "color",
+        "unit": "hex",
+        "$meta": {
+          "category": "action sheet"
+        }
       }
     }
   }

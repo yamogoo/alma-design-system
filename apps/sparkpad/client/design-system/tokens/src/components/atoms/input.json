@@ -1,7 +1,7 @@
 {
   "default": {
     "md": {
-      "self": {
+      "root": {
         "height": {
           "$value": 44,
           "$type": "number",
@@ -101,7 +101,7 @@
       "$type": "component"
     },
     "lg": {
-      "self": {
+      "root": {
         "height": {
           "$value": 52,
           "$type": "number",

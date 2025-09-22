@@ -35,7 +35,7 @@ withDefaults(defineProps<MainFooterProps>(), {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.main-footer_size-#{$size} {
-          $padding-v: px2rem(get($val, "self.padding"));
+          $padding-v: px2rem(get($val, "root.padding"));
           padding-top: $padding-v;
           padding-bottom: $padding-v;
         }
@@ -51,11 +51,11 @@ withDefaults(defineProps<MainFooterProps>(), {
         &.main-footer_mode-#{$mode} {
           @include themify($themes) {
             background-color: themed(
-              "templates.main-footer.#{$tone}.#{$mode}.self.background.normal"
+              "templates.main-footer.#{$tone}.#{$mode}.root.background.normal"
             );
             border: $outline solid
               themed(
-                "templates.main-footer.#{$tone}.#{$mode}.self.border.normal"
+                "templates.main-footer.#{$tone}.#{$mode}.root.border.normal"
               );
           }
           @extend %base-transition;

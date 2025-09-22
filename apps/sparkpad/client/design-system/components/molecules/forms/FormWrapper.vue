@@ -37,10 +37,10 @@ withDefaults(defineProps<FormWrapperProps>(), {
 @mixin defineSizes($map: get($molecules, "form-wrapper")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $padding: get($val, "self.padding");
+      $padding: get($val, "root.padding");
 
-      $border-radius: px2rem(get($val, "self.border-radius"));
-      $border-width: px2rem(get($val, "self.border-width"));
+      $border-radius: px2rem(get($val, "root.border-radius"));
+      $border-width: px2rem(get($val, "root.border-width"));
 
       $header-padding: get($val, "header.padding");
 

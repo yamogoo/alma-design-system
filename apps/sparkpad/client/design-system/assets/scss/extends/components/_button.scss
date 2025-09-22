@@ -6,10 +6,10 @@
 @mixin defineButtonSizes($map: get($atoms, "button")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $button-size: px2rem(get($val, "self.size"));
-      $gap: px2rem(get($val, "self.gap"));
-      $border-radius: get($val, "self.border-radius");
-      $padding: get($val, "self.padding");
+      $button-size: px2rem(get($val, "root.size"));
+      $gap: px2rem(get($val, "root.gap"));
+      $border-radius: get($val, "root.border-radius");
+      $padding: get($val, "root.padding");
 
       $font-style: get($val, "label.font-style");
       $icon-size: px2rem(get($val, "icon.size"));
@@ -51,27 +51,27 @@
             color: themed("atoms.button.#{$mode}.#{$tone}.label.normal");
             fill: themed("atoms.button.#{$mode}.#{$tone}.label.normal");
             background-color: themed(
-              "atoms.button.#{$mode}.#{$tone}.self.background.normal"
+              "atoms.button.#{$mode}.#{$tone}.root.background.normal"
             );
             border: $outline solid
-              themed("atoms.button.#{$mode}.#{$tone}.self.border.normal");
+              themed("atoms.button.#{$mode}.#{$tone}.root.border.normal");
           }
           @extend %base-transition;
 
           &:focus {
             @include themify($themes) {
               outline: $outline solid
-                themed("atoms.button.#{$mode}.#{$tone}.self.border.outline");
+                themed("atoms.button.#{$mode}.#{$tone}.root.border.outline");
             }
           }
 
           &.button_hovered {
             @include themify($themes) {
               background-color: themed(
-                "atoms.button.#{$mode}.#{$tone}.self.background.hovered"
+                "atoms.button.#{$mode}.#{$tone}.root.background.hovered"
               );
               border: $outline solid
-                themed("atoms.button.#{$mode}.#{$tone}.self.border.hovered");
+                themed("atoms.button.#{$mode}.#{$tone}.root.border.hovered");
             }
 
             .button__label {
@@ -85,10 +85,10 @@
           &.button_pressed {
             @include themify($themes) {
               background-color: themed(
-                "atoms.button.#{$mode}.#{$tone}.self.background.pressed"
+                "atoms.button.#{$mode}.#{$tone}.root.background.pressed"
               );
               border: $outline solid
-                themed("atoms.button.#{$mode}.#{$tone}.self.border.pressed");
+                themed("atoms.button.#{$mode}.#{$tone}.root.border.pressed");
             }
 
             .button__label {
@@ -102,10 +102,10 @@
           &.button_disabled {
             @include themify($themes) {
               background-color: themed(
-                "atoms.button.#{$mode}.#{$tone}.self.background.disabled"
+                "atoms.button.#{$mode}.#{$tone}.root.background.disabled"
               );
               border: $outline solid
-                themed("atoms.button.#{$mode}.#{$tone}.self.border.disabled");
+                themed("atoms.button.#{$mode}.#{$tone}.root.border.disabled");
             }
 
             .button__label {

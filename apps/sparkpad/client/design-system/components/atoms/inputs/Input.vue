@@ -272,10 +272,10 @@ onMounted(() => {
 
       $value-padding-top: px2rem(get($val, "label.padding-top"));
 
-      $height: get($val, "self.height");
-      $whole-height: get($val, "self.whole-height");
-      $padding: get($val, "self.padding");
-      $border-radius: get($val, "self.border-radius");
+      $height: get($val, "root.height");
+      $whole-height: get($val, "root.whole-height");
+      $padding: get($val, "root.padding");
+      $border-radius: get($val, "root.border-radius");
       $error-padding: get($val, "error.padding");
 
       &_variant-#{$variant} {
@@ -318,7 +318,7 @@ onMounted(() => {
               @include themify($themes) {
                 color: themed("atoms.input.#{$mode}.#{$tone}.label.normal");
                 background-color: themed(
-                  "atoms.input.#{$mode}.#{$tone}.self.background.normal"
+                  "atoms.input.#{$mode}.#{$tone}.root.background.normal"
                 );
                 @extend %base-transition;
               }
@@ -329,7 +329,7 @@ onMounted(() => {
             .input__field {
               @include themify($themes) {
                 border: $outline solid
-                  themed("atoms.input.#{$mode}.#{$tone}.self.border.normal");
+                  themed("atoms.input.#{$mode}.#{$tone}.root.border.normal");
               }
             }
           }
@@ -339,10 +339,10 @@ onMounted(() => {
               @include themify($themes) {
                 color: themed("atoms.input.#{$mode}.#{$tone}.label.focused");
                 background-color: themed(
-                  "atoms.input.#{$mode}.#{$tone}.self.background.focused"
+                  "atoms.input.#{$mode}.#{$tone}.root.background.focused"
                 );
                 border: $outline solid
-                  themed("atoms.input.#{$mode}.#{$tone}.self.border.outline");
+                  themed("atoms.input.#{$mode}.#{$tone}.root.border.outline");
                 @extend %base-transition;
               }
             }
@@ -353,7 +353,7 @@ onMounted(() => {
               @include themify($themes) {
                 color: themed("atoms.input.#{$mode}.#{$tone}.label.disabled");
                 background-color: themed(
-                  "atoms.input.#{$mode}.#{$tone}.self.background.disabled"
+                  "atoms.input.#{$mode}.#{$tone}.root.background.disabled"
                 );
                 @extend %base-transition;
               }
@@ -365,7 +365,7 @@ onMounted(() => {
               @include themify($themes) {
                 color: themed("atoms.input.#{$mode}.#{$tone}.label.error");
                 background-color: themed(
-                  "atoms.input.#{$mode}.#{$tone}.self.background.error"
+                  "atoms.input.#{$mode}.#{$tone}.root.background.error"
                 );
                 @extend %base-transition;
               }

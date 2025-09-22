@@ -1,8 +1,8 @@
 {
   "default": {
     "lg": {
-      "self": {
-        "min-height": {
+      "root": {
+        "minHeight": {
           "$value": 32,
           "$type": "number",
           "$unit": "px",
@@ -38,8 +38,8 @@
       "$type": "component"
     },
     "md": {
-      "self": {
-        "min-height": {
+      "root": {
+        "minHeight": {
           "$value": 32,
           "$type": "number",
           "$unit": "px",

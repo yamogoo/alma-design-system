@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.lg.$value}",
           "$type": "number",
@@ -28,7 +28,7 @@
           }
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -40,7 +40,7 @@
       "$type": "component"
     },
     "md": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
@@ -67,7 +67,7 @@
           }
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -79,7 +79,7 @@
       "$type": "component"
     },
     "sm": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
@@ -106,7 +106,7 @@
           }
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -120,7 +120,7 @@
   },
   "block": {
     "lg": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.lg.$value}",
           "$type": "number",
@@ -147,7 +147,7 @@
           }
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -159,7 +159,7 @@
       "$type": "component"
     },
     "md": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
@@ -186,7 +186,7 @@
           }
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -198,7 +198,7 @@
       "$type": "component"
     },
     "sm": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",
@@ -225,7 +225,7 @@
           }
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {

@@ -2,11 +2,20 @@
   "default": {
     "colorIn": {
       "$value": "rgba({themes.themes.dark.abstracts.label.neutral.disabled.$value}, 0.25)",
-      "$type": "color"
+      "type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "skeleton"
+      }
     },
     "colorOut": {
       "$value": "rgba({themes.themes.dark.abstracts.label.neutral.disabled.$value}, 0)",
-      "$type": "color"
+      "$type": "color",
+      "type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "skeleton"
+      }
     }
   }
 }

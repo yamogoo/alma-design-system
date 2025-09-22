@@ -1,7 +1,7 @@
 {
   "neutral": {
     "primary": {
-      "self": {
+      "root": {
         "border": {
           "$value": "{themes.themes.light.abstracts.border.primary.$value}",
           "$type": "color",
@@ -14,7 +14,7 @@
       }
     },
     "secondary": {
-      "self": {
+      "root": {
         "border": {
           "$value": "{themes.themes.light.abstracts.border.secondary.$value}",
           "$type": "color",

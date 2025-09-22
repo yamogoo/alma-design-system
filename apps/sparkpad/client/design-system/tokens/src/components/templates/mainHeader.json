@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "padding": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
@@ -13,7 +13,7 @@
       }
     },
     "md": {
-      "self": {
+      "root": {
         "padding": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
@@ -25,7 +25,7 @@
       }
     },
     "sm": {
-      "self": {
+      "root": {
         "padding": {
           "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",

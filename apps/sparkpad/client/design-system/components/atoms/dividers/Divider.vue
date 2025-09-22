@@ -35,8 +35,8 @@ withDefaults(defineProps<DividerProps>(), {
 @mixin defineSizes($map: get($atoms, "divider")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $border-width: px2rem(get($val, "self.border-width"));
-      $padding: get($val, "self.padding");
+      $border-width: px2rem(get($val, "root.border-width"));
+      $padding: get($val, "root.padding");
 
       &_variant-#{$variant} {
         &.divider_size-#{$size} {
@@ -94,7 +94,7 @@ withDefaults(defineProps<DividerProps>(), {
             &-horizontal {
               @include themify($themes) {
                 border-bottom-color: themed(
-                  "atoms.divider.#{$mode}.#{$tone}.self.border"
+                  "atoms.divider.#{$mode}.#{$tone}.root.border"
                 );
               }
             }
@@ -102,7 +102,7 @@ withDefaults(defineProps<DividerProps>(), {
             &-vertical {
               @include themify($themes) {
                 border-right-color: themed(
-                  "atoms.divider.#{$mode}.#{$tone}.self.border"
+                  "atoms.divider.#{$mode}.#{$tone}.root.border"
                 );
               }
             }

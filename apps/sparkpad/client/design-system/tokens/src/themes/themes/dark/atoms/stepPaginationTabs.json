@@ -7,8 +7,7 @@
           "$type": "color",
           "$unit": "hex",
           "$meta": {
-            "category": "text",
-            "description": "Normal label color for step pagination tab"
+            "category": "text"
           }
         },
         "active": {
@@ -16,8 +15,7 @@
           "$type": "color",
           "$unit": "hex",
           "$meta": {
-            "category": "text",
-            "description": "Active label color for step pagination tab"
+            "category": "text"
           }
         }
       }

@@ -49,13 +49,13 @@ withDefaults(defineProps<SnackbarProps>(), {
 @mixin defineSizes($map: get($molecules, "snackbar")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $gap: px2rem(get($val, "self.gap"));
+      $gap: px2rem(get($val, "root.gap"));
 
-      $padding-h: px2rem(get($val, "self.padding-h"));
-      $padding-v: px2rem(get($val, "self.padding-v"));
+      $padding-h: px2rem(get($val, "root.padding-h"));
+      $padding-v: px2rem(get($val, "root.padding-v"));
       $padding: $padding-v $padding-h;
 
-      $border-radius: px2rem(get($val, "self.border-radius"));
+      $border-radius: px2rem(get($val, "root.border-radius"));
 
       $content-gap: px2rem(get($val, "content.gap"));
       $title-font-style: get($val, "title.font-style");
@@ -96,7 +96,7 @@ withDefaults(defineProps<SnackbarProps>(), {
         &.snackbar_mode-#{$mode} {
           @include themify($themes) {
             background-color: themed(
-              "molecules.snackbar.#{$tone}.#{$mode}.self.background"
+              "molecules.snackbar.#{$tone}.#{$mode}.root.background"
             );
           }
 

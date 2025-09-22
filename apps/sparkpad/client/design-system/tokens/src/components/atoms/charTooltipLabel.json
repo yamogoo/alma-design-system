@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$unit": "px",

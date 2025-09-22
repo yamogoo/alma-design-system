@@ -6,8 +6,7 @@
         "$type": "color",
         "$unit": "hex",
         "$meta": {
-          "category": "text",
-          "description": "Normal color of the resizer splitter"
+          "category": "text"
         }
       },
       "active": {
@@ -15,8 +14,7 @@
         "$type": "color",
         "$unit": "hex",
         "$meta": {
-          "category": "text",
-          "description": "Active color of the resizer splitter"
+          "category": "text"
         }
       }
     },
@@ -26,8 +24,7 @@
         "$type": "color",
         "$unit": "hex",
         "$meta": {
-          "category": "background",
-          "description": "Normal color of the resizer knob"
+          "category": "background"
         }
       },
       "active": {
@@ -35,8 +32,7 @@
         "$type": "color",
         "$unit": "hex",
         "$meta": {
-          "category": "background",
-          "description": "Active color of the resizer knob"
+          "category": "background"
         }
       }
     }

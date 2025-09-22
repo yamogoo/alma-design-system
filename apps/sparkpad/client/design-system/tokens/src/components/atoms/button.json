@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "size": {
           "$value": 56,
           "$type": "number",
@@ -57,7 +57,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.sm.self.size.$value}",
+          "$value": "{components.atoms.icon.default.sm.root.size.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -80,7 +80,7 @@
       "$type": "component"
     },
     "md": {
-      "self": {
+      "root": {
         "size": {
           "$value": 44,
           "$type": "number",
@@ -136,7 +136,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xs.self.size.$value}",
+          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -159,7 +159,7 @@
       "$type": "component"
     },
     "sm": {
-      "self": {
+      "root": {
         "size": {
           "$value": 40,
           "$type": "number",
@@ -215,7 +215,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xs.self.size.$value}",
+          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -238,7 +238,7 @@
       "$type": "component"
     },
     "xs": {
-      "self": {
+      "root": {
         "size": {
           "$value": 36,
           "$type": "number",
@@ -289,7 +289,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xxs.self.size.$value}",
+          "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -314,7 +314,7 @@
   },
   "rounded": {
     "lg": {
-      "self": {
+      "root": {
         "size": {
           "$value": 56,
           "$type": "number",
@@ -365,7 +365,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.sm.self.size.$value}",
+          "$value": "{components.atoms.icon.default.sm.root.size.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -388,7 +388,7 @@
       "$type": "component"
     },
     "md": {
-      "self": {
+      "root": {
         "size": {
           "$value": 44,
           "$type": "number",
@@ -439,7 +439,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xs.self.size.$value}",
+          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -462,7 +462,7 @@
       "$type": "component"
     },
     "sm": {
-      "self": {
+      "root": {
         "size": {
           "$value": 32,
           "$type": "number",
@@ -518,7 +518,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xs.self.size.$value}",
+          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -541,7 +541,7 @@
       "$type": "component"
     },
     "xs": {
-      "self": {
+      "root": {
         "size": {
           "$value": 24,
           "$type": "number",
@@ -597,7 +597,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xxs.self.size.$value}",
+          "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {

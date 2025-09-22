@@ -1,7 +1,7 @@
 {
   "default": {
     "xxs": {
-      "self": {
+      "root": {
         "size": {
           "$value": 12,
           "$type": "number",
@@ -16,7 +16,7 @@
       "$type": "component"
     },
     "xs": {
-      "self": {
+      "root": {
         "size": {
           "$value": 16,
           "$type": "number",
@@ -31,7 +31,7 @@
       "$type": "component"
     },
     "sm": {
-      "self": {
+      "root": {
         "size": {
           "$value": 20,
           "$type": "number",
@@ -46,7 +46,7 @@
       "$type": "component"
     },
     "md": {
-      "self": {
+      "root": {
         "size": {
           "$value": 24,
           "$type": "number",
@@ -61,7 +61,7 @@
       "$type": "component"
     },
     "lg": {
-      "self": {
+      "root": {
         "size": {
           "$value": 32,
           "$type": "number",
@@ -76,7 +76,7 @@
       "$type": "component"
     },
     "xl": {
-      "self": {
+      "root": {
         "size": {
           "$value": 48,
           "$type": "number",
@@ -91,7 +91,7 @@
       "$type": "component"
     },
     "xxl": {
-      "self": {
+      "root": {
         "size": {
           "$value": 56,
           "$type": "number",

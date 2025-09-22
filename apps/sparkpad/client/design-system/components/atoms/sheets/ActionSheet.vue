@@ -75,8 +75,8 @@ watch(
 @mixin defineSizes($map: get($atoms, "action-sheet")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $min-height: px2rem(get($val, "self.min-height"));
-      $border-radius: px2rem(get($val, "self.border-radius"));
+      $min-height: px2rem(get($val, "root.min-height"));
+      $border-radius: px2rem(get($val, "root.border-radius"));
 
       &_variant-#{$variant} {
         &.action-sheet_size-#{$size} {

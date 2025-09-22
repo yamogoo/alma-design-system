@@ -146,13 +146,13 @@ const onOptionClick = (): void => {
 @mixin defineSizes($map: get($molecules, "dropdown")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $min-width: px2rem(get($val, "self.min-width"));
-      $height: px2rem(get($val, "self.height"));
+      $min-width: px2rem(get($val, "root.min-width"));
+      $height: px2rem(get($val, "root.height"));
 
-      $value-gap: px2rem(get($val, "current-value.self.gap"));
-      $value-padding: get($val, "current-value.self.padding");
+      $value-gap: px2rem(get($val, "current-value.root.gap"));
+      $value-padding: get($val, "current-value.root.padding");
       $value-border-radius: px2rem(
-        get($val, "current-value.self.border-radius")
+        get($val, "current-value.root.border-radius")
       );
       $value-font-style: get($val, "current-value.label.font-style");
       $value-icon-size: px2rem(get($val, "current-value.icon.size"));

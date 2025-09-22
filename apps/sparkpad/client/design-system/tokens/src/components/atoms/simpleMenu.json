@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
@@ -32,7 +32,7 @@
       }
     },
     "md": {
-      "self": {
+      "root": {
         "gap": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",

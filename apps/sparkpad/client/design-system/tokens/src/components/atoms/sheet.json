@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "min-height": {
           "$value": 32,
           "$type": "number",
@@ -57,7 +57,7 @@
       }
     },
     "md": {
-      "self": {
+      "root": {
         "min-height": {
           "$value": 32,
           "$type": "number",

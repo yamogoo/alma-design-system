@@ -46,10 +46,10 @@ const componentTag = props.as;
 @mixin defineSizes($map: get($atoms, "group")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $gap: px2rem(get($val, "self.gap"));
-      $padding: px2rem(get($val, "self.padding"));
-      $border-radius: px2rem(get($val, "self.border-radius"));
-      $divider-border-width: px2rem(get($val, "self.border-width"));
+      $gap: px2rem(get($val, "root.gap"));
+      $padding: px2rem(get($val, "root.padding"));
+      $border-radius: px2rem(get($val, "root.border-radius"));
+      $divider-border-width: px2rem(get($val, "root.border-width"));
 
       &_variant-#{$variant} {
         &.group_size-#{$size} {
@@ -78,19 +78,19 @@ const componentTag = props.as;
   @each $mode, $modes in $map {
     &_mode-#{$mode} {
       @include themify($themes) {
-        background-color: themed("atoms.group.#{$mode}.self.background");
+        background-color: themed("atoms.group.#{$mode}.root.background");
       }
 
       &.group_divider {
         &.group_orientation-horizontal {
           @include themify($themes) {
-            border-right-color: themed("atoms.group.#{$mode}.self.divider");
+            border-right-color: themed("atoms.group.#{$mode}.root.divider");
           }
         }
 
         &.group_orientation-vertical {
           @include themify($themes) {
-            border-bottom-color: themed("atoms.group.#{$mode}.self.divider");
+            border-bottom-color: themed("atoms.group.#{$mode}.root.divider");
           }
         }
       }
@@ -153,7 +153,7 @@ const componentTag = props.as;
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.group_size-#{$size} {
-          gap: px2rem(get($val, "self.gap"));
+          gap: px2rem(get($val, "root.gap"));
         }
       }
     }

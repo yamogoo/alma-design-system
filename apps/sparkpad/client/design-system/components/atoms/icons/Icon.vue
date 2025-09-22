@@ -50,7 +50,7 @@ const symbol = computed(() => {
 @mixin defineSizes($map: get($atoms, "icon")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $box-size: px2rem(get($val, "self.size"));
+      $box-size: px2rem(get($val, "root.size"));
 
       &_variant-#{$variant} {
         &.icon_size-#{$size} {

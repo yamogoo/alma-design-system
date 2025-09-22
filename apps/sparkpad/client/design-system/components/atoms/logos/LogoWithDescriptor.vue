@@ -49,7 +49,7 @@ const computedClass = () => {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.logo-with-descriptor_size-#{$size} {
-          $gap: px2rem(get($val, "self.gap"));
+          $gap: px2rem(get($val, "root.gap"));
           $label-font-style: get($val, "label.font-style");
 
           gap: $gap;

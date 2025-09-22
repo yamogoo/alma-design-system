@@ -1,7 +1,7 @@
 {
   "default": {
     "md": {
-      "self": {
+      "root": {
         "borderRadius": {
           "$value": "{tokens.roundness.lg.$value}",
           "$$type": "number",

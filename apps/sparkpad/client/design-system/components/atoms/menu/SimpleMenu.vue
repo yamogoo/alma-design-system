@@ -75,8 +75,8 @@ const onPress = (item: IMenuItem<T>): void => {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.simple-menu_size-#{$size} {
-          $gap: px2rem(get($val, "self.gap"));
-          $padding: px2rem(get($val, "self.padding"));
+          $gap: px2rem(get($val, "root.gap"));
+          $padding: px2rem(get($val, "root.padding"));
 
           $label-font-style: get($val, "item-label.font-style");
 

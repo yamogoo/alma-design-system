@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "width": {
           "$value": 40,
           "$type": "number",
@@ -54,7 +54,7 @@
       }
     },
     "md": {
-      "self": {
+      "root": {
         "width": {
           "$value": 36,
           "$type": "number",
@@ -107,7 +107,7 @@
       }
     },
     "sm": {
-      "self": {
+      "root": {
         "width": {
           "$value": 32,
           "$type": "number",

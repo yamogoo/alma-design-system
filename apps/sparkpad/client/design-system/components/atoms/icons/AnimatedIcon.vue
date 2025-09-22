@@ -79,7 +79,7 @@ const onCompleted = (): void => {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.animated-icon_size-#{$size} {
-          $icon-size: px2rem(get($val, "self.size"));
+          $icon-size: px2rem(get($val, "root.size"));
 
           width: $icon-size !important;
           height: $icon-size !important;

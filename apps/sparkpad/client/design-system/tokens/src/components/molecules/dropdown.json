@@ -1,7 +1,7 @@
 {
   "default": {
     "lg": {
-      "self": {
+      "root": {
         "minWidth": {
           "$value": 76,
           "$type": "number",
@@ -22,7 +22,7 @@
         }
       },
       "currentValue": {
-        "self": {
+        "root": {
           "gap": {
             "$value": "{tokens.spacing.xs.$value}",
             "$type": "number",
@@ -64,7 +64,7 @@
         },
         "icon": {
           "size": {
-            "$value": "{components.atoms.icon.default.xxs.self.size.$value}",
+            "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
             "$type": "number",
             "$unit": "px",
             "$meta": {
@@ -123,7 +123,7 @@
       "$type": "component"
     },
     "md": {
-      "self": {
+      "root": {
         "minWidth": {
           "$value": 76,
           "$type": "number",
@@ -144,7 +144,7 @@
         }
       },
       "currentValue": {
-        "self": {
+        "root": {
           "gap": {
             "$value": "{tokens.spacing.xs.$value}",
             "$type": "number",
@@ -186,7 +186,7 @@
         },
         "icon": {
           "size": {
-            "$value": "{components.atoms.icon.default.xxs.self.size.$value}",
+            "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
             "$type": "number",
             "$unit": "px",
             "$meta": {

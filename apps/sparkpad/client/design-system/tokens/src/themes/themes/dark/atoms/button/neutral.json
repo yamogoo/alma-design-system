@@ -1,53 +1,80 @@
 {
   "primary": {
-    "self": {
+    "root": {
       "background": {
         "normal": {
           "$value": "{colors.gray-800}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "disabled": {
           "$value": "rgba({colors.gray-800}, .5)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "hovered": {
           "$value": "{colors.gray-900}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "pressed": {
           "$value": "{colors.gray-950}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         }
       },
       "border": {
         "normal": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.primary.self.background.normal.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.primary.root.background.normal.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "disabled": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.primary.self.background.disabled.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.primary.root.background.disabled.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "hovered": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.primary.self.background.hovered.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.primary.root.background.hovered.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "pressed": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.primary.self.background.pressed.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.primary.root.background.pressed.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "outline": {
           "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         }
       }
     },
@@ -55,74 +82,113 @@
       "normal": {
         "$value": "{colors.gray-50}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "disabled": {
         "$value": "rgba({colors.gray-50}, 0.5)",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "hovered": {
         "$value": "{colors.gray-150}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "pressed": {
         "$value": "{colors.gray-200}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       }
     }
   },
   "secondary": {
-    "self": {
+    "root": {
       "background": {
         "normal": {
           "$value": "{colors.gray-500}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "disabled": {
           "$value": "rgba({colors.gray-500}, .5)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "hovered": {
           "$value": "{colors.gray-600}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "pressed": {
           "$value": "{colors.gray-650}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         }
       },
       "border": {
         "normal": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.secondary.self.background.normal.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.secondary.root.background.normal.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "disabled": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.secondary.self.background.disabled.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.secondary.root.background.disabled.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "hovered": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.secondary.self.background.hovered.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.secondary.root.background.hovered.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "pressed": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.secondary.self.background.pressed.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.secondary.root.background.pressed.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "outline": {
           "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         }
       }
     },
@@ -130,74 +196,113 @@
       "normal": {
         "$value": "{colors.gray-50}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "disabled": {
         "$value": "{colors.gray-600}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "hovered": {
         "$value": "{colors.gray-50}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "pressed": {
         "$value": "{colors.gray-50}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       }
     }
   },
   "tertiary": {
-    "self": {
+    "root": {
       "background": {
         "normal": {
           "$value": "rgba({colors.black-1000}, 0)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "disabled": {
           "$value": "rgba({colors.black-1000}, 0)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "hovered": {
           "$value": "rgba({colors.gray-950}, 0)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "pressed": {
           "$value": "rgba({colors.gray-900}, 0)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         }
       },
       "border": {
         "normal": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.tertiary.self.background.normal.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.tertiary.root.background.normal.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "disabled": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.tertiary.self.background.disabled.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.tertiary.root.background.disabled.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "hovered": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.tertiary.self.background.hovered.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.tertiary.root.background.hovered.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "pressed": {
-          "$value": "{themes.themes.dark.atoms.button.neutral.tertiary.self.background.pressed.$value}",
+          "$value": "{themes.themes.dark.atoms.button.neutral.tertiary.root.background.pressed.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "outline": {
           "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         }
       }
     },
@@ -205,74 +310,113 @@
       "normal": {
         "$value": "{colors.gray-50}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "disabled": {
         "$value": "{colors.gray-600}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "hovered": {
         "$value": "{colors.gray-50}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "pressed": {
         "$value": "{colors.gray-50}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       }
     }
   },
   "outline": {
-    "self": {
+    "root": {
       "background": {
         "normal": {
           "$value": "rgba({colors.gray-850}, 0)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "disabled": {
           "$value": "rgba({colors.gray-850}, 0)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "hovered": {
           "$value": "rgba({colors.gray-800}, 0)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "pressed": {
           "$value": "rgba({colors.gray-750}, 0)",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         }
       },
       "border": {
         "normal": {
           "$value": "{colors.gray-850}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "disabled": {
           "$value": "{colors.gray-700}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "hovered": {
           "$value": "{colors.gray-800}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "pressed": {
           "$value": "{colors.gray-750}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         },
         "outline": {
           "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "description": "button"
+          }
         }
       }
     },
@@ -280,22 +424,34 @@
       "normal": {
         "$value": "{colors.gray-350}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "disabled": {
         "$value": "{colors.gray-600}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "hovered": {
         "$value": "{colors.gray-200}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       },
       "pressed": {
         "$value": "{colors.gray-250}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "description": "button"
+        }
       }
     }
   }

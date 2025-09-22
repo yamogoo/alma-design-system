@@ -164,9 +164,9 @@ onMounted(() => {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.switch_size-#{$size} {
-          $gap: get($val, "self.gap");
-          $width: px2rem(get($val, "self.width"));
-          $height: px2rem(get($val, "self.height"));
+          $gap: get($val, "root.gap");
+          $width: px2rem(get($val, "root.width"));
+          $height: px2rem(get($val, "root.height"));
 
           $track-padding: px2rem(get($val, "track.padding"));
           $label-font-style: get($val, "label.font-style");

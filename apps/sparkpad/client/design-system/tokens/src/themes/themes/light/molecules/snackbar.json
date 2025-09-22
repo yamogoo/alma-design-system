@@ -1,11 +1,11 @@
 {
   "neutral": {
     "primary": {
-      "self": {
+      "root": {
         "background": {
           "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
           "$type": "color",
-          "$unit": "",
+          "$unit": "hex",
           "$meta": {
             "category": "snackbar"
           }
@@ -14,7 +14,7 @@
       "title": {
         "$value": "{themes.themes.light.abstracts.label.neutral.primary.$value}",
         "$type": "color",
-        "$unit": "",
+        "$unit": "hex",
         "$meta": {
           "category": "snackbar"
         }
@@ -22,7 +22,7 @@
       "description": {
         "$value": "{themes.themes.light.abstracts.label.neutral.secondary.$value}",
         "$type": "color",
-        "$unit": "",
+        "$unit": "hex",
         "$meta": {
           "category": "snackbar"
         }
@@ -31,21 +31,27 @@
         "tone": {
           "$value": "neutral",
           "$type": "string",
-          "$unit": ""
+          "$unit": "hex",
+          "$meta": {
+            "category": "snackbar"
+          }
         },
         "mode": {
           "$value": "secondary",
           "$type": "string",
-          "$unit": ""
+          "$unit": "hex",
+          "$meta": {
+            "category": "snackbar"
+          }
         }
       }
     },
     "inversed": {
-      "self": {
+      "root": {
         "background": {
           "$value": "{themes.themes.light.abstracts.surface.neutral.inversed.$value}",
           "$type": "color",
-          "$unit": "",
+          "$unit": "hex",
           "$meta": {
             "category": "snackbar"
           }
@@ -54,7 +60,7 @@
       "title": {
         "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
         "$type": "color",
-        "$unit": "",
+        "$unit": "hex",
         "$meta": {
           "category": "snackbar"
         }
@@ -62,7 +68,7 @@
       "description": {
         "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
         "$type": "color",
-        "$unit": "",
+        "$unit": "hex",
         "$meta": {
           "category": "snackbar"
         }
@@ -71,23 +77,29 @@
         "tone": {
           "$value": "neutral",
           "$type": "string",
-          "$unit": ""
+          "$unit": "hex",
+          "$meta": {
+            "category": "snackbar"
+          }
         },
         "mode": {
           "$value": "primary",
           "$type": "string",
-          "$unit": ""
+          "$unit": "hex",
+          "$meta": {
+            "category": "snackbar"
+          }
         }
       }
     }
   },
   "accent": {
     "primary": {
-      "self": {
+      "root": {
         "background": {
           "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
           "$type": "color",
-          "$unit": "",
+          "$unit": "hex",
           "$meta": {
             "category": "snackbar"
           }
@@ -96,7 +108,7 @@
       "title": {
         "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
         "$type": "color",
-        "$unit": "",
+        "$unit": "hex",
         "$meta": {
           "category": "snackbar"
         }
@@ -104,7 +116,7 @@
       "description": {
         "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
         "$type": "color",
-        "$unit": "",
+        "$unit": "hex",
         "$meta": {
           "category": "snackbar"
         }
@@ -113,21 +125,27 @@
         "tone": {
           "$value": "neutral",
           "$type": "string",
-          "$unit": ""
+          "$unit": "hex",
+          "$meta": {
+            "category": "snackbar"
+          }
         },
         "mode": {
           "$value": "secondary",
           "$type": "string",
-          "$unit": ""
+          "$unit": "hex",
+          "$meta": {
+            "category": "snackbar"
+          }
         }
       }
     },
     "inversed": {
-      "self": {
+      "root": {
         "background": {
           "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
           "$type": "color",
-          "$unit": "",
+          "$unit": "hex",
           "$meta": {
             "category": "snackbar"
           }
@@ -136,7 +154,7 @@
       "title": {
         "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
         "$type": "color",
-        "$unit": "",
+        "$unit": "hex",
         "$meta": {
           "category": "snackbar"
         }
@@ -144,7 +162,7 @@
       "description": {
         "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
         "$type": "color",
-        "$unit": "",
+        "$unit": "hex",
         "$meta": {
           "category": "snackbar"
         }
@@ -153,12 +171,18 @@
         "tone": {
           "$value": "neutral",
           "$type": "string",
-          "$unit": ""
+          "$unit": "hex",
+          "$meta": {
+            "category": "snackbar"
+          }
         },
         "mode": {
           "$value": "secondary",
           "$type": "string",
-          "$unit": ""
+          "$unit": "hex",
+          "$meta": {
+            "category": "snackbar"
+          }
         }
       }
     }

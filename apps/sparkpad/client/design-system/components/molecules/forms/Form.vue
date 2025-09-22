@@ -51,7 +51,7 @@ const id = useId();
 @mixin defineSizes($map: get($molecules, "form")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $border-radius: get($val, "self.border-radius");
+      $border-radius: get($val, "root.border-radius");
 
       $body-gap: get($val, "body.gap");
       $body-padding: get($val, "body.padding");

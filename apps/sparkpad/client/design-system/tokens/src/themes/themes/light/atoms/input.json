@@ -1,44 +1,65 @@
 {
   "neutral": {
     "primary": {
-      "self": {
+      "root": {
         "background": {
           "normal": {
             "$value": "{colors.gray-75}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "disabled": {
             "$value": "{colors.gray-50}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "hovered": {
             "$value": "{colors.gray-50}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "focused": {
             "$value": "{colors.gray-50}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "error": {
             "$value": "{colors.red-50}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           }
         },
         "border": {
           "normal": {
             "$value": "rgba({themes.themes.light.abstracts.border.outline.$value}, 0)",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "outline": {
             "$value": "{themes.themes.light.abstracts.border.outline.$value}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           }
         }
       },
@@ -46,72 +67,107 @@
         "normal": {
           "$value": "{colors.gray-800}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
         },
         "disabled": {
           "$value": "{colors.gray-400}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
         },
         "hovered": {
           "$value": "{colors.gray-950}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
         },
         "focused": {
           "$value": "{colors.gray-950}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
         },
         "error": {
           "$value": "{colors.red-500}",
           "$type": "color",
           "$unit": "hex",
-          "description": "placeholder = {themes.themes.light.abstracts.label.error.$value}"
+          "$meta": {
+            "category": "input"
+          }
         }
       }
     }
   },
   "accent": {
     "primary": {
-      "self": {
+      "root": {
         "background": {
           "normal": {
             "$value": "{colors.blue-50}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "disabled": {
             "$value": "{colors.blue-25}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "hovered": {
             "$value": "{colors.blue-25}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "focused": {
             "$value": "{colors.blue-25}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "error": {
             "$value": "{colors.red-50}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           }
         },
         "border": {
           "normal": {
             "$value": "rgba({themes.themes.light.abstracts.border.outline.$value}, 0)",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           },
           "outline": {
             "$value": "{themes.themes.light.abstracts.border.outline.$value}",
             "$type": "color",
-            "$unit": "hex"
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
           }
         }
       },
@@ -119,28 +175,42 @@
         "normal": {
           "$value": "{colors.blue-800}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
         },
         "disabled": {
           "$value": "{colors.blue-400}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
         },
         "hovered": {
           "$value": "{colors.blue-950}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
         },
         "focused": {
           "$value": "{colors.blue-950}",
           "$type": "color",
-          "$unit": "hex"
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
         },
         "error": {
           "$value": "{colors.red-500}",
           "$type": "color",
           "$unit": "hex",
-          "description": "placeholder = {themes.themes.light.abstracts.label.error.$value}"
+          "$meta": {
+            "category": "input"
+          }
         }
       }
     }

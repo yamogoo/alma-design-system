@@ -1,7 +1,7 @@
 {
   "neutral": {
     "primary": {
-      "self": {
+      "root": {
         "background": {
           "normal": {
             "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
@@ -27,7 +27,7 @@
   },
   "accent": {
     "primary": {
-      "self": {
+      "root": {
         "background": {
           "normal": {
             "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",

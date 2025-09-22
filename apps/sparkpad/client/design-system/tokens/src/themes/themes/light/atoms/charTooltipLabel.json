@@ -1,6 +1,6 @@
 {
   "primary": {
-    "self": {
+    "root": {
       "background": {
         "normal": {
           "$value": "{themes.themes.light.abstracts.surface.neutral.inversed.$value}",
@@ -34,7 +34,7 @@
     }
   },
   "inversed": {
-    "self": {
+    "root": {
       "background": {
         "normal": {
           "$value": "{colors.gray-150}",

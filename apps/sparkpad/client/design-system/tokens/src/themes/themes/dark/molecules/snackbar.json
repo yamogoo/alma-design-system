@@ -1,7 +1,7 @@
 {
   "neutral": {
     "primary": {
-      "self": {
+      "root": {
         "background": {
           "$value": "{themes.themes.dark.abstracts.surface.neutral.primary.$value}",
           "$type": "color",
@@ -29,15 +29,25 @@
       },
       "closeButton": {
         "tone": {
-          "$value": "neutral"
+          "$value": "neutral",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
+            "category": "snackbar"
+          }
         },
         "mode": {
-          "$value": "secondary"
+          "$value": "secondary",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
+            "category": "snackbar"
+          }
         }
       }
     },
     "inversed": {
-      "self": {
+      "root": {
         "background": {
           "$value": "{themes.themes.dark.abstracts.surface.neutral.inversed.$value}",
           "$type": "color",
@@ -65,17 +75,27 @@
       },
       "closeButton": {
         "tone": {
-          "$value": "neutral"
+          "$value": "neutral",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
+            "category": "snackbar"
+          }
         },
         "mode": {
-          "$value": "primary"
+          "$value": "primary",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
+            "category": "snackbar"
+          }
         }
       }
     }
   },
   "accent": {
     "primary": {
-      "self": {
+      "root": {
         "background": {
           "$value": "{themes.themes.dark.abstracts.surface.accent.primary.$value}",
           "$type": "color",
@@ -103,15 +123,25 @@
       },
       "closeButton": {
         "tone": {
-          "$value": "neutral"
+          "$value": "neutral",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
+            "category": "snackbar"
+          }
         },
         "mode": {
-          "$value": "secondary"
+          "$value": "secondary",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
+            "category": "snackbar"
+          }
         }
       }
     },
     "inversed": {
-      "self": {
+      "root": {
         "background": {
           "$value": "{themes.themes.dark.abstracts.surface.accent.primary.$value}",
           "$type": "color",
@@ -139,10 +169,20 @@
       },
       "closeButton": {
         "tone": {
-          "$value": "neutral"
+          "$value": "neutral",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
+            "category": "snackbar"
+          }
         },
         "mode": {
-          "$value": "primary"
+          "$value": "primary",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
+            "category": "snackbar"
+          }
         }
       }
     }

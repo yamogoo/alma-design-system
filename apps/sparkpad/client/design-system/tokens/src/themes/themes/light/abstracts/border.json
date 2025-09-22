@@ -3,24 +3,32 @@
     "$value": "{colors.gray-125}",
     "$type": "color",
     "$unit": "hex",
-    "description": "Default border color"
+    "$meta": {
+      "category": "border"
+    }
   },
   "secondary": {
     "$value": "{colors.gray-175}",
     "$type": "color",
     "$unit": "hex",
-    "description": "Secondary border color, used for subtle dividers"
+    "$meta": {
+      "category": "border"
+    }
   },
   "strong": {
     "$value": "{colors.gray-800}",
     "$type": "color",
     "$unit": "hex",
-    "description": "Strong border color, used for emphasis and contrast"
+    "$meta": {
+      "category": "border"
+    }
   },
   "outline": {
     "$value": "{colors.blue-500}",
     "$type": "color",
     "$unit": "hex",
-    "description": "Outline border color, used for focus states and accentuated elements"
+    "$meta": {
+      "category": "border"
+    }
   }
 }
