@@ -104,6 +104,14 @@ Each component has:
 
 - **structure.md** — token architecture docs
 
+#### Figma Integration:
+
+- Full Code → Figma export supported
+
+- Backward Figma → Code compatibility exists, but discouraged (system is code-first)
+
+- Tokens remain the single source of truth in code
+
 ### 🔹 Stories
 
 - **components/** — story examples for atomic/molecular UI

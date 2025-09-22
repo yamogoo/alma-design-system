@@ -1,112 +1,124 @@
-name: AlmaIconsProtoKit
-description: >
-  AlmaIconsProtoKit is a prototype UI Kit and design system infrastructure
-  that unifies components, tokens, fonts, icons, and utilities into a single
-  platform for product development.
+# AlmaProtoKit — MANIFEST.yaml
+# Prototype UI Kit & design system infrastructure
 
 project:
-  structure:
-    adapters: environment-specific wrappers for components
-    assets: base resources (fonts, icons, animations, SCSS core)
-    components: Vue components (atoms, molecules, organisms, templates)
-    composables: Vue composables (global and local hooks)
-    constants: UI constants
-    declarations: TypeScript declarations
-    directives: Vue directives
-    scripts: build/dev helper scripts
-    stories: Storybook stories (components and tokens)
-    tokens: design tokens (JSON), theming (light/dark), build outputs
-    typings: TypeScript types for UI, API, router, etc.
-    utils: helper utilities (units, events, sanitization, etc.)
-    MANIFEST.yaml: machine-readable specification
-    MANIFEST.md: human-readable documentation
+  name: AlmaProtoKit
+  type: design-system
+  description: >
+    Experimental design system platform unifying components, tokens, fonts, icons,
+    and utilities into a single code-driven environment with Figma integration.
+
+structure:
+  adapters: environment-specific wrappers for components
+  assets: base resources (fonts, icons, animations, SCSS core)
+  components: Vue components (atoms, molecules, organisms, templates)
+  composables: Vue composables (global and local hooks)
+  constants: UI constants
+  stories: Storybook stories (components, tokens, pages)
+  tokens: design tokens (JSON), theming (light/dark), build outputs
+  typings: TypeScript types (UI, API, router, etc.)
+  utils: helper utilities (units, events, sanitization, testing)
+  manifest:
+    - MANIFEST.yaml (machine-readable specification)
+    - MANIFEST.md (human-readable documentation)
 
 modules:
   adapters:
-    description: >
-      Adapters provide bridges between raw Vue components and specific
-      environments/contexts. They contain minimal wrappers and mapping
-      logic, while components/ keep the full UI and typing contracts.
-    structure:
-      atoms: wrappers for atomic components (button, input, icon, etc.)
-      molecules: wrappers for combined elements (forms, dropdowns, snackbar)
-      organisms: environment-specific complex blocks
-      templates: high-level layout wrappers
+    description: Thin wrappers bridging base Vue components into environments
+    categories:
+      atoms: atomic components (button, input, icon, etc.)
+      molecules: composed elements (forms, dropdown, snackbar)
+      organisms: environment-specific blocks (editor, navigation)
+      templates: high-level layout wrappers (headers, footers, menus)
 
   assets:
-    animations: JSON animations (spinner, themeIcon)
-    fonts: bundled fonts for offline-first usage (Manrope Cyrillic + Latin, weights 200–800)
+    animations: JSON animations (spinner, theme toggle)
+    fonts: >
+      Bundled Manrope font (Cyrillic + Latin, weights 200–800),
+      offline-first but replaceable with CDN
     icons: AlmaIcons entry point (index.ts)
-    images: static images
     scss:
       abstracts: tokens, base colors, breakpoints, themes
-      core: functions & mixins (px2rem, themify, map-get)
-      extends: extensions (animations, containers, components)
-      mixins: reusable SCSS mixins
-      entry: app.*.scss global style entry points
+      core: mixins & functions (px2rem, themify, map-get)
+      extends: animations, containers, component styles
+      mixins: reusable mixins
+      app: global entry points (app.*.scss)
 
   components:
-    description: >
-      Atomic design structure with Vue 3 + TypeScript.
-      Each component has implementation, typings, unit tests, and stories.
-    requirements:
-      - Implementation (.vue + .ts)
-      - Typings (e.g., Button.ts with ButtonProps)
-      - Unit tests (.spec.ts)
-      - Stories (.stories.ts[x])
-    structure:
-      atoms: smallest units (buttons, icons, inputs, typography)
-      molecules: composed elements (dropdown, forms, snackbar)
-      organisms: complex blocks (editor, navigation, forms)
-      templates: ready-to-use layouts (headers, footers, menus)
+    implementation: ".vue + .ts"
+    typings: "Props & contracts in .ts files"
+    tests: "Unit tests in .spec.ts"
+    stories: "Optional .stories.tsx"
+    categories:
+      atoms: buttons, icons, inputs, typography, tooltips
+      molecules: forms, dropdowns, snackbar
+      organisms: editor, navigation
+      templates: headers, footers, menus
 
   composables:
-    global: app-wide hooks (theme, meta, connection state)
-    local: feature/local hooks (hover, clickOutside, drag-and-drop, SEO, navigation, etc.)
+    global: theme, meta, connection
+    local:
+      - hover
+      - clickOutside
+      - drag-and-drop
+      - seo
+      - router
+      - timers
+      - storage
 
   tokens:
     src:
-      abstracts: backgrounds, borders, shadows, base colors
+      abstracts: background, border, shadow, base colors
       atoms: per-component tokens
       molecules: per-component tokens
       templates: per-component tokens
-      themes: light and dark variants
+      themes: light & dark
       typography: text styles and type scale
-      tokens: spacing, stroke, roundness, gaps, touch areas
-    build: compiled runtime tokens (CSS vars, JSON) — generated only
+      tokens: spacing, stroke, roundness, gap, touchArea
+    build:
+      outputs: [scss maps, css vars, json]
+      status: generated-only, excluded from git
     docs: structure.md
+    figma:
+      forward: Code → Figma (fully supported)
+      backward: Figma → Code (compatibility only, not recommended)
+      philosophy: Code-first, tokens are the single source of truth
 
   stories:
-    components: story examples for atomic/molecular UI
+    components: atomic/molecular UI demos
     decorators: Storybook global wrappers
-    tokens: theme and token showcase
+    pages: theme & token showcases
     utils: helpers for story organization
 
   utils:
-    - Unit conversion (px2rem)
-    - Path parsing (getPathSegment)
-    - Event helpers
-    - Unit testing helpers (Vitest setup)
+    - px2rem
+    - getPathSegment
+    - event helpers
+    - unit testing (Vitest setup)
 
   typings:
-    - API
-    - routing
-    - themes
+    - ui
+    - api
+    - router
     - localization
-    - UI controls
-    - elements
-    - declaration helpers (.d.ts)
+    - themes
+    - declarations (.d.ts)
 
 rules:
-  - "**/*.temp/ — draft components/composables (ignored via .gitignore)"
-  - "tokens/build/ — generated only, excluded from git"
-  - "Fonts included for offline-first; can be later replaced with CDN-hosted package"
-  - "Each component must include at least: .vue + .ts + .spec.ts; stories optional but recommended"
-  - "Adapters must remain thin wrappers; heavy UI logic belongs in components"
+  - tokens/build excluded from git
+  - fonts shipped offline-first
+  - each component must include .vue + .ts + .spec.ts
+  - adapters must remain thin wrappers, no heavy UI logic
 
-summary: >
-  AlmaIconsProtoKit is not just a component library, but an experimental
-  design system platform that brings together assets (fonts, icons, animations),
-  tokens (colors, typography, spacing, themes), components & adapters (atomic design
-  + environment bindings), composables & utils (hooks and helpers), and documentation
-  (Storybook, MANIFEST, Figma integration).
+summary:
+  keywords:
+    - assets
+    - tokens
+    - components
+    - adapters
+    - composables
+    - utils
+    - figma integration
+  philosophy: >
+    AlmaProtoKit is not a production library but an experimental R&D platform,
+    where tokens and code are the single source of truth.

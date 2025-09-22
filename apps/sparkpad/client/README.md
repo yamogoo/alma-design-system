@@ -8,7 +8,7 @@ This is not a production-ready library, but rather a prototype environment where
 
 Think of AlmaProtoKit as a design-system R&D playground rather than a production framework.
 
-## 🚀 Goals of AlmaProtoKit
+## 🚀 Goals
 
 - Experiment with design tokens pipelines (JSON → SCSS → CSS variables).
 - Prototype multi-weight icon systems.
@@ -41,15 +41,15 @@ Fonts are included for offline-first usage and can be later replaced with CDN-ho
 
 > AlmaProtoKit includes a structured token system with support for JSON, YAML, and TypeScript. Tokens are organized under `tokens/src` (source), `tokens/build` (runtime output), and `tokens/structure.md`.
 
-**Figma Integration**
+**🔗 Figma Integration**
 
-AlmaProtoKit now includes **full support for exporting tokens to Figma**.  
-The pipeline allows developers to work in a **code-driven system first**, ensuring tokens remain the single source of truth.
+AlmaProtoKit provides **full support for exporting tokens to Figma**.
 
-- Forward flow (Code → Figma) is fully supported and integrated into the token pipeline.
-- Backward flow (Figma → Code) is technically possible for compatibility, but not recommended — since AlmaProtoKit is inherently **code-driven**, maintaining tokens directly in code is the primary workflow.
+✅ **Forward flow (Code → Figma)**: fully supported and recommended.
 
-This ensures teams can experiment with tokens in code while still syncing them into Figma for design collaboration, without creating a fragmented workflow.
+♻️ **Backward flow (Figma → Code)**: possible for compatibility, but discouraged. AlmaProtoKit is inherently **code-driven**, so maintaining tokens in code is the primary workflow.
+
+This enables designers and developers to share the same foundation without fragmenting workflows.
 
 ## 💻 Demo
 
