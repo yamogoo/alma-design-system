@@ -1,27 +1,27 @@
 {
   "sm": {
-    "value": 1,
-    "type": "border",
-    "unit": "px",
-    "meta": { "description": "Thin stroke width", "category": "border" }
+    "$value": 1,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Thin stroke width", "category": "border" }
   },
   "md": {
-    "value": 2,
-    "type": "border",
-    "unit": "px",
-    "meta": { "description": "Medium stroke width", "category": "border" }
+    "$value": 2,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Medium stroke width", "category": "border" }
   },
   "lg": {
-    "value": 3,
-    "type": "border",
-    "unit": "px",
-    "meta": { "description": "Large stroke width", "category": "border" }
+    "$value": 3,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Large stroke width", "category": "border" }
   },
   "xl": {
-    "value": 4,
-    "type": "border",
-    "unit": "px",
-    "meta": {
+    "$value": 4,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": {
       "description": "Extra large stroke width",
       "category": "border"
     }

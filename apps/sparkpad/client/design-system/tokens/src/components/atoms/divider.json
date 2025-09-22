@@ -3,94 +3,94 @@
     "lg": {
       "self": {
         "borderWidth": {
-          "value": "{tokens.stroke.sm.value}",
-          "type": "border",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.stroke.sm.$value}",
+          "$type": "border",
+          "$unit": "px",
+          "$meta": {
             "description": "Divider border width for large size",
             "category": "divider"
           }
         },
         "padding": {
-          "value": "{tokens.spacing.md.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding around the divider for large size",
             "category": "divider"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "md": {
       "self": {
         "borderWidth": {
-          "value": "{tokens.stroke.sm.value}",
-          "type": "border",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.stroke.sm.$value}",
+          "$type": "border",
+          "$unit": "px",
+          "$meta": {
             "description": "Divider border width for medium size",
             "category": "divider"
           }
         },
         "padding": {
-          "value": "{tokens.spacing.sm.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding around the divider for medium size",
             "category": "divider"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "sm": {
       "self": {
         "borderWidth": {
-          "value": "{tokens.stroke.sm.value}",
-          "type": "border",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.stroke.sm.$value}",
+          "$type": "border",
+          "$unit": "px",
+          "$meta": {
             "description": "Divider border width for small size",
             "category": "divider"
           }
         },
         "padding": {
-          "value": "{tokens.spacing.xs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding around the divider for small size",
             "category": "divider"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "xs": {
       "self": {
         "borderWidth": {
-          "value": "{tokens.stroke.sm.value}",
-          "type": "border",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.stroke.sm.$value}",
+          "$type": "border",
+          "$unit": "px",
+          "$meta": {
             "description": "Divider border width for extra small size",
             "category": "divider"
           }
         },
         "padding": {
-          "value": 0,
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": 0,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "No padding for extra small divider",
             "category": "divider"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     }
   }
 }

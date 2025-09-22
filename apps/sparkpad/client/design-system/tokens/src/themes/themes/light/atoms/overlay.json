@@ -1,19 +1,19 @@
 {
   "primary": {
     "background": {
-      "value": "{themes.themes.light.abstracts.surface.neutral.primary.value}",
-      "type": "color",
-      "unit": "hex",
-      "meta": {
+      "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
         "category": "overlay"
       }
     },
     "primaryInversed": {
       "background": {
-        "value": "{themes.themes.light.abstracts.surface.neutral.inversed.value}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.surface.neutral.inversed.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "overlay"
         }
       }

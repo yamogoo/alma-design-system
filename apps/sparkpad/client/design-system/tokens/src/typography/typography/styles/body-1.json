@@ -1,54 +1,54 @@
 {
   "fontFamily": {
-    "value": "{typography.typography.tokens.fontFamily.primary.value}",
-    "type": "fontFamily",
-    "unit": "",
-    "meta": {
+    "$value": "{typography.typography.tokens.fontFamily.primary.$value}",
+    "$type": "fontFamily",
+    "$unit": "",
+    "$meta": {
       "description": "Body-1 font family",
       "category": "typography"
     }
   },
   "fontSize": {
-    "value": 18,
-    "type": "size",
-    "unit": "px",
-    "meta": {
+    "$value": 18,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": {
       "description": "Body-1 font size",
       "category": "typography"
     }
   },
   "fontStyle": {
-    "value": "normal",
-    "type": "fontStyle",
-    "unit": "",
-    "meta": {
+    "$value": "normal",
+    "$type": "fontStyle",
+    "$unit": "",
+    "$meta": {
       "description": "Body-1 font style",
       "category": "typography"
     }
   },
   "fontWeight": {
-    "value": "{typography.typography.tokens.fontWeight.semibold.value}",
-    "type": "fontWeight",
-    "unit": "",
-    "meta": {
+    "$value": "{typography.typography.tokens.fontWeight.semibold.$value}",
+    "$type": "fontWeight",
+    "$unit": "",
+    "$meta": {
       "description": "Body-1 font weight",
       "category": "typography"
     }
   },
   "lineHeight": {
-    "value": "150%",
-    "type": "lineHeight",
-    "unit": "%",
-    "meta": {
+    "$value": "150%",
+    "$type": "lineHeight",
+    "$unit": "%",
+    "$meta": {
       "description": "Body-1 line height",
       "category": "typography"
     }
   },
   "letterSpacing": {
-    "value": 0.48,
-    "type": "letterSpacing",
-    "unit": "px",
-    "meta": {
+    "$value": 0.48,
+    "$type": "letterSpacing",
+    "$unit": "px",
+    "$meta": {
       "description": "Body-1 letter spacing",
       "category": "typography"
     }

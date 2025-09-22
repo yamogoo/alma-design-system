@@ -3,80 +3,80 @@
     "primary": {
       "self": {
         "background": {
-          "value": "{themes.themes.light.abstracts.surface.neutral.primary.value}",
-          "type": "color",
-          "unit": "",
-          "meta": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
             "category": "snackbar"
           }
         }
       },
       "title": {
-        "value": "{themes.themes.light.abstracts.label.neutral.primary.value}",
-        "type": "color",
-        "unit": "",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.neutral.primary.$value}",
+        "$type": "color",
+        "$unit": "",
+        "$meta": {
           "category": "snackbar"
         }
       },
       "description": {
-        "value": "{themes.themes.light.abstracts.label.neutral.secondary.value}",
-        "type": "color",
-        "unit": "",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.neutral.secondary.$value}",
+        "$type": "color",
+        "$unit": "",
+        "$meta": {
           "category": "snackbar"
         }
       },
       "closeButton": {
         "tone": {
-          "value": "neutral",
-          "type": "alias",
-          "unit": ""
+          "$value": "neutral",
+          "$type": "string",
+          "$unit": ""
         },
         "mode": {
-          "value": "secondary",
-          "type": "alias",
-          "unit": ""
+          "$value": "secondary",
+          "$type": "string",
+          "$unit": ""
         }
       }
     },
     "inversed": {
       "self": {
         "background": {
-          "value": "{themes.themes.light.abstracts.surface.neutral.inversed.value}",
-          "type": "color",
-          "unit": "",
-          "meta": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.inversed.$value}",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
             "category": "snackbar"
           }
         }
       },
       "title": {
-        "value": "{themes.themes.light.abstracts.label.neutral.inversed.value}",
-        "type": "color",
-        "unit": "",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
+        "$type": "color",
+        "$unit": "",
+        "$meta": {
           "category": "snackbar"
         }
       },
       "description": {
-        "value": "{themes.themes.light.abstracts.label.neutral.inversed.value}",
-        "type": "color",
-        "unit": "",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
+        "$type": "color",
+        "$unit": "",
+        "$meta": {
           "category": "snackbar"
         }
       },
       "closeButton": {
         "tone": {
-          "value": "neutral",
-          "type": "alias",
-          "unit": ""
+          "$value": "neutral",
+          "$type": "string",
+          "$unit": ""
         },
         "mode": {
-          "value": "primary",
-          "type": "alias",
-          "unit": ""
+          "$value": "primary",
+          "$type": "string",
+          "$unit": ""
         }
       }
     }
@@ -85,80 +85,80 @@
     "primary": {
       "self": {
         "background": {
-          "value": "{themes.themes.light.abstracts.surface.accent.primary.value}",
-          "type": "color",
-          "unit": "",
-          "meta": {
+          "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
             "category": "snackbar"
           }
         }
       },
       "title": {
-        "value": "{themes.themes.light.abstracts.label.neutral.inversed.value}",
-        "type": "color",
-        "unit": "",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
+        "$type": "color",
+        "$unit": "",
+        "$meta": {
           "category": "snackbar"
         }
       },
       "description": {
-        "value": "{themes.themes.light.abstracts.label.neutral.inversed.value}",
-        "type": "color",
-        "unit": "",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
+        "$type": "color",
+        "$unit": "",
+        "$meta": {
           "category": "snackbar"
         }
       },
       "closeButton": {
         "tone": {
-          "value": "neutral",
-          "type": "alias",
-          "unit": ""
+          "$value": "neutral",
+          "$type": "string",
+          "$unit": ""
         },
         "mode": {
-          "value": "secondary",
-          "type": "alias",
-          "unit": ""
+          "$value": "secondary",
+          "$type": "string",
+          "$unit": ""
         }
       }
     },
     "inversed": {
       "self": {
         "background": {
-          "value": "{themes.themes.light.abstracts.surface.accent.primary.value}",
-          "type": "color",
-          "unit": "",
-          "meta": {
+          "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+          "$type": "color",
+          "$unit": "",
+          "$meta": {
             "category": "snackbar"
           }
         }
       },
       "title": {
-        "value": "{themes.themes.light.abstracts.label.neutral.inversed.value}",
-        "type": "color",
-        "unit": "",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
+        "$type": "color",
+        "$unit": "",
+        "$meta": {
           "category": "snackbar"
         }
       },
       "description": {
-        "value": "{themes.themes.light.abstracts.label.neutral.inversed.value}",
-        "type": "color",
-        "unit": "",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.neutral.inversed.$value}",
+        "$type": "color",
+        "$unit": "",
+        "$meta": {
           "category": "snackbar"
         }
       },
       "closeButton": {
         "tone": {
-          "value": "neutral",
-          "type": "alias",
-          "unit": ""
+          "$value": "neutral",
+          "$type": "string",
+          "$unit": ""
         },
         "mode": {
-          "value": "secondary",
-          "type": "alias",
-          "unit": ""
+          "$value": "secondary",
+          "$type": "string",
+          "$unit": ""
         }
       }
     }

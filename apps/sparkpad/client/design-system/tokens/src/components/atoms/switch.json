@@ -3,26 +3,26 @@
     "lg": {
       "self": {
         "width": {
-          "value": 40,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 40,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "height": {
-          "value": 20,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 20,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "gap": {
-          "value": "{tokens.gap.xs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.gap.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         }
@@ -30,52 +30,52 @@
 
       "track": {
         "padding": {
-          "value": 2,
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": 2,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "borderRadius": {
-          "value": 10,
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": 10,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         }
       },
       "label": {
         "fontStyle": {
-          "value": "label-3",
-          "type": "alias"
+          "$value": "label-3",
+          "$type": "alias"
         }
       }
     },
     "md": {
       "self": {
         "width": {
-          "value": 36,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 36,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "height": {
-          "value": 18,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 18,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "gap": {
-          "value": "{tokens.gap.xs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.gap.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         }
@@ -83,52 +83,52 @@
 
       "track": {
         "padding": {
-          "value": 2,
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": 2,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "borderRadius": {
-          "value": 7,
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": 7,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         }
       },
       "label": {
         "fontStyle": {
-          "value": "label-3",
-          "type": "alias"
+          "$value": "label-3",
+          "$type": "alias"
         }
       }
     },
     "sm": {
       "self": {
         "width": {
-          "value": 32,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 32,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "height": {
-          "value": 16,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 16,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "gap": {
-          "value": "{tokens.gap.xs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.gap.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         }
@@ -136,26 +136,26 @@
 
       "track": {
         "padding": {
-          "value": 2,
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": 2,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         },
         "borderRadius": {
-          "value": 6,
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": 6,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "toggle switch"
           }
         }
       },
       "label": {
         "fontStyle": {
-          "value": "label-3",
-          "type": "alias"
+          "$value": "label-3",
+          "$type": "alias"
         }
       }
     }

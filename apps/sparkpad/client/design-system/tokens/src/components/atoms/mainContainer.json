@@ -2,10 +2,10 @@
   "default": {
     "self": {
       "borderRadius": {
-        "value": "{tokens.roundness.md.value}",
-        "type": "radius",
-        "unit": "px",
-        "meta": {
+        "$value": "{tokens.roundness.md.$value}",
+        "$type": "number",
+        "$unit": "px",
+        "$meta": {
           "description": "Border radius of the main container",
           "category": "main container",
           "status": "unused"
@@ -14,10 +14,10 @@
       "media": {
         "lg": {
           "padding": {
-            "value": "{tokens.spacing.xs.value}",
-            "type": "spacing",
-            "unit": "px",
-            "meta": {
+            "$value": "{tokens.spacing.xs.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
               "description": "Padding for large screens",
               "category": "main container",
               "status": "unused"
@@ -26,10 +26,10 @@
         },
         "md": {
           "padding": {
-            "value": "{tokens.spacing.xs.value}",
-            "type": "spacing",
-            "unit": "px",
-            "meta": {
+            "$value": "{tokens.spacing.xs.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
               "description": "Padding for medium screens",
               "category": "main container",
               "status": "unused"
@@ -38,8 +38,8 @@
         }
       }
     },
-    "type": "component",
-    "meta": {
+    "$type": "component",
+    "$meta": {
       "status": "unused",
       "category": "main container"
     }

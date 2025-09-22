@@ -3,31 +3,31 @@
     "primary": {
       "label": {
         "normal": {
-          "value": "{themes.themes.light.abstracts.label.neutral.primary.value}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{themes.themes.light.abstracts.label.neutral.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "logo with descriptor"
           }
         },
         "hovered": {
-          "value": "rgba({themes.themes.light.abstracts.label.neutral.primary.value}, 0.8)",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "rgba({themes.themes.light.abstracts.label.neutral.primary.$value}, 0.8)",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "logo with descriptor"
           }
         },
         "pressed": {
-          "value": "rgba({themes.themes.light.abstracts.label.neutral.primary.value}, 0.8)",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "rgba({themes.themes.light.abstracts.label.neutral.primary.$value}, 0.8)",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "logo with descriptor"
           }
         }
       }
     },
-    "type": "component"
+    "$type": "component"
   }
 }

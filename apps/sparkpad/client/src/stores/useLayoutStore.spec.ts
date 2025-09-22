@@ -47,7 +47,7 @@ describe("useLayoutStore", () => {
     const store = useLayoutStore();
 
     const expectedAppSize1 = {
-      width: tokens.breakpoints.md.value - 1,
+      width: tokens.breakpoints.md.$value - 1,
       height: 240,
     };
 
@@ -55,7 +55,7 @@ describe("useLayoutStore", () => {
     expect(store.isTabletLayout).toBeFalsy();
 
     const expectedAppSize2 = {
-      width: tokens.breakpoints.md.value + 1,
+      width: tokens.breakpoints.md.$value + 1,
       height: 240,
     };
 
@@ -63,7 +63,7 @@ describe("useLayoutStore", () => {
     expect(store.isTabletLayout).toBeTruthy();
 
     const expectedAppSize3 = {
-      width: tokens.breakpoints.lg.value + 1,
+      width: tokens.breakpoints.lg.$value + 1,
       height: 240,
     };
 

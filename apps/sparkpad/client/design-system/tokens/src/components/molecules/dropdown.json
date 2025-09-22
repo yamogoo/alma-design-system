@@ -3,19 +3,19 @@
     "lg": {
       "self": {
         "minWidth": {
-          "value": 76,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 76,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Minimum width of large dropdown",
             "category": "dropDown"
           }
         },
         "height": {
-          "value": 56,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 56,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Height of large dropdown",
             "category": "dropDown"
           }
@@ -24,72 +24,72 @@
       "currentValue": {
         "self": {
           "gap": {
-            "value": "{tokens.spacing.xs.value}",
-            "type": "spacing",
-            "unit": "px",
-            "meta": {
-              "description": "Gap inside dropdown value component",
+            "$value": "{tokens.spacing.xs.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Gap inside dropdown $value component",
               "category": "dropDown"
             }
           },
           "padding": {
-            "value": "{components.molecules.dropdown.default.lg.tokens.padding.value}",
-            "type": "spacing",
-            "unit": "px",
-            "meta": {
-              "description": "Padding inside dropdown value component",
+            "$value": "{components.molecules.dropdown.default.lg.tokens.padding.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Padding inside dropdown $value component",
               "category": "dropDown"
             }
           },
           "borderRadius": {
-            "value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.value}",
-            "type": "radius",
-            "unit": "px",
-            "meta": {
-              "description": "Border radius of dropdown value component",
+            "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Border radius of dropdown $value component",
               "category": "dropDown"
             }
           }
         },
         "label": {
           "fontStyle": {
-            "value": "label-2",
-            "type": "alias",
-            "unit": "",
-            "meta": {
-              "description": "Font style for dropdown value label",
+            "$value": "label-2",
+            "$type": "string",
+            "$unit": "",
+            "$meta": {
+              "description": "Font style for dropdown $value label",
               "category": "typography"
             }
           }
         },
         "icon": {
           "size": {
-            "value": "{components.atoms.icon.default.xxs.self.size.value}",
-            "type": "size",
-            "unit": "px",
-            "meta": {
-              "description": "Icon size for dropdown value",
+            "$value": "{components.atoms.icon.default.xxs.self.size.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Icon size for dropdown $value",
               "category": "dropDown"
             }
           }
         },
-        "type": "component"
+        "$type": "component"
       },
       "options": {
         "padding": {
-          "value": "{components.molecules.dropdown.default.lg.tokens.padding.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.molecules.dropdown.default.lg.tokens.padding.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding inside dropdown options",
             "category": "dropDown"
           }
         },
         "borderRadius": {
-          "value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border radius for dropdown options",
             "category": "dropDown"
           }
@@ -97,47 +97,47 @@
       },
       "tokens": {
         "padding": {
-          "value": [
-            "{tokens.spacing.xs.value}",
-            "{tokens.spacing.sm.value}",
-            "{tokens.spacing.xs.value}",
-            "{tokens.spacing.sm.value}"
+          "$value": [
+            "{tokens.spacing.xs.$value}",
+            "{tokens.spacing.sm.$value}",
+            "{tokens.spacing.xs.$value}",
+            "{tokens.spacing.sm.$value}"
           ],
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding tokens for large dropdown",
             "category": "dropDown"
           }
         },
         "borderRadius": {
-          "value": "{tokens.roundness.xs.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.roundness.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border radius token for large dropdown",
             "category": "dropDown"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "md": {
       "self": {
         "minWidth": {
-          "value": 76,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 76,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Minimum width of medium dropdown",
             "category": "dropDown"
           }
         },
         "height": {
-          "value": 44,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 44,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Height of medium dropdown",
             "category": "dropDown"
           }
@@ -146,72 +146,72 @@
       "currentValue": {
         "self": {
           "gap": {
-            "value": "{tokens.spacing.xs.value}",
-            "type": "spacing",
-            "unit": "px",
-            "meta": {
-              "description": "Gap inside dropdown value component",
+            "$value": "{tokens.spacing.xs.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Gap inside dropdown $value component",
               "category": "dropDown"
             }
           },
           "padding": {
-            "value": "{components.molecules.dropdown.default.lg.tokens.padding.value}",
-            "type": "spacing",
-            "unit": "px",
-            "meta": {
-              "description": "Padding inside dropdown value component",
+            "$value": "{components.molecules.dropdown.default.lg.tokens.padding.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Padding inside dropdown $value component",
               "category": "dropDown"
             }
           },
           "borderRadius": {
-            "value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.value}",
-            "type": "radius",
-            "unit": "px",
-            "meta": {
-              "description": "Border radius of dropdown value component",
+            "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Border radius of dropdown $value component",
               "category": "dropDown"
             }
           }
         },
         "label": {
           "fontStyle": {
-            "value": "label-3",
-            "type": "alias",
-            "unit": "",
-            "meta": {
-              "description": "Font style for dropdown value label",
+            "$value": "label-3",
+            "$type": "string",
+            "$unit": "",
+            "$meta": {
+              "description": "Font style for dropdown $value label",
               "category": "typography"
             }
           }
         },
         "icon": {
           "size": {
-            "value": "{components.atoms.icon.default.xxs.self.size.value}",
-            "type": "size",
-            "unit": "px",
-            "meta": {
-              "description": "Icon size for dropdown value",
+            "$value": "{components.atoms.icon.default.xxs.self.size.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Icon size for dropdown $value",
               "category": "dropDown"
             }
           }
         },
-        "type": "component"
+        "$type": "component"
       },
       "options": {
         "padding": {
-          "value": "{components.molecules.dropdown.default.lg.tokens.padding.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.molecules.dropdown.default.lg.tokens.padding.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding inside dropdown options",
             "category": "dropDown"
           }
         },
         "borderRadius": {
-          "value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border radius for dropdown options",
             "category": "dropDown"
           }
@@ -219,30 +219,30 @@
       },
       "tokens": {
         "padding": {
-          "value": [
-            "{tokens.spacing.xs.value}",
-            "{tokens.spacing.sm.value}",
-            "{tokens.spacing.xs.value}",
-            "{tokens.spacing.sm.value}"
+          "$value": [
+            "{tokens.spacing.xs.$value}",
+            "{tokens.spacing.sm.$value}",
+            "{tokens.spacing.xs.$value}",
+            "{tokens.spacing.sm.$value}"
           ],
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding tokens for medium dropdown",
             "category": "dropDown"
           }
         },
         "borderRadius": {
-          "value": "{tokens.roundness.xs.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.roundness.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border radius token for medium dropdown",
             "category": "dropDown"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     }
   }
 }

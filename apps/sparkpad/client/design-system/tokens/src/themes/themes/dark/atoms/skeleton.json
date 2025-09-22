@@ -1,12 +1,12 @@
 {
   "default": {
     "colorIn": {
-      "value": "rgba({themes.themes.dark.abstracts.label.neutral.disabled.value}, 0.25)",
-      "type": "color"
+      "$value": "rgba({themes.themes.dark.abstracts.label.neutral.disabled.$value}, 0.25)",
+      "$type": "color"
     },
     "colorOut": {
-      "value": "rgba({themes.themes.dark.abstracts.label.neutral.disabled.value}, 0)",
-      "type": "color"
+      "$value": "rgba({themes.themes.dark.abstracts.label.neutral.disabled.$value}, 0)",
+      "$type": "color"
     }
   }
 }

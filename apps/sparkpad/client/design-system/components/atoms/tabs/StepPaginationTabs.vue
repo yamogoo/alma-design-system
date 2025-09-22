@@ -34,7 +34,7 @@ const itemStyle = computed(() => ({
 
 const textVariant = computed(() => {
   return tokens.atoms.stepPaginationTabs.default[props.size].item.fontStyle
-    .value as TextVariant;
+    .$value as TextVariant;
 });
 
 const onItemClick = (item: StepPaginationTabItem): void => {

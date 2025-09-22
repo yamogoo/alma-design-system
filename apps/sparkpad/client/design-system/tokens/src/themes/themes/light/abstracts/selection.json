@@ -1,18 +1,18 @@
 {
   "default": {
     "label": {
-      "value": "{colors.gray-950}",
-      "type": "color",
-      "unit": "hex",
-      "meta": {
+      "$value": "{colors.gray-950}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
         "category": "selection"
       }
     },
     "background": {
-      "value": "{colors.yellow-300}",
-      "type": "color",
-      "unit": "hex",
-      "meta": {
+      "$value": "{colors.yellow-300}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
         "category": "selection"
       }
     }

@@ -1,132 +1,132 @@
 {
   "neutral": {
     "primary": {
-      "value": "{colors.gray-100}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.gray-100}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "secondary": {
-      "value": "{colors.gray-300}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.gray-300}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "tertiary": {
-      "value": "{colors.gray-350}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.gray-350}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "disabled": {
-      "value": "{colors.gray-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.gray-500}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "inversed": {
-      "value": "{colors.gray-900}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.gray-900}",
+      "$type": "color",
+      "$unit": "hex"
     }
   },
   "accent": {
     "primary": {
-      "value": "{colors.blue-300}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-300}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "secondary": {
-      "value": "{colors.blue-400}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-400}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "tertiary": {
-      "value": "{colors.blue-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "disabled": {
-      "value": "{colors.blue-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "inversed": {
-      "value": "{colors.blue-700}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-700}",
+      "$type": "color",
+      "$unit": "hex"
     }
   },
   "info": {
     "primary": {
-      "value": "{colors.blue-400}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-400}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "secondary": {
-      "value": "{colors.blue-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "tertiary": {
-      "value": "{colors.blue-300}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-300}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "disabled": {
-      "value": "{colors.blue-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex"
     }
   },
   "warning": {
     "primary": {
-      "value": "{colors.orange-400}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.orange-400}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "secondary": {
-      "value": "{colors.orange-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.orange-500}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "tertiary": {
-      "value": "{colors.orange-300}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.orange-300}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "disabled": {
-      "value": "{colors.orange-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.orange-500}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "inversed": {
-      "value": "{colors.orange-600}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.orange-600}",
+      "$type": "color",
+      "$unit": "hex"
     }
   },
   "error": {
     "primary": {
-      "value": "{colors.red-325}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.red-325}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "secondary": {
-      "value": "{colors.red-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.red-500}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "tertiary": {
-      "value": "{colors.red-200}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.red-200}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "disabled": {
-      "value": "{colors.red-500}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.red-500}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "inversed": {
-      "value": "{colors.red-675}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.red-675}",
+      "$type": "color",
+      "$unit": "hex"
     }
   }
 }

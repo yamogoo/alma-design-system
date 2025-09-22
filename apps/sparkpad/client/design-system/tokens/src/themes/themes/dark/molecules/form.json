@@ -1,18 +1,18 @@
 {
   "primary": {
     "background": {
-      "value": "{themes.themes.dark.abstracts.surface.neutral.primary.value}"
+      "$value": "{themes.themes.dark.abstracts.surface.neutral.primary.$value}"
     },
     "shadow": {
-      "value": "{themes.themes.dark.abstracts.shadow.primary.value}"
+      "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}"
     }
   },
   "secondary": {
     "background": {
-      "value": "{themes.themes.dark.abstracts.surface.neutral.secondary.value}"
+      "$value": "{themes.themes.dark.abstracts.surface.neutral.secondary.$value}"
     },
     "shadow": {
-      "value": "{themes.themes.dark.abstracts.shadow.primary.value}"
+      "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}"
     }
   }
 }

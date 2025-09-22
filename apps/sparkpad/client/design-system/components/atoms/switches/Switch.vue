@@ -52,7 +52,7 @@ const onChange = (e: Event): void => {
 };
 
 const padding = computed(
-  () => tokens.atoms.switch.default[`${props.size}`].track.padding.value
+  () => tokens.atoms.switch.default[`${props.size}`].track.padding.$value
 );
 
 const onKeyDown = (e: KeyboardEvent): void => {

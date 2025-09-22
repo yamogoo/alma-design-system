@@ -3,28 +3,31 @@
     "lg": {
       "self": {
         "padding": {
-          "value": ["{tokens.spacing.md.value}", "{tokens.spacing.lg.value}"],
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": [
+            "{tokens.spacing.md.$value}",
+            "{tokens.spacing.lg.$value}"
+          ],
+          "$$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding inside the form wrapper",
             "category": "formWrapper"
           }
         },
         "borderRadius": {
-          "value": "{tokens.roundness.lg.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.roundness.lg.$value}",
+          "$$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border radius of the form wrapper",
             "category": "formWrapper"
           }
         },
         "borderWidth": {
-          "value": 0,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 0,
+          "$$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border width of the form wrapper",
             "category": "formWrapper"
           }
@@ -32,16 +35,16 @@
       },
       "header": {
         "padding": {
-          "value": ["{tokens.spacing.sm.value}", 0],
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": ["{tokens.spacing.sm.$value}", 0],
+          "$$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding for the header inside the form wrapper",
             "category": "formWrapper"
           }
         }
       },
-      "type": "component"
+      "$$type": "component"
     }
   }
 }

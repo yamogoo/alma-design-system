@@ -3,10 +3,10 @@
     "self": {
       "background": {
         "normal": {
-          "value": "{themes.themes.light.abstracts.surface.neutral.inversed.value}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.inversed.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "tooltip"
           }
         }
@@ -14,20 +14,20 @@
     },
     "label": {
       "normal": {
-        "value": "{colors.gray-300}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-300}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "tooltip"
         }
       }
     },
     "icon": {
       "normal": {
-        "value": "{colors.gray-300}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-300}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "tooltip"
         }
       }
@@ -37,10 +37,10 @@
     "self": {
       "background": {
         "normal": {
-          "value": "{colors.gray-150}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-150}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "tooltip"
           }
         }
@@ -48,20 +48,20 @@
     },
     "label": {
       "normal": {
-        "value": "{colors.gray-500}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-500}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "tooltip"
         }
       }
     },
     "icon": {
       "normal": {
-        "value": "{colors.gray-450}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-450}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "tooltip"
         }
       }

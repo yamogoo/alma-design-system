@@ -1,48 +1,48 @@
 {
   "xxs": {
-    "value": 4,
-    "type": "spacing",
-    "unit": "px",
-    "meta": {
+    "$value": 4,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": {
       "description": "Extra extra small spacing",
       "category": "spacing"
     }
   },
   "xs": {
-    "value": 8,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Extra small spacing", "category": "spacing" }
+    "$value": 8,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Extra small spacing", "category": "spacing" }
   },
   "sm": {
-    "value": 12,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Small spacing", "category": "spacing" }
+    "$value": 12,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Small spacing", "category": "spacing" }
   },
   "md": {
-    "value": 16,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Medium spacing", "category": "spacing" }
+    "$value": 16,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Medium spacing", "category": "spacing" }
   },
   "lg": {
-    "value": 24,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Large spacing", "category": "spacing" }
+    "$value": 24,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Large spacing", "category": "spacing" }
   },
   "xl": {
-    "value": 32,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Extra large spacing", "category": "spacing" }
+    "$value": 32,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Extra large spacing", "category": "spacing" }
   },
   "xxl": {
-    "value": 48,
-    "type": "spacing",
-    "unit": "px",
-    "meta": {
+    "$value": 48,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": {
       "description": "Extra extra large spacing",
       "category": "spacing"
     }

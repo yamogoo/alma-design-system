@@ -1,9 +1,12 @@
-import fs from "node:fs";
-import Color from "color";
+// Portions of this file were developed with the assistance of AI tools (ChatGPT).
+
+import fs from 'node:fs';
+import path from 'node:path';
+import Color from 'color';
 
 interface ColorsGeneratorOptions {
   source: string;
-  outDir: string;
+  outDir: string; // may include directory; may end with .json or not
   step?: number;
   comment?: string;
   writeMarkdownFiles?: boolean;
@@ -30,19 +33,68 @@ interface DerivativeColor {
 
 type DerivativeColors = DerivativeColor[];
 
-// Generates a set of lighter colors
-export const generateDerivativeColors = (
-  color: MainColor
-): DerivativeColors => {
+/* ---------- helpers ---------- */
+
+/** Convert to kebab-case */
+const toKebab = (s: string) =>
+  s
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/([A-Z])([A-Z])(?=[a-z])/g, '$1-$2')
+    .replace(/\s+/g, '-')
+    .toLowerCase();
+
+/** Support alt key access: value / $value */
+const hasField = (obj: any, key: 'value') =>
+  obj &&
+  (Object.prototype.hasOwnProperty.call(obj, key) ||
+    Object.prototype.hasOwnProperty.call(obj, `$${key}`));
+
+/** Support alt key access: value / $value */
+const getField = <T = any>(obj: any, key: 'value'): T | undefined =>
+  Object.prototype.hasOwnProperty.call(obj, key)
+    ? (obj as any)[key]
+    : Object.prototype.hasOwnProperty.call(obj, `$${key}`)
+      ? (obj as any)[`$${key}`]
+      : undefined;
+
+/** Check if string is a color that Color() can parse */
+const isColorish = (v: unknown): v is string => {
+  if (typeof v !== 'string') return false;
+  try {
+    Color(v);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+/** Ensure directory exists for given file path */
+const ensureDirForFile = (filePath: string) => {
+  const dir = path.dirname(filePath);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+};
+
+/** Resolve output file paths (main & underscored variant) */
+const resolveOutputPaths = (outDir: string) => {
+  const dir = path.dirname(outDir);
+  const base = path.basename(outDir);
+  const hasJson = base.toLowerCase().endsWith('.json');
+
+  const baseName = hasJson ? base.slice(0, -5) : base;
+  const mainPath = path.join(dir, `${baseName}.json`);
+  const underscoredPath = path.join(dir, `_${baseName}.json`);
+  const mainMd = mainPath.replace(/\.json$/i, '.md');
+  const underscoredMd = underscoredPath.replace(/\.json$/i, '.md');
+
+  return { mainPath, underscoredPath, mainMd, underscoredMd, baseName };
+};
+
+/* ---------- derivative generation ---------- */
+
+/** Generates lighter variants from a base color */
+export const generateDerivativeColors = (color: MainColor): DerivativeColors => {
   const tempColors: DerivativeColors = [];
-  const {
-    id,
-    name: rootName,
-    value: rootValue,
-    step,
-    prefix,
-    separator,
-  } = color;
+  const { id, name: rootName, value: rootValue, step, prefix, separator } = color;
 
   const colorLightnessFactor = 100 / (step + 2);
 
@@ -50,9 +102,7 @@ export const generateDerivativeColors = (
     const increment = Math.round(1000 - (1000 / step) * i);
     const fullName = `${prefix}${rootName}${separator}${increment}`;
 
-    const colorInstance = Color(rootValue).lightness(
-      (i + 1) * colorLightnessFactor
-    );
+    const colorInstance = Color(rootValue).lightness((i + 1) * colorLightnessFactor);
 
     const value = colorInstance.hex();
     const lightness = colorInstance.lightness();
@@ -71,8 +121,11 @@ export const generateDerivativeColors = (
     tempColors.push(derivative);
   }
 
+  // ascending by increment (0..1000 -> 1000 darkest..0 lightest or vice-versa)
   return tempColors.sort((a, b) => a.increment - b.increment);
 };
+
+/* ---------- main ---------- */
 
 export const generateColorsFromFile = (opts: ColorsGeneratorOptions): void => {
   const {
@@ -83,47 +136,80 @@ export const generateColorsFromFile = (opts: ColorsGeneratorOptions): void => {
     writeMarkdownFiles = false,
   } = opts;
 
-  if (!/\.json$/.test(source)) {
-    throw new Error("Invalid source file: must be a .json file.");
+  if (!/\.json$/i.test(source)) {
+    throw new Error('Invalid source file: must be a .json file.');
   }
 
-  const raw = fs.readFileSync(source, "utf-8");
+  const raw = fs.readFileSync(source, 'utf-8');
   const parsed = JSON.parse(raw);
 
-  const resultMap: Record<string, string> = {};
+  // flat result: { "gray-0": "#F8F9FA", ... }
+  const flatMap: Record<string, string> = {};
+  // token result: { "gray-0": { "$value": "#F8F9FA", "$type": "color" }, ... }
+  const tokenMap: Record<string, { $value: string; $type: 'color' }> = {};
 
-  const traverse = (obj: Record<string, any>, parentName?: string): void => {
+  const addDerivatives = (baseName: string, baseColor: string) => {
+    const colorDef: MainColor = {
+      id: baseName,
+      name: baseName,
+      value: baseColor,
+      step,
+      prefix: '',
+      separator: '-',
+    };
+    const generated = generateDerivativeColors(colorDef);
+    for (const c of generated) {
+      flatMap[c.fullName] = c.value;
+      tokenMap[c.fullName] = { $value: c.value, $type: 'color' };
+    }
+  };
+
+  const traverse = (obj: any, pathAcc: string[] = []): void => {
+    if (obj == null || typeof obj !== 'object') return;
+
+    // If this is a token object (value / $value) — generate from it.
+    if (hasField(obj, 'value')) {
+      const rawVal = getField<string>(obj, 'value');
+      if (isColorish(rawVal)) {
+        const baseName = pathAcc.map(toKebab).join('-');
+        addDerivatives(baseName, rawVal);
+      }
+    }
+
+    // Walk nested objects (ignore $-keys except $value which is handled above)
     for (const [key, value] of Object.entries(obj)) {
-      if (key === "value" && typeof value === "string") {
-        const colorDef: MainColor = {
-          id: parentName || key,
-          name: parentName || key,
-          value,
-          step,
-          prefix: "",
-          separator: "-",
-        };
-        const generated = generateDerivativeColors(colorDef);
-        for (const c of generated) {
-          resultMap[c.fullName] = c.value;
-        }
-      } else if (typeof value === "object" && value !== null) {
-        traverse(value, key);
+      if (key.startsWith('$') && key !== '$value') continue;
+
+      if (typeof value === 'object' && value !== null) {
+        traverse(value, [...pathAcc, key]);
+      } else if (key === 'value' && isColorish(value)) {
+        const baseName = pathAcc.map(toKebab).join('-');
+        addDerivatives(baseName, value);
       }
     }
   };
 
   traverse(parsed);
 
-  const outputPath = outDir.endsWith(".json") ? outDir : `${outDir}.json`;
-  const markdownPath = outputPath.replace(/\.json$/, ".md");
+  const { mainPath, underscoredPath, mainMd, underscoredMd } = resolveOutputPaths(outDir);
 
   try {
-    fs.writeFileSync(outputPath, JSON.stringify(resultMap, null, 2), "utf-8");
-    if (writeMarkdownFiles) fs.writeFileSync(markdownPath, comment, "utf-8");
+    ensureDirForFile(mainPath);
+    ensureDirForFile(underscoredPath);
 
-    console.log(`✅ Colors written to: ${outputPath}`);
+    // Write main flat file: <basename>.json
+    fs.writeFileSync(mainPath, JSON.stringify(flatMap, null, 2), 'utf-8');
+
+    // Write underscored token file: _<basename>.json
+    fs.writeFileSync(underscoredPath, JSON.stringify(tokenMap, null, 2), 'utf-8');
+
+    if (writeMarkdownFiles) {
+      fs.writeFileSync(mainMd, comment, 'utf-8');
+      fs.writeFileSync(underscoredMd, comment, 'utf-8');
+    }
+
+    console.log(`✅ Colors written to:\n  - ${mainPath}\n  - ${underscoredPath}`);
   } catch (err) {
-    console.error("❌ Failed to write output:", err);
+    console.error('❌ Failed to write output:', err);
   }
 };

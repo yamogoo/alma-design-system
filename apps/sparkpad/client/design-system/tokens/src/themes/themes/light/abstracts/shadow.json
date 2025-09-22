@@ -1,9 +1,9 @@
 {
   "primary": {
-    "value": "rgba({colors.black-1000}, 0.075)",
-    "type": "color",
-    "unit": "hex",
-    "meta": {
+    "$value": "rgba({colors.black-1000}, 0.075)",
+    "$type": "color",
+    "$unit": "hex",
+    "$meta": {
       "category": "shadow"
     }
   }

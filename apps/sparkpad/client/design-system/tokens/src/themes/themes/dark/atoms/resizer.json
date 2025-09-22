@@ -2,19 +2,19 @@
   "default": {
     "splitter": {
       "normal": {
-        "value": "{themes.themes.light.abstracts.label.accent.primary.value}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.accent.primary.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "text",
           "description": "Normal color of the resizer splitter"
         }
       },
       "active": {
-        "value": "{themes.themes.light.abstracts.label.accent.primary.value}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{themes.themes.light.abstracts.label.accent.primary.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "text",
           "description": "Active color of the resizer splitter"
         }
@@ -22,19 +22,19 @@
     },
     "knob": {
       "normal": {
-        "value": "{colors.gray-750}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-750}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "background",
           "description": "Normal color of the resizer knob"
         }
       },
       "active": {
-        "value": "{colors.accent-750}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.accent-750}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "background",
           "description": "Active color of the resizer knob"
         }

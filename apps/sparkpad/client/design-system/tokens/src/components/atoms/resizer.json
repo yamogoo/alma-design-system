@@ -2,48 +2,48 @@
   "default": {
     "self": {
       "activeAreaWidth": {
-        "value": 20,
-        "type": "size",
-        "unit": "px",
-        "meta": {
+        "$value": 20,
+        "$type": "number",
+        "$unit": "px",
+        "$meta": {
           "description": "Width of the interactive area for the resizer",
-          "category": "spacing",
+          "category": "number",
           "usage": "Used internally by Vue3 Resize Bounding component only"
         }
       }
     },
     "knob": {
       "width": {
-        "value": 76,
-        "type": "size",
-        "unit": "px",
-        "meta": {
+        "$value": 76,
+        "$type": "number",
+        "$unit": "px",
+        "$meta": {
           "description": "Width of the draggable knob",
-          "category": "size",
+          "category": "number",
           "usage": "Specific to vue3-resize-bounding"
         }
       },
       "height": {
-        "value": 6,
-        "type": "size",
-        "unit": "px",
-        "meta": {
+        "$value": 6,
+        "$type": "number",
+        "$unit": "px",
+        "$meta": {
           "description": "Height of the draggable knob",
-          "category": "size",
+          "category": "number",
           "usage": "Specific to vue3-resize-bounding"
         }
       },
       "borderRadius": {
-        "value": 3,
-        "type": "radius",
-        "unit": "px",
-        "meta": {
+        "$value": 3,
+        "$type": "number",
+        "$unit": "px",
+        "$meta": {
           "description": "Corner radius of the knob",
-          "category": "radius",
+          "category": "number",
           "usage": "Specific to vue3-resize-bounding"
         }
       }
     },
-    "type": "component"
+    "$type": "component"
   }
 }

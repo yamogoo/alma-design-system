@@ -1,54 +1,54 @@
 {
   "fontFamily": {
-    "value": "{typography.typography.tokens.fontFamily.primary.value}",
-    "type": "fontFamily",
-    "unit": "",
-    "meta": {
+    "$value": "{typography.typography.tokens.fontFamily.primary.$value}",
+    "$type": "fontFamily",
+    "$unit": "",
+    "$meta": {
       "description": "Label-3 font family",
       "category": "typography"
     }
   },
   "fontSize": {
-    "value": 14,
-    "type": "size",
-    "unit": "px",
-    "meta": {
+    "$value": 14,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": {
       "description": "Label-3 font size",
       "category": "typography"
     }
   },
   "fontStyle": {
-    "value": "normal",
-    "type": "fontStyle",
-    "unit": "",
-    "meta": {
+    "$value": "normal",
+    "$type": "fontStyle",
+    "$unit": "",
+    "$meta": {
       "description": "Label-3 font style",
       "category": "typography"
     }
   },
   "fontWeight": {
-    "value": "{typography.typography.tokens.fontWeight.regular.value}",
-    "type": "fontWeight",
-    "unit": "",
-    "meta": {
+    "$value": "{typography.typography.tokens.fontWeight.regular.$value}",
+    "$type": "fontWeight",
+    "$unit": "",
+    "$meta": {
       "description": "Label-3 font weight",
       "category": "typography"
     }
   },
   "lineHeight": {
-    "value": 22,
-    "type": "size",
-    "unit": "px",
-    "meta": {
+    "$value": 22,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": {
       "description": "Label-3 line height",
       "category": "typography"
     }
   },
   "letterSpacing": {
-    "value": 0.1,
-    "type": "letterSpacing",
-    "unit": "px",
-    "meta": {
+    "$value": 0.1,
+    "$type": "letterSpacing",
+    "$unit": "px",
+    "$meta": {
       "description": "Label-3 letter spacing",
       "category": "typography"
     }

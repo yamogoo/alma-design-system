@@ -3,25 +3,28 @@
     "lg": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.sm.value}",
-          "unit": "px",
-          "type": "spacing"
+          "$value": "{tokens.spacing.sm.$value}",
+          "$unit": "px",
+          "$type": "spacing"
         },
         "padding": {
-          "value": ["{tokens.spacing.xs.value}", "{tokens.spacing.sm.value}"],
-          "unit": "px",
-          "type": "spacing"
+          "$value": [
+            "{tokens.spacing.xs.$value}",
+            "{tokens.spacing.sm.$value}"
+          ],
+          "$unit": "px",
+          "$type": "spacing"
         },
         "borderRadius": {
-          "value": "{tokens.roundness.xs.value}",
-          "unit": "px",
-          "type": "radius"
+          "$value": "{tokens.roundness.xs.$value}",
+          "$unit": "px",
+          "$type": "radius"
         }
       },
       "label": {
         "fontStyle": {
-          "value": "caption-1",
-          "type": "alias"
+          "$value": "caption-1",
+          "$type": "alias"
         }
       }
     }

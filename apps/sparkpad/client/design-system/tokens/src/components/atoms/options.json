@@ -3,48 +3,48 @@
     "lg": {
       "option": {
         "fontStyle": {
-          "value": "label-2",
-          "type": "alias",
-          "unit": "",
-          "meta": {
+          "$value": "label-2",
+          "$type": "string",
+          "$unit": "",
+          "$meta": {
             "description": "Font style for large dropdown option",
             "category": "typography"
           }
         },
         "minHeight": {
-          "value": 24,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 24,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Minimum height of large dropdown option",
             "category": "dropDown"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "md": {
       "option": {
         "fontStyle": {
-          "value": "label-3",
-          "type": "alias",
-          "unit": "",
-          "meta": {
+          "$value": "label-3",
+          "$type": "string",
+          "$unit": "",
+          "$meta": {
             "description": "Font style for medium dropdown option",
             "category": "typography"
           }
         },
         "minHeight": {
-          "value": 24,
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": 24,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Minimum height of medium dropdown option",
             "category": "dropDown"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     }
   }
 }

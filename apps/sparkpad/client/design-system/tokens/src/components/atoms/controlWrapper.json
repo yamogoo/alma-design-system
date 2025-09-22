@@ -3,26 +3,26 @@
     "md": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.sm.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "control wrapper"
           }
         },
         "paddingV": {
-          "value": "{tokens.spacing.xxs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.xxs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "control wrapper"
           }
         },
         "paddingH": {
-          "value": "{tokens.spacing.xxs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.xxs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "control wrapper"
           }
         }

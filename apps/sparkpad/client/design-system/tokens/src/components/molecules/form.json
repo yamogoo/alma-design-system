@@ -3,10 +3,10 @@
     "md": {
       "self": {
         "borderRadius": {
-          "value": "{tokens.roundness.lg.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.roundness.lg.$value}",
+          "$$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border radius of the form",
             "category": "form"
           }
@@ -14,23 +14,23 @@
       },
       "body": {
         "gap": {
-          "value": "{tokens.spacing.lg.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.lg.$value}",
+          "$$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "form"
           }
         },
         "padding": {
-          "value": "{tokens.spacing.sm.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "form"
           }
         }
       },
-      "type": "component"
+      "$$type": "component"
     }
   }
 }

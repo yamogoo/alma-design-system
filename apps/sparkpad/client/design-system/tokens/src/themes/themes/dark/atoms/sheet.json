@@ -2,52 +2,52 @@
   "primary": {
     "background": {
       "normal": {
-        "value": "{themes.themes.dark.abstracts.surface.neutral.primary.value}"
+        "$value": "{themes.themes.dark.abstracts.surface.neutral.primary.$value}"
       }
     },
     "shadow": {
       "normal": {
-        "value": "{themes.themes.dark.abstracts.shadow.primary.value}",
-        "type": "color"
+        "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}",
+        "$type": "color"
       }
     }
   },
   "secondary": {
     "background": {
       "normal": {
-        "value": "{themes.themes.dark.abstracts.surface.neutral.secondary.value}"
+        "$value": "{themes.themes.dark.abstracts.surface.neutral.secondary.$value}"
       }
     },
     "shadow": {
       "normal": {
-        "value": "{themes.themes.dark.abstracts.shadow.primary.value}",
-        "type": "color"
+        "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}",
+        "$type": "color"
       }
     }
   },
   "accent": {
     "background": {
       "normal": {
-        "value": "{themes.themes.dark.abstracts.surface.accent.primary.value}"
+        "$value": "{themes.themes.dark.abstracts.surface.accent.primary.$value}"
       }
     },
     "shadow": {
       "normal": {
-        "value": "{themes.themes.dark.abstracts.shadow.primary.value}",
-        "type": "color"
+        "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}",
+        "$type": "color"
       }
     }
   },
   "transparental": {
     "background": {
       "normal": {
-        "value": "rgba({themes.themes.dark.abstracts.surface.neutral.primary.value}, 0)"
+        "$value": "rgba({themes.themes.dark.abstracts.surface.neutral.primary.$value}, 0)"
       }
     },
     "shadow": {
       "normal": {
-        "value": "{themes.themes.dark.abstracts.shadow.primary.value}",
-        "type": "color"
+        "$value": "{themes.themes.dark.abstracts.shadow.primary.$value}",
+        "$type": "color"
       }
     }
   }

@@ -1,11 +1,13 @@
 // Portions of this file were developed with the assistance of AI tools (ChatGPT).
 
-import fs from "node:fs/promises";
-import nodePath from "node:path";
-import { readFileSync } from "node:fs";
-import * as _ from "lodash-es";
+import fs from 'node:fs/promises';
+import nodePath from 'node:path';
+import { readFileSync } from 'node:fs';
+import * as _ from 'lodash-es';
 
-import { JSONBuilder, type JSONBuilderOptions } from "./JSONBuilder.js";
+import Color from 'color';
+
+import { JSONBuilder, type JSONBuilderOptions } from './JSONBuilder.js';
 
 /* * * Common Types * * */
 
@@ -22,15 +24,15 @@ export interface TokenObj {
       web?: {
         exportAsVar?: boolean;
         varName?: string;
-        status?: "unused" | "active";
+        status?: 'unused' | 'active';
       };
       ios: {
         applyMultiplier?: boolean;
-        status?: "unused" | "active";
+        status?: 'unused' | 'active';
       };
       android: {
         applyMultiplier?: boolean;
-        status?: "unused" | "active";
+        status?: 'unused' | 'active';
       };
     };
   };
@@ -89,7 +91,7 @@ abstract class Parser {
   abstract parseMap<T extends object>(
     map: Value<T>,
     opts: ParseValueOptions,
-    path?: string[]
+    path?: string[],
   ): string;
 }
 
@@ -111,47 +113,51 @@ export class SCSSParser extends Parser {
 
   private normalizeValue(value: any, opts: ParseValueOptions): string {
     // nested token reference like "{file.key}"
-    if (_.isString(value) && value.startsWith("{")) {
+    if (_.isString(value) && value.startsWith('{')) {
       const nested = this.tokensParser.parseNestedValue(value, opts);
       return this.normalizeValue(nested, opts);
     }
 
-    if (typeof value === "number") {
+    if (typeof value === 'number') {
       return this.tokensParser.convertNumberByKey(value, opts.key, opts);
     }
 
-    if (typeof value === "string") {
+    if (typeof value === 'string') {
+      // try to recognize a color/color expression
+      const colorMaybe = this.tokensParser.tryParseColor(value, opts.unit);
+      if (colorMaybe) return colorMaybe;
+
       // numeric string -> convert like number
       if (/^\d+(\.\d+)?$/.test(value)) {
-        return this.tokensParser.convertNumberByKey(
-          Number(value),
-          opts.key,
-          opts
-        );
+        return this.tokensParser.convertNumberByKey(Number(value), opts.key, opts);
+      }
+      // keep already unit'ed values
+      if (/^\d+(\.\d+)?(px|rem|em|%)$/.test(value)) {
+        return value;
       }
       return value;
     }
 
     if (_.isArray(value)) {
-      return value.map((v) => this.normalizeValue(v, opts)).join(" ");
+      return value.map((v) => this.normalizeValue(v, opts)).join(' ');
     }
 
     if (_.isPlainObject(value)) {
-      // token object with { value, type, unit, meta ... }
-      if ("value" in value) {
+      // token object with { value/$value, type/$type, unit/$unit, meta/$meta ... }
+      if (this.tokensParser.hasTokenField(value, 'value')) {
         const localOpts: ParseValueOptions = {
           ...opts,
           key:
-            typeof (value as any).type === "string"
-              ? (value as any).type
+            typeof this.tokensParser.getTokenField(value, 'type') === 'string'
+              ? (this.tokensParser.getTokenField(value, 'type') as string)
               : opts.key,
-          unit:
-            Object.prototype.hasOwnProperty.call(value, "unit") &&
-            typeof (value as any).unit === "string"
-              ? (value as any).unit
-              : opts.unit,
+          unit: (() => {
+            const hasUnit = this.tokensParser.hasTokenField(value, 'unit');
+            const unitVal = this.tokensParser.getTokenField(value, 'unit');
+            return hasUnit && typeof unitVal === 'string' ? unitVal : opts.unit;
+          })(),
         };
-        return this.normalizeValue((value as any).value, localOpts);
+        return this.normalizeValue(this.tokensParser.getTokenField(value, 'value'), localOpts);
       }
       // plain object -> parse as map
       return this.parseMap(value as IMap, opts);
@@ -165,61 +171,55 @@ export class SCSSParser extends Parser {
   }
 
   parseList(list: List<unknown>, opts: ParseValueOptions): string {
-    return list.map((v) => this.normalizeValue(v, opts)).join(" ");
+    return list.map((v) => this.normalizeValue(v, opts)).join(' ');
   }
 
-  private serializeMeta(
-    meta: any,
-    opts: ParseValueOptions,
-    path: string[] = []
-  ): string {
-    if (!meta) return "()";
+  private serializeMeta(meta: any, opts: ParseValueOptions, path: string[] = []): string {
+    if (!meta) return '()';
 
     const entries = Object.entries(meta).map(([k, v]) => {
       if (_.isPlainObject(v)) {
         return `${k}: ${this.serializeMeta(v, opts, [...path, k])}`;
       } else if (_.isArray(v)) {
         const arr = v
-          .map((i) =>
-            _.isPlainObject(i)
-              ? this.serializeMeta(i, opts, [...path, k])
-              : `"${i}"`
-          )
-          .join(", ");
+          .map((i) => (_.isPlainObject(i) ? this.serializeMeta(i, opts, [...path, k]) : `"${i}"`))
+          .join(', ');
         return `${k}: (\n    ${arr}\n  )`;
       } else {
         return `${k}: "${String(v)}"`;
       }
     });
 
-    return `(\n  ${entries.join(",\n  ")}\n)`;
+    return `(\n  ${entries.join(',\n  ')}\n)`;
   }
 
-  parseMap<T extends object>(
-    map: Value<T>,
-    opts: ParseValueOptions,
-    path: string[] = []
-  ): string {
+  parseMap<T extends object>(map: Value<T>, opts: ParseValueOptions, path: string[] = []): string {
     // whether to preserve original token structure when generating SCSS map
-    const useReflect =
-      this.tokensParser.opts.useReflectOriginalStructure ?? true;
+    const useReflect = this.tokensParser.opts.useReflectOriginalStructure ?? true;
 
     // primitives
-    if (typeof map === "string")
-      return this.tokensParser.parseNestedValue(map, opts);
+    if (typeof map === 'string') return this.normalizeValue(map, opts);
     if (_.isArray(map)) return this.parseList(map, opts);
-    if (!_.isPlainObject(map)) return String(map);
+    if (!_.isPlainObject(map)) return this.normalizeValue(map, opts);
 
     const obj = map as IMap;
     const keys = Object.keys(obj);
-    const hasTokenFields = ["value", "type", "unit", "description"].some((k) =>
-      keys.includes(k)
-    );
+    const hasTokenFields = [
+      'value',
+      '$value',
+      'type',
+      '$type',
+      'unit',
+      '$unit',
+      'description', // no alternative
+      'meta',
+      '$meta',
+    ].some((k) => keys.includes(k));
 
     // helper: build list of candidate paths/names to compare against exclude list
     const buildExcludeCandidates = (): string[] => {
       const candidates: string[] = [];
-      const fileName = opts?.fileName ?? "";
+      const fileName = opts?.fileName ?? '';
 
       if (fileName) {
         candidates.push(fileName);
@@ -249,25 +249,19 @@ export class SCSSParser extends Parser {
         }
       }
 
-      return [...new Set(candidates)].map((c) =>
-        (c || "").replace(/\\/g, "/").toLowerCase()
-      );
+      return [...new Set(candidates)].map((c) => (c || '').replace(/\\/g, '/').toLowerCase());
     };
 
     const matchesExcluded = (excludedRaw: string, candidates: string[]) => {
       if (!excludedRaw) return false;
-      const excluded = excludedRaw.replace(/\\/g, "/").toLowerCase();
+      const excluded = excludedRaw.replace(/\\/g, '/').toLowerCase();
 
-      if (excluded.endsWith("/")) {
+      if (excluded.endsWith('/')) {
         return candidates.some((c) => c.startsWith(excluded));
       }
 
       return candidates.some((c) => {
-        return (
-          c === excluded ||
-          c.endsWith(`/${excluded}`) ||
-          excluded.endsWith(`/${c}`)
-        );
+        return c === excluded || c.endsWith(`/${excluded}`) || excluded.endsWith(`/${c}`);
       });
     };
 
@@ -275,8 +269,7 @@ export class SCSSParser extends Parser {
       const tokenObj = obj as IMap;
 
       // --- check exclude list ---
-      const excludeList =
-        this.tokensParser.opts?.mapOptions?.excludeCSSVariables ?? [];
+      const excludeList = this.tokensParser.opts?.mapOptions?.excludeCSSVariables ?? [];
       const candidates = buildExcludeCandidates();
 
       let isExcluded = false;
@@ -289,28 +282,33 @@ export class SCSSParser extends Parser {
         }
       }
 
+      // resolved fields via helpers
+      const metaVal = this.tokensParser.getTokenField(tokenObj, 'meta');
+      const typeVal = this.tokensParser.getTokenField(tokenObj, 'type');
+      const unitVal = this.tokensParser.getTokenField(tokenObj, 'unit');
+      const valueVal = this.tokensParser.getTokenField(tokenObj, 'value');
+
       // --- determine whether we must export this token as CSS var ---
-      const globalMapFlag =
-        this.tokensParser.opts?.mapOptions?.convertToCSSVariables ?? false;
+      const globalMapFlag = this.tokensParser.opts?.mapOptions?.convertToCSSVariables ?? false;
       const localMapFlag = opts?.convertToCSSVariables ?? false;
       const shouldExportAsVar =
         !isExcluded &&
-        (Boolean(tokenObj.meta?.build?.web?.exportAsVar) ||
+        (Boolean(metaVal?.build?.web?.exportAsVar) ||
           Boolean(localMapFlag) ||
           Boolean(globalMapFlag));
 
-      if (shouldExportAsVar && tokenObj.value !== undefined) {
-        const explicitVarName = tokenObj.meta?.build?.web?.varName;
-        const pathPart = path.filter(Boolean).join("-");
+      if (shouldExportAsVar && valueVal !== undefined) {
+        const explicitVarName = metaVal?.build?.web?.varName;
+        const pathPart = path.filter(Boolean).join('-');
         const filePart = opts.fileName
           ? opts.convertCase
             ? this.tokensParser.toKebabCase(opts.fileName)
             : opts.fileName
-          : "";
+          : '';
 
         let computedNameSource = explicitVarName
           ? explicitVarName
-          : pathPart || (filePart ? `${filePart}` : "");
+          : pathPart || (filePart ? `${filePart}` : '');
 
         // --- includeFileNameToCSSVariables ---
         if (
@@ -326,31 +324,27 @@ export class SCSSParser extends Parser {
         }
 
         const varName =
-          computedNameSource && computedNameSource.startsWith("--")
+          computedNameSource && computedNameSource.startsWith('--')
             ? computedNameSource
-            : `--${computedNameSource || opts.fileName || "token"}`;
+            : `--${computedNameSource || opts.fileName || 'token'}`;
 
         const localOpts: ParseValueOptions = {
           ...opts,
-          key: typeof tokenObj.type === "string" ? tokenObj.type : opts.key,
+          key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
           unit:
-            Object.prototype.hasOwnProperty.call(tokenObj, "unit") &&
-            typeof tokenObj.unit === "string"
-              ? (tokenObj.unit as string)
+            this.tokensParser.hasTokenField(tokenObj, 'unit') && typeof unitVal === 'string'
+              ? (unitVal as string)
               : opts.unit,
         };
 
         let cssValue: string | undefined;
-        if (_.isPlainObject(tokenObj.value) || Array.isArray(tokenObj.value)) {
-          cssValue = this.parseMap(tokenObj.value, localOpts, [
-            ...path,
-            "value",
-          ]);
+        if (_.isPlainObject(valueVal) || Array.isArray(valueVal)) {
+          cssValue = this.parseMap(valueVal as any, localOpts, [...path, 'value']);
         } else {
-          cssValue = this.normalizeValue(tokenObj.value, localOpts);
+          cssValue = this.normalizeValue(valueVal, localOpts);
         }
 
-        if (cssValue !== undefined && cssValue !== "undefined") {
+        if (cssValue !== undefined && cssValue !== 'undefined') {
           this.collectedCssVars.push(`  ${varName}: ${cssValue};`);
         }
       }
@@ -360,150 +354,127 @@ export class SCSSParser extends Parser {
         const parts: string[] = [];
 
         // value
-        if (tokenObj.value !== undefined) {
-          if (_.isPlainObject(tokenObj.value)) {
-            parts.push(
-              `value: ${this.parseMap(tokenObj.value, opts, [
-                ...path,
-                "value",
-              ])}`
-            );
-          } else if (Array.isArray(tokenObj.value)) {
-            parts.push(
-              `value: ${this.parseList(tokenObj.value as any[], opts)}`
-            );
+        if (valueVal !== undefined) {
+          if (_.isPlainObject(valueVal)) {
+            parts.push(`value: ${this.parseMap(valueVal as any, opts, [...path, 'value'])}`);
+          } else if (Array.isArray(valueVal)) {
+            parts.push(`value: ${this.parseList(valueVal as any[], opts)}`);
           } else {
             const localOpts: ParseValueOptions = {
               ...opts,
-              key: typeof tokenObj.type === "string" ? tokenObj.type : opts.key,
+              key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
               unit:
-                Object.prototype.hasOwnProperty.call(tokenObj, "unit") &&
-                typeof tokenObj.unit === "string"
-                  ? (tokenObj.unit as string)
+                this.tokensParser.hasTokenField(tokenObj, 'unit') && typeof unitVal === 'string'
+                  ? (unitVal as string)
                   : opts.unit,
             };
-            parts.push(
-              `value: ${this.normalizeValue(tokenObj.value, localOpts)}`
-            );
+            parts.push(`value: ${this.normalizeValue(valueVal, localOpts)}`);
           }
         }
 
         // type / unit always treated as scalar fields (if present)
-        if (tokenObj.type !== undefined) {
-          let parsed = this.normalizeValue(tokenObj.type, opts);
+        if (typeVal !== undefined) {
+          let parsed = this.normalizeValue(typeVal, opts);
           parsed = `"${parsed}"`;
           parts.push(`type: ${parsed}`);
         }
-        if (tokenObj.unit !== undefined) {
-          let parsed = this.normalizeValue(tokenObj.unit, opts);
+        if (unitVal !== undefined) {
+          let parsed = this.normalizeValue(unitVal, opts);
           parsed = `"${parsed}"`;
           parts.push(`unit: ${parsed}`);
         }
 
         // description: include only if it's NOT a nested object.
-        // if it's a plain object, we will handle it below as an "extra key" (nested token).
         if (
-          tokenObj.description !== undefined &&
-          !_.isPlainObject(tokenObj.description)
+          (tokenObj as any).description !== undefined &&
+          !_.isPlainObject((tokenObj as any).description)
         ) {
-          let parsed = this.normalizeValue(tokenObj.description, opts);
+          let parsed = this.normalizeValue((tokenObj as any).description, opts);
           parsed = `"${parsed}"`;
           parts.push(`description: ${parsed}`);
         }
 
-        // meta: serialize explicitly and remove description inside meta (serializeMeta already does that)
-        if (tokenObj.meta !== undefined) {
-          const serializedMeta = this.serializeMeta(tokenObj.meta, opts, [
-            ...path,
-            "meta",
-          ]);
+        // meta: serialize explicitly
+        if (metaVal !== undefined) {
+          const serializedMeta = this.serializeMeta(metaVal, opts, [...path, 'meta']);
           parts.push(`meta: ${serializedMeta}`);
         }
 
-        // extra keys: exclude tokens fields already handled; treat description as extra key
-        // only if it was a nested object (we didn't emit it above).
+        // extra keys: exclude tokens fields (both regular and $-алиасы)
+        const excluded = new Set([
+          'value',
+          'type',
+          'unit',
+          'meta',
+          '$value',
+          '$type',
+          '$unit',
+          '$meta',
+        ]);
         const extraKeys = keys.filter((k) => {
-          if (["value", "type", "unit", "meta"].includes(k)) return false;
-          if (k === "description") {
-            // include description only if it's a nested object (a token), otherwise already handled
+          if (excluded.has(k)) return false;
+          if (k === 'description') {
             return _.isPlainObject((map as IMap)[k]);
           }
           return true;
         });
 
         for (const extraKey of extraKeys) {
-          const kebabKey = opts.convertCase
-            ? this.tokensParser.toKebabCase(extraKey)
-            : extraKey;
-          const value = this.parseMap(
-            (map as IMap)[extraKey] as Value<object>,
-            opts,
-            [...path, kebabKey]
-          );
+          const kebabKey = opts.convertCase ? this.tokensParser.toKebabCase(extraKey) : extraKey;
+          const value = this.parseMap((map as IMap)[extraKey] as Value<object>, opts, [
+            ...path,
+            kebabKey,
+          ]);
           parts.push(`${kebabKey}: ${value}`);
         }
 
-        return `(\n  ${parts.join(",\n  ")}\n)`;
+        return `(\n  ${parts.join(',\n  ')}\n)`;
       } else {
         // not reflecting original structure
-        if (tokenObj.value === undefined) {
-          // When value is undefined we treat object as container of nested tokens.
-          // IMPORTANT: don't unconditionally exclude "description" here — exclude it only when
-          // it's a scalar token field (not a nested token object). This fixes the bug
-          // where a nested token named "description" was previously dropped.
+        if (valueVal === undefined) {
+          // container of nested tokens
           const nestedParts: string[] = [];
+          const excluded = new Set(['type', 'unit', 'meta', '$type', '$unit', '$meta']);
           const subKeys = keys.filter((k) => {
-            // always skip token scalar fields
-            if (["type", "unit", "meta"].includes(k)) return false;
-            if (k === "description") {
-              // if description is a scalar (string/number) it's a field and must be skipped;
-              // but if it's a plain object — it's a nested token and must be kept.
+            if (excluded.has(k)) return false;
+            if (k === 'description') {
               return _.isPlainObject((map as IMap)[k]);
             }
             return true;
           });
 
           for (const subKey of subKeys) {
-            const kebabKey = opts.convertCase
-              ? this.tokensParser.toKebabCase(subKey)
-              : subKey;
-            const value = this.parseMap((map as IMap)[subKey] as any, opts, [
-              ...path,
-              kebabKey,
-            ]);
+            const kebabKey = opts.convertCase ? this.tokensParser.toKebabCase(subKey) : subKey;
+            const value = this.parseMap((map as IMap)[subKey] as any, opts, [...path, kebabKey]);
             nestedParts.push(`${kebabKey}: ${value}`);
           }
 
-          // include meta (but without meta.description) if present
-          if ((map as any).meta !== undefined && !subKeys.includes("meta")) {
-            // if meta exists as scalar or object and not already processed, include serialized meta
-            const serializedMeta = this.serializeMeta((map as any).meta, opts, [
-              ...path,
-              "meta",
-            ]);
+          // include meta (but without meta.description) if present (either meta or $meta)
+          const rawMeta = this.tokensParser.getTokenField(map, 'meta');
+          if (rawMeta !== undefined && !subKeys.includes('meta')) {
+            const serializedMeta = this.serializeMeta(rawMeta, opts, [...path, 'meta']);
             nestedParts.push(`meta: ${serializedMeta}`);
           }
 
-          return `(\n  ${nestedParts.join(",\n  ")}\n)`;
+          return `(\n  ${nestedParts.join(',\n  ')}\n)`;
         }
 
         // token has a value -> return final normalized value
         const localOpts: ParseValueOptions = {
           ...opts,
-          key: typeof tokenObj.type === "string" ? tokenObj.type : opts.key,
+          key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
           unit:
-            Object.prototype.hasOwnProperty.call(tokenObj, "unit") &&
-            typeof tokenObj.unit === "string"
-              ? (tokenObj.unit as string)
+            this.tokensParser.hasTokenField(tokenObj, 'unit') && typeof unitVal === 'string'
+              ? (unitVal as string)
               : opts.unit,
         };
 
-        if (_.isPlainObject(tokenObj.value)) {
-          return this.parseMap(tokenObj.value, localOpts, [...path, "value"]);
-        } else if (Array.isArray(tokenObj.value)) {
-          return this.parseList(tokenObj.value as any[], localOpts);
+        if (_.isPlainObject(valueVal)) {
+          return this.parseMap(valueVal as any, localOpts, [...path, 'value']);
+        } else if (Array.isArray(valueVal)) {
+          return this.parseList(valueVal as any[], localOpts);
         } else {
-          return this.normalizeValue(tokenObj.value, localOpts);
+          return this.normalizeValue(valueVal, localOpts);
         }
       }
     }
@@ -514,20 +485,20 @@ export class SCSSParser extends Parser {
       if (!this.tokensParser.isKeyValidated(k)) continue;
       const kebabKey = opts.convertCase ? this.tokensParser.toKebabCase(k) : k;
 
-      // --- FIX: убираем description ТОЛЬКО внутри meta ---
-      if (k === "description" && path[path.length - 1] === "meta") {
+      // --- FIX: remove description ONLY inside meta ---
+      if (k === 'description' && path[path.length - 1] === 'meta') {
         continue;
       }
 
       const value = this.parseMap(v as any, opts, [...path, kebabKey]);
       nestedParts.push(`${kebabKey}: ${value}`);
     }
-    return `(\n  ${nestedParts.join(",\n  ")}\n)`;
+    return `(\n  ${nestedParts.join(',\n  ')}\n)`;
   }
 
   public getCssVarsBlock(): string {
-    if (this.collectedCssVars.length === 0) return "";
-    return `\n:root {\n${this.collectedCssVars.join("\n")}\n}\n`;
+    if (this.collectedCssVars.length === 0) return '';
+    return `\n:root {\n${this.collectedCssVars.join('\n')}\n}\n`;
   }
 }
 
@@ -549,18 +520,16 @@ export class TokensParser {
         convertCase: opts.mapOptions?.convertCase ?? false,
         includeFileName: opts.mapOptions?.includeFileName ?? true,
         convertToCSSVariables: opts.mapOptions?.convertToCSSVariables ?? false,
-        includeFileNameToCSSVariables:
-          opts.mapOptions?.includeFileNameToCSSVariables ?? false,
+        includeFileNameToCSSVariables: opts.mapOptions?.includeFileNameToCSSVariables ?? false,
         excludeCSSVariables: opts.mapOptions?.excludeCSSVariables ?? [],
       },
 
       builder: {
-        format: "json",
+        format: 'json',
         outDir: opts.builder?.outDir ?? opts.source,
-        paths: opts.builder?.paths ?? opts.paths ?? ["."],
+        paths: opts.builder?.paths ?? opts.paths ?? ['.'],
         includeRootDirName: opts.builder?.includeRootDirName ?? false,
-        useTokensInSeparateFiles:
-          opts.builder?.useTokensInSeparateFiles ?? true,
+        useTokensInSeparateFiles: opts.builder?.useTokensInSeparateFiles ?? true,
       },
     };
 
@@ -585,6 +554,21 @@ export class TokensParser {
     };
   }
 
+  /* --- Unified accessors for alt keys --- */
+  public hasTokenField(obj: any, name: 'value' | 'type' | 'unit' | 'meta'): boolean {
+    return (
+      Object.prototype.hasOwnProperty.call(obj, name) ||
+      Object.prototype.hasOwnProperty.call(obj, `$${name}`)
+    );
+  }
+
+  public getTokenField<T = any>(obj: any, name: 'value' | 'type' | 'unit' | 'meta'): T | undefined {
+    if (obj == null) return undefined;
+    if (Object.prototype.hasOwnProperty.call(obj, name)) return obj[name] as T;
+    if (Object.prototype.hasOwnProperty.call(obj, `$${name}`)) return obj[`$${name}`] as T;
+    return undefined;
+  }
+
   async buildAndParse() {
     const builder = new JSONBuilder(this.opts.builder!);
     await builder.build();
@@ -599,17 +583,17 @@ export class TokensParser {
     if (this.opts.themesDir && this.opts.themesOutFile) {
       const includeRequired = this.opts.themesIncludeRequired ?? false;
 
-      if (this.opts.themesDir.endsWith(".json")) {
+      if (this.opts.themesDir.endsWith('.json')) {
         await this.generateThemesFromFile(
           this.opts.themesDir,
           this.opts.themesOutFile,
-          includeRequired
+          includeRequired,
         );
       } else {
         await this.generateThemesFromDir(
           this.opts.themesDir,
           this.opts.themesOutFile,
-          includeRequired
+          includeRequired,
         );
       }
     }
@@ -621,8 +605,8 @@ export class TokensParser {
 
   toKebabCase(key: string): string {
     return key
-      .replace(/([a-z0-9])([A-Z])/g, "$1-$2")
-      .replace(/([A-Z])([A-Z])(?=[a-z])/g, "$1-$2")
+      .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+      .replace(/([A-Z])([A-Z])(?=[a-z])/g, '$1-$2')
       .toLowerCase();
   }
 
@@ -630,40 +614,254 @@ export class TokensParser {
     return `px2rem(${value}px)`;
   }
 
-  convertNumberByKey(
-    value: number,
-    key?: string,
-    opts?: ParseValueOptions
-  ): string {
-    if (opts && Object.prototype.hasOwnProperty.call(opts, "unit")) {
+  convertNumberByKey(value: number, key?: string, opts?: ParseValueOptions): string {
+    if (opts && Object.prototype.hasOwnProperty.call(opts, 'unit')) {
       const unitVal = (opts as any).unit;
 
-      if (unitVal === "") {
+      if (unitVal === '') {
         return `${value}`;
       }
 
-      if (typeof unitVal === "string") {
+      if (typeof unitVal === 'string') {
         return `${value}${unitVal}`;
       }
     }
 
-    if (["font-size", "line-height", "letter-spacing"].includes(key || "")) {
+    if (['font-size', 'line-height', 'letter-spacing'].includes(key || '')) {
       return `${value}em`;
     }
 
     return opts?.convertPxToRem ? this.valuePxToRem(value) : `${value}px`;
   }
 
+  /** ---------- Color helpers ---------- */
+
+  private normalizeUnit(u?: string): string {
+    const unit = (u ?? '').trim().toLowerCase();
+    if (unit === '' || unit === 'none' || unit === 'hex') return 'hex';
+    if (unit === 'rgba') return 'rgba';
+    if (unit === 'rgb') return 'rgb';
+    if (unit === 'hsla') return 'hsla';
+    if (unit === 'hsl') return 'hsl';
+    if (unit === 'laba') return 'laba';
+    if (unit === 'lab') return 'lab';
+    return 'hex';
+  }
+
+  private formatColor(c: ReturnType<typeof Color>, unit?: string): string {
+    const fmt = this.normalizeUnit(unit);
+    const a = c.alpha();
+
+    const clamp = (n: number, min = 0, max = 1) => Math.min(max, Math.max(min, n));
+
+    if (fmt === 'hex') {
+      return (a < 1 ? c.hexa() : c.hex()).toLowerCase();
+    }
+
+    if (fmt === 'rgb') {
+      const { r, g, b } = c.rgb().object();
+      return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
+    }
+
+    if (fmt === 'rgba') {
+      const { r, g, b } = c.rgb().object();
+      const alpha = Math.round(clamp(a) * 1000) / 1000;
+      return `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${alpha})`;
+    }
+
+    if (fmt === 'hsl' || fmt === 'hsla') {
+      const { h, s, l } = c.hsl().object();
+      const hRound = Math.round(h ?? 0);
+      const sRound = Math.round(s ?? 0);
+      const lRound = Math.round(l ?? 0);
+      if (fmt === 'hsl' || a >= 1) {
+        return `hsl(${hRound} ${sRound}% ${lRound}%)`;
+      }
+      const alpha = Math.round(clamp(a) * 1000) / 1000;
+      return `hsla(${hRound} ${sRound}% ${lRound}% / ${alpha})`;
+    }
+
+    if (fmt === 'lab' || fmt === 'laba') {
+      const arr = (c as any).lab().array?.() ?? (c as any).lab().values ?? [];
+      const [L, a1, b1] = arr;
+      const Lr = Math.round((L ?? 0) * 10) / 10;
+      const ar = Math.round((a1 ?? 0) * 10) / 10;
+      const br = Math.round((b1 ?? 0) * 10) / 10;
+      if (fmt === 'lab' || a >= 1) {
+        return `lab(${Lr}% ${ar} ${br})`;
+      }
+      const alpha = Math.round(clamp(a) * 1000) / 1000;
+      return `lab(${Lr}% ${ar} ${br} / ${alpha})`;
+    }
+
+    return (a < 1 ? c.hexa() : c.hex()).toLowerCase();
+  }
+
+  private parseAmount(raw: string): number {
+    const s = raw.trim();
+    if (s.endsWith('%')) {
+      const p = parseFloat(s.slice(0, -1));
+      if (!isNaN(p)) return p / 100;
+    }
+    const n = parseFloat(s);
+    return isNaN(n) ? 0 : n;
+  }
+
+  private tryToColor(raw: string): ReturnType<typeof Color> | null {
+    try {
+      return Color(raw);
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * Expression support:
+   * rgba(color, a), lighten(color, x), darken(color, x), saturate(color, x), desaturate(color, x)
+   * color can be: a color string, {link}, or a nested function.
+   */
+  private evaluateColorExpression(expr: string, unitForFormat?: string): string | null {
+    let s = expr.trim();
+
+    const plain = this.tryToColor(s);
+    if (plain) return this.formatColor(plain, unitForFormat);
+
+    const fnMatch = /^([a-zA-Z]+)\((.*)\)$/.exec(s);
+    if (!fnMatch) return null;
+
+    const fn = fnMatch[1].toLowerCase();
+    const argsStr = fnMatch[2];
+
+    const args: string[] = [];
+    let buf = '';
+    let depth = 0;
+    for (let i = 0; i < argsStr.length; i++) {
+      const ch = argsStr[i];
+      if (ch === '(') depth++;
+      if (ch === ')') depth--;
+      if (ch === ',' && depth === 0) {
+        args.push(buf.trim());
+        buf = '';
+      } else {
+        buf += ch;
+      }
+    }
+    if (buf.trim().length) args.push(buf.trim());
+
+    const resolveColorArg = (arg: string): ReturnType<typeof Color> | null => {
+      const resolved = arg.startsWith('{')
+        ? this.parseNestedValue(arg, this.defaultParseOptions)
+        : arg;
+      const c = this.tryToColor(String(resolved).trim());
+      return c;
+    };
+
+    const resolveMaybeFunction = (arg: string): ReturnType<typeof Color> | null => {
+      const direct = resolveColorArg(arg);
+      if (direct) return direct;
+      const inner = this.evaluateColorExpression(arg, unitForFormat);
+      if (inner) {
+        const c = this.tryToColor(inner);
+        if (c) return c;
+      }
+      return null;
+    };
+
+    let out: ReturnType<typeof Color> | null = null;
+
+    switch (fn) {
+      case 'rgba': {
+        if (args.length !== 2) return null;
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+        const alpha = this.parseAmount(args[1]);
+        out = base.alpha(alpha);
+        break;
+      }
+      case 'lighten': {
+        if (args.length !== 2) return null;
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+        const amt = this.parseAmount(args[1]);
+        out = base.lighten(amt);
+        break;
+      }
+      case 'darken': {
+        if (args.length !== 2) return null;
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+        const amt = this.parseAmount(args[1]);
+        out = base.darken(amt);
+        break;
+      }
+      case 'saturate': {
+        if (args.length !== 2) return null;
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+        const amt = this.parseAmount(args[1]);
+        out = base.saturate(amt);
+        break;
+      }
+      case 'desaturate': {
+        if (args.length !== 2) return null;
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+        const amt = this.parseAmount(args[1]);
+        out = base.desaturate(amt);
+        break;
+      }
+      default:
+        return null;
+    }
+
+    return out ? this.formatColor(out, unitForFormat) : null;
+  }
+
+  /**
+   * Public helper: evaluate a string as a color/color expression and return it in the required format.
+   * If not a color, return null.
+   */
+  public tryParseColor(value: string, unitForFormat?: string): string | null {
+    const raw = value.trim();
+
+    const resolved = raw.startsWith('{')
+      ? String(this.parseNestedValue(raw, this.defaultParseOptions))
+      : raw;
+
+    const direct = this.tryToColor(resolved);
+    if (direct) return this.formatColor(direct, unitForFormat);
+
+    const expr = this.evaluateColorExpression(resolved, unitForFormat);
+    if (expr) return expr;
+
+    if (/\{[^}]+\}/.test(resolved)) {
+      const withRefsResolved = resolved.replace(/\{[^}]+\}/g, (m) =>
+        String(this.parseNestedValue(m, this.defaultParseOptions)),
+      );
+      const direct2 = this.tryToColor(withRefsResolved);
+      if (direct2) return this.formatColor(direct2, unitForFormat);
+      const expr2 = this.evaluateColorExpression(withRefsResolved, unitForFormat);
+      if (expr2) return expr2;
+    }
+
+    return null;
+  }
+
+  /* ---------- end of color helpers ---------- */
+
   normalizeValue(value: any, opts: ParseValueOptions): string {
-    if (typeof value === "number") {
+    if (typeof value === 'number') {
       return this.convertNumberByKey(value, opts.key, opts);
     }
 
-    if (typeof value === "string") {
-      if (value.startsWith("{")) {
+    if (typeof value === 'string') {
+      if (value.startsWith('{')) {
         const nested = this.parseNestedValue(value, opts);
         return this.normalizeValue(nested, opts);
       }
+
+      const colorMaybe = this.tryParseColor(value, opts.unit);
+      if (colorMaybe) return colorMaybe;
 
       if (/^\d+(\.\d+)?$/.test(value)) {
         return this.convertNumberByKey(Number(value), opts.key, opts);
@@ -677,23 +875,21 @@ export class TokensParser {
     }
 
     if (Array.isArray(value)) {
-      return value.map((v) => this.normalizeValue(v, opts)).join(" ");
+      return value.map((v) => this.normalizeValue(v, opts)).join(' ');
     }
 
-    if (_.isPlainObject(value) && "value" in value) {
+    if (_.isPlainObject(value) && this.hasTokenField(value, 'value')) {
+      const typeVal = this.getTokenField(value, 'type');
+      const unitVal = this.getTokenField(value, 'unit');
       const localOpts: ParseValueOptions = {
         ...opts,
-        key:
-          typeof (value as any).type === "string"
-            ? (value as any).type
-            : opts.key,
+        key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
         unit:
-          Object.prototype.hasOwnProperty.call(value, "unit") &&
-          typeof (value as any).unit === "string"
-            ? (value as any).unit
+          this.hasTokenField(value, 'unit') && typeof unitVal === 'string'
+            ? (unitVal as string)
             : opts.unit,
       };
-      return this.normalizeValue((value as any).value, localOpts);
+      return this.normalizeValue(this.getTokenField(value, 'value'), localOpts);
     }
 
     return String(value);
@@ -703,7 +899,7 @@ export class TokensParser {
     value: string,
     opts: ParseValueOptions,
     depth = 0,
-    visited = new Set<string>()
+    visited = new Set<string>(),
   ): any {
     if (depth > 5) return value;
     const regex = /{([^}]+)}/g;
@@ -721,7 +917,7 @@ export class TokensParser {
 
       visited.add(fullMatch);
 
-      const pathParts = pathStr.split(".");
+      const pathParts = pathStr.split('.');
       const fileName = pathParts.shift();
       if (!fileName) {
         visited.delete(fullMatch);
@@ -732,12 +928,12 @@ export class TokensParser {
       if (this.fileCache[fileName]) {
         json = this.fileCache[fileName];
       } else {
-        const paths = this.opts.paths ?? ["."];
+        const paths = this.opts.paths ?? ['.'];
         let fileFound = false;
         for (const p of paths) {
           const filePath = `${p}/${fileName}.json`;
           try {
-            json = JSON.parse(readFileSync(filePath, "utf-8"));
+            json = JSON.parse(readFileSync(filePath, 'utf-8'));
             this.fileCache[fileName] = json;
             fileFound = true;
             break;
@@ -745,11 +941,7 @@ export class TokensParser {
         }
 
         if (!fileFound) {
-          console.warn(
-            `⚠️ Token file "${fileName}.json" not found in paths: ${paths.join(
-              ", "
-            )}`
-          );
+          console.warn(`⚠️ Token file "${fileName}.json" not found in paths: ${paths.join(', ')}`);
           visited.delete(fullMatch);
           continue;
         }
@@ -757,20 +949,13 @@ export class TokensParser {
 
       let nestedValue = pathParts.reduce((acc, key) => acc?.[key], json);
       if (nestedValue === undefined) {
-        console.warn(
-          `⚠️ Token path "${pathStr}" not found in file "${fileName}"`
-        );
+        console.warn(`⚠️ Token path "${pathStr}" not found in file "${fileName}"`);
         visited.delete(fullMatch);
         continue;
       }
 
-      if (typeof nestedValue === "string" && nestedValue.startsWith("{")) {
-        nestedValue = this.parseNestedValue(
-          nestedValue,
-          opts,
-          depth + 1,
-          visited
-        );
+      if (typeof nestedValue === 'string' && nestedValue.startsWith('{')) {
+        nestedValue = this.parseNestedValue(nestedValue, opts, depth + 1, visited);
       }
 
       result = result.replace(fullMatch, nestedValue);
@@ -784,26 +969,20 @@ export class TokensParser {
     obj: any,
     path: string[] = [],
     result: string[] = [],
-    opts?: ParseValueOptions
+    opts?: ParseValueOptions,
   ): string[] {
     const useOpts = opts ?? this.defaultVarsOptions;
 
-    if (_.isPlainObject(obj) && "value" in obj) {
+    if (_.isPlainObject(obj) && this.hasTokenField(obj, 'value')) {
       const flatPath =
         useOpts.includeFileName && useOpts.fileName
-          ? [
-              useOpts.convertCase
-                ? this.toKebabCase(useOpts.fileName!)
-                : useOpts.fileName!,
-              ...path,
-            ]
+          ? [useOpts.convertCase ? this.toKebabCase(useOpts.fileName!) : useOpts.fileName!, ...path]
           : path;
 
-      const cssVarName = `--${flatPath.join("-")}`;
+      const cssVarName = `--${flatPath.join('-')}`;
+      const rawVal = this.getTokenField(obj, 'value');
       const finalValue =
-        obj.value !== undefined
-          ? this.parser.parseValue(obj.value, useOpts)
-          : "initial";
+        rawVal !== undefined ? (this.parser.parseValue as any)(rawVal, useOpts) : 'initial';
 
       result.push(`${cssVarName}: ${finalValue};`);
       return result;
@@ -824,61 +1003,57 @@ export class TokensParser {
 
   async writeCSSFile(filePath: string, cssContent: string) {
     await fs.mkdir(nodePath.dirname(filePath), { recursive: true });
-    await fs.writeFile(filePath, cssContent, "utf-8");
+    await fs.writeFile(filePath, cssContent, 'utf-8');
   }
 
   async generateThemesFromDir(
     inputDir: string,
     outputPath: string,
-    includeRequired: boolean
+    includeRequired: boolean,
   ): Promise<void> {
     const files = await fs.readdir(inputDir);
     const themes: Record<string, any> = {};
 
     for (const file of files) {
-      if (!file.endsWith(".json")) continue;
-      const themeName = nodePath.basename(file, ".json");
-      const raw = await fs.readFile(nodePath.join(inputDir, file), "utf-8");
+      if (!file.endsWith('.json')) continue;
+      const themeName = nodePath.basename(file, '.json');
+      const raw = await fs.readFile(nodePath.join(inputDir, file), 'utf-8');
       themes[themeName] = JSON.parse(raw);
     }
 
     const css = this.generateThemesBlockFromObject(themes, includeRequired);
     await fs.mkdir(nodePath.dirname(outputPath), { recursive: true });
-    await fs.writeFile(outputPath, css, "utf-8");
+    await fs.writeFile(outputPath, css, 'utf-8');
   }
 
   async generateThemesFromFile(
     inputPath: string,
     outputPath: string,
-    includeRequired: boolean
+    includeRequired: boolean,
   ): Promise<void> {
-    const raw = await fs.readFile(inputPath, "utf-8");
+    const raw = await fs.readFile(inputPath, 'utf-8');
     const themes = JSON.parse(raw);
 
     const css = this.generateThemesBlockFromObject(themes, includeRequired);
     await fs.mkdir(nodePath.dirname(outputPath), { recursive: true });
-    await fs.writeFile(outputPath, css, "utf-8");
+    await fs.writeFile(outputPath, css, 'utf-8');
   }
 
-  generateThemesBlockFromObject(
-    themes: Record<string, any>,
-    includeRequired: boolean
-  ): string {
+  generateThemesBlockFromObject(themes: Record<string, any>, includeRequired: boolean): string {
     // helper: serialize a single theme object into array of css var lines
     const collectVarsFromTheme = (themeObj: any, prefixPath: string[] = []) => {
       const vars: string[] = [];
 
       const walk = (obj: any, path: string[] = []) => {
-        if (_.isPlainObject(obj) && "value" in obj) {
-          const exportAsVar = obj.meta?.build?.web?.exportAsVar ?? false;
+        if (_.isPlainObject(obj) && this.hasTokenField(obj, 'value')) {
+          const meta = this.getTokenField(obj, 'meta');
+          const exportAsVar = meta?.build?.web?.exportAsVar ?? false;
 
           if (!includeRequired || exportAsVar) {
-            const cssVarName = `--${[...prefixPath, ...path].join("-")}`;
+            const cssVarName = `--${[...prefixPath, ...path].join('-')}`;
+            const rawVal = this.getTokenField(obj, 'value');
             vars.push(
-              `${cssVarName}: ${this.parser.parseValue(
-                obj.value,
-                this.defaultVarsOptions
-              )}`
+              `${cssVarName}: ${(this.parser.parseValue as any)(rawVal, this.defaultVarsOptions)}`,
             );
           }
           return;
@@ -895,22 +1070,18 @@ export class TokensParser {
       return vars;
     };
 
-    let css = "";
+    let css = '';
 
-    // If the root object is a wrapper (like { "themes": { "light": {...}, "dark": {...} } })
-    // detect that and "unwrap" one level so we generate proper selectors for inner keys.
+    // unwrap wrapper if needed
     const rootKeys = Object.keys(themes);
     if (rootKeys.length === 1) {
       const onlyKey = rootKeys[0];
       const onlyVal = themes[onlyKey];
-      // if the only value is a plain object whose direct children look like theme objects (map of names -> objects),
-      // and those children do not themselves contain "value" directly, treat it as wrapper and unwrap.
       if (
         _.isPlainObject(onlyVal) &&
         Object.keys(onlyVal).length > 0 &&
         Object.values(onlyVal).every((v) => _.isPlainObject(v))
       ) {
-        // unwrap
         themes = onlyVal as Record<string, any>;
       }
     }
@@ -920,15 +1091,13 @@ export class TokensParser {
 
       const themeName = this.toKebabCase(rawThemeName);
 
-      // collect vars for this theme
       const vars = collectVarsFromTheme(themeObj);
 
       if (vars.length === 0) {
-        // skip empty theme
         continue;
       }
 
-      css += `\n[data-theme="${themeName}"] {\n  ${vars.join("\n  ")}\n}\n`;
+      css += `\n[data-theme="${themeName}"] {\n  ${vars.join('\n  ')}\n}\n`;
     }
 
     return css;
@@ -939,12 +1108,12 @@ export class TokensParser {
     inputPath: string,
     outputDir: string,
     outputFileName: string,
-    opts?: Partial<JSONToSCSSOptions>
+    opts?: Partial<JSONToSCSSOptions>,
   ): Promise<void> {
     const {
-      header = "// Generated by tokensParser. ‼️ DO NOT MODIFY THIS FILE ‼️ /\n",
-      name = "",
-      comment = "",
+      header = '// Generated by tokensParser. ‼️ DO NOT MODIFY THIS FILE ‼️ /\n',
+      name = '',
+      comment = '',
       options,
       mapOptions,
       varsOptions,
@@ -952,7 +1121,7 @@ export class TokensParser {
 
     const baseOptions: ParseValueOptions = {
       ...this.defaultParseOptions,
-      fileName: options?.fileName || "",
+      fileName: options?.fileName || '',
       ...(options || {}),
     };
 
@@ -975,7 +1144,7 @@ export class TokensParser {
         .catch(() => false);
       if (!isOutputExists) await fs.mkdir(outputDir, { recursive: true });
 
-      const data = await fs.readFile(inputPath, "utf-8");
+      const data = await fs.readFile(inputPath, 'utf-8');
       const json = JSON.parse(data);
 
       let content = `${header}\n${comment}\n`;
@@ -985,7 +1154,7 @@ export class TokensParser {
           ? parseMapOptions.convertCase
             ? this.toKebabCase(parseMapOptions.fileName)
             : parseMapOptions.fileName
-          : "";
+          : '';
 
       const rootMap =
         parseMapOptions.includeFileName && parseMapOptions.fileName
@@ -1004,23 +1173,18 @@ export class TokensParser {
         const map = v as IMap;
 
         // --- IMPORTANT: pass initial path = [kebabKey] so that the prefix is ​​preserved ---
-        // if kebabKey is empty (unlikely), pass fileName as fallback
         const initialPath =
           kebabKey && kebabKey.length > 0
             ? [kebabKey]
             : parseMapOptions.fileName
-            ? [
-                parseMapOptions.convertCase
-                  ? this.toKebabCase(parseMapOptions.fileName)
-                  : parseMapOptions.fileName,
-              ]
-            : [];
+              ? [
+                  parseMapOptions.convertCase
+                    ? this.toKebabCase(parseMapOptions.fileName)
+                    : parseMapOptions.fileName,
+                ]
+              : [];
 
-        const str = `${keyLine}${this.parser.parseMap(
-          map,
-          parseMapOptions,
-          initialPath
-        )};`;
+        const str = `${keyLine}${(this.parser as SCSSParser).parseMap(map, parseMapOptions, initialPath)};`;
         content += `${str}\n`;
       }
 
@@ -1034,13 +1198,8 @@ export class TokensParser {
 
       // --- All to CSS vars" (legacy)
       if (parseVarsOptions.convertToCSSVariables) {
-        const flatVars = this.flattenToCSSVariables(
-          json,
-          [],
-          [],
-          parseVarsOptions
-        );
-        const cssContent = `:root {\n  ${flatVars.join("\n  ")}\n}`;
+        const flatVars = this.flattenToCSSVariables(json, [], [], parseVarsOptions);
+        const cssContent = `:root {\n  ${flatVars.join('\n  ')}\n}`;
         if (this.opts.cssVarsOutDir) {
           const cssOutPath = `${this.opts.cssVarsOutDir}/${parseVarsOptions.fileName}.css`;
           await fs.writeFile(cssOutPath, cssContent);
@@ -1072,16 +1231,16 @@ export class TokensParser {
           await this.JSONToSCSS(
             `${this.opts.build}/${fileName}`,
             `${output}`,
-            `_${fileName.replace(".json", ".scss")}`,
+            `_${fileName.replace('.json', '.scss')}`,
             {
               options: {
                 ...this.defaultParseOptions,
-                fileName: fileName.replace(/\.json$/, ""),
+                fileName: fileName.replace(/\.json$/, ''),
               },
               mapOptions: this.defaultMapOptions,
               varsOptions: this.defaultVarsOptions,
-              name: fileName.replace(".json", ""),
-            }
+              name: fileName.replace('.json', ''),
+            },
           );
         }
       }
@@ -1090,21 +1249,14 @@ export class TokensParser {
     }
   }
 
-  private async resolveAndSaveJson(
-    inputPath: string,
-    fileName: string
-  ): Promise<void> {
+  private async resolveAndSaveJson(inputPath: string, fileName: string): Promise<void> {
     if (!this.opts.build) return;
     const unresolvedTokens: string[] = [];
     try {
-      const jsonRaw = await fs.readFile(inputPath, "utf-8");
+      const jsonRaw = await fs.readFile(inputPath, 'utf-8');
       const json = JSON.parse(jsonRaw);
 
-      const resolveRecursive = (
-        obj: any,
-        opts: ParseValueOptions,
-        depth = 0
-      ): any => {
+      const resolveRecursive = (obj: any, opts: ParseValueOptions, depth = 0): any => {
         if (_.isString(obj)) {
           const regex = /{([^}]+)}/g;
           let result: any = obj;
@@ -1112,7 +1264,7 @@ export class TokensParser {
           while ((match = regex.exec(obj)) !== null) {
             const fullMatch = match[0];
             const pathStr = match[1];
-            const pathParts = pathStr.split(".");
+            const pathParts = pathStr.split('.');
             const fileName = pathParts.shift();
             if (!fileName) continue;
 
@@ -1122,13 +1274,13 @@ export class TokensParser {
               if (this.fileCache[fileName]) {
                 json = this.fileCache[fileName];
               } else {
-                const paths = this.opts.paths ?? ["."];
+                const paths = this.opts.paths ?? ['.'];
                 let fileFound = false;
 
                 for (const p of paths) {
                   const filePath = `${p}/${fileName}.json`;
                   try {
-                    const file = readFileSync(filePath, "utf-8");
+                    const file = readFileSync(filePath, 'utf-8');
                     json = JSON.parse(file);
                     this.fileCache[fileName] = json;
                     fileFound = true;
@@ -1144,10 +1296,7 @@ export class TokensParser {
                 }
               }
 
-              let nestedValue = pathParts.reduce(
-                (acc, key) => acc?.[key],
-                json
-              );
+              let nestedValue = pathParts.reduce((acc, key) => acc?.[key], json);
               if (nestedValue === undefined) {
                 unresolvedTokens.push(fullMatch);
                 continue;
@@ -1164,21 +1313,17 @@ export class TokensParser {
           return result;
         }
 
-        if (_.isArray(obj))
-          return obj.map((v) => resolveRecursive(v, opts, depth));
+        if (_.isArray(obj)) return obj.map((v) => resolveRecursive(v, opts, depth));
         if (_.isPlainObject(obj))
           return Object.fromEntries(
-            Object.entries(obj).map(([k, v]) => [
-              k,
-              resolveRecursive(v, opts, depth),
-            ])
+            Object.entries(obj).map(([k, v]) => [k, resolveRecursive(v, opts, depth)]),
           );
         return obj;
       };
 
       const resolvedJson = resolveRecursive(json, {
         ...this.defaultParseOptions,
-        fileName: fileName.replace(/\.json$/, ""),
+        fileName: fileName.replace(/\.json$/, ''),
       });
 
       const buildDir = this.opts.build!;
@@ -1190,17 +1335,13 @@ export class TokensParser {
       )
         await fs.mkdir(buildDir, { recursive: true });
       const buildPath = `${buildDir}/${fileName}`;
-      await fs.writeFile(
-        buildPath,
-        JSON.stringify(resolvedJson, null, 2),
-        "utf-8"
-      );
+      await fs.writeFile(buildPath, JSON.stringify(resolvedJson, null, 2), 'utf-8');
 
       if (unresolvedTokens.length > 0) {
         const logPath = `${buildDir}/unresolved-tokens.log`;
         const uniqueTokens = [...new Set(unresolvedTokens)];
-        await fs.writeFile(logPath, uniqueTokens.join("\n"), "utf-8");
-        console.warn("Unresolved tokens saved to", logPath);
+        await fs.writeFile(logPath, uniqueTokens.join('\n'), 'utf-8');
+        console.warn('Unresolved tokens saved to', logPath);
       }
     } catch (err) {
       console.error(err);
@@ -1213,58 +1354,48 @@ export class TokensParser {
 
     try {
       const files = await fs.readdir(build);
-      const jsonFiles = files.filter((f: string) => f.endsWith(".json"));
+      const jsonFiles = files.filter((f: string) => f.endsWith('.json'));
 
-      const relativeImportPath = nodePath.relative(
-        nodePath.dirname(entryFilePath),
-        build
-      );
+      const relativeImportPath = nodePath.relative(nodePath.dirname(entryFilePath), build);
 
       const imports = jsonFiles
         .map((file: string) => {
-          const name = file.replace(".json", "");
-          let importPath = nodePath
-            .join(relativeImportPath, file)
-            .replace(/\\/g, "/");
-          if (!importPath.startsWith(".") && !importPath.startsWith("/"))
-            importPath = "./" + importPath;
+          const name = file.replace('.json', '');
+          let importPath = nodePath.join(relativeImportPath, file).replace(/\\/g, '/');
+          if (!importPath.startsWith('.') && !importPath.startsWith('/'))
+            importPath = './' + importPath;
           return `import ${name} from "${importPath}";`;
         })
-        .join("\n");
+        .join('\n');
 
-      const spreadList = jsonFiles
-        .map((file: string) => file.replace(".json", ""))
-        .join(", ");
+      const spreadList = jsonFiles.map((file: string) => file.replace('.json', '')).join(', ');
 
       const content = `${imports}\n\nconst module = {\n  ${spreadList
-        .split(", ")
+        .split(', ')
         .map((name: string) => `...${name}`)
-        .join(",\n  ")}\n};\n\nexport default module;\n`;
+        .join(',\n  ')}\n};\n\nexport default module;\n`;
 
       const entryDir = nodePath.dirname(entryFilePath);
       await fs.mkdir(entryDir, { recursive: true });
-      await fs.writeFile(entryFilePath, content, "utf-8");
+      await fs.writeFile(entryFilePath, content, 'utf-8');
       console.log(`✅ TypeScript entry file generated at ${entryFilePath}`);
     } catch (err) {
-      console.error("❌ Failed to generate TypeScript entry file", err);
+      console.error('❌ Failed to generate TypeScript entry file', err);
     }
   }
 
   // --- Resolve links in file structure --- //
 
   private async resolveTokenPathRecursive(pathStr: string): Promise<any> {
-    const pathParts = pathStr.split(".");
+    const pathParts = pathStr.split('.');
 
-    const tryResolve = async (
-      currentParts: string[],
-      currentDir: string
-    ): Promise<any> => {
+    const tryResolve = async (currentParts: string[], currentDir: string): Promise<any> => {
       if (currentParts.length === 0) return undefined;
 
       const fileName = `${currentParts[0]}.json`;
       const filePath = nodePath.join(currentDir, fileName);
       if (await this.isFile(filePath)) {
-        const content = JSON.parse(await fs.readFile(filePath, "utf-8"));
+        const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
         if (currentParts.length === 1) return content;
         return this.getNestedValue(content, currentParts.slice(1));
       }
@@ -1275,12 +1406,9 @@ export class TokensParser {
       }
 
       for (let i = currentParts.length; i > 0; i--) {
-        const joinedFile = nodePath.join(
-          currentDir,
-          currentParts.slice(0, i).join("/") + ".json"
-        );
+        const joinedFile = nodePath.join(currentDir, currentParts.slice(0, i).join('/') + '.json');
         if (await this.isFile(joinedFile)) {
-          const content = JSON.parse(await fs.readFile(joinedFile, "utf-8"));
+          const content = JSON.parse(await fs.readFile(joinedFile, 'utf-8'));
           return this.getNestedValue(content, currentParts.slice(i));
         }
       }
@@ -1288,7 +1416,7 @@ export class TokensParser {
       return undefined;
     };
 
-    for (const rootPath of this.opts.paths ?? ["./"]) {
+    for (const rootPath of this.opts.paths ?? ['./']) {
       const absRoot = nodePath.resolve(rootPath);
       const res = await tryResolve(pathParts, absRoot);
       if (res !== undefined) return res;

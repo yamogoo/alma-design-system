@@ -3,30 +3,36 @@
     "lg": {
       "header": {
         "padding": {
-          "value": ["{tokens.spacing.lg.value}", "{tokens.spacing.lg.value}"],
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": [
+            "{tokens.spacing.lg.$value}",
+            "{tokens.spacing.lg.$value}"
+          ],
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding for the header inside large carousel stack",
             "category": "carouselStack"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "md": {
       "header": {
         "padding": {
-          "value": ["{tokens.spacing.md.value}", "{tokens.spacing.md.value}"],
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": [
+            "{tokens.spacing.md.$value}",
+            "{tokens.spacing.md.$value}"
+          ],
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Padding for the header inside medium carousel stack",
             "category": "carouselStack"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     }
   }
 }

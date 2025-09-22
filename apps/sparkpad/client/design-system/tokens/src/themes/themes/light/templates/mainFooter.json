@@ -4,20 +4,20 @@
       "self": {
         "background": {
           "normal": {
-            "value": "{themes.themes.light.abstracts.surface.neutral.primary.value}",
-            "type": "color",
-            "unit": "hex",
-            "meta": {
+            "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
               "category": "main footer"
             }
           }
         },
         "border": {
           "normal": {
-            "value": "rgba({themes.themes.light.abstracts.surface.neutral.primary.value},0)",
-            "type": "color",
-            "unit": "hex",
-            "meta": {
+            "$value": "rgba({themes.themes.light.abstracts.surface.neutral.primary.$value},0)",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
               "category": "main footer"
             }
           }
@@ -30,20 +30,20 @@
       "self": {
         "background": {
           "normal": {
-            "value": "{themes.themes.light.abstracts.surface.accent.primary.value}",
-            "type": "color",
-            "unit": "hex",
-            "meta": {
+            "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
               "category": "main footer"
             }
           }
         },
         "border": {
           "normal": {
-            "value": "rgba({themes.themes.light.abstracts.surface.accent.primary.value},0)",
-            "type": "color",
-            "unit": "hex",
-            "meta": {
+            "$value": "rgba({themes.themes.light.abstracts.surface.accent.primary.$value},0)",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
               "category": "main footer"
             }
           }

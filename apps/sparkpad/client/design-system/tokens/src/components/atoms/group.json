@@ -3,238 +3,238 @@
     "lg": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.lg.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.lg.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Gap between elements in large group",
             "category": "group"
           }
         },
         "padding": {
-          "value": 0,
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": 0,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderRadius": {
-          "value": 0,
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": 0,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderWidth": {
-          "value": "{components.atoms.divider.default.md.self.borderWidth.value}",
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border width for large group",
             "category": "group"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "md": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.md.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Gap between elements in medium group",
             "category": "group"
           }
         },
         "padding": {
-          "value": 0,
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": 0,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderRadius": {
-          "value": 0,
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": 0,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderWidth": {
-          "value": "{components.atoms.divider.default.md.self.borderWidth.value}",
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border width for medium group",
             "category": "group"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "sm": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.sm.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Gap between elements in small group",
             "category": "group"
           }
         },
         "padding": {
-          "value": 0,
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": 0,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderRadius": {
-          "value": 0,
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": 0,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderWidth": {
-          "value": "{components.atoms.divider.default.md.self.borderWidth.value}",
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border width for small group",
             "category": "group"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     }
   },
   "block": {
     "lg": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.lg.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.lg.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Gap between elements in large group",
             "category": "group"
           }
         },
         "padding": {
-          "value": "{tokens.spacing.xxs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.xxs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderRadius": {
-          "value": "{tokens.roundness.md.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.roundness.md.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderWidth": {
-          "value": "{components.atoms.divider.default.md.self.borderWidth.value}",
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border width for large group",
             "category": "group"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "md": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.sm.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Gap between elements in medium group",
             "category": "group"
           }
         },
         "padding": {
-          "value": "{tokens.spacing.xxs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.xxs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderRadius": {
-          "value": "{tokens.roundness.sm.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.roundness.sm.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderWidth": {
-          "value": "{components.atoms.divider.default.md.self.borderWidth.value}",
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border width for medium group",
             "category": "group"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     },
     "sm": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.xs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Gap between elements in small group",
             "category": "group"
           }
         },
         "padding": {
-          "value": "{tokens.spacing.xxs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.xxs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderRadius": {
-          "value": "{tokens.roundness.xs.value}",
-          "type": "radius",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.roundness.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "group"
           }
         },
         "borderWidth": {
-          "value": "{components.atoms.divider.default.md.self.borderWidth.value}",
-          "type": "size",
-          "unit": "px",
-          "meta": {
+          "$value": "{components.atoms.divider.default.md.self.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "description": "Border width for small group",
             "category": "group"
           }
         }
       },
-      "type": "component"
+      "$type": "component"
     }
   }
 }

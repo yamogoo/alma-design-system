@@ -3,25 +3,25 @@
     "md": {
       "self": {
         "gap": {
-          "value": "{tokens.spacing.sm.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "logo with descriptor"
           }
         }
       },
       "label": {
         "fontStyle": {
-          "value": "label-1",
-          "type": "alias",
-          "unit": "",
-          "meta": {
+          "$value": "label-1",
+          "$type": "string",
+          "$unit": "",
+          "$meta": {
             "category": "logo with descriptor"
           }
         }
       }
     },
-    "type": "component"
+    "$type": "component"
   }
 }

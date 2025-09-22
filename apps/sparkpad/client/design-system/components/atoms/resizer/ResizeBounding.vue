@@ -19,11 +19,11 @@ const emits = defineEmits<{
 
 const variant = props.variant;
 
-const knobWidth = tokens.atoms.resizer[variant].knob.width.value;
-const knobHeight = tokens.atoms.resizer[variant].knob.height.value;
-const knobRoundness = tokens.atoms.resizer[variant].knob.borderRadius.value;
+const knobWidth = tokens.atoms.resizer[variant].knob.width.$value;
+const knobHeight = tokens.atoms.resizer[variant].knob.height.$value;
+const knobRoundness = tokens.atoms.resizer[variant].knob.borderRadius.$value;
 const activeAreaWidth =
-  tokens.atoms.resizer[variant].self.activeAreaWidth.value;
+  tokens.atoms.resizer[variant].self.activeAreaWidth.$value;
 </script>
 
 <template>

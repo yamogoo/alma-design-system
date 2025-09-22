@@ -3,10 +3,10 @@
     "lg": {
       "self": {
         "padding": {
-          "value": "{tokens.spacing.md.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "main header"
           }
         }
@@ -15,10 +15,10 @@
     "md": {
       "self": {
         "padding": {
-          "value": "{tokens.spacing.sm.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "main header"
           }
         }
@@ -27,10 +27,10 @@
     "sm": {
       "self": {
         "padding": {
-          "value": "{tokens.spacing.xs.value}",
-          "type": "spacing",
-          "unit": "px",
-          "meta": {
+          "$value": "{tokens.spacing.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
             "category": "main header"
           }
         }

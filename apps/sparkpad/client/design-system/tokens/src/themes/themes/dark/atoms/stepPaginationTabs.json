@@ -3,19 +3,19 @@
     "item": {
       "label": {
         "normal": {
-          "value": "{themes.themes.dark.abstracts.label.neutral.primary.value}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{themes.themes.dark.abstracts.label.neutral.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "text",
             "description": "Normal label color for step pagination tab"
           }
         },
         "active": {
-          "value": "{themes.themes.dark.abstracts.label.neutral.primary.value}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{themes.themes.dark.abstracts.label.neutral.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "text",
             "description": "Active label color for step pagination tab"
           }

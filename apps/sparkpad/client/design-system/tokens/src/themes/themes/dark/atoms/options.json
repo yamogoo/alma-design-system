@@ -2,34 +2,34 @@
   "primary": {
     "label": {
       "normal": {
-        "value": "{colors.gray-300}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-300}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "options"
         }
       },
       "disabled": {
-        "value": "{colors.gray-600}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-600}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "options"
         }
       },
       "hovered": {
-        "value": "{colors.gray-50}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-50}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "options"
         }
       },
       "focused": {
-        "value": "{colors.gray-50}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-50}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "options"
         }
       }
@@ -38,34 +38,34 @@
   "secondary": {
     "label": {
       "normal": {
-        "value": "{colors.gray-300}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-300}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "options"
         }
       },
       "disabled": {
-        "value": "{colors.gray-600}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-600}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "options"
         }
       },
       "hovered": {
-        "value": "{colors.gray-50}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-50}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "options"
         }
       },
       "focused": {
-        "value": "{colors.gray-50}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-50}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "options"
         }
       }

@@ -17,6 +17,7 @@ import {
   TokensParserPlugin,
   VitePluginTokenLinter,
   JSONBuilderPlugin,
+  VitePluginFigmaTokensParser,
 } from "tokens-worker";
 
 import VueRouterPlugin from "unplugin-vue-router/vite";
@@ -102,10 +103,10 @@ export default (opts: { mode: string }) => {
       VitePluginTokenLinter({
         source: "./design-system/tokens/src",
       }),
-      // FlattenTokensParserPlugin({
-      //   source: "./design-system/tokens/build",
-      //   outDir: "./design-system/tokens/figma",
-      // }),
+      VitePluginFigmaTokensParser({
+        source: "./design-system/tokens/build",
+        outDir: "./design-system/tokens/.figma",
+      }),
       // Application: Tokens and SCSS generation
       TokensParserPlugin({
         source: "./src/tokens/.cache",

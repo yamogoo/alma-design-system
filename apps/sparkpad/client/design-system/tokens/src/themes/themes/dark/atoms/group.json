@@ -2,36 +2,36 @@
   "primary": {
     "self": {
       "background": {
-        "value": "{themes.themes.dark.abstracts.surface.neutral.primary.value}"
+        "$value": "{themes.themes.dark.abstracts.surface.neutral.primary.$value}"
       },
       "divider": {
-        "value": "{themes.themes.dark.atoms.divider.neutral.primary.self.border.value}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{themes.themes.dark.atoms.divider.neutral.primary.self.border.$value}",
+        "$type": "color",
+        "$unit": "hex"
       }
     }
   },
   "secondary": {
     "self": {
       "background": {
-        "value": "{themes.themes.dark.abstracts.surface.neutral.secondary.value}"
+        "$value": "{themes.themes.dark.abstracts.surface.neutral.secondary.$value}"
       },
       "divider": {
-        "value": "{themes.themes.dark.atoms.divider.neutral.secondary.self.border.value}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{themes.themes.dark.atoms.divider.neutral.secondary.self.border.$value}",
+        "$type": "color",
+        "$unit": "hex"
       }
     }
   },
   "ghost": {
     "self": {
       "background": {
-        "value": "rgba({colors.gray-1000}, 0)"
+        "$value": "rgba({colors.gray-1000}, 0)"
       },
       "divider": {
-        "value": "{themes.themes.dark.atoms.divider.neutral.secondary.self.border.value}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{themes.themes.dark.atoms.divider.neutral.secondary.self.border.$value}",
+        "$type": "color",
+        "$unit": "hex"
       }
     }
   }

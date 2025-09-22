@@ -3,102 +3,102 @@
     "currentValue": {
       "label": {
         "normal": {
-          "value": "{colors.gray-50}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-50}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "hovered": {
-          "value": "{colors.gray-100}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-100}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expanded": {
-          "value": "{colors.gray-200}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-200}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expandedHovered": {
-          "value": "{colors.gray-250}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-250}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         }
       },
       "icon": {
         "normal": {
-          "value": "{colors.gray-50}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-50}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "hovered": {
-          "value": "{colors.gray-100}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-100}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expanded": {
-          "value": "{colors.gray-200}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-200}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expandedHovered": {
-          "value": "{colors.gray-250}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-250}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         }
       },
       "background": {
         "normal": {
-          "value": "{colors.gray-850}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-850}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "hovered": {
-          "value": "{colors.gray-800}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-800}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expanded": {
-          "value": "{colors.gray-700}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-700}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expandedHovered": {
-          "value": "{colors.gray-750}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-750}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         }
@@ -107,18 +107,18 @@
     "options": {
       "background": {
         "normal": {
-          "value": "{colors.gray-800}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-800}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "hovered": {
-          "value": "{colors.gray-800}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-800}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         }
@@ -129,102 +129,102 @@
     "currentValue": {
       "label": {
         "normal": {
-          "value": "{colors.gray-50}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-50}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "hovered": {
-          "value": "{colors.gray-100}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-100}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expanded": {
-          "value": "{colors.gray-200}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-200}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expandedHovered": {
-          "value": "{colors.gray-250}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-250}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         }
       },
       "icon": {
         "normal": {
-          "value": "{colors.gray-50}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-50}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "hovered": {
-          "value": "{colors.gray-100}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-100}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expanded": {
-          "value": "{colors.gray-200}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-200}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expandedHovered": {
-          "value": "{colors.gray-250}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-250}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         }
       },
       "background": {
         "normal": {
-          "value": "{colors.gray-850}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-850}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "hovered": {
-          "value": "{colors.gray-800}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-800}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expanded": {
-          "value": "{colors.gray-700}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-700}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "expandedHovered": {
-          "value": "{colors.gray-750}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-750}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         }
@@ -233,18 +233,18 @@
     "options": {
       "background": {
         "normal": {
-          "value": "{colors.gray-800}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-800}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         },
         "hovered": {
-          "value": "{colors.gray-800}",
-          "type": "color",
-          "unit": "hex",
-          "meta": {
+          "$value": "{colors.gray-800}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
             "category": "dropdown"
           }
         }

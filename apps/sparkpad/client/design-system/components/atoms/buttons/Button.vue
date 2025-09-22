@@ -47,7 +47,7 @@ const localIsPressed = ref(false);
 const computedButtonSize: ComputedRef<IconSize> = computed(
   () =>
     tokens.atoms.button[props.variant][props.size].icon.alias.size
-      .value as IconSize
+      .$value as IconSize
 );
 
 const onDown = (e: PointerEvent): void => {

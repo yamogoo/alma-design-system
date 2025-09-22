@@ -1,38 +1,38 @@
 {
   "xxs": {
-    "value": 4,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Extra extra small gap", "category": "spacing" }
+    "$value": 4,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Extra extra small gap", "category": "spacing" }
   },
   "xs": {
-    "value": 10,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Extra small gap", "category": "spacing" }
+    "$value": 10,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Extra small gap", "category": "spacing" }
   },
   "sm": {
-    "value": 12,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Small gap", "category": "spacing" }
+    "$value": 12,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Small gap", "category": "spacing" }
   },
   "md": {
-    "value": 14,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Medium gap", "category": "spacing" }
+    "$value": 14,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Medium gap", "category": "spacing" }
   },
   "lg": {
-    "value": 24,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Large gap", "category": "spacing" }
+    "$value": 24,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Large gap", "category": "spacing" }
   },
   "xl": {
-    "value": 32,
-    "type": "spacing",
-    "unit": "px",
-    "meta": { "description": "Extra large gap", "category": "spacing" }
+    "$value": 32,
+    "$type": "number",
+    "$unit": "px",
+    "$meta": { "description": "Extra large gap", "category": "spacing" }
   }
 }

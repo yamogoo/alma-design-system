@@ -26,6 +26,7 @@ dist-ssr
 *.temp
 *build
 *.cache
+*.figma
 electron
 *storybook.log
 storybook-static

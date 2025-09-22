@@ -2,78 +2,78 @@
   "primary": {
     "track": {
       "normal": {
-        "value": "{colors.gray-725}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-725}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       },
       "disabled": {
-        "value": "{colors.gray-675}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-675}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       },
       "active": {
-        "value": "{colors.gray-725}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-725}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       }
     },
     "knob": {
       "normal": {
-        "value": "{colors.gray-0}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-0}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       },
       "disabled": {
-        "value": "{colors.gray-550}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-550}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       },
       "active": {
-        "value": "{colors.gray-0}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{colors.gray-0}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       }
     },
     "label": {
       "normal": {
-        "value": "{themes.themes.dark.abstracts.label.neutral.primary.value}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{themes.themes.dark.abstracts.label.neutral.primary.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       },
       "disabled": {
-        "value": "{themes.themes.dark.abstracts.label.neutral.disabled.value}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{themes.themes.dark.abstracts.label.neutral.disabled.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       },
       "active": {
-        "value": "{themes.themes.dark.abstracts.label.neutral.primary.value}",
-        "type": "color",
-        "unit": "hex",
-        "meta": {
+        "$value": "{themes.themes.dark.abstracts.label.neutral.primary.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
           "category": "toggle switch"
         }
       }

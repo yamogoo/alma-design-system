@@ -4,70 +4,70 @@
       "self": {
         "background": {
           "normal": {
-            "value": "{colors.gray-800}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{colors.gray-800}",
+            "$type": "color",
+            "$unit": "hex"
           },
           "disabled": {
-            "value": "{colors.gray-950}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{colors.gray-950}",
+            "$type": "color",
+            "$unit": "hex"
           },
           "hovered": {
-            "value": "{colors.gray-900}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{colors.gray-900}",
+            "$type": "color",
+            "$unit": "hex"
           },
           "focused": {
-            "value": "{colors.gray-850}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{colors.gray-850}",
+            "$type": "color",
+            "$unit": "hex"
           },
           "error": {
-            "value": "rgba({colors.red-600}, .2)",
-            "type": "color",
-            "unit": "hex"
+            "$value": "rgba({colors.red-600}, .2)",
+            "$type": "color",
+            "$unit": "hex"
           }
         },
         "border": {
           "normal": {
-            "value": "rgba({themes.themes.dark.abstracts.border.outline.value}, 0)",
-            "type": "color",
-            "unit": "hex"
+            "$value": "rgba({themes.themes.dark.abstracts.border.outline.$value}, 0)",
+            "$type": "color",
+            "$unit": "hex"
           },
           "outline": {
-            "value": "{themes.themes.dark.abstracts.border.outline.value}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
+            "$type": "color",
+            "$unit": "hex"
           }
         }
       },
       "label": {
         "normal": {
-          "value": "{colors.gray-300}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.gray-300}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "disabled": {
-          "value": "{colors.gray-600}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.gray-600}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "hovered": {
-          "value": "{colors.gray-50}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.gray-50}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "focused": {
-          "value": "{colors.gray-50}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.gray-50}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "error": {
-          "value": "{colors.red-350}",
-          "type": "color",
-          "unit": "hex",
-          "description": "placeholder = {themes.themes.light.abstracts.label.error.value}"
+          "$value": "{colors.red-350}",
+          "$type": "color",
+          "$unit": "hex",
+          "description": "placeholder = {themes.themes.light.abstracts.label.error.$value}"
         }
       }
     }
@@ -77,70 +77,70 @@
       "self": {
         "background": {
           "normal": {
-            "value": "{colors.blue-700}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{colors.blue-700}",
+            "$type": "color",
+            "$unit": "hex"
           },
           "disabled": {
-            "value": "{colors.blue-950}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{colors.blue-950}",
+            "$type": "color",
+            "$unit": "hex"
           },
           "hovered": {
-            "value": "{colors.blue-800}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{colors.blue-800}",
+            "$type": "color",
+            "$unit": "hex"
           },
           "focused": {
-            "value": "{colors.blue-850}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{colors.blue-850}",
+            "$type": "color",
+            "$unit": "hex"
           },
           "error": {
-            "value": "rgba({colors.red-600}, .2)",
-            "type": "color",
-            "unit": "hex"
+            "$value": "rgba({colors.red-600}, .2)",
+            "$type": "color",
+            "$unit": "hex"
           }
         },
         "border": {
           "normal": {
-            "value": "rgba({themes.themes.dark.abstracts.border.outline.value}, 0)",
-            "type": "color",
-            "unit": "hex"
+            "$value": "rgba({themes.themes.dark.abstracts.border.outline.$value}, 0)",
+            "$type": "color",
+            "$unit": "hex"
           },
           "outline": {
-            "value": "{themes.themes.dark.abstracts.border.outline.value}",
-            "type": "color",
-            "unit": "hex"
+            "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
+            "$type": "color",
+            "$unit": "hex"
           }
         }
       },
       "label": {
         "normal": {
-          "value": "{colors.blue-300}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-300}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "disabled": {
-          "value": "{colors.blue-600}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-600}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "hovered": {
-          "value": "{colors.blue-50}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-50}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "focused": {
-          "value": "{colors.blue-50}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-50}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "error": {
-          "value": "{colors.blue-350}",
-          "type": "color",
-          "unit": "hex",
-          "description": "placeholder = {themes.themes.light.abstracts.label.error.value}"
+          "$value": "{colors.blue-350}",
+          "$type": "color",
+          "$unit": "hex",
+          "description": "placeholder = {themes.themes.light.abstracts.label.error.$value}"
         }
       }
     }

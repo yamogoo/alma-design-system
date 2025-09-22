@@ -16,24 +16,24 @@ export const useLayoutStore = defineStore("layout-store", () => {
   };
 
   const layoutType = computed(() => {
-    if (appSize.value.width < tokens.breakpoints.md.value) return "mobile";
+    if (appSize.value.width < tokens.breakpoints.md.$value) return "mobile";
 
     return "desktop";
   });
 
   const isDesktopLayout = computed(() => {
-    return appSize.value.width >= tokens.breakpoints.lg.value;
+    return appSize.value.width >= tokens.breakpoints.lg.$value;
   });
 
   const isTabletLayout = computed(() => {
     return (
-      appSize.value.width >= tokens.breakpoints.md.value &&
-      appSize.value.width < tokens.breakpoints.lg.value
+      appSize.value.width >= tokens.breakpoints.md.$value &&
+      appSize.value.width < tokens.breakpoints.lg.$value
     );
   });
 
   const isMobileLayout = computed(() => {
-    return appSize.value.width < tokens.breakpoints.md.value;
+    return appSize.value.width < tokens.breakpoints.md.$value;
   });
 
   return {

@@ -3,74 +3,74 @@
     "self": {
       "background": {
         "normal": {
-          "value": "{colors.blue-500}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-500}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "disabled": {
-          "value": "rgba({colors.blue-500}, .5)",
-          "type": "color",
-          "unit": "hex"
+          "$value": "rgba({colors.blue-500}, .5)",
+          "$type": "color",
+          "$unit": "hex"
         },
         "hovered": {
-          "value": "{colors.blue-600}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-600}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "pressed": {
-          "value": "{colors.blue-700}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-700}",
+          "$type": "color",
+          "$unit": "hex"
         }
       },
       "border": {
         "normal": {
-          "value": "{themes.themes.dark.atoms.button.accent.primary.self.background.normal.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.dark.atoms.button.accent.primary.self.background.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "disabled": {
-          "value": "rgba({themes.themes.dark.atoms.button.accent.primary.self.background.disabled.value}, 0)",
-          "type": "color",
-          "unit": "hex"
+          "$value": "rgba({themes.themes.dark.atoms.button.accent.primary.self.background.disabled.$value}, 0)",
+          "$type": "color",
+          "$unit": "hex"
         },
         "hovered": {
-          "value": "{themes.themes.dark.atoms.button.accent.primary.self.background.hovered.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.dark.atoms.button.accent.primary.self.background.hovered.$value}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "pressed": {
-          "value": "{themes.themes.dark.atoms.button.accent.primary.self.background.pressed.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.dark.atoms.button.accent.primary.self.background.pressed.$value}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "outline": {
-          "value": "{themes.themes.dark.abstracts.border.outline.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
     "label": {
       "normal": {
-        "value": "{colors.blue-50}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-50}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "disabled": {
-        "value": "{colors.blue-200}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-200}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "hovered": {
-        "value": "{colors.blue-100}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-100}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "pressed": {
-        "value": "{colors.blue-150}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-150}",
+        "$type": "color",
+        "$unit": "hex"
       }
     }
   },
@@ -78,64 +78,64 @@
     "self": {
       "background": {
         "normal": {
-          "value": "{colors.blue-100}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-100}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "disabled": {
-          "value": "rgba({colors.blue-100}, .5)",
-          "type": "color",
-          "unit": "hex"
+          "$value": "rgba({colors.blue-100}, .5)",
+          "$type": "color",
+          "$unit": "hex"
         },
         "hovered": {
-          "value": "{colors.blue-200}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-200}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "pressed": {
-          "value": "{colors.blue-250}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-250}",
+          "$type": "color",
+          "$unit": "hex"
         }
       },
       "border": {
         "normal": {
-          "value": "{themes.themes.dark.atoms.button.accent.secondary.self.background.normal.value}"
+          "$value": "{themes.themes.dark.atoms.button.accent.secondary.self.background.normal.$value}"
         },
         "disabled": {
-          "value": "{themes.themes.dark.atoms.button.accent.secondary.self.background.disabled.value}"
+          "$value": "{themes.themes.dark.atoms.button.accent.secondary.self.background.disabled.$value}"
         },
         "hovered": {
-          "value": "{themes.themes.dark.atoms.button.accent.secondary.self.background.hovered.value}"
+          "$value": "{themes.themes.dark.atoms.button.accent.secondary.self.background.hovered.$value}"
         },
         "pressed": {
-          "value": "{themes.themes.dark.atoms.button.accent.secondary.self.background.pressed.value}"
+          "$value": "{themes.themes.dark.atoms.button.accent.secondary.self.background.pressed.$value}"
         },
         "outline": {
-          "value": "{themes.themes.dark.abstracts.border.outline.value}"
+          "$value": "{themes.themes.dark.abstracts.border.outline.$value}"
         }
       }
     },
     "label": {
       "normal": {
-        "value": "{colors.blue-900}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-900}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "disabled": {
-        "value": "{colors.blue-400}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-400}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "hovered": {
-        "value": "{colors.blue-950}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-950}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "pressed": {
-        "value": "{colors.blue-950}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-950}",
+        "$type": "color",
+        "$unit": "hex"
       }
     }
   },
@@ -143,64 +143,64 @@
     "self": {
       "background": {
         "normal": {
-          "value": "{colors.blue-750}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-750}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "disabled": {
-          "value": "rgba({colors.blue-750}, .5)",
-          "type": "color",
-          "unit": "hex"
+          "$value": "rgba({colors.blue-750}, .5)",
+          "$type": "color",
+          "$unit": "hex"
         },
         "hovered": {
-          "value": "{colors.blue-850}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-850}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "pressed": {
-          "value": "{colors.blue-900}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{colors.blue-900}",
+          "$type": "color",
+          "$unit": "hex"
         }
       },
       "border": {
         "normal": {
-          "value": "{themes.themes.dark.atoms.button.accent.tertiary.self.background.normal.value}"
+          "$value": "{themes.themes.dark.atoms.button.accent.tertiary.self.background.normal.$value}"
         },
         "disabled": {
-          "value": "{themes.themes.dark.atoms.button.accent.tertiary.self.background.disabled.value}"
+          "$value": "{themes.themes.dark.atoms.button.accent.tertiary.self.background.disabled.$value}"
         },
         "hovered": {
-          "value": "{themes.themes.dark.atoms.button.accent.tertiary.self.background.hovered.value}"
+          "$value": "{themes.themes.dark.atoms.button.accent.tertiary.self.background.hovered.$value}"
         },
         "pressed": {
-          "value": "{themes.themes.dark.atoms.button.accent.tertiary.self.background.pressed.value}"
+          "$value": "{themes.themes.dark.atoms.button.accent.tertiary.self.background.pressed.$value}"
         },
         "outline": {
-          "value": "{themes.themes.dark.abstracts.border.outline.value}"
+          "$value": "{themes.themes.dark.abstracts.border.outline.$value}"
         }
       }
     },
     "label": {
       "normal": {
-        "value": "{colors.blue-50}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-50}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "disabled": {
-        "value": "{colors.blue-150}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-150}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "hovered": {
-        "value": "{colors.blue-100}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-100}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "pressed": {
-        "value": "{colors.blue-150}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-150}",
+        "$type": "color",
+        "$unit": "hex"
       }
     }
   },
@@ -208,74 +208,74 @@
     "self": {
       "background": {
         "normal": {
-          "value": "rgba({colors.gray-75}, 0)",
-          "type": "color",
-          "unit": "hex"
+          "$value": "rgba({colors.gray-75}, 0)",
+          "$type": "color",
+          "$unit": "hex"
         },
         "disabled": {
-          "value": "rgba({colors.gray-75}, 0)",
-          "type": "color",
-          "unit": "hex"
+          "$value": "rgba({colors.gray-75}, 0)",
+          "$type": "color",
+          "$unit": "hex"
         },
         "hovered": {
-          "value": "rgba({colors.gray-100}, 0)",
-          "type": "color",
-          "unit": "hex"
+          "$value": "rgba({colors.gray-100}, 0)",
+          "$type": "color",
+          "$unit": "hex"
         },
         "pressed": {
-          "value": "rgba({colors.gray-150}, 0)",
-          "type": "color",
-          "unit": "hex"
+          "$value": "rgba({colors.gray-150}, 0)",
+          "$type": "color",
+          "$unit": "hex"
         }
       },
       "border": {
         "normal": {
-          "value": "{themes.themes.dark.atoms.button.accent.outline.label.normal.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.dark.atoms.button.accent.outline.label.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "disabled": {
-          "value": "{themes.themes.dark.atoms.button.accent.outline.label.disabled.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.dark.atoms.button.accent.outline.label.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "hovered": {
-          "value": "{themes.themes.dark.atoms.button.accent.outline.label.hovered.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.dark.atoms.button.accent.outline.label.hovered.$value}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "pressed": {
-          "value": "{themes.themes.dark.atoms.button.accent.outline.label.pressed.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.dark.atoms.button.accent.outline.label.pressed.$value}",
+          "$type": "color",
+          "$unit": "hex"
         },
         "outline": {
-          "value": "{themes.themes.light.abstracts.border.outline.value}",
-          "type": "color",
-          "unit": "hex"
+          "$value": "{themes.themes.light.abstracts.border.outline.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
     "label": {
       "normal": {
-        "value": "{colors.blue-400}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-400}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "disabled": {
-        "value": "{colors.blue-250}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-250}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "hovered": {
-        "value": "{colors.blue-300}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-300}",
+        "$type": "color",
+        "$unit": "hex"
       },
       "pressed": {
-        "value": "{colors.blue-250}",
-        "type": "color",
-        "unit": "hex"
+        "$value": "{colors.blue-250}",
+        "$type": "color",
+        "$unit": "hex"
       }
     }
   }

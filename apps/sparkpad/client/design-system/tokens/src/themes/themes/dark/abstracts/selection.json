@@ -1,14 +1,14 @@
 {
   "default": {
     "label": {
-      "value": "{colors.gray-50}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.gray-50}",
+      "$type": "color",
+      "$unit": "hex"
     },
     "background": {
-      "value": "{colors.yellow-700}",
-      "type": "color",
-      "unit": "hex"
+      "$value": "{colors.yellow-700}",
+      "$type": "color",
+      "$unit": "hex"
     }
   }
 }

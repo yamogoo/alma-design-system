@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<PageProps>(), {
   transitionInType: "fade",
   transitionOutType: "fade",
   tone: "primary",
-  orientation: "horizontal",
+  orientation: "vertical",
 });
 
 const emit = defineEmits<{
