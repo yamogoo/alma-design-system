@@ -12,13 +12,13 @@ import {
 
 import { useMeta, useTheme, useConnection } from "@/composables/global";
 
-import { AUTHOR } from "@@/constants";
+import { Constants } from "@@/constants";
 
 const { $t } = storeToRefs(useLocaleStore());
 
 useTitle($t.value.about.title);
 useMeta("description", $t.value.about.description);
-useMeta("author", AUTHOR);
+useMeta("author", Constants.APP_AUTHOR_NAME);
 useTheme("light", {
   selector: "html",
 });

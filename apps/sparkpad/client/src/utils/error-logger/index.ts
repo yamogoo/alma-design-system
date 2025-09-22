@@ -38,7 +38,8 @@ const STORE = localforage.createInstance({
 });
 
 const CONFIG = {
-  ENDPOINT: import.meta.env.VITE_LOG_ENDPOINT || "http://localhost:5043/api/logs",
+  ENDPOINT:
+    import.meta.env.VITE_LOG_ENDPOINT || "http://localhost:5043/api/logs",
   BATCH_SIZE: Number(import.meta.env.VITE_LOG_BATCH_SIZE || 20),
   MAX_RETRY: Number(import.meta.env.VITE_LOG_MAX_RETRY || 5),
   SAMPLE_DEFAULT: Number(import.meta.env.VITE_LOG_SAMPLE_DEFAULT ?? 1),
@@ -143,7 +144,6 @@ export async function logError(
     extra?: Record<string, any>;
   }
 ) {
-  
   const severity = options?.severity ?? "error";
   if (!shouldSample(severity)) return;
 
@@ -157,7 +157,6 @@ export async function logError(
   )
     return;
 
-    
   const item: QueueItem = {
     log: base,
     retries: 0,

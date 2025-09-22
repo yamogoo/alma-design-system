@@ -9,6 +9,8 @@ import {
   onUnmounted,
 } from "vue";
 
+import { Constants } from "@/constants";
+
 import type { Theme, SystemTheme, LocalStorageKey } from "@/typings";
 
 import { useTypedLocalStorage } from "@/composables/local";
@@ -19,10 +21,6 @@ export interface UseThemeOptions {
   key?: LocalStorageKey;
   systemKey?: LocalStorageKey;
 }
-
-export const DEFAULT_IS_SYSTEM_THEME_ENABLED = Boolean(
-  import.meta.env.IS_SYSTEM_THEME_ENABLE
-);
 
 export const useTheme = (
   init: MaybeRefOrGetter<Theme>,
@@ -40,7 +38,7 @@ export const useTheme = (
   const localSystemTheme: Ref<SystemTheme> = ref(localTheme.value);
   const isSystemThemeEnabled = useTypedLocalStorage(
     systemKey,
-    DEFAULT_IS_SYSTEM_THEME_ENABLED
+    Constants.APP_IS_SYSTEM_THEME_ENABLE
   );
 
   const theme = computed({

@@ -3,7 +3,7 @@ import { storeToRefs } from "pinia";
 
 import { useLocaleStore } from "@@/stores";
 
-import { LOCALE_KEYS } from "@@/constants";
+import { Constants } from "@@/constants";
 import type { Locale } from "@@/typings";
 
 import { Dropdown } from "@/components/molecules";
@@ -30,7 +30,7 @@ const onSelectKey = (key: Locale) => {
       :size="'md'"
       :mode="'primary'"
       :value="currentLocale"
-      :items="LOCALE_KEYS"
+      :items="Constants.LOCALE_KEYS"
       @select="onSelectKey"
     >
       <template #default="{ value }">

@@ -2,13 +2,13 @@
 import { nextTick, ref, useTemplateRef, watch } from "vue";
 import gsap from "gsap";
 
-import { OVERLAY_IDS } from "@/constants";
+import { Constants } from "@/constants";
 
 import type { ActionSheetProps } from "@/components/atoms";
 
 const props = withDefaults(defineProps<ActionSheetProps>(), {
   variant: "default",
-  containerId: OVERLAY_IDS.MAIN,
+  containerId: Constants.OVERLAY_IDS.MAIN,
   size: "md",
 });
 

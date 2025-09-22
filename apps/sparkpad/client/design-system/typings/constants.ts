@@ -1,3 +1,4 @@
-import type { OVERLAY_IDS } from "@/constants";
+import type { Constants } from "@/constants";
 
-export type OverlayId = (typeof OVERLAY_IDS)[keyof typeof OVERLAY_IDS];
+export type OverlayId =
+  (typeof Constants.OVERLAY_IDS)[keyof typeof Constants.OVERLAY_IDS];
