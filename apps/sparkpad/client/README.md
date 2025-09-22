@@ -41,6 +41,16 @@ Fonts are included for offline-first usage and can be later replaced with CDN-ho
 
 > AlmaProtoKit includes a structured token system with support for JSON, YAML, and TypeScript. Tokens are organized under `tokens/src` (source), `tokens/build` (runtime output), and `tokens/structure.md`.
 
+**Figma Integration**
+
+AlmaProtoKit now includes **full support for exporting tokens to Figma**.  
+The pipeline allows developers to work in a **code-driven system first**, ensuring tokens remain the single source of truth.
+
+- Forward flow (Code → Figma) is fully supported and integrated into the token pipeline.
+- Backward flow (Figma → Code) is technically possible for compatibility, but not recommended — since AlmaProtoKit is inherently **code-driven**, maintaining tokens directly in code is the primary workflow.
+
+This ensures teams can experiment with tokens in code while still syncing them into Figma for design collaboration, without creating a fragmented workflow.
+
 ## 💻 Demo
 
 > For details on project structure and module definitions, see [MANIFEST.md](./design-system/MANIFEST.md) and [MANIFEST.yaml](./design-system/MANIFEST.yaml).
