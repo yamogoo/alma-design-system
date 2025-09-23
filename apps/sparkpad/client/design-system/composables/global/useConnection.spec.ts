@@ -5,7 +5,7 @@ import { useConnection } from "./useConnection";
 
 const setIsConnected = vi.fn();
 
-vi.mock("@@/stores", () => ({
+vi.mock("@/stores", () => ({
   useConnectionStore: vi.fn(() => ({ setIsConnected })),
 }));
 

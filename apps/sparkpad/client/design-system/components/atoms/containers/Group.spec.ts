@@ -22,7 +22,7 @@ describe("Group", () => {
       const props: GroupProps = {
         variant: "default",
         size: "md",
-        mode: "primary",
+        mode: "neutral",
         direction: "forward",
         orientation: "horizontal",
         verticalAlignment: "center",
