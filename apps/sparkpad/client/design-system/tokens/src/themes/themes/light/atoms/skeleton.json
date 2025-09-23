@@ -1,19 +1,21 @@
 {
-  "default": {
-    "colorIn": {
-      "$value": "rgba({themes.themes.light.abstracts.label.neutral.disabled.$value}, 0.25)",
-      "$type": "color",
-      "$unit": "hex",
-      "$meta": {
-        "category": "sheet"
-      }
-    },
-    "colorOut": {
-      "$value": "rgba({themes.themes.light.abstracts.label.neutral.disabled.$value}, 0)",
-      "$type": "color",
-      "$unit": "hex",
-      "$meta": {
-        "category": "sheet"
+  "neutral": {
+    "primary": {
+      "backgroundIn": {
+        "$value": "rgba({themes.themes.light.abstracts.label.neutral.disabled.$value}, 0.25)",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "sheet"
+        }
+      },
+      "backgroundOut": {
+        "$value": "rgba({themes.themes.light.abstracts.label.neutral.disabled.$value}, 0)",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "sheet"
+        }
       }
     }
   }

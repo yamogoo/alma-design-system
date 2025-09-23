@@ -33,23 +33,51 @@ const meta = {
     },
   },
   argTypes: {
-    variant: enumOptions(buttonVariants),
-    size: enumOptions(buttonSizes),
-    mode: enumOptions(buttonModes),
-    tone: enumOptions(buttonTones),
-    contentDirection: enumOptions(["ltr", "rtl"]),
-    prependIconName: enumOptions(iconNames),
-    prependIconStyle: enumOptions(iconStyles),
-    prependIconWeight: enumOptions(iconWeights),
-    appendIconName: enumOptions(iconNames),
-    appendIconStyle: enumOptions(iconStyles),
-    appendIconWeight: enumOptions(iconWeights),
-    scalePressed: {
-      control: "number",
+    variant: {
+      ...enumOptions(buttonVariants),
+      table: { category: "Appearance" },
+      description: "Visual style",
     },
+    size: {
+      ...enumOptions(buttonSizes),
+      table: { category: "Sizing" },
+      description: "Control size",
+    },
+    mode: { ...enumOptions(buttonModes), table: { category: "Theme" } },
+    tone: { ...enumOptions(buttonTones), table: { category: "Theme" } },
     stretch: {
       control: "select",
       options: ["fill", "auto"],
+      table: { category: "Layout" },
+    },
+    contentDirection: {
+      control: "radio",
+      options: ["ltr", "rtl"],
+      table: { category: "I18n" },
+    },
+    prependIconName: {
+      ...enumOptions(iconNames),
+      table: { category: "Icons" },
+    },
+    prependIconStyle: {
+      ...enumOptions(iconStyles),
+      table: { category: "Icons" },
+    },
+    prependIconWeight: {
+      ...enumOptions(iconWeights),
+      table: { category: "Icons" },
+    },
+    appendIconName: { ...enumOptions(iconNames), table: { category: "Icons" } },
+    appendIconStyle: {
+      ...enumOptions(iconStyles),
+      table: { category: "Icons" },
+    },
+    appendIconWeight: {
+      ...enumOptions(iconWeights),
+      table: { category: "Icons" },
+    },
+    scalePressed: {
+      control: "number",
     },
   },
   args: {

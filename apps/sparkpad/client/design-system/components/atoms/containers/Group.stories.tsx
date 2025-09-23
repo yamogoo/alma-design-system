@@ -22,6 +22,8 @@ const meta = {
       description: {
         component:
           "Groups are the primary positioning containers that organize and align multiple components within a layout.",
+        story:
+          "Interactive playground to explore orientation, size, and color tokens.",
       },
     },
   },
@@ -39,27 +41,29 @@ const meta = {
     wrap: booleanOptions(false),
     divider: booleanOptions(false),
     gapX: {
-      type: "string",
+      control: "text",
+      table: { category: "Layout" },
+      description: "Horizontal gap (e.g. 8px, 0.5rem, var(--space-sm))",
     },
     gapY: {
-      type: "string",
+      control: "text",
+      table: { category: "Layout" },
+      description: "Vertical gap",
     },
   },
   args: {
     size: "md",
     mode: "neutral",
     tone: "primary",
+    role: "group",
+    ariaLabel: "Example group",
   },
 } satisfies Meta<typeof Group>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-let buttons = [];
-
-for (let i = 1; i <= 10; i++) {
-  buttons.push(`Button ${i}`);
-}
+const BUTTONS = Array.from({ length: 10 }, (_, i) => `Button ${i + 1}`);
 
 export const Playground: Story = {
   args: {
@@ -71,7 +75,7 @@ export const Playground: Story = {
         <>
           <StoryGrid columns={1}>
             <Group {...args}>
-              {buttons.slice(0, 3).map((label) => (
+              {BUTTONS.slice(0, 3).map((label) => (
                 <Button
                   key={label}
                   size={"md"}
@@ -95,8 +99,8 @@ export const Orientation: Story = {
       return () => (
         <>
           <PageHeader
-            title={"Group orientations"}
-            description={"Demonstrates orientations of the group"}
+            title="Group orientations"
+            description="Demonstrates orientations of the group"
           ></PageHeader>
           <StoryGrid columns={1}>
             {UIElementOrientations.map((orientation) => (
@@ -107,7 +111,7 @@ export const Orientation: Story = {
                 orientation={"vertical"}
               >
                 <Group {...args} orientation={orientation}>
-                  {buttons.slice(0, 3).map((label) => (
+                  {BUTTONS.slice(0, 3).map((label) => (
                     <Button
                       key={label}
                       size={"md"}
@@ -150,7 +154,7 @@ export const Size: Story = {
                   orientation={"vertical"}
                 >
                   <Group {...args} variant={variant} size={size}>
-                    {buttons.slice(0, 3).map((label) => (
+                    {BUTTONS.slice(0, 3).map((label) => (
                       <Button
                         key={label}
                         size={size}
@@ -192,7 +196,7 @@ export const Color: Story = {
                   orientation={"vertical"}
                 >
                   <Group {...args} mode={mode} tone={tone}>
-                    {buttons.slice(0, 3).map((label) => (
+                    {BUTTONS.slice(0, 3).map((label) => (
                       <Button
                         key={label}
                         size={"md"}
@@ -233,7 +237,7 @@ export const Stretch: Story = {
                 orientation={"vertical"}
               >
                 <Group {...args} stretch={stretch}>
-                  {buttons.slice(0, 3).map((label) => (
+                  {BUTTONS.slice(0, 3).map((label) => (
                     <Button
                       key={label}
                       size={"md"}

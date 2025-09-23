@@ -1,0 +1,118 @@
+{
+  "default": {
+    "md": {
+      "root": {
+        "width": {
+          "$value": 100,
+          "$type": "number",
+          "$unit": "%",
+          "$meta": {
+            "category": "skeleton"
+          }
+        },
+        "height": {
+          "$value": 100,
+          "$type": "number",
+          "$unit": "%",
+          "$meta": {
+            "category": "skeleton"
+          }
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.sm.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "skeleton"
+          }
+        }
+      }
+    },
+    "sm": {
+      "root": {
+        "width": {
+          "$value": 100,
+          "$type": "number",
+          "$unit": "%",
+          "$meta": {
+            "category": "skeleton"
+          }
+        },
+        "height": {
+          "$value": 100,
+          "$type": "number",
+          "$unit": "%",
+          "$meta": {
+            "category": "skeleton"
+          }
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.xs.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "skeleton"
+          }
+        }
+      }
+    }
+  },
+  "rounded": {
+    "md": {
+      "root": {
+        "width": {
+          "$value": "{components.atoms.icon.default.xl.root.size.$value}",
+          "$type": "number",
+          "$unit": "%",
+          "$meta": {
+            "category": "skeleton"
+          }
+        },
+        "height": {
+          "$value": "{components.atoms.icon.default.xl.root.size.$value}",
+          "$type": "number",
+          "$unit": "%",
+          "$meta": {
+            "category": "skeleton"
+          }
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.infinity.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "skeleton"
+          }
+        }
+      }
+    },
+    "sm": {
+      "root": {
+        "width": {
+          "$value": "{components.atoms.icon.default.lg.root.size.$value}",
+          "$type": "number",
+          "$unit": "%",
+          "$meta": {
+            "category": "skeleton"
+          }
+        },
+        "height": {
+          "$value": "{components.atoms.icon.default.lg.root.size.$value}",
+          "$type": "number",
+          "$unit": "%",
+          "$meta": {
+            "category": "skeleton"
+          }
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.infinity.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "skeleton"
+          }
+        }
+      }
+    }
+  }
+}
