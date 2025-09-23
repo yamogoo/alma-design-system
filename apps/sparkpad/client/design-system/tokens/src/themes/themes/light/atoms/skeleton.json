@@ -18,5 +18,25 @@
         }
       }
     }
+  },
+  "accent": {
+    "primary": {
+      "backgroundIn": {
+        "$value": "rgba({themes.themes.light.abstracts.label.accent.primary.$value}, 0.25)",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "sheet"
+        }
+      },
+      "backgroundOut": {
+        "$value": "rgba({themes.themes.light.abstracts.label.accent.primary.$value}, 0)",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "sheet"
+        }
+      }
+    }
   }
 }

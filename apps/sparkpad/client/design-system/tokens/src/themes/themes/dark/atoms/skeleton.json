@@ -19,5 +19,26 @@
         }
       }
     }
+  },
+  "accent": {
+    "primary": {
+      "backgroundIn": {
+        "$value": "rgba({themes.themes.dark.abstracts.label.accent.primary.$value}, 0.25)",
+        "type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "skeleton"
+        }
+      },
+      "backgroundOut": {
+        "$value": "rgba({themes.themes.dark.abstracts.label.accent.primary.$value}, 0)",
+        "$type": "color",
+        "type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "skeleton"
+        }
+      }
+    }
   }
 }

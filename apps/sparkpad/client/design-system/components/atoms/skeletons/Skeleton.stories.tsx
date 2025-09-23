@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-// import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
-
 import {
   skeletonModes,
   skeletonSizes,
@@ -16,6 +14,7 @@ import { Skeleton, type SkeletonProps } from "@/components/atoms";
 
 const meta = {
   title: "Atoms/Skeletons/Skeleton",
+  tags: ["autodocs"],
   argTypes: {
     variant: {
       ...enumOptions(skeletonVariants),
@@ -75,6 +74,44 @@ export const Size: Story = {
                     {...args}
                     variant={variant}
                     size={size}
+                    style={{ height: "64px" }}
+                  ></Skeleton>
+                </InfoBlock>
+              ))
+            )}
+          </StoryGrid>
+        </>
+      );
+    },
+  }),
+};
+
+export const Color: Story = {
+  args: {
+    variant: "rounded",
+    size: "md",
+  },
+  render: (args: SkeletonProps) => ({
+    setup() {
+      return () => (
+        <>
+          <PageHeader
+            title={"Skeleton size"}
+            description={"Demonstrates mode and tone"}
+          ></PageHeader>
+          <StoryGrid columns={1}>
+            {skeletonModes.map((mode) =>
+              skeletonTones.map((tone) => (
+                <InfoBlock
+                  key={`${mode}${tone}`}
+                  title={`${mode} / ${tone}`}
+                  align={"center"}
+                  orientation={"vertical"}
+                >
+                  <Skeleton
+                    {...args}
+                    mode={mode}
+                    tone={tone}
                     style={{ height: "64px" }}
                   ></Skeleton>
                 </InfoBlock>
