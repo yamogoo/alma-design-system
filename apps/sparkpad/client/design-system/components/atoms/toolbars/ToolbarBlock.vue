@@ -6,7 +6,8 @@ import { Group } from "@/components/atoms";
 const props = withDefaults(defineProps<ToolbarBlockProps>(), {
   variant: "block",
   size: "md",
-  mode: "primary",
+  mode: "neutral",
+  tone: "primary",
 });
 </script>
 

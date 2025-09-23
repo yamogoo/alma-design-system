@@ -1,38 +1,70 @@
 {
-  "primary": {
-    "$value": "{colors.gray-850}",
-    "$type": "color",
-    "$unit": "hex",
-    "$meta": {
-      "category": "border",
-      "description": "Default border color"
+  "neutral": {
+    "primary": {
+      "$value": "{colors.gray-850}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "secondary": {
+      "$value": "{colors.gray-750}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "tertiary": {
+      "$value": "{colors.gray-200}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "outline": {
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
     }
   },
-  "secondary": {
-    "$value": "{colors.gray-750}",
-    "$type": "color",
-    "$unit": "hex",
-    "$meta": {
-      "category": "border",
-      "description": "Secondary border color, used for subtle dividers"
-    }
-  },
-  "strong": {
-    "$value": "{colors.gray-200}",
-    "$type": "color",
-    "$unit": "hex",
-    "$meta": {
-      "category": "border",
-      "description": "Strong border color, used for emphasis and contrast"
-    }
-  },
-  "outline": {
-    "$value": "{colors.blue-500}",
-    "$type": "color",
-    "$unit": "hex",
-    "$meta": {
-      "category": "border",
-      "description": "Outline border color, used for focus states and accentuated elements"
+  "accent": {
+    "primary": {
+      "$value": "{colors.blue-850}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "secondary": {
+      "$value": "{colors.blue-750}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "tertiary": {
+      "$value": "{colors.blue-200}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "outline": {
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
     }
   }
 }

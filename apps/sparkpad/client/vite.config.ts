@@ -18,7 +18,7 @@ import {
   VitePluginTokenLinter,
   JSONBuilderPlugin,
   VitePluginFigmaTokensParser,
-} from "tokens-worker";
+} from "@alma/tokens-worker";
 
 import VueRouterPlugin from "unplugin-vue-router/vite";
 

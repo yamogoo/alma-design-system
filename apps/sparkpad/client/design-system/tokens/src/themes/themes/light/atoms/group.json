@@ -1,60 +1,123 @@
 {
-  "primary": {
-    "root": {
-      "background": {
-        "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "group"
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "divider": {
+          "$value": "{themes.themes.light.atoms.divider.neutral.primary.root.border.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
         }
-      },
-      "divider": {
-        "$value": "{themes.themes.light.atoms.divider.neutral.primary.root.border.$value}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "group"
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.secondary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "divider": {
+          "$value": "{themes.themes.light.atoms.divider.neutral.secondary.root.border.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "ghost": {
+      "root": {
+        "background": {
+          "$value": "rgba({colors.gray-0}, 0)",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "divider": {
+          "$value": "{themes.themes.light.atoms.divider.neutral.secondary.root.border.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
         }
       }
     }
   },
-  "secondary": {
-    "root": {
-      "background": {
-        "$value": "{themes.themes.light.abstracts.surface.neutral.secondary.$value}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "group"
-        }
-      },
-      "divider": {
-        "$value": "{themes.themes.light.atoms.divider.neutral.secondary.root.border.$value}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "group"
+  "accent": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "divider": {
+          "$value": "{themes.themes.light.abstracts.border.accent.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
         }
       }
-    }
-  },
-  "ghost": {
-    "root": {
-      "background": {
-        "$value": "rgba({colors.gray-0}, 0)",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "group"
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.accent.secondary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "divider": {
+          "$value": "{themes.themes.light.abstracts.border.accent.secondary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
         }
-      },
-      "divider": {
-        "$value": "{themes.themes.light.atoms.divider.neutral.secondary.root.border.$value}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "group"
+      }
+    },
+    "ghost": {
+      "root": {
+        "background": {
+          "$value": "rgba({themes.themes.light.abstracts.surface.accent.primary.$value}, 0)",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "divider": {
+          "$value": "{themes.themes.light.atoms.divider.neutral.secondary.root.border.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
         }
       }
     }

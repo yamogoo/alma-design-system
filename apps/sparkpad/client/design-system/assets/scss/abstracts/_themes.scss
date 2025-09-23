@@ -5,10 +5,18 @@ $themes:(
   dark: (
   abstracts: (
   border: (
+  neutral: (
   primary: #242b31,
   secondary: #39444c,
-  strong: #c0c9d0,
+  tertiary: #c0c9d0,
   outline: #013cfe
+),
+  accent: (
+  primary: #001455,
+  secondary: #011f85,
+  tertiary: #92abff,
+  outline: #013cfe
+)
 ),
   label: (
   neutral: (
@@ -554,6 +562,7 @@ $themes:(
 )
 ),
   group: (
+  neutral: (
   primary: (
   root: (
   background: #101315,
@@ -570,6 +579,27 @@ $themes:(
   root: (
   background: #05060700,
   divider: #39444c
+)
+)
+),
+  accent: (
+  primary: (
+  root: (
+  background: #013cfe,
+  divider: #001455
+)
+),
+  secondary: (
+  root: (
+  background: #0130ce,
+  divider: #011f85
+)
+),
+  ghost: (
+  root: (
+  background: #013cfe00,
+  divider: #39444c
+)
 )
 )
 ),
@@ -930,10 +960,18 @@ $themes:(
   light: (
   abstracts: (
   border: (
+  neutral: (
   primary: #d5dbe0,
   secondary: #c7cfd5,
   strong: #2f383f,
   outline: #013cfe
+),
+  accent: (
+  primary: #b6c7ff,
+  secondary: #9eb5ff,
+  strong: #001a6d,
+  outline: #013cfe
+)
 ),
   label: (
   neutral: (
@@ -1479,6 +1517,7 @@ $themes:(
 )
 ),
   group: (
+  neutral: (
   primary: (
   root: (
   background: #f8f9fa,
@@ -1495,6 +1534,27 @@ $themes:(
   root: (
   background: #f8f9fa00,
   divider: #c7cfd5
+)
+)
+),
+  accent: (
+  primary: (
+  root: (
+  background: #013cfe,
+  divider: #b6c7ff
+)
+),
+  secondary: (
+  root: (
+  background: #0130ce,
+  divider: #9eb5ff
+)
+),
+  ghost: (
+  root: (
+  background: #013cfe00,
+  divider: #c7cfd5
+)
 )
 )
 ),

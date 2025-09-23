@@ -67,6 +67,14 @@ export type UIElementHeaderTag = "div" | "header" | "section";
 
 export type UIElementFooterTag = "div" | "footer" | "section";
 
+export const UIElementBlockTags = [
+  "div",
+  "header",
+  "footer",
+  "section",
+] as const;
+export type UIElementBlockTag = (typeof UIElementBlockTags)[number];
+
 export type UIElementTypographyTag =
   | UIElementTypographyTitleTag
   | UIElementTypographyParagraphTag

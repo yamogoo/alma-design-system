@@ -31,12 +31,12 @@
         },
         "border": {
           "normal": {
-            "$value": "rgba({themes.themes.dark.abstracts.border.outline.$value}, 0)",
+            "$value": "rgba({themes.themes.dark.abstracts.border.neutral.outline.$value}, 0)",
             "$type": "color",
             "$unit": "hex"
           },
           "outline": {
-            "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
+            "$value": "{themes.themes.dark.abstracts.border.neutral.outline.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -104,12 +104,12 @@
         },
         "border": {
           "normal": {
-            "$value": "rgba({themes.themes.dark.abstracts.border.outline.$value}, 0)",
+            "$value": "rgba({themes.themes.dark.abstracts.border.neutral.outline.$value}, 0)",
             "$type": "color",
             "$unit": "hex"
           },
           "outline": {
-            "$value": "{themes.themes.dark.abstracts.border.outline.$value}",
+            "$value": "{themes.themes.dark.abstracts.border.neutral.outline.$value}",
             "$type": "color",
             "$unit": "hex"
           }

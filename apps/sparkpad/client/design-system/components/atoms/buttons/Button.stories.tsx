@@ -33,10 +33,10 @@ const meta = {
     },
   },
   argTypes: {
+    variant: enumOptions(buttonVariants),
     size: enumOptions(buttonSizes),
     mode: enumOptions(buttonModes),
     tone: enumOptions(buttonTones),
-    variant: enumOptions(buttonVariants),
     contentDirection: enumOptions(["ltr", "rtl"]),
     prependIconName: enumOptions(iconNames),
     prependIconStyle: enumOptions(iconStyles),

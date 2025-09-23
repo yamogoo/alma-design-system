@@ -3,7 +3,7 @@
     "primary": {
       "root": {
         "border": {
-          "$value": "{themes.themes.light.abstracts.border.primary.$value}",
+          "$value": "{themes.themes.light.abstracts.border.neutral.primary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -16,7 +16,7 @@
     "secondary": {
       "root": {
         "border": {
-          "$value": "{themes.themes.light.abstracts.border.secondary.$value}",
+          "$value": "{themes.themes.light.abstracts.border.neutral.secondary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {

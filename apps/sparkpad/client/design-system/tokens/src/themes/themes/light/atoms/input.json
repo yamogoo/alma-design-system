@@ -46,7 +46,7 @@
         },
         "border": {
           "normal": {
-            "$value": "rgba({themes.themes.light.abstracts.border.outline.$value}, 0)",
+            "$value": "rgba({themes.themes.light.abstracts.border.neutral.outline.$value}, 0)",
             "$type": "color",
             "$unit": "hex",
             "$meta": {
@@ -54,7 +54,7 @@
             }
           },
           "outline": {
-            "$value": "{themes.themes.light.abstracts.border.outline.$value}",
+            "$value": "{themes.themes.light.abstracts.border.neutral.outline.$value}",
             "$type": "color",
             "$unit": "hex",
             "$meta": {
@@ -154,7 +154,7 @@
         },
         "border": {
           "normal": {
-            "$value": "rgba({themes.themes.light.abstracts.border.outline.$value}, 0)",
+            "$value": "rgba({themes.themes.light.abstracts.border.neutral.outline.$value}, 0)",
             "$type": "color",
             "$unit": "hex",
             "$meta": {
@@ -162,7 +162,7 @@
             }
           },
           "outline": {
-            "$value": "{themes.themes.light.abstracts.border.outline.$value}",
+            "$value": "{themes.themes.light.abstracts.border.neutral.outline.$value}",
             "$type": "color",
             "$unit": "hex",
             "$meta": {

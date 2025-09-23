@@ -1,6 +1,6 @@
 import { onMounted, onUnmounted } from "vue";
 
-import { useConnectionStore } from "@@/stores";
+import { useConnectionStore } from "@/stores";
 
 export const useConnection = () => {
   const { setIsConnected } = useConnectionStore();

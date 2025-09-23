@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Page } from "@/components/atoms";
-import { EditorView } from "@/components/organisms";
+import { EditorView } from "@@/components/organisms";
 </script>
 
 <template>

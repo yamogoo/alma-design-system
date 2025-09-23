@@ -9,7 +9,7 @@
       }
     },
     "border": {
-      "$value": "{themes.themes.dark.abstracts.border.primary.$value}",
+      "$value": "{themes.themes.dark.abstracts.border.neutral.primary.$value}",
       "$type": "color",
       "$unit": "hex",
       "$meta": {
@@ -27,7 +27,7 @@
       }
     },
     "border": {
-      "$value": "{themes.themes.dark.abstracts.border.primary.$value}",
+      "$value": "{themes.themes.dark.abstracts.border.neutral.primary.$value}",
       "$type": "color",
       "$unit": "hex",
       "$meta": {

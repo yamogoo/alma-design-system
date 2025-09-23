@@ -6,7 +6,8 @@ const props = withDefaults(defineProps<GroupProps>(), {
   as: "div",
   role: "group",
   size: "md",
-  mode: "ghost",
+  mode: "neutral",
+  tone: "ghost",
   ariaLabel: "group",
 });
 
@@ -20,8 +21,9 @@ const componentTag = props.as;
     :class="[
       `group_variant-${variant}`,
       `group_size-${size}`,
-      `group_mode-${mode}`,
       {
+        [`group_mode-${mode}`]: !!mode,
+        [`group_tone-${tone}`]: !!tone,
         [`group_direction-${direction}`]: !!direction,
         [`group_orientation-${orientation}`]: !!orientation,
         [`group_align-vertical-${verticalAlignment}`]: !!verticalAlignment,
@@ -76,21 +78,36 @@ const componentTag = props.as;
 
 @mixin defineThemes($map: get($themes, "light.atoms.group")) {
   @each $mode, $modes in $map {
-    &_mode-#{$mode} {
-      @include themify($themes) {
-        background-color: themed("atoms.group.#{$mode}.root.background");
-      }
-
-      &.group_divider {
-        &.group_orientation-horizontal {
-          @include themify($themes) {
-            border-right-color: themed("atoms.group.#{$mode}.root.divider");
-          }
+    @each $tone, $val in $modes {
+      &_mode-#{$mode} {
+        @include themify($themes) {
+          background-color: themed(
+            "atoms.group.#{$mode}.#{$tone}.root.background"
+          );
         }
-
-        &.group_orientation-vertical {
+        &.group_tone-#{$tone} {
           @include themify($themes) {
-            border-bottom-color: themed("atoms.group.#{$mode}.root.divider");
+            background-color: themed(
+              "atoms.group.#{$mode}.#{$tone}.root.background"
+            );
+          }
+
+          &.group_divider {
+            &.group_orientation-horizontal {
+              @include themify($themes) {
+                border-right-color: themed(
+                  "atoms.group.#{$mode}.#{$tone}.root.divider"
+                );
+              }
+            }
+
+            &.group_orientation-vertical {
+              @include themify($themes) {
+                border-bottom-color: themed(
+                  "atoms.group.#{$mode}.#{$tone}.root.divider"
+                );
+              }
+            }
           }
         }
       }
@@ -123,15 +140,7 @@ const componentTag = props.as;
     }
 
     &-auto {
-      &.group_orientation {
-        &-vertical {
-          @include box(auto, 100%);
-        }
-
-        &-horizontal {
-          @include box(100%, auto);
-        }
-      }
+      @include box(max-content);
     }
   }
 

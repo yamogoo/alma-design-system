@@ -13,7 +13,7 @@
 .storybook-root,
 .storybook-main-container {
   @include themify($themes) {
-    background-color: themed("abstracts.background.primary");
+    background-color: themed("abstracts.surface.neutral.primary");
   }
 }
 

@@ -1,34 +1,70 @@
 {
-  "primary": {
-    "$value": "{colors.gray-125}",
-    "$type": "color",
-    "$unit": "hex",
-    "$meta": {
-      "category": "border"
+  "neutral": {
+    "primary": {
+      "$value": "{colors.gray-125}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "secondary": {
+      "$value": "{colors.gray-175}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "strong": {
+      "$value": "{colors.gray-800}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "outline": {
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
     }
   },
-  "secondary": {
-    "$value": "{colors.gray-175}",
-    "$type": "color",
-    "$unit": "hex",
-    "$meta": {
-      "category": "border"
-    }
-  },
-  "strong": {
-    "$value": "{colors.gray-800}",
-    "$type": "color",
-    "$unit": "hex",
-    "$meta": {
-      "category": "border"
-    }
-  },
-  "outline": {
-    "$value": "{colors.blue-500}",
-    "$type": "color",
-    "$unit": "hex",
-    "$meta": {
-      "category": "border"
+  "accent": {
+    "primary": {
+      "$value": "{colors.blue-125}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "secondary": {
+      "$value": "{colors.blue-175}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "strong": {
+      "$value": "{colors.blue-800}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
+    },
+    "outline": {
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border"
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
-import { useConnectionStore } from "@@/stores";
+import { useConnectionStore } from "@/stores";
 
 import { Page, ActionSheet, Text } from "@/components/atoms";
 import { Snackbar } from "@/components/molecules";

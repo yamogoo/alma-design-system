@@ -12,3 +12,8 @@ export type GroupMode = keyof typeof tokens.themes.light.atoms.group;
 export const groupModes = Object.keys(
   tokens.themes.light.atoms.group
 ) as GroupMode[];
+
+export type GroupTone = keyof typeof tokens.themes.light.atoms.group.neutral;
+export const groupTones = Object.keys(
+  tokens.themes.light.atoms.group.neutral
+) as GroupTone[];
