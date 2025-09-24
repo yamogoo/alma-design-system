@@ -19,3 +19,9 @@ export type SliderTone = keyof typeof tokens.themes.light.atoms.slider.accent;
 export const sliderTones = Object.keys(
   tokens.themes.light.atoms.slider.accent
 ) as SliderTone[];
+
+export type SliderState =
+  keyof typeof tokens.themes.light.atoms.slider.accent.primary.track;
+export const sliderStates = Object.keys(
+  tokens.themes.light.atoms.slider.accent.primary.track
+) as SliderState[];

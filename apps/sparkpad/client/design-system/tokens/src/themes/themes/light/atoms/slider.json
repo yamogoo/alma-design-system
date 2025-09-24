@@ -18,6 +18,14 @@
             "meta": {
               "category": "slider"
             }
+          },
+          "disabled": {
+            "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
           }
         }
       },
@@ -33,6 +41,14 @@
           },
           "hovered": {
             "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "disabled": {
+            "$value": "{themes.themes.light.abstracts.surface.neutral.tertiary.$value}",
             "$type": "color",
             "$unit": "hex",
             "meta": {
@@ -58,6 +74,14 @@
             "meta": {
               "category": "slider"
             }
+          },
+          "disabled": {
+            "$value": "rgba({themes.themes.light.abstracts.surface.neutral.primary.$value}, 1)",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
           }
         },
         "borderColor": {
@@ -71,6 +95,14 @@
           },
           "hovered": {
             "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "disabled": {
+            "$value": "rgba({themes.themes.light.abstracts.surface.neutral.tertiary.$value}, 1)",
             "$type": "color",
             "$unit": "hex",
             "meta": {

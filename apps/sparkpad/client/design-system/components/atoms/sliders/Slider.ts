@@ -22,6 +22,7 @@ export interface SliderProps {
   isSnapToStep?: boolean;
   snapThreshold?: number;
   isPageKeysEnabled?: boolean;
+  isDisabled?: boolean;
   label?: string;
   /* * * animations * * */
   knobAnimScaleActive?: number;

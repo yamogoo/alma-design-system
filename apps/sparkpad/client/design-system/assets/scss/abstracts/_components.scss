@@ -537,6 +537,26 @@ $atoms:(
 ),
   slider: (
   default: (
+  lg: (
+  root: (
+  gap: 12px,
+  min-width: 64px,
+  padding: 8px
+),
+  track: (
+  height: 24px,
+  border-radius: 20px
+),
+  knob: (
+  width: 24px,
+  height: 24px,
+  border-radius: 20px,
+  border-width: 2px
+),
+  label: (
+  font-style: label-2
+)
+),
   md: (
   root: (
   gap: 8px,
@@ -547,14 +567,31 @@ $atoms:(
   height: 16px,
   border-radius: 16px
 ),
-  range-track: (
-  
-),
   knob: (
   width: 16px,
   height: 16px,
   border-radius: 16px,
   border-width: 2px
+),
+  label: (
+  font-style: label-2
+)
+),
+  sm: (
+  root: (
+  gap: 8px,
+  min-width: 64px,
+  padding: 8px
+),
+  track: (
+  height: 12px,
+  border-radius: 12px
+),
+  knob: (
+  width: 12px,
+  height: 12px,
+  border-radius: 12px,
+  border-width: 1px
 ),
   label: (
   font-style: label-2

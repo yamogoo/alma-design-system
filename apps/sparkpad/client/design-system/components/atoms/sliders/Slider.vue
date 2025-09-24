@@ -15,14 +15,15 @@ const props = withDefaults(defineProps<SliderProps>(), {
   max: 100,
   step: 10,
   value: 0,
-  knobAnimScaleActive: 1.35,
-  knobAnimScaleNormal: 1.0,
-  knobAnimDuration: 0.45,
   /** New: Stick to steps when dragging/clicking on a track */
   isSnapToStep: false,
   /** Sticking threshold in pixels relative to track width (px) */
   snapThreshold: 10,
+  isDisabled: false,
   isPageKeysEnabled: false,
+  knobAnimScaleActive: 1.35,
+  knobAnimScaleNormal: 1.0,
+  knobAnimDuration: 0.45,
 });
 
 const emit = defineEmits<{ (e: "update:value", value: number): void }>();
@@ -197,7 +198,9 @@ onBeforeUnmount(removeEventListeners);
       `slider_size-${size}`,
       ` slider_mode-${mode}`,
       `slider_tone-${tone}`,
-      `slider_state-${isHovered ? 'hovered' : 'normal'}`,
+      isDisabled
+        ? `slider_state-disabled`
+        : `slider_state-${isHovered ? 'hovered' : 'normal'}`,
     ]"
     @pointerdown="onTrackPress"
   >
@@ -356,6 +359,36 @@ onBeforeUnmount(removeEventListeners);
                 );
                 border-color: themed(
                   "atoms.slider.#{$mode}.#{$tone}.knob.border-color.hovered"
+                );
+              }
+            }
+          }
+
+          &.slider_state-disabled {
+            .slider__track {
+              @include themify($themes) {
+                background: themed(
+                  "atoms.slider.#{$mode}.#{$tone}.track.background.disabled"
+                );
+              }
+            }
+
+            .slider__range-track,
+            .slider__track::before {
+              @include themify($themes) {
+                background: themed(
+                  "atoms.slider.#{$mode}.#{$tone}.range-track.background.disabled"
+                );
+              }
+            }
+
+            .slider__knob {
+              @include themify($themes) {
+                background: themed(
+                  "atoms.slider.#{$mode}.#{$tone}.knob.background.disabled"
+                );
+                border-color: themed(
+                  "atoms.slider.#{$mode}.#{$tone}.knob.border-color.disabled"
                 );
               }
             }

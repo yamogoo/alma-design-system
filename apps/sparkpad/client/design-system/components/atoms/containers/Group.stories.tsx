@@ -29,8 +29,8 @@ const meta = {
   },
   argTypes: {
     as: enumOptions(UIElementBlockTags),
-    size: enumOptions(groupSizes),
     variant: enumOptions(groupVariants),
+    size: enumOptions(groupSizes),
     mode: enumOptions(groupModes),
     tone: enumOptions(groupTones),
     orientation: enumOptions(UIElementOrientations),

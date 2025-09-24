@@ -13,7 +13,6 @@ import {
 import { useMeta, useTheme, useConnection } from "@/composables/global";
 
 import { Constants } from "@@/constants";
-import { Slider } from "@/components/atoms";
 
 const { $t } = storeToRefs(useLocaleStore());
 
@@ -47,9 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Slider :value="50" :max="100"></Slider>
-  <Slider :value="50" :max="100"></Slider>
-  <!-- <router-view></router-view> -->
+  <router-view></router-view>
 </template>
 
 <style lang="scss">

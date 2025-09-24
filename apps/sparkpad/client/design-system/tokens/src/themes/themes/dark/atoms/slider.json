@@ -18,6 +18,14 @@
             "meta": {
               "category": "slider"
             }
+          },
+          "disabled": {
+            "$value": "{themes.themes.dark.abstracts.label.neutral.secondary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
           }
         }
       },
@@ -33,6 +41,14 @@
           },
           "hovered": {
             "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "disabled": {
+            "$value": "{themes.themes.dark.abstracts.label.neutral.tertiary.$value}",
             "$type": "color",
             "$unit": "hex",
             "meta": {
@@ -58,6 +74,14 @@
             "meta": {
               "category": "slider"
             }
+          },
+          "disabled": {
+            "$value": "rgba({themes.themes.dark.abstracts.label.neutral.primary.$value}, .0)",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
           }
         },
         "borderColor": {
@@ -71,6 +95,14 @@
           },
           "hovered": {
             "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "disabled": {
+            "$value": "rgba({themes.themes.dark.abstracts.label.accent.primary.$value}, .0)",
             "$type": "color",
             "$unit": "hex",
             "meta": {
