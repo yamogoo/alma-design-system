@@ -44,7 +44,7 @@
       "knob": {
         "background": {
           "normal": {
-            "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$value": "{themes.themes.dark.abstracts.label.neutral.primary.$value}",
             "$type": "color",
             "$unit": "hex",
             "meta": {
@@ -52,7 +52,7 @@
             }
           },
           "hovered": {
-            "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$value": "{themes.themes.dark.abstracts.label.neutral.primary.$value}",
             "$type": "color",
             "$unit": "hex",
             "meta": {

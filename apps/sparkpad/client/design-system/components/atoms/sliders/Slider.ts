@@ -19,6 +19,12 @@ export interface SliderProps {
   min?: number;
   max: number;
   step?: number;
+  isSnapToStep?: boolean;
+  snapThreshold?: number;
+  isPageKeysEnabled?: boolean;
   label?: string;
-  orientation?: SliderOrientation;
+  /* * * animations * * */
+  knobAnimScaleActive?: number;
+  knobAnimScaleNormal?: number;
+  knobAnimDuration?: number;
 }

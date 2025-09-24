@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
+// import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
 
 import { Slider } from "@/components/atoms";
 
@@ -22,9 +22,6 @@ const meta = {
     },
     label: {
       type: "string",
-    },
-    knobSize: {
-      type: "number",
     },
   },
   component: Slider,

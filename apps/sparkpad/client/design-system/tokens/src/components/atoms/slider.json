@@ -19,7 +19,7 @@
           }
         },
         "padding": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xss.$value}",
           "$type": "number",
           "$unit": "px",
           "meta": {
@@ -45,7 +45,6 @@
           }
         }
       },
-      "rangeTrack": {},
       "knob": {
         "width": {
           "$value": "{tokens.spacing.md.$value}",

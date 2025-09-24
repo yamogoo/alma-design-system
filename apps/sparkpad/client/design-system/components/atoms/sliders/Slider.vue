@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, watch, onBeforeUnmount, useTemplateRef } from "vue";
+import g from "gsap";
+
 import { useHover } from "@/composables/local";
+
 import { type SliderProps } from "@/components/atoms";
 
 const props = withDefaults(defineProps<SliderProps>(), {
@@ -10,13 +13,19 @@ const props = withDefaults(defineProps<SliderProps>(), {
   tone: "primary",
   min: 0,
   max: 100,
-  step: 1,
+  step: 10,
   value: 0,
+  knobAnimScaleActive: 1.35,
+  knobAnimScaleNormal: 1.0,
+  knobAnimDuration: 0.45,
+  /** New: Stick to steps when dragging/clicking on a track */
+  isSnapToStep: false,
+  /** Sticking threshold in pixels relative to track width (px) */
+  snapThreshold: 10,
+  isPageKeysEnabled: false,
 });
 
-const emit = defineEmits<{
-  (e: "update:value", value: number): void;
-}>();
+const emit = defineEmits<{ (e: "update:value", value: number): void }>();
 
 const refRoot = useTemplateRef<HTMLDivElement | null>("root");
 const refTrack = useTemplateRef<HTMLDivElement | null>("track");
@@ -36,6 +45,7 @@ const roundToStep = (v: number, step: number, min: number) => {
   const steps = Math.round((v - min) / step);
   return min + steps * step;
 };
+
 const getPercentage = (value: number, min: number, max: number): number =>
   ((value - min) / Math.max(1e-9, max - min)) * 100;
 
@@ -50,46 +60,65 @@ watch(
       localValue.value = clamp(newValue, props.min, props.max);
   }
 );
-watch(localValue, (nv) => {
-  emit("update:value", clamp(nv, props.min, props.max));
-});
+watch(localValue, (newValue) =>
+  emit("update:value", clamp(newValue, props.min, props.max))
+);
 
-const computedValueFromClientX = (clientX: number): number => {
+/** Without snapping */
+const rawValueFromClientX = (clientX: number): number => {
   const track = trackRect ?? refTrack.value?.getBoundingClientRect() ?? null;
 
   if (!track) return localValue.value;
 
   const x = clamp(clientX - track.left, 0, track.width);
-  const raw = props.min + (x / track.width) * (props.max - props.min);
-  const snapped = roundToStep(raw, props.step, props.min);
+  const ratio = x / Math.max(1e-9, track.width);
+  const raw = props.min + ratio * (props.max - props.min);
 
-  return clamp(snapped, props.min, props.max);
+  return clamp(raw, props.min, props.max);
+};
+
+/** with snapping */
+const computedValueFromClientX = (clientX: number): number => {
+  const track = trackRect ?? refTrack.value?.getBoundingClientRect() ?? null;
+  const raw = rawValueFromClientX(clientX);
+
+  if (!props.isSnapToStep || !track) return raw;
+
+  const stepped = roundToStep(raw, props.step, props.min);
+
+  const pxToValue = (px: number) =>
+    (px / Math.max(1e-9, track.width)) * (props.max - props.min);
+  const thresholdValue = pxToValue(props.snapThreshold);
+
+  if (Math.abs(stepped - raw) <= thresholdValue) {
+    return clamp(stepped, props.min, props.max);
+  }
+  return raw;
 };
 
 const onTrackPress = (e: PointerEvent) => {
   if (!refTrack.value) return;
 
+  e.preventDefault();
+
   refTrack.value.setPointerCapture?.(e.pointerId);
   trackRect = refTrack.value.getBoundingClientRect();
-  const newVal = computedValueFromClientX(e.clientX);
-  localValue.value = newVal;
-
+  localValue.value = computedValueFromClientX(e.clientX);
   isDragging.value = true;
 
   addEventListeners();
-  e.preventDefault();
 };
 
 const onKnobPress = (e: PointerEvent): void => {
   if (!refTrack.value) return;
 
+  e.preventDefault();
+
   refKnob.value?.setPointerCapture?.(e.pointerId);
   trackRect = refTrack.value.getBoundingClientRect();
-
   isDragging.value = true;
 
   addEventListeners();
-  e.preventDefault();
 };
 
 const onDragMove = (e: PointerEvent) => {
@@ -100,14 +129,27 @@ const onDragMove = (e: PointerEvent) => {
 const onDragEnd = () => {
   if (!isDragging.value) return;
   isDragging.value = false;
+
   removeEventListeners();
+
+  if (!props.isSnapToStep) return;
+  localValue.value = roundToStep(localValue.value, props.step, props.min);
 };
 
-/* Keyboard */
+/* Keyboard (by step) */
 const onKnobKeydown = (e: KeyboardEvent) => {
   let delta = 0;
+
   if (e.key === "ArrowRight" || e.key === "ArrowUp") delta = props.step;
   else if (e.key === "ArrowLeft" || e.key === "ArrowDown") delta = -props.step;
+
+  if (props.isPageKeysEnabled) {
+    if (e.key === "Home") delta = props.min - localValue.value;
+    if (e.key === "End") delta = props.max - localValue.value;
+    if (e.key === "PageUp") delta = props.step * 10;
+    if (e.key === "PageDown") delta = -props.step * 10;
+  }
+
   if (delta !== 0) {
     e.preventDefault();
 
@@ -119,21 +161,31 @@ const onKnobKeydown = (e: KeyboardEvent) => {
   }
 };
 
+watch(isHovered, (state) => {
+  const el = refKnob.value;
+
+  if (el) {
+    g.to(el, {
+      scale: state ? props.knobAnimScaleActive : props.knobAnimScaleNormal,
+      duration: props.knobAnimDuration,
+      ease: "power4.out",
+    });
+  }
+});
+
+/* Listeners */
 const addEventListeners = (): void => {
   window.addEventListener("pointermove", onDragMove, { passive: true });
   window.addEventListener("pointerup", onDragEnd, { passive: true });
   window.addEventListener("pointercancel", onDragEnd, { passive: true });
 };
-
 const removeEventListeners = (): void => {
   window.removeEventListener("pointermove", onDragMove);
   window.removeEventListener("pointerup", onDragEnd);
   window.removeEventListener("pointercancel", onDragEnd);
 };
 
-onBeforeUnmount(() => {
-  removeEventListeners();
-});
+onBeforeUnmount(removeEventListeners);
 </script>
 
 <template>
@@ -147,8 +199,9 @@ onBeforeUnmount(() => {
       `slider_tone-${tone}`,
       `slider_state-${isHovered ? 'hovered' : 'normal'}`,
     ]"
+    @pointerdown="onTrackPress"
   >
-    <div class="slider__track" @pointerdown="onTrackPress">
+    <div class="slider__track">
       <div
         ref="track"
         class="slider__track-container"
@@ -160,6 +213,7 @@ onBeforeUnmount(() => {
           ref="knob"
           class="slider__knob"
           role="slider"
+          aria-orientation="horizontal"
           tabindex="0"
           :aria-valuemin="min"
           :aria-valuemax="max"
@@ -300,6 +354,9 @@ onBeforeUnmount(() => {
                 background: themed(
                   "atoms.slider.#{$mode}.#{$tone}.knob.background.hovered"
                 );
+                border-color: themed(
+                  "atoms.slider.#{$mode}.#{$tone}.knob.border-color.hovered"
+                );
               }
             }
           }
@@ -335,7 +392,7 @@ onBeforeUnmount(() => {
       position: relative;
       box-sizing: border-box;
       @include box(100%);
-      --p: 0%;
+      --p: 0;
     }
   }
 
@@ -346,7 +403,7 @@ onBeforeUnmount(() => {
     bottom: 0;
     width: 100%;
     transform-origin: left center;
-    transform: scaleX(calc(var(--p)));
+    transform: scaleX(var(--p));
     will-change: transform;
     box-sizing: border-box;
     z-index: 0;
