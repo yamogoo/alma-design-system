@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, nextTick, ref } from "vue";
-import gsap from "gsap";
+import { onMounted, ref } from "vue";
+import g from "gsap";
 
 import type { SkeletonProps } from "@/components/atoms";
 
@@ -9,78 +9,27 @@ const props = withDefaults(defineProps<SkeletonProps>(), {
   tone: "primary",
   speed: 1,
 });
-
 const refShape = ref<HTMLDivElement | null>(null);
 
-let ctx: gsap.Context | null = null;
-let resizeObserver: ResizeObserver | null = null;
-let tween: gsap.core.Tween | null = null;
-let isAlive = true;
+onMounted(() => {
+  if (refShape.value) onAnimate(refShape.value);
+});
 
-const applyAnimation = async (el: HTMLDivElement) => {
-  if (!isAlive) return;
+const onAnimate = (el: Element): void => {
+  const width = el.clientWidth;
 
-  let width = el.offsetWidth || el.getBoundingClientRect().width || 0;
-  if (width === 0) {
-    await nextTick();
-    if (!isAlive) return;
-    width = el.offsetWidth || el.getBoundingClientRect().width || 0;
-    if (width === 0) return;
-  }
-
-  tween?.kill();
-  gsap.killTweensOf(el);
-
-  gsap.set(el, { xPercent: -50 });
-
-  const base = 0.75;
-  const duration = base / Math.max(props.speed, 0.01);
-
-  tween = gsap.fromTo(
+  g.fromTo(
     el,
-    { x: -width },
-    { x: width, duration, repeat: -1, ease: "none" }
+    {
+      x: -width,
+    },
+    {
+      x: width,
+      duration: 0.75 * props.speed,
+      repeat: -1,
+    }
   );
 };
-
-const mountAnimation = (el: HTMLDivElement) => {
-  ctx = gsap.context(() => {
-    applyAnimation(el);
-
-    resizeObserver = new ResizeObserver(() => {
-      ctx!.add(() => applyAnimation(el));
-    });
-    resizeObserver.observe(el);
-  }, el);
-};
-
-onMounted(() => {
-  const el = refShape.value;
-  if (!el) return;
-
-  const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (mql.matches) return;
-
-  isAlive = true;
-  mountAnimation(el);
-});
-
-onUnmounted(() => {
-  isAlive = false;
-
-  resizeObserver?.disconnect();
-  resizeObserver = null;
-
-  tween?.kill();
-  tween = null;
-
-  if (refShape.value) {
-    gsap.killTweensOf(refShape.value);
-  }
-
-  ctx?.revert();
-  ctx = null;
-});
 </script>
 
 <template>
