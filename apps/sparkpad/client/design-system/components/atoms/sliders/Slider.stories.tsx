@@ -10,7 +10,7 @@ import {
   sliderSizes,
   sliderTones,
   sliderVariants,
-} from "~/design-system/adapters";
+} from "@/adapters";
 
 const meta = {
   title: "Atoms/Sliders/RangeSlider",
@@ -20,9 +20,9 @@ const meta = {
     docs: {
       description: {
         component:
-          "Groups are the primary positioning containers that organize and align multiple components within a layout.",
+          "A flexible range slider component that supports steps, snapping, keyboard navigation, and custom themes. Designed to work seamlessly with tokens and modes from the design system.",
         story:
-          "Interactive playground to explore orientation, size, and color tokens.",
+          "Use the playground to interactively explore slider orientation, size, tones, and snapping behavior.",
       },
     },
   },
@@ -81,6 +81,14 @@ export const Playground: Story = {
     value: 50,
     max: 100,
   },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Interactive playground for experimenting with props such as steps, snapping, and disabled state.",
+      },
+    },
+  },
 };
 
 export const Size: Story = {
@@ -97,8 +105,8 @@ export const Size: Story = {
       return () => (
         <>
           <PageHeader
-            title={"Slider size"}
-            description={"Demonstrates variant and size"}
+            title="Slider sizes"
+            description="Demonstrates how different size tokens and variants affect the appearance and spacing of the slider."
           ></PageHeader>
           <StoryGrid columns={2}>
             {sliderVariants.map((variant) =>
@@ -134,8 +142,8 @@ export const Color: Story = {
       return () => (
         <>
           <PageHeader
-            title={"Slider colors"}
-            description={"Demonstrates mode and tone"}
+            title="Slider colors"
+            description="Shows the effect of mode and tone combinations on the slider track, knob, and range fill."
           ></PageHeader>
           <StoryGrid columns={2}>
             {sliderModes.map((mode) =>
