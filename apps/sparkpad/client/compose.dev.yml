@@ -1,0 +1,45 @@
+version: "3.9"
+
+volumes:
+  pnpm-store: {}
+
+services:
+  tokens-worker:
+    build:
+      context: ../../..
+      dockerfile: Dockerfile.mono
+    working_dir: /repo/packages/tokens-worker
+    command: pnpm build
+    environment:
+      - CHOKIDAR_USEPOLLING=1
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../../..:/repo
+      - pnpm-store:/root/.local/share/pnpm/store
+      - /repo/node_modules
+      - /repo/apps/sparkpad/client/node_modules
+      - /repo/packages/tokens-worker/node_modules
+
+  client:
+    build:
+      context: ../../..
+      dockerfile: Dockerfile.mono
+    working_dir: /repo/apps/sparkpad/client
+    depends_on:
+      tokens-worker:
+        condition: service_completed_successfully
+    command: pnpm dev --host --port 5041
+    ports: ["5041:5041"]
+    environment:
+      - CHOKIDAR_USEPOLLING=1
+      - CHOKIDAR_INTERVAL=200
+      - WATCHPACK_POLLING=true
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../../..:/repo
+      - pnpm-store:/root/.local/share/pnpm/store
+      - /repo/node_modules
+      - /repo/apps/sparkpad/client/node_modules
+      - /repo/packages/tokens-worker/node_modules

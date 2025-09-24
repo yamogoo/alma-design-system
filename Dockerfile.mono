@@ -1,0 +1,15 @@
+FROM node:20-alpine
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+WORKDIR /repo
+
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+
+COPY apps/sparkpad/client/package.json ./apps/sparkpad/client/package.json
+COPY packages/tokens-worker/package.json ./packages/tokens-worker/package.json
+
+RUN pnpm fetch
+COPY . .
+
+RUN pnpm install --frozen-lockfile --offline

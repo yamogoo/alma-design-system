@@ -1,9 +1,6 @@
 export * from "./AnimatedWrapper";
 export { default as AnimatedWrapper } from "./AnimatedWrapper.vue";
 
-export * from "./Carousel";
-export { default as Carousel } from "./Carousel.vue";
-
 export * from "./CarouselStack";
 export { default as CarouselStack } from "./CarouselStack.vue";
 
