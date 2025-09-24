@@ -750,6 +750,40 @@ $themes:(
 )
 )
 ),
+  slider: (
+  accent: (
+  primary: (
+  track: (
+  background: (
+  normal: #a5b1bc,
+  hovered: #a5b1bc
+)
+),
+  range-track: (
+  background: (
+  normal: #6286fe,
+  hovered: #6286fe
+)
+),
+  knob: (
+  background: (
+  normal: #6286fe,
+  hovered: #6286fe
+),
+  border-color: (
+  normal: #6286fe,
+  hovered: #6286fe
+)
+),
+  label: (
+  color: (
+  normal: #dce1e5,
+  hovered: #dce1e5
+)
+)
+)
+)
+),
   step-pagination-tabs: (
   primary: (
   item: (
@@ -1710,6 +1744,40 @@ $themes:(
   primary: (
   background-in: #0130ce40,
   background-out: #0130ce00
+)
+)
+),
+  slider: (
+  accent: (
+  primary: (
+  track: (
+  background: (
+  normal: #f8f9fa,
+  hovered: #f8f9fa
+)
+),
+  range-track: (
+  background: (
+  normal: #013cfe,
+  hovered: #013cfe
+)
+),
+  knob: (
+  background: (
+  normal: #013cfe,
+  hovered: #013cfe
+),
+  border-color: (
+  normal: #013cfe,
+  hovered: #013cfe
+)
+),
+  label: (
+  color: (
+  normal: #2f383f,
+  hovered: #2f383f
+)
+)
 )
 )
 ),

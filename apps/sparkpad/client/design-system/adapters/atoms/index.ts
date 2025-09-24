@@ -33,6 +33,8 @@ export * from "./sheet";
 // skeletons
 export * from "./skeleton";
 
+export * from "./slider";
+
 // switches
 export * from "./switch";
 

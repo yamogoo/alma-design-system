@@ -80,11 +80,6 @@ const componentTag = props.as;
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        @include themify($themes) {
-          background-color: themed(
-            "atoms.group.#{$mode}.#{$tone}.root.background"
-          );
-        }
         &.group_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(

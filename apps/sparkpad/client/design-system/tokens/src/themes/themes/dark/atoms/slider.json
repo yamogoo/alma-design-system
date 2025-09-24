@@ -1,0 +1,104 @@
+{
+  "accent": {
+    "primary": {
+      "track": {
+        "background": {
+          "normal": {
+            "$value": "{themes.themes.dark.abstracts.label.neutral.secondary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "hovered": {
+            "$value": "{themes.themes.dark.abstracts.label.neutral.secondary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          }
+        }
+      },
+      "rangeTrack": {
+        "background": {
+          "normal": {
+            "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "hovered": {
+            "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          }
+        }
+      },
+      "knob": {
+        "background": {
+          "normal": {
+            "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "hovered": {
+            "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          }
+        },
+        "borderColor": {
+          "normal": {
+            "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "hovered": {
+            "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          }
+        }
+      },
+      "label": {
+        "color": {
+          "normal": {
+            "$value": "{themes.themes.dark.abstracts.label.neutral.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          },
+          "hovered": {
+            "$value": "{themes.themes.dark.abstracts.label.neutral.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "meta": {
+              "category": "slider"
+            }
+          }
+        }
+      }
+    }
+  }
+}

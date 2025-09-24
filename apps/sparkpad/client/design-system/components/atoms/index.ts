@@ -34,6 +34,8 @@ export * from "./sheets";
 // Skeletons: Skeleton and other fallback components
 export * from "./skeletons";
 
+export * from "./sliders";
+
 // Switches: ToggleSwitch, Checkbox, Radio button and other controls
 export * from "./switches";
 

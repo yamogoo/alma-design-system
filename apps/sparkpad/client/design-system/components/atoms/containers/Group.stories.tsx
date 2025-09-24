@@ -176,6 +176,7 @@ export const Size: Story = {
 
 export const Color: Story = {
   args: {
+    variant: "block",
     tone: "primary",
   },
   render: (args: GroupProps) => ({
