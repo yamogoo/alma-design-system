@@ -7,6 +7,7 @@ WORKDIR /repo
 COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
 
 COPY apps/sparkpad/client/package.json ./apps/sparkpad/client/package.json
+COPY apps/sparkpad/log-server/package.json ./apps/sparkpad/log-server/package.json
 COPY packages/tokens-worker/package.json ./packages/tokens-worker/package.json
 
 RUN pnpm fetch

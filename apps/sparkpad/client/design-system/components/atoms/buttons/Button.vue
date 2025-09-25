@@ -6,6 +6,7 @@ import {
   computed,
   type ComputedRef,
   useTemplateRef,
+  useSlots,
 } from "vue";
 import g from "gsap";
 
@@ -74,6 +75,9 @@ watch(localIsPressed, (isPressed) => {
   const el = toValue(refRoot);
   if (el) onAnim(el, isPressed);
 });
+
+const hasPrependSlot = !!useSlots()?.["prepend-icon"];
+const hasAppendSlot = !!useSlots()?.["append-icon"];
 </script>
 
 <template>
@@ -102,7 +106,7 @@ watch(localIsPressed, (isPressed) => {
     @pointerup="onUp"
   >
     <Icon
-      v-if="prependIconName"
+      v-if="prependIconName && !hasPrependSlot"
       :data-testid="'button__icon'"
       :name="prependIconName"
       :appearance="prependIconStyle"
@@ -118,7 +122,7 @@ watch(localIsPressed, (isPressed) => {
     }}</span>
     <slot name="append-icon"></slot>
     <Icon
-      v-if="appendIconName"
+      v-if="appendIconName && !hasAppendSlot"
       :name="appendIconName"
       :appearance="appendIconStyle"
       :weight="appendIconWeight"

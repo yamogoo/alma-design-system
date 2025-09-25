@@ -43,3 +43,23 @@ services:
       - /repo/node_modules
       - /repo/apps/sparkpad/client/node_modules
       - /repo/packages/tokens-worker/node_modules
+
+  log-server:
+    build:
+      context: ../../..
+      dockerfile: Dockerfile.mono
+    working_dir: /repo/apps/sparkpad/log-server
+    command: pnpm dev --host --port 5043
+    ports:
+      - "5043:5043"
+    environment:
+      - CHOKIDAR_USEPOLLING=1
+      - CHOKIDAR_INTERVAL=200
+      - WATCHPACK_POLLING=true
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../../..:/repo
+      - pnpm-store:/root/.local/share/pnpm/store
+      - /repo/node_modules
+      - /repo/apps/sparkpad/log-server/node_modules

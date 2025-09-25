@@ -25,6 +25,7 @@ const meta = {
   component: Button,
   tags: ["autodocs"],
   parameters: {
+    controls: { sort: "requiredFirst", expanded: true },
     docs: {
       description: {
         component:
