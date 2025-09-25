@@ -45,6 +45,8 @@ const componentTag = props.as;
 <style lang="scss">
 @use "sass:map";
 
+$prefix: "group";
+
 @mixin defineSizes($map: get($atoms, "group")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
@@ -54,18 +56,18 @@ const componentTag = props.as;
       $divider-border-width: px2rem(get($val, "root.border-width"));
 
       &_variant-#{$variant} {
-        &.group_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           gap: $gap;
           padding: $padding;
           border-radius: $border-radius;
 
-          &.group_divider {
-            &.group_orientation-horizontal {
+          &.#{$prefix}_divider {
+            &.#{$prefix}_orientation-horizontal {
               border-right-width: $divider-border-width;
               padding-right: $gap;
             }
 
-            &.group_orientation-vertical {
+            &.#{$prefix}_orientation-vertical {
               border-bottom-width: $divider-border-width;
               padding-bottom: $gap;
             }
@@ -80,26 +82,26 @@ const componentTag = props.as;
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.group_tone-#{$tone} {
+        &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "atoms.group.#{$mode}.#{$tone}.root.background"
+              "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background"
             );
           }
 
-          &.group_divider {
-            &.group_orientation-horizontal {
+          &.#{$prefix}divider {
+            &.#{$prefix}orientation-horizontal {
               @include themify($themes) {
                 border-right-color: themed(
-                  "atoms.group.#{$mode}.#{$tone}.root.divider"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
                 );
               }
             }
 
-            &.group_orientation-vertical {
+            &.#{$prefix}orientation-vertical {
               @include themify($themes) {
                 border-bottom-color: themed(
-                  "atoms.group.#{$mode}.#{$tone}.root.divider"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
                 );
               }
             }
@@ -144,11 +146,11 @@ const componentTag = props.as;
   }
 
   &_divider {
-    &.group_orientation-horizontal {
+    &.#{$prefix}orientation-horizontal {
       border-right-style: solid;
     }
 
-    &.group_orientation-vertical {
+    &.#{$prefix}orientation-vertical {
       border-bottom-style: solid;
     }
   }
@@ -156,7 +158,7 @@ const componentTag = props.as;
   @each $variant, $sizes in get($atoms, "group") {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.group_size-#{$size} {
+        &.#{$prefix}size-#{$size} {
           gap: px2rem(get($val, "root.gap"));
         }
       }

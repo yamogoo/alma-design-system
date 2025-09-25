@@ -427,15 +427,21 @@ $atoms:(
 )
 )
 ),
-  resizer: (
+  resize-bounding: (
   default: (
+  md: (
   root: (
   active-area-width: 20px
 ),
   knob: (
+  show: false,
   width: 76px,
   height: 6px,
   border-radius: 3px
+),
+  splitter: (
+  width: 4px
+)
 )
 )
 ),

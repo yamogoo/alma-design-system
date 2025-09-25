@@ -690,8 +690,9 @@ $themes:(
   background: #eaedef
 )
 ),
-  resizer: (
-  default: (
+  resize-bounding: (
+  accent: (
+  primary: (
   splitter: (
   normal: #0130ce,
   active: #0130ce
@@ -699,6 +700,7 @@ $themes:(
   knob: (
   normal: #39444c,
   active: #097c37
+)
 )
 )
 ),
@@ -1691,8 +1693,9 @@ $themes:(
 )
 )
 ),
-  resizer: (
-  default: (
+  resize-bounding: (
+  accent: (
+  primary: (
   splitter: (
   normal: #0130ce,
   active: #0130ce
@@ -1700,6 +1703,7 @@ $themes:(
   knob: (
   normal: #6d8292,
   active: #12ed6a
+)
 )
 )
 ),

@@ -20,6 +20,8 @@ export * from "./input";
 // logos
 export * from "./logoWithDescriptor";
 
+export * from "./resizeBounding";
+
 // menues
 export * from "./simpleMenu";
 

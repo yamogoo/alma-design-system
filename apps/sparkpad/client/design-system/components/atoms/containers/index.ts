@@ -12,3 +12,7 @@ export { default as Overlay } from "./Overlay.vue";
 
 export * from "./Page";
 export { default as Page } from "./Page.vue";
+
+// Resizer: ResizeBounding and drag/resize utilities
+export * from "./ResizeBounding";
+export { default as ResizeBounding } from "./ResizeBounding.vue";

@@ -5,8 +5,25 @@ export const enumOptions = <T>(arr: readonly T[]): InputType => ({
   options: arr,
 });
 
-export const booleanOptions = (defaultValue: boolean): InputType => ({
+export const booleanOptions = (defaultValue?: boolean): InputType => ({
   control: "boolean",
   type: "boolean",
-  defaultValue,
+  ...(defaultValue ? { defaultValue } : {}),
+});
+
+export const numberOptions = (defaultValue?: number): InputType => ({
+  control: "number",
+  type: "number",
+  ...(defaultValue ? { defaultValue } : {}),
+});
+
+export const stringOptions = (defaultValue?: string): InputType => ({
+  control: "text",
+  type: "string",
+  ...(defaultValue ? { defaultValue } : {}),
+});
+
+export const objectOptions = <T>(defaultValue?: T): InputType => ({
+  control: "object",
+  ...(defaultValue ? { defaultValue } : {}),
 });
