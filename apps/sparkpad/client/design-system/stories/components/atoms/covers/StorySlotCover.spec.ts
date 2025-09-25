@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import StoryResizeBounding from "./StoryResizeBounding.vue";
+import StoryResizeBounding from "./StorySlotCover.vue";
 
 const getResizeBounding = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.findComponent({ name: "ResizeBounding" });

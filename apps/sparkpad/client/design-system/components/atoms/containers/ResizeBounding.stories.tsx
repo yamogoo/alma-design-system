@@ -15,7 +15,7 @@ import {
   stringOptions,
 } from "@/stories/utils";
 
-import { StoryGrid, StoryResizeBounding } from "@/stories/components";
+import { StoryGrid, StorySlotCover } from "@/stories/components";
 import { ResizeBounding, type ResizeBoundingProps } from "@/components/atoms";
 
 const meta = {
@@ -66,6 +66,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
+  args: {
+    directions: "hv",
+    minWidth: 240,
+    minHeight: 240,
+  },
   render: (args: ResizeBoundingProps) => ({
     setup() {
       const width = ref(args.width);
@@ -89,7 +94,7 @@ export const Playground: Story = {
               onUpdate:width={(value) => (width.value = value)}
               onUpdate:height={(value) => (height.value = value)}
             >
-              <StoryResizeBounding></StoryResizeBounding>
+              <StorySlotCover></StorySlotCover>
             </ResizeBounding>
           </StoryGrid>
         </>

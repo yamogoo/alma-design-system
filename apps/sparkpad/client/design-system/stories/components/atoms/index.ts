@@ -1,1 +1,1 @@
-export { default as StoryResizeBounding } from "./containers/StoryResizeBounding.vue";
+export { default as StorySlotCover } from "./covers/StorySlotCover.vue";

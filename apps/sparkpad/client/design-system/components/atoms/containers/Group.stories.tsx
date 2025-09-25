@@ -93,7 +93,9 @@ export const Playground: Story = {
 };
 
 export const Orientation: Story = {
-  args: {},
+  args: {
+    variant: "block",
+  },
   render: (args: GroupProps) => ({
     setup() {
       return () => (
