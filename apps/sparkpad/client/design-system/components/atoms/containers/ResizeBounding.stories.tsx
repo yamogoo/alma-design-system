@@ -25,8 +25,10 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: "",
-        story: "",
+        component:
+          "ResizeBounding is a lightweight Vue 3 wrapper around **vue3-resize-bounding**, providing draggable split panes and resizable containers with an intuitive API.",
+        story:
+          "Interactive playground to explore resizing behavior, directional constraints, and container nesting.",
       },
     },
   },
