@@ -625,7 +625,7 @@ $atoms:(
   default: (
   lg: (
   root: (
-  width: 40px,
+  width: 64px,
   height: 20px,
   gap: 10px
 ),
@@ -635,12 +635,16 @@ $atoms:(
 ),
   label: (
   font-style: label-3
+),
+  knob: (
+  width: 32px,
+  height: 20px
 )
 ),
   md: (
   root: (
   width: 36px,
-  height: 18px,
+  height: 20px,
   gap: 10px
 ),
   track: (
@@ -649,11 +653,15 @@ $atoms:(
 ),
   label: (
   font-style: label-3
+),
+  knob: (
+  width: 28px,
+  height: 16px
 )
 ),
   sm: (
   root: (
-  width: 32px,
+  width: 40px,
   height: 16px,
   gap: 10px
 ),
@@ -663,6 +671,10 @@ $atoms:(
 ),
   label: (
   font-style: label-3
+),
+  knob: (
+  width: 24px,
+  height: 16px
 )
 )
 )

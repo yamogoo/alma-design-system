@@ -54,7 +54,7 @@ const meta = {
   args: {
     size: "md",
     mode: "neutral",
-    tone: "primary",
+    tone: "ghost",
     role: "group",
     ariaLabel: "Example group",
   },

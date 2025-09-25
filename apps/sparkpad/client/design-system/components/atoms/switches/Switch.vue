@@ -1,16 +1,6 @@
 <script setup lang="ts">
-import {
-  useAttrs,
-  useId,
-  onMounted,
-  watch,
-  toValue,
-  computed,
-  useTemplateRef,
-} from "vue";
+import { useAttrs, useId, onMounted, watch, useTemplateRef } from "vue";
 import g from "gsap";
-
-import tokens from "@/tokens";
 
 import { usePressed } from "@/composables/local";
 
@@ -40,6 +30,9 @@ const id = useId();
 const refRoot = useTemplateRef<HTMLLabelElement | HTMLDivElement | null>(
   "root"
 );
+const refTrack = useTemplateRef<HTMLLabelElement | HTMLDivElement | null>(
+  "track"
+);
 const refKnob = useTemplateRef<HTMLDivElement | null>("knob");
 
 const { isPressed } = usePressed(refRoot);
@@ -50,10 +43,6 @@ const onChange = (e: Event): void => {
   const state = (e.target as HTMLInputElement).checked;
   emit("update:is-active", state);
 };
-
-const padding = computed(
-  () => tokens.atoms.switch.default[`${props.size}`].track.padding.$value
-);
 
 const onKeyDown = (e: KeyboardEvent): void => {
   if (props.isDisabled) return;
@@ -70,10 +59,13 @@ watch(isPressed, (val) => {
 /* * * Animations * * */
 
 const onAnimateKnob = (duration = 0.25): void => {
-  const width = ((refRoot.value?.clientWidth || 0) - toValue(padding) * 2) / 2;
+  const trackWidth = refTrack.value?.clientWidth || 0;
+  const knobWidth = refKnob.value?.clientWidth || 0;
+
+  const offsetX = trackWidth - knobWidth;
 
   if (refKnob.value) {
-    const knobPosX = props.isActive ? width : 0;
+    const knobPosX = props.isActive ? offsetX : 0;
 
     g.to(refKnob.value, {
       x: knobPosX,
@@ -117,7 +109,7 @@ onMounted(() => {
       @keydown="onKeyDown"
     >
       <div class="switch__track">
-        <div class="switch__track-container">
+        <div ref="track" class="switch__track-container">
           <span ref="knob" class="switch__knob"></span>
         </div>
       </div>
@@ -171,6 +163,10 @@ onMounted(() => {
           $track-padding: px2rem(get($val, "track.padding"));
           $label-font-style: get($val, "label.font-style");
 
+          $knob-width: px2rem(get($val, "knob.width"));
+          $knob-height: px2rem(get($val, "knob.height"));
+          $knob-border-radius: calc($knob-height / 2);
+
           gap: $gap;
 
           .switch__track {
@@ -180,8 +176,8 @@ onMounted(() => {
           }
 
           .switch__knob {
-            @include box($height);
-            border-radius: calc($height / 2);
+            @include box($knob-width, $knob-height);
+            border-radius: $knob-border-radius;
           }
 
           .switch__label {

@@ -3,7 +3,7 @@
     "lg": {
       "root": {
         "width": {
-          "$value": 40,
+          "$value": 64,
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -27,7 +27,6 @@
           }
         }
       },
-
       "track": {
         "padding": {
           "$value": 2,
@@ -51,6 +50,24 @@
           "$value": "label-3",
           "$type": "alias"
         }
+      },
+      "knob": {
+        "width": {
+          "$value": 32,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "toggle switch"
+          }
+        },
+        "height": {
+          "$value": 20,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "toggle switch"
+          }
+        }
       }
     },
     "md": {
@@ -64,7 +81,7 @@
           }
         },
         "height": {
-          "$value": 18,
+          "$value": 20,
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -104,12 +121,30 @@
           "$value": "label-3",
           "$type": "alias"
         }
+      },
+      "knob": {
+        "width": {
+          "$value": 28,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "toggle switch"
+          }
+        },
+        "height": {
+          "$value": 16,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "toggle switch"
+          }
+        }
       }
     },
     "sm": {
       "root": {
         "width": {
-          "$value": 32,
+          "$value": 40,
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -133,7 +168,6 @@
           }
         }
       },
-
       "track": {
         "padding": {
           "$value": 2,
@@ -156,6 +190,24 @@
         "fontStyle": {
           "$value": "label-3",
           "$type": "alias"
+        }
+      },
+      "knob": {
+        "width": {
+          "$value": 24,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "toggle switch"
+          }
+        },
+        "height": {
+          "$value": 16,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "toggle switch"
+          }
         }
       }
     }
