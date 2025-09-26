@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 
+import { Text } from "@/components/atoms";
 import {
   TreeView,
   type TreeViewNode,
@@ -14,6 +15,8 @@ const props = withDefaults(defineProps<FilesTreeProps>(), {
   size: "md",
   mode: "neutral",
   tone: "primary",
+  apiErrorMessage: "Failed to load",
+  apiLoadingMessage: "Loading",
 });
 
 const emit = defineEmits<{
@@ -154,8 +157,16 @@ onMounted(async () => {
 
 <template>
   <div class="files-tree">
-    <div v-if="rootLoading" class="tree__loading">Loading…</div>
-    <div v-else-if="loadError" class="tree__error">Failed to load.</div>
+    <div v-if="rootLoading && apiLoadingMessage" class="tree__loading">
+      <slot>
+        <Text>{{ apiLoadingMessage }}</Text>
+      </slot>
+    </div>
+    <div v-else-if="loadError && apiErrorMessage" class="tree__error">
+      <slot
+        ><Text>{{ apiErrorMessage }}</Text></slot
+      >
+    </div>
     <TreeView
       v-else
       :variant="variant"

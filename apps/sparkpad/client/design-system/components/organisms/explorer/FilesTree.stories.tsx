@@ -50,7 +50,7 @@ const meta = {
 
 - **Fetching:** performs \`GET {apiUrl}\` and \`GET {apiUrl}?parentId=<id>\`. Default response shape is \`{ items: TreeViewNode[] }\`; customize via \`mapResponse(raw) => TreeViewNode[]\`.
 - **Lazy loading:** on first expand of a group, calls the API and shows a loading state.
-- **Selection / v-model:** two-way bind via \`v-model\` to \`selectedItemIndexes\` (\`ID[] | ID | null\`). Supports single/multi select (\`isMultiSelect\`) and optional checkboxes (\`isCheckable\`).
+- **Selection / v-model:** two-way bind via \`v-model\` to \`selectedItemIndexes\` (\`ID[] | null\`). Supports single/multi select (\`isMultiSelect\`) and optional checkboxes (\`isCheckable\`).
 - **Auto expand:** \`expandDepth\` expands the tree to a given depth after the root loads.
 - **Events:** \`update:selected-item-indexes\`, \`loaded(parentId, nodes)\`, \`error(error)\`, \`toggle:item(node, nextExpanded)\`, \`select:item(node)\`.
 - **Network options:** pass \`headers\` for auth/tracing, etc.

@@ -6,12 +6,18 @@ import type {
   TreeViewStylingProps,
 } from "@/components/molecules";
 
+export interface FilesTreeMessages {
+  apiLoadingMessage: string;
+  apiErrorMessage: string;
+}
+
 export interface FilesTreeProps
   extends TreeViewConfigProps,
     Partial<
       Pick<TreeViewControlProps, "selectedItemIndexes" | "expandedItemIndexes">
     >,
-    Partial<TreeViewStylingProps> {
+    Partial<TreeViewStylingProps>,
+    Partial<FilesTreeMessages> {
   apiUrl: string;
   rootId?: TreeViewNodeID | null;
   expandDepth?: number;

@@ -8,6 +8,7 @@ import {
 } from "@@/stores/useEditorLayout";
 
 import { ResizeBounding, Text } from "@/components/atoms";
+import { FilesNavigator } from "@@/components/organisms";
 
 const { navigatorWidth, isNavigatorShown } = storeToRefs(useEditorLayout());
 const { setNavigatorWidth } = useEditorLayout();
@@ -29,7 +30,7 @@ const onUpdateWidth = (width: number) => {
       :max-width="DEFAULT_NAVIGATOR_MAX_WIDTH"
       @update:width="onUpdateWidth"
     >
-      <Text :variant="'body-2'">FS Navigator (Sidebar)</Text>
+      <FilesNavigator></FilesNavigator>
     </ResizeBounding>
     <div class="editor-view__content">
       <Text :variant="'body-2'">Notes</Text>
