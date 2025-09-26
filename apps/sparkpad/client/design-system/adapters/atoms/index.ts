@@ -6,7 +6,7 @@ export * from "./carouselStack";
 export * from "./group";
 
 // controls
-export * from "./constrolWrapper";
+export * from "./controlWrapper";
 
 //. dividers
 export * from "./divider";

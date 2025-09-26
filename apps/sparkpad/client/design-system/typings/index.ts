@@ -1,6 +1,6 @@
 export * from "./theme";
 export * from "./dimentions";
-export * from "./lcoalStorage";
+export * from "./localStorage";
 export * from "./elements";
 export * from "./transitions";
 export * from "./controls";
