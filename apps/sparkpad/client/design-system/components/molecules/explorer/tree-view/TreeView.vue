@@ -4,7 +4,7 @@ import { nextTick, ref, useTemplateRef, watch } from "vue";
 import {
   TreeViewItem,
   type TreeViewNode,
-  type TreeViewNodeId,
+  type TreeViewNodeID,
   type TreeViewProps,
 } from "@/components/molecules";
 
@@ -19,42 +19,42 @@ const props = withDefaults(defineProps<TreeViewProps>(), {
   isMultiSelect: false,
   isCheckable: false,
   isSelectOnRelease: true,
-  isExpandOnItemPress: true,
+  isExpandOnItemPress: false,
   ariaLabel: "Files",
 });
 
 const emit = defineEmits<{
   (
     e: "update:selected-item-indexes",
-    value: TreeViewNodeId[] | TreeViewNodeId | null
+    value: TreeViewNodeID[] | TreeViewNodeID | null
   ): void;
-  (e: "selected:item", node: TreeViewNode): void;
+  (e: "select:item", node: TreeViewNode): void;
   (e: "toggle:item", node: TreeViewNode, nextExpanded: boolean): void;
 }>();
 
 const refRoot = useTemplateRef<HTMLElement | null>("root");
 
-const localSelectedItemIndexes = ref<TreeViewNodeId[]>([]);
-const localExpandedItemIndexes = ref<TreeViewNodeId[]>([]);
-const localLoadingItemIndexes = ref<TreeViewNodeId[]>([]);
+const localSelectedItemIndexes = ref<TreeViewNodeID[]>([]);
+const localExpandedItemIndexes = ref<TreeViewNodeID[]>([]);
+const localLoadingItemIndexes = ref<TreeViewNodeID[]>([]);
 
 watch(
   () => props.selectedItemIndexes,
   (newIndexes) => {
     if (props.isMultiSelect)
       localSelectedItemIndexes.value = Array.isArray(newIndexes)
-        ? (newIndexes as TreeViewNodeId[])
+        ? (newIndexes as TreeViewNodeID[])
         : newIndexes == null
           ? []
-          : [newIndexes as TreeViewNodeId];
+          : [newIndexes as TreeViewNodeID];
     else
       localSelectedItemIndexes.value = Array.isArray(newIndexes)
         ? newIndexes[0]
-          ? [newIndexes[0] as TreeViewNodeId]
+          ? [newIndexes[0] as TreeViewNodeID]
           : []
         : newIndexes == null
           ? []
-          : [newIndexes as TreeViewNodeId];
+          : [newIndexes as TreeViewNodeID];
   },
   { immediate: true }
 );
@@ -85,7 +85,7 @@ const onToggle = (node: TreeViewNode, next: boolean) => {
   emit("toggle:item", node, next);
 };
 
-const updateSelection = (arr: TreeViewNodeId[]) => {
+const updateSelection = (arr: TreeViewNodeID[]) => {
   if (props.isMultiSelect) {
     emit("update:selected-item-indexes", arr);
   } else {
@@ -103,7 +103,7 @@ const onSelect = (node: TreeViewNode, checked: boolean) => {
 };
 
 const onRowClick = (node: TreeViewNode) => {
-  emit("selected:item", node);
+  emit("select:item", node);
 
   // expand on item click if it's a group (not a leaf)
   if (props.isExpandOnItemPress && !node.isLeaf) {
@@ -134,7 +134,7 @@ function buildFlat(nodes: TreeViewNode[], out: TreeViewNode[] = []) {
   return out;
 }
 
-const focusById = (id: TreeViewNodeId) => {
+const focusById = (id: TreeViewNodeID) => {
   const el = refRoot.value?.querySelector<HTMLElement>(
     `[data-node-id="${CSS.escape(String(id))}"]`
   );
@@ -246,12 +246,10 @@ $prefix: "tree-view";
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
-          .#{$prefix} {
-            @include themify($themes) {
-              background-color: themed(
-                "molecules.tree-view.#{$mode}.#{$tone}.root.background"
-              );
-            }
+          @include themify($themes) {
+            background-color: themed(
+              "molecules.tree-view.#{$mode}.#{$tone}.root.background"
+            );
           }
         }
       }

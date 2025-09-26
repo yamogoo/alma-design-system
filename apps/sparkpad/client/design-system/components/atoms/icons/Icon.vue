@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineAsyncComponent, computed, markRaw } from "vue";
+import { defineAsyncComponent, computed, markRaw, useTemplateRef } from "vue";
 
 import {
   Skeleton,
@@ -12,6 +12,8 @@ const props = withDefaults(defineProps<IconProps>(), {
   variant: "default",
 });
 
+const root = useTemplateRef<HTMLDivElement | null>("root");
+
 const symbol = computed(() => {
   const { name, appearance, weight } = props;
 
@@ -20,10 +22,15 @@ const symbol = computed(() => {
   const loader = iconManifest[key as IconFullName];
   return loader ? markRaw(defineAsyncComponent(loader)) : null;
 });
+
+defineExpose({
+  root,
+});
 </script>
 
 <template>
   <div
+    ref="root"
     class="icon"
     :class="[
       {

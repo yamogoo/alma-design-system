@@ -958,9 +958,9 @@ $themes:(
   item: (
   root: (
   background: (
-  normal: #101315,
+  normal: #10131500,
   hovered: #1a1f23,
-  selected: #013cfe
+  selected: #000e3c
 )
 ),
   label: (
@@ -1993,9 +1993,10 @@ $themes:(
   item: (
   root: (
   background: (
-  normal: #f8f9fa,
-  hovered: #013cfe,
-  selected: #013cfe
+  normal: #f8f9fa00,
+  hovered: #dbe3ff,
+  selected: #cfdaff
+)
 ),
   label: (
   color: (
@@ -2009,7 +2010,6 @@ $themes:(
   normal: #2f383f,
   hovered: #0130ce,
   selected: #0130ce
-)
 )
 )
 )

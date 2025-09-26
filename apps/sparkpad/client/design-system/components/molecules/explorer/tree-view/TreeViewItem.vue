@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, useTemplateRef } from "vue";
+import { computed, onMounted, useTemplateRef, watch } from "vue";
+import g from "gsap";
 
 import { useHover } from "@/composables/local";
 
@@ -18,6 +19,7 @@ const emit = defineEmits<{
 }>();
 
 const refRoot = useTemplateRef<HTMLDivElement | null>("root");
+const refIcon = useTemplateRef<InstanceType<typeof Icon> | null>("icon");
 
 const { isHovered } = useHover(refRoot);
 
@@ -63,6 +65,36 @@ const onItemPress = (e: PointerEvent, isPressed: boolean): void => {
 const onItemKeyDown = (e: KeyboardEvent): void => {
   emit("keydown:item", e, props.node);
 };
+
+/* * * Animations * * */
+
+const ICON_DURATION = 0.2;
+
+const onAnimIcon = (isExpanded: boolean, duration = ICON_DURATION): void => {
+  const el = refIcon.value?.root;
+
+  if (el) {
+    g.to(el, {
+      rotate: isExpanded ? 0 : -90,
+      ease: "power4.out",
+      duration: duration,
+    });
+  }
+};
+
+watch(
+  isExpanded,
+  async (newValue) => {
+    onAnimIcon(newValue);
+  },
+  {
+    immediate: true,
+  }
+);
+
+onMounted(() => {
+  onAnimIcon(isExpanded.value, 0);
+});
 </script>
 
 <template>
@@ -84,19 +116,22 @@ const onItemKeyDown = (e: KeyboardEvent): void => {
     @keydown="onItemKeyDown"
   >
     <slot>
-      <Icon
-        class="tree-view-item__caret"
-        :variant="'default'"
-        name="down"
-        appearance="outline"
-        weight="400"
-        aria-label="Expand/Collapse"
-        :aria-expanded="isExpanded"
-      />
-      <Text class="tree-view-item__label">{{ node.name }}</Text>
+      <div class="tree-view-item__content">
+        <Icon
+          v-if="!node.isLeaf"
+          ref="icon"
+          class="tree-view-item__caret"
+          :variant="'default'"
+          name="down"
+          appearance="outline"
+          weight="400"
+          aria-label="Expand/Collapse"
+          :aria-expanded="isExpanded"
+        />
+        <Text class="tree-view-item__label">{{ node.name }}</Text>
+      </div>
     </slot>
   </div>
-
   <div
     v-if="!node.isLeaf && isExpanded"
     role="group"
@@ -129,16 +164,26 @@ $prefix: "tree-view";
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
+          $root-gap: px2rem(get($val, "root.gap"));
+
           $gap: px2rem(get($val, "item.root.gap"));
           $indent: px2rem(get($val, "item.root.indent"));
+          $padding: px2rem(get($val, "item.root.padding"));
+          $border-radius: px2rem(get($val, "item.root.border-radius"));
 
           $label-font-style: get($val, "item.label.font-style");
 
           $caret-size: get($val, "item.caret.size");
 
           .#{$prefix}-item {
-            gap: $gap;
+            gap: $root-gap;
             padding-left: $indent;
+            border-radius: $border-radius;
+
+            &__content {
+              gap: $gap;
+              padding: $padding;
+            }
 
             &__label {
               @extend %t__#{$label-font-style};
@@ -156,10 +201,12 @@ $prefix: "tree-view";
 
 @mixin stateStyles($mode, $tone, $state) {
   &-#{$state} {
-    @include themify($themes) {
-      background-color: themed(
-        "molecules.tree-view.#{$mode}.#{$tone}.item.root.background.#{$state}"
-      );
+    &.#{$prefix}-item {
+      @include themify($themes) {
+        background-color: themed(
+          "molecules.tree-view.#{$mode}.#{$tone}.item.root.background.#{$state}"
+        );
+      }
     }
 
     .#{$prefix}-item__label {
@@ -185,11 +232,9 @@ $prefix: "tree-view";
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
-          .#{$prefix}-item {
-            &.#{$prefix}-item_state {
-              @each $state in ("normal", "hovered", "selected") {
-                @include stateStyles($state);
-              }
+          .#{$prefix}-item_state {
+            @each $state in ("normal", "hovered", "selected") {
+              @include stateStyles($mode, $tone, $state);
             }
           }
         }
@@ -200,12 +245,22 @@ $prefix: "tree-view";
 
 .#{$prefix} {
   @include defineSizes();
+  @include defineThemes();
 
   &-item {
+    position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     cursor: pointer;
+
+    &__content {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   }
+
   &-children {
     display: block;
   }

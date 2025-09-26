@@ -2,10 +2,15 @@ import { setup, type Preview } from "@storybook/vue3";
 import { type App } from "vue";
 import { createPinia } from "pinia";
 
+import { initialize, mswLoader } from "msw-storybook-addon";
+
 import "./storybook.theme.scss";
 
 import "@/assets/scss/app.global.styles.scss";
 import "@/assets/fonts/_fonts.scss";
+
+initialize({ onUnhandledRequest: "bypass" });
+export const decorators = [mswLoader];
 
 const pinia = createPinia();
 
@@ -44,7 +49,9 @@ const preview: Preview = {
        */
       options: {},
     },
+    actions: { argTypesRegex: "^on[A-Z].*" },
   },
+  loaders: [mswLoader],
   decorators: [
     withTheme,
     () => ({

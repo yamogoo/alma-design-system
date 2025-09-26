@@ -3,7 +3,7 @@
     "md": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": 0,
           "$type": "number",
           "unit": "px",
           "meta": {
@@ -31,6 +31,22 @@
           },
           "indent": {
             "$value": "{tokens.spacing.md.$value}",
+            "$type": "number",
+            "unit": "px",
+            "meta": {
+              "category": "tree view item"
+            }
+          },
+          "padding": {
+            "$value": "{tokens.spacing.sm.$value}",
+            "$type": "number",
+            "unit": "px",
+            "meta": {
+              "category": "tree view item"
+            }
+          },
+          "border-radius": {
+            "$value": "{tokens.roundness.xs.$value}",
             "$type": "number",
             "unit": "px",
             "meta": {

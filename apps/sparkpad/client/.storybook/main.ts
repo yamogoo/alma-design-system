@@ -9,10 +9,12 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
+    "msw-storybook-addon",
   ],
   framework: {
     name: "@storybook/vue3-vite",
     options: {},
   },
+  staticDirs: ["../public"],
 };
 export default config;

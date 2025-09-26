@@ -1,11 +1,11 @@
-import type { TreeViewSelectedItemIndexes } from "./TreeView";
+import type { TreeViewControlProps } from "./TreeView";
 
 export type TreeViewNodeType = "group" | "file";
 
-export type TreeViewNodeId = string | number | symbol;
+export type TreeViewNodeID = string | number;
 
 export interface TreeViewNode {
-  id: TreeViewNodeId;
+  id: TreeViewNodeID;
   name: string;
   type?: TreeViewNodeType;
   isLeaf?: boolean;
@@ -14,12 +14,9 @@ export interface TreeViewNode {
   [key: string]: unknown;
 }
 
-export interface TreeViewItemProps {
+export interface TreeViewItemProps extends TreeViewControlProps {
   node: TreeViewNode;
   depth: number;
-  selectedItemIndexes: TreeViewSelectedItemIndexes;
-  expandedItemIndexes: TreeViewSelectedItemIndexes;
-  loadingItemIndexes: TreeViewSelectedItemIndexes;
   isCheckable?: boolean;
   isSelectOnRelease?: boolean;
 }

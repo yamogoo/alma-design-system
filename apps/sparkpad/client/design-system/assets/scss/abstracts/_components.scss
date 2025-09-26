@@ -808,13 +808,15 @@ $molecules:(
   default: (
   md: (
   root: (
-  gap: 12px,
+  gap: 0px,
   padding: 12px
 ),
   item: (
   root: (
   gap: 12px,
-  indent: 16px
+  indent: 16px,
+  padding: 12px,
+  border-radius: 8px
 ),
   label: (
   font-style: label-3

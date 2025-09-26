@@ -26,7 +26,7 @@
       "category": "config",
       "build": {
         "web": {
-          "exportAsVar": true,
+          "exportAsVar": false,
           "varName": "--scale-factor"
         },
         "ios": {
