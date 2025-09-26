@@ -7,3 +7,5 @@ export * from "./formWrapper";
 
 // panels
 export * from "./snackbar";
+
+export * from "./treeView";

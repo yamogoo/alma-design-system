@@ -803,6 +803,28 @@ $molecules:(
 )
 )
 )
+),
+  tree-view: (
+  default: (
+  md: (
+  root: (
+  gap: 12px,
+  padding: 12px
+),
+  item: (
+  root: (
+  gap: 12px,
+  indent: 16px
+),
+  label: (
+  font-style: label-3
+),
+  caret: (
+  size: 16px
+)
+)
+)
+)
 )
 );
 $templates:(

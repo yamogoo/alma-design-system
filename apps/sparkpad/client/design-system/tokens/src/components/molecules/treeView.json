@@ -1,0 +1,64 @@
+{
+  "default": {
+    "md": {
+      "root": {
+        "gap": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "unit": "px",
+          "meta": {
+            "category": "tree view"
+          }
+        },
+        "padding": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "unit": "px",
+          "meta": {
+            "category": "tree view"
+          }
+        }
+      },
+      "item": {
+        "root": {
+          "gap": {
+            "$value": "{tokens.spacing.sm.$value}",
+            "$type": "number",
+            "unit": "px",
+            "meta": {
+              "category": "tree view item"
+            }
+          },
+          "indent": {
+            "$value": "{tokens.spacing.md.$value}",
+            "$type": "number",
+            "unit": "px",
+            "meta": {
+              "category": "tree view item"
+            }
+          }
+        },
+        "label": {
+          "fontStyle": {
+            "$value": "label-3",
+            "$type": "alias",
+            "unit": "",
+            "meta": {
+              "category": "tree view item"
+            }
+          }
+        },
+        "caret": {
+          "size": {
+            "$value": "{components.atoms.icon.default.xs.root.size.$value}",
+            "$type": "number",
+            "unit": "px",
+            "meta": {
+              "category": "tree view item"
+            }
+          }
+        }
+      }
+    }
+  }
+}

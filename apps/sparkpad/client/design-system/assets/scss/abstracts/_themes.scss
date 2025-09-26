@@ -948,6 +948,38 @@ $themes:(
 )
 )
 )
+),
+  tree-view: (
+  neutral: (
+  primary: (
+  root: (
+  background: #10131500
+),
+  item: (
+  root: (
+  background: (
+  normal: #101315,
+  hovered: #1a1f23,
+  selected: #013cfe
+)
+),
+  label: (
+  color: (
+  normal: #dce1e5,
+  hovered: #a5b1bc,
+  selected: #6286fe
+)
+),
+  caret: (
+  color: (
+  normal: #dce1e5,
+  hovered: #a5b1bc,
+  selected: #6286fe
+)
+)
+)
+)
+)
 )
 ),
   templates: (
@@ -1948,6 +1980,38 @@ $themes:(
   close-button: (
   tone: neutral,
   mode: secondary
+)
+)
+)
+),
+  tree-view: (
+  neutral: (
+  primary: (
+  root: (
+  background: #f8f9fa00
+),
+  item: (
+  root: (
+  background: (
+  normal: #f8f9fa,
+  hovered: #013cfe,
+  selected: #013cfe
+),
+  label: (
+  color: (
+  normal: #2f383f,
+  hovered: #0130ce,
+  selected: #0130ce
+)
+),
+  caret: (
+  color: (
+  normal: #2f383f,
+  hovered: #0130ce,
+  selected: #0130ce
+)
+)
+)
 )
 )
 )

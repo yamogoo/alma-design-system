@@ -15,8 +15,8 @@ const { isConnected } = storeToRefs(useConnectionStore());
     <AppHeader></AppHeader>
     <RouterView></RouterView>
     <Snackbar
-      :tone="'neutral'"
-      :mode="'inversed'"
+      :mode="'neutral'"
+      :tone="'inversed'"
       :title="'Notification'"
       :description="'Some message'"
     ></Snackbar>

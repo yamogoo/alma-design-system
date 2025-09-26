@@ -2,9 +2,8 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 
 import { booleanOptions, enumOptions } from "@/stories/utils";
 
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
-import { Group, Button, type GroupProps } from "@/components/atoms";
 import { groupModes, groupSizes, groupTones, groupVariants } from "@/adapters";
+
 import {
   UIElementAlignments,
   UIElementBlockTags,
@@ -12,6 +11,9 @@ import {
   UIElementOrientations,
   UIElementStretches,
 } from "@/typings";
+
+import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
+import { Group, Button, type GroupProps } from "@/components/atoms";
 
 const meta = {
   title: "Atoms/Containers/Group",

@@ -10,13 +10,13 @@ export const snackbarSizes = Object.keys(
   tokens.molecules.snackbar.default
 ) as SnackbarSize[];
 
-export type SnackbarTone = keyof typeof tokens.themes.light.molecules.snackbar;
-export const snackbarTones = Object.keys(
-  tokens.themes.light.molecules.snackbar
-) as Array<SnackbarTone>;
-
-export type SnackbarMode =
-  keyof typeof tokens.themes.light.molecules.snackbar.neutral;
+export type SnackbarMode = keyof typeof tokens.themes.light.molecules.snackbar;
 export const snackbarModes = Object.keys(
-  tokens.themes.light.molecules.snackbar.neutral
+  tokens.themes.light.molecules.snackbar
 ) as SnackbarMode[];
+
+export type SnackbarTone =
+  keyof typeof tokens.themes.light.molecules.snackbar.neutral;
+export const snackbarTones = Object.keys(
+  tokens.themes.light.molecules.snackbar.neutral
+) as Array<SnackbarTone>;

@@ -1,0 +1,102 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "rgba({themes.themes.light.abstracts.surface.neutral.primary.$value}, 0)",
+          "$type": "color",
+          "unit": "hex",
+          "$meta": {
+            "category": "tree view item"
+          }
+        }
+      },
+      "item": {
+        "root": {
+          "background": {
+            "normal": {
+              "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+              "$type": "color",
+              "unit": "hex",
+              "$meta": {
+                "category": "tree view item"
+              }
+            },
+            "hovered": {
+              "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+              "$type": "color",
+              "unit": "hex",
+              "$meta": {
+                "category": "tree view item"
+              }
+            },
+            "selected": {
+              "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+              "$type": "color",
+              "unit": "hex",
+              "$meta": {
+                "category": "tree view item"
+              }
+            }
+          },
+          "label": {
+            "color": {
+              "normal": {
+                "$value": "{themes.themes.light.abstracts.label.neutral.primary.$value}",
+                "$type": "color",
+                "unit": "hex",
+                "$meta": {
+                  "category": "tree view item"
+                }
+              },
+              "hovered": {
+                "$value": "{themes.themes.light.abstracts.label.accent.primary.$value}",
+                "$type": "color",
+                "unit": "hex",
+                "$meta": {
+                  "category": "tree view item"
+                }
+              },
+              "selected": {
+                "$value": "{themes.themes.light.abstracts.label.accent.primary.$value}",
+                "$type": "color",
+                "unit": "hex",
+                "$meta": {
+                  "category": "tree view item"
+                }
+              }
+            }
+          },
+          "caret": {
+            "color": {
+              "normal": {
+                "$value": "{themes.themes.light.abstracts.label.neutral.primary.$value}",
+                "$type": "color",
+                "unit": "hex",
+                "$meta": {
+                  "category": "tree view item"
+                }
+              },
+              "hovered": {
+                "$value": "{themes.themes.light.abstracts.label.accent.primary.$value}",
+                "$type": "color",
+                "unit": "hex",
+                "$meta": {
+                  "category": "tree view item"
+                }
+              },
+              "selected": {
+                "$value": "{themes.themes.light.abstracts.label.accent.primary.$value}",
+                "$type": "color",
+                "unit": "hex",
+                "$meta": {
+                  "category": "tree view item"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

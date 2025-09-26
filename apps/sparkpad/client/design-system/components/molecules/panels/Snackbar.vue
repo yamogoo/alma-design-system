@@ -4,8 +4,8 @@ import { type SnackbarProps } from "@/components/molecules";
 
 withDefaults(defineProps<SnackbarProps>(), {
   variant: "default",
-  mode: "primary",
-  tone: "neutral",
+  mode: "neutral",
+  tone: "primary",
   size: "md",
   isCloseButtonShown: false,
 });
