@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
-import {
-  DEFAULT_NAVIGATOR_MAX_WIDTH,
-  DEFAULT_NAVIGATOR_MIN_WIDTH,
-  useEditorLayout,
-} from "@@/stores/useEditorLayout";
+import { Constants } from "@@/constants";
+
+import { useEditorLayout } from "@@/stores/useEditorLayout";
 
 import { ResizeBounding } from "@/components/atoms";
 import { Explorer } from "@@/components/organisms";
@@ -30,8 +28,8 @@ import { EditorView, SidebarMenu } from "@@/components/organisms";
       data-test="editor-navigator"
       :directions="'r'"
       :width="navigatorWidth"
-      :min-width="DEFAULT_NAVIGATOR_MIN_WIDTH"
-      :max-width="DEFAULT_NAVIGATOR_MAX_WIDTH"
+      :min-width="Constants.DEFAULT_NAVIGATOR_MIN_WIDTH"
+      :max-width="Constants.DEFAULT_NAVIGATOR_MAX_WIDTH"
       @update:width="onUpdateWidth"
     >
       <Explorer></Explorer>

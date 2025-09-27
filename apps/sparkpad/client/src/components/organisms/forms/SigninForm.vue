@@ -46,8 +46,9 @@ const isValid = computed(
   () => isPasswordValid.value && isRepeatedPasswordValid.value
 );
 
-const isError = computed(() => {
+const localIsError = computed(() => {
   const value = !!loginError.value.general;
+
   emit("update:is-error", value);
   return value;
 });
@@ -92,27 +93,27 @@ export interface Props {
       v-model:value="localEmail"
       :placeholder="$t.auth.signin.form.userName"
       :type="'text'"
-      :is-error="isError"
+      :is-error="localIsError"
     ></Input>
     <PasswordInput
       v-model:value="localPassword"
       v-model:masked="localIsPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.signin.form.password"
-      :is-error="isError"
+      :is-error="localIsError"
     ></PasswordInput>
     <PasswordInput
       v-model:value="localRepeatedPassword"
       v-model:masked="localIsRepeatedPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.signin.form.repeatPassword"
-      :is-error="isError"
+      :is-error="localIsError"
     ></PasswordInput>
     <Text :variant="'caption-2'" :mode="'neutral'" :tone="'secondary'">{{
       $t.auth.login.form.description
     }}</Text>
     <Text
-      v-if="isError"
+      v-if="localIsError"
       :data-testid="'auth-form-error'"
       :variant="'caption-1'"
       :text-color="'error'"

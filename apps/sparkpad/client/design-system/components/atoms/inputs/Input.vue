@@ -214,30 +214,33 @@ onMounted(() => {
     data-testid="input"
   >
     <div class="input__field" @pointerdown="onFocus">
-      <label
-        v-if="placeholder || placeholder === ''"
-        ref="refPlaceholder"
-        :for="id"
-        :class="`${PREFIX}__field-placeholder`"
-        >{{ placeholder }}
-      </label>
       <div :class="`${PREFIX}__field-content`">
         <div v-if="$slots.icon" :class="`${PREFIX}__field-content-icon`">
           <slot name="icon"></slot>
         </div>
-        <input
-          :id
-          ref="refInput"
-          v-model="localModelValue"
-          :type
-          :class="`${PREFIX}__field-value`"
-          data-testid="input-value"
-          :areaPlaceholder="areaPlaceholder ?? placeholder"
-          :disabled="isDisabled"
-          :autocomplete
-          :spellcheck="'false'"
-          @change="onChange"
-        />
+        <div class="input__field-inner-content">
+          <label
+            v-if="placeholder || placeholder === ''"
+            ref="refPlaceholder"
+            :for="id"
+            :class="`${PREFIX}__field-placeholder`"
+          >
+            {{ placeholder }}
+          </label>
+          <input
+            :id
+            ref="refInput"
+            v-model="localModelValue"
+            :type
+            :class="`${PREFIX}__field-value`"
+            data-testid="input-value"
+            :areaPlaceholder="areaPlaceholder ?? placeholder"
+            :disabled="isDisabled"
+            :autocomplete
+            :spellcheck="'false'"
+            @change="onChange"
+          />
+        </div>
         <slot name="controls"></slot>
         <ControlButton
           v-if="isResetButtonShown"
@@ -260,8 +263,9 @@ onMounted(() => {
         v-if="!!errorMessage"
         :class="`${PREFIX}__error-message`"
         :variant="'caption-2'"
-        >{{ errorMessage.toLowerCase() }}</Text
       >
+        {{ errorMessage.toLowerCase() }}
+      </Text>
     </div>
   </AnimatedWrapper>
 </template>
@@ -428,6 +432,14 @@ $prefix: input;
       align-items: center;
       gap: px2rem(get($gap, "xs"));
       height: 100%;
+
+      &-icon {
+        height: max-content;
+      }
+    }
+
+    &-inner-content {
+      @include box(100%);
 
       &-icon {
         height: max-content;

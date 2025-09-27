@@ -5,17 +5,23 @@ import { booleanOptions, enumOptions } from "@/stories";
 import { inputModes, inputSizes, inputTones, inputVariants } from "@/adapters";
 
 import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
-import { PasswordInput, type PasswordInputProps } from "@/components/atoms";
+import { SearchInput, type SearchFieldProps } from "@/components/atoms";
 
 const meta = {
-  title: "Atoms/Inputs/PasswordInput",
-  component: PasswordInput,
+  title: "Atoms/Inputs/SearchInput",
+  component: SearchInput,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
-        component:
-          "PasswordInput extends the base Input component with password-specific features, including masking/unmasking of input text. It supports all base Input modifiers (variant, size, mode, tone) and adds additional controls like `masked` and `isMaskIconShown` for secure text entry.",
+        component: `**SearchField** is a controlled search input that wraps the atomic \`Input\` and forwards styling modifiers (**variant**, **size**, **mode**, **tone**) while managing focus state.
+**Key points**
+- Predictable two-way data flow via \`value\` / \`update:value\`.
+- Emits \`update:focused\` on focus/blur and \`reset:value\` when cleared.
+- Optional search icon is decorative (\`aria-hidden="true"\`) for accessible UI.
+- Supports optional auto-clear on unmount to prevent stale state.
+- Aligned with design-token-driven theming and BEM-style class naming.
+`,
       },
     },
   },
@@ -30,20 +36,11 @@ const meta = {
     },
     placeholder: {
       type: "string",
-      defaultValue: "placeholder",
+      defaultValue: "search",
     },
-    errorMessage: {
-      type: "string",
-      defaultValue: "error",
-    },
-    masked: booleanOptions(true),
-    isFocused: booleanOptions(false),
     isDisabled: booleanOptions(false),
-    isError: booleanOptions(false),
-    isRestButtonEnabled: booleanOptions(false),
-    isMaskIconShown: booleanOptions(false),
   },
-} satisfies Meta<typeof PasswordInput>;
+} satisfies Meta<typeof SearchInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -54,19 +51,19 @@ export const Playground: Story = {
     mode: "neutral",
     tone: "primary",
     value: "",
-    placeholder: "login",
+    placeholder: "Search",
   },
 };
 
 export const Colors: Story = {
   args: {
     value: "",
-    placeholder: "placeholder",
+    placeholder: "search",
     mode: "neutral",
     tone: "primary",
     size: "md",
   },
-  render: (args: PasswordInputProps) => ({
+  render: (args: SearchFieldProps) => ({
     setup() {
       return () => (
         <>
@@ -87,7 +84,7 @@ export const Colors: Story = {
                     align={"center"}
                     orientation={"vertical"}
                   >
-                    <PasswordInput
+                    <SearchInput
                       {...args}
                       variant={"default"}
                       mode={mode}
@@ -109,12 +106,11 @@ export const Colors: Story = {
 export const Sizes: Story = {
   args: {
     value: "",
-    placeholder: "placeholder",
+    placeholder: "Search",
     mode: "neutral",
-    // tone: "primary",
     size: "md",
   },
-  render: (args: PasswordInputProps) => ({
+  render: (args: SearchFieldProps) => ({
     setup() {
       return () => (
         <>
@@ -135,7 +131,7 @@ export const Sizes: Story = {
                     align={"center"}
                     orientation={"vertical"}
                   >
-                    <PasswordInput
+                    <SearchInput
                       {...args}
                       variant={variant}
                       mode={"neutral"}

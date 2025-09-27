@@ -324,25 +324,6 @@ $atoms:(
 ),
   input: (
   default: (
-  md: (
-  root: (
-  height: 44px,
-  whole-height: 60px,
-  padding: 8px 16px,
-  border-radius: 8px
-),
-  label: (
-  font-style: label-3,
-  padding-top: 12px
-),
-  placeholder: (
-  font-style: label-3
-),
-  error: (
-  font-style: caption-1,
-  padding: 0px 16px 0px 16px
-)
-),
   lg: (
   root: (
   height: 52px,
@@ -352,7 +333,26 @@ $atoms:(
 ),
   label: (
   font-style: label-3,
-  padding-top: 12px
+  padding-top: 4px
+),
+  placeholder: (
+  font-style: label-3
+),
+  error: (
+  font-style: caption-1,
+  padding: 0px 16px 0px 16px
+)
+),
+  md: (
+  root: (
+  height: 44px,
+  whole-height: 60px,
+  padding: 8px 16px,
+  border-radius: 8px
+),
+  label: (
+  font-style: label-3,
+  padding-top: 4px
 ),
   placeholder: (
   font-style: label-3
