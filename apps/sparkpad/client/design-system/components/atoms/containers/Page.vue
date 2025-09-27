@@ -1,6 +1,7 @@
+gsap
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, useTemplateRef } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import { createCustomEvent } from "@/utils";
 
@@ -61,10 +62,10 @@ const MOVE_DURATION_OUT = 0.65;
 const MOVE_DELAY_IN = 0.05;
 const MOVE_DELAY_OUT = 0.1;
 
-let tl: gsap.core.Timeline = g.timeline();
+let tl: gsap.core.Timeline = gsap.timeline();
 
 const clearTimeline = (el: Element): void => {
-  g.set(el, { clearProps: "all" });
+  gsap.set(el, { clearProps: "all" });
 };
 
 const onAnimEnter = async (el: Element, done: () => void): Promise<void> => {
@@ -277,7 +278,7 @@ const onAnimLeave = async (el: Element, done: () => void): Promise<void> => {
       break;
     case "top-to-bottom":
       {
-        const tl = g.timeline();
+        const tl = gsap.timeline();
 
         tl.to(
           el,
@@ -308,7 +309,7 @@ const onAnimLeave = async (el: Element, done: () => void): Promise<void> => {
       break;
     case "bottom-to-top":
       {
-        const tl = g.timeline();
+        const tl = gsap.timeline();
 
         tl.to(
           el,
@@ -339,7 +340,7 @@ const onAnimLeave = async (el: Element, done: () => void): Promise<void> => {
       break;
     case "right-to-left":
       {
-        const tl = g.timeline();
+        const tl = gsap.timeline();
 
         tl.to(
           el,
@@ -370,7 +371,7 @@ const onAnimLeave = async (el: Element, done: () => void): Promise<void> => {
       break;
     case "left-to-right":
       {
-        const tl = g.timeline();
+        const tl = gsap.timeline();
 
         tl.to(
           el,
@@ -405,7 +406,7 @@ const onAnimLeave = async (el: Element, done: () => void): Promise<void> => {
 const onFooterEnter = (el: Element, done: () => void): void => {
   const height = el.clientHeight;
 
-  g.fromTo(
+  gsap.fromTo(
     el,
     {
       y: height,
@@ -424,7 +425,7 @@ const onFooterEnter = (el: Element, done: () => void): void => {
 const onFooterLeave = (el: Element, done: () => void): void => {
   const height = el.clientHeight;
 
-  g.to(el, {
+  gsap.to(el, {
     y: height,
     opacity: 0,
     ease: "power4.out",
@@ -453,6 +454,7 @@ onUnmounted(() => {
   <Transition :css="false" @enter="onAnimEnter" @leave="onAnimLeave">
     <div
       v-if="isMounted"
+      ref="root"
       class="page"
       :class="[
         {
@@ -460,7 +462,6 @@ onUnmounted(() => {
           [`page_mode-${tone}`]: !!tone,
         },
       ]"
-      ref="root"
       @pointerdown="onPointerDown"
     >
       <div v-if="$slots.header" class="page__header">

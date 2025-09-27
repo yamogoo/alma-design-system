@@ -28,8 +28,8 @@ withDefaults(defineProps<SnackbarProps>(), {
     <div v-if="!$slots.default" :class="`${PREFIX}__content`">
       <Text v-if="title" :class="`${PREFIX}__content-title`"> {{ title }}</Text>
       <Text v-if="description" :class="`${PREFIX}__content-description`">
-        {{ description }}</Text
-      >
+        {{ description }}
+      </Text>
     </div>
     <ControlButton
       :class="`${PREFIX}__close-button`"

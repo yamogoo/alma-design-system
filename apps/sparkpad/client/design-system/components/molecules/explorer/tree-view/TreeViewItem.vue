@@ -139,7 +139,9 @@ onMounted(() => {
           aria-label="Expand/Collapse"
           :aria-expanded="isExpanded"
         />
-        <Text :class="`${PREFIX}__label`">{{ node.name }}</Text>
+        <Text :class="`${PREFIX}__label`">
+          {{ node.name }}
+        </Text>
       </div>
     </slot>
   </div>

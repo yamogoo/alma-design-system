@@ -20,6 +20,7 @@ const symbol = computed(() => {
     throw new Error(`SVG not found: ${path}`);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return defineAsyncComponent(loader as any);
 });
 </script>
@@ -37,7 +38,7 @@ const symbol = computed(() => {
     ]"
   >
     <Suspense>
-      <component v-if="symbol" :is="symbol" viewBox="0 0 24 24"></component>
+      <component :is="symbol" v-if="symbol" viewBox="0 0 24 24"></component>
       <template #fallback>
         <Skeleton></Skeleton>
       </template>

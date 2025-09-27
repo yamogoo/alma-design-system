@@ -22,7 +22,9 @@ const { isConnected } = storeToRefs(useConnectionStore());
     ></Snackbar>
     <AppFooter></AppFooter>
     <ActionSheet :is-active="!isConnected" :mode="'primary'">
-      <Text :variant="'caption-2'"> Connection Lost</Text>
+      <Text :variant="'caption-2'">
+        {{ "Connection Lost" }}
+      </Text>
     </ActionSheet>
   </Page>
 </template>

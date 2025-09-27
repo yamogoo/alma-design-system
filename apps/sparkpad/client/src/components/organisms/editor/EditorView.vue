@@ -5,7 +5,9 @@ import { Text } from "@/components/atoms";
 <template>
   <div class="editor-view">
     <div class="editor-view__content">
-      <Text :variant="'body-2'">Notes</Text>
+      <Text :variant="'body-2'">
+        {{ "Notes" }}
+      </Text>
     </div>
   </div>
 </template>

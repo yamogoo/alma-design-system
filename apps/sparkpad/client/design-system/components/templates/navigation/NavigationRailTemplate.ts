@@ -7,12 +7,11 @@ import type {
 
 import type { UIElementStylingModifiers } from "@/typings";
 
-export interface NavigationRailTemplateProps
-  extends Partial<
-    UIElementStylingModifiers<
-      NavigationRailVariant,
-      NavigationRailSize,
-      NavigationRailMode,
-      NavigationRailTone
-    >
-  > {}
+export type NavigationRailTemplateProps = Partial<
+  UIElementStylingModifiers<
+    NavigationRailVariant,
+    NavigationRailSize,
+    NavigationRailMode,
+    NavigationRailTone
+  >
+>;

@@ -109,16 +109,17 @@ export interface Props {
       :placeholder="$t.auth.signin.form.repeatPassword"
       :is-error="localIsError"
     ></PasswordInput>
-    <Text :variant="'caption-2'" :mode="'neutral'" :tone="'secondary'">{{
-      $t.auth.login.form.description
-    }}</Text>
+    <Text :variant="'caption-2'" :mode="'neutral'" :tone="'secondary'">
+      {{ $t.auth.login.form.description }}
+    </Text>
     <Text
       v-if="localIsError"
       :data-testid="'auth-form-error'"
       :variant="'caption-1'"
       :text-color="'error'"
-      >{{ loginError }}</Text
     >
+      {{ loginError }}
+    </Text>
     <template #footer>
       <ActionButton
         :mode="'accent'"

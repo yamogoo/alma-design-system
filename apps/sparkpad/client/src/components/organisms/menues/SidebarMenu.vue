@@ -9,7 +9,9 @@ const onOpenSettings = (): void => {};
 
 <template>
   <NavigationRail class="sidebar-menu" :items="[]" :selected-item-id="1">
-    <template #header><Logo></Logo></template>
+    <template #header>
+      <Logo></Logo>
+    </template>
     <template #footer>
       <Group
         :variant="'block'"
@@ -56,12 +58,6 @@ const onOpenSettings = (): void => {};
   height: 100%;
   padding: 12px 0px;
   gap: 24px;
-
-  &__body {
-  }
-
-  &__header {
-  }
 
   &__footer {
     display: flex;

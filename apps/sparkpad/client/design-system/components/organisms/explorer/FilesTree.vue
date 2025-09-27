@@ -165,17 +165,17 @@ onMounted(async () => {
       </slot>
     </div>
     <div v-else-if="loadError && apiErrorMessage" :class="`${PREFIX}__error`">
-      <slot
-        ><Text>{{ apiErrorMessage }}</Text></slot
-      >
+      <slot>
+        <Text> {{ apiErrorMessage }}] </Text>
+      </slot>
     </div>
     <TreeView
       v-else
+      v-model:selected-item-indexes="selectionProxy"
       :variant="variant"
       :size="size"
       :mode="mode"
       :tone="tone"
-      v-model:selected-item-indexes="selectionProxy"
       :nodes="rootNodes"
       :expanded-item-indexes="[...expandedItemIndexes]"
       :loading-item-indexes="[...loadingItemIndexes]"

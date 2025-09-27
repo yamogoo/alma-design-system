@@ -120,12 +120,12 @@ const onOptionClick = (): void => {
     >
       <div :class="`${PREFIX}__current-value-container`">
         <div :class="`${PREFIX}__current-value-content`">
-          <span :class="`${PREFIX}__current-value-label`">{{ value }}</span
-          ><span
-            v-if="valuePostfix"
-            :class="`${PREFIX}__current-value-postfix`"
-            >{{ valuePostfix }}</span
-          >
+          <span :class="`${PREFIX}__current-value-label`">
+            {{ value }}
+          </span>
+          <span v-if="valuePostfix" :class="`${PREFIX}__current-value-postfix`">
+            {{ valuePostfix }}
+          </span>
         </div>
         <Icon
           :class="`${PREFIX}__current-value-icon`"

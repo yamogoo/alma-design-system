@@ -118,16 +118,9 @@ export interface Props {
       :is-error="!!passwordError"
       :error-message="passwordError"
     ></PasswordInput>
-    <!-- <Text
-      v-if="errorMessage"
-      :data-testid="'auth-form-error'"
-      :variant="'caption-1'"
-      :text-color="'error'"
-      >{{ errorMessage }}</Text
-    > -->
-    <Text :variant="'caption-2'" :mode="'neutral'" :tone="'secondary'">{{
-      $t.auth.login.form.description
-    }}</Text>
+    <Text :variant="'caption-2'" :mode="'neutral'" :tone="'secondary'">
+      {{ $t.auth.login.form.description }}
+    </Text>
 
     <template #footer>
       <Group :orientation="'vertical'" :size="'sm'" :stretch="'fill'">
@@ -148,8 +141,8 @@ export interface Props {
           :mode="'neutral'"
           :tone="'primary'"
         ></Divider>
-        <Tooltip :label="'Button'"
-          ><ActionButton
+        <Tooltip :label="'Button'">
+          <ActionButton
             :mode="'neutral'"
             :tone="'tertiary'"
             :size="'md'"

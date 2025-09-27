@@ -54,7 +54,7 @@ const onPress = (item: IMenuItem<T>): void => {
     <MenuItem
       v-for="item in items"
       :key="item.id"
-      v-memo="item.id === selectedItemId"
+      v-memo="[item.id === selectedItemId]"
       :is-active="item.id === selectedItemId"
       role="menuitem"
       data-testid="simple-menu-item"
@@ -65,8 +65,9 @@ const onPress = (item: IMenuItem<T>): void => {
         :as="'span'"
         :class="`${PREFIX}__item-label`"
         data-testid="simple-menu-item-label"
-        >{{ item.label }}</Text
       >
+        {{ item.label }}
+      </Text>
     </MenuItem>
   </div>
 </template>

@@ -34,9 +34,9 @@ const id = useId();
         :class="`${PREFIX}__header`"
         data-testid="form-header"
       >
-        <Text :variant="'title-2'" :mode="'neutral'" :tone="'primary'">{{
-          title
-        }}</Text>
+        <Text :variant="'title-2'" :mode="'neutral'" :tone="'primary'">
+          {{ title }}
+        </Text>
         <slot name="header"></slot>
       </div>
       <div :class="`${PREFIX}__body`">

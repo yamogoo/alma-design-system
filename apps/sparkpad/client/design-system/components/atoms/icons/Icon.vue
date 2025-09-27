@@ -45,7 +45,7 @@ defineExpose({
     data-testid="icon"
   >
     <Suspense>
-      <component v-if="symbol" :is="symbol" viewBox="0 0 24 24"></component>
+      <component :is="symbol" v-if="symbol" viewBox="0 0 24 24"></component>
       <template #fallback>
         <Skeleton></Skeleton>
       </template>
