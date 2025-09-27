@@ -133,9 +133,24 @@ onMounted(() => {
           ref="icon"
           :class="`${PREFIX}__caret`"
           :variant="'default'"
+          :size="'xs'"
           name="down"
           appearance="outline"
-          weight="400"
+          weight="300"
+          aria-label="Expand/Collapse"
+          :aria-expanded="isExpanded"
+        />
+        <Icon
+          v-if="isIconShown"
+          :class="[
+            `${PREFIX}__icon`,
+            `${PREFIX}__icon-${node.isLeaf ? 'file' : 'group'}`,
+          ]"
+          :variant="'default'"
+          :size="'sm'"
+          :name="node.isLeaf ? 'blankSheet' : 'folderClosed'"
+          appearance="outline"
+          weight="300"
           aria-label="Expand/Collapse"
           :aria-expanded="isExpanded"
         />

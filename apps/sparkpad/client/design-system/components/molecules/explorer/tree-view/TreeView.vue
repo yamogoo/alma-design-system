@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<TreeViewProps>(), {
   isCheckable: false,
   isSelectOnRelease: true,
   isExpandOnItemPress: false,
+  isIconShown: false,
   ariaLabel: "Files",
 });
 

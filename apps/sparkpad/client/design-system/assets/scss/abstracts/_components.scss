@@ -33,7 +33,7 @@ $atoms:(
   font-style: label-1
 ),
   icon: (
-  size: 20px,
+  size: 18px,
   alias: (
   size: sm
 )
@@ -103,7 +103,7 @@ $atoms:(
   font-style: label-1
 ),
   icon: (
-  size: 20px,
+  size: 18px,
   alias: (
   size: sm
 )
@@ -297,27 +297,27 @@ $atoms:(
 ),
   sm: (
   root: (
-  size: 20px
+  size: 18px
 )
 ),
   md: (
   root: (
-  size: 24px
+  size: 20px
 )
 ),
   lg: (
   root: (
-  size: 32px
+  size: 24px
 )
 ),
   xl: (
   root: (
-  size: 48px
+  size: 32px
 )
 ),
   xxl: (
   root: (
-  size: 56px
+  size: 48px
 )
 )
 )
@@ -527,15 +527,15 @@ $atoms:(
   rounded: (
   md: (
   root: (
-  width: 48%,
-  height: 48%,
+  width: 32%,
+  height: 32%,
   border-radius: 9999px
 )
 ),
   sm: (
   root: (
-  width: 32%,
-  height: 32%,
+  width: 24%,
+  height: 24%,
   border-radius: 9999px
 )
 )

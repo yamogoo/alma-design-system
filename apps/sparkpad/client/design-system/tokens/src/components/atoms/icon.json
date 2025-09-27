@@ -33,7 +33,7 @@
     "sm": {
       "root": {
         "size": {
-          "$value": 20,
+          "$value": 18,
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -48,7 +48,7 @@
     "md": {
       "root": {
         "size": {
-          "$value": 24,
+          "$value": 20,
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -63,7 +63,7 @@
     "lg": {
       "root": {
         "size": {
-          "$value": 32,
+          "$value": 24,
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -78,7 +78,7 @@
     "xl": {
       "root": {
         "size": {
-          "$value": 48,
+          "$value": 32,
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -93,7 +93,7 @@
     "xxl": {
       "root": {
         "size": {
-          "$value": 56,
+          "$value": 48,
           "$type": "number",
           "$unit": "px",
           "$meta": {

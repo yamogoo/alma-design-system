@@ -17,7 +17,7 @@ import {
   TokensParserPlugin,
   VitePluginTokenLinter,
   JSONBuilderPlugin,
-  VitePluginFigmaTokensParser,
+  // VitePluginFigmaTokensParser,
 } from "@alma/tokens-worker";
 
 import VueRouterPlugin from "unplugin-vue-router/vite";
@@ -103,29 +103,29 @@ export default (opts: { mode: string }) => {
       VitePluginTokenLinter({
         source: "./design-system/tokens/src",
       }),
-      VitePluginFigmaTokensParser({
-        source: "./design-system/tokens/build",
-        outDir: "./design-system/tokens/.figma",
-      }),
+      // VitePluginFigmaTokensParser({
+      //   source: "./design-system/tokens/build",
+      //   outDir: "./design-system/tokens/.figma",
+      // }),
       // Application: Tokens and SCSS generation
-      TokensParserPlugin({
-        source: "./src/tokens/.cache",
-        outDir: "./src/assets/scss/abstracts",
-        build: "./src/tokens/build",
-        entryFilePath: "./src/tokens/index.ts",
-        paths: ["./src/tokens", "./design-system/tokens/.cache"],
-        mapOptions: {
-          convertCase: true,
-          includeFileName: false,
-          convertToCSSVariables: true,
-        },
-        builder: {
-          format: "json",
-          paths: ["./src/tokens/src"],
-          includeRootDirName: false,
-        },
-        useReflectOriginalStructure: true,
-      }),
+      // TokensParserPlugin({
+      //   source: "./src/tokens/.cache",
+      //   outDir: "./src/assets/scss/abstracts",
+      //   build: "./src/tokens/build",
+      //   entryFilePath: "./src/tokens/index.ts",
+      //   paths: ["./src/tokens", "./design-system/tokens/.cache"],
+      //   mapOptions: {
+      //     convertCase: true,
+      //     includeFileName: false,
+      //     convertToCSSVariables: true,
+      //   },
+      //   builder: {
+      //     format: "json",
+      //     paths: ["./src/tokens/src"],
+      //     includeRootDirName: false,
+      //   },
+      //   useReflectOriginalStructure: true,
+      // }),
       // Generate locales JSON from directory structure
       JSONBuilderPlugin({
         format: "json",

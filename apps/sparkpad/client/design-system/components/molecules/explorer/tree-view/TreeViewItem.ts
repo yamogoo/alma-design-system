@@ -19,4 +19,5 @@ export interface TreeViewItemProps extends TreeViewControlProps {
   depth: number;
   isCheckable?: boolean;
   isSelectOnRelease?: boolean;
+  isIconShown?: boolean;
 }

@@ -5,7 +5,11 @@ import type {
   TreeViewVariant,
 } from "@/adapters";
 
-import type { TreeViewNodeID, TreeViewNode } from "./TreeViewItem";
+import type {
+  TreeViewNodeID,
+  TreeViewNode,
+  TreeViewItemProps,
+} from "./TreeViewItem";
 
 export type TreeViewNodes = Array<TreeViewNode>;
 
@@ -39,6 +43,7 @@ export interface TreeViewControlProps {
 export interface TreeViewProps
   extends TreeViewStylingProps,
     TreeViewConfigProps,
-    Partial<TreeViewControlProps> {
+    Partial<TreeViewControlProps>,
+    Partial<Pick<TreeViewItemProps, "isIconShown">> {
   ariaLabel?: string;
 }
