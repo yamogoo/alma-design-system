@@ -3,6 +3,8 @@ import type { ToolbarBlockProps } from "./ToolbarBlock";
 
 import { Group } from "@/components/atoms";
 
+const PREFIX = "toolbar-block";
+
 const props = withDefaults(defineProps<ToolbarBlockProps>(), {
   variant: "block",
   size: "md",
@@ -12,7 +14,7 @@ const props = withDefaults(defineProps<ToolbarBlockProps>(), {
 </script>
 
 <template>
-  <Group class="toolbar-block" v-bind="props">
+  <Group :class="PREFIX" v-bind="props">
     <slot></slot>
   </Group>
 </template>

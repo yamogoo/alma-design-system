@@ -96,7 +96,7 @@ $prefix: char-tooltip-label;
     }
   }
 
-  .char-tooltip-label {
+  .#{$prefix} {
     display: flex;
     flex-direction: column;
 

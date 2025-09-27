@@ -59,6 +59,10 @@ const { focused: isLocalFocused } = useFocus(refInput, {
   initialValue: props.isFocused,
 });
 
+const isIdle = computed(() => {
+  return localModelValue.value === "";
+});
+
 watchEffect(() => {
   emit("focused", isLocalFocused.value);
 });
@@ -204,6 +208,7 @@ onMounted(() => {
       `${PREFIX}_variant-${variant}`,
       `${PREFIX}_mode-${mode}`,
       `${PREFIX}_tone-${tone}`,
+      `${PREFIX}_state-${isIdle ? 'idle' : 'normal'}`,
       {
         [`${PREFIX}_size-${size}`]: size,
         [`${PREFIX}_state-error`]: isError,
@@ -326,9 +331,7 @@ $prefix: input;
           &:not(.#{$prefix}_state-disabled) {
             .#{$prefix}__field {
               @include themify($themes) {
-                color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
-                );
+                color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.idle");
                 background-color: themed(
                   "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
                 );
@@ -338,12 +341,47 @@ $prefix: input;
           }
 
           &:not(.#{$prefix}_state-focused) {
-            .#{$prefix}__field {
-              @include themify($themes) {
-                border: $outline solid
-                  themed(
-                    "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
-                  );
+            &.#{$prefix}_state-idle {
+              .#{$prefix}__field {
+                @include themify($themes) {
+                  color: themed("atoms.input.#{$mode}.#{$tone}.label.idle");
+                  border: $outline solid
+                    themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.idle"
+                    );
+                }
+              }
+
+              .#{$prefix}__field-content-icon {
+                .icon {
+                  @include themify($themes) {
+                    fill: themed(
+                      "atoms.input.#{$mode}.#{$tone}.label.disabled"
+                    );
+                  }
+                }
+              }
+            }
+
+            &.#{$prefix}_state-normal {
+              .#{$prefix}__field {
+                @include themify($themes) {
+                  color: themed("atoms.input.#{$mode}.#{$tone}.label.normal");
+                  border: $outline solid
+                    themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
+                    );
+                }
+              }
+
+              .#{$prefix}__field-content-icon {
+                .icon {
+                  @include themify($themes) {
+                    fill: themed(
+                      "atoms.input.#{$mode}.#{$tone}.label.disabled"
+                    );
+                  }
+                }
               }
             }
           }
@@ -359,7 +397,14 @@ $prefix: input;
                   themed(
                     "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.outline"
                   );
-                @extend %base-transition;
+              }
+            }
+
+            .#{$prefix}__field-content-icon {
+              .icon {
+                @include themify($themes) {
+                  fill: themed("atoms.input.#{$mode}.#{$tone}.label.focused");
+                }
               }
             }
           }
@@ -371,7 +416,14 @@ $prefix: input;
                 background-color: themed(
                   "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.disabled"
                 );
-                @extend %base-transition;
+              }
+            }
+
+            .#{$prefix}__field-content-icon {
+              .icon {
+                @include themify($themes) {
+                  fill: themed("atoms.input.#{$mode}.#{$tone}.label.disabled");
+                }
               }
             }
           }
@@ -383,7 +435,14 @@ $prefix: input;
                 background-color: themed(
                   "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.error"
                 );
-                @extend %base-transition;
+              }
+            }
+
+            .#{$prefix}__field-content-icon {
+              .icon {
+                @include themify($themes) {
+                  fill: themed("atoms.input.#{$mode}.#{$tone}.label.error");
+                }
               }
             }
           }

@@ -35,7 +35,7 @@
           }
         },
         "borderRadius": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -135,7 +135,7 @@
           }
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.xs.$value}",
+          "$value": "{tokens.roundness.md.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {

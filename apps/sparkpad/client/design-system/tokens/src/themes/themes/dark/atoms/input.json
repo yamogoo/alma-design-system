@@ -30,6 +30,11 @@
           }
         },
         "border": {
+          "idle": {
+            "$value": "rgba({themes.themes.dark.abstracts.border.neutral.primary.$value}, 0)",
+            "$type": "color",
+            "$unit": "hex"
+          },
           "normal": {
             "$value": "rgba({themes.themes.dark.abstracts.border.neutral.primary.$value}, 0)",
             "$type": "color",
@@ -43,6 +48,14 @@
         }
       },
       "label": {
+        "idle": {
+          "$value": "{themes.themes.dark.abstracts.label.neutral.tertiary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
+        },
         "normal": {
           "$value": "{colors.gray-300}",
           "$type": "color",
@@ -103,6 +116,11 @@
           }
         },
         "border": {
+          "idle": {
+            "$value": "rgba({themes.themes.dark.abstracts.border.neutral.primary.$value}, 0)",
+            "$type": "color",
+            "$unit": "hex"
+          },
           "normal": {
             "$value": "rgba({themes.themes.dark.abstracts.border.neutral.primary.$value}, 0)",
             "$type": "color",
@@ -116,6 +134,11 @@
         }
       },
       "label": {
+        "idle": {
+          "$value": "{themes.themes.dark.abstracts.label.neutral.tertiary.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
         "normal": {
           "$value": "{colors.blue-300}",
           "$type": "color",

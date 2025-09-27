@@ -9,7 +9,7 @@
     }
   },
   "fontSize": {
-    "$value": 16,
+    "$value": 14,
     "$type": "number",
     "$unit": "px",
     "$meta": {
@@ -36,7 +36,7 @@
     }
   },
   "lineHeight": {
-    "$value": 22,
+    "$value": 20,
     "$type": "number",
     "$unit": "px",
     "$meta": {

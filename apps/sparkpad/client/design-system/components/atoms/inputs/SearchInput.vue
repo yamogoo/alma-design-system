@@ -69,9 +69,10 @@ onUnmounted(() => {
     <template v-if="isSearchIconShown" #icon>
       <Icon
         :class="`icon-preview`"
+        :size="'sm'"
         :name="'search'"
         :appearance="'outline'"
-        :weight="'300'"
+        :weight="'400'"
       />
     </template>
   </Input>

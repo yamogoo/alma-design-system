@@ -45,6 +45,14 @@
           }
         },
         "border": {
+          "idle": {
+            "$value": "rgba({themes.themes.light.abstracts.border.neutral.primary.$value}, 0)",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
+          },
           "normal": {
             "$value": "rgba({themes.themes.light.abstracts.border.neutral.primary.$value}, 0)",
             "$type": "color",
@@ -64,6 +72,14 @@
         }
       },
       "label": {
+        "idle": {
+          "$value": "{themes.themes.light.abstracts.label.neutral.tertiary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
+        },
         "normal": {
           "$value": "{colors.gray-800}",
           "$type": "color",
@@ -153,6 +169,14 @@
           }
         },
         "border": {
+          "idle": {
+            "$value": "rgba({themes.themes.light.abstracts.border.neutral.primary.$value}, 0)",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "input"
+            }
+          },
           "normal": {
             "$value": "rgba({themes.themes.light.abstracts.border.neutral.primary.$value}, 0)",
             "$type": "color",
@@ -172,6 +196,14 @@
         }
       },
       "label": {
+        "idle": {
+          "$value": "{themes.themes.light.abstracts.label.accent.tertiary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "input"
+          }
+        },
         "normal": {
           "$value": "{colors.blue-800}",
           "$type": "color",

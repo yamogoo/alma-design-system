@@ -15,7 +15,7 @@
           }
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.lg.$value}",
+          "$value": "{tokens.roundness.xxl.$value}",
           "$$type": "number",
           "$unit": "px",
           "$meta": {
