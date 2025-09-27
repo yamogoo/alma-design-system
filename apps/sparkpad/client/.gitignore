@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 
 *.temp
+*.__draft
 *build
 *.cache
 *.figma

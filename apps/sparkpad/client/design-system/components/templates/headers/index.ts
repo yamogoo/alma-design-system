@@ -1,2 +1,2 @@
-export * from "./MainHeader";
-export { default as MainHeader } from "./MainHeader.vue";
+export * from "./MainHeaderTemplate";
+export { default as MainHeaderTemplate } from "./MainHeaderTemplate.vue";

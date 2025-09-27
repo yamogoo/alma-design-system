@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { DividerProps } from "@/components/atoms";
 
+const PREFIX = "divider";
+
 withDefaults(defineProps<DividerProps>(), {
   as: "span",
   variant: "default",
@@ -15,14 +17,14 @@ withDefaults(defineProps<DividerProps>(), {
 <template>
   <component
     :is="as"
-    class="divider"
     :class="[
-      `divider_variant-${variant}`,
-      `divider_size-${size}`,
-      `divider_mode-${mode}`,
-      `divider_tone-${tone}`,
-      `divider_orientation-${orientation}`,
-      `divider_align-${align}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
+      `${PREFIX}_orientation-${orientation}`,
+      `${PREFIX}_align-${align}`,
     ]"
     role="separator"
     :aria-orientation="orientation === 'vertical' ? 'vertical' : undefined"
@@ -30,22 +32,22 @@ withDefaults(defineProps<DividerProps>(), {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: divider;
 
-@mixin defineSizes($map: get($atoms, "divider")) {
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $border-width: px2rem(get($val, "root.border-width"));
       $padding: get($val, "root.padding");
 
       &_variant-#{$variant} {
-        &.divider_size-#{$size} {
-          &.divider_orientation {
+        &.#{$prefix}_size-#{$size} {
+          &.#{$prefix}_orientation {
             &-horizontal {
               border-bottom-style: solid;
               border-bottom-width: $border-width;
 
-              &.divider_align {
+              &.#{$prefix}_align {
                 &-start {
                   margin: 0 0 $padding * 2 0;
                 }
@@ -64,7 +66,7 @@ withDefaults(defineProps<DividerProps>(), {
               border-right-style: solid;
               border-right-width: $border-width;
 
-              &.divider_align {
+              &.#{$prefix}_align {
                 &-start {
                   margin: 0 $padding * 2 0 0;
                 }
@@ -85,16 +87,16 @@ withDefaults(defineProps<DividerProps>(), {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.divider")) {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.divider_tone-#{$tone} {
-          &.divider_orientation {
+        &.#{$prefix}_tone-#{$tone} {
+          &.#{$prefix}_orientation {
             &-horizontal {
               @include themify($themes) {
                 border-bottom-color: themed(
-                  "atoms.divider.#{$mode}.#{$tone}.root.border"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
                 );
               }
             }
@@ -102,7 +104,7 @@ withDefaults(defineProps<DividerProps>(), {
             &-vertical {
               @include themify($themes) {
                 border-right-color: themed(
-                  "atoms.divider.#{$mode}.#{$tone}.root.border"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
                 );
               }
             }
@@ -113,7 +115,7 @@ withDefaults(defineProps<DividerProps>(), {
   }
 }
 
-.divider {
+.#{$prefix} {
   @extend %base-transition;
 
   @include defineSizes();

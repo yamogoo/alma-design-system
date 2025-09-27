@@ -5,11 +5,13 @@ import { useHover, usePressed } from "@/composables/local";
 
 import { Logo, Text, type LogoWithDescriptorProps } from "@/components/atoms";
 
+const PREFIX = "logo-with-descriptor";
+
 withDefaults(defineProps<LogoWithDescriptorProps>(), {
   variant: "default",
   size: "md",
-  tone: "default",
-  mode: "primary",
+  mode: "default",
+  tone: "primary",
 });
 
 const root = useTemplateRef<HTMLElement | null>("root");
@@ -27,34 +29,36 @@ const computedClass = () => {
 <template>
   <div
     ref="root"
-    class="logo-with-descriptor"
     :class="[
-      `logo-with-descriptor_variant-${variant}`,
-      `logo-with-descriptor_size-${size}`,
-      `logo-with-descriptor_mode-${mode}`,
-      `logo-with-descriptor_tone-${tone}`,
-      `logo-with-descriptor_state-${computedClass()}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
+      `${PREFIX}_state-${computedClass()}`,
     ]"
   >
     <Logo data-testid="logo" />
-    <Text variant="body-2" class="logo-with-descriptor__label">
+    <Text variant="body-2" :class="`${PREFIX}__label`">
       {{ name }}
     </Text>
   </div>
 </template>
 
 <style lang="scss">
-@mixin defineButtonSizes($map: get($atoms, "logo-with-descriptor")) {
+$prefix: logo-with-descriptor;
+
+@mixin defineButtonSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.logo-with-descriptor_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           $gap: px2rem(get($val, "root.gap"));
           $label-font-style: get($val, "label.font-style");
 
           gap: $gap;
 
-          &.logo-with-descriptor__label {
+          &.#{$prefix}__label {
             @extend %t__#{$label-font-style};
             line-height: 1;
           }
@@ -64,23 +68,20 @@ const computedClass = () => {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.logo-with-descriptor")) {
-  @each $tone, $modes in $map {
-    @each $mode, $val in $modes {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+  @each $mode, $val in $map {
+    @each $tone, $modes in $modes {
       &_tone-#{$tone} {
         &.logo-with-descriptor_mode-#{$mode} {
-          $states: get(
-            $themes,
-            "light.logo-with-descriptor.default.primary.label"
-          );
+          $states: get($themes, "light.#{$prefix}.default.primary.label");
 
-          &.logo-with-descriptor {
+          &.#{$prefix} {
             @each $state in $states {
               &._state-#{$state} {
-                .logo-with-descriptor__label {
+                .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "logo-with-descriptor.#{$tone}.#{$mode}.label.#{state}"
+                      "#{$prefix}.#{$mode}.#{$tone}.label.#{state}"
                     );
                   }
                 }
@@ -93,7 +94,7 @@ const computedClass = () => {
   }
 }
 
-.logo-with-descriptor {
+.#{$prefix} {
   display: flex;
   flex-direction: row;
   align-items: center;

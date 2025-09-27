@@ -1,0 +1,54 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "navigation rail"
+            }
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "rgba({themes.themes.light.abstracts.surface.neutral.primary.$value},0)",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "navigation rail"
+            }
+          }
+        }
+      }
+    }
+  },
+  "accent": {
+    "primary": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "navigation rail"
+            }
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "rgba({themes.themes.light.abstracts.surface.accent.primary.$value},0)",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "navigation rail"
+            }
+          }
+        }
+      }
+    }
+  }
+}

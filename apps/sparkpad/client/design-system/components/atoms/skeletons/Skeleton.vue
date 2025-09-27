@@ -4,6 +4,8 @@ import g from "gsap";
 
 import type { SkeletonProps } from "@/components/atoms";
 
+const PREFIX = "skeleton";
+
 const props = withDefaults(defineProps<SkeletonProps>(), {
   mode: "neutral",
   tone: "primary",
@@ -34,26 +36,26 @@ const onAnimate = (el: Element): void => {
 
 <template>
   <div
-    class="skeleton"
     :class="[
+      PREFIX,
       {
-        [`skeleton_variant-${variant}`]: !!variant,
-        [`skeleton_size-${size}`]: !!size,
+        [`${PREFIX}_variant-${variant}`]: !!variant,
+        [`${PREFIX}_size-${size}`]: !!size,
       },
-      `skeleton_mode-${mode}`,
-      `skeleton_tone-${tone}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
     ]"
     :aria-label="ariaLabel"
     :aria-busy="ariaBusy"
   >
-    <div ref="refShape" class="skeleton__shape"></div>
+    <div ref="refShape" :class="`${PREFIX}__shape`"></div>
   </div>
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: skeleton;
 
-@mixin defineSizes($map: get($atoms, "skeleton")) {
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $width: get($val, "root.width");
@@ -61,7 +63,7 @@ const onAnimate = (el: Element): void => {
       $border-radius: px2rem(get($val, "root.border-radius"));
 
       &_variant-#{$variant} {
-        &.skeleton_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           @include box($width, $height);
           @include maxBox($width, $height);
           border-radius: $border-radius;
@@ -71,7 +73,7 @@ const onAnimate = (el: Element): void => {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.skeleton")) {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -79,10 +81,10 @@ const onAnimate = (el: Element): void => {
           .skeleton__shape {
             @include themify($themes) {
               $background-in: themed(
-                "atoms.skeleton.#{$mode}.#{$tone}.background-in"
+                "atoms.#{$prefix}.#{$mode}.#{$tone}.background-in"
               );
               $background-out: themed(
-                "atoms.skeleton.#{$mode}.#{$tone}.background-out"
+                "atoms.#{$prefix}.#{$mode}.#{$tone}.background-out"
               );
               background: linear-gradient(
                 90deg,
@@ -98,7 +100,7 @@ const onAnimate = (el: Element): void => {
   }
 }
 
-.skeleton {
+.#{$prefix} {
   position: relative;
   overflow: hidden;
   z-index: 1;

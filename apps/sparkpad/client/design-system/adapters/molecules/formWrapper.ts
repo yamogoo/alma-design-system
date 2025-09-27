@@ -15,3 +15,9 @@ export type FormWrapperMode =
 export const formWrapperModes = Object.keys(
   tokens.themes.light.molecules.formWrapper
 ) as FormWrapperMode[];
+
+export type FormWrapperTone =
+  keyof typeof tokens.themes.light.molecules.formWrapper.neutral;
+export const formWrapperTones = Object.keys(
+  tokens.themes.light.molecules.formWrapper.neutral
+) as FormWrapperTone[];

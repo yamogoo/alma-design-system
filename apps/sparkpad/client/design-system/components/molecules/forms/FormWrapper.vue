@@ -2,28 +2,31 @@
 import { AnimatedWrapper } from "@/components/atoms";
 import type { FormWrapperProps } from "@/components/molecules";
 
+const PREFIX = "form-wrapper";
+
 withDefaults(defineProps<FormWrapperProps>(), {
   variant: "default",
   size: "lg",
-  mode: "primary",
+  mode: "neutral",
+  tone: "primary",
   bordered: false,
 });
 </script>
 
 <template>
   <div
-    class="form-wrapper"
     :class="[
-      `form-wrapper_variant-${variant}`,
-      `form-wrapper_size-${size}`,
-      `form-wrapper_mode-${mode}`,
-
-      { 'form-wrapper_bordered': bordered },
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
+      { [`${PREFIX}_bordered`]: bordered },
     ]"
     data-testid="form-wrapper"
   >
     <AnimatedWrapper :duration="duration" :content-key="contentKey ?? ''">
-      <div v-if="$slots.header" class="form-wrapper__header">
+      <div v-if="$slots.header" :class="`${PREFIX}__header`">
         <slot name="header"></slot>
       </div>
       <slot></slot>
@@ -32,9 +35,9 @@ withDefaults(defineProps<FormWrapperProps>(), {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: form-wrapper;
 
-@mixin defineSizes($map: get($molecules, "form-wrapper")) {
+@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $padding: get($val, "root.padding");
@@ -45,16 +48,16 @@ withDefaults(defineProps<FormWrapperProps>(), {
       $header-padding: get($val, "header.padding");
 
       &_variant-#{$variant} {
-        &.form-wrapper_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           padding: $padding;
           border-radius: $border-radius;
 
-          &.form-wrapper_bordered {
+          &.#{$prefix}_bordered {
             border-style: solid;
             border-width: $border-width;
           }
 
-          .form-wrapper__header {
+          .#{$prefix}__header {
             padding: $header-padding;
           }
         }
@@ -63,18 +66,26 @@ withDefaults(defineProps<FormWrapperProps>(), {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.form-wrapper")) {
+@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
   @each $mode, $modes in $map {
-    &_mode-#{$mode} {
-      @include themify($themes) {
-        background-color: themed("molecules.form-wrapper.#{$mode}.background");
-        border-color: themed("molecules.form-wrapper.#{$mode}.border");
+    @each $tone, $val in $modes {
+      &_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
+          @include themify($themes) {
+            background-color: themed(
+              "molecules.#{$prefix}.#{$mode}.#{$tone}.background"
+            );
+            border-color: themed(
+              "molecules.#{$prefix}.#{$mode}.#{$tone}.border"
+            );
+          }
+        }
       }
     }
   }
 }
 
-.form-wrapper {
+.#{$prefix} {
   overflow: hidden;
   @extend %base-transition;
 

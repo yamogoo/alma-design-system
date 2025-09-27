@@ -8,6 +8,8 @@ import {
   type IconProps,
 } from "@/components/atoms";
 
+const PREFIX = "icon";
+
 const props = withDefaults(defineProps<IconProps>(), {
   variant: "default",
 });
@@ -31,13 +33,13 @@ defineExpose({
 <template>
   <div
     ref="root"
-    class="icon"
     :class="[
+      PREFIX,
       {
-        [`icon_variant-${variant}`]: !!variant,
-        [`icon_size-${size}`]: !!size,
-        [`icon_mode-${mode}`]: !!mode,
-        [`icon_tone-${tone}`]: !!tone,
+        [`${PREFIX}_variant-${variant}`]: !!variant,
+        [`${PREFIX}_size-${size}`]: !!size,
+        [`${PREFIX}_mode-${mode}`]: !!mode,
+        [`${PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
     data-testid="icon"
@@ -52,15 +54,15 @@ defineExpose({
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: icon;
 
-@mixin defineSizes($map: get($atoms, "icon")) {
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $box-size: px2rem(get($val, "root.size"));
 
       &_variant-#{$variant} {
-        &.icon_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           @include box($box-size);
         }
       }
@@ -72,7 +74,7 @@ defineExpose({
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.icon_tone-#{$tone} {
+        &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             fill: themed("abstracts.label.#{$mode}.#{$tone}");
           }
@@ -82,7 +84,7 @@ defineExpose({
   }
 }
 
-.icon {
+.#{$prefix} {
   @include box(auto, inherit);
   line-height: 0;
   fill: inherit;

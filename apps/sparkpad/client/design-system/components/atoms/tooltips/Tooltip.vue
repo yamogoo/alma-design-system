@@ -7,6 +7,8 @@ import { useHover, useTimeout } from "@/composables/local";
 
 import { CharTooltipLabel, type TooltipProps } from "@/components/atoms";
 
+const PREFIX = "tooltip";
+
 const FOCUS_SHOW_TOOLTIP_TIME_MS = 250,
   UNFOCUS_HIDE_TOOLTIP_TIME_MS = 750;
 
@@ -91,14 +93,16 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
 
 <template>
   <div
-    class="tooltip"
     :class="[
-      isFollowingCursor ? `tooltip_follow-cursor` : `tooltip_align-${align}`,
+      PREFIX,
+      isFollowingCursor
+        ? `${PREFIX}_follow-cursor`
+        : `${PREFIX}_align-${align}`,
     ]"
   >
     <div
       ref="refContent"
-      class="tooltip__content"
+      :class="`${PREFIX}__content`"
       :aria-describedby="localTooltipId"
     >
       <slot></slot>
@@ -106,7 +110,7 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
     <Transition :css="false" @enter="onTooltipEnter" @leave="onTooltipLeave">
       <CharTooltipLabel
         v-if="isTooltipShown"
-        class="tooltip__label"
+        :class="`${PREFIX}__label`"
         :label="label"
         role="tooltip"
       ></CharTooltipLabel>
@@ -115,7 +119,9 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
 </template>
 
 <style lang="scss">
-.tooltip {
+$prefix: tooltip;
+
+.#{$prefix} {
   box-sizing: border-box;
   position: relative;
 
@@ -134,14 +140,14 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
     }
 
     &-center {
-      .tooltip__label {
+      .#{$prefix}__label {
         left: 50%;
         transform: translateX(-50%);
       }
     }
 
     &-end {
-      .tooltip__label {
+      .#{$prefix}__label {
         right: 0;
       }
     }

@@ -14,16 +14,15 @@ export const LogoWithDescriptorSizes = Object.keys(
   tokens.atoms.logoWithDescriptor.default
 ) as Array<LogoWithDescriptorSize>;
 
-export const LogoWithDescriptorTones = Object.keys(
-  tokens.themes.light.atoms.logoWithDescriptor
-) as Array<LogoWithDescriptorTone>;
-
-export type LogoWithDescriptorTone =
-  keyof typeof tokens.themes.light.atoms.logoWithDescriptor;
-
 export const LogoWithDescriptorModes = Object.keys(
-  tokens.themes.light.atoms.logoWithDescriptor.default
+  tokens.themes.light.atoms.logoWithDescriptor
 ) as Array<LogoWithDescriptorMode>;
 
 export type LogoWithDescriptorMode =
+  keyof typeof tokens.themes.light.atoms.logoWithDescriptor;
+
+export const LogoWithDescriptorTones = Object.keys(
+  tokens.themes.light.atoms.logoWithDescriptor.default
+) as Array<LogoWithDescriptorTone>;
+export type LogoWithDescriptorTone =
   keyof typeof tokens.themes.light.atoms.logoWithDescriptor.default;

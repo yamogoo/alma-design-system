@@ -3,6 +3,8 @@ import { useRouter } from "vue-router";
 
 import { Text, type LinkProps } from "@/components/atoms";
 
+const PREFIX = "link";
+
 const props = withDefaults(defineProps<LinkProps>(), {
   textDecoration: "underline",
 });
@@ -23,7 +25,7 @@ const onClick = (e: PointerEvent): void => {
     v-bind="props"
     :as="'a'"
     :href="href ?? to"
-    class="link"
+    :class="PREFIX"
     @pointerup="onClick"
   >
     <slot></slot>
@@ -31,9 +33,9 @@ const onClick = (e: PointerEvent): void => {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: link;
 
-.link {
+.#{$prefix} {
   cursor: pointer;
 }
 </style>

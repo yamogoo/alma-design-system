@@ -1,17 +1,17 @@
-import type { InputSize, InputMode, InputTone } from "@/adapters";
+import type { InputSize, InputMode, InputTone, InputVariant } from "@/adapters";
 
 import type { InputTypeHTMLAttribute } from "vue";
 
-import type { UIElementUnionProps } from "@/typings";
+import type { UIElementStylingModifiers } from "@/typings";
 
 export type InputState = "focused";
 
-export interface InputProps extends Partial<UIElementUnionProps> {
+export interface InputProps
+  extends Partial<
+    UIElementStylingModifiers<InputVariant, InputSize, InputMode, InputTone>
+  > {
   value: string;
   placeholder?: string;
-  mode?: InputMode;
-  tone?: InputTone;
-  size?: InputSize;
   isError?: boolean;
   isFocused?: boolean;
   isDisabled?: boolean;

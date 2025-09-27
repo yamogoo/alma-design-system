@@ -8,17 +8,22 @@ import type {
 import type {
   UIElementAlignment,
   UIElementOrientation,
+  UIElementStylingModifiers,
   UIElementTypographyTag,
 } from "@/typings";
 
 export type DividerAlign = UIElementAlignment;
 
-export interface DividerProps {
+export interface DividerProps
+  extends Partial<
+    UIElementStylingModifiers<
+      DividerVariant,
+      DividerSize,
+      DividerMode,
+      DividerTone
+    >
+  > {
   as?: UIElementTypographyTag;
-  variant?: DividerVariant;
-  size?: DividerSize;
-  mode?: DividerMode;
-  tone?: DividerTone;
   orientation?: UIElementOrientation;
   align?: DividerAlign;
 }

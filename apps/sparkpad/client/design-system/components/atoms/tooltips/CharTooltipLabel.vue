@@ -3,15 +3,18 @@ import { useTemplateRef } from "vue";
 
 import { Icon, Text, type CharTooltipLabelProps } from "@/components/atoms";
 
+const PREFIX = "char-tooltip-label";
+
 withDefaults(defineProps<CharTooltipLabelProps>(), {
   variant: "default",
   size: "lg",
-  mode: "primary",
+  mode: "neutral",
+  tone: "primary",
   iconStyle: "outline",
   iconWeight: "300",
 });
 
-const root = useTemplateRef("refRoot");
+const root = useTemplateRef("root");
 
 defineExpose({
   root,
@@ -20,12 +23,13 @@ defineExpose({
 
 <template>
   <div
-    ref="refRoot"
-    class="char-tooltip-label"
+    ref="root"
     :class="[
-      `char-tooltip-label_variant-${variant}`,
-      `char-tooltip-label_size-${size}`,
-      `char-tooltip-label_mode-${mode}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
     ]"
   >
     <Icon
@@ -38,18 +42,17 @@ defineExpose({
     <Text>
       {{ label }}
     </Text>
-    <!-- <Icon :name="'cross'" :style="'outline'" :weight="'300'"></Icon> -->
   </div>
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: char-tooltip-label;
 
-@mixin defineSized($map: get($atoms, "char-tooltip-label")) {
+@mixin defineSized($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.char-tooltip-label_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           $gap: px2rem(get($val, "root.gap"));
           $padding: get($val, "root.padding");
           $border-radius: px2rem(get($val, "root.border-radius"));
@@ -69,34 +72,36 @@ defineExpose({
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.char-tooltip-label")) {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
-    &_mode-#{$mode} {
-      @include themify($themes) {
-        color: themed("atoms.char-tooltip-label.#{$mode}.label.normal");
-        fill: themed("atoms.char-tooltip-label.#{$mode}.label.normal");
-        background-color: themed(
-          "atoms.char-tooltip-label.#{$mode}.root.background.normal"
-        );
+    @each $tone, $val in $modes {
+      &_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
+          color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
+          fill: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
+          background-color: themed(
+            "atoms.#{$prefix}.#{$mode}.root.background.normal"
+          );
 
-        .text {
-          color: inherit;
-        }
+          .text {
+            color: inherit;
+          }
 
-        .icon {
-          fill: inherit;
+          .icon {
+            fill: inherit;
+          }
         }
+        @extend %base-transition;
       }
-      @extend %base-transition;
     }
   }
-}
 
-.char-tooltip-label {
-  display: flex;
-  flex-direction: column;
+  .char-tooltip-label {
+    display: flex;
+    flex-direction: column;
 
-  @include defineSized();
-  @include defineThemes();
+    @include defineSized();
+    @include defineThemes();
+  }
 }
 </style>

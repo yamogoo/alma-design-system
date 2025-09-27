@@ -12,6 +12,8 @@ import type {
   StepPaginationTabsProps,
 } from "./StepPaginationTabs";
 
+const PREFIX = "step-pagination-tabs";
+
 const props = withDefaults(defineProps<StepPaginationTabsProps>(), {
   variant: "default",
   selectedItemId: 0,
@@ -84,26 +86,28 @@ onMounted(() => {
 
 <template>
   <div
-    class="step-pagination-tabs"
     :class="[
-      `step-pagination-tabs_variant-${variant}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
       {
-        [`step-pagination-tabs_size-${String(size)}`]: !!size,
-        [`step-pagination-tabs_mode-${String(mode)}`]: !!mode,
+        [`${PREFIX}_size-${String(size)}`]: !!size,
+        [`${PREFIX}_mode-${String(mode)}`]: !!mode,
       },
     ]"
   >
-    <div ref="track" class="step-pagination-tabs__track">
+    <div ref="track" :class="`${PREFIX}__track`">
       <div
         v-for="(item, idx) in items"
         :key="item.id"
         ref="refsItems"
-        class="step-pagination-tabs__item"
-        :class="`step-pagination-tabs__item_state-${getItemState(idx)}`"
+        :class="[
+          `${PREFIX}__item`,
+          `${PREFIX}__item_state-${getItemState(idx)}`,
+        ]"
         :style="itemStyle"
       >
         <Text
-          :class="['step-pagination-tabs__item-lable']"
+          :class="[`${PREFIX}__item-lable`]"
           :variant="textVariant"
           @click="onItemClick(item)"
         >
@@ -115,16 +119,16 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: step-pagination-tabs;
 
-@mixin defineSizes($map: get($atoms, "step-pagination-tabs")) {
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.step-pagination_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           $font-style: get($val, "item.font-style");
 
-          .step-pagination__item {
+          .#{$prefix}__item {
             @extend %t__#{$font-style};
           }
         }
@@ -133,21 +137,17 @@ onMounted(() => {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.step-pagination-tabs")) {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     &_mode-#{$mode} {
-      .step-pagination__item {
+      .#{$prefix}__item {
         @include themify($themes) {
-          color: themed(
-            "atoms.step-pagination-tabs.#{$mode}.item.label.normal"
-          );
+          color: themed("atoms.#{$prefix}.#{$mode}.item.label.normal");
         }
 
         &_state-active {
           @include themify($themes) {
-            color: themed(
-              "atoms.step-pagination-tabs.#{$mode}.item.label.active"
-            );
+            color: themed("atoms.#{$prefix}.#{$mode}.item.label.active");
           }
         }
       }
@@ -155,7 +155,7 @@ onMounted(() => {
   }
 }
 
-.step-pagination-tabs {
+.#{$prefix} {
   display: flex;
   justify-content: center;
   align-items: center;

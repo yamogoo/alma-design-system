@@ -1,7 +1,11 @@
 import { nextTick } from "vue";
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { Input } from "@/components/atoms";
+import { Input, type InputProps } from "@/components/atoms";
+
+const REQUIRED_PROPS: InputProps = {
+  value: "some-value",
+};
 
 const getResetButton = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="input__field-reset-button"]');
@@ -35,7 +39,7 @@ describe("input", () => {
     const placeholderContent = "Some Placeholder";
 
     const wrapper = mount(Input, {
-      props: { value: "", placeholder: placeholderContent },
+      props: { ...REQUIRED_PROPS, placeholder: placeholderContent },
     });
 
     const placeholder = getPlaceholder(wrapper);
@@ -45,7 +49,7 @@ describe("input", () => {
   });
 
   test("does not render placeholder if not passed", () => {
-    const wrapper = mount(Input, { props: { value: "" } });
+    const wrapper = mount(Input, { props: REQUIRED_PROPS });
 
     const placeholder = getPlaceholder(wrapper);
 
@@ -54,7 +58,7 @@ describe("input", () => {
 
   test("displays a reset button if value is not empty", async () => {
     const wrapper = mount(Input, {
-      props: { value: "abc", placeholder: "Some Placeholder" },
+      props: { ...REQUIRED_PROPS, placeholder: "Some Placeholder" },
     });
 
     expect(getResetButton(wrapper).exists()).toBe(true);
@@ -65,7 +69,7 @@ describe("input", () => {
 
   test("emits update:value when text changes", async () => {
     const wrapper = mount(Input, {
-      props: { value: "" },
+      props: REQUIRED_PROPS,
     });
 
     const input = wrapper.find('[data-testid="input-value"]');
@@ -77,7 +81,7 @@ describe("input", () => {
 
   test("resets value when clicking reset and emits events", async () => {
     const wrapper = mount(Input, {
-      props: { value: "abc", placeholder: "Test" },
+      props: { ...REQUIRED_PROPS, placeholder: "Test" },
     });
 
     const button = getResetButton(wrapper);
@@ -89,17 +93,17 @@ describe("input", () => {
 
   test("add class input_focused on focus", async () => {
     const wrapper = mount(Input, {
-      props: { value: "", placeholder: "Test" },
+      props: { ...REQUIRED_PROPS, placeholder: "Test" },
     });
 
     await wrapper.trigger("pointerdown");
-    expect(wrapper.classes()).toContain("input_focused");
+    expect(wrapper.classes()).toContain("input_state-focused");
   });
 
   test("should shows error message", async () => {
     const wrapper = mount(Input, {
       props: {
-        value: "",
+        ...REQUIRED_PROPS,
         errorMessage: "Error",
         isError: true,
       },

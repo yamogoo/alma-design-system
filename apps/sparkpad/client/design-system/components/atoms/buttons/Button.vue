@@ -4,9 +4,8 @@ import {
   ref,
   watch,
   computed,
-  type ComputedRef,
   useTemplateRef,
-  useSlots,
+  type ComputedRef,
 } from "vue";
 import g from "gsap";
 
@@ -17,6 +16,8 @@ import { useHover } from "@/composables/local";
 import type { IconSize } from "@/adapters";
 
 import { Icon, type ButtonProps } from "@/components/atoms";
+
+const PREFIX = "button";
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   variant: "default",
@@ -47,16 +48,19 @@ const localIsPressed = ref(false);
 
 const computedButtonSize: ComputedRef<IconSize> = computed(
   () =>
-    tokens.atoms.button[props.variant][props.size].icon.alias.size
+    tokens.atoms.button[props.variant][props.size ?? "md"].icon.alias.size
       .$value as IconSize
 );
 
-const onDown = (e: PointerEvent): void => {
+const onDown = (e: PointerEvent) => {
+  if (props.isDisabled) return;
+
   localIsPressed.value = true;
   emit("pointerdown", e);
 };
+const onUp = (e: PointerEvent) => {
+  if (props.isDisabled) return;
 
-const onUp = (e: PointerEvent): void => {
   localIsPressed.value = false;
   emit("pointerup", e);
 };
@@ -76,89 +80,183 @@ watch(localIsPressed, (isPressed) => {
   if (el) onAnim(el, isPressed);
 });
 
-const hasPrependSlot = !!useSlots()?.["prepend-icon"];
-const hasAppendSlot = !!useSlots()?.["append-icon"];
+/* * * Keyboard * * */
+
+const onKeydown = (e: KeyboardEvent) => {
+  if (props.isDisabled) return;
+
+  if (e.key === " " || e.key === "Enter") {
+    e.preventDefault();
+    localIsPressed.value = true;
+  }
+};
+const onKeyup = (e: KeyboardEvent) => {
+  if (props.isDisabled) return;
+
+  if (e.key === " " || e.key === "Enter") {
+    localIsPressed.value = false;
+  }
+};
 </script>
 
 <template>
   <component
     :is="componentTag"
     ref="root"
-    role="button"
-    class="button"
+    :role="as !== 'button' ? 'button' : undefined"
+    :type="as === 'button' ? 'button' : undefined"
     :class="[
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
+      `${PREFIX}_state-${localIsPressed ? 'pressed' : isHovered ? 'hovered' : 'normal'}`,
       {
-        [`button_variant-${variant}`]: !!variant,
-        [`button_size-${size}`]: !!size,
-        [`button_mode-${mode}`]: !!mode,
-        [`button_tone-${tone}`]: !!tone,
-        [`button_direction-${contentDirection}`]: !!contentDirection,
-        [`button_stretch-${stretch}`]: !!stretch,
-        [`button_hovered`]: isHovered,
-        [`button_disabled`]: isDisabled,
-        button_pressed: localIsPressed,
+        [`${PREFIX}_direction-${contentDirection}`]: !!contentDirection,
+        [`${PREFIX}_stretch-${stretch}`]: !!stretch,
+        [`${PREFIX}_state-disabled`]: isDisabled,
       },
     ]"
     data-testid="button"
-    :aria-label="label ?? prependIconName ?? appendIconName"
+    :aria-label="label || undefined"
     :aria-disabled="isDisabled"
+    :disabled="as === 'button' ? isDisabled : undefined"
+    :tabindex="as !== 'button' ? (isDisabled ? -1 : 0) : undefined"
     @pointerdown="onDown"
     @pointerup="onUp"
+    @pointerleave="localIsPressed = false"
+    @pointercancel="localIsPressed = false"
+    @lostpointercapture="localIsPressed = false"
+    @blur="localIsPressed = false"
+    @keydown="onKeydown"
+    @keyup="onKeyup"
   >
-    <Icon
-      v-if="prependIconName && !hasPrependSlot"
-      :data-testid="'button__icon'"
-      :name="prependIconName"
-      :appearance="prependIconStyle"
-      :weight="prependIconWeight"
-      :size="iconSize ?? computedButtonSize"
-    ></Icon>
-    <slot name="prepend-icon"></slot>
-    <div v-if="$slots.content" class="button__content">
+    <slot name="prepend-icon">
+      <Icon
+        v-if="prependIconName"
+        :class="`${PREFIX}__icon`"
+        :data-testid="'button__icon'"
+        :name="prependIconName"
+        :appearance="prependIconStyle"
+        :weight="prependIconWeight"
+        :size="iconSize ?? computedButtonSize"
+        aria-hidden="true"
+      ></Icon>
+    </slot>
+    <div v-if="$slots.content" :class="`${PREFIX}__content`">
       <slot name="content"></slot>
     </div>
-    <span v-if="label" class="button__label" data-testid="button-label">{{
+    <span v-if="label" :class="`${PREFIX}__label`" data-testid="button-label">{{
       label
     }}</span>
-    <slot name="append-icon"></slot>
-    <Icon
-      v-if="appendIconName && !hasAppendSlot"
-      :name="appendIconName"
-      :appearance="appendIconStyle"
-      :weight="appendIconWeight"
-      :size="iconSize ?? computedButtonSize"
-    ></Icon>
+    <slot name="append-icon">
+      <Icon
+        v-if="appendIconName"
+        :class="`${PREFIX}__icon`"
+        :name="appendIconName"
+        :appearance="appendIconStyle"
+        :weight="appendIconWeight"
+        :size="iconSize ?? computedButtonSize"
+        aria-hidden="true"
+      ></Icon>
+    </slot>
   </component>
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: "button";
 
-@mixin defineButtonSizes($map: get($atoms, "button")) {
+@mixin defineButtonSizes($prefix, $map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
+      $button-size: px2rem(get($val, "root.size"));
+      $gap: px2rem(get($val, "root.gap"));
+      $border-radius: get($val, "root.border-radius");
+      $padding: get($val, "root.padding");
+
+      $font-style: get($val, "label.font-style");
+      $icon-size: px2rem(get($val, "icon.size"));
+
       &_variant-#{$variant} {
-        &.button_size-#{$size} {
-          @extend %button_variant-#{$variant}_size-#{$size};
+        &.#{$prefix}_size-#{$size} {
+          gap: $gap;
+          height: $button-size;
+          min-height: $button-size;
+          border-radius: $border-radius;
+
+          &.#{$prefix}_variant-default {
+            padding: $padding;
+          }
+
+          &.#{$prefix}_variant-rounded,
+          &.#{$prefix}_variant-squared {
+            width: $button-size !important;
+          }
+
+          .#{$prefix}__label {
+            @extend %t__#{$font-style};
+            line-height: 1;
+          }
         }
       }
     }
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.button")) {
+@mixin defineStates($prefix, $mode, $tone, $state) {
+  &.#{$prefix}_state-#{$state} {
+    @include themify($themes) {
+      background-color: themed(
+        "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.#{$state}"
+      );
+      border: $outline solid
+        themed("atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}");
+    }
+
+    .#{$prefix}__label {
+      @include themify($themes) {
+        color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.#{$state}");
+        fill: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.#{$state}");
+      }
+    }
+
+    .#{$prefix}__icon {
+      @include themify($themes) {
+        fill: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.#{$state}");
+      }
+    }
+  }
+}
+
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.button_tone-#{$tone} {
-          @extend %button_mode-#{$mode}_tone-#{$tone};
+        &.#{$prefix}_tone-#{$tone} {
+          @extend %base-transition;
+
+          &:focus {
+            outline: none;
+          }
+
+          &:focus-visible {
+            @include themify($themes) {
+              outline: $outline solid
+                themed("atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.outline");
+            }
+          }
+
+          @each $state in ("normal", "hovered", "pressed", "disabled") {
+            @include defineStates($prefix, $mode, $tone, $state);
+          }
         }
       }
     }
   }
 }
 
-.button {
+.#{$prefix} {
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -169,8 +267,13 @@ const hasAppendSlot = !!useSlots()?.["append-icon"];
   user-select: none;
   @extend %base-transition;
 
-  @include defineButtonSizes();
+  @include defineButtonSizes($prefix);
   @include defineThemes();
+
+  &_state-disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 
   &_direction {
     @include useDirection();

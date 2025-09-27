@@ -3,6 +3,8 @@ import { computed, type ComputedRef, type CSSProperties } from "vue";
 
 import type { TextProps } from "@/components/atoms";
 
+const PREFIX = "text";
+
 const props = withDefaults(defineProps<TextProps>(), {
   as: "span",
   mode: "neutral",
@@ -36,12 +38,12 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
 <template>
   <component
     :is="componentTag"
-    class="text"
     :class="[
+      PREFIX,
       {
-        [`text_variant-${variant}`]: !!variant,
-        [`text_mode-${mode}`]: !!mode,
-        [`text_tone-${tone}`]: !!tone,
+        [`${PREFIX}_variant-${variant}`]: !!variant,
+        [`${PREFIX}_mode-${mode}`]: !!mode,
+        [`${PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
     :style="computedStyle"
@@ -52,9 +54,9 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: text;
 
-@mixin defineVariants($map: map.get($typography, "styles")) {
+@mixin defineVariants($map: get($typography, "styles")) {
   @each $variant, $val in $map {
     &_variant-#{$variant} {
       @each $key, $value in $val {
@@ -84,7 +86,7 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
   }
 }
 
-.text {
+.#{$prefix} {
   b {
     font-style: inherit;
     font-weight: inherit;

@@ -5,11 +5,17 @@ import type {
   SkeletonVariant,
 } from "@/adapters";
 
-export interface SkeletonProps {
-  variant?: SkeletonVariant;
-  size?: SkeletonSize;
-  mode?: SkeletonMode;
-  tone?: SkeletonTone;
+import type { UIElementStylingModifiers } from "@/typings";
+
+export interface SkeletonProps
+  extends Partial<
+    UIElementStylingModifiers<
+      SkeletonVariant,
+      SkeletonSize,
+      SkeletonMode,
+      SkeletonTone
+    >
+  > {
   speed?: number;
   ariaLabel?: string;
   ariaBusy?: boolean;

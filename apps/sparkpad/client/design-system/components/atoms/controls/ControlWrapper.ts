@@ -1,6 +1,11 @@
 import type { ControlWrapperSize, ControlWrapperVariant } from "@/adapters";
 
-export interface ControlWrapperProps {
-  variant?: ControlWrapperVariant;
-  size?: ControlWrapperSize;
-}
+import type { UIElementStylingModifiers } from "@/typings";
+
+export interface ControlWrapperProps
+  extends Partial<
+    Pick<
+      UIElementStylingModifiers<ControlWrapperVariant, ControlWrapperSize>,
+      "variant" | "size"
+    >
+  > {}

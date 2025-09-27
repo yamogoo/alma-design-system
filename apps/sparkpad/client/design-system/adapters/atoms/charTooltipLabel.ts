@@ -17,3 +17,9 @@ export type CharTooltipLabelMode =
 export const charTooltipLabelModes = Object.keys(
   tokens.themes.light.atoms.charTooltipLabel
 ) as CharTooltipLabelMode[];
+
+export type CharTooltipLabelTone =
+  keyof typeof tokens.themes.light.atoms.charTooltipLabel.neutral;
+export const charTooltipLabelTones = Object.keys(
+  tokens.themes.light.atoms.charTooltipLabel.neutral
+) as CharTooltipLabelTone[];

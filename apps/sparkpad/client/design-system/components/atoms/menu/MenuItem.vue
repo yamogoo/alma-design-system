@@ -5,6 +5,8 @@ import { usePressed } from "@/composables/local";
 
 import type { MenuItemProps } from "@/components/atoms";
 
+const PREFIX = "menu-item";
+
 withDefaults(defineProps<MenuItemProps>(), {
   isActive: false,
 });
@@ -26,11 +28,7 @@ watch(isPressed, (isState) => {
 </script>
 
 <template>
-  <div ref="root" class="menu-item" :aria-selected="isActive">
+  <div ref="root" :class="PREFIX" :aria-selected="isActive">
     <slot></slot>
   </div>
 </template>
-
-<style lang="scss">
-/* .menu-item {} */
-</style>

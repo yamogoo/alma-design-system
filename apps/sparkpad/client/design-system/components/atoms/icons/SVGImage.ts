@@ -1,8 +1,10 @@
-import type { IconMode, IconSize, IconTone } from "@/adapters";
+import type { IconMode, IconSize, IconTone, IconVariant } from "@/adapters";
 
-export interface SVGImageProps {
+import type { UIElementStylingModifiers } from "@/typings";
+
+export interface SVGImageProps
+  extends Partial<
+    UIElementStylingModifiers<IconVariant, IconSize, IconMode, IconTone>
+  > {
   name: string;
-  mode?: IconMode;
-  tone?: IconTone;
-  size?: IconSize;
 }

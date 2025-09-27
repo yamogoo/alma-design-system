@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { Group, ToolbarBlock } from "@/components/atoms";
+import { MainHeaderTemplate } from "@/components/templates";
 
-import { MainHeader } from "@/components/templates";
-
-import { LanguageMenu, ThemeSwitch, MainLogo } from "@@/components/moleculas";
+import { LanguageMenu, ThemeSwitch, MainLogo } from "@@/components/molecules";
 import { MainMenu } from "@@/components/organisms";
 </script>
 
 <template>
-  <MainHeader class="app-header" data-testid="app-header">
+  <MainHeaderTemplate class="app-header" data-testid="app-header">
     <template #left>
       <MainLogo data-testid="app-header-logo"></MainLogo>
     </template>
@@ -19,5 +18,5 @@ import { MainMenu } from "@@/components/organisms";
         <ToolbarBlock><ThemeSwitch></ThemeSwitch></ToolbarBlock>
       </Group>
     </template>
-  </MainHeader>
+  </MainHeaderTemplate>
 </template>

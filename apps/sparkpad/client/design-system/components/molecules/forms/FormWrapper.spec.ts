@@ -10,7 +10,8 @@ describe("FormWrapper", () => {
       const props: FormWrapperProps = {
         variant: "default",
         size: "lg",
-        mode: "primary",
+        mode: "neutral",
+        tone: "primary",
       };
 
       const wrapper = mount(FormWrapper, {

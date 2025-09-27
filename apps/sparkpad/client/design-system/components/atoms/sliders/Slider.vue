@@ -6,6 +6,8 @@ import { useHover } from "@/composables/local";
 
 import { type SliderProps } from "@/components/atoms";
 
+const PREFIX = "slider";
+
 const props = withDefaults(defineProps<SliderProps>(), {
   variant: "default",
   size: "md",
@@ -192,12 +194,12 @@ onBeforeUnmount(removeEventListeners);
 <template>
   <div
     ref="root"
-    class="slider"
     :class="[
-      `slider_variant-${variant}`,
-      `slider_size-${size}`,
-      ` slider_mode-${mode}`,
-      `slider_tone-${tone}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
       isDisabled
         ? `slider_state-disabled`
         : `slider_state-${isHovered ? 'hovered' : 'normal'}`,
@@ -207,14 +209,14 @@ onBeforeUnmount(removeEventListeners);
     <div class="slider__track">
       <div
         ref="track"
-        class="slider__track-container"
+        :class="`${PREFIX}__track-container`"
         :style="{ '--p': percent / 100 }"
       >
-        <div class="slider__range-track" aria-hidden="true"></div>
+        <div :class="`${PREFIX}__range-track`" aria-hidden="true"></div>
 
         <div
           ref="knob"
-          class="slider__knob"
+          :class="`${PREFIX}__knob`"
           role="slider"
           aria-orientation="horizontal"
           tabindex="0"
@@ -238,13 +240,13 @@ onBeforeUnmount(removeEventListeners);
 </template>
 
 <style lang="scss">
-@use "sass:math";
+$prefix: slider;
 
-@mixin defineSizes($map: get($atoms, "slider")) {
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.slider_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           $gap: px2rem(get($val, "root.gap"));
           $min-width: px2rem(get($val, "root.min-width"));
           $padding: px2rem(get($val, "root.padding"));
@@ -265,7 +267,7 @@ onBeforeUnmount(removeEventListeners);
           min-height: $knob-height;
           padding: $padding;
 
-          .slider__track {
+          .#{$prefix}__track {
             @include box(100%, $track-height);
             border-radius: $track-border-radius;
             padding: 0 $track-padding;
@@ -281,14 +283,14 @@ onBeforeUnmount(removeEventListeners);
             }
           }
 
-          .slider__knob {
+          .#{$prefix}__knob {
             @include box($knob-width, $knob-height);
             border-radius: $knob-border-radius;
             border-style: solid;
             border-width: $knob-border-width;
           }
 
-          .slider__label {
+          .#{$prefix}__label {
             @include themify($themes) {
               @extend %t__#{$label-font-style};
             }
@@ -299,96 +301,96 @@ onBeforeUnmount(removeEventListeners);
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.slider")) {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.slider_tone-#{$tone} {
-          &.slider_state-normal {
-            .slider__track {
+        &.#{$prefix}_tone-#{$tone} {
+          &.#{$prefix}_state-normal {
+            .#{$prefix}__track {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.track.background.normal"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.normal"
                 );
               }
             }
 
-            .slider__range-track,
-            .slider__track::before {
+            .#{$prefix}__range-track,
+            .#{$prefix}_track::before {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.range-track.background.normal"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.normal"
                 );
               }
             }
 
-            .slider__knob {
+            .#{$prefix}__knob {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.knob.background.normal"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.normal"
                 );
                 border-color: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.knob.border-color.normal"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.normal"
                 );
               }
             }
           }
 
-          &.slider_state-hovered {
+          &.#{$prefix}_state-hovered {
             .slider__track {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.track.background.hovered"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.hovered"
                 );
               }
             }
 
-            .slider__range-track,
-            .slider__track::before {
+            .#{$prefix}__range-track,
+            .#{$prefix}__track::before {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.range-track.background.hovered"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.hovered"
                 );
               }
             }
 
-            .slider__knob {
+            .#{$prefix}__knob {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.knob.background.hovered"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.hovered"
                 );
                 border-color: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.knob.border-color.hovered"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.hovered"
                 );
               }
             }
           }
 
-          &.slider_state-disabled {
-            .slider__track {
+          &.#{$prefix}_state-disabled {
+            .#{$prefix}__track {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.track.background.disabled"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.disabled"
                 );
               }
             }
 
-            .slider__range-track,
-            .slider__track::before {
+            .#{$prefix}__range-track,
+            .#{$prefix}__track::before {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.range-track.background.disabled"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.disabled"
                 );
               }
             }
 
-            .slider__knob {
+            .#{$prefix}__knob {
               @include themify($themes) {
                 background: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.knob.background.disabled"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.disabled"
                 );
                 border-color: themed(
-                  "atoms.slider.#{$mode}.#{$tone}.knob.border-color.disabled"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.disabled"
                 );
               }
             }
@@ -397,7 +399,7 @@ onBeforeUnmount(removeEventListeners);
           &__label {
             @include themify($themes) {
               background: themed(
-                "atoms.slider.#{$mode}.#{$tone}.label.color.normal"
+                "atoms.#{$prefix}.#{$mode}.#{$tone}.label.color.normal"
               );
             }
           }
@@ -407,7 +409,7 @@ onBeforeUnmount(removeEventListeners);
   }
 }
 
-.slider {
+.#{$prefix} {
   box-sizing: border-box;
   display: flex;
   align-items: center;

@@ -1,9 +1,31 @@
 {
-  "primary": {
-    "root": {
-      "background": {
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{themes.themes.dark.abstracts.surface.neutral.inversed.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "tooltip"
+            }
+          }
+        }
+      },
+      "label": {
         "normal": {
-          "$value": "{themes.themes.dark.abstracts.surface.neutral.inversed.$value}",
+          "$value": "{themes.themes.dark.abstracts.label.neutral.inversed.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "tooltip"
+          }
+        }
+      },
+      "icon": {
+        "normal": {
+          "$value": "{themes.themes.dark.abstracts.label.neutral.inversed.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -12,57 +34,37 @@
         }
       }
     },
-    "label": {
-      "normal": {
-        "$value": "{themes.themes.dark.abstracts.label.neutral.inversed.$value}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "tooltip"
+    "inversed": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{colors.gray-850}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "tooltip"
+            }
+          }
         }
-      }
-    },
-    "icon": {
-      "normal": {
-        "$value": "{themes.themes.dark.abstracts.label.neutral.inversed.$value}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "tooltip"
-        }
-      }
-    }
-  },
-  "inversed": {
-    "root": {
-      "background": {
+      },
+      "label": {
         "normal": {
-          "$value": "{colors.gray-850}",
+          "$value": "{colors.gray-500}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
             "category": "tooltip"
           }
         }
-      }
-    },
-    "label": {
-      "normal": {
-        "$value": "{colors.gray-500}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "tooltip"
-        }
-      }
-    },
-    "icon": {
-      "normal": {
-        "$value": "{colors.gray-550}",
-        "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "tooltip"
+      },
+      "icon": {
+        "normal": {
+          "$value": "{colors.gray-550}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "tooltip"
+          }
         }
       }
     }

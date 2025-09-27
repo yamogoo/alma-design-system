@@ -3,6 +3,8 @@ import { defineAsyncComponent, computed } from "vue";
 
 import { Skeleton, type SVGImageProps } from "@/components/atoms";
 
+const PREFIX = "svg-image";
+
 const props = defineProps<SVGImageProps>();
 
 const modules = import.meta.glob("../../../assets/images/**/*.svg", {
@@ -24,13 +26,13 @@ const symbol = computed(() => {
 
 <template>
   <div
-    class="svg-image"
     data-testid="svg-image"
     :class="[
+      PREFIX,
       {
-        [`svg-image_size-${size}`]: !!size,
-        [`svg-image_mode-${mode}`]: !!mode,
-        [`svg-image_tone-${tone}`]: !!tone,
+        [`${PREFIX}_size-${size}`]: !!size,
+        [`${PREFIX}_mode-${mode}`]: !!mode,
+        [`${PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
   >
@@ -44,7 +46,7 @@ const symbol = computed(() => {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: svg-image;
 
 @mixin defineSizes($map: get($atoms, "icon")) {
   @each $variant, $sizes in $map {
@@ -52,7 +54,7 @@ const symbol = computed(() => {
       $box-size: px2rem(get($val, "root.size"));
 
       &_variant-#{$variant} {
-        &.icon_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           @include box($box-size);
         }
       }
@@ -64,7 +66,7 @@ const symbol = computed(() => {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.svg-image_tone-#{$tone} {
+        &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             fill: themed("abstracts.label.#{$mode}.#{$tone}");
           }
@@ -74,7 +76,7 @@ const symbol = computed(() => {
   }
 }
 
-.svg-image {
+.#{$prefix} {
   @include box(auto, inherit);
   line-height: 0;
   fill: inherit;

@@ -4,6 +4,8 @@ import { Vue3Lottie as LottieAnimation } from "vue3-lottie";
 
 import type { AnimatedIconProps } from "@/components/atoms";
 
+const PREFIX = "animated-icon";
+
 const props = withDefaults(defineProps<AnimatedIconProps>(), {
   variant: "default",
   speed: 1,
@@ -55,10 +57,10 @@ const onCompleted = (): void => {
     class="animated-icon"
     :class="[
       {
-        [`animated-icon_variant-${variant}`]: !!variant,
-        [`animated-icon_size-${size}`]: !!size,
-        [`animated-icon_mode-${mode}`]: !!mode,
-        [`animated-icon_tone-${tone}`]: !!tone,
+        [`${PREFIX}_variant-${variant}`]: !!variant,
+        [`${PREFIX}_size-${size}`]: !!size,
+        [`${PREFIX}_mode-${mode}`]: !!mode,
+        [`${PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
     :animation-data
@@ -72,13 +74,13 @@ const onCompleted = (): void => {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: "animated-icon";
 
 @mixin defineSizes($map: get($atoms, "icon")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.animated-icon_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           $icon-size: px2rem(get($val, "root.size"));
 
           width: $icon-size !important;
@@ -93,7 +95,7 @@ const onCompleted = (): void => {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.animated-icon_tone-#{$tone} {
+        &.#{$prefix}_tone-#{$tone} {
           svg {
             path {
               @include themify($themes) {
@@ -108,7 +110,7 @@ const onCompleted = (): void => {
   }
 }
 
-.animated-icon {
+.#{$prefix} {
   @include box(auto, inherit);
   line-height: 0;
   fill: inherit;

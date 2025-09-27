@@ -1,0 +1,19 @@
+volumes:
+  dbdata: {}
+
+services:
+  server:
+    build:
+      context: ../../..
+      dockerfile: apps/sparkpad/server/Dockerfile
+    platform: linux/amd64
+    working_dir: /repo/apps/sparkpad/server
+    command: pnpm run dev -- --host --port 5042
+    ports:
+      - "5042:5042"
+    environment:
+      - NODE_ENV=development
+    tty: true
+    stdin_open: true
+    volumes:
+      - dbdata:/repo/apps/sparkpad/server/data

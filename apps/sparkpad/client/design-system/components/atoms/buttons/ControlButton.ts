@@ -3,23 +3,29 @@ import type {
   ButtonSize,
   ButtonTone,
   ButtonVariant,
+  IconSize,
 } from "@/adapters";
 
 import type {
   ButtonContentDirection,
   ButtonStretch,
-  ButtonRequiredProps,
   IconComponentProps,
 } from "@/components/atoms";
 
+import type { UIElementStylingModifiers } from "@/typings";
+
 export interface ControlButtonProps
-  extends ButtonRequiredProps,
+  extends Partial<
+      UIElementStylingModifiers<
+        ButtonVariant,
+        ButtonSize,
+        ButtonMode,
+        ButtonTone
+      >
+    >,
     IconComponentProps {
-  variant?: ButtonVariant;
-  size: ButtonSize;
-  mode: ButtonMode;
-  tone: ButtonTone;
   label?: string;
+  iconSize?: IconSize;
   contentDirection?: ButtonContentDirection;
   isDisabled?: boolean;
   stretch?: ButtonStretch;

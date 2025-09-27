@@ -5,16 +5,19 @@ import type {
   SliderVariant,
 } from "@/adapters";
 
-import type { UIElementAxisDirection, UIElementOrientation } from "@/typings";
+import type {
+  UIElementAxisDirection,
+  UIElementOrientation,
+  UIElementStylingModifiers,
+} from "@/typings";
 
 export type SliderOrientation = UIElementOrientation;
 export type SliderDirection = UIElementAxisDirection;
 
-export interface SliderProps {
-  variant?: SliderVariant;
-  size?: SliderSize;
-  mode?: SliderMode;
-  tone?: SliderTone;
+export interface SliderProps
+  extends Partial<
+    UIElementStylingModifiers<SliderVariant, SliderSize, SliderMode, SliderTone>
+  > {
   value: number;
   min?: number;
   max: number;

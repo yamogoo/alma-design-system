@@ -23,7 +23,8 @@ describe("Options", () => {
         value: items[0],
         variant: "default",
         size: "lg",
-        mode: "primary",
+        mode: "neutral",
+        tone: "primary",
       };
 
       const wrapper = mount(Options, {
@@ -33,8 +34,9 @@ describe("Options", () => {
       expect(
         wrapper.classes(`${CLASS_NAME}_variant-${props.variant}`)
       ).toBeTruthy();
-      expect(wrapper.classes(`${CLASS_NAME}_mode-${props.mode}`)).toBeTruthy();
       expect(wrapper.classes(`${CLASS_NAME}_size-${props.size}`)).toBeTruthy();
+      expect(wrapper.classes(`${CLASS_NAME}_mode-${props.mode}`)).toBeTruthy();
+      expect(wrapper.classes(`${CLASS_NAME}_tone-${props.tone}`)).toBeTruthy();
     });
   });
 

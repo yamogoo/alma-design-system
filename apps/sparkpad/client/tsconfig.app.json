@@ -49,5 +49,5 @@
     "src/**/*.tsx",
     "src/**/*.vue"
   ],
-  "exclude": ["design-system/**/__tests__/*"]
+  "exclude": ["**/__tests__/*", "**/*.__draft", "**/*.temp", "**/*.cache"]
 }

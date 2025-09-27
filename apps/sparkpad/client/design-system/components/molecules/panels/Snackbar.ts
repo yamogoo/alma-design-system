@@ -5,11 +5,17 @@ import type {
   SnackbarVariant,
 } from "@/adapters";
 
-export interface SnackbarProps {
-  variant?: SnackbarVariant;
-  size?: SnackbarSize;
-  tone?: SnackbarTone;
-  mode?: SnackbarMode;
+import type { UIElementStylingModifiers } from "@/typings";
+
+export interface SnackbarProps
+  extends Partial<
+    UIElementStylingModifiers<
+      SnackbarVariant,
+      SnackbarSize,
+      SnackbarMode,
+      SnackbarTone
+    >
+  > {
   status?: "info" | "warning";
   isCloseButtonShown?: boolean;
   /** ms */

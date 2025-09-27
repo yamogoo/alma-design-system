@@ -1,18 +1,24 @@
 import type { SimpleMenuSize, SimpleMenuVariant } from "@/adapters";
 
-import type { UIElementOrientation } from "@/typings";
+import type {
+  UIElementOrientation,
+  UIElementStylingModifiers,
+} from "@/typings";
 
 import type { MenuItems } from "@/components/atoms";
 
 export type SimpleMenuOrientation = UIElementOrientation;
 
-export interface SimpleMenuProps {
-  variant?: SimpleMenuVariant;
-  size?: SimpleMenuSize;
-  // mode?: SimpleMenuMode;
+export interface SimpleMenuProps
+  extends Partial<
+    Pick<
+      UIElementStylingModifiers<SimpleMenuVariant, SimpleMenuSize>,
+      "variant" | "size"
+    >
+  > {
+  as?: keyof HTMLElementTagNameMap;
   orientation?: UIElementOrientation;
   divider?: boolean;
-  as?: keyof HTMLElementTagNameMap;
   role?: string;
   ariaLabel?: string;
 }

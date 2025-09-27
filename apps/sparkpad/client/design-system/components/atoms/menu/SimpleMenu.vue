@@ -10,6 +10,8 @@ import {
   type SimpleMenuProps,
 } from "@/components/atoms";
 
+const PREFIX = "simple-menu";
+
 const props = withDefaults(defineProps<SimpleMenuProps<T>>(), {
   variant: "default",
   size: "lg",
@@ -41,11 +43,11 @@ const onPress = (item: IMenuItem<T>): void => {
 <template>
   <div
     ref="root"
-    class="simple-menu"
     :class="[
-      `simple-menu_variant-${variant}`,
-      `simple-menu_size-${size}`,
-      `simple-menu_orientation-${orientation}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_orientation-${orientation}`,
     ]"
     :role="orientation === 'vertical' ? 'menu' : 'menubar'"
   >
@@ -61,7 +63,7 @@ const onPress = (item: IMenuItem<T>): void => {
     >
       <Text
         :as="'span'"
-        class="simple-menu__item-label"
+        :class="`${PREFIX}__item-label`"
         data-testid="simple-menu-item-label"
         >{{ item.label }}</Text
       >
@@ -70,11 +72,13 @@ const onPress = (item: IMenuItem<T>): void => {
 </template>
 
 <style lang="scss">
-@mixin defineSizes($map: get($atoms, "simple-menu")) {
+$prefix: simple-menu;
+
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.simple-menu_size-#{$size} {
+        &.s#{$prefix}_size-#{$size} {
           $gap: px2rem(get($val, "root.gap"));
           $padding: px2rem(get($val, "root.padding"));
 
@@ -83,7 +87,7 @@ const onPress = (item: IMenuItem<T>): void => {
           gap: $gap;
           padding: $padding;
 
-          .simple-menu__item {
+          .#{$prefix}__item {
             &-label {
               @extend %t__#{$label-font-style};
             }
@@ -94,7 +98,7 @@ const onPress = (item: IMenuItem<T>): void => {
   }
 }
 
-.simple-menu {
+.#{$prefix} {
   display: flex;
   @include defineSizes();
 

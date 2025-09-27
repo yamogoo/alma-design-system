@@ -10,6 +10,8 @@ import {
 } from "@/components/molecules";
 import type { FilesTreeProps } from "@/components/organisms";
 
+const PREFIX = "files-tree";
+
 const props = withDefaults(defineProps<FilesTreeProps>(), {
   variant: "default",
   size: "md",
@@ -156,13 +158,13 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="files-tree">
-    <div v-if="rootLoading && apiLoadingMessage" class="tree__loading">
+  <div :class="PREFIX">
+    <div v-if="rootLoading && apiLoadingMessage" :class="`${PREFIX}__loading`">
       <slot>
         <Text>{{ apiLoadingMessage }}</Text>
       </slot>
     </div>
-    <div v-else-if="loadError && apiErrorMessage" class="tree__error">
+    <div v-else-if="loadError && apiErrorMessage" :class="`${PREFIX}__error`">
       <slot
         ><Text>{{ apiErrorMessage }}</Text></slot
       >

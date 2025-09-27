@@ -20,6 +20,8 @@ import {
   type InputProps,
 } from "@/components/atoms";
 
+const PREFIX = "input";
+
 const props = withDefaults(defineProps<InputProps>(), {
   variant: "default",
   mode: "neutral",
@@ -70,9 +72,9 @@ watch(
 
 watch(
   () => props.value,
-  (v) => {
-    if (localModelValue.value !== v) {
-      localModelValue.value = v;
+  (newValue) => {
+    if (localModelValue.value !== newValue) {
+      localModelValue.value = newValue;
     }
   }
 );
@@ -181,9 +183,12 @@ const animate = (durationFactor = 1): void => {
   onAnimErrorMessage(message, durationFactor);
 };
 
-watch([isLocalFocused, localModelValue], () => {
-  animate(1);
-});
+watch(
+  () => [isLocalFocused.value, localModelValue.value],
+  () => {
+    animate(1);
+  }
+);
 
 onMounted(() => {
   animate(0);
@@ -194,30 +199,30 @@ onMounted(() => {
   <AnimatedWrapper
     :content-key="String(errorMessage)"
     :duration="0.3"
-    class="input"
-    data-testid="input"
     :class="[
-      `input_variant-${variant}`,
-      `input_mode-${mode}`,
-      `input_tone-${tone}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
       {
-        [`input_size-${size}`]: size,
-        [`input_error`]: isError,
-        [`input_disabled`]: isDisabled,
-        [`input_focused`]: isLocalFocused,
+        [`${PREFIX}_size-${size}`]: size,
+        [`${PREFIX}_state-error`]: isError,
+        [`${PREFIX}_state-disabled`]: isDisabled,
+        [`${PREFIX}_state-focused`]: isLocalFocused,
       },
     ]"
+    data-testid="input"
   >
     <div class="input__field" @pointerdown="onFocus">
       <label
         v-if="placeholder || placeholder === ''"
         ref="refPlaceholder"
         :for="id"
-        class="input__field-placeholder"
+        :class="`${PREFIX}__field-placeholder`"
         >{{ placeholder }}
       </label>
-      <div class="input__field-content">
-        <div v-if="$slots.icon" class="input__field-content-icon">
+      <div :class="`${PREFIX}__field-content`">
+        <div v-if="$slots.icon" :class="`${PREFIX}__field-content-icon`">
           <slot name="icon"></slot>
         </div>
         <input
@@ -225,7 +230,7 @@ onMounted(() => {
           ref="refInput"
           v-model="localModelValue"
           :type
-          class="input__field-value"
+          :class="`${PREFIX}__field-value`"
           data-testid="input-value"
           :areaPlaceholder="areaPlaceholder ?? placeholder"
           :disabled="isDisabled"
@@ -237,6 +242,7 @@ onMounted(() => {
         <ControlButton
           v-if="isResetButtonShown"
           type="reset"
+          :class="`${PREFIX}__field-reset-button`"
           data-testid="input__field-reset-button"
           :size="'xs'"
           :mode="!isError ? 'neutral' : 'negative'"
@@ -252,7 +258,7 @@ onMounted(() => {
     <div ref="refMessage" class="input__error">
       <Text
         v-if="!!errorMessage"
-        class="input__error-message"
+        :class="`${PREFIX}__error-message`"
         :variant="'caption-2'"
         >{{ errorMessage.toLowerCase() }}</Text
       >
@@ -261,9 +267,9 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: input;
 
-@mixin defineInputSizes($map: get($atoms, "input")) {
+@mixin defineInputSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $value-font-style: get($val, "label.font-style");
@@ -279,23 +285,23 @@ onMounted(() => {
       $error-padding: get($val, "error.padding");
 
       &_variant-#{$variant} {
-        &.input_size-#{$size} {
-          .input__field {
+        &.#{$prefix}_size-#{$size} {
+          .#{$prefix}__field {
             height: $height;
             padding: $padding;
             border-radius: $border-radius;
           }
 
-          .input__field-value {
+          .#{$prefix}__field-value {
             padding-top: $value-padding-top;
             @extend %t__#{$value-font-style};
           }
 
-          .input__field-placeholder {
+          .#{$prefix}__field-placeholder {
             @extend %t__#{$placeholder-font-style};
           }
 
-          .input__error {
+          .#{$prefix}__error {
             padding: $error-padding;
 
             &-message {
@@ -308,80 +314,86 @@ onMounted(() => {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.input")) {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.input_tone-#{$tone} {
-          &:not(.input_disabled) {
-            .input__field {
+        &.#{$prefix}_tone-#{$tone} {
+          &:not(.#{$prefix}_state-disabled) {
+            .#{$prefix}__field {
               @include themify($themes) {
-                color: themed("atoms.input.#{$mode}.#{$tone}.label.normal");
+                color: themed(
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                );
                 background-color: themed(
-                  "atoms.input.#{$mode}.#{$tone}.root.background.normal"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
                 );
                 @extend %base-transition;
               }
             }
           }
 
-          &:not(.input__focused) {
-            .input__field {
+          &:not(.#{$prefix}_state-focused) {
+            .#{$prefix}__field {
               @include themify($themes) {
                 border: $outline solid
-                  themed("atoms.input.#{$mode}.#{$tone}.root.border.normal");
+                  themed(
+                    "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
+                  );
               }
             }
           }
 
-          &.input_focused {
-            .input__field {
+          &.#{$prefix}_state-focused {
+            .#{$prefix}__field {
               @include themify($themes) {
                 color: themed("atoms.input.#{$mode}.#{$tone}.label.focused");
                 background-color: themed(
-                  "atoms.input.#{$mode}.#{$tone}.root.background.focused"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.focused"
                 );
                 border: $outline solid
-                  themed("atoms.input.#{$mode}.#{$tone}.root.border.outline");
+                  themed(
+                    "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.outline"
+                  );
                 @extend %base-transition;
               }
             }
           }
 
-          &.input_disabled {
-            .input__field {
+          &.#{$prefix}_state-disabled {
+            .#{$prefix}__field {
               @include themify($themes) {
                 color: themed("atoms.input.#{$mode}.#{$tone}.label.disabled");
                 background-color: themed(
-                  "atoms.input.#{$mode}.#{$tone}.root.background.disabled"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.disabled"
                 );
                 @extend %base-transition;
               }
             }
           }
 
-          &.input_error {
-            .input__field {
+          &.#{$prefix}_state-error {
+            .#{$prefix}__field {
               @include themify($themes) {
                 color: themed("atoms.input.#{$mode}.#{$tone}.label.error");
                 background-color: themed(
-                  "atoms.input.#{$mode}.#{$tone}.root.background.error"
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.error"
                 );
                 @extend %base-transition;
               }
             }
           }
 
-          .input__field-value,
-          .input__field-placeholder {
+          .#{$prefix}__field-value,
+          .#{$prefix}__field-placeholder {
             color: inherit;
             @extend %base-transition;
           }
 
-          .input__error {
+          .#{$prefix}__error {
             &-message {
               @include themify($themes) {
-                color: themed("atoms.input.#{$mode}.#{$tone}.label.error");
+                color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.error");
                 @extend %base-transition;
               }
             }
@@ -392,7 +404,7 @@ onMounted(() => {
   }
 }
 
-.input {
+.#{$prefix} {
   box-sizing: border-box;
   position: relative;
 

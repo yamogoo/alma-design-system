@@ -8,6 +8,8 @@ import {
   type TreeViewProps,
 } from "@/components/molecules";
 
+const PREFIX = "tree-view";
+
 const props = withDefaults(defineProps<TreeViewProps>(), {
   variant: "default",
   size: "md",
@@ -62,7 +64,9 @@ watch(
 watch(
   () => props.expandedItemIndexes,
   (newValue) => {
-    localExpandedItemIndexes.value = newValue ? [...newValue] : [];
+    typeof newValue === "object"
+      ? (localExpandedItemIndexes.value = newValue ? [...newValue] : [])
+      : (localExpandedItemIndexes.value = [newValue]);
   },
   { immediate: true }
 );
@@ -70,7 +74,9 @@ watch(
 watch(
   () => props.loadingItemIndexes,
   (newValue) => {
-    localLoadingItemIndexes.value = newValue ? [...newValue] : [];
+    typeof newValue === "object"
+      ? (localLoadingItemIndexes.value = newValue ? [...newValue] : [])
+      : (localLoadingItemIndexes.value = [newValue]);
   },
   { immediate: true }
 );
@@ -193,10 +199,10 @@ watch(
     ref="root"
     class="tree-view"
     :class="[
-      `tree-view_variant-${variant}`,
-      `tree-view_size-${size}`,
-      `tree-view_mode-${mode}`,
-      `tree-view_tone-${tone}`,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
     ]"
     role="tree"
     :aria-label="ariaLabel"
@@ -225,7 +231,7 @@ watch(
 <style lang="scss">
 $prefix: "tree-view";
 
-@mixin defineSizes($map: get($molecules, "tree-view")) {
+@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));
@@ -241,14 +247,14 @@ $prefix: "tree-view";
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.tree-view")) {
+@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "molecules.tree-view.#{$mode}.#{$tone}.root.background"
+              "molecules.#{$prefix}.#{$mode}.#{$tone}.root.background"
             );
           }
         }

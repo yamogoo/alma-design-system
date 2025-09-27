@@ -11,14 +11,14 @@ import type {
   IconWeight,
   ButtonContentDirection,
   ButtonStretch,
-  ButtonRequiredProps,
 } from "@/components/atoms";
 
-export interface ActionButtonProps extends ButtonRequiredProps {
-  variant?: ButtonVariant;
-  size: ButtonSize;
-  mode: ButtonMode;
-  tone: ButtonTone;
+import type { UIElementStylingModifiers } from "@/typings";
+
+export interface ActionButtonProps
+  extends Partial<
+    UIElementStylingModifiers<ButtonVariant, ButtonSize, ButtonMode, ButtonTone>
+  > {
   label?: string;
   contentDirection?: ButtonContentDirection;
   iconName?: IconName;

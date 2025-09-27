@@ -2,6 +2,8 @@
 import { ControlButton, Text } from "@/components/atoms";
 import { type SnackbarProps } from "@/components/molecules";
 
+const PREFIX = "snackbar";
+
 withDefaults(defineProps<SnackbarProps>(), {
   variant: "default",
   mode: "neutral",
@@ -13,24 +15,24 @@ withDefaults(defineProps<SnackbarProps>(), {
 
 <template>
   <div
-    class="snackbar"
     :class="[
-      `snackbar_variant-${variant}`,
-      `snackbar_size-${size}`,
-      `snackbar_mode-${mode}`,
-      `snackbar_tone-${tone}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
     ]"
     :role="status === 'info' ? 'status' : 'alert'"
   >
     <slot v-if="$slots.default"></slot>
-    <div v-if="!$slots.default" class="snackbar__content">
-      <Text v-if="title" class="snackbar__content-title"> {{ title }}</Text>
-      <Text v-if="description" class="snackbar__content-description">
+    <div v-if="!$slots.default" :class="`${PREFIX}__content`">
+      <Text v-if="title" :class="`${PREFIX}__content-title`"> {{ title }}</Text>
+      <Text v-if="description" :class="`${PREFIX}__content-description`">
         {{ description }}</Text
       >
     </div>
     <ControlButton
-      class="snackbar__close-button"
+      :class="`${PREFIX}__close-button`"
       :variant="'rounded'"
       :size="'xs'"
       :mode="'neutral'"
@@ -44,9 +46,9 @@ withDefaults(defineProps<SnackbarProps>(), {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: snackbar;
 
-@mixin defineSizes($map: get($molecules, "snackbar")) {
+@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));
@@ -62,12 +64,12 @@ withDefaults(defineProps<SnackbarProps>(), {
       $description-font-style: get($val, "description.font-style");
 
       &_variant-#{$variant} {
-        &.snackbar_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           gap: $gap;
           padding: $padding;
           border-radius: $border-radius;
 
-          .snackbar__content {
+          .#{$prefix}__content {
             gap: $content-gap;
 
             &-title {
@@ -84,42 +86,40 @@ withDefaults(defineProps<SnackbarProps>(), {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.snackbar")) {
+@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
   @each $tone, $modes in $map {
     @each $mode, $val in $modes {
       &_tone-#{$tone} {
         $close-button-tone: get($val, "close-button.tone");
         $close-button-mode: get($val, "close-button.mode");
 
-        /* @debug $close-button-tone $close-button-mode; */
-
-        &.snackbar_mode-#{$mode} {
+        &.#{$prefix}_mode-#{$mode} {
           @include themify($themes) {
             background-color: themed(
-              "molecules.snackbar.#{$tone}.#{$mode}.root.background"
+              "molecules.#{$prefix}.#{$tone}.#{$mode}.root.background"
             );
           }
 
-          .snackbar {
+          .#{$prefix} {
             &__content {
               &-title {
                 @include themify($themes) {
-                  color: themed("molecules.snackbar.#{$tone}.#{$mode}.title");
+                  color: themed("molecules.#{$prefix}.#{$tone}.#{$mode}.title");
                 }
               }
 
               &-description {
                 @include themify($themes) {
                   color: themed(
-                    "molecules.snackbar.#{$tone}.#{$mode}.description"
+                    "molecules.#{$prefix}.#{$tone}.#{$mode}.description"
                   );
                 }
               }
             }
 
-            &__close-button {
+            /* &__close-button {
               @extend %button_mode-#{$close-button-tone}_tone-#{$close-button-mode};
-            }
+            } */
           }
         }
       }

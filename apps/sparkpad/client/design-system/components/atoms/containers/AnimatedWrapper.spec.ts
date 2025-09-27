@@ -1,6 +1,10 @@
 import { mount } from "@vue/test-utils";
 
-import { AnimatedWrapper } from "@/components/atoms";
+import { AnimatedWrapper, type AnimatedWrapperProps } from "@/components/atoms";
+
+const REQUIRED_PROPS: AnimatedWrapperProps = {
+  contentKey: "some-key",
+};
 
 describe("AnimatedWrapper", () => {
   describe("slots", () => {
@@ -9,6 +13,7 @@ describe("AnimatedWrapper", () => {
       const slot = `<p data-testid="slot">${slotContent}</p>`;
 
       const wrapper = mount(AnimatedWrapper, {
+        props: REQUIRED_PROPS,
         slots: { default: slot },
       });
 

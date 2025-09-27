@@ -7,12 +7,18 @@ import type {
   ResizeBoundingVariant,
 } from "@/adapters";
 
+import type { UIElementStylingModifiers } from "@/typings";
+
 export const RESIZE_BOUNDING_PREFIX = "resize-bounding";
 export const RESIZE_BOUNDING_PREFIX_WITH_DIVIDER = `${RESIZE_BOUNDING_PREFIX}__`;
 
-export interface ResizeBoundingProps extends Omit<Props, "styles" | "options"> {
-  variant?: ResizeBoundingVariant;
-  size?: ResizeBoundingSize;
-  mode?: ResizeBoundingMode;
-  tone?: ResizeBoundingTone;
-}
+export interface ResizeBoundingProps
+  extends Partial<
+      UIElementStylingModifiers<
+        ResizeBoundingVariant,
+        ResizeBoundingSize,
+        ResizeBoundingMode,
+        ResizeBoundingTone
+      >
+    >,
+    Omit<Props, "styles" | "options"> {}

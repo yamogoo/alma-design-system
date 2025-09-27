@@ -4,6 +4,8 @@ import g from "gsap";
 
 import type { AnimatedWrapperProps } from "@/components/atoms";
 
+const PREFIX = "animated-wrapper";
+
 const props = withDefaults(defineProps<AnimatedWrapperProps>(), {
   duration: 0.4,
 });
@@ -42,13 +44,15 @@ watch(
 </script>
 
 <template>
-  <div ref="refWrapper" class="animated-wrapper">
+  <div ref="refWrapper" :class="PREFIX">
     <slot></slot>
   </div>
 </template>
 
 <style lang="scss">
-.animated-wrapper {
+$prefix: animated-wrapper;
+
+.#{$prefix} {
   position: relative;
 }
 </style>

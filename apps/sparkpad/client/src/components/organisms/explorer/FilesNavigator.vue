@@ -3,5 +3,5 @@ import { FilesTree } from "@/components/organisms";
 </script>
 
 <template>
-  <FilesTree api-url="/api/all"></FilesTree>
+  <FilesTree api-url="http://localhost:5042/api/groups"></FilesTree>
 </template>

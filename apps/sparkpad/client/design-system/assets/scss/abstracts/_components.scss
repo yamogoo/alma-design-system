@@ -867,5 +867,30 @@ $templates:(
 )
 )
 )
+),
+  navigation-rail: (
+  default: (
+  lg: (
+  root: (
+  gap: 16px,
+  min-width: 88px,
+  padding: 16px
+)
+),
+  md: (
+  root: (
+  gap: 16px,
+  min-width: 76px,
+  padding: 12px
+)
+),
+  sm: (
+  root: (
+  gap: 12px,
+  min-width: 64px,
+  padding: 8px
+)
+)
+)
 )
 );

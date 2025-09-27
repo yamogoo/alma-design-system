@@ -4,10 +4,13 @@ import { useId } from "vue";
 import { Text } from "@/components/atoms";
 import type { FormProps } from "@/components/molecules";
 
+const PREFIX = "form";
+
 withDefaults(defineProps<FormProps>(), {
   variant: "default",
   size: "md",
-  mode: "primary",
+  mode: "neutral",
+  tone: "primary",
 });
 
 const id = useId();
@@ -16,18 +19,19 @@ const id = useId();
 <template>
   <form
     :id
-    class="form"
     :class="[
-      { [`form_variant-${variant}`]: !!variant },
-      { [`form_size-${size}`]: !!size },
-      { [`form_mode-${mode}`]: !!mode },
+      PREFIX,
+      { [`${PREFIX}_variant-${variant}`]: !!variant },
+      { [`${PREFIX}_size-${size}`]: !!size },
+      { [`${PREFIX}_mode-${mode}`]: !!mode },
+      { [`${PREFIX}_tone-${tone}`]: !!tone },
     ]"
     @submit.prevent
   >
-    <div class="form__container">
+    <div :class="`${PREFIX}__container`">
       <div
         v-if="$slots.header || title"
-        class="form__header"
+        :class="`${PREFIX}__header`"
         data-testid="form-header"
       >
         <Text :variant="'title-2'" :mode="'neutral'" :tone="'primary'">{{
@@ -35,7 +39,7 @@ const id = useId();
         }}</Text>
         <slot name="header"></slot>
       </div>
-      <div class="form__body">
+      <div :class="`${PREFIX}__body`">
         <slot></slot>
       </div>
       <div v-if="$slots.footer" class="form__footer">
@@ -46,9 +50,9 @@ const id = useId();
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: form;
 
-@mixin defineSizes($map: get($molecules, "form")) {
+@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $border-radius: get($val, "root.border-radius");
@@ -59,34 +63,43 @@ const id = useId();
       &_size-#{$size} {
         border-radius: $border-radius;
 
-        .form__body {
+        .#{$prefix}__body {
           gap: $body-gap;
         }
 
-        .form__header,
-        .form__body,
-        .form__footer {
-          padding: $body-padding 0;
+        .#{$prefix} {
+          &__header,
+          &__body,
+          &__footer {
+            padding: $body-padding 0;
+          }
         }
       }
     }
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.form")) {
+@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
   @each $mode, $modes in $map {
-    &_mode-#{$mode} {
-      @include themify($themes) {
-        background-color: themed("molecules.form.#{$mode}.background");
-        @include themify($themes) {
-          box-shadow: 0px 4px 32px themed("molecules.form.#{$mode}.shadow");
+    @each $tone, $val in $modes {
+      &_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
+          @include themify($themes) {
+            background-color: themed(
+              "molecules.#{$prefix}.#{$mode}.#{$tone}.background"
+            );
+            @include themify($themes) {
+              box-shadow: 0px 4px 32px
+                themed("molecules.#{$prefix}.#{$mode}.#{$tone}.shadow");
+            }
+          }
         }
       }
     }
   }
 }
 
-.form {
+.#{$prefix} {
   width: 100%;
   @extend %base-transition;
 

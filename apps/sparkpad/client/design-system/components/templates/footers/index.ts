@@ -1,2 +1,2 @@
-export * from "./MainFooter";
-export { default as MainFooter } from "./MainFooter.vue";
+export * from "./MainFooterTemplate";
+export { default as MainFooterTemplate } from "./MainFooterTemplate.vue";

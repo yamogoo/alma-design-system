@@ -9,7 +9,7 @@ import type {
 import type {
   UIElementAxisDirection,
   UIElementStretch,
-  UIElementUnionProps,
+  UIElementStylingModifiers,
 } from "@/typings";
 
 import type { IconName, IconStyle, IconWeight } from "@/components/atoms";
@@ -18,15 +18,15 @@ export type ButtonStretch = UIElementStretch;
 
 export type ButtonContentDirection = UIElementAxisDirection;
 
-export interface ButtonRequiredProps {
-  size: ButtonSize;
-  mode: ButtonMode;
-  tone: ButtonTone;
-}
+export interface ButtonRequiredProps
+  extends UIElementStylingModifiers<
+    ButtonVariant,
+    ButtonSize,
+    ButtonMode,
+    ButtonTone
+  > {}
 
-export interface ButtonProps
-  extends Partial<UIElementUnionProps<ButtonVariant>>,
-    ButtonRequiredProps {
+export interface ButtonProps extends Partial<ButtonRequiredProps> {
   as?: keyof HTMLElementTagNameMap;
 
   label?: string;

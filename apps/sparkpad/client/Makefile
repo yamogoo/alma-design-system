@@ -1,10 +1,10 @@
-CLIENT_COMPOSE = compose.dev.yml
+CLIENT_COMPOSE = docker-compose.yml
 
-dev-client:
+dev-sparkpad:
 	docker compose -f $(CLIENT_COMPOSE) up --build
 
-dev-client-detach:
+dev-sparkpad-detach:
 	docker compose -f $(CLIENT_COMPOSE) up --build -d
 
-stop-client:
+stop-sparkpad:
 	docker compose -f $(CLIENT_COMPOSE) down

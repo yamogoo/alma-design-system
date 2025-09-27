@@ -14,3 +14,8 @@ export type OptionsMode = keyof typeof tokens.themes.dark.atoms.options;
 export const optionsModes = Object.keys(
   tokens.themes.dark.atoms.options
 ) as OptionsMode[];
+
+export type OptionsTone = keyof typeof tokens.themes.dark.atoms.options.neutral;
+export const optionsTone = Object.keys(
+  tokens.themes.dark.atoms.options.neutral
+) as OptionsTone[];

@@ -84,3 +84,10 @@ export type UIElementTypographyTag =
 export interface UIElementUnionProps<V = UIElementVariant> {
   variant?: V;
 }
+
+export interface UIElementStylingModifiers<V, S, M = unknown, T = unknown> {
+  variant: V;
+  size: S;
+  mode: M;
+  tone: T;
+}

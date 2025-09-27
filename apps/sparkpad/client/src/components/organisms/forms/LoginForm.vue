@@ -96,7 +96,13 @@ export interface Props {
 </script>
 
 <template>
-  <Form :color="'primary'" :aria-label="'Signin'">
+  <Form
+    variant="default"
+    :size="'md'"
+    :mode="'neutral'"
+    :tone="'primary'"
+    :aria-label="'Signin'"
+  >
     <Input
       v-model:value="localEmail"
       :placeholder="$t.auth.login.form.userName"

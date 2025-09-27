@@ -1,6 +1,8 @@
 <script setup lang="ts" generic="T">
 import { Text, type OptionsProps } from "@/components/atoms";
 
+const PREFIX = "options";
+
 const props = withDefaults(defineProps<OptionsProps<T>>(), {
   variant: "default",
   isCurrentOptionShown: false,
@@ -25,12 +27,13 @@ const showCurrentOption = (key: T) => {
 
 <template>
   <ul
-    class="options"
     :class="[
+      PREFIX,
       {
-        [`options_variant-${variant}`]: !!variant,
-        [`options_size-${size}`]: !!size,
-        [`options_mode-${mode}`]: !!mode,
+        [`${PREFIX}_variant-${variant}`]: !!variant,
+        [`${PREFIX}_size-${size}`]: !!size,
+        [`${PREFIX}_mode-${mode}`]: !!mode,
+        [`${PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
   >
@@ -38,7 +41,7 @@ const showCurrentOption = (key: T) => {
       <Text
         v-if="showCurrentOption(key)"
         :as="'li'"
-        class="options__option"
+        :class="`${PREFIX}__option`"
         data-testid="options__option"
         @click="onSelect(key)"
       >
@@ -50,17 +53,17 @@ const showCurrentOption = (key: T) => {
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: options;
 
-@mixin defineSizes($map: get($atoms, "options")) {
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $option-font-style: get($val, "option.font-style");
       $option-min-height: px2rem(get($val, "option.min-height"));
 
       &_variant-#{$variant} {
-        &.options_size-#{$size} {
-          .options__option {
+        &.#{$prefix}_size-#{$size} {
+          .#{$prefix}__option {
             min-height: $option-min-height;
             @extend %t__#{$option-font-style};
           }
@@ -70,17 +73,23 @@ const showCurrentOption = (key: T) => {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.options")) {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
-    &_mode-#{$mode} {
-      .options__option {
-        @include themify($themes) {
-          color: themed("atoms.options.#{$mode}.label.normal");
-        }
+    @each $tone, $val in $modes {
+      &_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
+          .#{$prefix}__option {
+            @include themify($themes) {
+              color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
+            }
 
-        &:hover {
-          @include themify($themes) {
-            color: themed("atoms.options.#{$mode}.label.hovered");
+            &:hover {
+              @include themify($themes) {
+                color: themed(
+                  "atoms.#{$prefix}.#{$mode}.#{$tone}.label.hovered"
+                );
+              }
+            }
           }
         }
       }
@@ -88,7 +97,7 @@ const showCurrentOption = (key: T) => {
   }
 }
 
-.options {
+.#{$prefix} {
   margin: 0;
   padding: 0;
 

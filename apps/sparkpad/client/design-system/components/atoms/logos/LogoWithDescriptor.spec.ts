@@ -25,8 +25,8 @@ describe("LogoWithDescriptor", () => {
       const props: LogoWithDescriptorProps = {
         variant: "default",
         size: "md",
-        tone: "default",
-        mode: "primary",
+        mode: "default",
+        tone: "primary",
       };
 
       const wrapper = mount(LogoWithDescriptor, { props });

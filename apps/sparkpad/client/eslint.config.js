@@ -1,59 +1,74 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
-
-import pluginJs from "@eslint/js";
-import pluginVue from "eslint-plugin-vue";
+import js from "@eslint/js";
+import vue from "eslint-plugin-vue";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-import withNuxt from "./.nuxt/eslint.config.mjs";
+// import storybook from "eslint-plugin-storybook";
 
-export default withNuxt(
+export default [
   {
     ignores: [
-      "*.d.ts",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.output/**",
+      "**/.vscode/**",
+      "**/coverage/**",
+      "tokens/build/**",
+      "**/*.d.ts",
+      "**/*.__draft*",
+      "**/*.temp",
       "**/tests-report/*",
-      "**/.vscode/*",
-      "**/.netlify/*",
-      "**/node_modules/*",
-      "**/.nuxt/*",
-      "**/.output/*",
-      "**/dist/*",
+      "**/error-logger/**",
     ],
   },
-  {
-    languageOptions: {
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
-  },
-  { files: ["**/*.{js,ts,vue}"] },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
+
+  js.configs.recommended,
+
+  // TypeScript
   ...tseslint.configs.recommended,
-  ...pluginVue.configs["flat/recommended"],
+
+  // Vue SFC
+  ...vue.configs["flat/recommended"],
+
   {
-    files: ["**/*.vue"],
+    files: ["**/*.{js,ts,vue}"],
     languageOptions: {
-      parserOptions: { parser: tseslint.parser },
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: globals.browser,
     },
-  },
-  {
     rules: {
       "@typescript-eslint/no-unused-expressions": [
         "error",
-        {
-          allowShortCircuit: true,
-          allowTernary: true,
-        },
+        { allowShortCircuit: true, allowTernary: true },
       ],
       "no-async-promise-executor": "off",
       "vue/multi-word-component-names": "off",
-      "eslintvue/max-attributes-per-line": "off",
       "vue/require-default-prop": "off",
       "vue/html-self-closing": "off",
       "vue/max-attributes-per-line": "off",
     },
   },
-);
+
+  {
+    files: ["**/*.vue"],
+    languageOptions: {
+      parserOptions: {
+        parser: tseslint.parser,
+        ecmaVersion: "latest",
+        sourceType: "module",
+        extraFileExtensions: [".vue"],
+      },
+    },
+  },
+
+  {
+    files: [
+      "**/vite.config.{js,ts,mjs,cjs}",
+      "**/eslint.config.{js,ts,mjs,cjs}",
+      "**/.storybook/**/*.{js,ts,mjs,cjs}",
+      "**/scripts/**/*.{js,ts,mjs,cjs}",
+    ],
+    languageOptions: { globals: globals.node, sourceType: "module" },
+  },
+];

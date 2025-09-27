@@ -18,9 +18,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "dev": "pnpm lint && vite",
     "dev:electron": "electron .",
-    "build": "vue-tsc -b tsconfig.app.json && vite build --mode production --config vite.config.ts",
+    "build": "pnpm lint && vue-tsc -b tsconfig.app.json && vite build --mode production --config vite.config.ts",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:ui": "vitest --ui",

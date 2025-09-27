@@ -1,37 +1,39 @@
 {
-  "primary": {
-    "background": {
-      "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
-      "$type": "color",
-      "$unit": "hex",
-      "$meta": {
-        "category": "form"
+  "neutral": {
+    "primary": {
+      "background": {
+        "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "form"
+        }
+      },
+      "shadow": {
+        "$value": "{themes.themes.light.abstracts.shadow.primary.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "form"
+        }
       }
     },
-    "shadow": {
-      "$value": "{themes.themes.light.abstracts.shadow.primary.$value}",
-      "$type": "color",
-      "$unit": "hex",
-      "$meta": {
-        "category": "form"
-      }
-    }
-  },
-  "secondary": {
-    "background": {
-      "$value": "{themes.themes.light.abstracts.surface.neutral.secondary.$value}",
-      "$type": "color",
-      "$unit": "hex",
-      "$meta": {
-        "category": "form"
-      }
-    },
-    "shadow": {
-      "$value": "{themes.themes.light.abstracts.shadow.primary.$value}",
-      "$type": "color",
-      "$unit": "hex",
-      "$meta": {
-        "category": "form"
+    "secondary": {
+      "background": {
+        "$value": "{themes.themes.light.abstracts.surface.neutral.secondary.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "form"
+        }
+      },
+      "shadow": {
+        "$value": "{themes.themes.light.abstracts.shadow.primary.$value}",
+        "$type": "color",
+        "$unit": "hex",
+        "$meta": {
+          "category": "form"
+        }
       }
     }
   }

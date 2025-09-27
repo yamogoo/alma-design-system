@@ -6,6 +6,7 @@ import type {
   UIElementBlockTag,
   UIElementOrientation,
   UIElementStretch,
+  UIElementStylingModifiers,
 } from "@/typings";
 
 export type GroupOrientation = UIElementOrientation;
@@ -14,12 +15,11 @@ export type GroupAlignment = UIElementAlignment;
 export type GroupStretch = UIElementStretch;
 export type GroupAsTag = UIElementBlockTag;
 
-export interface GroupProps {
+export interface GroupProps
+  extends Partial<
+    UIElementStylingModifiers<GroupVariant, GroupSize, GroupMode, GroupTone>
+  > {
   as?: GroupAsTag;
-  variant?: GroupVariant;
-  size?: GroupSize;
-  mode?: GroupMode;
-  tone?: GroupTone;
   orientation?: GroupOrientation;
   direction?: GroupDirection;
   verticalAlignment?: GroupAlignment;

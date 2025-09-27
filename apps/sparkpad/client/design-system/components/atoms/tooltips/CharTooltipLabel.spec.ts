@@ -1,42 +1,64 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import CharTooltipLabel from "./CharTooltipLabel.vue";
+import {
+  CharTooltipLabel,
+  type CharTooltipLabelProps,
+} from "@/components/atoms";
 
 const getIcon = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="icon"]');
 };
 
+enum Classes {
+  ROOT_CLASS = "char-tooltip-label",
+  VARIANT = `${Classes.ROOT_CLASS}_variant`,
+  SIZE = `${Classes.ROOT_CLASS}_size`,
+  MODE = `${Classes.ROOT_CLASS}_mode`,
+  TONE = `${Classes.ROOT_CLASS}_tone`,
+}
+
 describe("CharTooltipLabel", () => {
   test("renders with default props", () => {
+    const props: CharTooltipLabelProps = {
+      variant: "default",
+      size: "lg",
+      mode: "neutral",
+      tone: "primary",
+    };
+
     const wrapper = mount(CharTooltipLabel, {
       props: {
         label: "Hello",
-        variant: "default",
-        size: "lg",
-        mode: "primary",
+        ...props,
       },
     });
 
-    expect(wrapper.classes()).toContain("char-tooltip-label");
-    expect(wrapper.classes()).toContain("char-tooltip-label_variant-default");
-    expect(wrapper.classes()).toContain("char-tooltip-label_size-lg");
-    expect(wrapper.classes()).toContain("char-tooltip-label_mode-primary");
+    expect(wrapper.classes()).toContain(`${Classes.VARIANT}-${props.variant}`);
+    expect(wrapper.classes()).toContain(`${Classes.SIZE}-${props.size}`);
+    expect(wrapper.classes()).toContain(`${Classes.TONE}-${props.tone}`);
+    expect(wrapper.classes()).toContain(`${Classes.MODE}-${props.mode}`);
     expect(wrapper.text()).toContain("Hello");
   });
 
   test("applies custom variant, size and color", () => {
+    const props: CharTooltipLabelProps = {
+      variant: "default",
+      size: "lg",
+      mode: "neutral",
+      tone: "primary",
+    };
+
     const wrapper = mount(CharTooltipLabel, {
       props: {
         label: "Custom",
-        variant: "default",
-        size: "lg",
-        mode: "primary",
+        ...props,
       },
     });
 
-    expect(wrapper.classes()).toContain("char-tooltip-label_variant-default");
-    expect(wrapper.classes()).toContain("char-tooltip-label_size-lg");
-    expect(wrapper.classes()).toContain("char-tooltip-label_mode-primary");
+    expect(wrapper.classes()).toContain(`${Classes.VARIANT}-${props.variant}`);
+    expect(wrapper.classes()).toContain(`${Classes.SIZE}-${props.size}`);
+    expect(wrapper.classes()).toContain(`${Classes.TONE}-${props.tone}`);
+    expect(wrapper.classes()).toContain(`${Classes.MODE}-${props.mode}`);
   });
 
   test("renders the text label", () => {

@@ -2,14 +2,22 @@ import type {
   CharTooltipLabelMode,
   CharTooltipLabelSize,
   CharTooltipLabelVariant,
+  CharTooltipLabelTone,
 } from "@/adapters";
+
+import type { UIElementStylingModifiers } from "@/typings";
 
 import type { IconName, IconStyle, IconWeight } from "@/components/atoms";
 
-export interface CharTooltipLabelProps {
-  variant?: CharTooltipLabelVariant;
-  size?: CharTooltipLabelSize;
-  mode?: CharTooltipLabelMode;
+export interface CharTooltipLabelProps
+  extends Partial<
+    UIElementStylingModifiers<
+      CharTooltipLabelVariant,
+      CharTooltipLabelSize,
+      CharTooltipLabelMode,
+      CharTooltipLabelTone
+    >
+  > {
   label?: string;
   iconName?: IconName;
   iconStyle?: IconStyle;

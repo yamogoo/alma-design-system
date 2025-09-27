@@ -27,6 +27,7 @@ const onPointerDown = (e: PointerEvent): void => {
     :prepend-icon-name="iconName"
     :prepend-icon-style="iconStyle"
     :prepend-icon-weight="iconWeight"
+    :icon-size="iconSize"
     @pointerup="onPointerUp"
     @pointerdown="onPointerDown"
   ></Button>

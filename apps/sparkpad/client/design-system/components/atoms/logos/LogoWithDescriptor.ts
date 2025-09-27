@@ -5,10 +5,16 @@ import type {
   LogoWithDescriptorVariant,
 } from "@/adapters";
 
-export interface LogoWithDescriptorProps {
-  variant?: LogoWithDescriptorVariant;
-  size?: LogoWithDescriptorSize;
-  tone?: LogoWithDescriptorTone;
-  mode?: LogoWithDescriptorMode;
+import type { UIElementStylingModifiers } from "@/typings";
+
+export interface LogoWithDescriptorProps
+  extends Partial<
+    UIElementStylingModifiers<
+      LogoWithDescriptorVariant,
+      LogoWithDescriptorSize,
+      LogoWithDescriptorMode,
+      LogoWithDescriptorTone
+    >
+  > {
   name?: string;
 }

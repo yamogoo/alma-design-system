@@ -1,5 +1,5 @@
 export * from "./theme";
-export * from "./dimentions";
+export * from "./dimensions";
 export * from "./localStorage";
 export * from "./elements";
 export * from "./transitions";

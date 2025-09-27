@@ -14,7 +14,7 @@ export interface FrontendErrorLog {
   url: string;
   severity: ErrorSeverity;
   tags?: Record<string, string | number | boolean>;
-  extra?: Record<string, any>;
+  extra?: Record<string, unknown>;
   user?: { id?: string; anonId?: string };
   env: {
     appVersion?: string;
@@ -47,7 +47,7 @@ const CONFIG = {
   VITE_APP_VERSION: import.meta.env.VITE_APP_VERSION || undefined,
 };
 
-const JITTER = () => Math.floor(Math.random() * 300); // 0..300ms
+const JITTER = () => Math.floor(Math.random() * 300);
 
 function backoff(retries: number) {
   // exponential backoff with jitter: 0.5s, 1s, 2s, 4s, ...
@@ -68,7 +68,6 @@ async function saveQueue(q: QueueItem[]) {
   await STORE.setItem(LF_KEY, JSON.stringify(q));
 }
 
-// deduplication: hash by message+top frame from stack
 function hashString(s: string) {
   let h = 0;
   for (let i = 0; i < s.length; i++) h = (h << 5) - h + s.charCodeAt(i);
@@ -89,6 +88,7 @@ function redact(text?: string) {
     .replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g, "[email]")
     .replace(
       /([?&](?:token|password|secret|api_key)=[^&#]+)/gi,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       (_m) => "[REDACTED_PARAM]"
     )
     .slice(0, 20_000); // limit the size
@@ -104,7 +104,7 @@ function shouldSample(severity: ErrorSeverity) {
 function buildLog(
   err: unknown,
   severity: ErrorSeverity,
-  extra?: Record<string, any>
+  extra?: Record<string, unknown>
 ): FrontendErrorLog {
   const e = err instanceof Error ? err : new Error(String(err));
   const msg = e.message || String(err);

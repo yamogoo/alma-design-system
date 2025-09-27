@@ -6,6 +6,8 @@ import { usePressed } from "@/composables/local";
 
 import type { SwitchProps } from "@/components/atoms";
 
+const PREFIX = "switch";
+
 defineOptions({
   inheritAttrs: false,
 });
@@ -14,7 +16,8 @@ useAttrs();
 
 const props = withDefaults(defineProps<SwitchProps>(), {
   variant: "default",
-  mode: "primary",
+  mode: "neutral",
+  tone: "primary",
   size: "md",
   isActive: false,
   isDisabled: false,
@@ -94,12 +97,12 @@ onMounted(() => {
     <div
       ref="root"
       :class="[
-        'switch',
-        `switch_variant-${variant}`,
-        `switch_mode-${mode}`,
-        `switch_size-${size}`,
-        `switch_state-${isActive ? 'active' : 'normal'}`,
-        { switch_disabled: isDisabled },
+        PREFIX,
+        `${PREFIX}_variant-${variant}`,
+        `${PREFIX}_mode-${mode}`,
+        `${PREFIX}_size-${size}`,
+        `${PREFIX}_state-${isActive ? 'active' : 'normal'}`,
+        { [`${PREFIX}_state-disabled`]: isDisabled },
       ]"
       role="switch"
       :aria-labelledby="`label-${id}`"
@@ -108,9 +111,9 @@ onMounted(() => {
       tabindex="0"
       @keydown="onKeyDown"
     >
-      <div class="switch__track">
-        <div ref="track" class="switch__track-container">
-          <span ref="knob" class="switch__knob"></span>
+      <div :class="`${PREFIX}__track`">
+        <div ref="track" :class="`${PREFIX}__track-container`">
+          <span ref="knob" :class="`${PREFIX}__knob`"></span>
         </div>
       </div>
       <span v-if="label" class="switch__label">{{ label }}</span>
@@ -121,12 +124,12 @@ onMounted(() => {
       ref="root"
       :for="id"
       :class="[
-        'switch',
-        `switch_variant-${variant}`,
-        `switch_mode-${mode}`,
-        `switch_size-${size}`,
-        `switch_state-${isActive ? 'active' : 'normal'}`,
-        { switch_disabled: isDisabled },
+        PREFIX,
+        `${PREFIX}_variant-${variant}`,
+        `${PREFIX}_mode-${mode}`,
+        `${PREFIX}_size-${size}`,
+        `${PREFIX}_state-${isActive ? 'active' : 'normal'}`,
+        { [`${PREFIX}_state-disabled`]: isDisabled },
       ]"
       :aria-labelledby="`label-${id}`"
       tabindex="0"
@@ -138,20 +141,20 @@ onMounted(() => {
         :checked="isActive"
         @change="onChange"
       />
-      <div class="switch__track">
-        <div class="switch__track-container">
-          <span ref="knob" class="switch__knob"></span>
+      <div :class="`${PREFIX}__track`">
+        <div :class="`${PREFIX}__track-container`">
+          <span ref="knob" :class="`${PREFIX}__knob`"></span>
         </div>
       </div>
-      <span v-if="label" class="switch__label">{{ label }}</span>
+      <span v-if="label" :class="`${PREFIX}__label`">{{ label }}</span>
     </label>
   </template>
 </template>
 
 <style lang="scss">
-@use "sass:map";
+$prefix: switch;
 
-@mixin defineSizes($map: get($atoms, "switch")) {
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -169,19 +172,21 @@ onMounted(() => {
 
           gap: $gap;
 
-          .switch__track {
-            @include box($width, $height);
-            border-radius: $height;
-            padding: $track-padding;
-          }
+          .#{$prefix} {
+            &__track {
+              @include box($width, $height);
+              border-radius: $height;
+              padding: $track-padding;
+            }
 
-          .switch__knob {
-            @include box($knob-width, $knob-height);
-            border-radius: $knob-border-radius;
-          }
+            &__knob {
+              @include box($knob-width, $knob-height);
+              border-radius: $knob-border-radius;
+            }
 
-          .switch__label {
-            @extend %t__#{$label-font-style};
+            &__label {
+              @extend %t__#{$label-font-style};
+            }
           }
         }
       }
@@ -189,95 +194,119 @@ onMounted(() => {
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.switch")) {
+@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
-    &_mode-#{$mode} {
-      &:not(.switch_disabled) {
-        &.switch_state {
-          &-normal {
-            .switch__track {
-              @include themify($themes) {
-                background-color: themed("atoms.switch.#{$mode}.track.normal");
-              }
-            }
+    @each $tone, $val in $modes {
+      &_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
+          &:not(.#{$prefix}_state-disabled) {
+            &.#{$prefix}_state {
+              &-normal {
+                .#{$prefix}__track {
+                  @include themify($themes) {
+                    background-color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.track.normal"
+                    );
+                  }
+                }
 
-            .switch__knob {
-              @include themify($themes) {
-                background-color: themed("atoms.switch.#{$mode}.knob.normal");
-              }
-            }
+                .#{$prefix}__knob {
+                  @include themify($themes) {
+                    background-color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.normal"
+                    );
+                  }
+                }
 
-            .switch__label {
-              @include themify($themes) {
-                color: themed("atoms.switch.#{$mode}.label.normal");
+                .#{$prefix}__label {
+                  @include themify($themes) {
+                    color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                    );
+                  }
+                }
               }
-            }
-          }
 
-          &-active {
-            .switch__track {
-              @include themify($themes) {
-                background-color: themed("atoms.switch.#{$mode}.track.active");
-              }
-            }
+              &-active {
+                .#{$prefix}__track {
+                  @include themify($themes) {
+                    background-color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.track.active"
+                    );
+                  }
+                }
 
-            .switch__knob {
-              @include themify($themes) {
-                background-color: themed("atoms.switch.#{$mode}.knob.active");
-              }
-            }
+                .#{$prefix}__knob {
+                  @include themify($themes) {
+                    background-color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.active"
+                    );
+                  }
+                }
 
-            .switch__label {
-              @include themify($themes) {
-                color: themed("atoms.switch.#{$mode}.label.active");
-              }
-            }
-          }
-        }
-      }
-
-      &.switch_disabled {
-        &.switch_state {
-          &-normal {
-            .switch__track {
-              @include themify($themes) {
-                background-color: themed(
-                  "atoms.switch.#{$mode}.track.disabled"
-                );
-              }
-            }
-
-            .switch__knob {
-              @include themify($themes) {
-                background-color: themed("atoms.switch.#{$mode}.knob.disabled");
-              }
-            }
-
-            .switch__label {
-              @include themify($themes) {
-                color: themed("atoms.switch.#{$mode}.label.disabled");
+                .#{$prefix}__label {
+                  @include themify($themes) {
+                    color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.label.active"
+                    );
+                  }
+                }
               }
             }
           }
 
-          &-active {
-            .switch__track {
-              @include themify($themes) {
-                background-color: themed(
-                  "atoms.switch.#{$mode}.track.disabled"
-                );
-              }
-            }
+          &.#{$prefix}_state-disabled {
+            &.#{$prefix}_state {
+              &-normal {
+                .#{$prefix}__track {
+                  @include themify($themes) {
+                    background-color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.track.disabled"
+                    );
+                  }
+                }
 
-            .switch__knob {
-              @include themify($themes) {
-                background-color: themed("atoms.switch.#{$mode}.knob.disabled");
-              }
-            }
+                .#{$prefix}__knob {
+                  @include themify($themes) {
+                    background-color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.disabled"
+                    );
+                  }
+                }
 
-            .switch__label {
-              @include themify($themes) {
-                color: themed("atoms.switch.#{$mode}.label.disabled");
+                .#{$prefix}__label {
+                  @include themify($themes) {
+                    color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                    );
+                  }
+                }
+              }
+
+              &-active {
+                .#{$prefix}__track {
+                  @include themify($themes) {
+                    background-color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.track.disabled"
+                    );
+                  }
+                }
+
+                .#{$prefix}__knob {
+                  @include themify($themes) {
+                    background-color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.disabled"
+                    );
+                  }
+                }
+
+                .#{$prefix}__label {
+                  @include themify($themes) {
+                    color: themed(
+                      "atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                    );
+                  }
+                }
               }
             }
           }
@@ -287,7 +316,7 @@ onMounted(() => {
   }
 }
 
-.switch {
+.#{$prefix} {
   box-sizing: border-box;
   display: flex;
   flex-direction: row-reverse;

@@ -36,10 +36,11 @@ export const useAuthStore = defineStore("auth-store", () => {
       });
       setUser({ email: meResponse.data.email });
       isInitialized.value = true;
-    } catch (err: any) {
-      console.error(err);
+    } catch (err: unknown) {
+      const error = err as { response: { data: { message: string } } };
+
       const message =
-        err.response?.data?.message || "Authorization error. Try again.";
+        error.response?.data?.message || "Authorization error. Try again.";
 
       if (message.includes("email")) {
         errors.value.email = "Invalid email address";

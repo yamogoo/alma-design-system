@@ -129,21 +129,24 @@ const nodes: TreeViewNodes = [
   {
     id: "1",
     name: "empty group",
+    isLeaf: false,
   },
   {
     id: "2",
     name: "work group",
-
+    isLeaf: false,
     children: [
       {
         id: "4",
         name: "helloWorld.tsx",
+        isLeaf: true,
       },
     ],
   },
   {
     id: "3",
     name: "empty group",
+    isLeaf: false,
   },
 ];
 

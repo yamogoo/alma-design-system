@@ -9,7 +9,10 @@ import type { TreeViewNodeID, TreeViewNode } from "./TreeViewItem";
 
 export type TreeViewNodes = Array<TreeViewNode>;
 
-export type TreeViewSelectedItemIndexes = Array<TreeViewNodeID> | null;
+export type TreeViewSelectedItemIndexes =
+  | Array<TreeViewNodeID>
+  | TreeViewNodeID
+  | null;
 
 export interface TreeViewStylingProps {
   variant: TreeViewVariant;

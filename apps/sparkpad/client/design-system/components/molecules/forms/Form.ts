@@ -1,9 +1,10 @@
-import type { FormMode, FormSize } from "@/adapters";
+import type { FormMode, FormSize, FormTone, FormVariant } from "@/adapters";
 
-import type { UIElementUnionProps } from "@/typings";
+import type { UIElementStylingModifiers } from "@/typings";
 
-export interface FormProps extends UIElementUnionProps {
+export interface FormProps
+  extends Partial<
+    UIElementStylingModifiers<FormVariant, FormSize, FormMode, FormTone>
+  > {
   title?: string;
-  mode?: FormMode;
-  size?: FormSize;
 }
