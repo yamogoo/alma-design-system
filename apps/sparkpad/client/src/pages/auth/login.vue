@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onUnmounted, ref } from "vue";
+import { onUnmounted, useTemplateRef } from "vue";
 import g from "gsap";
 
 import { useTimeout } from "@/composables/local";
@@ -14,9 +14,9 @@ const CONTAINER_DURATION_IN = 0.45;
 const FORM_DELAY = 0.5;
 const FORM_DURATION_IN = 0.55;
 
-const refContent = ref<HTMLDivElement | null>();
-const refMessage = ref<HTMLDivElement | null>();
-const refForm = ref<HTMLDivElement | null>();
+const refContent = useTemplateRef<HTMLDivElement | null>("content");
+const refMessage = useTemplateRef<HTMLDivElement | null>("message");
+const refForm = useTemplateRef<HTMLDivElement | null>("form");
 
 const containerToCenterOffset = (): number => {
   const height = refContent.value?.clientHeight ?? 0;
@@ -116,12 +116,10 @@ onUnmounted(() => {
 
 <template>
   <Page class="login" @anim-enter-completed="onPageAnimCompleted">
-    <div ref="refContent" class="login__content">
-      <Transition :css="false">
-        <div class="login__form-wrapper" ref="refForm">
-          <AuthForm></AuthForm>
-        </div>
-      </Transition>
+    <div ref="content" class="login__content">
+      <div ref="form" class="login__form-wrapper">
+        <AuthForm></AuthForm>
+      </div>
     </div>
   </Page>
 </template>

@@ -139,7 +139,7 @@ export interface Props {
           :orientation="'horizontal'"
           :size="'md'"
           :mode="'neutral'"
-          :tone="'primary'"
+          :tone="'secondary'"
         ></Divider>
         <Tooltip :label="'Button'">
           <ActionButton

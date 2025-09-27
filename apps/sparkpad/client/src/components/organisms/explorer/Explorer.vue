@@ -29,8 +29,12 @@ const onResetValue = (): void => {
   box-sizing: border-box;
   position: relative;
   @include box(100%);
-  background-color: white;
   border-radius: 32px;
   padding: 12px;
+  @include surface("neutral", "primary");
+  @include border("neutral", "primary");
+  border-width: 1px;
+  border-style: solid;
+  @extend %base-transition;
 }
 </style>

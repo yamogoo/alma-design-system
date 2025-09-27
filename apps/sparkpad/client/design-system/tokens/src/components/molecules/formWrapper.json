@@ -24,7 +24,7 @@
           }
         },
         "borderWidth": {
-          "$value": 0,
+          "$value": "{tokens.outline.$value}",
           "$$type": "number",
           "$unit": "px",
           "$meta": {

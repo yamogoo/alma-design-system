@@ -101,6 +101,7 @@ onMounted(() => {
         `${PREFIX}_variant-${variant}`,
         `${PREFIX}_mode-${mode}`,
         `${PREFIX}_size-${size}`,
+        `${PREFIX}_tone-${tone}`,
         `${PREFIX}_state-${isActive ? 'active' : 'normal'}`,
         { [`${PREFIX}_state-disabled`]: isDisabled },
       ]"
@@ -126,8 +127,9 @@ onMounted(() => {
       :class="[
         PREFIX,
         `${PREFIX}_variant-${variant}`,
-        `${PREFIX}_mode-${mode}`,
         `${PREFIX}_size-${size}`,
+        `${PREFIX}_mode-${mode}`,
+        `${PREFIX}_tone-${tone}`,
         `${PREFIX}_state-${isActive ? 'active' : 'normal'}`,
         { [`${PREFIX}_state-disabled`]: isDisabled },
       ]"

@@ -52,7 +52,7 @@ const contentKey = computed(
   >
     <template #header>
       <StepPaginationTabs
-        :selectedItemId="selectedFormId"
+        :selected-item-id="selectedFormId"
         :items="formPaginationItems"
         @update:selected-item-id="onUpdateSelectedFormId"
       >

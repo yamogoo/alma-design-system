@@ -1,6 +1,6 @@
 @use "sass:list" as list;
 
-@mixin border($list, $value) {
+@mixin set-border($list, $value) {
   @for $i from 1 through list.length($list) {
     $prop: list.nth($list, $i);
     border-#{$prop}: $value;

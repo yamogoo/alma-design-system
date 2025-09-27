@@ -1,0 +1,10 @@
+@use "../../abstracts/themes" as *;
+@use "../../core/" as *;
+
+@mixin border($mode, $tone) {
+  & {
+    @include themify($themes) {
+      border-color: themed("abstracts.border.#{$mode}.#{$tone}");
+    }
+  }
+}
