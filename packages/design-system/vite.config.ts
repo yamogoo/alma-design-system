@@ -12,7 +12,7 @@ import {
   ColorsGeneratorPlugin,
   TokensParserPlugin,
   VitePluginTokenLinter,
-  VitePluginFigmaTokensParser,
+  // VitePluginFigmaTokensParser,
 } from "@alma/tokens-worker";
 
 export default () => {
@@ -56,10 +56,10 @@ export default () => {
       VitePluginTokenLinter({
         source: "../tokens/src",
       }),
-      VitePluginFigmaTokensParser({
-        source: "../tokens/src/build",
-        outDir: "../tokens/src/.figma",
-      }),
+      // VitePluginFigmaTokensParser({
+      //   source: "../tokens/src/build",
+      //   outDir: "../tokens/src/.figma",
+      // }),
       dts({
         tsconfigPath: path.resolve(__dirname, "tsconfig.types.json"),
         outDir: "dist",
