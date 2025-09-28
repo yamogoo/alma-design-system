@@ -1,4 +1,4 @@
-import colors from "@alma/tokens";
+import colors from "@/tokens";
 
 export type AbstractColorName = keyof typeof colors;
 export const abstractColorNames = Object.keys(colors) as AbstractColorName[];

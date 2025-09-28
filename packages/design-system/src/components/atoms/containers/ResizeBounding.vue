@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Resizer from "vue3-resize-bounding";
 
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 import {
   RESIZE_BOUNDING_PREFIX,

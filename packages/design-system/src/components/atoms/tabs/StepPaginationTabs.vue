@@ -2,7 +2,7 @@
 import { watch, computed, useTemplateRef, ref, onMounted } from "vue";
 import g from "gsap";
 
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 import { Text } from "@/components/atoms";
 import { type TextVariant } from "@/adapters";

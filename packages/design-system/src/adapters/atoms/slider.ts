@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type SliderVariant = keyof typeof tokens.atoms.slider;
 export const sliderVariants = Object.keys(

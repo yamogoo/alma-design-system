@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type ResizeBoundingVariant = keyof typeof tokens.atoms.resizeBounding;
 export const resizeBoundingVariants = Object.keys(

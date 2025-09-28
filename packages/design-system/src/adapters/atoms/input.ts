@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type InputVariant = keyof typeof tokens.atoms.input;
 export const inputVariants = Object.keys(tokens.atoms.input) as InputVariant[];

@@ -11,7 +11,7 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] },
+    "paths": { "@/*": ["src/*"], "@alma/tokens/*": ["src/tokens/*"] },
 
     "resolveJsonModule": true,
     "skipLibCheck": true,

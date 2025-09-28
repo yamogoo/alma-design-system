@@ -42,9 +42,6 @@ importers:
       '@alma/design-system':
         specifier: workspace:*
         version: link:../../../packages/design-system
-      '@alma/tokens':
-        specifier: workspace:*
-        version: link:../../../packages/tokens
       '@alma/tokens-worker':
         specifier: workspace:*
         version: link:../../../packages/tokens-worker
@@ -348,9 +345,6 @@ importers:
 
   packages/design-system:
     dependencies:
-      '@alma/tokens':
-        specifier: workspace:*
-        version: link:../tokens
       '@alma/tokens-worker':
         specifier: workspace:*
         version: link:../tokens-worker
@@ -533,16 +527,6 @@ importers:
         specifier: ^2.2.12
         version: 2.2.12(typescript@5.8.3)
 
-  packages/scss.temp:
-    dependencies:
-      '@alma/tokens':
-        specifier: workspace:*
-        version: link:../tokens
-    devDependencies:
-      sass:
-        specifier: ^1.93.2
-        version: 1.93.2
-
   packages/tokens:
     devDependencies:
       rollup:
@@ -612,6 +596,18 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@22.18.6)(@vitest/ui@3.2.4)(jsdom@26.1.0)(less@4.4.1)(msw@2.11.3(@types/node@22.18.6)(typescript@5.8.3))(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1)
+
+  packages/tokens.temp:
+    devDependencies:
+      rollup:
+        specifier: ^4.0.0
+        version: 4.52.3
+      typescript:
+        specifier: ~5.8.3
+        version: 5.8.3
+      vite:
+        specifier: ^6.3.6
+        version: 6.3.6(@types/node@24.5.2)(less@4.4.1)(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1)
 
 packages:
 
@@ -2206,8 +2202,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  baseline-browser-mapping@2.8.8:
-    resolution: {integrity: sha512-be0PUaPsQX/gPWWgFsdD+GFzaoig5PXaUC1xLkQiYdDnANU8sMnHoQd8JhbJQuvTWrWLyeFN9Imb5Qtfvr4RrQ==}
+  baseline-browser-mapping@2.8.9:
+    resolution: {integrity: sha512-hY/u2lxLrbecMEWSB0IpGzGyDyeoMFQhCvZd2jGFSE5I17Fh01sYUBPCJtkWERw7zrac9+cIghxm/ytJa2X8iA==}
     hasBin: true
 
   bcrypt@6.0.0:
@@ -4733,8 +4729,8 @@ packages:
   vue-component-type-helpers@2.2.12:
     resolution: {integrity: sha512-YbGqHZ5/eW4SnkPNR44mKVc6ZKQoRs/Rux1sxC6rdwXb4qpbOSYfDr9DsTHolOTGmIKgM9j141mZbBeg05R1pw==}
 
-  vue-component-type-helpers@3.0.8:
-    resolution: {integrity: sha512-WyR30Eq15Y/+odrUUMax6FmPbZwAp/HnC7qgR1r3lVFAcqwQ4wUoV79Mbh4SxDy3NiqDa+G4TOKD5xXSgBHo5A==}
+  vue-component-type-helpers@3.1.0:
+    resolution: {integrity: sha512-cC1pYNRZkSS1iCvdlaMbbg2sjDwxX098FucEjtz9Yig73zYjWzQsnMe5M9H8dRNv55hAIDGUI29hF2BEUA4FMQ==}
 
   vue-docgen-api@4.79.2:
     resolution: {integrity: sha512-n9ENAcs+40awPZMsas7STqjkZiVlIjxIKgiJr5rSohDP0/JCrD9VtlzNojafsA1MChm/hz2h3PDtUedx3lbgfA==}
@@ -5917,7 +5913,7 @@ snapshots:
       storybook: 9.1.8(@testing-library/dom@10.4.0)(msw@2.11.3(@types/node@22.18.6)(typescript@5.8.3))(prettier@3.6.2)(vite@6.3.6(@types/node@22.18.6)(less@4.4.1)(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1))
       type-fest: 2.19.0
       vue: 3.5.22(typescript@5.8.3)
-      vue-component-type-helpers: 3.0.8
+      vue-component-type-helpers: 3.1.0
 
   '@storybook/vue3@9.1.8(storybook@9.1.8(@testing-library/dom@10.4.0)(msw@2.11.3(@types/node@24.5.2)(typescript@5.8.3))(prettier@3.6.2)(vite@6.3.6(@types/node@24.5.2)(less@4.4.1)(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1)))(vue@3.5.22(typescript@5.8.3))':
     dependencies:
@@ -5925,7 +5921,7 @@ snapshots:
       storybook: 9.1.8(@testing-library/dom@10.4.0)(msw@2.11.3(@types/node@24.5.2)(typescript@5.8.3))(prettier@3.6.2)(vite@6.3.6(@types/node@24.5.2)(less@4.4.1)(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1))
       type-fest: 2.19.0
       vue: 3.5.22(typescript@5.8.3)
-      vue-component-type-helpers: 3.0.8
+      vue-component-type-helpers: 3.1.0
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -6333,7 +6329,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 2.0.0
-      vitest: 3.2.4(@types/node@24.5.2)(@vitest/ui@3.2.4)(jsdom@26.1.0)(less@4.4.1)(msw@2.11.3(@types/node@24.5.2)(typescript@5.8.3))(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 3.2.4(@types/node@22.18.6)(@vitest/ui@3.2.4)(jsdom@26.1.0)(less@4.4.1)(msw@2.11.3(@types/node@22.18.6)(typescript@5.8.3))(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1)
 
   '@vitest/utils@2.0.5':
     dependencies:
@@ -6685,7 +6681,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  baseline-browser-mapping@2.8.8: {}
+  baseline-browser-mapping@2.8.9: {}
 
   bcrypt@6.0.0:
     dependencies:
@@ -6745,7 +6741,7 @@ snapshots:
 
   browserslist@4.26.2:
     dependencies:
-      baseline-browser-mapping: 2.8.8
+      baseline-browser-mapping: 2.8.9
       caniuse-lite: 1.0.30001745
       electron-to-chromium: 1.5.227
       node-releases: 2.0.21
@@ -9297,7 +9293,7 @@ snapshots:
   vitest-canvas-mock@0.3.3(vitest@3.2.4):
     dependencies:
       jest-canvas-mock: 2.5.2
-      vitest: 3.2.4(@types/node@24.5.2)(@vitest/ui@3.2.4)(jsdom@26.1.0)(less@4.4.1)(msw@2.11.3(@types/node@24.5.2)(typescript@5.8.3))(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1)
+      vitest: 3.2.4(@types/node@22.18.6)(@vitest/ui@3.2.4)(jsdom@26.1.0)(less@4.4.1)(msw@2.11.3(@types/node@22.18.6)(typescript@5.8.3))(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1)
 
   vitest@3.2.4(@types/node@22.18.6)(@vitest/ui@3.2.4)(jsdom@26.1.0)(less@4.4.1)(msw@2.11.3(@types/node@22.18.6)(typescript@5.8.3))(sass@1.93.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1):
     dependencies:
@@ -9400,7 +9396,7 @@ snapshots:
 
   vue-component-type-helpers@2.2.12: {}
 
-  vue-component-type-helpers@3.0.8: {}
+  vue-component-type-helpers@3.1.0: {}
 
   vue-docgen-api@4.79.2(vue@3.5.22(typescript@5.8.3)):
     dependencies:

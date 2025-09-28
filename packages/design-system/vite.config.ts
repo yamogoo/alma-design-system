@@ -12,7 +12,7 @@ import {
   ColorsGeneratorPlugin,
   TokensParserPlugin,
   VitePluginTokenLinter,
-  // VitePluginFigmaTokensParser,
+  VitePluginFigmaTokensParser,
 } from "@alma/tokens-worker";
 
 export default () => {
@@ -26,40 +26,40 @@ export default () => {
       svgLoader({ defaultImport: "component" }),
       // Deign System: Tokens and SCSS generation
       ColorsGeneratorPlugin({
-        source: "../tokens/src/src/baseColors.json",
-        outDir: "./tokens/src/src/tokens/src/colors.json",
+        source: "./src/tokens/src/src/baseColors.json",
+        outDir: "./src/tokens/src/src/tokens/src/colors.json",
         step: 40,
       }),
       TokensParserPlugin({
-        source: "../tokens/src/.cache",
-        build: "../tokens/src/build",
+        source: "./src/tokens/.cache",
+        build: "./src/tokens/output",
         outDir: "./src/assets/scss/abstracts",
-        entryFilePath: "../tokens/src/index.ts",
-        paths: ["../tokens/src/", "../tokens/src/.cache"],
+        entryFilePath: "./src/tokens/index.ts",
+        paths: ["./src/tokens/src/", "./src/tokens/.cache"],
         mapOptions: {
           convertCase: true,
           includeFileName: false,
           convertToCSSVariables: false,
           includeFileNameToCSSVariables: true,
-          excludeCSSVariables: ["../tokens/src/.cache/themes.json"],
+          excludeCSSVariables: ["./src/tokens/.cache/themes.json"],
         },
-        themesDir: "../tokens/src/build/themes.json",
+        themesDir: "./src/tokens/output/themes.json",
         themesOutFile: "./src/assets/scss/abstracts/_runtime_themes.scss",
         themesIncludeRequired: true,
         builder: {
           format: "json",
-          paths: ["../tokens/src/src"],
+          paths: ["./src/tokens/src"],
           includeRootDirName: false,
         },
         useReflectOriginalStructure: false,
       }),
       VitePluginTokenLinter({
-        source: "../tokens/src",
+        source: "./src/tokens/src",
       }),
-      // VitePluginFigmaTokensParser({
-      //   source: "../tokens/src/build",
-      //   outDir: "../tokens/src/.figma",
-      // }),
+      VitePluginFigmaTokensParser({
+        source: "./src/tokens/output",
+        outDir: "./src/tokens/.figma",
+      }),
       dts({
         tsconfigPath: path.resolve(__dirname, "tsconfig.types.json"),
         outDir: "dist",
@@ -73,6 +73,7 @@ export default () => {
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),
+        "@alma/tokens/": fileURLToPath(new URL("./src/tokens", import.meta.url)),
       },
       dedupe: ["vue"],
     },
@@ -84,7 +85,7 @@ export default () => {
         fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
       },
       rollupOptions: {
-        external: ["vue", "pinia", "vue-router", "alma-icons", "@alma/tokens"],
+        external: ["vue", "pinia", "vue-router", "alma-icons", "@alma/tokens/"],
         output: {
           globals: { vue: "Vue" },
           assetFileNames: (info) =>

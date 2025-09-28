@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type TreeViewVariant = keyof typeof tokens.molecules.treeView;
 export const treeViewVariants = Object.keys(

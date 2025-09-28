@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type MainHeaderVariant = keyof typeof tokens.templates.mainHeader;
 export const MainHeaderVariants = Object.keys(

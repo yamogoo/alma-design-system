@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type FormVariant = keyof typeof tokens.molecules.form;
 export const formVariants = Object.keys(tokens.molecules.form) as FormVariant[];

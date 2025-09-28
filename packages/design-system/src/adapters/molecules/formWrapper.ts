@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type FormWrapperVariant = keyof typeof tokens.molecules.formWrapper;
 export const formWrapperVariants = Object.keys(

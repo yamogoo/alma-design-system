@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type IconMode = keyof typeof tokens.themes.light.abstracts.label;
 export const iconModes = Object.keys(

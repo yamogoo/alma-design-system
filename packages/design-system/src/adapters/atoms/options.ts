@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type OptionsVariant = keyof typeof tokens.atoms.options;
 export const optionsVariants = Object.keys(

@@ -19,7 +19,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "dev": "pnpm lint && vite",
+    "dev": "vite",
     "build": "vue-tsc -b tsconfig.app.json && vite build --mode production --config vite.config.ts",
     "preview": "vite preview",
     "test:unit": "vitest",
@@ -27,7 +27,6 @@
     "tokens:build": "node style-dictionary.config.js"
   },
   "dependencies": {
-    "@alma/tokens": "workspace:*",
     "@alma/design-system": "workspace:*",
     "@alma/tokens-worker": "workspace:*",
     "@vueuse/core": "^13.9.0",

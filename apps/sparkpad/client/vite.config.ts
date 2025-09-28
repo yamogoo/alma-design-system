@@ -65,32 +65,11 @@ export default (opts: { mode: string }) => {
         dts: true,
       }),
       svgLoader({ defaultImport: "component" }),
-
-      // // Application: Tokens and SCSS generation
-      // TokensParserPlugin({
-      //   source: "./src/tokens/.cache",
-      //   outDir: "./src/assets/scss/abstracts",
-      //   build: "./src/tokens/build",
-      //   entryFilePath: "./src/tokens/index.ts",
-      //   paths: ["./src/tokens", "./design-system/tokens/.cache"],
-      //   mapOptions: {
-      //     convertCase: true,
-      //     includeFileName: false,
-      //     convertToCSSVariables: true,
-      //   },
-      //   builder: {
-      //     format: "json",
-      //     paths: ["./src/tokens/src"],
-      //     includeRootDirName: false,
-      //   },
-      //   useReflectOriginalStructure: true,
-      // }),
-
       // Generate locales JSON from directory structure
       JSONBuilderPlugin({
         format: "json",
         paths: ["./src/locales/src"],
-        outDir: "./src/locales/build",
+        outDir: "./src/locales/output",
         entryFilePath: "./src/locales/index.ts",
         includeRootDirName: true,
         includeRootNames: true,

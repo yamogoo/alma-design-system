@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type SimpleMenuVariant = keyof typeof tokens.atoms.simpleMenu;
 export const simpleMenuVariants = Object.keys(

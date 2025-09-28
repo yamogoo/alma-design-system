@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type DropdownVariant = keyof typeof tokens.molecules.dropdown;
 export const dropdownVariants = Object.keys(

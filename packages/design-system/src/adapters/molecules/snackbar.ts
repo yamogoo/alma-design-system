@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type SnackbarVariant = keyof typeof tokens.molecules.snackbar;
 export const snackbarVariants = Object.keys(

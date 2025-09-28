@@ -4,9 +4,7 @@ import { Plugin } from 'vite';
 import fs from 'node:fs';
 import path from 'node:path';
 
-/* =========================
-   Types & Config
-========================= */
+/* * * Types & Config * * */
 
 type Token = {
   value?: any;
@@ -51,9 +49,7 @@ const allowedUnits: Record<string, string[]> = {
 
 const expectedStates = ['normal', 'hovered', 'pressed', 'disabled'];
 
-/* =========================
-   Pretty console
-========================= */
+/* * * Pretty console * * */
 
 const c = {
   reset: '\x1b[0m',
@@ -87,9 +83,7 @@ function ok(msg: string) {
   console.log(`${c.green}${icons.ok} [OK]${c.reset} ${msg}`);
 }
 
-/* =========================
-   Helpers
-========================= */
+/* * * elpers * * */
 
 function isTokenReference(value: unknown) {
   return typeof value === 'string' && value.startsWith('{') && value.endsWith('}');
@@ -158,9 +152,7 @@ function assertColorValue(v: any): boolean {
   return false;
 }
 
-/* =========================
-   Lint core
-========================= */
+/* * * Lint core * * */
 
 type Counters = { errors: number; warnings: number };
 
@@ -272,9 +264,7 @@ function lintToken(token: any, pathArr: string[] = [], filePath?: string, counte
   });
 }
 
-/* =========================
-   FS utils
-========================= */
+/* * * FS utils * * */
 
 function getAllJsonFiles(dir: string): string[] {
   let results: string[] = [];
@@ -292,9 +282,7 @@ function getAllJsonFiles(dir: string): string[] {
   return results;
 }
 
-/* =========================
-   Vite Plugin
-========================= */
+/* * * Vite Plugin * * */
 
 export function VitePluginTokenLinter(options?: { source?: string }): Plugin {
   const sourcePath = options?.source || path.resolve(process.cwd(), 'tokens');
@@ -315,10 +303,10 @@ export function VitePluginTokenLinter(options?: { source?: string }): Plugin {
     Object.entries(tokens).forEach(([key, token]) => lintToken(token, [key], file, counters));
 
     // Summary
-    const sum =
-      counters.errors === 0
-        ? `${c.green}${icons.ok}${c.reset} ${c.bold}No errors${c.reset}`
-        : `${c.red}${icons.error}${c.reset} ${c.bold}${c.red}${c.bold}${c.red}${c.bold}${c.reset}`;
+
+    counters.errors === 0
+      ? `${c.green}${icons.ok}${c.reset} ${c.bold}No errors${c.reset}`
+      : `${c.red}${icons.error}${c.reset} ${c.bold}${c.red}${c.bold}${c.red}${c.bold}${c.reset}`;
 
     const pad = (n: number) => String(n).padStart(3, ' ');
     const line = `${c.gray}────────────────────────────────────────────────────────────${c.reset}`;

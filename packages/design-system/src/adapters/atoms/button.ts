@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type ButtonVariant = keyof typeof tokens.atoms.button;
 

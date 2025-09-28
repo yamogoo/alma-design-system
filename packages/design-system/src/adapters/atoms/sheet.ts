@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type SheetColor = keyof typeof tokens.themes.light.atoms.sheet;
 export const sheetColors = Object.keys(

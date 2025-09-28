@@ -1,4 +1,4 @@
-import app from "./build/app.json";
+import app from "./output/app.json";
 
 const module = {
   ...app

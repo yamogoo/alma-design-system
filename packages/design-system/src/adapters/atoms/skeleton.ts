@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type SkeletonVariant = keyof typeof tokens.atoms.skeleton;
 export const skeletonVariants = Object.keys(

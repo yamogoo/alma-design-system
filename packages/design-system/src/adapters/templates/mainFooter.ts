@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type MainFooterVariant = keyof typeof tokens.templates.mainFooter;
 export const MainFooterVariants = Object.keys(

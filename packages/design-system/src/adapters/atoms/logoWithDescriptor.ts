@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type LogoWithDescriptorVariant =
   keyof typeof tokens.atoms.logoWithDescriptor;

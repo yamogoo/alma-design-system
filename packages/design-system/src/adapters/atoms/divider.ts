@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type DividerVariant = keyof typeof tokens.atoms.divider;
 export const dividerVariants = Object.keys(

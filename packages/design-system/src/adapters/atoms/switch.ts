@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type SwitchVariant = keyof typeof tokens.atoms.switch;
 export const switchVariants = Object.keys(

@@ -9,7 +9,7 @@ import {
 } from "vue";
 import g from "gsap";
 
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 import { useHover } from "@/composables/local";
 

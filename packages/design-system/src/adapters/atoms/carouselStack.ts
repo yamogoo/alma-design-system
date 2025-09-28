@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type CarousleStackSize = keyof typeof tokens.atoms.carouselStack.default;
 export const carousleStackSizes = Object.keys(

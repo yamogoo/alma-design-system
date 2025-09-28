@@ -79,8 +79,7 @@
         "error": {
           "$value": "{colors.red-350}",
           "$type": "color",
-          "$unit": "hex",
-          "description": "placeholder = {themes.themes.light.abstracts.label.error.$value}"
+          "$unit": "hex"
         }
       }
     }
@@ -162,8 +161,7 @@
         "error": {
           "$value": "{colors.blue-350}",
           "$type": "color",
-          "$unit": "hex",
-          "description": "placeholder = {themes.themes.light.abstracts.label.error.$value}"
+          "$unit": "hex"
         }
       }
     }

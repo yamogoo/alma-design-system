@@ -1,6 +1,6 @@
 import { useLayoutStore } from "./useLayoutStore";
 
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 describe("useLayoutStore", () => {
   test("should set the appSize", () => {

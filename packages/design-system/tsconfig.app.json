@@ -21,7 +21,8 @@
 
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@alma/tokens/*": ["src/tokens/*"]
     },
     "types": [
       "gsap/types",

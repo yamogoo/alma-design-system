@@ -1,0 +1,236 @@
+{
+  "app": {
+    "de": {
+      "about": {
+        "title": "alma Proto Kit",
+        "description": "alma Proto Kit Kit ist eine kostenlose Open-Source-Notiz-App, die Ihnen hilft, Ihre Gedanken, Ideen und Aufgaben effizient zu organisieren. Mit einer benutzerfreundlichen Oberfläche und leistungsstarken Funktionen erleichtert Sparkpad das Erfassen und Verwalten Ihrer Notizen unterwegs.",
+        "version": "мersion",
+        "author": "Misha Grebennikov",
+        "repository": "repository",
+        "license": "lizenz"
+      },
+      "auth": {
+        "login": {
+          "form": {
+            "title": "Anmelden",
+            "description": "Erstellen Sie ein Konto und melden Sie sich an, um Ihre Daten auf dem Server zu speichern und zu synchronisieren",
+            "userName": "benutzername",
+            "password": "passwort",
+            "login": "login",
+            "skip": "ohne Anmeldung fortfahren",
+            "forgotPassword": "passwort vergessen?",
+            "register": "registrieren"
+          }
+        },
+        "signin": {
+          "form": {
+            "title": "Melden Sie sich an",
+            "description": "Geben Sie Ihre Anmeldeinformationen ein, um auf Ihr Konto zuzugreifen",
+            "userName": "benutzername",
+            "email": "e-mail",
+            "password": "passwort",
+            "repeatPassword": "passwort wiederholen",
+            "signIn": "anmelden",
+            "forgotPassword": "passwort vergessen?",
+            "register": "registrieren"
+          }
+        }
+      },
+      "common": {
+        "version": "version"
+      },
+      "locales": {
+        "en": {
+          "value": "en",
+          "word": "englisch"
+        },
+        "ru": {
+          "value": "ru",
+          "word": "russisch"
+        },
+        "de": {
+          "value": "de",
+          "word": "deutsch"
+        },
+        "fr": {
+          "value": "ru",
+          "word": "französisch"
+        }
+      }
+    },
+    "en": {
+      "about": {
+        "title": "alma Proto Kit",
+        "description": "alma Proto Kit Kit is a free and open-source note-taking application designed to help you organize your thoughts, ideas, and tasks efficiently. With a user-friendly interface and powerful features, Sparkpad makes it easy to capture and manage your notes on the go.",
+        "version": "version",
+        "author": "Misha Grebennikov",
+        "repository": "repository",
+        "license": "license"
+      },
+      "auth": {
+        "login": {
+          "form": {
+            "title": "Sign in",
+            "description": "Create an account and sign in to keep your data saved and synchronized on the server",
+            "userName": "user name",
+            "password": "password",
+            "login": "login",
+            "skip": "continue without login",
+            "forgotPassword": "forgot password?",
+            "register": "register"
+          }
+        },
+        "signin": {
+          "form": {
+            "title": "Sign up",
+            "description": "Enter your credentials to access your account",
+            "userName": "user name",
+            "email": "email",
+            "password": "password",
+            "repeatPassword": "repeat password",
+            "signIn": "sign in",
+            "forgotPassword": "forgot password?",
+            "register": "register"
+          }
+        }
+      },
+      "common": {
+        "version": "version"
+      },
+      "locales": {
+        "en": {
+          "value": "en",
+          "word": "english"
+        },
+        "ru": {
+          "value": "ru",
+          "word": "russian"
+        },
+        "de": {
+          "value": "de",
+          "word": "german"
+        },
+        "fr": {
+          "value": "ru",
+          "word": "french"
+        }
+      }
+    },
+    "fr": {
+      "about": {
+        "title": "alma Proto Kit",
+        "description": "alma Proto Kit Kit est une application de prise de notes gratuite et open source conçue pour vous aider à organiser efficacement vos pensées, vos idées et vos tâches. Grâce à son interface intuitive et à ses fonctionnalités performantes, Sparkpad simplifie la prise et la gestion de vos notes où que vous soyez.",
+        "version": "version",
+        "author": "Misha Grebennikov",
+        "repository": "repository",
+        "license": "licence"
+      },
+      "auth": {
+        "login": {
+          "form": {
+            "title": "Se connecter",
+            "description": "Créez un compte et connectez-vous pour conserver vos données enregistrées et synchronisées sur le serveur",
+            "userName": "nom d'utilisateur",
+            "password": "mot de passe",
+            "login": "se connecter",
+            "skip": "continuer sans connexion",
+            "forgotPassword": "Mot de passe oublié?",
+            "register": "registre"
+          }
+        },
+        "signin": {
+          "form": {
+            "title": "S'inscrire",
+            "description": "Entrez vos identifiants pour accéder à votre compte",
+            "userName": "nom d'utilisateur",
+            "email": "e-mail",
+            "password": "mot de passe",
+            "repeatPassword": "répéter le mot de passe",
+            "signIn": "se connecter",
+            "forgotPassword": "mot de passe oublié?",
+            "register": "registre"
+          }
+        }
+      },
+      "common": {
+        "version": "version"
+      },
+      "locales": {
+        "en": {
+          "value": "en",
+          "word": "Anglais"
+        },
+        "ru": {
+          "value": "ru",
+          "word": "russe"
+        },
+        "de": {
+          "value": "de",
+          "word": "allemand"
+        },
+        "fr": {
+          "value": "ru",
+          "word": "français"
+        }
+      }
+    },
+    "ru": {
+      "about": {
+        "title": "alma Proto Kit",
+        "description": "alma Proto Kit Kit — это бесплатное приложение с открытым исходным кодом для создания заметок, призванное помочь вам эффективно организовать мысли, идеи и задачи. Благодаря удобному интерфейсу и мощным функциям Sparkpad позволяет легко создавать и управлять заметками где угодно.",
+        "version": "версия",
+        "author": "Миша Гребенников",
+        "repository": "репозиторий",
+        "license": "лицензия"
+      },
+      "auth": {
+        "login": {
+          "form": {
+            "title": "Войти",
+            "description": "Создайте аккаунт и войдите, чтобы ваши данные были сохранены и синхронизированы на сервере",
+            "userName": "имя пользователя",
+            "password": "пароль",
+            "login": "войти",
+            "skip": "продолжить без входа",
+            "forgotPassword": "зыбыли пароль?",
+            "register": "регистрация"
+          }
+        },
+        "signin": {
+          "form": {
+            "title": "Регистрация",
+            "description": "Введите свои учетные данные для доступа к вашей учетной записи",
+            "userName": "имя пользователя",
+            "email": "email",
+            "password": "пароль",
+            "repeatPassword": "повторите пароль",
+            "signIn": "регистрация",
+            "forgotPassword": "забыли пароль?",
+            "register": "регистриация"
+          }
+        }
+      },
+      "common": {
+        "version": "версия"
+      },
+      "locales": {
+        "en": {
+          "value": "en",
+          "word": "english"
+        },
+        "ru": {
+          "value": "ru",
+          "word": "russian"
+        },
+        "de": {
+          "value": "de",
+          "word": "немецкий"
+        },
+        "fr": {
+          "value": "ru",
+          "word": "французский"
+        }
+      }
+    }
+  }
+}

@@ -4,9 +4,7 @@ import { storeToRefs } from "pinia";
 
 import { useLocaleStore } from "@/stores";
 
-import tokens from "@alma/tokens";
-
-import { Components } from "@alma/design-system";
+import { Components, Tokens } from "@alma/design-system";
 
 import LoginForm from "./LoginForm.vue";
 import SigninForm from "./SigninForm.vue";
@@ -67,7 +65,7 @@ const contentKey = computed(
       :direction="'forward'"
       :stretch="'auto'"
       :duration="FORM_VIEW_ANIMATION_DURATION"
-      :gap="tokens.spacing.md.$value"
+      :gap="Tokens.spacing.md.$value"
     >
       <template #screen-1="{ isActive }">
         <LoginForm

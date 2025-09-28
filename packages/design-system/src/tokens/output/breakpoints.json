@@ -1,0 +1,66 @@
+{
+  "breakpoints": {
+    "xs": {
+      "$value": 240,
+      "$unit": "px",
+      "$type": "number",
+      "$meta": {
+        "description": "Extra small screens, phones",
+        "category": "breakpoints",
+        "tags": [
+          "mobile",
+          "small"
+        ]
+      }
+    },
+    "sm": {
+      "$value": 480,
+      "$unit": "px",
+      "$type": "number",
+      "$meta": {
+        "description": "Small screens, phones",
+        "category": "breakpoints",
+        "tags": [
+          "mobile"
+        ]
+      }
+    },
+    "md": {
+      "$value": 820,
+      "$unit": "px",
+      "$type": "number",
+      "$meta": {
+        "description": "Medium screens, tablets",
+        "category": "breakpoints",
+        "tags": [
+          "tablet"
+        ]
+      }
+    },
+    "lg": {
+      "$value": 1280,
+      "$unit": "px",
+      "$type": "number",
+      "$meta": {
+        "description": "Large screens, desktops",
+        "category": "breakpoints",
+        "tags": [
+          "desktop"
+        ]
+      }
+    },
+    "xl": {
+      "$value": 1440,
+      "$unit": "px",
+      "$type": "number",
+      "$meta": {
+        "description": "Extra large screens, wide desktops",
+        "category": "breakpoints",
+        "tags": [
+          "desktop",
+          "wide"
+        ]
+      }
+    }
+  }
+}

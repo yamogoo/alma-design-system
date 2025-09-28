@@ -1,4 +1,4 @@
-import tokens from "@alma/tokens";
+import tokens from "@/tokens";
 
 export type TextVariant = keyof typeof tokens.typography.styles;
 export const textVariants = Object.keys(
