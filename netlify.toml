@@ -1,8 +1,16 @@
 #* * * Base build config (monorepo / packages/design-system) * * */
 [build]
   base    = "."
-  command = "corepack enable && corepack prepare pnpm@9.12.3 --activate && pnpm i --frozen-lockfile && pnpm -w -r build && pnpm -C packages/design-system docs:build"
+  command = """
+  corepack enable &&
+  corepack prepare pnpm@9.12.3 --activate &&
+  pnpm i --frozen-lockfile &&
+  pnpm -w --filter @alma/tokens-worker... run lint &&
+  pnpm -w --filter @alma/tokens-worker... run build &&
+  pnpm -C packages/design-system docs:build
+  """
   publish = "packages/design-system/storybook-static"
+
 
 [build.environment]
   NODE_VERSION = "22"

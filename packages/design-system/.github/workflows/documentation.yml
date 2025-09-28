@@ -14,36 +14,52 @@ jobs:
         working-directory: packages/design-system
 
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v4
 
+      # Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: "pnpm"
+          cache: pnpm
 
+      # Setup PNPM package manager
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
         with:
           version: 9
 
+      # Install dependencies from the root workspace
       - name: Install deps (root for workspace)
         run: pnpm i --frozen-lockfile
         working-directory: .
 
+      # Build local workspace packages required for Storybook
+      - name: Build tokens packages
+        run: |
+          pnpm -w --filter @alma/tokens-worker... run lint
+          pnpm -w --filter @alma/tokens-worker... run build
+
+      # Run linting for the design-system package
       - name: Lint
         run: pnpm lint
 
+      # Run type-checking
       - name: Typecheck
         run: pnpm typecheck
 
+      # Run unit tests
       - name: Unit tests
         run: pnpm test:unit
 
+      # Build Storybook static files
       - name: Build Storybook
         run: pnpm docs:build
 
+      # Deploy to Netlify: PR → Preview, Push to main → Production
       - name: Deploy (PR → preview, push → production)
+        if: ${{ secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != '' }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -51,15 +67,15 @@ jobs:
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             pnpm dlx netlify-cli deploy \
               --dir=storybook-static \
-              --site=$NETLIFY_SITE_ID \
-              --auth=$NETLIFY_AUTH_TOKEN \
+              --site="$NETLIFY_SITE_ID" \
+              --auth="$NETLIFY_AUTH_TOKEN" \
               --message="PR #${{ github.event.number }}" \
               --alias="pr-${{ github.event.number }}"
           else
             pnpm dlx netlify-cli deploy \
               --dir=storybook-static \
-              --site=$NETLIFY_SITE_ID \
-              --auth=$NETLIFY_AUTH_TOKEN \
+              --site="$NETLIFY_SITE_ID" \
+              --auth="$NETLIFY_AUTH_TOKEN" \
               --prod \
               --message="${{ github.sha }}"
           fi
