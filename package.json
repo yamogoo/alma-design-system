@@ -27,7 +27,7 @@
     "ds:docs:preview": "pnpm --filter design-system storybook:preview",
     "install:all": "pnpm install"
   },
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@9.12.3",
   "dependencies": {
     "design-system": "link:../../../../Library/pnpm/global/5/node_modules/design-system"
   },

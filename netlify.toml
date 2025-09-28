@@ -1,42 +1,25 @@
 #* * * Base build config (monorepo / packages/design-system) * * */
 [build]
-    base = "packages/design-system"
-    command = "pnpm i --frozen-lockfile && pnpm docs:build"
-    publish = "packages/design-system/storybook-static"
+  base    = "."
+  command = "corepack enable && corepack prepare pnpm@9.12.3 --activate && pnpm i --frozen-lockfile && pnpm -w -r build && pnpm -C packages/design-system docs:build"
+  publish = "packages/design-system/storybook-static"
 
 [build.environment]
-    NODE_VERSION = "22"
-    PNPM_VERSION = "9"
-    # For large storybooks, you can increase the memory limit:
-    # NODE_OPTIONS = "--max-old-space-size=4096"
+  NODE_VERSION = "22"
 
-#* * * Deploy Preview (PR) overrides * * *#
-[context.deploy-preview]
-  command = "pnpm i --frozen-lockfile && pnpm docs:build"
-
-#* * * Branch deploys * * *#
-#[context.branch-deploy]
-#  command = "pnpm i --frozen-lockfile && pnpm docs:build"
-
-#* * * Headers (Storybook assets cache) * * *#
 [[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-#* * * IMPORTANT: Disable SPA redirects for Storybook * * *#
-# If you have a catch-all redirect (/* -> /index.html 200) somewhere,
-# these rules should go ABOVE it.
 [[redirects]]
   from = "/iframe.html"
   to = "/iframe.html"
   status = 200
-
 [[redirects]]
   from = "/sb-preview/*"
   to = "/sb-preview/:splat"
   status = 200
-
 [[redirects]]
   from = "/sb-manager/*"
   to = "/sb-manager/:splat"
