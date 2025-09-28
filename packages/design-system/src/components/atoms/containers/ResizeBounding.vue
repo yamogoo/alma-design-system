@@ -3,8 +3,6 @@ import Resizer from "vue3-resize-bounding";
 
 import tokens from "@alma/tokens";
 
-import type { ResizeBoundingSize, ResizeBoundingVariant } from "@/adapters";
-
 import {
   RESIZE_BOUNDING_PREFIX,
   RESIZE_BOUNDING_PREFIX_WITH_DIVIDER,
@@ -23,8 +21,8 @@ const emits = defineEmits<{
   (e: "update:height", height: number): void;
 }>();
 
-const variant = props.variant as ResizeBoundingVariant;
-const size = props.size as ResizeBoundingSize;
+const variant = props.variant;
+const size = props.size;
 
 const componentToken = tokens.atoms.resizeBounding[variant][size];
 const activeAreaWidth = componentToken.root.activeAreaWidth.$value;

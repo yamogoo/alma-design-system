@@ -5,7 +5,7 @@ import type {
   ResizeBoundingSize,
   ResizeBoundingTone,
   ResizeBoundingVariant,
-} from "@/adapters";
+} from "@/adapters/atoms/resizeBounding";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

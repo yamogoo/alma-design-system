@@ -2,11 +2,19 @@
 
 ### R&D Playground for UI & System Design
 
-> AlmaProtoKit is my personal R&D project — an experimental design system platform (see [MANIFEST.md](./packages/design-system/MANIFEST.md) and [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml)) where I explore new approaches to UI development, design tokens, iconography, type design (font making), and cross-framework integration.
+### About the Project
 
-This is not a production-ready library, but rather a prototype environment where I test ideas that may later evolve into Alma-UI, Alma-Tokens, Alma-Icons, or other parts of the Alma ecosystem.
+AlmaProtoKit is my personal **R&D and exploratory project** — an experimental design system platform (see [MANIFEST.md](./packages/design-system/MANIFEST.md) and [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml)).  
+Its main goal is to **experiment with design system concepts**, study different approaches, and strengthen my engineering skills.
 
-Think of AlmaProtoKit as a design-system R&D playground rather than a production framework.
+This is **not a polished production-ready library**, but rather a **sandbox for growth and research**, where I:
+
+- Explore trade-offs between performance, developer experience, and design flexibility;
+- Test token pipelines, theming strategies, component architectures, and cross-framework integration;
+- Experiment with iconography, type design (font making), and other aspects of UI systems;
+- Gain insights that will inform the creation of a more mature and efficient system in the future (such as Alma-UI, Alma-Tokens, Alma-Icons, or other parts of the Alma ecosystem).
+
+Think of AlmaProtoKit as a **design-system R&D playground** — a foundation for the next generation of design system work rather than a production framework.
 
 ## 🚀 Goals
 

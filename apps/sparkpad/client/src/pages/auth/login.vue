@@ -97,8 +97,8 @@ const setContainerStartPosition = (): void => {
 const animInit = (): void => {
   if (!refForm.value || !refMessage.value) return;
 
-  refForm.value!.style = "opacity: 0;";
-  refMessage.value!.style = "opacity: 0;";
+  refForm.value.style = "opacity: 0;";
+  refMessage.value.style = "opacity: 0;";
 
   setContainerStartPosition();
   messageAnimTimer.start();

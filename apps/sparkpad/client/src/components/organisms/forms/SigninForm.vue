@@ -52,12 +52,12 @@ const localIsError = computed(() => {
   return value;
 });
 
-const onSubmit = async (): Promise<void> => {
-  onLogin(localEmail.value, localPassword.value);
+const onSubmit = (): void => {
+  void onLogin(localEmail.value, localPassword.value);
 };
 
 const onRedirectToEditor = (): void => {
-  router.push("/editor");
+  void router.push("/editor");
 };
 
 const onRedirectIfLoggedIn = (): void => {
@@ -108,17 +108,21 @@ export interface Props {
       :placeholder="$t.auth.signin.form.repeatPassword"
       :is-error="localIsError"
     ></Components.Atoms.PasswordInput>
-    <Text :variant="'caption-2'" :mode="'neutral'" :tone="'secondary'">
+    <Components.Atoms.Text
+      :variant="'caption-2'"
+      :mode="'neutral'"
+      :tone="'secondary'"
+    >
       {{ $t.auth.login.form.description }}
-    </Text>
-    <Text
+    </Components.Atoms.Text>
+    <Components.Atoms.Text
       v-if="localIsError"
       :data-testid="'auth-form-error'"
       :variant="'caption-1'"
       :text-color="'error'"
     >
       {{ loginError }}
-    </Text>
+    </Components.Atoms.Text>
     <template #footer>
       <Components.Atoms.ActionButton
         :mode="'accent'"

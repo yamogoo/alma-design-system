@@ -58,9 +58,9 @@
     "dts:verify": "tsc --noEmit",
     "test:unit": "vitest",
     "test:ui": "vitest --ui",
-    "storybook:dev": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
-    "storybook:preview": "serve -s storybook-static"
+    "docs:dev": "storybook dev -p 6006",
+    "docs:build": "storybook build",
+    "docs:preview": "serve storybook-static"
   },
   "peerDependencies": {
     "pinia": "^3.0.0",

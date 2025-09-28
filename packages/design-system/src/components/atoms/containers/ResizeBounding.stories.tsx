@@ -15,8 +15,11 @@ import {
   stringOptions,
 } from "@/stories/utils";
 
-import { StoryGrid, StorySlotCover } from "@/stories/components";
-import { ResizeBounding, type ResizeBoundingProps } from "@/components/atoms";
+import StoryGrid from "@/stories/components/grids/StoryGrid.vue";
+import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
+
+import { type ResizeBoundingProps } from "./ResizeBounding";
+import ResizeBounding from "./ResizeBounding.vue";
 
 const meta = {
   title: "Atoms/Containers/ResizeBounding",
