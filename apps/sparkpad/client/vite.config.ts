@@ -35,6 +35,7 @@ export default (opts: { mode: string }) => {
       },
       fs: {
         allow: ["../.."],
+        strict: true,
       },
     },
     define: {

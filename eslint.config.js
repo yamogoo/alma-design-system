@@ -73,6 +73,7 @@ export default tseslint.config(
       "vue/require-default-prop": "off",
       "vue/html-self-closing": "off",
       "vue/max-attributes-per-line": "off",
+      "no-undef": "off",
     },
   },
 
@@ -111,6 +112,7 @@ export default tseslint.config(
       "vue/require-default-prop": "off",
       "vue/html-self-closing": "off",
       "vue/max-attributes-per-line": "off",
+      "no-undef": "off",
     },
   }
 );

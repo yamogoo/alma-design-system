@@ -1,4 +1,4 @@
-declare global {
+export declare global {
   interface GlobalEventHandlersEventMap {
     "control-action": unknown;
   }

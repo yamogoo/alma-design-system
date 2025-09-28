@@ -2,8 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "noEmit": true,
-    "lib": ["ESNext", "DOM"],
-    "types": ["vitest/globals"],
+    "lib": ["ES2022", "DOM"],
+    "types": ["vite/client", "vitest/globals"],
     "moduleResolution": "bundler"
   },
   "include": [
@@ -11,6 +11,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/**/*.json",
+    "types/**/*.d.ts",
     "env.d.ts",
     "**/*.stories.*",
     "**/*.spec.*",

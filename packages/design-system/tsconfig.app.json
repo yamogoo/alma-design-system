@@ -23,7 +23,12 @@
       "~/*": ["./*"],
       "@/*": ["src/*"]
     },
-    "types": ["gsap/types", "vitest/globals", "unplugin-vue-router/client"]
+    "types": [
+      "gsap/types",
+      "vitest/globals",
+      "unplugin-vue-router/client",
+      "vite/client"
+    ]
   },
 
   "include": [

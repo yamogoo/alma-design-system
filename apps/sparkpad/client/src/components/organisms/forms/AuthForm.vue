@@ -44,7 +44,10 @@ const contentKey = computed(
 <template>
   <Components.Moleculas.FormWrapper
     class="auth-form"
-    :color="'primary'"
+    variant="default"
+    mode="neutral"
+    tone="primary"
+    size="lg"
     bordered
     :content-key="contentKey"
     :duration="FORM_ANIMATION_DURATION"

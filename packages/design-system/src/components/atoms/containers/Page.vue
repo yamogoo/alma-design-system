@@ -68,7 +68,7 @@ const clearTimeline = (el: Element): void => {
   gsap.set(el, { clearProps: "all" });
 };
 
-const onAnimEnter = async (el: Element, done: () => void): Promise<void> => {
+const onAnimEnter = (el: Element, done: () => void): void => {
   const { clientWidth: width, clientHeight: height } = el;
 
   switch (localTransitionInType.value) {
@@ -256,7 +256,7 @@ const onAnimEnter = async (el: Element, done: () => void): Promise<void> => {
   }
 };
 
-const onAnimLeave = async (el: Element, done: () => void): Promise<void> => {
+const onAnimLeave = (el: Element, done: () => void): void => {
   const { clientWidth: width, clientHeight: height } = el;
 
   switch (localTransitionOutType.value) {

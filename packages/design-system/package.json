@@ -22,6 +22,30 @@
       "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     },
+    "./assets/*": {
+      "import": "./dist/assets/*.js",
+      "types": "./dist/assets/*.d.ts"
+    },
+    "./atoms/*": {
+      "import": "./dist/atoms/*.js",
+      "types": "./dist/atoms/*.d.ts"
+    },
+    "./molecules/*": {
+      "import": "./dist/molecules/*.js",
+      "types": "./dist/molecules/*.d.ts"
+    },
+    "./organisms/*": {
+      "import": "./dist/organisms/*.js",
+      "types": "./dist/organisms/*.d.ts"
+    },
+    "./templates/*": {
+      "import": "./dist/templates/*.js",
+      "types": "./dist/templates/*.d.ts"
+    },
+    "./composables/*": {
+      "import": "./dist/composables/*.js",
+      "types": "./dist/composables/*.d.ts"
+    },
     "./style.css": "./dist/style.css",
     "./core.scss": "./src/_index.scss",
     "./global.styles.scss": "./src/assets/scss/app.global.styles.scss"

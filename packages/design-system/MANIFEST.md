@@ -4,7 +4,29 @@
 
 This document provides a **project structure overview**, **module descriptions**, and **usage examples**.
 
-📂 Project Structure
+## 🗂 Monorepo Overview
+
+```bash
+apps/
+  sparkpad/
+    client/        # consumer (frontend)
+    server/        # consumer (backend API)
+    log-server/    # consumer (logging service)
+
+packages/
+  design-system/   # @alma/design-system — components, adapters, SCSS core, Storybook utils
+  tokens/          # @alma/tokens        — source and compiled design tokens
+  tokens-worker/   # @alma/tokens-worker — token build/link pipeline and converters
+```
+
+> The SCSS core is kept inside `packages/design-system` and is not extracted into a separate package.
+> Global styles entry point:
+
+```scss
+@use "@alma/design-system/core.scss" as *;
+```
+
+## 📂 Project Structure
 
 ```bash
 adapters/       — environment-specific wrappers for components
@@ -59,6 +81,38 @@ They contain minimal wrappers and mapping logic, while components/ keep the full
 
   - app.\*.scss — global entry points
 
+### @alma/tokens (packages/tokens)
+
+The single source of truth for design tokens.
+
+**Structure**
+
+```bash
+
+src/
+  abstracts/     # backgrounds, borders, shadows, base colors
+  tokens/        # spacing, stroke, roundness, gaps, touch areas
+  typography/    # type styles and scale
+  themes/        # light/dark
+  components/
+    atoms/ molecules/ templates/
+build/           # compiled runtime tokens (JSON, CSS vars, …) — generated
+structure.md     # token architecture docs
+
+```
+
+#### Figma Integration:
+
+- Full Code → Figma export supported
+
+- Backward Figma → Code compatibility exists, but discouraged (system is code-first)
+
+- Tokens remain the single source of truth in code
+
+### @alma/tokens-worker (packages/tokens-worker)
+
+Token build utilities: resolving nested references, generating artifacts (JSON, CSS vars), converters, Figma-format integration.
+
 ### 🔹 Components
 
 Atomic design structure with Vue 3 + TypeScript.
@@ -104,14 +158,6 @@ Each component has:
 
 - **structure.md** — token architecture docs
 
-#### Figma Integration:
-
-- Full Code → Figma export supported
-
-- Backward Figma → Code compatibility exists, but discouraged (system is code-first)
-
-- Tokens remain the single source of truth in code
-
 ### 🔹 Stories
 
 - **components/** — story examples for atomic/molecular UI
@@ -150,16 +196,22 @@ Each component has:
 
 - Adapters must remain **thin wrappers**; heavy UI logic belongs in components
 
+### 🧪 Testing
+
+- Vitest + Vue Test Utils.
+
+- DOM types (jsdom) enabled for `design-system` tests.
+
 ### 📖 Summary
 
-AlmaIconsProtoKit is not just a component library, but an **experimental design system platform** that brings together:
+AlmaIconsProtoKit is now organized as a **monorepo** with clear separation between **packages** and **consumer apps**:
 
-- 🖼️ Assets (fonts, icons, animations)
+- 🎨 @alma/tokens — tokens (code-first source of truth)
 
-- 🎨 Tokens (colors, typography, spacing, themes)
+- 🧩 @alma/design-system — Vue components + SCSS core
 
-- 🧩 Components & Adapters (atomic design + environment bindings)
+- ⚙️ @alma/tokens-worker — token build pipeline
 
-- ⚡ Composables & Utils (hooks and helpers)
+- 🧪 Consumer apps (client, server, log-server) — use the packages
 
-- 📚 Documentation (Storybook, MANIFEST, Figma integration)
+This structure enables modular delivery, faster builds, easier versioning, and better reuse across projects.

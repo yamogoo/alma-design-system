@@ -2,7 +2,7 @@
 
 ### R&D Playground for UI & System Design
 
-> AlmaProtoKit is my personal R&D project — an experimental design system platform (see [MANIFEST.md](./design-system/MANIFEST.md) and [MANIFEST.yaml](./design-system/MANIFEST.yaml)) where I explore new approaches to UI development, design tokens, iconography, and cross-framework integration.
+> AlmaProtoKit is my personal R&D project — an experimental design system platform (see [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml)) where I explore new approaches to UI development, design tokens, iconography, type design (font making), and cross-framework integration.
 
 This is not a production-ready library, but rather a prototype environment where I test ideas that may later evolve into Alma-UI, Alma-Tokens, Alma-Icons, or other parts of the Alma ecosystem.
 
@@ -10,54 +10,53 @@ Think of AlmaProtoKit as a design-system R&D playground rather than a production
 
 ## 🚀 Goals
 
-- Experiment with design tokens pipelines (JSON → SCSS → CSS variables).
-- Prototype multi-weight icon systems.
-- Explore runtime vs compile-time theming strategies.
-- Validate component patterns for Vue 3 and React.
-- Research how to bridge design tools (Figma) with developer platforms.
+- Experiment with **design tokens pipelines** (JSON → SCSS → CSS variables).
+- Prototype **multi-weight icon systems**.
+- Explore **runtime** vs **compile-time theming strategies**.
+- Validate **component patterns** for Vue 3 and React.
+- Research **bridges between design tools (Figma) and developer platforms**.
 
 > Everything is optimized for my stack and workflow, without the bloat of prebuilt UI libraries.
 
 ## 🎯 Status
 
-🚧 Experimental & evolving. Expect breaking changes.  
-Components may have corresponding adapters; adapters are thin wrappers only.
-
-Fonts are included for offline-first usage and can be later replaced with CDN-hosted versions if desired.
+🚧 Experimental & evolving — expect breaking changes.
+Components may ship with adapters, which are deliberately **thin wrappers** only.
 
 ## 🛠 Stack & Tech
 
-- Vue 3 + TypeScript
-- Adapters for environment-specific component bindings
-- GSAP for animations
-- Custom design tokens & themes
-- SCSS core with mixins and utilities
-- Fully custom components and composables
+- **Vue 3 + TypeScript**
+- **Custom SCSS core** with mixins and utilities
+- **GSAP** for motion and animation
+- **Adapters** for environment-specific bindings
+- **Design tokens & themes** (code-first)
+- **Custom components and composables**
 - [Alma Icons](https://almaicons.netlify.app/icons)
 - [Vue3ResizeBounding](https://resize-bounding.netlify.app/) for resizable UI
-- Project structure and module definitions specified in [MANIFEST.md](./design-system/MANIFEST.md) and [MANIFEST.yaml](./design-system/MANIFEST.yaml)
+- Project structure and module definitions specified in [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml)
 
 **Modular Design Tokens System**
 
-> AlmaProtoKit includes a structured token system with support for JSON, YAML, and TypeScript. Tokens are organized under `tokens/src` (source), `tokens/build` (runtime output), and `tokens/structure.md`.
+> AlmaProtoKit includes a **structured token system** with support for JSON, YAML, and TypeScript.
+
+- **Source tokens** → `tokens/src`
+- **Build output** → `tokens/build`
+- **Architecture docs** → `tokens/structure.md`
 
 **🔗 Figma Integration**
 
-AlmaProtoKit provides **full support for exporting tokens to Figma**.
+AlmaProtoKit provides **end-to-end integration** with **Figma**:
 
-✅ **Forward flow (Code → Figma)**: fully supported and recommended.
+- ✅ **Forward flow (Code → Figma)**: fully supported and recommended.
+- ♻️ **Backward flow (Figma → Code)**: possible for compatibility, but discouraged.
 
-♻️ **Backward flow (Figma → Code)**: possible for compatibility, but discouraged. AlmaProtoKit is inherently **code-driven**, so maintaining tokens in code is the primary workflow.
-
-This enables designers and developers to share the same foundation without fragmenting workflows.
+The system is **code-driven**: tokens in code are the single source of truth. This ensures designers and developers share the same foundation without workflow fragmentation.
 
 ## 💻 Demo
 
-> For details on project structure and module definitions, see [MANIFEST.md](./design-system/MANIFEST.md) and [MANIFEST.yaml](./design-system/MANIFEST.yaml).
-
 ```bash
 # Clone repository
-git clone https://github.com/yamogoo/alma-ui.git
+git clone https://github.com/yamogoo/alma-ptoto-kit.git
 
 # Go to project folder
 cd alma-proto-kit
@@ -66,11 +65,13 @@ cd alma-proto-kit
 pnpm install
 
 # Run development server (Vue app)
-pnpm client:dev
+pnpm sparkpad:client:dev
 
 # Run Storybook for component demos
-pnpm storybook:dev
+pnpm ds:docs:dev
 ```
+
+> For details on project structure and module definitions, see [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml).
 
 > ℹ️ **Startup**: first dev launch may take ~3-7s due to asset pre-processing and pre-bundling.  
 > **HMR is instantaneous** afterwards, so iteration speed remains high.
