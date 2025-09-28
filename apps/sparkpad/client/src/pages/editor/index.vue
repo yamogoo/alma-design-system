@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
-import { Constants } from "@@/constants";
+import { Constants } from "@/constants";
 
-import { useEditorLayout } from "@@/stores/useEditorLayout";
+import { useEditorLayout } from "@/stores/useEditorLayout";
 
-import { ResizeBounding } from "@/components/atoms";
-import { Explorer } from "@@/components/organisms";
+import { Components } from "@alma/design-system";
+import { Explorer } from "@/components/organisms";
 
 const { navigatorWidth, isNavigatorShown } = storeToRefs(useEditorLayout());
 const { setNavigatorWidth } = useEditorLayout();
@@ -15,14 +15,13 @@ const onUpdateWidth = (width: number) => {
   setNavigatorWidth(width);
 };
 
-import { Page } from "@/components/atoms";
-import { EditorView, SidebarMenu } from "@@/components/organisms";
+import { EditorView, SidebarMenu } from "@/components/organisms";
 </script>
 
 <template>
-  <Page class="editor-main-page" orientation="horizontal">
+  <Components.Atoms.Page class="editor-main-page" orientation="horizontal">
     <SidebarMenu></SidebarMenu>
-    <ResizeBounding
+    <Components.Atoms.ResizeBounding
       v-if="isNavigatorShown"
       class="editor-view__navigator"
       data-test="editor-navigator"
@@ -33,9 +32,9 @@ import { EditorView, SidebarMenu } from "@@/components/organisms";
       @update:width="onUpdateWidth"
     >
       <Explorer></Explorer>
-    </ResizeBounding>
+    </Components.Atoms.ResizeBounding>
     <EditorView></EditorView>
-  </Page>
+  </Components.Atoms.Page>
 </template>
 
 <style lang="scss">

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ControlButton, Group, Logo } from "@/components/atoms";
-import { NavigationRail } from "@/components/organisms";
+import { Components } from "@alma/design-system";
 
 const onLogin = (): void => {};
 
@@ -8,19 +7,23 @@ const onOpenSettings = (): void => {};
 </script>
 
 <template>
-  <NavigationRail class="sidebar-menu" :items="[]" :selected-item-id="1">
+  <Components.Organisms.NavigationRail
+    class="sidebar-menu"
+    :items="[]"
+    :selected-item-id="1"
+  >
     <template #header>
-      <Logo></Logo>
+      <Components.Atoms.Logo></Components.Atoms.Logo>
     </template>
     <template #footer>
-      <Group
+      <Components.Atoms.Group
         :variant="'block'"
         :mode="'neutral'"
         :tone="'ghost'"
         :size="'md'"
         :orientation="'vertical'"
       >
-        <ControlButton
+        <Components.Atoms.ControlButton
           :variant="'rounded'"
           :size="'md'"
           :mode="'neutral'"
@@ -30,8 +33,8 @@ const onOpenSettings = (): void => {};
           :icon-style="'outline'"
           :icon-weight="'300'"
           @press="onLogin"
-        ></ControlButton>
-        <ControlButton
+        ></Components.Atoms.ControlButton>
+        <Components.Atoms.ControlButton
           :variant="'rounded'"
           :size="'md'"
           :mode="'neutral'"
@@ -41,10 +44,10 @@ const onOpenSettings = (): void => {};
           :icon-style="'outline'"
           :icon-weight="'300'"
           @press="onOpenSettings"
-        ></ControlButton>
-      </Group>
+        ></Components.Atoms.ControlButton>
+      </Components.Atoms.Group>
     </template>
-  </NavigationRail>
+  </Components.Organisms.NavigationRail>
 </template>
 
 <style lang="scss">

@@ -3,9 +3,9 @@ import { routes } from "vue-router/auto-routes";
 
 import { routes as extendedRoutes } from "./extendedRoutes";
 
-import { useAuthStore } from "@@/stores";
+import { useAuthStore } from "@/stores";
 
-import { trackRouteHistory } from "@/composables/local";
+import { Composables } from "@alma/design-system";
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +13,7 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  trackRouteHistory(to, from);
+  Composables.Local.trackRouteHistory(to, from);
 
   /* * * Auth * * */
 

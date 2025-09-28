@@ -1,22 +1,32 @@
 <script setup lang="ts">
-import { Group, ToolbarBlock } from "@/components/atoms";
-import { MainHeaderTemplate } from "@/components/templates";
+import { Components } from "@alma/design-system";
 
-import { LanguageMenu, ThemeSwitch, MainLogo } from "@@/components/molecules";
-import { MainMenu } from "@@/components/organisms";
+import { LanguageMenu, ThemeSwitch, MainLogo } from "@/components/molecules";
+import { MainMenu } from "@/components/organisms";
 </script>
 
 <template>
-  <MainHeaderTemplate class="app-header" data-testid="app-header">
+  <Components.Templates.MainHeaderTemplate
+    class="app-header"
+    data-testid="app-header"
+  >
     <template #left>
       <MainLogo data-testid="app-header-logo"></MainLogo>
     </template>
     <MainMenu v-if="false" data-testid="app-header-menu"></MainMenu>
     <template #right>
-      <Group :direction="'forward'" :orientation="'horizontal'" :size="'md'">
-        <ToolbarBlock><LanguageMenu></LanguageMenu></ToolbarBlock>
-        <ToolbarBlock><ThemeSwitch></ThemeSwitch></ToolbarBlock>
-      </Group>
+      <Components.Atoms.Group
+        :direction="'forward'"
+        :orientation="'horizontal'"
+        :size="'md'"
+      >
+        <Components.Atoms.ToolbarBlock
+          ><LanguageMenu></LanguageMenu
+        ></Components.Atoms.ToolbarBlock>
+        <Components.Atoms.ToolbarBlock
+          ><ThemeSwitch></ThemeSwitch
+        ></Components.Atoms.ToolbarBlock>
+      </Components.Atoms.Group>
     </template>
-  </MainHeaderTemplate>
+  </Components.Templates.MainHeaderTemplate>
 </template>

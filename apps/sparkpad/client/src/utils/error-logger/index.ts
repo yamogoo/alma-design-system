@@ -1,3 +1,4 @@
+/* eslint-disable */
 import localforage from "localforage";
 
 export type ErrorSeverity = "fatal" | "error" | "warn" | "info";
@@ -88,7 +89,6 @@ function redact(text?: string) {
     .replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g, "[email]")
     .replace(
       /([?&](?:token|password|secret|api_key)=[^&#]+)/gi,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       (_m) => "[REDACTED_PARAM]"
     )
     .slice(0, 20_000); // limit the size

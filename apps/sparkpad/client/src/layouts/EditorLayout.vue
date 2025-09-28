@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Settings from "@@/components/organisms/menues/Settings.vue";
+import Settings from "@/components/organisms/menues/Settings.vue";
 </script>
 
 <template>

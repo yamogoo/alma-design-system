@@ -1,4 +1,4 @@
-import type locales from "@@/locales";
+import type locales from "@/locales";
 
 export type Locale = keyof typeof locales.app;
 

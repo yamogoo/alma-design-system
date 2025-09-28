@@ -55,9 +55,6 @@ This enables designers and developers to share the same foundation without fragm
 
 > For details on project structure and module definitions, see [MANIFEST.md](./apps/sparkpad/client/design-system/MANIFEST.md) and [MANIFEST.yaml](./apps/sparkpad/client/design-system/MANIFEST.yaml).
 
-> ℹ️ **Startup**: first dev launch may take ~20–30 s due to asset pre-processing and pre-bundling.  
-> **HMR is instantaneous** afterwards, so iteration speed remains high.
-
 ```bash
 # Clone repository
 git clone https://github.com/yamogoo/alma-ui.git
@@ -74,6 +71,9 @@ pnpm client:dev
 # Run Storybook for component demos
 pnpm storybook:dev
 ```
+
+> ℹ️ **Startup**: first dev launch may take ~3-7s due to asset pre-processing and pre-bundling.  
+> **HMR is instantaneous** afterwards, so iteration speed remains high.
 
 _Then open http://localhost:3000 to see AlmaProtoKit in action._
 

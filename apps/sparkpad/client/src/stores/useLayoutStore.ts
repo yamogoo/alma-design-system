@@ -1,17 +1,17 @@
 import { computed, ref, type Ref } from "vue";
 import { defineStore } from "pinia";
 
-import tokens from "@/tokens";
+import tokens from "@alma/tokens";
 
-import type { ISize } from "@/typings";
+import { Typings } from "@alma/design-system";
 
 export const useLayoutStore = defineStore("layout-store", () => {
-  const appSize: Ref<ISize> = ref({
+  const appSize: Ref<Typings.ISize> = ref({
     width: 0,
     height: 0,
   });
 
-  const setAppSize = (size: ISize): void => {
+  const setAppSize = (size: Typings.ISize): void => {
     appSize.value = size;
   };
 

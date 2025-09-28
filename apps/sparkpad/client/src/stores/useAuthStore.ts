@@ -2,7 +2,7 @@ import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import axios from "axios";
 
-import type { AuthErrors } from "@/typings";
+import type { Typings } from "@alma/design-system";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const API_BASE_URL = `${API_URL}/api`;
@@ -10,7 +10,7 @@ const API_BASE_URL = `${API_URL}/api`;
 export const useAuthStore = defineStore("auth-store", () => {
   const user = ref<{ email: string } | null>(null);
   const isLoading = ref(false);
-  const errors = ref<AuthErrors>({});
+  const errors = ref<Typings.AuthErrors>({});
 
   const isInitialized = ref(false);
 
@@ -31,10 +31,13 @@ export const useAuthStore = defineStore("auth-store", () => {
         { withCredentials: true }
       );
 
-      const meResponse = await axios.get(`${API_BASE_URL}/auth/me`, {
-        withCredentials: true,
-      });
-      setUser({ email: meResponse.data.email });
+      const res = await axios.get<{ email: string }>(
+        `${API_BASE_URL}/auth/me`,
+        {
+          withCredentials: true,
+        }
+      );
+      setUser({ email: res.data.email });
       isInitialized.value = true;
     } catch (err: unknown) {
       const error = err as { response: { data: { message: string } } };
@@ -71,10 +74,19 @@ export const useAuthStore = defineStore("auth-store", () => {
   const initializeAuth = async () => {
     isLoading.value = true;
     try {
-      const res = await axios.get(`${API_BASE_URL}/auth/me`, {
-        withCredentials: true,
-      });
-      setUser({ email: res.data.email });
+      const res = await axios.get<{ email?: string }>(
+        `${API_BASE_URL}/auth/me`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      const email = res.data?.email;
+      if (typeof email === "string" && email.length > 0) {
+        setUser({ email });
+      } else {
+        setUser(null);
+      }
     } catch {
       setUser(null);
     } finally {

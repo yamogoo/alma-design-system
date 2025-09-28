@@ -2,10 +2,9 @@
 import { onUnmounted, useTemplateRef } from "vue";
 import g from "gsap";
 
-import { useTimeout } from "@/composables/local";
+import { Composables, Components } from "@alma/design-system";
 
-import { Page } from "@/components/atoms";
-import { AuthForm } from "@@/components/organisms";
+import { AuthForm } from "@/components/organisms";
 
 const START_DELAY = 350;
 const MESSAGE_DURATION_IN = 0.65;
@@ -28,7 +27,7 @@ const containerToCenterOffset = (): number => {
 
 /* * * Animations * * */
 
-const messageAnimTimer = useTimeout(() => {
+const messageAnimTimer = Composables.Local.useTimeout(() => {
   const el = refMessage.value;
 
   if (el) onAnimMessageEnter(el);
@@ -115,13 +114,16 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Page class="login" @anim-enter-completed="onPageAnimCompleted">
+  <Components.Atoms.Page
+    class="login"
+    @anim-enter-completed="onPageAnimCompleted"
+  >
     <div ref="content" class="login__content">
       <div ref="form" class="login__form-wrapper">
         <AuthForm></AuthForm>
       </div>
     </div>
-  </Page>
+  </Components.Atoms.Page>
 </template>
 
 <style lang="scss">

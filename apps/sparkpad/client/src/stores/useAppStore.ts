@@ -1,6 +1,8 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
-import { useTypedLocalStorage } from "@/composables/local";
+import { Composables } from "@alma/design-system";
+
+const { useTypedLocalStorage } = Composables.Local;
 
 export const DEFAULT_APP_VERSION = import.meta.env.VITE_APP_VERSION;
 export const APP_DEVICE_ID = import.meta.env.VITE_APP_DEVICE_ID;

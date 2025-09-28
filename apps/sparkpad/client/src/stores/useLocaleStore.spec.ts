@@ -1,7 +1,7 @@
 import { useLocaleStore } from "./useLocaleStore";
 
 describe("useLocaleStore", () => {
-  test("should set the locale", async () => {
+  test("should set the locale", () => {
     const store = useLocaleStore();
 
     store.setLocale("en");

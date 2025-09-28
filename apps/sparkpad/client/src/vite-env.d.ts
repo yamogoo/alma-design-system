@@ -8,11 +8,15 @@ interface ImportMetaEnv {
   readonly APP_AUTHOR_FULL_NAME: string;
   readonly APP_AUTHOR_EMAIL: string;
   readonly APP_AUTHOR_URL: string;
+  readonly VITE_APP_DEVICE_ID: string;
 
   /* * * Design Sytem config * * */
   readonly VITE_APP_DEFAULT_THEME: string;
   readonly VITE_IS_SYSTEM_THEME_ENABLE: string;
   readonly VITE_APP_DEFAULT_LOCALE: string;
+
+  /* * * Logger * * */
+  readonly VITE_LOG_ENDPOINT: string;
 
   // === App config === /
   /* * * Environment Variables * * */

@@ -31,5 +31,15 @@
   "packageManager": "pnpm@10.15.1",
   "dependencies": {
     "design-system": "link:../../../../Library/pnpm/global/5/node_modules/design-system"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-vue": "^10.5.0",
+    "globals": "^16.4.0",
+    "typescript-eslint": "^8.44.1",
+    "vue-eslint-parser": "^10.2.0"
   }
 }

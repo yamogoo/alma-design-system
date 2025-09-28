@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
-import { useLocaleStore } from "@@/stores";
+import { useLocaleStore } from "@/stores";
 
-import { LogoWithDescriptor } from "@/components/atoms";
+import { Components } from "@alma/design-system";
 
 const { $t } = storeToRefs(useLocaleStore());
 </script>
 
 <template>
-  <LogoWithDescriptor :name="$t.about.title"></LogoWithDescriptor>
+  <Components.Atoms.LogoWithDescriptor
+    :name="$t.about.title"
+  ></Components.Atoms.LogoWithDescriptor>
 </template>

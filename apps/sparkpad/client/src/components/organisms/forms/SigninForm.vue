@@ -3,10 +3,9 @@ import { onMounted, ref, computed } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 
-import { useAuthStore, useLocaleStore } from "@@/stores";
+import { useAuthStore, useLocaleStore } from "@/stores";
 
-import { Form } from "@/components/molecules";
-import { ActionButton, Input, PasswordInput, Text } from "@/components/atoms";
+import { Components } from "@alma/design-system";
 
 withDefaults(defineProps<Props>(), {
   isError: false,
@@ -82,33 +81,33 @@ export interface Props {
 </script>
 
 <template>
-  <Form
+  <Components.Moleculas.Form
     variant="default"
     :size="'md'"
     :mode="'neutral'"
     :tone="'primary'"
     :aria-label="'Login'"
   >
-    <Input
+    <Components.Atoms.Input
       v-model:value="localEmail"
       :placeholder="$t.auth.signin.form.userName"
       :type="'text'"
       :is-error="localIsError"
-    ></Input>
-    <PasswordInput
+    ></Components.Atoms.Input>
+    <Components.Atoms.PasswordInput
       v-model:value="localPassword"
       v-model:masked="localIsPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.signin.form.password"
       :is-error="localIsError"
-    ></PasswordInput>
-    <PasswordInput
+    ></Components.Atoms.PasswordInput>
+    <Components.Atoms.PasswordInput
       v-model:value="localRepeatedPassword"
       v-model:masked="localIsRepeatedPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.signin.form.repeatPassword"
       :is-error="localIsError"
-    ></PasswordInput>
+    ></Components.Atoms.PasswordInput>
     <Text :variant="'caption-2'" :mode="'neutral'" :tone="'secondary'">
       {{ $t.auth.login.form.description }}
     </Text>
@@ -121,7 +120,7 @@ export interface Props {
       {{ loginError }}
     </Text>
     <template #footer>
-      <ActionButton
+      <Components.Atoms.ActionButton
         :mode="'accent'"
         :tone="'primary'"
         :size="'md'"
@@ -130,7 +129,7 @@ export interface Props {
         :is-disabled="!isValid"
         @press="onSubmit"
         @key.enter="onSubmit"
-      ></ActionButton>
+      ></Components.Atoms.ActionButton>
     </template>
-  </Form>
+  </Components.Moleculas.Form>
 </template>

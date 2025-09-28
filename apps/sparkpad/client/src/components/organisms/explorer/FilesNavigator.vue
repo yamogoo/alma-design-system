@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { FilesTree } from "@/components/organisms";
+import { Components } from "@alma/design-system";
 </script>
 
 <template>
-  <FilesTree api-url="http://localhost:5042/api/groups"></FilesTree>
+  <Components.Organisms.FilesTree
+    api-url="http://localhost:5042/api/groups"
+  ></Components.Organisms.FilesTree>
 </template>

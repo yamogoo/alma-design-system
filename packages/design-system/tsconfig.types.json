@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": false,
+    "outDir": "dist",
+    "rootDir": "src",
+
+    "resolveJsonModule": true,
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.json", "env.d.ts"],
+  "exclude": [
+    "node_modules",
+    "storybook-static",
+    "**/*.spec.ts",
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    "**/*.test.ts",
+    "**/*__tests__",
+    "**/*.temp",
+    "**/*.__draft",
+    "dist",
+    "**/vitest.ts",
+    "**/*__tests__"
+  ]
+}

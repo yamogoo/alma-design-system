@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "strict": true,
+    "noEmit": true
+  }
+}

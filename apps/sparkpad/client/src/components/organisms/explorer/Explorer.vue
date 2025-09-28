@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import { SearchInput } from "@/components/atoms";
+import { Components } from "@alma/design-system";
 
 import FilesNavigator from "./FilesNavigator.vue";
 
@@ -14,12 +14,12 @@ const onResetValue = (): void => {
 
 <template>
   <div class="explorer">
-    <SearchInput
+    <Components.Atoms.SearchInput
       v-model.trim="searchingPhrase"
       placeholder="Search"
       size="lg"
       @reset:value="onResetValue"
-    ></SearchInput>
+    ></Components.Atoms.SearchInput>
     <FilesNavigator></FilesNavigator>
   </div>
 </template>

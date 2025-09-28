@@ -1,30 +1,28 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
-import { useConnectionStore } from "@/stores";
+import { Components, Stores } from "@alma/design-system";
 
-import { Page, ActionSheet, Text } from "@/components/atoms";
-import { Snackbar } from "@/components/molecules";
-import { AppHeader, AppFooter } from "@@/components/organisms";
+import { AppHeader, AppFooter } from "@/components/organisms";
 
-const { isConnected } = storeToRefs(useConnectionStore());
+const { isConnected } = storeToRefs(Stores.useConnectionStore());
 </script>
 
 <template>
-  <Page>
+  <Components.Atoms.Page>
     <AppHeader></AppHeader>
     <RouterView></RouterView>
-    <Snackbar
+    <Components.Moleculas.Snackbar
       :mode="'neutral'"
       :tone="'inversed'"
       :title="'Notification'"
       :description="'Some message'"
-    ></Snackbar>
+    ></Components.Moleculas.Snackbar>
     <AppFooter></AppFooter>
-    <ActionSheet :is-active="!isConnected" :mode="'primary'">
-      <Text :variant="'caption-2'">
+    <Components.Atoms.ActionSheet :is-active="!isConnected" :mode="'primary'">
+      <Components.Atoms.Text :variant="'caption-2'">
         {{ "Connection Lost" }}
-      </Text>
-    </ActionSheet>
-  </Page>
+      </Components.Atoms.Text>
+    </Components.Atoms.ActionSheet>
+  </Components.Atoms.Page>
 </template>

@@ -1,19 +1,18 @@
-import { createApp } from "vue";
+import { createApp, type Component } from "vue";
 import App from "./App.vue";
 
 import { createPinia } from "pinia";
 import { router } from "./router";
 
-import { initErrorLogger, logError } from "@@/utils";
+import { initErrorLogger, logError } from "@/utils";
 
-import "@/assets/scss/app.fonts.scss";
+import "@alma/design-system/style.css";
+import "@alma/design-system/global.styles.scss";
 
-import "@/assets/scss/app.global.styles.scss";
-import "@/assets/scss/app.fonts.scss";
-
-const app = createApp(App);
+const app = createApp(App as Component);
 
 app.config.errorHandler = (err, _instance, info) => {
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   logError(err, { tags: { vueInfo: info } });
 };
 

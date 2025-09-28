@@ -3,7 +3,7 @@ import { useConfigStore } from "./useConfigStore";
 describe("useConfigStore", () => {
   /* * * Settings * * */
 
-  test("should set a theme", async () => {
+  test("should set a theme", () => {
     const store = useConfigStore();
 
     store.setTheme("dark");

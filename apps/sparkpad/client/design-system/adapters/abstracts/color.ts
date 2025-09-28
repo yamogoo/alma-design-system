@@ -1,6 +1,0 @@
-import colors from "@/tokens/build/colors.json";
-
-export type AbstractColorName = keyof typeof colors;
-export const abstractColorNames = Object.keys(colors) as AbstractColorName[];
-
-export { colors as abstractColors };

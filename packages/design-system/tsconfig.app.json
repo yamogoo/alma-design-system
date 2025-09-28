@@ -1,0 +1,41 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    "moduleResolution": "Bundler",
+
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "./dist/client",
+
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["src/*"]
+    },
+    "types": ["gsap/types", "vitest/globals", "unplugin-vue-router/client"]
+  },
+
+  "include": [
+    "env.d.ts",
+    "styles.d.ts",
+    "typed-router.d.ts",
+    "src/**/*.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.mdx"
+  ],
+  "exclude": ["**/__tests__/*", "**/*.__draft", "**/*.temp", "**/*.cache"]
+}

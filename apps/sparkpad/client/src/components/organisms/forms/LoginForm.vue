@@ -3,18 +3,9 @@ import { onMounted, ref, watch, computed } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 
-import { useAuthStore, useLocaleStore } from "@@/stores";
+import { useAuthStore, useLocaleStore } from "@/stores";
 
-import { Form } from "@/components/molecules";
-import {
-  Group,
-  Divider,
-  ActionButton,
-  Input,
-  PasswordInput,
-  Text,
-  Tooltip,
-} from "@/components/atoms";
+import { Components } from "@alma/design-system";
 
 withDefaults(defineProps<Props>(), {
   isLoginError: false,
@@ -96,35 +87,43 @@ export interface Props {
 </script>
 
 <template>
-  <Form
+  <Components.Moleculas.Form
     variant="default"
     :size="'md'"
     :mode="'neutral'"
     :tone="'primary'"
     :aria-label="'Signin'"
   >
-    <Input
+    <Components.Atoms.Input
       v-model:value="localEmail"
       :placeholder="$t.auth.login.form.userName"
       :type="'text'"
       :is-error="!!emailError"
       :error-message="emailError"
-    ></Input>
-    <PasswordInput
+    ></Components.Atoms.Input>
+    <Components.Atoms.PasswordInput
       v-model:value="localPassword"
       v-model:masked="localIsPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.login.form.password"
       :is-error="!!passwordError"
       :error-message="passwordError"
-    ></PasswordInput>
-    <Text :variant="'caption-2'" :mode="'neutral'" :tone="'secondary'">
+    ></Components.Atoms.PasswordInput>
+    <Components.Atoms.Text
+      :variant="'caption-2'"
+      :mode="'neutral'"
+      :tone="'secondary'"
+    >
       {{ $t.auth.login.form.description }}
-    </Text>
+    </Components.Atoms.Text>
 
     <template #footer>
-      <Group :orientation="'vertical'" :size="'sm'" :stretch="'fill'">
-        <ActionButton
+      <Components.Atoms.Group
+        :orientation="'vertical'"
+        :size="'sm'"
+        :stretch="'fill'"
+      >
+        <Components.Atoms.ActionButton
           :mode="'accent'"
           :tone="'primary'"
           :size="'md'"
@@ -134,24 +133,24 @@ export interface Props {
           @press="onSubmit"
           @key.enter="onSubmit"
         >
-        </ActionButton>
-        <Divider
+        </Components.Atoms.ActionButton>
+        <Components.Atoms.Divider
           :orientation="'horizontal'"
           :size="'md'"
           :mode="'neutral'"
           :tone="'secondary'"
-        ></Divider>
-        <Tooltip :label="'Button'">
-          <ActionButton
+        ></Components.Atoms.Divider>
+        <Components.Atoms.Tooltip :label="'Button'">
+          <Components.Atoms.ActionButton
             :mode="'neutral'"
             :tone="'tertiary'"
             :size="'md'"
             :stretch="'fill'"
             :label="$t.auth.login.form.skip"
             @press="onContinueAsGuest"
-          ></ActionButton>
-        </Tooltip>
-      </Group>
+          ></Components.Atoms.ActionButton>
+        </Components.Atoms.Tooltip>
+      </Components.Atoms.Group>
     </template>
-  </Form>
+  </Components.Moleculas.Form>
 </template>

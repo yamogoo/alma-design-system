@@ -1,0 +1,31 @@
+{
+  "name": "@alma/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "pnpm run build:js && pnpm run build:types",
+    "build:js": "tsc -p tsconfig.json --noEmit false --emitDeclarationOnly false",
+    "build:types": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "rollup": "^4.0.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.6"
+  }
+}

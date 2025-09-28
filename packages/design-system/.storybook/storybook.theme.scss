@@ -1,0 +1,31 @@
+@use "../src/assets/scss/app.abstracts.scss" as *;
+@use "../src/assets/scss/core/mixins/themify" as *;
+@use "../src/assets/scss/core/mixins/box" as *;
+
+.storybook {
+  &-main-container {
+    position: relative;
+    @include box(100%);
+  }
+}
+
+.docs-story,
+.storybook-root,
+.storybook-main-container {
+  @include themify($themes) {
+    background-color: themed("abstracts.surface.neutral.primary");
+  }
+}
+
+.storybook-main-container {
+  box-sizing: border-box;
+  position: relative;
+  padding: 2em;
+  overflow: hidden;
+}
+
+/* * * Reset styles * * */
+
+.sb-show-main.sb-main-padded {
+  padding: 0;
+}

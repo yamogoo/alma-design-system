@@ -1,8 +1,10 @@
 import { defineStore } from "pinia";
 
-import { Constants } from "../constants";
+import { Constants } from "@/constants";
 
-import { useTypedLocalStorage } from "@/composables/local";
+import { Composables } from "@alma/design-system";
+
+const { useTypedLocalStorage } = Composables.Local;
 
 export const useEditorLayout = defineStore("editor-layout-store", () => {
   const isNavigatorShown = useTypedLocalStorage(

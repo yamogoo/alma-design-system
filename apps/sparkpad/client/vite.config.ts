@@ -12,13 +12,7 @@ import packageJson from "./package.json";
 import vueRouter from "unplugin-vue-router/vite";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 
-import {
-  ColorsGeneratorPlugin,
-  TokensParserPlugin,
-  VitePluginTokenLinter,
-  JSONBuilderPlugin,
-  // VitePluginFigmaTokensParser,
-} from "@alma/tokens-worker";
+import { JSONBuilderPlugin } from "@alma/tokens-worker";
 
 import VueRouterPlugin from "unplugin-vue-router/vite";
 
@@ -70,44 +64,8 @@ export default (opts: { mode: string }) => {
         dts: true,
       }),
       svgLoader({ defaultImport: "component" }),
-      // Deign System: Tokens and SCSS generation
-      ColorsGeneratorPlugin({
-        source: "./design-system/tokens/src/baseColors.json",
-        outDir: "./design-system/tokens/src/colors.json",
-        step: 40,
-      }),
-      TokensParserPlugin({
-        source: "./design-system/tokens/.cache",
-        outDir: "./design-system/assets/scss/abstracts",
-        build: "./design-system/tokens/build",
-        entryFilePath: "./design-system/tokens/index.ts",
-        paths: ["./design-system/tokens", "./design-system/tokens/.cache"],
-        mapOptions: {
-          convertCase: true,
-          includeFileName: false,
-          convertToCSSVariables: false,
-          includeFileNameToCSSVariables: true,
-          excludeCSSVariables: ["./design-system/tokens/.cache/themes.json"],
-        },
-        themesDir: "./design-system/tokens/build/themes.json",
-        themesOutFile:
-          "./design-system/assets/scss/abstracts/_runtime_themes.scss",
-        themesIncludeRequired: true,
-        builder: {
-          format: "json",
-          paths: ["./design-system/tokens/src"],
-          includeRootDirName: false,
-        },
-        useReflectOriginalStructure: false,
-      }),
-      VitePluginTokenLinter({
-        source: "./design-system/tokens/src",
-      }),
-      // VitePluginFigmaTokensParser({
-      //   source: "./design-system/tokens/build",
-      //   outDir: "./design-system/tokens/.figma",
-      // }),
-      // Application: Tokens and SCSS generation
+
+      // // Application: Tokens and SCSS generation
       // TokensParserPlugin({
       //   source: "./src/tokens/.cache",
       //   outDir: "./src/assets/scss/abstracts",
@@ -126,6 +84,7 @@ export default (opts: { mode: string }) => {
       //   },
       //   useReflectOriginalStructure: true,
       // }),
+
       // Generate locales JSON from directory structure
       JSONBuilderPlugin({
         format: "json",
@@ -158,9 +117,8 @@ export default (opts: { mode: string }) => {
     },
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./design-system"),
         "~": fileURLToPath(new URL("./", import.meta.url)),
-        "@@": fileURLToPath(new URL("./src", import.meta.url)),
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
         "@lp": fileURLToPath(new URL("./landing-src", import.meta.url)),
       },
     },
@@ -175,10 +133,10 @@ export default (opts: { mode: string }) => {
           api: "modern-compiler",
           additionalData: `
             /* * * Design System * * */
-            @use "@/index" as *;
+            @use "@alma/design-system/core.scss" as *;
 
             /* * * App * * */
-            @use "@@/index" as app;
+            @use "@/index" as app;
           `,
         },
       },

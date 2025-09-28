@@ -1,10 +1,10 @@
 import { computed } from "vue";
 import { defineStore } from "pinia";
 
-import locales from "@@/locales";
-import { useTypedLocalStorage } from "@/composables/local";
+import locales from "@/locales";
+import { Composables } from "@alma/design-system";
 
-import type { Locale, LocaleSchema } from "@@/typings";
+import type { Locale, LocaleSchema } from "@/typings";
 
 const DEFAULT_LOCALE = import.meta.env.VITE_APP_DEFAULT_LOCALE as Locale;
 
@@ -13,7 +13,7 @@ export type LocaleVersion = keyof typeof locales.app.en.common.version;
 export const useLocaleStore = defineStore("locale-store", () => {
   const availableLocales = Object.keys(locales.app) as Locale[];
 
-  const currentLocale = useTypedLocalStorage<Locale>(
+  const currentLocale = Composables.Local.useTypedLocalStorage<Locale>(
     "LOCALE",
     availableLocales.includes(DEFAULT_LOCALE)
       ? DEFAULT_LOCALE

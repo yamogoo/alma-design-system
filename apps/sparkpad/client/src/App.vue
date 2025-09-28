@@ -8,21 +8,21 @@ import {
   useConfigStore,
   useLayoutStore,
   useLocaleStore,
-} from "@@/stores";
+} from "@/stores";
 
-import { useMeta, useTheme, useConnection } from "@/composables/global";
+import { Constants } from "@/constants";
 
-import { Constants } from "@@/constants";
+import { Composables } from "@alma/design-system";
 
 const { $t } = storeToRefs(useLocaleStore());
 
 useTitle($t.value.about.title);
-useMeta("description", $t.value.about.description);
-useMeta("author", Constants.APP_AUTHOR_NAME);
-useTheme("light", {
+Composables.Global.useMeta("description", $t.value.about.description);
+Composables.Global.useMeta("author", Constants.APP_AUTHOR_NAME);
+Composables.Global.useTheme("light", {
   selector: "html",
 });
-useConnection();
+Composables.Global.useConnection();
 
 const { setAppSize } = useLayoutStore();
 const { setLocale } = useLocaleStore();
@@ -46,7 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <router-view></router-view>
+  <RouterView></RouterView>
 </template>
 
 <style lang="scss">

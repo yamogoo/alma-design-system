@@ -1,9 +1,9 @@
 import { useLayoutStore } from "./useLayoutStore";
 
-import tokens from "@/tokens";
+import tokens from "@alma/tokens";
 
 describe("useLayoutStore", () => {
-  test("should set the appSize", async () => {
+  test("should set the appSize", () => {
     const store = useLayoutStore();
 
     const expectedAppSize1 = {

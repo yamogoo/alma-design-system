@@ -11,5 +11,5 @@
     "skipLibCheck": true
   },
   "include": ["lib"],
-  "exclude": ["src"]
+  "exclude": ["src", "src/tokens/*"]
 }

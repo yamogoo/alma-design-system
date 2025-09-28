@@ -1,0 +1,38 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": false,
+    "outDir": "dist",
+    "rootDir": "src",
+
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] },
+
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "stripInternal": false
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.json",
+    "env.d.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/__tests__/**",
+    "src/**/*.stories.*",
+    "**/*.spec.*",
+    "**/*.test.*",
+    "**/*.temp",
+    "**/*.__draft",
+    "src/stories"
+  ]
+}

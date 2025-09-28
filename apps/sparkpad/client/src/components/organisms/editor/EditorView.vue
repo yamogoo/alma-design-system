@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { Text } from "@/components/atoms";
+import { Components } from "@alma/design-system";
 </script>
 
 <template>
   <div class="editor-view">
     <div class="editor-view__content">
-      <Text :variant="'body-2'">
+      <Components.Atoms.Text :variant="'body-2'">
         {{ "Notes" }}
-      </Text>
+      </Components.Atoms.Text>
     </div>
   </div>
 </template>
