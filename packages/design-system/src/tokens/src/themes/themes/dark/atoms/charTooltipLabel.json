@@ -10,15 +10,15 @@
             "$meta": {
               "category": "tooltip"
             }
-          },
-          "border": {
-            "normal": {
-              "$value": "{themes.themes.light.abstracts.border.neutral.secondary.$value}",
-              "$type": "color",
-              "$unit": "hex",
-              "$meta": {
-                "category": "tooltip"
-              }
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "{themes.themes.dark.abstracts.border.neutral.secondary.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "tooltip"
             }
           }
         }

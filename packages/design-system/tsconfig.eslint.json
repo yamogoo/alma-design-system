@@ -15,7 +15,10 @@
     "env.d.ts",
     "**/*.stories.*",
     "**/*.spec.*",
-    "**/*.test.*"
+    "**/*.test.*",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts"
   ],
   "exclude": ["dist", "node_modules"]
 }

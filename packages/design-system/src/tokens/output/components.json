@@ -776,6 +776,11 @@
               "$value": 8,
               "$unit": "px",
               "$type": "radius"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": "radius"
             }
           },
           "label": {

@@ -9,7 +9,7 @@ export const charTooltipLabelVariants = Object.keys(
 export type CharTooltipLabelSize =
   keyof typeof tokens.atoms.charTooltipLabel.default;
 export const charTooltipLabelSizes = Object.keys(
-  typeof tokens.atoms.charTooltipLabel.default
+  tokens.atoms.charTooltipLabel.default
 ) as CharTooltipLabelSize[];
 
 export type CharTooltipLabelMode =

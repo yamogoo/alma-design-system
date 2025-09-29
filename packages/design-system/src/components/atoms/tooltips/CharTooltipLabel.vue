@@ -58,6 +58,7 @@ $prefix: char-tooltip-label;
           $min-width: px2rem(get($val, "root.min-width"));
           $padding: get($val, "root.padding");
           $border-radius: px2rem(get($val, "root.border-radius"));
+          $border-width: px2rem(get($val, "root.border-width"));
 
           $label-font-style: get($val, "label.font-style");
 
@@ -66,6 +67,8 @@ $prefix: char-tooltip-label;
           gap: $gap;
           padding: $padding;
           border-radius: $border-radius;
+          border-width: $border-width;
+          border-style: solid;
 
           .text {
             @extend %t__#{$label-font-style};
@@ -88,6 +91,9 @@ $prefix: char-tooltip-label;
           @include themify($themes) {
             background-color: themed(
               "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+            );
+            border-color: themed(
+              "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
             );
 
             .text {

@@ -24,6 +24,11 @@
           "$value": "{tokens.roundness.xs.$value}",
           "$unit": "px",
           "$type": "radius"
+        },
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm.$value}",
+          "$unit": "px",
+          "$type": "radius"
         }
       },
       "label": {

@@ -22,6 +22,12 @@
     "skipLibCheck": true,
     "noEmitOnError": true
   },
-  "include": ["server/**/*.ts", "server/**/*.db"],
+  "include": [
+    "server/**/*.ts",
+    "server/**/*.db",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ],
   "exclude": ["dist", "node_modules"]
 }

@@ -2535,15 +2535,15 @@
                     "$meta": {
                       "category": "tooltip"
                     }
-                  },
-                  "border": {
-                    "normal": {
-                      "$value": "#e9ecef",
-                      "$type": "color",
-                      "$unit": "hex",
-                      "$meta": {
-                        "category": "tooltip"
-                      }
+                  }
+                },
+                "border": {
+                  "normal": {
+                    "$value": "#1b2125",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "tooltip"
                     }
                   }
                 }
