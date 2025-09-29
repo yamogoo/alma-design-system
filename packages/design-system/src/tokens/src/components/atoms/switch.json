@@ -61,7 +61,7 @@
           }
         },
         "height": {
-          "$value": 20,
+          "$value": "{components.atoms.switch.default.lg.root.height.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -73,7 +73,7 @@
     "md": {
       "root": {
         "width": {
-          "$value": 36,
+          "$value": 54,
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -132,7 +132,7 @@
           }
         },
         "height": {
-          "$value": 16,
+          "$value": "{components.atoms.switch.default.md.root.height.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {
@@ -202,7 +202,7 @@
           }
         },
         "height": {
-          "$value": 16,
+          "$value": "{components.atoms.switch.default.sm.root.height.$value}",
           "$type": "number",
           "$unit": "px",
           "$meta": {

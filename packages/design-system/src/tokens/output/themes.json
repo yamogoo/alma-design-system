@@ -3451,6 +3451,88 @@
                 }
               }
             }
+          },
+          "accent": {
+            "primary": {
+              "track": {
+                "normal": {
+                  "$value": "#012291",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "disabled": {
+                  "$value": "#495661",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "active": {
+                  "$value": "#0130CE",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                }
+              },
+              "knob": {
+                "normal": {
+                  "$value": "#F8F9FA",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "disabled": {
+                  "$value": "#637584",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "active": {
+                  "$value": "#F8F9FA",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                }
+              },
+              "label": {
+                "normal": {
+                  "$value": "#DCE1E5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "disabled": {
+                  "$value": "#6D8292",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "active": {
+                  "$value": "#DCE1E5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -7704,6 +7786,88 @@
                 },
                 "active": {
                   "$value": "#909FAC",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                }
+              },
+              "knob": {
+                "normal": {
+                  "$value": "#F8F9FA",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "disabled": {
+                  "$value": "#DCE1E5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "active": {
+                  "$value": "#F8F9FA",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                }
+              },
+              "label": {
+                "normal": {
+                  "$value": "#2F383F",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "disabled": {
+                  "$value": "#6D8292",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "active": {
+                  "$value": "#2F383F",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                }
+              }
+            }
+          },
+          "accent": {
+            "primary": {
+              "track": {
+                "normal": {
+                  "$value": "#6286FE",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "disabled": {
+                  "$value": "#C0C9D0",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "toggle switch"
+                  }
+                },
+                "active": {
+                  "$value": "#3161FE",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {

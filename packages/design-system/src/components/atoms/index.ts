@@ -7,7 +7,9 @@ export * from "./buttons";
 export * from "./containers";
 
 // Controls: ControlWrapper, etc.
-export * from "./controls";
+export * from "./controls/control-wrapper";
+export * from "./controls/slider";
+export * from "./controls/switch";
 
 // Dividers: simple decorative elements like Divider
 export * from "./dividers";
@@ -31,10 +33,10 @@ export * from "./sheets";
 // Skeletons: Skeleton and other fallback components
 export * from "./skeletons";
 
-export * from "./sliders";
+export * from "./controls/slider";
 
 // Switches: ToggleSwitch, Checkbox, Radio button and other controls
-export * from "./switches";
+export * from "./controls/switch";
 
 // Tabs/Navigation: StepPaginationTabs and other tab controls
 export * from "./tabs";

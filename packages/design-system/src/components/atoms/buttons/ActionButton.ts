@@ -3,27 +3,31 @@ import type {
   ButtonSize,
   ButtonTone,
   ButtonVariant,
-} from "@/adapters";
+} from "@/adapters/atoms/button";
 
 import type {
   IconName,
   IconStyle,
   IconWeight,
-  ButtonContentDirection,
-  ButtonStretch,
-} from "@/components/atoms";
+} from "@/components/atoms/icons/Icon";
+
+import type { ButtonProps } from "@/components/atoms/buttons/Button";
 
 import type { UIElementStylingModifiers } from "@/typings";
 
 export interface ActionButtonProps
   extends Partial<
-    UIElementStylingModifiers<ButtonVariant, ButtonSize, ButtonMode, ButtonTone>
-  > {
-  label?: string;
-  contentDirection?: ButtonContentDirection;
+      UIElementStylingModifiers<
+        ButtonVariant,
+        ButtonSize,
+        ButtonMode,
+        ButtonTone
+      >
+    >,
+    Partial<
+      Pick<ButtonProps, "contentDirection" | "label" | "isDisabled" | "stretch">
+    > {
   iconName?: IconName;
   iconStyle?: IconStyle;
   iconWeight?: IconWeight;
-  isDisabled?: boolean;
-  stretch?: ButtonStretch;
 }

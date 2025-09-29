@@ -26,8 +26,8 @@ export default () => {
       svgLoader({ defaultImport: "component" }),
       // Deign System: Tokens and SCSS generation
       ColorsGeneratorPlugin({
-        source: "./src/tokens/src/src/baseColors.json",
-        outDir: "./src/tokens/src/src/tokens/src/colors.json",
+        source: "./src/tokens/src/baseColors.json",
+        outDir: "./src/tokens/src/colors.json",
         step: 40,
       }),
       TokensParserPlugin({
@@ -60,6 +60,7 @@ export default () => {
         source: "./src/tokens/output",
         outDir: "./src/tokens/.figma",
       }),
+
       dts({
         tsconfigPath: path.resolve(__dirname, "tsconfig.types.json"),
         outDir: "dist",
@@ -73,7 +74,9 @@ export default () => {
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),
-        "@alma/tokens/": fileURLToPath(new URL("./src/tokens", import.meta.url)),
+        "@alma/tokens/": fileURLToPath(
+          new URL("./src/tokens", import.meta.url)
+        ),
       },
       dedupe: ["vue"],
     },

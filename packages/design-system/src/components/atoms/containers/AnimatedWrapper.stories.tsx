@@ -1,14 +1,9 @@
 import { computed, ref, type ComputedRef, type CSSProperties } from "vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-// import {
-//   booleanOptions,
-//   enumOptions,
-//   numberOptions,
-//   stringOptions,
-// } from "@/stories/utils";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
 
-import { StoryGrid, StorySlotCover } from "@/stories/components";
 import {
   Text,
   ActionButton,

@@ -2448,7 +2448,7 @@
         "md": {
           "root": {
             "width": {
-              "$value": 36,
+              "$value": 54,
               "$type": "number",
               "$unit": "px",
               "$meta": {
@@ -2506,7 +2506,7 @@
               }
             },
             "height": {
-              "$value": 16,
+              "$value": 20,
               "$type": "number",
               "$unit": "px",
               "$meta": {

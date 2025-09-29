@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
-import { abstractColorNames, abstractColors } from "@/adapters";
+import abstractColors from "@/tokens/output/colors.json";
 
 import {
   StoryGrid,
@@ -50,18 +50,17 @@ export const Variants: Story = {
             description={"color / lightness"}
           ></PageHeader>
           <StoryGrid columns={5}>
-            {abstractColorNames.map((name) => {
-              const color = abstractColors[name];
+            {Object.entries(abstractColors).map(([name, color], key) => {
               return (
                 <InfoBlock
-                  key={color}
+                  key={String(key)}
                   align={"center"}
                   orientation={"vertical"}
                 >
                   <ColorBlock
                     {...args}
-                    name={name}
-                    colorValue={color}
+                    name={String(name)}
+                    colorValue={String(color)}
                   ></ColorBlock>
                 </InfoBlock>
               );

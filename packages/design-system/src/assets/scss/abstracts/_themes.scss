@@ -829,6 +829,25 @@ $themes:(
   active: #dce1e5
 )
 )
+),
+  accent: (
+  primary: (
+  track: (
+  normal: #012291,
+  disabled: #495661,
+  active: #0130ce
+),
+  knob: (
+  normal: #f8f9fa,
+  disabled: #637584,
+  active: #f8f9fa
+),
+  label: (
+  normal: #dce1e5,
+  disabled: #6d8292,
+  active: #dce1e5
+)
+)
 )
 )
 ),
@@ -1896,6 +1915,25 @@ $themes:(
   normal: #909fac,
   disabled: #c0c9d0,
   active: #909fac
+),
+  knob: (
+  normal: #f8f9fa,
+  disabled: #dce1e5,
+  active: #f8f9fa
+),
+  label: (
+  normal: #2f383f,
+  disabled: #6d8292,
+  active: #2f383f
+)
+)
+),
+  accent: (
+  primary: (
+  track: (
+  normal: #6286fe,
+  disabled: #c0c9d0,
+  active: #3161fe
 ),
   knob: (
   normal: #f8f9fa,

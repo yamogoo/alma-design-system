@@ -4,7 +4,9 @@ import { booleanOptions, enumOptions } from "@/stories/utils";
 
 import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
 
-import { Slider, type SliderProps } from "@/components/atoms";
+import type { SliderProps } from "./Slider";
+import Slider from "./Slider.vue";
+
 import {
   sliderModes,
   sliderSizes,
@@ -13,7 +15,7 @@ import {
 } from "@/adapters";
 
 const meta = {
-  title: "Atoms/Sliders/Slider",
+  title: "Atoms/Controls/Slider/Slider",
   tags: ["autodocs"],
   component: Slider,
   parameters: {

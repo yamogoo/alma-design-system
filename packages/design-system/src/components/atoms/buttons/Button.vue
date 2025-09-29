@@ -13,9 +13,10 @@ import tokens from "@/tokens";
 
 import { useHover } from "@/composables/local";
 
-import type { IconSize } from "@/adapters";
+import type { IconSize } from "@/adapters/atoms/icon";
 
-import { Icon, type ButtonProps } from "@/components/atoms";
+import type { ButtonProps } from "./Button";
+import Icon from "@/components/atoms/icons/Icon.vue";
 
 const PREFIX = "button";
 

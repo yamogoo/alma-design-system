@@ -3,8 +3,9 @@ import type {
   ButtonSize,
   ButtonTone,
   ButtonVariant,
-  IconSize,
-} from "@/adapters";
+} from "@/adapters/atoms/button";
+
+import type { IconSize } from "@/adapters/atoms/icon";
 
 import type {
   UIElementAxisDirection,
@@ -12,7 +13,7 @@ import type {
   UIElementStylingModifiers,
 } from "@/typings";
 
-import type { IconName, IconStyle, IconWeight } from "@/components/atoms";
+import type { IconName, IconStyle, IconWeight } from "@/components/atoms/icons";
 
 export type ButtonStretch = UIElementStretch;
 

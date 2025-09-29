@@ -15,7 +15,7 @@ import {
   stringOptions,
 } from "@/stories/utils";
 
-import StoryGrid from "@/stories/components/grids/StoryGrid.vue";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
 
 import { type ResizeBoundingProps } from "./ResizeBounding";

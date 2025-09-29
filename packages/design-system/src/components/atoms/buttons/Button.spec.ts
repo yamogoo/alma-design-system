@@ -1,7 +1,8 @@
 import { mount, shallowMount, VueWrapper } from "@vue/test-utils";
 import g from "gsap";
 
-import { Button, type ButtonProps } from "@/components/atoms";
+import type { ButtonProps } from "@/components/atoms/buttons/Button";
+import Button from "@/components/atoms/buttons/Button.vue";
 
 const REQUIRED_PROPS: Pick<ButtonProps, "tone" | "mode"> = {
   mode: "neutral",

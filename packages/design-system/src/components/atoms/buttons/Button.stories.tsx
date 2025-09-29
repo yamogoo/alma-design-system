@@ -9,16 +9,20 @@ import {
   buttonSizes,
   buttonTones,
   buttonVariants,
-} from "@/adapters";
+} from "@/adapters/atoms/button";
 
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
+import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
+
 import {
-  Button,
-  type ButtonProps,
   iconNames,
   iconStyles,
   iconWeights,
-} from "@/components/atoms";
+} from "@/components/atoms/icons/Icon";
+
+import type { ButtonProps } from "./Button";
+import Button from "./Button.vue";
 
 const meta = {
   title: "Atoms/Buttons/Button",

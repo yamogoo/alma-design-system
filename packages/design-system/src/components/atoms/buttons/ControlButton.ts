@@ -3,14 +3,11 @@ import type {
   ButtonSize,
   ButtonTone,
   ButtonVariant,
-  IconSize,
-} from "@/adapters";
+} from "@/adapters/atoms/button";
 
-import type {
-  ButtonContentDirection,
-  ButtonStretch,
-  IconComponentProps,
-} from "@/components/atoms";
+import type { ButtonProps } from "@/components/atoms/buttons/Button";
+
+import type { IconComponentProps } from "@/components/atoms/icons/Icon";
 
 import type { UIElementStylingModifiers } from "@/typings";
 
@@ -23,10 +20,10 @@ export interface ControlButtonProps
         ButtonTone
       >
     >,
-    IconComponentProps {
-  label?: string;
-  iconSize?: IconSize;
-  contentDirection?: ButtonContentDirection;
-  isDisabled?: boolean;
-  stretch?: ButtonStretch;
-}
+    Partial<
+      Pick<
+        ButtonProps,
+        "contentDirection" | "label" | "isDisabled" | "stretch" | "iconSize"
+      >
+    >,
+    IconComponentProps {}

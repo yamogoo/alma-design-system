@@ -12,8 +12,13 @@ import {
   UIElementStretches,
 } from "@/typings";
 
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
-import { Group, Button, type GroupProps } from "@/components/atoms";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
+import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
+
+import type { GroupProps } from "./Group";
+import Group from "./Group.vue";
+import Button from "@/components/atoms/buttons/Button.vue";
 
 const meta = {
   title: "Atoms/Containers/Group",

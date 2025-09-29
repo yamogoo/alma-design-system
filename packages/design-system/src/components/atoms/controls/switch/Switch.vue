@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAttrs, useId, onMounted, watch, useTemplateRef } from "vue";
+import { useAttrs, useId, onMounted, watch, useTemplateRef, ref } from "vue";
 import g from "gsap";
 
 import { usePressed } from "@/composables/local";
@@ -40,12 +40,26 @@ const refKnob = useTemplateRef<HTMLDivElement | null>("knob");
 
 const { isPressed } = usePressed(refRoot);
 
+const localIsActive = ref(false);
+
+// Native
 const onChange = (e: Event): void => {
   if (props.isDisabled) return;
 
   const state = (e.target as HTMLInputElement).checked;
-  emit("update:is-active", state);
+
+  localIsActive.value = state;
+  emit("update:is-active", localIsActive.value);
 };
+
+// Custom
+watch(isPressed, (val) => {
+  if (!val && !props.useNative) {
+    localIsActive.value = !localIsActive.value;
+
+    emit("update:is-active", localIsActive.value);
+  }
+});
 
 const onKeyDown = (e: KeyboardEvent): void => {
   if (props.isDisabled) return;
@@ -54,10 +68,6 @@ const onKeyDown = (e: KeyboardEvent): void => {
     emit("update:is-active", !props.isActive);
   }
 };
-
-watch(isPressed, (val) => {
-  if (!val && !props.useNative) emit("update:is-active", !props.isActive);
-});
 
 /* * * Animations * * */
 
@@ -68,7 +78,7 @@ const onAnimateKnob = (duration = 0.25): void => {
   const offsetX = trackWidth - knobWidth;
 
   if (refKnob.value) {
-    const knobPosX = props.isActive ? offsetX : 0;
+    const knobPosX = localIsActive.value ? offsetX : 0;
 
     g.to(refKnob.value, {
       x: knobPosX,
@@ -78,9 +88,17 @@ const onAnimateKnob = (duration = 0.25): void => {
   }
 };
 
+watch(localIsActive, () => {
+  onAnimateKnob();
+});
+
 watch(
   () => props.isActive,
-  () => {
+  (newValue) => {
+    if (localIsActive.value !== newValue) {
+      localIsActive.value = newValue;
+    }
+
     onAnimateKnob();
   }
 );
@@ -102,7 +120,7 @@ onMounted(() => {
         `${PREFIX}_mode-${mode}`,
         `${PREFIX}_size-${size}`,
         `${PREFIX}_tone-${tone}`,
-        `${PREFIX}_state-${isActive ? 'active' : 'normal'}`,
+        `${PREFIX}_state-${localIsActive ? 'active' : 'normal'}`,
         { [`${PREFIX}_state-disabled`]: isDisabled },
       ]"
       role="switch"
