@@ -1,0 +1,13 @@
+{
+  "accent": {
+    "primary": {
+      "$value": "{themes.themes.dark.abstracts.label.accent.primary.$value}",
+      "$type": "color",
+      "$unit": "hex",
+      "$meta": {
+        "category": "border",
+        "role": "outline"
+      }
+    }
+  }
+}

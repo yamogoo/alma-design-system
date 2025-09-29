@@ -306,6 +306,17 @@ $prefix: slider;
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
+          &:focus {
+            outline: none;
+          }
+
+          &:focus-visible {
+            @include themify($themes) {
+              outline: $outline solid
+                themed("atoms.#{$prefix}.#{$mode}.#{$tone}.root.outline");
+            }
+          }
+
           &.#{$prefix}_state-normal {
             .#{$prefix}__track {
               @include themify($themes) {

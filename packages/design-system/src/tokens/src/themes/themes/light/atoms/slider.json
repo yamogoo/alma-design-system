@@ -1,6 +1,9 @@
 {
   "accent": {
     "primary": {
+      "root": {
+        "outline": "{themes.themes.light.abstracts.outline.accent.primary.$value}"
+      },
       "track": {
         "background": {
           "normal": {

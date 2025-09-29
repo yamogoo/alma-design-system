@@ -310,6 +310,19 @@
             }
           }
         },
+        "outline": {
+          "accent": {
+            "primary": {
+              "$value": "#6286FE",
+              "$type": "color",
+              "$unit": "hex",
+              "$meta": {
+                "category": "border",
+                "role": "outline"
+              }
+            }
+          }
+        },
         "selection": {
           "default": {
             "label": {
@@ -748,7 +761,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -862,7 +875,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -976,7 +989,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -1090,7 +1103,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -1206,7 +1219,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -1320,7 +1333,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -1434,7 +1447,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -1548,7 +1561,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -1664,7 +1677,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -1778,7 +1791,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -1892,7 +1905,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -2006,7 +2019,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -2122,7 +2135,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -2236,7 +2249,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -2350,7 +2363,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -2464,7 +2477,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -2777,7 +2790,7 @@
                     "$unit": "hex"
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -2862,7 +2875,7 @@
                     "$unit": "hex"
                   },
                   "outline": {
-                    "$value": "lighten(#101315, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -3212,6 +3225,9 @@
         "slider": {
           "accent": {
             "primary": {
+              "root": {
+                "outline": "#6286FE"
+              },
               "track": {
                 "background": {
                   "normal": {
@@ -3372,6 +3388,9 @@
         "switch": {
           "neutral": {
             "primary": {
+              "root": {
+                "outline": "#6286FE"
+              },
               "track": {
                 "normal": {
                   "$value": "#3E4A53",
@@ -3454,6 +3473,9 @@
           },
           "accent": {
             "primary": {
+              "root": {
+                "outline": "#6286FE"
+              },
               "track": {
                 "normal": {
                   "$value": "#012291",
@@ -4641,6 +4663,19 @@
             }
           }
         },
+        "outline": {
+          "accent": {
+            "primary": {
+              "$value": "#0130CE",
+              "$type": "color",
+              "$unit": "hex",
+              "$meta": {
+                "category": "border",
+                "role": "outline"
+              }
+            }
+          }
+        },
         "selection": {
           "default": {
             "label": {
@@ -5079,7 +5114,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -5173,7 +5208,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -5287,7 +5322,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -5401,7 +5436,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#6286FE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -5517,7 +5552,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -5631,7 +5666,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -5745,7 +5780,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -5859,7 +5894,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -5975,7 +6010,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6089,7 +6124,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6203,7 +6238,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6317,7 +6352,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6433,7 +6468,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6547,7 +6582,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6661,7 +6696,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6775,7 +6810,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -7112,7 +7147,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -7236,7 +7271,7 @@
                     }
                   },
                   "outline": {
-                    "$value": "lighten(#F8F9FA, .05)",
+                    "$value": "#0130CE",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -7605,6 +7640,9 @@
         "slider": {
           "accent": {
             "primary": {
+              "root": {
+                "outline": "#0130CE"
+              },
               "track": {
                 "background": {
                   "normal": {
@@ -7767,6 +7805,9 @@
         "switch": {
           "neutral": {
             "primary": {
+              "root": {
+                "outline": "#0130CE"
+              },
               "track": {
                 "normal": {
                   "$value": "#909FAC",
@@ -7849,6 +7890,9 @@
           },
           "accent": {
             "primary": {
+              "root": {
+                "outline": "#0130CE"
+              },
               "track": {
                 "normal": {
                   "$value": "#6286FE",

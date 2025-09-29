@@ -1,6 +1,9 @@
 {
   "neutral": {
     "primary": {
+      "root": {
+        "outline": "{themes.themes.dark.abstracts.outline.accent.primary.$value}"
+      },
       "track": {
         "normal": {
           "$value": "{colors.gray-725}",
@@ -83,6 +86,9 @@
   },
   "accent": {
     "primary": {
+      "root": {
+        "outline": "{themes.themes.dark.abstracts.outline.accent.primary.$value}"
+      },
       "track": {
         "normal": {
           "$value": "{colors.blue-725}",

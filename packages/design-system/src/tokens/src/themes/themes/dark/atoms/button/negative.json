@@ -69,7 +69,7 @@
           }
         },
         "outline": {
-          "$value": "{themes.themes.dark.abstracts.border.neutral.primary.$value}",
+          "$value": "{themes.themes.dark.abstracts.outline.accent.primary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -183,7 +183,7 @@
           }
         },
         "outline": {
-          "$value": "{themes.themes.dark.abstracts.border.neutral.primary.$value}",
+          "$value": "{themes.themes.dark.abstracts.outline.accent.primary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -297,7 +297,7 @@
           }
         },
         "outline": {
-          "$value": "{themes.themes.dark.abstracts.border.neutral.primary.$value}",
+          "$value": "{themes.themes.dark.abstracts.outline.accent.primary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -411,7 +411,7 @@
           }
         },
         "outline": {
-          "$value": "{themes.themes.dark.abstracts.border.neutral.primary.$value}",
+          "$value": "{themes.themes.dark.abstracts.outline.accent.primary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {

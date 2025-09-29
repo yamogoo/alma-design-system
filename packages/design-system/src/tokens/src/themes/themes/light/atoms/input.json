@@ -62,7 +62,7 @@
             }
           },
           "outline": {
-            "$value": "{themes.themes.light.abstracts.border.neutral.primary.$value}",
+            "$value": "{themes.themes.light.abstracts.outline.accent.primary.$value}",
             "$type": "color",
             "$unit": "hex",
             "$meta": {
@@ -186,7 +186,7 @@
             }
           },
           "outline": {
-            "$value": "{themes.themes.light.abstracts.border.neutral.primary.$value}",
+            "$value": "{themes.themes.light.abstracts.outline.accent.primary.$value}",
             "$type": "color",
             "$unit": "hex",
             "$meta": {

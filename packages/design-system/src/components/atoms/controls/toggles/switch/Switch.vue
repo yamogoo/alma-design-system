@@ -125,7 +125,7 @@ onMounted(() => {
       ]"
       role="switch"
       :aria-labelledby="`label-${id}`"
-      :aria-checked="isActive"
+      :aria-checked="localIsActive"
       :aria-disabled="isDisabled"
       tabindex="0"
       @keydown="onKeyDown"
@@ -191,6 +191,7 @@ $prefix: switch;
           $knob-border-radius: calc($knob-height / 2);
 
           gap: $gap;
+          border-radius: $height;
 
           .#{$prefix} {
             &__track {
@@ -219,6 +220,17 @@ $prefix: switch;
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
+          &:focus {
+            outline: none;
+          }
+
+          &:focus-visible {
+            @include themify($themes) {
+              outline: $outline solid
+                themed("atoms.#{$prefix}.#{$mode}.#{$tone}.root.outline");
+            }
+          }
+
           &:not(.#{$prefix}_state-disabled) {
             &.#{$prefix}_state {
               &-normal {

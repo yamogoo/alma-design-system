@@ -17,6 +17,7 @@ import {
 
 export default () => {
   return defineConfig({
+    cacheDir: "../../.vite",
     plugins: [
       vue(),
       vueJsx({
@@ -60,7 +61,6 @@ export default () => {
         source: "./src/tokens/output",
         outDir: "./src/tokens/.figma",
       }),
-
       dts({
         tsconfigPath: path.resolve(__dirname, "tsconfig.types.json"),
         outDir: "dist",

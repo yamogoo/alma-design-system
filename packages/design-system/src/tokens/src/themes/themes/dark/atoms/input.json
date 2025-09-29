@@ -41,7 +41,7 @@
             "$unit": "hex"
           },
           "outline": {
-            "$value": "{themes.themes.dark.abstracts.border.neutral.primary.$value}",
+            "$value": "{themes.themes.dark.abstracts.outline.accent.primary.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -126,7 +126,7 @@
             "$unit": "hex"
           },
           "outline": {
-            "$value": "{themes.themes.dark.abstracts.border.neutral.primary.$value}",
+            "$value": "{themes.themes.dark.abstracts.outline.accent.primary.$value}",
             "$type": "color",
             "$unit": "hex"
           }

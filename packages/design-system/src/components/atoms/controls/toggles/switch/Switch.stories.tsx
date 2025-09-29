@@ -15,7 +15,7 @@ import type { SwitchProps } from "./Switch";
 import Switch from "./Switch.vue";
 
 const meta = {
-  title: "Atoms/Controls/Switch/Switch",
+  title: "Atoms/Controls/Toggles/Switch/Switch",
   tags: ["autodocs"],
   component: Switch,
   parameters: {
