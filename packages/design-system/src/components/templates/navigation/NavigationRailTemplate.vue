@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { NavigationRailTemplateProps } from "@/components/templates";
 
+const PREFIX = "navigation-rail";
+
 withDefaults(defineProps<NavigationRailTemplateProps>(), {
   variant: "default",
   size: "lg",
@@ -11,23 +13,23 @@ withDefaults(defineProps<NavigationRailTemplateProps>(), {
 
 <template>
   <div
-    class="navigation-rail"
     :class="[
-      `navigation-rail_variant-${variant}`,
-      `navigation-rail_size-${size}`,
-      `navigation-rail_mode-${mode}`,
-      `navigation-rail_tone-${tone}`,
+      PREFIX,
+      `${PREFIX}-rail_variant-${variant}`,
+      `${PREFIX}-rail_size-${size}`,
+      `${PREFIX}-rail_mode-${mode}`,
+      `${PREFIX}-rail_tone-${tone}`,
     ]"
     role="navigation"
     aria-label="Navigation rail"
   >
-    <div v-if="$slots.header" class="navigation-rail__header">
+    <div v-if="$slots.header" :class="`${PREFIX}-rail__header`">
       <slot name="header"></slot>
     </div>
-    <div v-if="$slots.default" class="navigation-rail__body">
+    <div v-if="$slots.default" :class="`${PREFIX}-rail__body`">
       <slot></slot>
     </div>
-    <div v-if="$slots.footer" class="navigation-rail__footer">
+    <div v-if="$slots.footer" :class="`${PREFIX}-rail__footer`">
       <slot name="footer"></slot>
     </div>
   </div>
