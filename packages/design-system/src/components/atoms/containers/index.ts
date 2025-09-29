@@ -16,3 +16,6 @@ export { default as Page } from "./Page.vue";
 // Resizer: ResizeBounding and drag/resize utilities
 export * from "./ResizeBounding";
 export { default as ResizeBounding } from "./ResizeBounding.vue";
+
+export * from "./Surface";
+export { default as Surface } from "./Surface.vue";

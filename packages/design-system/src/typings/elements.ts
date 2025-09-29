@@ -72,6 +72,7 @@ export const UIElementBlockTags = [
   "header",
   "footer",
   "section",
+  "main",
 ] as const;
 export type UIElementBlockTag = (typeof UIElementBlockTags)[number];
 

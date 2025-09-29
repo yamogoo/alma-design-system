@@ -4,11 +4,19 @@ import { Components } from "@alma/design-system";
 
 <template>
   <div class="editor-view">
-    <div class="editor-view__content">
+    <Components.Atoms.Surface
+      class="editor-view__content"
+      :as="'div'"
+      bordered
+      :variant="'default'"
+      :size="'lg'"
+      :mode="'neutral'"
+      :tone="'primary'"
+    >
       <Components.Atoms.Text :variant="'body-2'">
         {{ "Notes" }}
       </Components.Atoms.Text>
-    </div>
+    </Components.Atoms.Surface>
   </div>
 </template>
 

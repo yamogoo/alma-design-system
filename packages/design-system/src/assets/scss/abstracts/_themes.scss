@@ -550,7 +550,7 @@ $themes:(
   normal: #eaedef
 ),
   border: (
-  normal: #111416
+  normal: #0f1214
 )
 ),
   label: (
@@ -820,6 +820,60 @@ $themes:(
   label: (
   normal: #dce1e5,
   active: #dce1e5
+)
+)
+)
+),
+  surface: (
+  neutral: (
+  primary: (
+  root: (
+  background: #101315,
+  border: #111416
+)
+),
+  secondary: (
+  root: (
+  background: #1a1f23,
+  border: #1b2125
+)
+),
+  tertiary: (
+  root: (
+  background: #2f383f,
+  border: #313b42
+)
+),
+  inversed: (
+  root: (
+  background: #eaedef,
+  border: #f7f9f9
+)
+)
+),
+  accent: (
+  primary: (
+  root: (
+  background: #013cfe,
+  border: #0e46fe
+)
+),
+  secondary: (
+  root: (
+  background: #0130ce,
+  border: #0132d8
+)
+),
+  tertiary: (
+  root: (
+  background: #01259d,
+  border: #0127a5
+)
+),
+  inversed: (
+  root: (
+  background: #92abff,
+  border: #a6baff
 )
 )
 )
@@ -1125,17 +1179,17 @@ $themes:(
   border: (
   neutral: (
   primary: #ffffff,
-  secondary: #e9ecef,
-  tertiary: #afbac4,
-  disabled: #cbd3d9,
-  inversed: #111416
+  secondary: #cfd6db,
+  tertiary: #9ba8b4,
+  disabled: #b5bfc7,
+  inversed: #0f1214
 ),
   accent: (
   primary: #0e46fe,
-  secondary: #0132d8,
-  tertiary: #0127a5,
-  disabled: #001b72,
-  inversed: #a6baff
+  secondary: #012ec4,
+  tertiary: #012395,
+  disabled: #001968,
+  inversed: #7e9cff
 )
 ),
   label: (
@@ -1652,7 +1706,7 @@ $themes:(
   normal: #dce1e5
 ),
   border: (
-  normal: #e9ecef
+  normal: #cfd6db
 )
 ),
   label: (
@@ -1668,7 +1722,7 @@ $themes:(
   normal: #101315
 ),
   border: (
-  normal: #111416
+  normal: #0f1214
 )
 ),
   label: (
@@ -1689,7 +1743,7 @@ $themes:(
 ),
   secondary: (
   root: (
-  border: #e9ecef
+  border: #cfd6db
 )
 )
 )
@@ -1705,13 +1759,13 @@ $themes:(
   secondary: (
   root: (
   background: #dce1e5,
-  divider: #e9ecef
+  divider: #cfd6db
 )
 ),
   ghost: (
   root: (
   background: #f8f9fa00,
-  divider: #e9ecef
+  divider: #cfd6db
 )
 )
 ),
@@ -1725,13 +1779,13 @@ $themes:(
   secondary: (
   root: (
   background: #0130ce,
-  divider: #0132d8
+  divider: #012ec4
 )
 ),
   ghost: (
   root: (
   background: #013cfe00,
-  divider: #e9ecef
+  divider: #cfd6db
 )
 )
 )
@@ -1938,6 +1992,60 @@ $themes:(
   label: (
   normal: #2f383f,
   active: #2f383f
+)
+)
+)
+),
+  surface: (
+  neutral: (
+  primary: (
+  root: (
+  background: #f8f9fa,
+  border: #ffffff
+)
+),
+  secondary: (
+  root: (
+  background: #dce1e5,
+  border: #cfd6db
+)
+),
+  tertiary: (
+  root: (
+  background: #a5b1bc,
+  border: #9ba8b4
+)
+),
+  inversed: (
+  root: (
+  background: #101315,
+  border: #0f1214
+)
+)
+),
+  accent: (
+  primary: (
+  root: (
+  background: #013cfe,
+  border: #0e46fe
+)
+),
+  secondary: (
+  root: (
+  background: #0130ce,
+  border: #012ec4
+)
+),
+  tertiary: (
+  root: (
+  background: #01259d,
+  border: #012395
+)
+),
+  inversed: (
+  root: (
+  background: #92abff,
+  border: #7e9cff
 )
 )
 )

@@ -2403,6 +2403,42 @@
         }
       }
     },
+    "surface": {
+      "default": {
+        "lg": {
+          "root": {
+            "borderRadius": {
+              "$value": 20
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px",
+              "$meta": {
+                "description": "Surface border width for large size",
+                "category": "surface"
+              }
+            }
+          }
+        },
+        "md": {
+          "root": {
+            "borderRadius": {
+              "$value": 16
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px",
+              "$meta": {
+                "description": "Surface border width for medium size",
+                "category": "surface"
+              }
+            }
+          }
+        }
+      }
+    },
     "switch": {
       "default": {
         "lg": {

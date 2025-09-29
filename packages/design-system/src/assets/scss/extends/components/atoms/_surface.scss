@@ -1,0 +1,11 @@
+@use "../../../abstracts/themes" as *;
+@use "../../../app.core.scss" as *;
+
+@mixin defineSurfaceThemes($prefix: "", $mode: "", $tone: "") {
+  @include themify($themes) {
+    background-color: themed(
+      "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background"
+    );
+    border-color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.root.border");
+  }
+}

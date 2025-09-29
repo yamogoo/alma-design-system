@@ -2583,7 +2583,7 @@
                 },
                 "border": {
                   "normal": {
-                    "$value": "#111416",
+                    "$value": "#0f1214",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -3399,6 +3399,172 @@
                   "$unit": "hex",
                   "$meta": {
                     "category": "text"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "surface": {
+          "neutral": {
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#101315",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#111416",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#1a1f23",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#1b2125",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "tertiary": {
+              "root": {
+                "background": {
+                  "$value": "#2f383f",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#313b42",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "inversed": {
+              "root": {
+                "background": {
+                  "$value": "#eaedef",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#f7f9f9",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            }
+          },
+          "accent": {
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#013cfe",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#0e46fe",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#0130ce",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#0132d8",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "tertiary": {
+              "root": {
+                "background": {
+                  "$value": "#01259d",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#0127a5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "inversed": {
+              "root": {
+                "background": {
+                  "$value": "#92abff",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#a6baff",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
                   }
                 }
               }
@@ -4387,7 +4553,7 @@
               }
             },
             "secondary": {
-              "$value": "#e9ecef",
+              "$value": "#cfd6db",
               "$type": "color",
               "$unit": "hex",
               "$meta": {
@@ -4396,7 +4562,7 @@
               }
             },
             "tertiary": {
-              "$value": "#afbac4",
+              "$value": "#9ba8b4",
               "$type": "color",
               "$unit": "hex",
               "$meta": {
@@ -4405,7 +4571,7 @@
               }
             },
             "disabled": {
-              "$value": "#cbd3d9",
+              "$value": "#b5bfc7",
               "$type": "color",
               "$unit": "hex",
               "$meta": {
@@ -4414,7 +4580,7 @@
               }
             },
             "inversed": {
-              "$value": "#111416",
+              "$value": "#0f1214",
               "$type": "color",
               "$unit": "hex",
               "$meta": {
@@ -4434,7 +4600,7 @@
               }
             },
             "secondary": {
-              "$value": "#0132d8",
+              "$value": "#012ec4",
               "$type": "color",
               "$unit": "hex",
               "$meta": {
@@ -4443,7 +4609,7 @@
               }
             },
             "tertiary": {
-              "$value": "#0127a5",
+              "$value": "#012395",
               "$type": "color",
               "$unit": "hex",
               "$meta": {
@@ -4452,7 +4618,7 @@
               }
             },
             "disabled": {
-              "$value": "#001b72",
+              "$value": "#001968",
               "$type": "color",
               "$unit": "hex",
               "$meta": {
@@ -4461,7 +4627,7 @@
               }
             },
             "inversed": {
-              "$value": "#a6baff",
+              "$value": "#7e9cff",
               "$type": "color",
               "$unit": "hex",
               "$meta": {
@@ -6892,7 +7058,7 @@
                 },
                 "border": {
                   "normal": {
-                    "$value": "#e9ecef",
+                    "$value": "#cfd6db",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6936,7 +7102,7 @@
                 },
                 "border": {
                   "normal": {
-                    "$value": "#111416",
+                    "$value": "#0f1214",
                     "$type": "color",
                     "$unit": "hex",
                     "$meta": {
@@ -6986,7 +7152,7 @@
             "secondary": {
               "root": {
                 "border": {
-                  "$value": "#e9ecef",
+                  "$value": "#cfd6db",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -7031,7 +7197,7 @@
                   }
                 },
                 "divider": {
-                  "$value": "#e9ecef",
+                  "$value": "#cfd6db",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -7051,7 +7217,7 @@
                   }
                 },
                 "divider": {
-                  "$value": "#e9ecef",
+                  "$value": "#cfd6db",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -7093,7 +7259,7 @@
                   }
                 },
                 "divider": {
-                  "$value": "#0132d8",
+                  "$value": "#012ec4",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -7112,7 +7278,7 @@
                   }
                 },
                 "divider": {
-                  "$value": "#e9ecef",
+                  "$value": "#cfd6db",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -7836,6 +8002,172 @@
                   "$meta": {
                     "category": "text",
                     "description": "Active label color for step pagination tab"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "surface": {
+          "neutral": {
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#f8f9fa",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#ffffff",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#dce1e5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#cfd6db",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "tertiary": {
+              "root": {
+                "background": {
+                  "$value": "#a5b1bc",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#9ba8b4",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "inversed": {
+              "root": {
+                "background": {
+                  "$value": "#101315",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#0f1214",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            }
+          },
+          "accent": {
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#013cfe",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#0e46fe",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#0130ce",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#012ec4",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "tertiary": {
+              "root": {
+                "background": {
+                  "$value": "#01259d",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#012395",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                }
+              }
+            },
+            "inversed": {
+              "root": {
+                "background": {
+                  "$value": "#92abff",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
+                  }
+                },
+                "border": {
+                  "$value": "#7e9cff",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "group"
                   }
                 }
               }

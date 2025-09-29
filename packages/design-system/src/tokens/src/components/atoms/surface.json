@@ -1,0 +1,36 @@
+{
+  "default": {
+    "lg": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.lg.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "description": "Surface border width for large size",
+            "category": "surface"
+          }
+        }
+      }
+    },
+    "md": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.md.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "description": "Surface border width for medium size",
+            "category": "surface"
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,7 +13,15 @@ const onResetValue = (): void => {
 </script>
 
 <template>
-  <div class="explorer">
+  <Components.Atoms.Surface
+    class="explorer"
+    :as="'div'"
+    bordered
+    :variant="'default'"
+    :size="'lg'"
+    :mode="'neutral'"
+    :tone="'primary'"
+  >
     <Components.Atoms.SearchInput
       v-model.trim="searchingPhrase"
       placeholder="Search"
@@ -21,7 +29,7 @@ const onResetValue = (): void => {
       @reset:value="onResetValue"
     ></Components.Atoms.SearchInput>
     <FilesNavigator></FilesNavigator>
-  </div>
+  </Components.Atoms.Surface>
 </template>
 
 <style lang="scss">

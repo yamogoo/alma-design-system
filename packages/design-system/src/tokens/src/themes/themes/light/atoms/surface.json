@@ -1,0 +1,166 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.themes.light.abstracts.border.neutral.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.secondary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.themes.light.abstracts.border.neutral.secondary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "tertiary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.tertiary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.themes.light.abstracts.border.neutral.tertiary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "inversed": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.neutral.inversed.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.themes.light.abstracts.border.neutral.inversed.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    }
+  },
+  "accent": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.accent.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.themes.light.abstracts.border.accent.primary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.accent.secondary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.themes.light.abstracts.border.accent.secondary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "tertiary": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.accent.tertiary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.themes.light.abstracts.border.accent.tertiary.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "inversed": {
+      "root": {
+        "background": {
+          "$value": "{themes.themes.light.abstracts.surface.accent.inversed.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.themes.light.abstracts.border.accent.inversed.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    }
+  }
+}

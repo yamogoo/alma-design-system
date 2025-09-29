@@ -10,7 +10,7 @@
       }
     },
     "secondary": {
-      "$value": "lighten({themes.themes.light.abstracts.surface.neutral.secondary.$value}, .05)",
+      "$value": "darken({themes.themes.light.abstracts.surface.neutral.secondary.$value}, .05)",
       "$type": "color",
       "$unit": "hex",
       "$meta": {
@@ -19,7 +19,7 @@
       }
     },
     "tertiary": {
-      "$value": "lighten({themes.themes.light.abstracts.surface.neutral.tertiary.$value}, .05)",
+      "$value": "darken({themes.themes.light.abstracts.surface.neutral.tertiary.$value}, .05)",
       "$type": "color",
       "$unit": "hex",
       "$meta": {
@@ -28,7 +28,7 @@
       }
     },
     "disabled": {
-      "$value": "lighten({themes.themes.light.abstracts.surface.neutral.disabled.$value}, .05)",
+      "$value": "darken({themes.themes.light.abstracts.surface.neutral.disabled.$value}, .05)",
       "$type": "color",
       "$unit": "hex",
       "$meta": {
@@ -37,7 +37,7 @@
       }
     },
     "inversed": {
-      "$value": "lighten({themes.themes.light.abstracts.surface.neutral.inversed.$value}, .05)",
+      "$value": "darken({themes.themes.light.abstracts.surface.neutral.inversed.$value}, .05)",
       "$type": "color",
       "$unit": "hex",
       "$meta": {
@@ -57,7 +57,7 @@
       }
     },
     "secondary": {
-      "$value": "lighten({themes.themes.light.abstracts.surface.accent.secondary.$value}, .05)",
+      "$value": "darken({themes.themes.light.abstracts.surface.accent.secondary.$value}, .05)",
       "$type": "color",
       "$unit": "hex",
       "$meta": {
@@ -66,7 +66,7 @@
       }
     },
     "tertiary": {
-      "$value": "lighten({themes.themes.light.abstracts.surface.accent.tertiary.$value}, .05)",
+      "$value": "darken({themes.themes.light.abstracts.surface.accent.tertiary.$value}, .05)",
       "$type": "color",
       "$unit": "hex",
       "$meta": {
@@ -75,7 +75,7 @@
       }
     },
     "disabled": {
-      "$value": "lighten({themes.themes.light.abstracts.surface.accent.disabled.$value}, .05)",
+      "$value": "darken({themes.themes.light.abstracts.surface.accent.disabled.$value}, .05)",
       "$type": "color",
       "$unit": "hex",
       "$meta": {
@@ -84,7 +84,7 @@
       }
     },
     "inversed": {
-      "$value": "lighten({themes.themes.light.abstracts.surface.accent.inversed.$value}, .05)",
+      "$value": "darken({themes.themes.light.abstracts.surface.accent.inversed.$value}, .05)",
       "$type": "color",
       "$unit": "hex",
       "$meta": {

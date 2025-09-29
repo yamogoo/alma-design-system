@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { GroupProps } from "@/components/atoms";
 
+const PREFIX = "group";
+
 const props = withDefaults(defineProps<GroupProps>(), {
   variant: "default",
   as: "div",
@@ -17,21 +19,21 @@ const componentTag = props.as;
 <template>
   <component
     :is="componentTag"
-    class="group"
     :class="[
-      `group_variant-${variant}`,
-      `group_size-${size}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
       {
-        [`group_mode-${mode}`]: !!mode,
-        [`group_tone-${tone}`]: !!tone,
-        [`group_direction-${direction}`]: !!direction,
-        [`group_orientation-${orientation}`]: !!orientation,
-        [`group_align-vertical-${verticalAlignment}`]: !!verticalAlignment,
-        [`group_align-horizontal-${horizontalAlignment}`]:
+        [`${PREFIX}_mode-${mode}`]: !!mode,
+        [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${PREFIX}_direction-${direction}`]: !!direction,
+        [`${PREFIX}_orientation-${orientation}`]: !!orientation,
+        [`${PREFIX}_align-vertical-${verticalAlignment}`]: !!verticalAlignment,
+        [`${PREFIX}_align-horizontal-${horizontalAlignment}`]:
           !!horizontalAlignment,
-        [`group_stretch-${stretch}`]: !!stretch,
-        group_wrap: wrap,
-        group_divider: divider,
+        [`${PREFIX}_stretch-${stretch}`]: !!stretch,
+        [`${PREFIX}_wrap`]: wrap,
+        [`${PREFIX}_divider`]: divider,
       },
     ]"
     :role="role"

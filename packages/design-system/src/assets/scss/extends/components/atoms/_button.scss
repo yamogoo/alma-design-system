@@ -41,7 +41,7 @@
   }
 }
 
-@mixin defineThemes(
+@mixin defineButtonThemes(
   $prefix: "button",
   $map: get($themes, "light.atoms.button")
 ) {
@@ -147,5 +147,5 @@
 // Usage %button_tone-#{$tone}_mode-#{$mode}
 // For example: %button_tone-acccent_mode-primary
 %button {
-  @include defineThemes();
+  @include defineButtonThemes();
 }

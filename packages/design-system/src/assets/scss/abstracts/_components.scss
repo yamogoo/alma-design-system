@@ -626,6 +626,22 @@ $atoms:(
 )
 )
 ),
+  surface: (
+  default: (
+  lg: (
+  root: (
+  border-radius: 20px,
+  border-width: 1px
+)
+),
+  md: (
+  root: (
+  border-radius: 16px,
+  border-width: 1px
+)
+)
+)
+),
   switch: (
   default: (
   lg: (
