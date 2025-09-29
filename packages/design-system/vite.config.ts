@@ -4,9 +4,9 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import { fileURLToPath, URL } from "node:url";
 
-import dts from "vite-plugin-dts";
-
 import svgLoader from "vite-svg-loader";
+import lightningcss from "vite-plugin-lightningcss";
+import dts from "vite-plugin-dts";
 
 import {
   ColorsGeneratorPlugin,
@@ -60,6 +60,11 @@ export default () => {
       VitePluginFigmaTokensParser({
         source: "./src/tokens/output",
         outDir: "./src/tokens/.figma",
+      }),
+      lightningcss({
+        browserslist: [">0.2%", "not dead"],
+        drafts: { nesting: true },
+        minify: true,
       }),
       dts({
         tsconfigPath: path.resolve(__dirname, "tsconfig.types.json"),

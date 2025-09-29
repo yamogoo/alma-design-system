@@ -30,7 +30,7 @@
       "closeButton": {
         "tone": {
           "$value": "neutral",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"
@@ -38,7 +38,7 @@
         },
         "mode": {
           "$value": "secondary",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"
@@ -76,7 +76,7 @@
       "closeButton": {
         "tone": {
           "$value": "neutral",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"
@@ -84,7 +84,7 @@
         },
         "mode": {
           "$value": "primary",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"
@@ -124,7 +124,7 @@
       "closeButton": {
         "tone": {
           "$value": "neutral",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"
@@ -132,7 +132,7 @@
         },
         "mode": {
           "$value": "secondary",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"
@@ -144,7 +144,7 @@
       "root": {
         "background": {
           "$value": "{themes.themes.dark.abstracts.surface.accent.primary.$value}",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"
@@ -170,7 +170,7 @@
       "closeButton": {
         "tone": {
           "$value": "neutral",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"
@@ -178,7 +178,7 @@
         },
         "mode": {
           "$value": "primary",
-          "$type": "color",
+          "$type": "string",
           "$unit": "",
           "$meta": {
             "category": "snackbar"

@@ -4,18 +4,28 @@
       "root": {
         "background": {
           "normal": {
-            "$value": "{themes.themes.dark.abstracts.surface.neutral.inversed.$value}",
+            "$value": "{themes.themes.dark.abstracts.surface.neutral.secondary.$value}",
             "$type": "color",
             "$unit": "hex",
             "$meta": {
               "category": "tooltip"
+            }
+          },
+          "border": {
+            "normal": {
+              "$value": "{themes.themes.light.abstracts.border.neutral.secondary.$value}",
+              "$type": "color",
+              "$unit": "hex",
+              "$meta": {
+                "category": "tooltip"
+              }
             }
           }
         }
       },
       "label": {
         "normal": {
-          "$value": "{themes.themes.dark.abstracts.label.neutral.inversed.$value}",
+          "$value": "{themes.themes.dark.abstracts.label.neutral.secondary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -25,7 +35,7 @@
       },
       "icon": {
         "normal": {
-          "$value": "{themes.themes.dark.abstracts.label.neutral.inversed.$value}",
+          "$value": "{themes.themes.dark.abstracts.label.neutral.secondary.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -38,7 +48,17 @@
       "root": {
         "background": {
           "normal": {
-            "$value": "{colors.gray-850}",
+            "$value": "{themes.themes.dark.abstracts.surface.neutral.inversed.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "tooltip"
+            }
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "{themes.themes.light.abstracts.border.neutral.inversed.$value}",
             "$type": "color",
             "$unit": "hex",
             "$meta": {
@@ -49,7 +69,7 @@
       },
       "label": {
         "normal": {
-          "$value": "{colors.gray-500}",
+          "$value": "{themes.themes.dark.abstracts.label.neutral.inversed.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -59,7 +79,7 @@
       },
       "icon": {
         "normal": {
-          "$value": "{colors.gray-550}",
+          "$value": "{themes.themes.dark.abstracts.label.neutral.inversed.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {

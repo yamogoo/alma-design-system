@@ -2,7 +2,7 @@
 
 import fs from 'node:fs/promises';
 import nodePath from 'node:path';
-import { readFileSync } from 'node:fs';
+import { readFileSync, statSync } from 'node:fs';
 import * as _ from 'lodash-es';
 
 import Color from 'color';
@@ -76,11 +76,15 @@ export interface TokensParserOptions {
   mapOptions?: Partial<ParseValueOptions>;
   varsOptions?: Partial<ParseValueOptions>;
   parseOptions?: Partial<ParseValueOptions>;
-  useFileStructureLookup?: boolean;
+  useFileStructureLookup?: boolean; // enable folder-structure lookup for token refs
   useReflectOriginalStructure?: boolean;
   themesDir?: string;
   themesOutFile?: string; // scss
   themesIncludeRequired?: boolean;
+  /** Enable verbose logs (warnings/info) */
+  verbose?: boolean;
+  /** CSS vars conflict resolution: first|last (default: last) */
+  cssVarsPrefer?: 'first' | 'last';
 }
 
 /* * * Abstract Parser * * */
@@ -99,7 +103,8 @@ abstract class Parser {
 
 export class SCSSParser extends Parser {
   private tokensParser: TokensParser;
-  private collectedCssVars: string[] = [];
+  // Map: varName -> value for deduplication and predictable overrides
+  private collectedCssVars: Map<string, string> = new Map();
 
   constructor(tokensParser: TokensParser) {
     super();
@@ -108,7 +113,7 @@ export class SCSSParser extends Parser {
 
   // PUBLIC: clear accumulated CSS variables (to avoid duplication between files)
   public clearCssVars() {
-    this.collectedCssVars = [];
+    this.collectedCssVars.clear();
   }
 
   private normalizeValue(value: any, opts: ParseValueOptions): string {
@@ -123,7 +128,7 @@ export class SCSSParser extends Parser {
     }
 
     if (typeof value === 'string') {
-      // try to recognize a color/color expression
+      // try to recognize a color/color expression and format to requested unit
       const colorMaybe = this.tokensParser.tryParseColor(value, opts.unit);
       if (colorMaybe) return colorMaybe;
 
@@ -174,15 +179,15 @@ export class SCSSParser extends Parser {
     return list.map((v) => this.normalizeValue(v, opts)).join(' ');
   }
 
-  private serializeMeta(meta: any, opts: ParseValueOptions, path: string[] = []): string {
+  private serializeMeta(meta: any, _opts: ParseValueOptions, path: string[] = []): string {
     if (!meta) return '()';
 
     const entries = Object.entries(meta).map(([k, v]) => {
       if (_.isPlainObject(v)) {
-        return `${k}: ${this.serializeMeta(v, opts, [...path, k])}`;
+        return `${k}: ${this.serializeMeta(v, _opts, [...path, k])}`;
       } else if (_.isArray(v)) {
         const arr = v
-          .map((i) => (_.isPlainObject(i) ? this.serializeMeta(i, opts, [...path, k]) : `"${i}"`))
+          .map((i) => (_.isPlainObject(i) ? this.serializeMeta(i, _opts, [...path, k]) : `"${i}"`))
           .join(', ');
         return `${k}: (\n    ${arr}\n  )`;
       } else {
@@ -211,7 +216,7 @@ export class SCSSParser extends Parser {
       '$type',
       'unit',
       '$unit',
-      'description', // no alternative
+      'description',
       'meta',
       '$meta',
     ].some((k) => keys.includes(k));
@@ -222,8 +227,7 @@ export class SCSSParser extends Parser {
       const fileName = opts?.fileName ?? '';
 
       if (fileName) {
-        candidates.push(fileName);
-        candidates.push(`${fileName}.json`);
+        candidates.push(fileName, `${fileName}.json`);
       }
 
       const buildRoot = this.tokensParser.opts.build;
@@ -240,8 +244,7 @@ export class SCSSParser extends Parser {
         } catch {}
       }
 
-      const pathsArray = this.tokensParser.opts.paths ?? [];
-      for (const p of pathsArray) {
+      for (const p of this.tokensParser.opts.paths ?? []) {
         if (fileName) {
           try {
             candidates.push(nodePath.resolve(p, `${fileName}.json`));
@@ -260,25 +263,23 @@ export class SCSSParser extends Parser {
         return candidates.some((c) => c.startsWith(excluded));
       }
 
-      return candidates.some((c) => {
-        return c === excluded || c.endsWith(`/${excluded}`) || excluded.endsWith(`/${c}`);
-      });
+      return candidates.some(
+        (c) => c === excluded || c.endsWith(`/${excluded}`) || excluded.endsWith(`/${c}`),
+      );
     };
 
     if (hasTokenFields) {
       const tokenObj = obj as IMap;
 
-      // --- check exclude list ---
+      // --- check exclude list for CSS variables ---
       const excludeList = this.tokensParser.opts?.mapOptions?.excludeCSSVariables ?? [];
       const candidates = buildExcludeCandidates();
 
       let isExcluded = false;
-      if (excludeList && excludeList.length > 0) {
-        for (const excludedRaw of excludeList) {
-          if (matchesExcluded(excludedRaw, candidates)) {
-            isExcluded = true;
-            break;
-          }
+      for (const excludedRaw of excludeList) {
+        if (matchesExcluded(excludedRaw, candidates)) {
+          isExcluded = true;
+          break;
         }
       }
 
@@ -310,7 +311,7 @@ export class SCSSParser extends Parser {
           ? explicitVarName
           : pathPart || (filePart ? `${filePart}` : '');
 
-        // --- includeFileNameToCSSVariables ---
+        // include file name into var if requested
         if (
           !explicitVarName &&
           this.tokensParser.opts?.mapOptions?.includeFileNameToCSSVariables &&
@@ -345,11 +346,23 @@ export class SCSSParser extends Parser {
         }
 
         if (cssValue !== undefined && cssValue !== 'undefined') {
-          this.collectedCssVars.push(`  ${varName}: ${cssValue};`);
+          const prev = this.collectedCssVars.get(varName);
+          if (prev !== undefined && prev !== cssValue && this.tokensParser.opts.verbose) {
+            console.warn(
+              `⚠️ CSS var conflict for "${varName}": "${prev}" -> "${cssValue}" (using ${
+                (this.tokensParser.opts.cssVarsPrefer ?? 'last') === 'last' ? 'last' : 'first'
+              })`,
+            );
+          }
+
+          const prefer = this.tokensParser.opts.cssVarsPrefer ?? 'last';
+          if (prev === undefined || prefer === 'last') {
+            this.collectedCssVars.set(varName, cssValue);
+          }
         }
       }
 
-      // --- reflect original structure into SCSS map ---
+      // --- reflect original structure back to SCSS map ---
       if (useReflect) {
         const parts: string[] = [];
 
@@ -372,26 +385,23 @@ export class SCSSParser extends Parser {
           }
         }
 
-        // type / unit always treated as scalar fields (if present)
+        // type / unit are scalar fields (if present)
         if (typeVal !== undefined) {
           let parsed = this.normalizeValue(typeVal, opts);
-          parsed = `"${parsed}"`;
-          parts.push(`type: ${parsed}`);
+          parts.push(`type: "${parsed}"`);
         }
         if (unitVal !== undefined) {
           let parsed = this.normalizeValue(unitVal, opts);
-          parsed = `"${parsed}"`;
-          parts.push(`unit: ${parsed}`);
+          parts.push(`unit: "${parsed}"`);
         }
 
-        // description: include only if it's NOT a nested object.
+        // description: include only if it is NOT an object
         if (
           (tokenObj as any).description !== undefined &&
           !_.isPlainObject((tokenObj as any).description)
         ) {
           let parsed = this.normalizeValue((tokenObj as any).description, opts);
-          parsed = `"${parsed}"`;
-          parts.push(`description: ${parsed}`);
+          parts.push(`description: "${parsed}"`);
         }
 
         // meta: serialize explicitly
@@ -400,7 +410,7 @@ export class SCSSParser extends Parser {
           parts.push(`meta: ${serializedMeta}`);
         }
 
-        // extra keys: exclude tokens fields (both regular and $-алиасы)
+        // extra keys: exclude token fields (both regular and $-aliases)
         const excluded = new Set([
           'value',
           'type',
@@ -449,7 +459,7 @@ export class SCSSParser extends Parser {
             nestedParts.push(`${kebabKey}: ${value}`);
           }
 
-          // include meta (but without meta.description) if present (either meta or $meta)
+          // include meta (without meta.description) if present (either meta or $meta)
           const rawMeta = this.tokensParser.getTokenField(map, 'meta');
           if (rawMeta !== undefined && !subKeys.includes('meta')) {
             const serializedMeta = this.serializeMeta(rawMeta, opts, [...path, 'meta']);
@@ -485,7 +495,7 @@ export class SCSSParser extends Parser {
       if (!this.tokensParser.isKeyValidated(k)) continue;
       const kebabKey = opts.convertCase ? this.tokensParser.toKebabCase(k) : k;
 
-      // --- FIX: remove description ONLY inside meta ---
+      // remove description ONLY inside meta
       if (k === 'description' && path[path.length - 1] === 'meta') {
         continue;
       }
@@ -497,8 +507,11 @@ export class SCSSParser extends Parser {
   }
 
   public getCssVarsBlock(): string {
-    if (this.collectedCssVars.length === 0) return '';
-    return `\n:root {\n${this.collectedCssVars.join('\n')}\n}\n`;
+    if (this.collectedCssVars.size === 0) return '';
+    const lines = [...this.collectedCssVars.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([name, value]) => `  ${name}: ${value};`);
+    return `\n:root {\n${lines.join('\n')}\n}\n`;
   }
 }
 
@@ -515,6 +528,8 @@ export class TokensParser {
   constructor(opts: TokensParserOptions) {
     this.opts = {
       ...opts,
+      verbose: opts.verbose ?? false,
+      cssVarsPrefer: opts.cssVarsPrefer ?? 'last',
 
       mapOptions: {
         convertCase: opts.mapOptions?.convertCase ?? false,
@@ -554,7 +569,7 @@ export class TokensParser {
     };
   }
 
-  /* --- Unified accessors for alt keys --- */
+  /* * * Unified accessors for alt keys * * */
   public hasTokenField(obj: any, name: 'value' | 'type' | 'unit' | 'meta'): boolean {
     return (
       Object.prototype.hasOwnProperty.call(obj, name) ||
@@ -579,7 +594,7 @@ export class TokensParser {
 
     await this.generateEntryFile();
 
-    // --- THEMES ---
+    /* * * THEMES * * */
     if (this.opts.themesDir && this.opts.themesOutFile) {
       const includeRequired = this.opts.themesIncludeRequired ?? false;
 
@@ -634,7 +649,7 @@ export class TokensParser {
     return opts?.convertPxToRem ? this.valuePxToRem(value) : `${value}px`;
   }
 
-  /** ---------- Color helpers ---------- */
+  /* * * Color helpers * * */
 
   private normalizeUnit(u?: string): string {
     const unit = (u ?? '').trim().toLowerCase();
@@ -716,22 +731,26 @@ export class TokensParser {
   }
 
   /**
-   * Expression support:
-   * rgba(color, a), lighten(color, x), darken(color, x), saturate(color, x), desaturate(color, x)
-   * color can be: a color string, {link}, or a nested function.
+   * Color expression evaluator.
+   * Supports: rgba(color, a), lighten(color, x), darken(color, x), saturate(color, x), desaturate(color, x)
+   * `color` can be: a color string, a {link}, or a nested function.
+   * IMPORTANT: returns a Color object (not formatted). Formatting happens in tryParseColor().
    */
-  private evaluateColorExpression(expr: string, unitForFormat?: string): string | null {
+  private evaluateColorExpression(expr: string): ReturnType<typeof Color> | null {
     let s = expr.trim();
 
+    // Plain color?
     const plain = this.tryToColor(s);
-    if (plain) return this.formatColor(plain, unitForFormat);
+    if (plain) return plain;
 
+    // Function call?
     const fnMatch = /^([a-zA-Z]+)\((.*)\)$/.exec(s);
     if (!fnMatch) return null;
 
     const fn = fnMatch[1].toLowerCase();
     const argsStr = fnMatch[2];
 
+    // Split args by commas while respecting nested parentheses
     const args: string[] = [];
     let buf = '';
     let depth = 0;
@@ -759,11 +778,8 @@ export class TokensParser {
     const resolveMaybeFunction = (arg: string): ReturnType<typeof Color> | null => {
       const direct = resolveColorArg(arg);
       if (direct) return direct;
-      const inner = this.evaluateColorExpression(arg, unitForFormat);
-      if (inner) {
-        const c = this.tryToColor(inner);
-        if (c) return c;
-      }
+      const inner = this.evaluateColorExpression(arg);
+      if (inner) return inner;
       return null;
     };
 
@@ -814,40 +830,46 @@ export class TokensParser {
         return null;
     }
 
-    return out ? this.formatColor(out, unitForFormat) : null;
+    return out;
   }
 
   /**
-   * Public helper: evaluate a string as a color/color expression and return it in the required format.
-   * If not a color, return null.
+   * Public helper: evaluate a string as a color/color expression and return it
+   * formatted according to `unitForFormat`. If it's not a color, return null.
    */
   public tryParseColor(value: string, unitForFormat?: string): string | null {
     const raw = value.trim();
 
+    // 1) Resolve a leading single {ref}, if any
     const resolved = raw.startsWith('{')
       ? String(this.parseNestedValue(raw, this.defaultParseOptions))
       : raw;
 
+    // 2) Try parsing as a direct color
     const direct = this.tryToColor(resolved);
     if (direct) return this.formatColor(direct, unitForFormat);
 
-    const expr = this.evaluateColorExpression(resolved, unitForFormat);
-    if (expr) return expr;
+    // 3) Try parsing as a color expression (returns Color), then format
+    const exprColor = this.evaluateColorExpression(resolved);
+    if (exprColor) return this.formatColor(exprColor, unitForFormat);
 
+    // 4) If there are embedded refs anywhere in the string, resolve them and try again
     if (/\{[^}]+\}/.test(resolved)) {
       const withRefsResolved = resolved.replace(/\{[^}]+\}/g, (m) =>
         String(this.parseNestedValue(m, this.defaultParseOptions)),
       );
+
       const direct2 = this.tryToColor(withRefsResolved);
       if (direct2) return this.formatColor(direct2, unitForFormat);
-      const expr2 = this.evaluateColorExpression(withRefsResolved, unitForFormat);
-      if (expr2) return expr2;
+
+      const exprColor2 = this.evaluateColorExpression(withRefsResolved);
+      if (exprColor2) return this.formatColor(exprColor2, unitForFormat);
     }
 
     return null;
   }
 
-  /* ---------- end of color helpers ---------- */
+  /* * * end of color helpers * * */
 
   normalizeValue(value: any, opts: ParseValueOptions): string {
     if (typeof value === 'number') {
@@ -895,6 +917,11 @@ export class TokensParser {
     return String(value);
   }
 
+  /**
+   * Synchronous parsing of nested references "{file.path.to.token}" with a
+   * fallback folder-structure lookup when the file is not found and the flag
+   * `useFileStructureLookup` is enabled.
+   */
   parseNestedValue(
     value: string,
     opts: ParseValueOptions,
@@ -911,7 +938,7 @@ export class TokensParser {
       const pathStr = match[1];
 
       if (visited.has(fullMatch)) {
-        console.warn(`⚠️ Circular reference detected: ${fullMatch}`);
+        if (this.opts.verbose) console.warn(`⚠️ Circular reference detected: ${fullMatch}`);
         continue;
       }
 
@@ -924,12 +951,15 @@ export class TokensParser {
         continue;
       }
 
-      let json;
+      // 1) Direct load <paths>/<fileName>.json
+      let json: any;
+      let fileFound = false;
+
       if (this.fileCache[fileName]) {
         json = this.fileCache[fileName];
+        fileFound = true;
       } else {
         const paths = this.opts.paths ?? ['.'];
-        let fileFound = false;
         for (const p of paths) {
           const filePath = `${p}/${fileName}.json`;
           try {
@@ -937,19 +967,35 @@ export class TokensParser {
             this.fileCache[fileName] = json;
             fileFound = true;
             break;
-          } catch {}
+          } catch {
+            // try next path
+          }
         }
+      }
 
-        if (!fileFound) {
-          console.warn(`⚠️ Token file "${fileName}.json" not found in paths: ${paths.join(', ')}`);
+      // 2) If not found and folder-structure lookup is allowed, try resolving by tree
+      if (!fileFound && this.opts.useFileStructureLookup) {
+        const resolved = this.resolveTokenPathRecursiveSync(pathStr);
+        if (resolved !== undefined) {
+          result = result.replace(fullMatch, resolved as any);
           visited.delete(fullMatch);
           continue;
         }
       }
 
+      if (!fileFound) {
+        if (this.opts.verbose)
+          console.warn(
+            `⚠️ Token file "${fileName}.json" not found in paths: ${(this.opts.paths ?? ['.']).join(', ')}`,
+          );
+        visited.delete(fullMatch);
+        continue;
+      }
+
       let nestedValue = pathParts.reduce((acc, key) => acc?.[key], json);
       if (nestedValue === undefined) {
-        console.warn(`⚠️ Token path "${pathStr}" not found in file "${fileName}"`);
+        if (this.opts.verbose)
+          console.warn(`⚠️ Token path "${pathStr}" not found in file "${fileName}"`);
         visited.delete(fullMatch);
         continue;
       }
@@ -999,7 +1045,7 @@ export class TokensParser {
     return result;
   }
 
-  // --- Theming --- //
+  /* * * Theming * * */
 
   async writeCSSFile(filePath: string, cssContent: string) {
     await fs.mkdir(nodePath.dirname(filePath), { recursive: true });
@@ -1103,7 +1149,7 @@ export class TokensParser {
     return css;
   }
 
-  // --- JSONToSCSS ---
+  /* * * JSONToSCSS * * */
   async JSONToSCSS(
     inputPath: string,
     outputDir: string,
@@ -1161,18 +1207,18 @@ export class TokensParser {
           ? { [topLevelKey]: json }
           : json;
 
-      // --- Clear previously collected CSS variables (so they are not duplicated between files) ---
+      // Clear previously collected CSS variables (avoid duplicates across files)
       if (this.parser instanceof SCSSParser) {
         this.parser.clearCssVars();
       }
 
-      // --- SCSS maps ---
+      // Generate SCSS maps
       for (const [k, v] of Object.entries(rootMap)) {
         const kebabKey = parseMapOptions.convertCase ? this.toKebabCase(k) : k;
         const keyLine = `$${kebabKey}:`;
         const map = v as IMap;
 
-        // --- IMPORTANT: pass initial path = [kebabKey] so that the prefix is ​​preserved ---
+        // IMPORTANT: pass initial path = [kebabKey] to preserve the prefix
         const initialPath =
           kebabKey && kebabKey.length > 0
             ? [kebabKey]
@@ -1188,7 +1234,7 @@ export class TokensParser {
         content += `${str}\n`;
       }
 
-      // --- CSS vars from exportAsVar (or convertToCSSVariables) ---
+      // CSS vars collected during map parsing
       if (this.parser instanceof SCSSParser) {
         const cssVarsBlock = this.parser.getCssVarsBlock();
         if (cssVarsBlock) {
@@ -1196,7 +1242,7 @@ export class TokensParser {
         }
       }
 
-      // --- All to CSS vars" (legacy)
+      // Legacy: flatten all tokens to CSS vars (if requested)
       if (parseVarsOptions.convertToCSSVariables) {
         const flatVars = this.flattenToCSSVariables(json, [], [], parseVarsOptions);
         const cssContent = `:root {\n  ${flatVars.join('\n  ')}\n}`;
@@ -1209,7 +1255,7 @@ export class TokensParser {
         }
       }
 
-      // --- write file ---
+      // write file
       await fs.writeFile(outputPath, content);
       console.log(`${name} parsed to ${outputPath}`);
     } catch (err) {
@@ -1217,7 +1263,7 @@ export class TokensParser {
     }
   }
 
-  // --- listDir (was missing previously) ---
+  /* * * listDir * * */
   private async listDir(source: string, output: string) {
     try {
       const fileNames = await fs.readdir(source);
@@ -1265,27 +1311,35 @@ export class TokensParser {
             const fullMatch = match[0];
             const pathStr = match[1];
             const pathParts = pathStr.split('.');
-            const fileName = pathParts.shift();
-            if (!fileName) continue;
+            const fName = pathParts.shift();
+            if (!fName) continue;
 
             try {
-              let json: any;
+              let jsonFile: any;
 
-              if (this.fileCache[fileName]) {
-                json = this.fileCache[fileName];
+              if (this.fileCache[fName]) {
+                jsonFile = this.fileCache[fName];
               } else {
                 const paths = this.opts.paths ?? ['.'];
                 let fileFound = false;
 
                 for (const p of paths) {
-                  const filePath = `${p}/${fileName}.json`;
+                  const filePath = `${p}/${fName}.json`;
                   try {
                     const file = readFileSync(filePath, 'utf-8');
-                    json = JSON.parse(file);
-                    this.fileCache[fileName] = json;
+                    jsonFile = JSON.parse(file);
+                    this.fileCache[fName] = jsonFile;
                     fileFound = true;
                     break;
                   } catch {
+                    continue;
+                  }
+                }
+
+                if (!fileFound && this.opts.useFileStructureLookup) {
+                  const resolved = this.resolveTokenPathRecursiveSync(pathStr);
+                  if (resolved !== undefined) {
+                    result = result.replace(fullMatch, resolved as any);
                     continue;
                   }
                 }
@@ -1296,8 +1350,15 @@ export class TokensParser {
                 }
               }
 
-              let nestedValue = pathParts.reduce((acc, key) => acc?.[key], json);
+              let nestedValue = pathParts.reduce((acc, key) => acc?.[key], jsonFile);
               if (nestedValue === undefined) {
+                if (this.opts.useFileStructureLookup) {
+                  const resolved = this.resolveTokenPathRecursiveSync(pathStr);
+                  if (resolved !== undefined) {
+                    result = result.replace(fullMatch, resolved as any);
+                    continue;
+                  }
+                }
                 unresolvedTokens.push(fullMatch);
                 continue;
               }
@@ -1310,7 +1371,10 @@ export class TokensParser {
               unresolvedTokens.push(fullMatch);
             }
           }
-          return result;
+
+          // If resolved to a color expression or color string, normalize it using parent opts
+          const colorMaybe = this.tryParseColor(String(result), opts.unit);
+          return colorMaybe ?? result;
         }
 
         if (_.isArray(obj)) return obj.map((v) => resolveRecursive(v, opts, depth));
@@ -1327,13 +1391,11 @@ export class TokensParser {
       });
 
       const buildDir = this.opts.build!;
-      if (
-        !(await fs
-          .access(buildDir)
-          .then(() => true)
-          .catch(() => false))
-      )
-        await fs.mkdir(buildDir, { recursive: true });
+      const exists = await fs
+        .access(buildDir)
+        .then(() => true)
+        .catch(() => false);
+      if (!exists) await fs.mkdir(buildDir, { recursive: true });
       const buildPath = `${buildDir}/${fileName}`;
       await fs.writeFile(buildPath, JSON.stringify(resolvedJson, null, 2), 'utf-8');
 
@@ -1341,7 +1403,7 @@ export class TokensParser {
         const logPath = `${buildDir}/unresolved-tokens.log`;
         const uniqueTokens = [...new Set(unresolvedTokens)];
         await fs.writeFile(logPath, uniqueTokens.join('\n'), 'utf-8');
-        console.warn('Unresolved tokens saved to', logPath);
+        if (this.opts.verbose) console.warn('Unresolved tokens saved to', logPath);
       }
     } catch (err) {
       console.error(err);
@@ -1384,59 +1446,19 @@ export class TokensParser {
     }
   }
 
-  // --- Resolve links in file structure --- //
+  /* * * File helpers (sync) for folder-structure lookup * * */
 
-  private async resolveTokenPathRecursive(pathStr: string): Promise<any> {
-    const pathParts = pathStr.split('.');
-
-    const tryResolve = async (currentParts: string[], currentDir: string): Promise<any> => {
-      if (currentParts.length === 0) return undefined;
-
-      const fileName = `${currentParts[0]}.json`;
-      const filePath = nodePath.join(currentDir, fileName);
-      if (await this.isFile(filePath)) {
-        const content = JSON.parse(await fs.readFile(filePath, 'utf-8'));
-        if (currentParts.length === 1) return content;
-        return this.getNestedValue(content, currentParts.slice(1));
-      }
-
-      const dirPath = nodePath.join(currentDir, currentParts[0]);
-      if (await this.isDir(dirPath)) {
-        return tryResolve(currentParts.slice(1), dirPath);
-      }
-
-      for (let i = currentParts.length; i > 0; i--) {
-        const joinedFile = nodePath.join(currentDir, currentParts.slice(0, i).join('/') + '.json');
-        if (await this.isFile(joinedFile)) {
-          const content = JSON.parse(await fs.readFile(joinedFile, 'utf-8'));
-          return this.getNestedValue(content, currentParts.slice(i));
-        }
-      }
-
-      return undefined;
-    };
-
-    for (const rootPath of this.opts.paths ?? ['./']) {
-      const absRoot = nodePath.resolve(rootPath);
-      const res = await tryResolve(pathParts, absRoot);
-      if (res !== undefined) return res;
-    }
-
-    console.warn(`⚠️ Token path "${pathStr}" could not be resolved.`);
-    return undefined;
-  }
-
-  private async isFile(p: string): Promise<boolean> {
+  private isFileSync(p: string): boolean {
     try {
-      return (await fs.stat(p)).isFile();
+      return statSync(p).isFile();
     } catch {
       return false;
     }
   }
 
-  private async isDir(p: string): Promise<boolean> {
+  private isDirSync(p: string): boolean {
     try {
-      return (await fs.stat(p)).isDirectory();
+      return statSync(p).isDirectory();
     } catch {
       return false;
     }
@@ -1444,5 +1466,66 @@ export class TokensParser {
 
   private getNestedValue(obj: any, keys: string[]): any {
     return keys.reduce((acc, k) => acc?.[k], obj);
+  }
+
+  /**
+   * SYNCHRONOUS token lookup by folder structure.
+   * Example: "themes.light.surface.neutral.primary" will try:
+   *   <root>/themes.json -> .light.surface.neutral.primary
+   *   <root>/themes/light.json -> .surface.neutral.primary
+   *   <root>/themes/light/surface.json -> .neutral.primary
+   *   <root>/themes/light/surface/neutral.json -> .primary
+   * ...across all roots in this.opts.paths.
+   */
+  private resolveTokenPathRecursiveSync(pathStr: string): any {
+    const parts = pathStr.split('.');
+
+    const tryResolve = (currentParts: string[], currentDir: string): any => {
+      if (currentParts.length === 0) return undefined;
+
+      // 1) Try "<currentDir>/<head>.json"
+      const head = currentParts[0];
+      const filePath = nodePath.join(currentDir, `${head}.json`);
+      if (this.isFileSync(filePath)) {
+        try {
+          const content = JSON.parse(readFileSync(filePath, 'utf-8'));
+          if (currentParts.length === 1) return content;
+          return this.getNestedValue(content, currentParts.slice(1));
+        } catch {
+          // ignore and continue
+        }
+      }
+
+      // 2) Try as directory "<currentDir>/<head>/..."
+      const dirPath = nodePath.join(currentDir, head);
+      if (this.isDirSync(dirPath)) {
+        const res = tryResolve(currentParts.slice(1), dirPath);
+        if (res !== undefined) return res;
+      }
+
+      // 3) Gradient search: join several segments into one file
+      for (let i = currentParts.length; i > 0; i--) {
+        const joined = currentParts.slice(0, i).join('/');
+        const joinedFile = nodePath.join(currentDir, `${joined}.json`);
+        if (this.isFileSync(joinedFile)) {
+          try {
+            const content = JSON.parse(readFileSync(joinedFile, 'utf-8'));
+            return this.getNestedValue(content, currentParts.slice(i));
+          } catch {
+            // ignore and continue
+          }
+        }
+      }
+
+      return undefined;
+    };
+
+    for (const root of this.opts.paths ?? ['./']) {
+      const abs = nodePath.resolve(root);
+      const res = tryResolve(parts, abs);
+      if (res !== undefined) return res;
+    }
+
+    return undefined;
   }
 }

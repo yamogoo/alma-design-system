@@ -181,11 +181,15 @@ $atoms:(
   lg: (
   root: (
   gap: 12px,
+  min-width: 32px,
   padding: 8px 12px,
   border-radius: 8px
 ),
   label: (
   font-style: caption-1
+),
+  icon: (
+  size: 18px
 )
 )
 )

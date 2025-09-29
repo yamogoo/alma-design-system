@@ -37,6 +37,7 @@ defineExpose({
       :name="iconName"
       :appearance="iconStyle"
       :weight="iconWeight"
+      :size="iconSize"
       data-testid="icon"
     ></Icon>
     <Text>
@@ -54,10 +55,13 @@ $prefix: char-tooltip-label;
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
           $gap: px2rem(get($val, "root.gap"));
+          $min-width: px2rem(get($val, "root.min-width"));
           $padding: get($val, "root.padding");
           $border-radius: px2rem(get($val, "root.border-radius"));
 
           $label-font-style: get($val, "label.font-style");
+
+          $icon-size: get($val, "icon.size");
 
           gap: $gap;
           padding: $padding;
@@ -65,6 +69,10 @@ $prefix: char-tooltip-label;
 
           .text {
             @extend %t__#{$label-font-style};
+          }
+
+          .icon {
+            @include box($icon-size);
           }
         }
       }
@@ -77,31 +85,38 @@ $prefix: char-tooltip-label;
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
-          color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
-          fill: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
-          background-color: themed(
-            "atoms.#{$prefix}.#{$mode}.root.background.normal"
-          );
+          @include themify($themes) {
+            background-color: themed(
+              "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+            );
 
-          .text {
-            color: inherit;
-          }
+            .text {
+              color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
+            }
 
-          .icon {
-            fill: inherit;
+            .icon {
+              fill: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
+            }
           }
         }
-        @extend %base-transition;
       }
     }
   }
+}
 
-  .#{$prefix} {
-    display: flex;
-    flex-direction: column;
+.#{$prefix} {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: min-content;
+  @extend %base-transition;
 
-    @include defineSized();
-    @include defineThemes();
+  @include defineSized();
+  @include defineThemes();
+
+  .text,
+  .icon {
+    @extend %base-transition;
   }
 }
 </style>

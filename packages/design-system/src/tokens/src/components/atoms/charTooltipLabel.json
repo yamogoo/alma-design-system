@@ -7,6 +7,11 @@
           "$unit": "px",
           "$type": "spacing"
         },
+        "minWidth": {
+          "$value": 32,
+          "$unit": "px",
+          "$type": "spacing"
+        },
         "padding": {
           "$value": [
             "{tokens.spacing.xs.$value}",
@@ -24,7 +29,15 @@
       "label": {
         "fontStyle": {
           "$value": "caption-1",
-          "$type": "alias"
+          "$type": "alias",
+          "unit": ""
+        }
+      },
+      "icon": {
+        "size": {
+          "$value": "{components.atoms.icon.default.sm.root.size}",
+          "$type": "alias",
+          "unit": ""
         }
       }
     }

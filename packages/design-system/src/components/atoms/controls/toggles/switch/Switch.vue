@@ -100,6 +100,9 @@ watch(
     }
 
     onAnimateKnob();
+  },
+  {
+    immediate: true,
   }
 );
 

@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import { Text } from "@/components/atoms";
 
+import type { StorySlotCoverProps } from "./StorySlotCover";
+
 defineOptions({
   inheritAttrs: true,
+});
+
+withDefaults(defineProps<StorySlotCoverProps>(), {
+  title: "Slot",
+  description: "Place the subcomponent in the default slot",
 });
 </script>
 
@@ -14,14 +21,14 @@ defineOptions({
         :variant="'label-3'"
         :mode="'accent'"
         :tone="'primary'"
-        >Slot</Text
+        >{{ title }}</Text
       >
       <Text
         class="story-slot-cover__description"
         :variant="'caption-2'"
         :mode="'accent'"
         :tone="'primary'"
-        >Place the subcomponent in the default slot</Text
+        >{{ description }}</Text
       >
     </template>
     <slot></slot>

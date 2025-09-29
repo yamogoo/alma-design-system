@@ -3,7 +3,9 @@ import type {
   CharTooltipLabelSize,
   CharTooltipLabelVariant,
   CharTooltipLabelTone,
-} from "@/adapters";
+} from "@/adapters/atoms/charTooltipLabel";
+
+import type { IconSize } from "@/adapters/atoms/icon";
 
 import type { UIElementStylingModifiers } from "@/typings";
 
@@ -22,4 +24,5 @@ export interface CharTooltipLabelProps
   iconName?: IconName;
   iconStyle?: IconStyle;
   iconWeight?: IconWeight;
+  iconSize?: IconSize;
 }

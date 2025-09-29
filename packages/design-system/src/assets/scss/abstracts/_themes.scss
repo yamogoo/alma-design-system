@@ -531,27 +531,33 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #eaedef
+  normal: #1a1f23,
+  border: (
+  normal: #e9ecef
+)
 )
 ),
   label: (
-  normal: #1a1f23
+  normal: #a5b1bc
 ),
   icon: (
-  normal: #1a1f23
+  normal: #a5b1bc
 )
 ),
   inversed: (
   root: (
   background: (
-  normal: #242b31
+  normal: #eaedef
+),
+  border: (
+  normal: #111416
 )
 ),
   label: (
-  normal: #6d8292
+  normal: #1a1f23
 ),
   icon: (
-  normal: #637584
+  normal: #1a1f23
 )
 )
 )
@@ -1643,27 +1649,33 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #101315
+  normal: #dce1e5
+),
+  border: (
+  normal: #e9ecef
 )
 ),
   label: (
-  normal: #a5b1bc
+  normal: #586976
 ),
   icon: (
-  normal: #a5b1bc
+  normal: #586976
 )
 ),
   inversed: (
   root: (
   background: (
-  normal: #ced5db
+  normal: #101315
+),
+  border: (
+  normal: #111416
 )
 ),
   label: (
-  normal: #6d8292
+  normal: #dce1e5
 ),
   icon: (
-  normal: #7b8e9c
+  normal: #dce1e5
 )
 )
 )

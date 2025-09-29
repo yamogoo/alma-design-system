@@ -1,6 +1,6 @@
 {
   "gray": {
-    "$value": "#353F47",
+    "$value": "#353f47",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
@@ -18,7 +18,7 @@
     }
   },
   "white": {
-    "$value": "#FFFFFF",
+    "$value": "#ffffff",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
@@ -27,7 +27,7 @@
     }
   },
   "red": {
-    "$value": "#E23939",
+    "$value": "#e23939",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
@@ -36,7 +36,7 @@
     }
   },
   "carrot": {
-    "$value": "#FA471F",
+    "$value": "#fa471f",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
@@ -45,7 +45,7 @@
     }
   },
   "orange": {
-    "$value": "#FFC968",
+    "$value": "#ffc968",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
@@ -81,7 +81,7 @@
     }
   },
   "blue": {
-    "$value": "#1A4FFE",
+    "$value": "#1a4ffe",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
@@ -90,7 +90,7 @@
     }
   },
   "darkBlue": {
-    "$value": "#1A4FFE",
+    "$value": "#1a4ffe",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
@@ -99,7 +99,7 @@
     }
   },
   "accent": {
-    "$value": "#0FC558",
+    "$value": "#0fc558",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
@@ -108,7 +108,7 @@
     }
   },
   "cream": {
-    "$value": "#FFC68E",
+    "$value": "#ffc68e",
     "$type": "color",
     "$unit": "hex",
     "$meta": {
