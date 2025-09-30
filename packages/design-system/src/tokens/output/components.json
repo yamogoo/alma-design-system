@@ -3126,29 +3126,29 @@
             "paddingHorizontal": {
               "$value": 16,
               "$unit": "px",
-              "$type": ""
+              "$type": "number"
             },
             "paddingVertical": {
               "$value": 12,
               "$unit": "px",
-              "$type": ""
+              "$type": "number"
             },
             "borderRadius": {
               "$value": 16,
               "$unit": "px",
-              "$type": ""
+              "$type": "number"
             },
             "borderWidth": {
               "$value": 1,
               "$unit": "px",
-              "$type": ""
+              "$type": "number"
             }
           },
           "divider": {
             "borderWidth": {
               "$value": 1,
               "$unit": "px",
-              "$type": ""
+              "$type": "number"
             }
           },
           "title": {
@@ -3169,6 +3169,13 @@
               "$meta": {
                 "category": "typography"
               }
+            }
+          },
+          "chevron": {
+            "size": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": "number"
             }
           }
         }

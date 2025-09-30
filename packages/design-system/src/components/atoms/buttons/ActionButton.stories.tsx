@@ -21,8 +21,8 @@ import {
   iconWeights,
 } from "@/components/atoms/icons/Icon";
 
-import type { ButtonProps } from "@/components/atoms/buttons/Button";
-import ActionButton from "@/components/atoms/buttons/ActionButton.vue";
+import type { ButtonProps } from "./Button";
+import ActionButton from "./ActionButton.vue";
 
 const meta = {
   title: "Atoms/Buttons/ActionButton",

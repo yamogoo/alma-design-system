@@ -17,6 +17,7 @@ import type { ListItems } from "./List";
 import List from "./List.vue";
 
 import ListItem from "./ListItem.vue";
+import Group from "../../atoms/containers/Group.vue";
 
 const meta = {
   title: "Molecules/List/List",
@@ -50,14 +51,31 @@ type Story = StoryObj<typeof meta>;
 const ITEMS: ListItems = ["First", "Second", "Third", "Fourth", "Fifth"];
 
 export const Playground: Story = {
-  args: {
-    items: ITEMS,
-  },
+  args: {},
   render: () => ({
     setup() {
       return () => (
         <StoryGrid columns={1}>
-          <List>
+          <List isMultiple={false}>
+            {ITEMS.map((item) => (
+              <Group variant={"block"} size={"md"}>
+                <ListItem id={item} title={item} isJoined={false}></ListItem>
+              </Group>
+            ))}
+          </List>
+        </StoryGrid>
+      );
+    },
+  }),
+};
+
+export const Joined: Story = {
+  args: {},
+  render: () => ({
+    setup() {
+      return () => (
+        <StoryGrid columns={1}>
+          <List isMultiple={false}>
             {ITEMS.map((item) => (
               <ListItem id={item} title={item}></ListItem>
             ))}
@@ -69,15 +87,12 @@ export const Playground: Story = {
 };
 
 export const MultipleSelection: Story = {
-  args: {
-    items: ITEMS,
-    isMultiple: true,
-  },
+  args: {},
   render: () => ({
     setup() {
       return () => (
         <StoryGrid columns={1}>
-          <List>
+          <List isMultiple={true}>
             {ITEMS.map((item) => (
               <ListItem id={item} title={item}></ListItem>
             ))}

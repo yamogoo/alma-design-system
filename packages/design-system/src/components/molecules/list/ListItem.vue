@@ -117,8 +117,8 @@ const onPress = (e: PointerEvent, isPressed: boolean): void => {
       </template>
       <slot name="append">
         <Icon
-          v-if="iconName"
-          :name="'next'"
+          :class="`${PREFIX}__chevron`"
+          :name="'right'"
           :appearance="'outline'"
           :weight="'300'"
           :size="iconSize"
@@ -146,6 +146,8 @@ $prefix: list-item;
 
           $title-font-style: get($val, "title.font-style");
           $description-font-style: get($val, "description.font-style");
+
+          $chevron-size: px2rem(get($val, "chevron.size"));
 
           &.#{$prefix} {
             min-height: $min-height;
@@ -203,6 +205,10 @@ $prefix: list-item;
 
           .#{$prefix}__description {
             @extend %t__#{$description-font-style};
+          }
+
+          .#{$prefix}__chevron {
+            @include box($chevron-size);
           }
         }
       }
@@ -301,12 +307,19 @@ $prefix: list-item;
 
 .#{$prefix} {
   box-sizing: border-box;
+  width: 100%;
   overflow: hidden;
   cursor: pointer;
   @extend %base-transition;
 
   &__container {
+    display: flex;
+    flex-direction: row;
     @extend %base-transition;
+  }
+
+  &__content {
+    width: 100%;
   }
 
   @include defineSizes();

@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 
 import { getButtonIconByClassName } from "@/__tests__/utils";
 
-import type { ActionButtonProps } from "@/components/atoms";
+import type { ActionButtonProps } from "./ActionButton";
 import ActionButton from "./ActionButton.vue";
 
 const REQUIRED_PROPS: ActionButtonProps = {

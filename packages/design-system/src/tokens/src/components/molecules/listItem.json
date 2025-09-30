@@ -13,29 +13,29 @@
         "paddingHorizontal": {
           "$value": "{tokens.spacing.md.$value}",
           "$unit": "px",
-          "$type": ""
+          "$type": "number"
         },
         "paddingVertical": {
           "$value": "{tokens.spacing.sm.$value}",
           "$unit": "px",
-          "$type": ""
+          "$type": "number"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.md.$value}",
           "$unit": "px",
-          "$type": ""
+          "$type": "number"
         },
         "borderWidth": {
           "$value": "{tokens.stroke.sm.$value}",
           "$unit": "px",
-          "$type": ""
+          "$type": "number"
         }
       },
       "divider": {
         "borderWidth": {
           "$value": "{tokens.stroke.sm.$value}",
           "$unit": "px",
-          "$type": ""
+          "$type": "number"
         }
       },
       "title": {
@@ -56,6 +56,13 @@
           "$meta": {
             "category": "typography"
           }
+        }
+      },
+      "chevron": {
+        "size": {
+          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
+          "$unit": "px",
+          "$type": "number"
         }
       }
     }

@@ -664,6 +664,8 @@ export class TokensParser {
     if (unit === 'hsl') return 'hsl';
     if (unit === 'laba') return 'laba';
     if (unit === 'lab') return 'lab';
+    if (unit === 'oklch' || unit === 'oklcha') return 'oklch';
+    if (unit === 'oklab' || unit === 'oklaba') return 'oklab';
     return 'hex';
   }
 
@@ -672,6 +674,37 @@ export class TokensParser {
     const a = c.alpha();
 
     const clamp = (n: number, min = 0, max = 1) => Math.min(max, Math.max(min, n));
+
+    // helpers to convert Color -> OK* numbers
+    const rgbObj = () => c.rgb().object();
+    const _okFromColor = () => {
+      const { r, g, b } = rgbObj();
+      const oklab = this.rgbToOKLab([r, g, b]); // [0..255] -> OKLab
+      const oklch = this.oklabToOklch(oklab); // -> OKLCH
+      return { oklab, oklch };
+    };
+
+    if (fmt === 'oklch') {
+      const { oklch } = _okFromColor();
+      const [L, C, H] = oklch;
+      const Lp = Math.round(L * 1000) / 1000;
+      const Cp = Math.round(C * 1000) / 1000;
+      const Hp = Math.round(H * 10) / 10;
+      if (a >= 1) return `oklch(${Lp} ${Cp} ${Hp})`;
+      const ap = Math.round(clamp(a) * 1000) / 1000;
+      return `oklch(${Lp} ${Cp} ${Hp} / ${ap})`;
+    }
+
+    if (fmt === 'oklab') {
+      const { oklab } = _okFromColor();
+      const [L, A, B] = oklab;
+      const Lp = Math.round(L * 1000) / 1000;
+      const Ap = Math.round(A * 1000) / 1000;
+      const Bp = Math.round(B * 1000) / 1000;
+      if (a >= 1) return `oklab(${Lp} ${Ap} ${Bp})`;
+      const ap = Math.round(clamp(a) * 1000) / 1000;
+      return `oklab(${Lp} ${Ap} ${Bp} / ${ap})`;
+    }
 
     if (fmt === 'hex') {
       return (a < 1 ? c.hexa() : c.hex()).toLowerCase();
@@ -734,6 +767,206 @@ export class TokensParser {
     }
   }
 
+  /* * * Perceptual color math (OKLab/OKLCH) * * */
+
+  // ---- low-level numeric helpers
+  private _clamp01(x: number) {
+    return Math.max(0, Math.min(1, x));
+  }
+  private _lerp(a: number, b: number, t: number) {
+    return a + (b - a) * t;
+  }
+  private _rad(deg: number) {
+    return (deg * Math.PI) / 180;
+  }
+  private _deg(rad: number) {
+    return (rad * 180) / Math.PI;
+  }
+  private _mod(a: number, n: number) {
+    return ((a % n) + n) % n;
+  }
+
+  // ---- sRGB <-> linear
+  private _srgbToLinear(u: number) {
+    const x = u / 255;
+    return x <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
+  }
+  private _linearToSrgb(u: number) {
+    const x = Math.max(0, Math.min(1, u));
+    return x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055;
+  }
+
+  // ---- sRGB<->OKLab based on Björn Ottosson's reference implementation
+  private rgbToOKLab(rgb255: [number, number, number]): [number, number, number] {
+    const [R8, G8, B8] = rgb255;
+    const r = this._srgbToLinear(R8);
+    const g = this._srgbToLinear(G8);
+    const b = this._srgbToLinear(B8);
+
+    const l = 0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b;
+    const m = 0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b;
+    const s = 0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b;
+
+    const l_ = Math.cbrt(l);
+    const m_ = Math.cbrt(m);
+    const s_ = Math.cbrt(s);
+
+    const L = 0.2104542553 * l_ + 0.793617785 * m_ - 0.0040720468 * s_;
+    const A = 1.9779984951 * l_ - 2.428592205 * m_ + 0.4505937099 * s_;
+    const B = 0.0259040371 * l_ + 0.7827717662 * m_ - 0.808675766 * s_;
+    return [L, A, B];
+  }
+
+  private oklabToRgb(ok: [number, number, number]): [number, number, number] {
+    const [L, A, B] = ok;
+    const l_ = L + 0.3963377774 * A + 0.2158037573 * B;
+    const m_ = L - 0.1055613458 * A - 0.0638541728 * B;
+    const s_ = L - 0.0894841775 * A - 1.291485548 * B;
+
+    const l = l_ * l_ * l_;
+    const m = m_ * m_ * m_;
+    const s = s_ * s_ * s_;
+
+    const r = +4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s;
+    const g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s;
+    const b = -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s;
+
+    const R = Math.round(this._linearToSrgb(r) * 255);
+    const G = Math.round(this._linearToSrgb(g) * 255);
+    const Bc = Math.round(this._linearToSrgb(b) * 255);
+    return [this._clampTo8(R), this._clampTo8(G), this._clampTo8(Bc)];
+  }
+  private _clampTo8(v: number) {
+    return Math.max(0, Math.min(255, v | 0));
+  }
+
+  // ---- OKLab <-> OKLCH
+  private oklabToOklch([L, A, B]: [number, number, number]): [number, number, number] {
+    const C = Math.hypot(A, B);
+    const H = this._mod(this._deg(Math.atan2(B, A)), 360);
+    return [L, C, H];
+  }
+  private oklchToOklab([L, C, H]: [number, number, number]): [number, number, number] {
+    const a = C * Math.cos(this._rad(H));
+    const b = C * Math.sin(this._rad(H));
+    return [L, a, b];
+  }
+
+  // ---- OKLCH mix (shortest hue path)
+  private mixOKLCH(aHex: string, bHex: string, t: number): string {
+    const A = this.colorToOklch(aHex);
+    const B = this.colorToOklch(bHex);
+    const [La, Ca, Ha] = A;
+    const [Lb, Cb, Hb] = B;
+
+    // shortest-arc hue interpolation
+    let dH = Hb - Ha;
+    if (dH > 180) dH -= 360;
+    if (dH < -180) dH += 360;
+
+    const L = this._lerp(La, Lb, t);
+    const C = this._lerp(Ca, Cb, t);
+    const H = Ha + dH * t;
+
+    const rgb = this.oklabToRgb(this.oklchToOklab([L, C, this._mod(H, 360)]));
+    return Color.rgb(rgb[0], rgb[1], rgb[2]).hex().toLowerCase();
+  }
+
+  private colorToOklch(colorStr: string): [number, number, number] {
+    const col = this.tryToColor(colorStr);
+    if (!col) return [0, 0, 0];
+    const { r, g, b } = col.rgb().object();
+    return this.oklabToOklch(this.rgbToOKLab([r, g, b]));
+  }
+
+  // ---- relative L-shift in OKLCH (darken/lighten)
+  private relShiftLOKLCH(colorStr: string, deltaL: number): string {
+    const [L, C, H] = this.colorToOklch(colorStr);
+    const L2 = this._clamp01(L - deltaL); // note: darken -> minus; lighten -> pass negative delta
+    const rgb = this.oklabToRgb(this.oklchToOklab([L2, C, H]));
+    return Color.rgb(rgb[0], rgb[1], rgb[2]).hex().toLowerCase();
+  }
+
+  // ---- parsing oklch()/oklab() syntax to sRGB
+  private parseOKStringToHex(raw: string): string | null {
+    // oklch(L C H [/ A])  OR  oklab(L A B [/ A])
+    const s = raw.trim().toLowerCase();
+    const okLCH = /^oklch\(\s*([0-9.]+)\s+([0-9.]+)\s+([\-0-9.]+)(?:\s*\/\s*([0-9.]+))?\s*\)$/;
+    const okLAB = /^oklab\(\s*([0-9.]+)\s+([\-0-9.]+)\s+([\-0-9.]+)(?:\s*\/\s*([0-9.]+))?\s*\)$/;
+
+    let m = okLCH.exec(s);
+    if (m) {
+      const L = parseFloat(m[1]);
+      const C = parseFloat(m[2]);
+      const H = parseFloat(m[3]);
+      const [R, G, B] = this.oklabToRgb(this.oklchToOklab([L, C, H]));
+      const base = Color.rgb(R, G, B);
+      const a = m[4] != null ? Math.max(0, Math.min(1, parseFloat(m[4]))) : 1;
+      return (a < 1 ? base.alpha(a).hexa() : base.hex()).toLowerCase();
+    }
+    m = okLAB.exec(s);
+    if (m) {
+      const L = parseFloat(m[1]);
+      const A = parseFloat(m[2]);
+      const B = parseFloat(m[3]);
+      const [R, G, Bc] = this.oklabToRgb([L, A, B]);
+      const base = Color.rgb(R, G, Bc);
+      const a = m[4] != null ? Math.max(0, Math.min(1, parseFloat(m[4]))) : 1;
+      return (a < 1 ? base.alpha(a).hexa() : base.hex()).toLowerCase();
+    }
+    return null;
+  }
+
+  // ---- WCAG contrast (relative luminance in sRGB)
+  private _relLuminance(rgb255: [number, number, number]) {
+    const [r8, g8, b8] = rgb255;
+    const rl = this._srgbToLinear(r8);
+    const gl = this._srgbToLinear(g8);
+    const bl = this._srgbToLinear(b8);
+    return 0.2126 * rl + 0.7152 * gl + 0.0722 * bl;
+  }
+  public contrastRatio(fg: string, bg: string): number {
+    const f = this.tryToColor(fg),
+      b = this.tryToColor(bg);
+    if (!f || !b) return 1;
+    const frgb = f.rgb().array() as [number, number, number];
+    const brgb = b.rgb().array() as [number, number, number];
+    const L1 = this._relLuminance(frgb);
+    const L2 = this._relLuminance(brgb);
+    const [hi, lo] = L1 >= L2 ? [L1, L2] : [L2, L1];
+    return (hi + 0.05) / (lo + 0.05);
+  }
+
+  // Pick readable: choose fg1 or fg2 by target contrast; fallback auto-adjust L in OKLCH
+  public pickReadable(fg1: string, fg2: string, bg: string, target = 4.5): string {
+    if (this.contrastRatio(fg1, bg) >= target) return fg1;
+    if (this.contrastRatio(fg2, bg) >= target) return fg2;
+    // try auto-adjust fg1 lightness slightly (±0.12)
+    const [L, C, H] = this.colorToOklch(fg1);
+    // choose direction (towards more contrast)
+    const up = this.contrastRatio(this.oklchToHex([this._clamp01(L + 0.12), C, H]), bg);
+    const dn = this.contrastRatio(this.oklchToHex([this._clamp01(L - 0.12), C, H]), bg);
+    const dir = up >= dn ? +1 : -1;
+    let best = fg1,
+      bestC = this.contrastRatio(fg1, bg);
+    for (let i = 1; i <= 12; i++) {
+      const L2 = this._clamp01(L + dir * (i * 0.01));
+      const cand = this.oklchToHex([L2, C, H]);
+      const c = this.contrastRatio(cand, bg);
+      if (c > bestC) {
+        best = cand;
+        bestC = c;
+        if (c >= target) break;
+      }
+    }
+    return best;
+  }
+  private oklchToHex([L, C, H]: [number, number, number]): string {
+    const rgb = this.oklabToRgb(this.oklchToOklab([L, C, H]));
+    return Color.rgb(rgb[0], rgb[1], rgb[2]).hex().toLowerCase();
+  }
+  /* * * END Perceptual color math (OKLab/OKLCH) * * */
+
   /**
    * Color expression evaluator.
    * Supports: rgba(color, a), lighten(color, x), darken(color, x), saturate(color, x), desaturate(color, x)
@@ -748,8 +981,13 @@ export class TokensParser {
     if (plain) return plain;
 
     // Function call?
-    const fnMatch = /^([a-zA-Z]+)\((.*)\)$/.exec(s);
-    if (!fnMatch) return null;
+    const fnMatch = /^([a-zA-Z_][a-zA-Z0-9_]*)\((.*)\)$/.exec(s);
+    if (!fnMatch) {
+      // allow raw oklch()/oklab() literals
+      const okHex = this.parseOKStringToHex(s);
+      if (okHex) return this.tryToColor(okHex);
+      return null;
+    }
 
     const fn = fnMatch[1].toLowerCase();
     const argsStr = fnMatch[2];
@@ -775,8 +1013,11 @@ export class TokensParser {
       const resolved = arg.startsWith('{')
         ? this.parseNestedValue(arg, this.defaultParseOptions)
         : arg;
-      const c = this.tryToColor(String(resolved).trim());
-      return c;
+
+      // allow oklch()/oklab() literal
+      const okHex = this.parseOKStringToHex(String(resolved));
+      if (okHex) return this.tryToColor(okHex);
+      return this.tryToColor(String(resolved).trim());
     };
 
     const resolveMaybeFunction = (arg: string): ReturnType<typeof Color> | null => {
@@ -830,6 +1071,72 @@ export class TokensParser {
         out = base.desaturate(amt);
         break;
       }
+
+      /* * * [ADDED OK*] new perceptual functions * * */
+      case 'oklch': {
+        // oklch(L C H [/ A])
+        if (args.length < 3 || args.length > 4) return null;
+        const raw = `oklch(${args.join(',')})`.replace(/,/g, ' ');
+        const hex = this.parseOKStringToHex(raw);
+        return hex ? this.tryToColor(hex) : null;
+      }
+      case 'oklab': {
+        // oklab(L A B [/ A])
+        if (args.length < 3 || args.length > 4) return null;
+        const raw = `oklab(${args.join(',')})`.replace(/,/g, ' ');
+        const hex = this.parseOKStringToHex(raw);
+        return hex ? this.tryToColor(hex) : null;
+      }
+      case 'rel_darken_oklch': {
+        // rel_darken_oklch(color, amount)
+        if (args.length !== 2) return null;
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+        const amt = this.parseAmount(args[1]); // 0..1
+        const hex = this.relShiftLOKLCH(base.hex().toString(), +amt); // minus inside
+        return this.tryToColor(hex);
+      }
+      case 'rel_lighten_oklch': {
+        // rel_lighten_oklch(color, amount) -> negative delta
+        if (args.length !== 2) return null;
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+        const amt = this.parseAmount(args[1]);
+        const hex = this.relShiftLOKLCH(base.hex().toString(), -amt);
+        return this.tryToColor(hex);
+      }
+      case 'mix_oklch': {
+        // mix_oklch(colorA, colorB, t)
+        if (args.length !== 3) return null;
+        const A = resolveMaybeFunction(args[0]);
+        const B = resolveMaybeFunction(args[1]);
+        if (!A || !B) return null;
+        const t = this.parseAmount(args[2]); // 0..1 or % supported
+        const hex = this.mixOKLCH(
+          A.hex().toString(),
+          B.hex().toString(),
+          Math.max(0, Math.min(1, t)),
+        );
+        return this.tryToColor(hex);
+      }
+      case 'on_contrast': {
+        // on_contrast(fg1, fg2, bg[, target])
+        if (args.length < 3 || args.length > 4) return null;
+        const FG1 = resolveMaybeFunction(args[0]);
+        if (!FG1) return null;
+        const FG2 = resolveMaybeFunction(args[1]);
+        if (!FG2) return null;
+        const BG = resolveMaybeFunction(args[2]);
+        if (!BG) return null;
+        const target = args[3] != null ? parseFloat(args[3]) : 4.5;
+        const chosen = this.pickReadable(
+          FG1.hex().toString(),
+          FG2.hex().toString(),
+          BG.hex().toString(),
+          target,
+        );
+        return this.tryToColor(chosen);
+      }
       default:
         return null;
     }
@@ -843,6 +1150,10 @@ export class TokensParser {
    */
   public tryParseColor(value: string, unitForFormat?: string): string | null {
     const raw = value.trim();
+
+    // allow raw oklch()/oklab() literals directly
+    const okHex = this.parseOKStringToHex(raw);
+    if (okHex) return this.formatColor(Color(okHex), unitForFormat);
 
     // 1) Resolve a leading single {ref}, if any
     const resolved = raw.startsWith('{')
@@ -875,7 +1186,6 @@ export class TokensParser {
 
   /* * * end of color helpers * * */
 
-  // Внутри class SCSSParser
   private normalizeValue(
     value: any,
     opts: ParseValueOptions,
@@ -902,7 +1212,7 @@ export class TokensParser {
             `⚠️ [normalizeValue] no-progress after parseNestedValue in file "${opts.fileName ?? ''}". Ref: ${before}`,
           );
         }
-        return before; // важно: выходим, чтобы не уйти в рекурсию
+        return before;
       }
       return this.normalizeValue(nested, opts, depth + 1, _trail);
     }
