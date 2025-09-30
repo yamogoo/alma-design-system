@@ -1,7 +1,7 @@
 @use "../abstracts/themes" as *;
 @use "../core/mixins/themify" as *;
 
-@mixin use-border($p: all, $c: null) {
+@mixin useBorder($p: all, $c: null) {
   @if $p == all {
     border: 1px solid $c;
   } @else {
@@ -9,7 +9,25 @@
   }
 }
 
-@mixin use-themed-border($p: all, $_c: null) {
+@mixin useBorderWidth($p: all, $w: null) {
+  @if $p == all {
+    border-width: $w;
+  } @else {
+    @each $prop in $p {
+      border-#{$prop}-width: $w;
+    }
+  }
+}
+
+@mixin useBorderColor($p: all, $c: null) {
+  @if $p == all {
+    border: $c;
+  } @else {
+    border-#{$p}: $c;
+  }
+}
+
+@mixin useThemedBorder($p: all, $_c: null) {
   @include themify($themes) {
     $c: themed("border", $_c);
     @include use-border($p, $c);

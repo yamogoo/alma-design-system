@@ -63,7 +63,6 @@ export default () => {
       }),
       lightningcss({
         browserslist: [">0.2%", "not dead"],
-        drafts: { nesting: true },
         minify: true,
       }),
       dts({

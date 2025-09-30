@@ -41,4 +41,5 @@ export interface ButtonProps extends Partial<ButtonRequiredProps> {
   scalePressed?: number;
   isDisabled?: boolean;
   stretch?: ButtonStretch;
+  arialLabel?: string;
 }

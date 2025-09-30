@@ -49,7 +49,7 @@ const componentTag = props.as;
 
 $prefix: "group";
 
-@mixin defineSizes($map: get($atoms, "group")) {
+@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));

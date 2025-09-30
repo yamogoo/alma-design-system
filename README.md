@@ -65,20 +65,26 @@ The system is **code-driven**: tokens in code are the single source of truth. Th
 ## 💻 Demo
 
 ```bash
-# Clone repository
 git clone https://github.com/yamogoo/alma-ptoto-kit.git
 
 # Go to project folder
 cd alma-proto-kit
 
 # Install dependencies
-pnpm install
+pnpm install:all
 
-# Run development server (Vue app)
-pnpm sparkpad:client:dev
+# Prepare and build packages
+pnpm prepare
+
+# Build Design System
+pnpm ds:build
 
 # Run Storybook for component demos
 pnpm ds:docs:dev
+
+# Run Sparkpad server (Vue app)
+pnpm sparkpad:client:dev
+pnpm sparkpad:server:dev
 ```
 
 > For details on project structure and module definitions, see [MANIFEST.md](./packages/design-system/MANIFEST.md) and [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml).

@@ -4081,6 +4081,246 @@
             }
           }
         },
+        "list": {
+          "neutral": {
+            "primary": {
+              "label": {
+                "normal": {
+                  "$value": "#a5b1bc",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "disabled": {
+                  "$value": "#586976",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "hovered": {
+                  "$value": "#eaedef",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "focused": {
+                  "$value": "#eaedef",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                }
+              }
+            },
+            "secondary": {
+              "label": {
+                "normal": {
+                  "$value": "#a5b1bc",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "disabled": {
+                  "$value": "#586976",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "hovered": {
+                  "$value": "#eaedef",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "focused": {
+                  "$value": "#eaedef",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "listItem": {
+          "neutral": {
+            "primary": {
+              "root": {
+                "background": {
+                  "normal": {
+                    "$value": "#2f383f",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "disabled": {
+                    "$value": "#2f383f80",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "hovered": {
+                    "$value": "#1a1f23",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "selected": {
+                    "$value": "#0130ce",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  }
+                },
+                "border": {
+                  "normal": {
+                    "$value": "#1a1f23",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "disabled": {
+                    "$value": "#2f383f",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "hovered": {
+                    "$value": "#1a1f23",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "selected": {
+                    "$value": "#0130ce",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "outline": {
+                    "$value": "#6286fe",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  }
+                }
+              },
+              "divider": {
+                "border": {
+                  "normal": {
+                    "$value": "#2f383f",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  }
+                }
+              },
+              "title": {
+                "normal": {
+                  "$value": "#dce1e5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "disabled": {
+                  "$value": "#97a5b1",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "hovered": {
+                  "$value": "#dce1e5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "selected": {
+                  "$value": "#dce1e5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                }
+              },
+              "description": {
+                "normal": {
+                  "$value": "#dce1e5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "disabled": {
+                  "$value": "#97a5b1",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "hovered": {
+                  "$value": "#dce1e5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "selected": {
+                  "$value": "#dce1e5",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                }
+              }
+            }
+          }
+        },
         "snackbar": {
           "neutral": {
             "primary": {
@@ -8679,6 +8919,246 @@
                 "$unit": "hex",
                 "$meta": {
                   "category": "form"
+                }
+              }
+            }
+          }
+        },
+        "list": {
+          "neutral": {
+            "primary": {
+              "label": {
+                "normal": {
+                  "$value": "#2f383f",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "disabled": {
+                  "$value": "#8999a7",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "hovered": {
+                  "$value": "#101315",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "focused": {
+                  "$value": "#101315",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                }
+              }
+            },
+            "secondary": {
+              "label": {
+                "normal": {
+                  "$value": "#2f383f",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "disabled": {
+                  "$value": "#8999a7",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "hovered": {
+                  "$value": "#101315",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                },
+                "focused": {
+                  "$value": "#101315",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "listItem": {
+          "neutral": {
+            "primary": {
+              "root": {
+                "background": {
+                  "normal": {
+                    "$value": "#e3e7ea",
+                    "$type": "color",
+                    "unit": "hex",
+                    "$meta": {
+                      "category": "tree view item"
+                    }
+                  },
+                  "hovered": {
+                    "$value": "#dbe3ff",
+                    "$type": "color",
+                    "unit": "hex",
+                    "$meta": {
+                      "category": "tree view item"
+                    }
+                  },
+                  "selected": {
+                    "$value": "#cfdaff",
+                    "$type": "color",
+                    "unit": "hex",
+                    "$meta": {
+                      "category": "tree view item"
+                    }
+                  },
+                  "disabled": {
+                    "$value": "#e3e7ea80",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  }
+                },
+                "border": {
+                  "normal": {
+                    "$value": "#e3e7ea",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "disabled": {
+                    "$value": "#e3e7ea80",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "hovered": {
+                    "$value": "#dbe3ff",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "selected": {
+                    "$value": "#cfdaff",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  },
+                  "outline": {
+                    "$value": "#0130ce",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  }
+                }
+              },
+              "divider": {
+                "border": {
+                  "normal": {
+                    "$value": "#a5b1bc",
+                    "$type": "color",
+                    "$unit": "hex",
+                    "$meta": {
+                      "category": "list item"
+                    }
+                  }
+                }
+              },
+              "title": {
+                "normal": {
+                  "$value": "#2f383f",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "disabled": {
+                  "$value": "#637584",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "hovered": {
+                  "$value": "#2f383f",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "selected": {
+                  "$value": "#0130ce",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                }
+              },
+              "description": {
+                "normal": {
+                  "$value": "#2f383f",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "disabled": {
+                  "$value": "#637584",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "hovered": {
+                  "$value": "#2f383f",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
+                },
+                "selected": {
+                  "$value": "#0130ce",
+                  "$type": "color",
+                  "$unit": "hex",
+                  "$meta": {
+                    "category": "list item"
+                  }
                 }
               }
             }

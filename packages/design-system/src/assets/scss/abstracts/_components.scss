@@ -182,6 +182,7 @@ $atoms:(
   root: (
   gap: 12px,
   min-width: 32px,
+  max-width: 280px,
   padding: 8px 12px,
   border-radius: 8px,
   border-width: 1px
@@ -628,6 +629,12 @@ $atoms:(
 ),
   surface: (
   default: (
+  xl: (
+  root: (
+  border-radius: 24px,
+  border-width: 1px
+)
+),
   lg: (
   root: (
   border-radius: 20px,
@@ -638,6 +645,18 @@ $atoms:(
   root: (
   border-radius: 16px,
   border-width: 1px
+)
+),
+  sm: (
+  root: (
+  border-radius: 12px,
+  border-width: 1px
+),
+  xs: (
+  root: (
+  border-radius: 8px,
+  border-width: 1px
+)
 )
 )
 )
@@ -783,6 +802,50 @@ $molecules:(
 ),
   header: (
   padding: 12px 0px
+)
+)
+)
+),
+  list: (
+  default: (
+  lg: (
+  root: (
+  
+),
+  item: (
+  font-style: label-2,
+  min-height: 24px
+)
+),
+  md: (
+  root: (
+  
+),
+  item: (
+  font-style: label-3,
+  min-height: 24px
+)
+)
+)
+),
+  list-item: (
+  default: (
+  md: (
+  root: (
+  min-height: 24px,
+  padding-horizontal: 16px,
+  padding-vertical: 12px,
+  border-radius: 16px,
+  border-width: 1px
+),
+  divider: (
+  border-width: 1px
+),
+  title: (
+  font-style: label-3
+),
+  description: (
+  font-style: body-3
 )
 )
 )

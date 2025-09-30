@@ -17,15 +17,18 @@
     "custom ui"
   ],
   "scripts": {
+    "install:all": "pnpm install",
+    "tokens-worker:build": "pnpm --filter tokens-worker build",
+    "prepare": "pnpm tokens-worker:build",
     "sparkpad:client:dev": "pnpm --filter sparkpad-client dev",
     "sparkpad:client:build": "pnpm --filter sparkpad-client build",
     "sparkpad:client:test:unit": "pnpm --filter sparkpad-client test:unit",
     "sparkpad:server:dev": "pnpm --filter sparkpad-server dev",
     "sparkpad:server:build": "pnpm --filter sparkpad-server build",
-    "ds:docs:dev": "pnpm --filter design-system storybook:dev",
-    "ds:docs:build": "pnpm --filter design-system storybook:build",
-    "ds:docs:preview": "pnpm --filter design-system storybook:preview",
-    "install:all": "pnpm install"
+    "ds:build": "pnpm --filter design-system build",
+    "ds:docs:dev": "pnpm --filter design-system docs:dev",
+    "ds:docs:build": "pnpm --filter design-system docs:build",
+    "ds:docs:preview": "pnpm --filter design-system docs:preview"
   },
   "packageManager": "pnpm@9.12.3",
   "dependencies": {

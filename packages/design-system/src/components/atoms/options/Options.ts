@@ -3,7 +3,7 @@ import type {
   OptionsSize,
   OptionsVariant,
   OptionsTone,
-} from "@/adapters";
+} from "@/adapters/atoms/options";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

@@ -7,8 +7,8 @@ const PREFIX = "text";
 
 const props = withDefaults(defineProps<TextProps>(), {
   as: "span",
-  mode: "neutral",
-  tone: "primary",
+  // mode: "neutral",
+  // tone: "primary",
 });
 
 const componentTag = props.as;

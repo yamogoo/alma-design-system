@@ -75,6 +75,7 @@ $prefix: surface;
   @include box(100%);
   border-style: solid;
   border-width: 0;
+  overflow: hidden;
   @extend %base-transition;
 
   @include defineSizes();

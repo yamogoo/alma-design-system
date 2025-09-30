@@ -13,6 +13,7 @@ import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
 import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
 import StoryBox from "@/stories/components/atoms/blocks/StoryBox.vue";
+import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
 
 import type { SurfaceProps } from "./Surface";
 import Surface from "./Surface.vue";
@@ -53,8 +54,8 @@ export const Playground: Story = {
   render: (args: SurfaceProps) => ({
     setup() {
       return () => (
-        <StoryGrid columns={1}>
-          <StoryBox>
+        <StoryGrid columns={4}>
+          <StoryBox width="100%">
             <Surface {...args}></Surface>
           </StoryBox>
         </StoryGrid>
@@ -72,7 +73,7 @@ export const Size: Story = {
             title={"Surface size"}
             description={"Available options and sizes"}
           ></PageHeader>
-          <StoryGrid columns={1}>
+          <StoryGrid columns={4}>
             {surfaceVariants.map((variant) =>
               surfaceSizes.map((size) => (
                 <InfoBlock
@@ -81,8 +82,10 @@ export const Size: Story = {
                   align={"center"}
                   orientation={"vertical"}
                 >
-                  <StoryBox>
-                    <Surface {...args} variant={variant} size={size}></Surface>
+                  <StoryBox width="100%">
+                    <Surface {...args} variant={variant} size={size}>
+                      <StorySlotCover></StorySlotCover>
+                    </Surface>
                   </StoryBox>
                 </InfoBlock>
               ))
@@ -106,7 +109,7 @@ export const Color: Story = {
             title={"Surface colors"}
             description={"Combinations of mode and tone"}
           ></PageHeader>
-          <StoryGrid columns={1}>
+          <StoryGrid columns={4}>
             {surfaceModes.map((mode) =>
               surfaceTones.map((tone) => (
                 <InfoBlock
@@ -115,7 +118,7 @@ export const Color: Story = {
                   align={"center"}
                   orientation={"vertical"}
                 >
-                  <StoryBox>
+                  <StoryBox width="100%">
                     <Surface {...args} mode={mode} tone={tone}></Surface>
                   </StoryBox>
                 </InfoBlock>

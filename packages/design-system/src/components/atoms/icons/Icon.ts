@@ -20,6 +20,7 @@ export interface IconComponentProps {
   iconName: IconName;
   iconStyle: IconStyle;
   iconWeight: IconWeight;
+  iconSize: IconSize;
 }
 
 export interface IconProps

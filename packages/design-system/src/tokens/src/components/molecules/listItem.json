@@ -1,0 +1,63 @@
+{
+  "default": {
+    "md": {
+      "root": {
+        "minHeight": {
+          "$value": 24,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "dropDown"
+          }
+        },
+        "paddingHorizontal": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$unit": "px",
+          "$type": ""
+        },
+        "paddingVertical": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$unit": "px",
+          "$type": ""
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.md.$value}",
+          "$unit": "px",
+          "$type": ""
+        },
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm.$value}",
+          "$unit": "px",
+          "$type": ""
+        }
+      },
+      "divider": {
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm.$value}",
+          "$unit": "px",
+          "$type": ""
+        }
+      },
+      "title": {
+        "fontStyle": {
+          "$value": "label-3",
+          "$type": "string",
+          "$unit": "",
+          "$meta": {
+            "category": "typography"
+          }
+        }
+      },
+      "description": {
+        "fontStyle": {
+          "$value": "body-3",
+          "$type": "string",
+          "$unit": "",
+          "$meta": {
+            "category": "typography"
+          }
+        }
+      }
+    }
+  }
+}

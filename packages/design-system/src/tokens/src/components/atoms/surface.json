@@ -1,5 +1,21 @@
 {
   "default": {
+    "xl": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.xl.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "description": "Surface border width for large size",
+            "category": "surface"
+          }
+        }
+      }
+    },
     "lg": {
       "root": {
         "borderRadius": {
@@ -28,6 +44,38 @@
           "$meta": {
             "description": "Surface border width for medium size",
             "category": "surface"
+          }
+        }
+      }
+    },
+    "sm": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.sm.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "description": "Surface border width for medium size",
+            "category": "surface"
+          }
+        }
+      },
+      "xs": {
+        "root": {
+          "borderRadius": {
+            "$value": "{tokens.roundness.xs.$value}"
+          },
+          "borderWidth": {
+            "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+            "$type": "number",
+            "$unit": "px",
+            "$meta": {
+              "description": "Surface border width for medium size",
+              "category": "surface"
+            }
           }
         }
       }

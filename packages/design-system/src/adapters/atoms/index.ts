@@ -25,15 +25,14 @@ export * from "./resizeBounding";
 // menues
 export * from "./simpleMenu";
 
-// options
-export * from "./options";
-
 // sheets
 export * from "./actionSheet";
 export * from "./sheet";
 
 // skeletons
 export * from "./skeleton";
+
+export * from "./options";
 
 export * from "./slider";
 

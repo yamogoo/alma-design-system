@@ -26,4 +26,4 @@ export interface ControlButtonProps
         "contentDirection" | "label" | "isDisabled" | "stretch" | "iconSize"
       >
     >,
-    IconComponentProps {}
+    Omit<IconComponentProps, "iconSize"> {}

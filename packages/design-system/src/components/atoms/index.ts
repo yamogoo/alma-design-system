@@ -20,12 +20,11 @@ export * from "./icons";
 // Inputs: Input, PasswordInput, and other text fields
 export * from "./inputs";
 
+export * from "./options";
+
 export * from "./logos";
 
 export * from "./menu";
-
-// Options/Selectors: Options component and selection logic
-export * from "./options";
 
 // Sheets: ActionSheet, Sheet, and their variations
 export * from "./sheets";

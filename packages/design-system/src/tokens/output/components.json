@@ -764,6 +764,11 @@
               "$unit": "px",
               "$type": "spacing"
             },
+            "maxWidth": {
+              "$value": 280,
+              "$unit": "px",
+              "$type": "spacing"
+            },
             "padding": {
               "$value": [
                 8,
@@ -2405,6 +2410,22 @@
     },
     "surface": {
       "default": {
+        "xl": {
+          "root": {
+            "borderRadius": {
+              "$value": 24
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px",
+              "$meta": {
+                "description": "Surface border width for large size",
+                "category": "surface"
+              }
+            }
+          }
+        },
         "lg": {
           "root": {
             "borderRadius": {
@@ -2433,6 +2454,38 @@
               "$meta": {
                 "description": "Surface border width for medium size",
                 "category": "surface"
+              }
+            }
+          }
+        },
+        "sm": {
+          "root": {
+            "borderRadius": {
+              "$value": 12
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px",
+              "$meta": {
+                "description": "Surface border width for medium size",
+                "category": "surface"
+              }
+            }
+          },
+          "xs": {
+            "root": {
+              "borderRadius": {
+                "$value": 8
+              },
+              "borderWidth": {
+                "$value": 1,
+                "$type": "number",
+                "$unit": "px",
+                "$meta": {
+                  "description": "Surface border width for medium size",
+                  "category": "surface"
+                }
               }
             }
           }
@@ -3009,6 +3062,115 @@
             }
           },
           "$$type": "component"
+        }
+      }
+    },
+    "list": {
+      "default": {
+        "lg": {
+          "root": {},
+          "item": {
+            "fontStyle": {
+              "$value": "label-2",
+              "$type": "string",
+              "$unit": "",
+              "$meta": {
+                "category": "typography"
+              }
+            },
+            "minHeight": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px",
+              "$meta": {
+                "category": "dropDown"
+              }
+            }
+          }
+        },
+        "md": {
+          "root": {},
+          "item": {
+            "fontStyle": {
+              "$value": "label-3",
+              "$type": "string",
+              "$unit": "",
+              "$meta": {
+                "category": "typography"
+              }
+            },
+            "minHeight": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px",
+              "$meta": {
+                "category": "dropDown"
+              }
+            }
+          }
+        }
+      }
+    },
+    "listItem": {
+      "default": {
+        "md": {
+          "root": {
+            "minHeight": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px",
+              "$meta": {
+                "category": "dropDown"
+              }
+            },
+            "paddingHorizontal": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": ""
+            },
+            "paddingVertical": {
+              "$value": 12,
+              "$unit": "px",
+              "$type": ""
+            },
+            "borderRadius": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": ""
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": ""
+            }
+          },
+          "divider": {
+            "borderWidth": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": ""
+            }
+          },
+          "title": {
+            "fontStyle": {
+              "$value": "label-3",
+              "$type": "string",
+              "$unit": "",
+              "$meta": {
+                "category": "typography"
+              }
+            }
+          },
+          "description": {
+            "fontStyle": {
+              "$value": "body-3",
+              "$type": "string",
+              "$unit": "",
+              "$meta": {
+                "category": "typography"
+              }
+            }
+          }
         }
       }
     },

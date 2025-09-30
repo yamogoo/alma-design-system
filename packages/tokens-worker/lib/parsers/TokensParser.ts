@@ -120,6 +120,10 @@ export class SCSSParser extends Parser {
     // nested token reference like "{file.key}"
     if (_.isString(value) && value.startsWith('{')) {
       const nested = this.tokensParser.parseNestedValue(value, opts);
+      // If nothing changed (unresolved or depth limit), avoid infinite recursion
+      if (nested === value) {
+        return value;
+      }
       return this.normalizeValue(nested, opts);
     }
 
@@ -164,7 +168,7 @@ export class SCSSParser extends Parser {
         };
         return this.normalizeValue(this.tokensParser.getTokenField(value, 'value'), localOpts);
       }
-      // plain object -> parse as map
+      // plain object -> parse as map (SCSSParser method)
       return this.parseMap(value as IMap, opts);
     }
 
@@ -871,47 +875,84 @@ export class TokensParser {
 
   /* * * end of color helpers * * */
 
-  normalizeValue(value: any, opts: ParseValueOptions): string {
+  // Внутри class SCSSParser
+  private normalizeValue(
+    value: any,
+    opts: ParseValueOptions,
+    _depth: number = 0,
+    _trail: string[] = [],
+  ): string {
+    const depth = _depth | 0;
+    if (depth > 100) {
+      if (this.opts.verbose) {
+        console.warn(
+          `⚠️ [normalizeValue] depth limit reached (>${depth}) in file "${opts.fileName ?? ''}". Value preview: ${String(value).slice(0, 120)}…`,
+        );
+      }
+      return String(value);
+    }
+
+    // nested token reference like "{file.key}"
+    if (_.isString(value) && value.startsWith('{')) {
+      const before = value;
+      const nested = this.parseNestedValue(value, opts);
+      if (nested === before) {
+        if (this.opts.verbose) {
+          console.warn(
+            `⚠️ [normalizeValue] no-progress after parseNestedValue in file "${opts.fileName ?? ''}". Ref: ${before}`,
+          );
+        }
+        return before; // важно: выходим, чтобы не уйти в рекурсию
+      }
+      return this.normalizeValue(nested, opts, depth + 1, _trail);
+    }
+
     if (typeof value === 'number') {
       return this.convertNumberByKey(value, opts.key, opts);
     }
 
     if (typeof value === 'string') {
-      if (value.startsWith('{')) {
-        const nested = this.parseNestedValue(value, opts);
-        return this.normalizeValue(nested, opts);
-      }
-
+      // try color first
       const colorMaybe = this.tryParseColor(value, opts.unit);
       if (colorMaybe) return colorMaybe;
 
       if (/^\d+(\.\d+)?$/.test(value)) {
         return this.convertNumberByKey(Number(value), opts.key, opts);
       }
-
       if (/^\d+(\.\d+)?(px|rem|em|%)$/.test(value)) {
         return value;
       }
-
       return value;
     }
 
-    if (Array.isArray(value)) {
-      return value.map((v) => this.normalizeValue(v, opts)).join(' ');
+    if (_.isArray(value)) {
+      return value.map((v) => this.normalizeValue(v, opts, depth + 1, _trail)).join(' ');
     }
 
-    if (_.isPlainObject(value) && this.hasTokenField(value, 'value')) {
-      const typeVal = this.getTokenField(value, 'type');
-      const unitVal = this.getTokenField(value, 'unit');
-      const localOpts: ParseValueOptions = {
-        ...opts,
-        key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
-        unit:
-          this.hasTokenField(value, 'unit') && typeof unitVal === 'string'
-            ? (unitVal as string)
-            : opts.unit,
-      };
-      return this.normalizeValue(this.getTokenField(value, 'value'), localOpts);
+    if (_.isPlainObject(value)) {
+      if (this.hasTokenField(value, 'value')) {
+        const localOpts: ParseValueOptions = {
+          ...opts,
+          key:
+            typeof this.getTokenField(value, 'type') === 'string'
+              ? (this.getTokenField(value, 'type') as string)
+              : opts.key,
+          unit: (() => {
+            const hasUnit = this.hasTokenField(value, 'unit');
+            const unitVal = this.getTokenField(value, 'unit');
+            return hasUnit && typeof unitVal === 'string' ? unitVal : opts.unit;
+          })(),
+        };
+        return this.normalizeValue(
+          this.getTokenField(value, 'value'),
+          localOpts,
+          depth + 1,
+          _trail,
+        );
+      }
+
+      // Delegate plain-object parsing to active parser implementation
+      return (this.parser as Parser).parseMap(value as IMap, opts);
     }
 
     return String(value);
@@ -928,30 +969,61 @@ export class TokensParser {
     depth = 0,
     visited = new Set<string>(),
   ): any {
-    if (depth > 5) return value;
+    if (depth > 50) {
+      if (this.opts.verbose) {
+        console.warn(
+          `⚠️ [parseNestedValue] depth limit reached in file "${opts.fileName ?? ''}" at value: ${value.slice(0, 120)}…`,
+        );
+      }
+      return value;
+    }
+
     const regex = /{([^}]+)}/g;
     let result = value;
     let match: RegExpExecArray | null;
+    let madeAnyReplacement = false;
+
+    const localSeen = new Set<string>();
 
     while ((match = regex.exec(result)) !== null) {
       const fullMatch = match[0];
       const pathStr = match[1];
 
-      if (visited.has(fullMatch)) {
-        if (this.opts.verbose) console.warn(`⚠️ Circular reference detected: ${fullMatch}`);
+      if (localSeen.has(pathStr)) {
+        if (this.opts.verbose) {
+          console.warn(
+            `⚠️ [parseNestedValue] repeated ref "{${pathStr}}" within same value in "${opts.fileName ?? ''}" — possible cycle.`,
+          );
+        }
+        continue;
+      }
+      localSeen.add(pathStr);
+
+      if (visited.has(pathStr)) {
+        if (this.opts.verbose) {
+          console.warn(
+            `⚠️ [parseNestedValue] circular reference detected: {${pathStr}} (file "${opts.fileName ?? ''}")`,
+          );
+        }
         continue;
       }
 
-      visited.add(fullMatch);
+      visited.add(pathStr);
 
       const pathParts = pathStr.split('.');
       const fileName = pathParts.shift();
+
       if (!fileName) {
-        visited.delete(fullMatch);
+        visited.delete(pathStr);
         continue;
       }
 
-      // 1) Direct load <paths>/<fileName>.json
+      if (this.opts.verbose) {
+        console.warn(
+          `ℹ️ [parseNestedValue] resolving {${pathStr}} (from "${opts.fileName ?? ''}")`,
+        );
+      }
+
       let json: any;
       let fileFound = false;
 
@@ -973,30 +1045,34 @@ export class TokensParser {
         }
       }
 
-      // 2) If not found and folder-structure lookup is allowed, try resolving by tree
       if (!fileFound && this.opts.useFileStructureLookup) {
         const resolved = this.resolveTokenPathRecursiveSync(pathStr);
         if (resolved !== undefined) {
           result = result.replace(fullMatch, resolved as any);
-          visited.delete(fullMatch);
+          madeAnyReplacement = true;
+          visited.delete(pathStr);
           continue;
         }
       }
 
       if (!fileFound) {
-        if (this.opts.verbose)
+        if (this.opts.verbose) {
           console.warn(
-            `⚠️ Token file "${fileName}.json" not found in paths: ${(this.opts.paths ?? ['.']).join(', ')}`,
+            `⚠️ [parseNestedValue] file "${fileName}.json" not found while resolving {${pathStr}} (paths: ${(this.opts.paths ?? ['.']).join(', ')})`,
           );
-        visited.delete(fullMatch);
+        }
+        visited.delete(pathStr);
         continue;
       }
 
       let nestedValue = pathParts.reduce((acc, key) => acc?.[key], json);
       if (nestedValue === undefined) {
-        if (this.opts.verbose)
-          console.warn(`⚠️ Token path "${pathStr}" not found in file "${fileName}"`);
-        visited.delete(fullMatch);
+        if (this.opts.verbose) {
+          console.warn(
+            `⚠️ [parseNestedValue] path "${pathStr}" not found inside "${fileName}.json"`,
+          );
+        }
+        visited.delete(pathStr);
         continue;
       }
 
@@ -1005,7 +1081,14 @@ export class TokensParser {
       }
 
       result = result.replace(fullMatch, nestedValue);
-      visited.delete(fullMatch);
+      madeAnyReplacement = true;
+      visited.delete(pathStr);
+    }
+
+    if (!madeAnyReplacement && this.opts.verbose) {
+      console.warn(
+        `⚠️ [parseNestedValue] no matches/replacements in "${opts.fileName ?? ''}" for: ${value}`,
+      );
     }
 
     return result;

@@ -1,0 +1,46 @@
+{
+  "default": {
+    "lg": {
+      "root": {},
+      "item": {
+        "fontStyle": {
+          "$value": "label-2",
+          "$type": "string",
+          "$unit": "",
+          "$meta": {
+            "category": "typography"
+          }
+        },
+        "minHeight": {
+          "$value": 24,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "dropDown"
+          }
+        }
+      }
+    },
+    "md": {
+      "root": {},
+      "item": {
+        "fontStyle": {
+          "$value": "label-3",
+          "$type": "string",
+          "$unit": "",
+          "$meta": {
+            "category": "typography"
+          }
+        },
+        "minHeight": {
+          "$value": 24,
+          "$type": "number",
+          "$unit": "px",
+          "$meta": {
+            "category": "dropDown"
+          }
+        }
+      }
+    }
+  }
+}

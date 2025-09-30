@@ -26,6 +26,10 @@
       "import": "./dist/*.js",
       "types": "./dist/*.d.ts"
     },
+    "./**": {
+      "import": "./dist/",
+      "types": "./dist/"
+    },
     "./assets/*": {
       "import": "./dist/assets/*.js",
       "types": "./dist/assets/*.d.ts"

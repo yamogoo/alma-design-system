@@ -122,7 +122,7 @@ const onKeyup = (e: KeyboardEvent) => {
       },
     ]"
     data-testid="button"
-    :aria-label="label || undefined"
+    :aria-label="label || arialLabel || 'button'"
     :aria-disabled="isDisabled"
     :disabled="as === 'button' ? isDisabled : undefined"
     :tabindex="as !== 'button' ? (isDisabled ? -1 : 0) : undefined"
@@ -237,8 +237,6 @@ $prefix: "button";
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
-          @extend %base-transition;
-
           &:focus {
             outline: none;
           }

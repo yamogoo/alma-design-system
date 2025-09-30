@@ -59,7 +59,27 @@ export type UIElementTypographyTitleTag = `h${1 | 2 | 3 | 4 | 5 | 6}`;
 
 export type UIElementTypographyLinkTag = "a";
 
-export type UIElementTypographyListItemTag = "li" | "ol" | "ul";
+export const UIElementListsTags = ["ol", "ul", "dl"] as const;
+export type UIElementListsTag = (typeof UIElementListsTags)[number];
+
+export const UIElementListItemTags = ["li", "dt", "dd"] as const;
+export type UIElementListItemTag = (typeof UIElementListItemTags)[number];
+
+export const UIElementMaybeListOrBlockTags = [
+  ...UIElementListsTags,
+  "div",
+] as const;
+export type UIElementMaybeListsOrBlockTag =
+  (typeof UIElementMaybeListOrBlockTags)[number];
+
+export type UIElementMaybeListOrBlockTag = "div" | "ul";
+
+export const UIElementMaybeListItemOrBlockTags = [
+  ...UIElementListItemTags,
+  "div",
+] as const;
+export type UIElementMaybeListItemOrBlockTag =
+  (typeof UIElementMaybeListItemOrBlockTags)[number];
 
 export type UIElementTypographyParagraphTag = "p" | "span" | "a" | "b" | "i";
 
@@ -80,7 +100,8 @@ export type UIElementTypographyTag =
   | UIElementTypographyTitleTag
   | UIElementTypographyParagraphTag
   | UIElementTypographyLinkTag
-  | UIElementTypographyListItemTag;
+  | UIElementListsTag
+  | UIElementListItemTag;
 
 export interface UIElementUnionProps<V = UIElementVariant> {
   variant?: V;

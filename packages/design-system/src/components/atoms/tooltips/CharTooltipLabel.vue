@@ -56,6 +56,7 @@ $prefix: char-tooltip-label;
         &.#{$prefix}_size-#{$size} {
           $gap: px2rem(get($val, "root.gap"));
           $min-width: px2rem(get($val, "root.min-width"));
+          $max-width: px2rem(get($val, "root.max-width"));
           $padding: get($val, "root.padding");
           $border-radius: px2rem(get($val, "root.border-radius"));
           $border-width: px2rem(get($val, "root.border-width"));
@@ -65,6 +66,8 @@ $prefix: char-tooltip-label;
           $icon-size: get($val, "icon.size");
 
           gap: $gap;
+          min-width: $min-width;
+          max-width: $max-width;
           padding: $padding;
           border-radius: $border-radius;
           border-width: $border-width;
@@ -114,7 +117,7 @@ $prefix: char-tooltip-label;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: min-content;
+  width: max-content;
   @extend %base-transition;
 
   @include defineSized();

@@ -12,6 +12,11 @@
           "$unit": "px",
           "$type": "spacing"
         },
+        "maxWidth": {
+          "$value": 280,
+          "$unit": "px",
+          "$type": "spacing"
+        },
         "padding": {
           "$value": [
             "{tokens.spacing.xs.$value}",

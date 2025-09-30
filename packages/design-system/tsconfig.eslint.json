@@ -1,10 +1,12 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "noEmit": true,
     "lib": ["ES2022", "DOM"],
-    "types": ["vite/client", "vitest/globals"],
-    "moduleResolution": "bundler"
+    "types": ["vite/client", "vitest/globals", "vue/jsx"],
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "jsxImportSource": "vue"
   },
   "include": [
     "src/**/*.ts",

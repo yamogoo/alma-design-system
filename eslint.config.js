@@ -38,7 +38,7 @@ export default tseslint.config(
     rules: {},
   },
 
-  // ===== @alma/design-system =====
+  /* * * @alma/design-system * * */
 
   {
     files: [
@@ -77,7 +77,7 @@ export default tseslint.config(
     },
   },
 
-  // ===== apps/sparkpad/client =====
+  /* * * apps/sparkpad/client * * */
 
   {
     files: [

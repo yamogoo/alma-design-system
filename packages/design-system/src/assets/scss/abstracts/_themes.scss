@@ -1010,6 +1010,64 @@ $themes:(
 )
 )
 ),
+  list: (
+  neutral: (
+  primary: (
+  label: (
+  normal: #a5b1bc,
+  disabled: #586976,
+  hovered: #eaedef,
+  focused: #eaedef
+)
+),
+  secondary: (
+  label: (
+  normal: #a5b1bc,
+  disabled: #586976,
+  hovered: #eaedef,
+  focused: #eaedef
+)
+)
+)
+),
+  list-item: (
+  neutral: (
+  primary: (
+  root: (
+  background: (
+  normal: #2f383f,
+  disabled: #2f383f80,
+  hovered: #1a1f23,
+  selected: #0130ce
+),
+  border: (
+  normal: #1a1f23,
+  disabled: #2f383f,
+  hovered: #1a1f23,
+  selected: #0130ce,
+  outline: #6286fe
+)
+),
+  divider: (
+  border: (
+  normal: #2f383f
+)
+),
+  title: (
+  normal: #dce1e5,
+  disabled: #97a5b1,
+  hovered: #dce1e5,
+  selected: #dce1e5
+),
+  description: (
+  normal: #dce1e5,
+  disabled: #97a5b1,
+  hovered: #dce1e5,
+  selected: #dce1e5
+)
+)
+)
+),
   snackbar: (
   neutral: (
   primary: (
@@ -2179,6 +2237,64 @@ $themes:(
   secondary: (
   background: #dce1e5,
   border: #ffffff
+)
+)
+),
+  list: (
+  neutral: (
+  primary: (
+  label: (
+  normal: #2f383f,
+  disabled: #8999a7,
+  hovered: #101315,
+  focused: #101315
+)
+),
+  secondary: (
+  label: (
+  normal: #2f383f,
+  disabled: #8999a7,
+  hovered: #101315,
+  focused: #101315
+)
+)
+)
+),
+  list-item: (
+  neutral: (
+  primary: (
+  root: (
+  background: (
+  normal: #e3e7ea,
+  hovered: #dbe3ff,
+  selected: #cfdaff,
+  disabled: #e3e7ea80
+),
+  border: (
+  normal: #e3e7ea,
+  disabled: #e3e7ea80,
+  hovered: #dbe3ff,
+  selected: #cfdaff,
+  outline: #0130ce
+)
+),
+  divider: (
+  border: (
+  normal: #a5b1bc
+)
+),
+  title: (
+  normal: #2f383f,
+  disabled: #637584,
+  hovered: #2f383f,
+  selected: #0130ce
+),
+  description: (
+  normal: #2f383f,
+  disabled: #637584,
+  hovered: #2f383f,
+  selected: #0130ce
+)
 )
 )
 ),
