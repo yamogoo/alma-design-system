@@ -3,7 +3,7 @@
     "lg": {
       "root": {
         "padding": {
-          "$value": ["{tokens.spacing.md.$value}", 0],
+          "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
           "$unit": "px"
         }
@@ -12,7 +12,7 @@
     "md": {
       "root": {
         "padding": {
-          "$value": ["{tokens.spacing.sm.$value}", 0],
+          "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
           "$unit": "px"
         }
@@ -21,7 +21,7 @@
     "sm": {
       "root": {
         "padding": {
-          "$value": ["{tokens.spacing.xs.$value}", 0],
+          "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",
           "$unit": "px"
         }

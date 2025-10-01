@@ -1,4 +1,36 @@
 {
+  "main": {
+    "idle": {
+      "$value": "shift_oklch({themes.dark.abstracts.surface.positive.main.base.$value}, {themes.dark.config.surface.state.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "shift_oklch({themes.dark.abstracts.surface.positive.main.base.$value}, {themes.dark.config.surface.state.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "shift_oklch({themes.dark.abstracts.surface.positive.main.base.$value}, {themes.dark.config.surface.state.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "shift_oklch({themes.dark.abstracts.surface.positive.main.base.$value}, {themes.dark.config.surface.state.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "shift_oklch({themes.dark.abstracts.surface.positive.main.base.$value}, {themes.dark.config.surface.state.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "shift_oklch({themes.dark.abstracts.surface.positive.main.base.$value}, {themes.dark.config.surface.state.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
   "primary": {
     "idle": {
       "$value": "shift_oklch({themes.dark.abstracts.surface.positive.primary.base.$value}, {themes.dark.config.surface.state.delta.lightness.idle.$value})",

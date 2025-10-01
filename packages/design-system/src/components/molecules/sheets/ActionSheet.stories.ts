@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 import { actionSheetSizes } from "@/adapters/molecules/actionSheet";
 import { surfaceModes } from "@/adapters/atoms/surface";

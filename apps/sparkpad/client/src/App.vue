@@ -56,7 +56,7 @@ onMounted(() => {
   overflow: hidden;
 
   @include themify($themes) {
-    background-color: themed("mixins.surface.neutral.primary.idle");
+    background-color: themed("mixins.surface.neutral.main.normal");
   }
   @extend %base-transition;
 }

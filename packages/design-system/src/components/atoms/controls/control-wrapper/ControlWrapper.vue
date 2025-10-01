@@ -11,11 +11,13 @@ withDefaults(defineProps<ControlWrapperProps>(), {
 
 <template>
   <div
-    :class="{
+    :class="[
       PREFIX,
-      [`${PREFIX}_variant-${variant}`]: !!variant,
-      [`${PREFIX}_size-${size}`]: !!size,
-    }"
+      {
+        [`${PREFIX}_variant-${variant}`]: !!variant,
+        [`${PREFIX}_size-${size}`]: !!size,
+      },
+    ]"
   >
     <slot></slot>
   </div>

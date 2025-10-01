@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 import { enumOptions } from "@/stories/utils";
 
@@ -54,7 +54,7 @@ export const Playground: Story = {
   render: (args: SurfaceProps) => ({
     setup() {
       return () => (
-        <StoryGrid columns={4}>
+        <StoryGrid columns={5}>
           <StoryBox width="100%">
             <Surface {...args}></Surface>
           </StoryBox>
@@ -73,7 +73,7 @@ export const Size: Story = {
             title={"Surface size"}
             description={"Available options and sizes"}
           ></PageHeader>
-          <StoryGrid columns={4}>
+          <StoryGrid columns={5}>
             {surfaceVariants.map((variant) =>
               surfaceSizes.map((size) => (
                 <InfoBlock
@@ -109,7 +109,7 @@ export const Color: Story = {
             title={"Surface colors"}
             description={"Combinations of mode and tone"}
           ></PageHeader>
-          <StoryGrid columns={4}>
+          <StoryGrid columns={5}>
             {surfaceModes.map((mode) =>
               surfaceTones.map((tone) => (
                 <InfoBlock

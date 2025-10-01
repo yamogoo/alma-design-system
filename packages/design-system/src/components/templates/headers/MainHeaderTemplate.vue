@@ -41,9 +41,10 @@ $prefix: main-header;
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
-          $padding: get($val, "root.padding");
+          $padding: px2rem(get($val, "root.padding"));
 
-          padding: $padding;
+          padding-top: $padding;
+          padding-bottom: $padding;
         }
       }
     }

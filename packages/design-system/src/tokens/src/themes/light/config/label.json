@@ -2,6 +2,11 @@
   "state": {
     "delta": {
       "lightness": {
+        "main": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
         "idle": {
           "$value": 0.0,
           "$type": "number",

@@ -4,32 +4,32 @@
       "root": {
         "background": {
           "idle": {
-            "$value": "{themes.light.mixins.surface.neutral.primary.idle.$value}",
+            "$value": "{themes.light.mixins.surface.neutral.secondary.idle.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "normal": {
-            "$value": "{themes.light.mixins.surface.neutral.primary.normal.$value}",
+            "$value": "{themes.light.mixins.surface.neutral.secondary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.mixins.surface.neutral.primary.disabled.$value}",
+            "$value": "{themes.light.mixins.surface.neutral.secondary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.mixins.surface.neutral.primary.hovered.$value}",
+            "$value": "{themes.light.mixins.surface.neutral.secondary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "focused": {
-            "$value": "{themes.light.mixins.surface.neutral.primary.hovered.$value}",
+            "$value": "{themes.light.mixins.surface.neutral.secondary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "error": {
-            "$value": "{themes.light.mixins.surface.negative.inversed.normal.$value}",
+            "$value": "{themes.light.mixins.surface.negative.secondary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }

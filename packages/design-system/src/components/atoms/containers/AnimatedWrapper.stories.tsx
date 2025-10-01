@@ -1,5 +1,5 @@
 import { computed, ref, type ComputedRef, type CSSProperties } from "vue";
-import type { Meta, StoryObj } from "@storybook/vue3";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";

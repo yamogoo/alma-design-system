@@ -1,5 +1,12 @@
 {
   "neutral": {
+    "main": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.main.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
         "$value": "shift_oklch({themes.light.abstracts.surface.neutral.primary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
@@ -30,6 +37,13 @@
     }
   },
   "accent": {
+    "main": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.accent.main.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
         "$value": "shift_oklch({themes.light.abstracts.surface.accent.primary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
@@ -60,6 +74,13 @@
     }
   },
   "positive": {
+    "main": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.positive.main.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
         "$value": "shift_oklch({themes.light.abstracts.surface.positive.primary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
@@ -90,6 +111,13 @@
     }
   },
   "negative": {
+    "main": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.negative.main.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
         "$value": "shift_oklch({themes.light.abstracts.surface.negative.primary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",

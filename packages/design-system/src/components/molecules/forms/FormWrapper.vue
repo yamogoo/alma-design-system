@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { AnimatedWrapper } from "@/components/atoms";
 import type { FormWrapperProps } from "@/components/molecules";
+import Surface from "@/components/atoms/containers/Surface.vue";
 
 const PREFIX = "form-wrapper";
 
@@ -8,13 +9,13 @@ withDefaults(defineProps<FormWrapperProps>(), {
   variant: "default",
   size: "lg",
   mode: "neutral",
-  tone: "primary",
+  tone: "main",
   bordered: false,
 });
 </script>
 
 <template>
-  <div
+  <Surface
     :class="[
       PREFIX,
       `${PREFIX}_variant-${variant}`,
@@ -23,6 +24,10 @@ withDefaults(defineProps<FormWrapperProps>(), {
       `${PREFIX}_tone-${tone}`,
       { [`${PREFIX}_bordered`]: bordered },
     ]"
+    :variant="variant"
+    :size="size"
+    :mode="mode"
+    :tone="tone"
     data-testid="form-wrapper"
   >
     <AnimatedWrapper :duration="duration" :content-key="contentKey ?? ''">
@@ -31,7 +36,7 @@ withDefaults(defineProps<FormWrapperProps>(), {
       </div>
       <slot></slot>
     </AnimatedWrapper>
-  </div>
+  </Surface>
 </template>
 
 <style lang="scss">

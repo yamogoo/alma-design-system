@@ -138,12 +138,12 @@ export interface Props {
           :orientation="'horizontal'"
           :size="'md'"
           :mode="'neutral'"
-          :tone="'secondary'"
+          :tone="'primary'"
         ></Components.Atoms.Divider>
         <Components.Atoms.Tooltip :label="'Button'">
           <Components.Atoms.ActionButton
             :mode="'neutral'"
-            :tone="'tertiary'"
+            :tone="'outline'"
             :size="'md'"
             :stretch="'fill'"
             :label="$t.auth.login.form.skip"

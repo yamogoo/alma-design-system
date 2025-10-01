@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "sass:list";
 @use "sass:string";
+@use "sass:meta";
 
 @function str-split($string, $delimiter: ".") {
   $result: ();
@@ -24,13 +25,27 @@
 @function get($map, $path) {
   $keys: str-split($path, ".");
   $value: $map;
+  $traversed: ""; // accumulated path up to current parent
 
   @each $key in $keys {
-    $value: map.get($value, $key);
+    $parent: $value;
+    $traversed-parent: $traversed;
 
-    @if $value == null {
-      @error "Key `#{$key}` not found in the map.";
+    // Verify current value is a map before accessing a child key
+    @if meta.type-of($parent) != "map" {
+      @error "utils.get(): Cannot access key `#{$key}` at path `#{$traversed-parent}` because value is of type `#{meta.type-of($parent)}`. Full path attempted: `#{$path}`.";
     }
+
+    $next: map.get($parent, $key);
+
+    @if $next == null {
+      $available: map.keys($parent);
+      @error "utils.get(): Key `#{$key}` not found at `#{$traversed-parent}`. Full path: `#{$path}`. Available keys here: #{$available}.";
+    }
+
+    // advance
+    $value: $next;
+    $traversed: if($traversed == "", "#{$key}", "#{$traversed}.#{$key}");
   }
 
   @return $value;

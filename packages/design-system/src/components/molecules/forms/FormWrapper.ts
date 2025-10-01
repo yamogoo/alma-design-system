@@ -1,21 +1,7 @@
-import type {
-  FormWrapperMode,
-  FormWrapperSize,
-  FormWrapperTone,
-  FormWrapperVariant,
-} from "@/adapters";
+import type { UIElementContentKey } from "@/typings";
+import type { SurfaceProps } from "@/components/atoms/containers/Surface";
 
-import type { UIElementContentKey, UIElementStylingModifiers } from "@/typings";
-
-export interface FormWrapperProps
-  extends Partial<
-    UIElementStylingModifiers<
-      FormWrapperVariant,
-      FormWrapperSize,
-      FormWrapperMode,
-      FormWrapperTone
-    >
-  > {
+export interface FormWrapperProps extends Partial<SurfaceProps> {
   bordered?: boolean;
   duration?: number;
   contentKey?: UIElementContentKey;

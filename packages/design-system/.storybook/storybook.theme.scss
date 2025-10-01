@@ -13,7 +13,7 @@
 .storybook-root,
 .storybook-main-container {
   @include themify($themes) {
-    background-color: themed("mixins.surface.neutral.primary.normal");
+    background-color: themed("mixins.surface.neutral.main.normal");
   }
 }
 

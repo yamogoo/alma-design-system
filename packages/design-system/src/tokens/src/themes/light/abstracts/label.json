@@ -1,5 +1,12 @@
 {
   "neutral": {
+    "main": {
+      "base": {
+        "$value": "{colors.gray-800}",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
         "$value": "{colors.gray-800}",
@@ -30,6 +37,13 @@
     }
   },
   "accent": {
+    "main": {
+      "base": {
+        "$value": "{colors.blue-600}",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
         "$value": "{colors.blue-600}",
@@ -60,6 +74,13 @@
     }
   },
   "positive": {
+    "main": {
+      "base": {
+        "$value": "{colors.green-400}",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
         "$value": "{colors.green-400}",
@@ -90,6 +111,13 @@
     }
   },
   "negative": {
+    "main": {
+      "base": {
+        "$value": "{colors.red-325}",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
         "$value": "{colors.red-325}",

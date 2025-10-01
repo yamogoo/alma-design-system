@@ -2289,10 +2289,7 @@
         "lg": {
           "root": {
             "padding": {
-              "$value": [
-                16,
-                0
-              ],
+              "$value": 16,
               "$type": "number",
               "$unit": "px"
             }
@@ -2301,10 +2298,7 @@
         "md": {
           "root": {
             "padding": {
-              "$value": [
-                12,
-                0
-              ],
+              "$value": 12,
               "$type": "number",
               "$unit": "px"
             }
@@ -2313,10 +2307,7 @@
         "sm": {
           "root": {
             "padding": {
-              "$value": [
-                8,
-                0
-              ],
+              "$value": 8,
               "$type": "number",
               "$unit": "px"
             }
@@ -2329,10 +2320,7 @@
         "lg": {
           "root": {
             "padding": {
-              "$value": [
-                16,
-                0
-              ],
+              "$value": 16,
               "$type": "number",
               "$unit": "px"
             }
@@ -2341,10 +2329,7 @@
         "md": {
           "root": {
             "padding": {
-              "$value": [
-                12,
-                0
-              ],
+              "$value": 12,
               "$type": "number",
               "$unit": "px"
             }
@@ -2353,10 +2338,7 @@
         "sm": {
           "root": {
             "padding": {
-              "$value": [
-                8,
-                0
-              ],
+              "$value": 8,
               "$type": "number",
               "$unit": "px"
             }

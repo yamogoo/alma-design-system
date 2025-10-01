@@ -2,8 +2,13 @@
   "abstract": {
     "delta": {
       "lightness": {
-        "normal": {
+        "main": {
           "$value": 0.06,
+          "$type": "number",
+          "$unit": ""
+        },
+        "normal": {
+          "$value": -0.06,
           "$type": "number",
           "$unit": ""
         }

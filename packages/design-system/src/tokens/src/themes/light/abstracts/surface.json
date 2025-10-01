@@ -1,120 +1,147 @@
 {
   "neutral": {
+    "main": {
+      "base": {
+        "$value": "shift_oklch({colors.gray-100}, {themes.light.config.surface.abstract.delta.lightness.main.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
-        "$value": "{colors.gray-50}",
+        "$value": "shift_oklch({colors.gray-50}, {themes.light.config.surface.abstract.delta.lightness.primary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "secondary": {
       "base": {
-        "$value": "{colors.gray-100}",
+        "$value": "shift_oklch({colors.gray-150}, {themes.light.config.surface.abstract.delta.lightness.secondary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "tertiary": {
       "base": {
-        "$value": "{colors.gray-300}",
+        "$value": "shift_oklch({colors.gray-300}, {themes.light.config.surface.abstract.delta.lightness.tertiary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "inversed": {
       "base": {
-        "$value": "{colors.gray-950}",
+        "$value": "shift_oklch({colors.gray-950}, {themes.light.config.surface.abstract.delta.lightness.inversed.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     }
   },
   "accent": {
+    "main": {
+      "base": {
+        "$value": "shift_oklch({colors.blue-100}, {themes.light.config.surface.abstract.delta.lightness.main.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
-        "$value": "{colors.blue-500}",
+        "$value": "shift_oklch({colors.blue-500}, {themes.light.config.surface.abstract.delta.lightness.primary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "secondary": {
       "base": {
-        "$value": "{colors.blue-600}",
+        "$value": "shift_oklch({colors.blue-600}, {themes.light.config.surface.abstract.delta.lightness.secondary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "tertiary": {
       "base": {
-        "$value": "{colors.blue-700}",
+        "$value": "shift_oklch({colors.blue-700}, {themes.light.config.surface.abstract.delta.lightness.tertiary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "inversed": {
       "base": {
-        "$value": "{colors.blue-200}",
+        "$value": "shift_oklch({colors.blue-150}, {themes.light.config.surface.abstract.delta.lightness.inversed.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     }
   },
   "positive": {
+    "main": {
+      "base": {
+        "$value": "shift_oklch({colors.green-100}, {themes.light.config.surface.abstract.delta.lightness.main.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
-        "$value": "{colors.green-400}",
+        "$value": "shift_oklch({colors.green-500}, {themes.light.config.surface.abstract.delta.lightness.primary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "secondary": {
       "base": {
-        "$value": "{colors.green-500}",
+        "$value": "shift_oklch({colors.green-600}, {themes.light.config.surface.abstract.delta.lightness.secondary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "tertiary": {
       "base": {
-        "$value": "{colors.green-300}",
+        "$value": "shift_oklch({colors.green-700}, {themes.light.config.surface.abstract.delta.lightness.tertiary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "inversed": {
       "base": {
-        "$value": "{colors.green-200}",
+        "$value": "shift_oklch({colors.green-150}, {themes.light.config.surface.abstract.delta.lightness.inversed.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     }
   },
   "negative": {
+    "main": {
+      "base": {
+        "$value": "shift_oklch({colors.red-100}, {themes.light.config.surface.abstract.delta.lightness.main.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
     "primary": {
       "base": {
-        "$value": "{colors.red-325}",
+        "$value": "shift_oklch({colors.red-500}, {themes.light.config.surface.abstract.delta.lightness.primary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "secondary": {
       "base": {
-        "$value": "{colors.red-500}",
+        "$value": "shift_oklch({colors.red-600}, {themes.light.config.surface.abstract.delta.lightness.secondary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "tertiary": {
       "base": {
-        "$value": "{colors.red-200}",
+        "$value": "shift_oklch({colors.red-700}, {themes.light.config.surface.abstract.delta.lightness.tertiary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-
     "inversed": {
       "base": {
-        "$value": "{colors.red-675}",
+        "$value": "shift_oklch({colors.red-150}, {themes.light.config.surface.abstract.delta.lightness.inversed.$value})",
         "$type": "color",
         "$unit": "hex"
       }
