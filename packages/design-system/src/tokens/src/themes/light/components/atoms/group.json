@@ -1,0 +1,90 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.light.mixins.surface.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.mixins.divider.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.light.mixins.surface.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.mixins.divider.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    },
+    "ghost": {
+      "root": {
+        "background": {
+          "$value": "rgba({themes.light.mixins.surface.neutral.primary.normal.$value}, 0)",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.mixins.divider.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    }
+  },
+  "accent": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.light.mixins.surface.accent.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.mixins.divider.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.light.mixins.surface.accent.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.mixins.divider.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    },
+    "ghost": {
+      "root": {
+        "background": {
+          "$value": "rgba({themes.light.mixins.surface.accent.primary.normal.$value}, 0)",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.mixins.divider.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    }
+  }
+}

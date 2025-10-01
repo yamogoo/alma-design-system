@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { GroupProps } from "@/components/atoms";
+import type { GroupProps } from "./Group";
 
 const PREFIX = "group";
 
@@ -49,7 +49,7 @@ const componentTag = props.as;
 
 $prefix: "group";
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));
@@ -80,14 +80,14 @@ $prefix: "group";
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.group")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background"
+              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background"
             );
           }
 
@@ -95,7 +95,7 @@ $prefix: "group";
             &.#{$prefix}orientation-horizontal {
               @include themify($themes) {
                 border-right-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
                 );
               }
             }
@@ -103,7 +103,7 @@ $prefix: "group";
             &.#{$prefix}orientation-vertical {
               @include themify($themes) {
                 border-bottom-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
                 );
               }
             }
@@ -157,7 +157,7 @@ $prefix: "group";
     }
   }
 
-  @each $variant, $sizes in get($atoms, "group") {
+  @each $variant, $sizes in get($components, "atoms.group") {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.#{$prefix}size-#{$size} {

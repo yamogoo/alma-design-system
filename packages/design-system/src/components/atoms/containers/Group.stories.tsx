@@ -2,7 +2,12 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 
 import { booleanOptions, enumOptions } from "@/stories/utils";
 
-import { groupModes, groupSizes, groupTones, groupVariants } from "@/adapters";
+import {
+  groupModes,
+  groupSizes,
+  groupTones,
+  groupVariants,
+} from "@/adapters/atoms/group";
 
 import {
   UIElementAlignments,

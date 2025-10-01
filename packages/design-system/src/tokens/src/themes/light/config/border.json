@@ -1,0 +1,91 @@
+{
+  "abstract": {
+    "delta": {
+      "lightness": {
+        "normal": {
+          "$value": 0.06,
+          "$type": "number",
+          "$unit": ""
+        }
+      }
+    }
+  },
+  "state": {
+    "delta": {
+      "lightness": {
+        "idle": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "normal": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "hovered": {
+          "$value": -0.03,
+          "$type": "number",
+          "$unit": ""
+        },
+        "pressed": {
+          "$value": -0.06,
+          "$type": "number",
+          "$unit": ""
+        },
+        "disabled": {
+          "$value": -0.12,
+          "$type": "number",
+          "$unit": ""
+        },
+        "selected": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "focused": {
+          "value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        }
+      },
+      "alpha": {
+        "idle": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "normal": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "hovered": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "pressed": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "disabled": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "selected": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "focused": {
+          "value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        }
+      }
+    }
+  }
+}

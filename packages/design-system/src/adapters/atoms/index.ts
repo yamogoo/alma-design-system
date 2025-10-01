@@ -25,10 +25,6 @@ export * from "./resizeBounding";
 // menues
 export * from "./simpleMenu";
 
-// sheets
-export * from "./actionSheet";
-export * from "./sheet";
-
 // skeletons
 export * from "./skeleton";
 

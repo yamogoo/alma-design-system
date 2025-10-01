@@ -49,7 +49,7 @@ defineExpose({
 <style lang="scss">
 $prefix: char-tooltip-label;
 
-@mixin defineSized($map: get($atoms, "#{$prefix}")) {
+@mixin defineSized($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -86,25 +86,29 @@ $prefix: char-tooltip-label;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
             );
             border-color: themed(
-              "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
+              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
             );
 
             .text {
-              color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
+              color: themed(
+                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+              );
             }
 
             .icon {
-              fill: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
+              fill: themed(
+                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+              );
             }
           }
         }

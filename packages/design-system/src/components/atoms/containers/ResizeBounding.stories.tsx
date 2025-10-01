@@ -6,7 +6,7 @@ import {
   resizeBoundingSizes,
   resizeBoundingTones,
   resizeBoundingVariants,
-} from "@/adapters";
+} from "@/adapters/atoms/resizeBounding";
 
 import {
   booleanOptions,

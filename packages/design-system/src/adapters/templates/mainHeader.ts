@@ -1,23 +1,25 @@
 import tokens from "@/tokens";
 
-export type MainHeaderVariant = keyof typeof tokens.templates.mainHeader;
+export type MainHeaderVariant =
+  keyof typeof tokens.components.templates.mainHeader;
 export const MainHeaderVariants = Object.keys(
-  tokens.templates.mainHeader
+  tokens.components.templates.mainHeader
 ) as Array<MainHeaderVariant>;
 
-export type MainHeaderSize = keyof typeof tokens.templates.mainHeader.default;
+export type MainHeaderSize =
+  keyof typeof tokens.components.templates.mainHeader.default;
 export const MainHeaderSizes = Object.keys(
-  tokens.templates.mainHeader.default
+  tokens.components.templates.mainHeader.default
 ) as Array<MainHeaderSize>;
 
 export type MainHeaderTone =
-  keyof typeof tokens.themes.light.templates.mainHeader;
+  keyof typeof tokens.themes.light.components.templates.mainHeader;
 export const MainHeaderTones = Object.keys(
-  tokens.themes.light.templates.mainHeader
+  tokens.themes.light.components.templates.mainHeader
 ) as Array<MainHeaderTone>;
 
 export type MainHeaderMode =
-  keyof typeof tokens.themes.light.templates.mainHeader.neutral;
+  keyof typeof tokens.themes.light.components.templates.mainHeader.neutral;
 export const MainHeaderModes = Object.keys(
-  tokens.themes.light.templates.mainHeader.neutral
+  tokens.themes.light.components.templates.mainHeader.neutral
 ) as Array<MainHeaderMode>;

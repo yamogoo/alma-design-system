@@ -1,0 +1,28 @@
+{
+  "neutral": {
+    "primary": {
+      "background": {
+        "$value": "{themes.light.mixins.surface.neutral.primary.normal.$value}",
+        "$type": "color",
+        "$unit": "hex"
+      },
+      "shadow": {
+        "$value": "{themes.light.mixins.shadow.neutral.primary.normal.$value}",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "secondary": {
+      "background": {
+        "$value": "{themes.light.mixins.surface.neutral.secondary.normal.$value}",
+        "$type": "color",
+        "$unit": "hex"
+      },
+      "shadow": {
+        "$value": "{themes.light.mixins.shadow.neutral.primary.normal.$value}",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    }
+  }
+}

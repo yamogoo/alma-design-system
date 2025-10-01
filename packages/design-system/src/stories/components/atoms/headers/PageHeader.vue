@@ -44,7 +44,7 @@ withDefaults(defineProps<InfoBlockProps>(), {
 .sb-page-header {
   display: flex;
   flex-direction: column;
-  gap: px2rem(get($spacing, "xxs"));
-  padding-bottom: px2rem(get($spacing, "xl"));
+  gap: px2rem(get($tokens, "spacing.xxs"));
+  padding-bottom: px2rem(get($tokens, "spacing.xl"));
 }
 </style>

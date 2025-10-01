@@ -1,81 +1,5 @@
 {
   "atoms": {
-    "actionSheet": {
-      "default": {
-        "lg": {
-          "root": {
-            "minHeight": {
-              "$value": 32,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Minimum height of large action sheet",
-                "category": "actionSheet"
-              }
-            },
-            "borderRadius": {
-              "$value": 16,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for large action sheet",
-                "category": "actionSheet"
-              }
-            },
-            "padding": {
-              "$value": [
-                48,
-                24,
-                24,
-                24
-              ],
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside large action sheet",
-                "category": "actionSheet"
-              }
-            }
-          },
-          "$type": "component"
-        },
-        "md": {
-          "root": {
-            "minHeight": {
-              "$value": 32,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Minimum height of medium action sheet",
-                "category": "actionSheet"
-              }
-            },
-            "borderRadius": {
-              "$value": 12,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for medium action sheet",
-                "category": "actionSheet"
-              }
-            },
-            "padding": {
-              "$value": [
-                24,
-                24
-              ],
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside medium action sheet",
-                "category": "actionSheet"
-              }
-            }
-          },
-          "$type": "component"
-        }
-      }
-    },
     "button": {
       "default": {
         "lg": {
@@ -83,20 +7,12 @@
             "size": {
               "$value": 56,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Button height for large default button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between button elements",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -106,76 +22,47 @@
                 32
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside large default button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for large default button",
-                "category": "button"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-1",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for button label",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "icon": {
             "size": {
               "$value": 18,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Icon size in large default button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "alias": {
               "size": {
                 "$value": "sm",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Alias for icon size",
-                  "category": "button"
-                }
+                "$unit": ""
               }
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "size": {
               "$value": 44,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Medium default button height",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -185,76 +72,47 @@
                 24
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside medium button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for medium button",
-                "category": "button"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for button label",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "icon": {
             "size": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Icon size in medium button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "alias": {
               "size": {
                 "$value": "xs",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Alias for icon size",
-                  "category": "button"
-                }
+                "$unit": ""
               }
             }
-          },
-          "$type": "component"
+          }
         },
         "sm": {
           "root": {
             "size": {
               "$value": 40,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Small default button height",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -264,76 +122,47 @@
                 12
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside small button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for small button",
-                "category": "button"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for button label",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "icon": {
             "size": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Icon size in small button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "alias": {
               "size": {
                 "$value": "xs",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Alias for icon size",
-                  "category": "button"
-                }
+                "$unit": ""
               }
             }
-          },
-          "$type": "component"
+          }
         },
         "xs": {
           "root": {
             "size": {
               "$value": 36,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Extra small default button height",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -341,56 +170,35 @@
                 12
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside extra small button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for extra small button",
-                "category": "button"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for button label",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "icon": {
             "size": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Icon size in extra small button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "alias": {
               "size": {
                 "$value": "xxs",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Alias for icon size",
-                  "category": "button"
-                }
+                "$unit": ""
               }
             }
-          },
-          "$type": "component"
+          }
         }
       },
       "rounded": {
@@ -399,20 +207,12 @@
             "size": {
               "$value": 56,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Large rounded button height",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -422,76 +222,47 @@
                 0
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside large rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for large rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-1",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for button label",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "icon": {
             "size": {
               "$value": 18,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Icon size in large rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "alias": {
               "size": {
                 "$value": "sm",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Alias for icon size",
-                  "category": "button"
-                }
+                "$unit": ""
               }
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "size": {
               "$value": 44,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Medium rounded button height",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -501,76 +272,47 @@
                 0
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside medium rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for medium rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for button label",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "icon": {
             "size": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Icon size in medium rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "alias": {
               "size": {
                 "$value": "xs",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Alias for icon size",
-                  "category": "button"
-                }
+                "$unit": ""
               }
             }
-          },
-          "$type": "component"
+          }
         },
         "sm": {
           "root": {
             "size": {
               "$value": 32,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Small rounded button height",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -580,76 +322,47 @@
                 24
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside small rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for small rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-4",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for button label",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "icon": {
             "size": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Icon size in small rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "alias": {
               "size": {
                 "$value": "xs",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Alias for icon size",
-                  "category": "button"
-                }
+                "$unit": ""
               }
             }
-          },
-          "$type": "component"
+          }
         },
         "xs": {
           "root": {
             "size": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Extra small rounded button height",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -659,56 +372,35 @@
                 24
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside extra small rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for extra small rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-4",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for button label",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "icon": {
             "size": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Icon size in extra small rounded button",
-                "category": "button"
-              }
+              "$unit": "px"
             },
             "alias": {
               "size": {
                 "$value": "xxs",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Alias for icon size",
-                  "category": "button"
-                }
+                "$unit": ""
               }
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -722,14 +414,9 @@
                 24
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding for the header inside large carousel stack",
-                "category": "carouselStack"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "header": {
@@ -739,14 +426,9 @@
                 16
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding for the header inside medium carousel stack",
-                "category": "carouselStack"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -800,15 +482,7 @@
               "$value": {
                 "$value": 18,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Small icon size",
-                  "category": "icon",
-                  "tags": [
-                    "ui",
-                    "icon"
-                  ]
-                }
+                "$unit": "px"
               },
               "$type": "alias",
               "unit": ""
@@ -824,26 +498,17 @@
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "control wrapper"
-              }
+              "$unit": "px"
             },
             "paddingV": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "control wrapper"
-              }
+              "$unit": "px"
             },
             "paddingH": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "control wrapper"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -856,92 +521,56 @@
             "borderWidth": {
               "$value": 1,
               "$type": "border",
-              "$unit": "px",
-              "$meta": {
-                "description": "Divider border width for large size",
-                "category": "divider"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding around the divider for large size",
-                "category": "divider"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "borderWidth": {
               "$value": 1,
               "$type": "border",
-              "$unit": "px",
-              "$meta": {
-                "description": "Divider border width for medium size",
-                "category": "divider"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding around the divider for medium size",
-                "category": "divider"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "sm": {
           "root": {
             "borderWidth": {
               "$value": 1,
               "$type": "border",
-              "$unit": "px",
-              "$meta": {
-                "description": "Divider border width for small size",
-                "category": "divider"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding around the divider for small size",
-                "category": "divider"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "xs": {
           "root": {
             "borderWidth": {
               "$value": 1,
               "$type": "border",
-              "$unit": "px",
-              "$meta": {
-                "description": "Divider border width for extra small size",
-                "category": "divider"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "No padding for extra small divider",
-                "category": "divider"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -952,117 +581,72 @@
             "gap": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements in large group",
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border width for large group",
-                "category": "group"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "gap": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements in medium group",
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border width for medium group",
-                "category": "group"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "sm": {
           "root": {
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements in small group",
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border width for small group",
-                "category": "group"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         }
       },
       "block": {
@@ -1071,117 +655,72 @@
             "gap": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements in large group",
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border width for large group",
-                "category": "group"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements in medium group",
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border width for medium group",
-                "category": "group"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "sm": {
           "root": {
             "gap": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements in small group",
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "group"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border width for small group",
-                "category": "group"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -1192,126 +731,63 @@
             "size": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Extra extra small icon size",
-                "category": "icon",
-                "tags": [
-                  "ui",
-                  "icon"
-                ]
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "xs": {
           "root": {
             "size": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Extra small icon size",
-                "category": "icon",
-                "tags": [
-                  "ui",
-                  "icon"
-                ]
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "sm": {
           "root": {
             "size": {
               "$value": 18,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Small icon size",
-                "category": "icon",
-                "tags": [
-                  "ui",
-                  "icon"
-                ]
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "size": {
               "$value": 20,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Medium icon size",
-                "category": "icon",
-                "tags": [
-                  "ui",
-                  "icon"
-                ]
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "lg": {
           "root": {
             "size": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Large icon size",
-                "category": "icon",
-                "tags": [
-                  "ui",
-                  "icon"
-                ]
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "xl": {
           "root": {
             "size": {
               "$value": 32,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Extra large icon size",
-                "category": "icon",
-                "tags": [
-                  "ui",
-                  "icon"
-                ]
-              }
+              "$unit": "px"
             }
           },
-          "$type": "component"
-        },
-        "xxl": {
-          "root": {
-            "size": {
-              "$value": 48,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Extra extra large icon size",
-                "category": "icon",
-                "tags": [
-                  "ui",
-                  "icon"
-                ]
+          "xxl": {
+            "root": {
+              "size": {
+                "$value": 48,
+                "$type": "number",
+                "$unit": "px"
               }
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -1322,20 +798,12 @@
             "height": {
               "$value": 52,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Height of the input field for large size",
-                "category": "input"
-              }
+              "$unit": "px"
             },
             "wholeHeight": {
               "$value": 68,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Total height including padding for large input",
-                "category": "input"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -1345,62 +813,38 @@
                 16
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding for large input",
-                "category": "input"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for large input",
-                "category": "input"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for input $value text",
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "padding-top": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Top padding for input $value text",
-                "category": "input"
-              }
+              "$unit": "px"
             }
           },
           "placeholder": {
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for placeholder text",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "error": {
             "fontStyle": {
               "$value": "caption-1",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for error text",
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "padding": {
               "$value": [
@@ -1410,34 +854,21 @@
                 16
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding for error message",
-                "category": "input"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "height": {
               "$value": 44,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Height of the input field for medium size",
-                "category": "input"
-              }
+              "$unit": "px"
             },
             "wholeHeight": {
               "$value": 60,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Total height including padding for medium input",
-                "category": "input"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": [
@@ -1445,62 +876,38 @@
                 16
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Horizontal padding for medium input",
-                "category": "input"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for medium input",
-                "category": "input"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for input $value text",
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "paddingTop": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Top padding for input $value text",
-                "category": "input"
-              }
+              "$unit": "px"
             }
           },
           "placeholder": {
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for placeholder text",
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "error": {
             "fontStyle": {
               "$value": "caption-1",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for error text",
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "padding": {
               "$value": [
@@ -1510,14 +917,9 @@
                 16
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding for error message",
-                "category": "input"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -1528,24 +930,17 @@
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "logo with descriptor"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-1",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "logo with descriptor"
-              }
+              "$unit": ""
             }
           }
-        },
-        "$type": "component"
+        }
       }
     },
     "mainContainer": {
@@ -1554,44 +949,24 @@
           "borderRadius": {
             "$value": 16,
             "$type": "number",
-            "$unit": "px",
-            "$meta": {
-              "description": "Border radius of the main container",
-              "category": "main container",
-              "status": "unused"
-            }
+            "$unit": "px"
           },
           "media": {
             "lg": {
               "padding": {
                 "$value": 8,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Padding for large screens",
-                  "category": "main container",
-                  "status": "unused"
-                }
+                "$unit": "px"
               }
             },
             "md": {
               "padding": {
                 "$value": 8,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Padding for medium screens",
-                  "category": "main container",
-                  "status": "unused"
-                }
+                "$unit": "px"
               }
             }
           }
-        },
-        "$type": "component",
-        "$meta": {
-          "status": "unused",
-          "category": "main container"
         }
       }
     },
@@ -1602,46 +977,28 @@
             "fontStyle": {
               "$value": "label-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for large dropdown option",
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "minHeight": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Minimum height of large dropdown option",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "option": {
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for medium dropdown option",
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "minHeight": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Minimum height of medium dropdown option",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -1652,42 +1009,28 @@
             "height": {
               "$value": 10,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "progressbar"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 5,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "progressbar"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "height": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "progressbar"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "progressbar"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -1698,64 +1041,36 @@
             "activeAreaWidth": {
               "$value": 20,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "resize bounding",
-                "description": "Width of the interactive area for the resizer",
-                "usage": "Used internally by Vue3 Resize Bounding component only"
-              }
+              "$unit": "px"
             }
           },
           "knob": {
             "show": {
               "$value": false,
               "$type": "boolean",
-              "$unit": "",
-              "$meta": {
-                "category": "resize bounding",
-                "description": "Width of the draggable knob",
-                "usage": "Specific to vue3-resize-bounding"
-              }
+              "$unit": ""
             },
             "width": {
               "$value": 76,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "resize bounding",
-                "description": "Width of the draggable knob",
-                "usage": "Specific to vue3-resize-bounding"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 6,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "resize bounding",
-                "description": "Height of the draggable knob",
-                "usage": "Specific to vue3-resize-bounding"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 3,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "resize bounding",
-                "description": "Corner radius of the knob",
-                "usage": "Specific to vue3-resize-bounding"
-              }
+              "$unit": "px"
             }
           },
           "splitter": {
             "width": {
               "$value": 4,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "resize bounding"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -1767,137 +1082,12 @@
           "width": {
             "$value": 3,
             "$type": "number",
-            "$unit": "px",
-            "$meta": {
-              "description": "Width of the scrollbar thumb",
-              "category": "number",
-              "usage": "Internal use only"
-            }
+            "$unit": "px"
           },
           "borderRadius": {
             "$value": 1.5,
             "$type": "number",
-            "$unit": "px",
-            "$meta": {
-              "description": "Corner radius of the scrollbar thumb",
-              "category": "number",
-              "usage": "Internal use only"
-            }
-          }
-        },
-        "$type": "component"
-      }
-    },
-    "sheet": {
-      "default": {
-        "lg": {
-          "root": {
-            "min-height": {
-              "$value": 32,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Minimum height of large action sheet",
-                "category": "sheet"
-              }
-            },
-            "borderRadius": {
-              "$value": 16,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for large action sheet",
-                "category": "sheet"
-              }
-            },
-            "gap": {
-              "$value": 32,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements inside large sheet",
-                "category": "sheet"
-              }
-            },
-            "padding": {
-              "$value": [
-                48,
-                24,
-                24,
-                24
-              ],
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside large sheet",
-                "category": "sheet"
-              }
-            }
-          },
-          "button": {
-            "offset": {
-              "$value": 24,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Offset for buttons inside large sheet",
-                "category": "sheet"
-              }
-            }
-          }
-        },
-        "md": {
-          "root": {
-            "min-height": {
-              "$value": 32,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Minimum height of large action sheet",
-                "category": "sheet"
-              }
-            },
-            "borderRadius": {
-              "$value": 16,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for large action sheet",
-                "category": "sheet"
-              }
-            },
-            "gap": {
-              "$value": 16,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Gap between elements inside medium sheet",
-                "category": "sheet"
-              }
-            },
-            "padding": {
-              "$value": [
-                24,
-                24
-              ],
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside medium sheet",
-                "category": "sheet"
-              }
-            }
-          },
-          "button": {
-            "offset": {
-              "$value": 24,
-              "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Offset for buttons inside medium sheet",
-                "category": "sheet"
-              }
-            }
+            "$unit": "px"
           }
         }
       }
@@ -1909,18 +1099,12 @@
             "gap": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "simple menu"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "simple menu"
-              }
+              "$unit": "px"
             }
           },
           "item": {},
@@ -1928,10 +1112,7 @@
             "fontStyle": {
               "$value": "label-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "simple menu"
-              }
+              "$unit": ""
             }
           }
         },
@@ -1940,18 +1121,12 @@
             "gap": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "simple menu"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "simple menu"
-              }
+              "$unit": "px"
             }
           },
           "item": {},
@@ -1959,10 +1134,7 @@
             "fontStyle": {
               "$value": "label-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "simple menu"
-              }
+              "$unit": ""
             }
           }
         }
@@ -1975,26 +1147,17 @@
             "width": {
               "$value": 100,
               "$type": "number",
-              "$unit": "%",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "%"
             },
             "height": {
               "$value": 100,
               "$type": "number",
-              "$unit": "%",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "%"
             },
             "borderRadius": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -2003,26 +1166,17 @@
             "width": {
               "$value": 100,
               "$type": "number",
-              "$unit": "%",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "%"
             },
             "height": {
               "$value": 100,
               "$type": "number",
-              "$unit": "%",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "%"
             },
             "borderRadius": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -2033,26 +1187,17 @@
             "width": {
               "$value": 32,
               "$type": "number",
-              "$unit": "%",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "%"
             },
             "height": {
               "$value": 32,
               "$type": "number",
-              "$unit": "%",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "%"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -2061,26 +1206,17 @@
             "width": {
               "$value": 24,
               "$type": "number",
-              "$unit": "%",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "%"
             },
             "height": {
               "$value": 24,
               "$type": "number",
-              "$unit": "%",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "%"
             },
             "borderRadius": {
               "$value": 9999,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "skeleton"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -2093,88 +1229,58 @@
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "minWidth": {
               "$value": 64,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "track": {
             "height": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 20,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "knob": {
             "width": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 20,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 2,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "slider"
-              }
+              "$unit": ""
             }
           }
         },
@@ -2183,88 +1289,58 @@
             "gap": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "minWidth": {
               "$value": 64,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "track": {
             "height": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "knob": {
             "width": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 2,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "slider"
-              }
+              "$unit": ""
             }
           }
         },
@@ -2273,88 +1349,58 @@
             "gap": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "minWidth": {
               "$value": 64,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "track": {
             "height": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "knob": {
             "width": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "meta": {
-                "category": "slider"
-              }
+              "$unit": "px"
             }
           },
           "label": {
             "fontStyle": {
               "$value": "label-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "slider"
-              }
+              "$unit": ""
             }
           }
         }
@@ -2367,20 +1413,12 @@
             "fontStyle": {
               "$value": "title-1",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for step pagination tab item on large screens",
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "padding": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding for step pagination tab item on large screens",
-                "category": "spacing"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -2389,20 +1427,12 @@
             "fontStyle": {
               "$value": "title-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "description": "Font style for step pagination tab item on medium screens",
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "padding": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding for step pagination tab item on medium screens",
-                "category": "spacing"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -2418,11 +1448,7 @@
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Surface border width for large size",
-                "category": "surface"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -2434,11 +1460,7 @@
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Surface border width for large size",
-                "category": "surface"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -2450,11 +1472,7 @@
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Surface border width for medium size",
-                "category": "surface"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -2466,27 +1484,19 @@
             "borderWidth": {
               "$value": 1,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Surface border width for medium size",
-                "category": "surface"
-              }
+              "$unit": "px"
             }
-          },
-          "xs": {
-            "root": {
-              "borderRadius": {
-                "$value": 8
-              },
-              "borderWidth": {
-                "$value": 1,
-                "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Surface border width for medium size",
-                  "category": "surface"
-                }
-              }
+          }
+        },
+        "xs": {
+          "root": {
+            "borderRadius": {
+              "$value": 8
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
             }
           }
         }
@@ -2499,44 +1509,29 @@
             "width": {
               "$value": 64,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 20,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 10,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           },
           "track": {
             "padding": {
               "$value": 2,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 10,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           },
           "label": {
@@ -2549,18 +1544,12 @@
             "width": {
               "$value": 32,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 20,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -2569,44 +1558,29 @@
             "width": {
               "$value": 54,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 20,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 10,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           },
           "track": {
             "padding": {
               "$value": 2,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 7,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           },
           "label": {
@@ -2619,18 +1593,12 @@
             "width": {
               "$value": 28,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 20,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -2639,44 +1607,29 @@
             "width": {
               "$value": 40,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "gap": {
               "$value": 10,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           },
           "track": {
             "padding": {
               "$value": 2,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 6,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           },
           "label": {
@@ -2689,18 +1642,12 @@
             "width": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "toggle switch"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -2708,6 +1655,56 @@
     }
   },
   "molecules": {
+    "actionSheet": {
+      "default": {
+        "lg": {
+          "root": {
+            "minHeight": {
+              "$value": 32,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": [
+                48,
+                24,
+                24,
+                24
+              ],
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "md": {
+          "root": {
+            "minHeight": {
+              "$value": 32,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 12,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": [
+                24,
+                24
+              ],
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        }
+      }
+    },
     "dropdown": {
       "default": {
         "lg": {
@@ -2715,20 +1712,12 @@
             "minWidth": {
               "$value": 76,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Minimum width of large dropdown",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 56,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Height of large dropdown",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
           },
           "currentValue": {
@@ -2736,11 +1725,7 @@
               "gap": {
                 "$value": 8,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Gap inside dropdown $value component",
-                  "category": "dropDown"
-                }
+                "$unit": "px"
               },
               "padding": {
                 "$value": [
@@ -2750,45 +1735,28 @@
                   12
                 ],
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Padding inside dropdown $value component",
-                  "category": "dropDown"
-                }
+                "$unit": "px"
               },
               "borderRadius": {
                 "$value": 8,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Border radius of dropdown $value component",
-                  "category": "dropDown"
-                }
+                "$unit": "px"
               }
             },
             "label": {
               "fontStyle": {
                 "$value": "label-2",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Font style for dropdown $value label",
-                  "category": "typography"
-                }
+                "$unit": ""
               }
             },
             "icon": {
               "size": {
                 "$value": 12,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Icon size for dropdown $value",
-                  "category": "dropDown"
-                }
+                "$unit": "px"
               }
-            },
-            "$type": "component"
+            }
           },
           "options": {
             "padding": {
@@ -2799,20 +1767,12 @@
                 12
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside dropdown options",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for dropdown options",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
           },
           "tokens": {
@@ -2824,43 +1784,26 @@
                 12
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding tokens for large dropdown",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius token for large dropdown",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         },
         "md": {
           "root": {
             "minWidth": {
               "$value": 76,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Minimum width of medium dropdown",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             },
             "height": {
               "$value": 44,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Height of medium dropdown",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
           },
           "currentValue": {
@@ -2868,11 +1811,7 @@
               "gap": {
                 "$value": 8,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Gap inside dropdown $value component",
-                  "category": "dropDown"
-                }
+                "$unit": "px"
               },
               "padding": {
                 "$value": [
@@ -2882,45 +1821,28 @@
                   12
                 ],
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Padding inside dropdown $value component",
-                  "category": "dropDown"
-                }
+                "$unit": "px"
               },
               "borderRadius": {
                 "$value": 8,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Border radius of dropdown $value component",
-                  "category": "dropDown"
-                }
+                "$unit": "px"
               }
             },
             "label": {
               "fontStyle": {
                 "$value": "label-3",
                 "$type": "string",
-                "$unit": "",
-                "$meta": {
-                  "description": "Font style for dropdown $value label",
-                  "category": "typography"
-                }
+                "$unit": ""
               }
             },
             "icon": {
               "size": {
                 "$value": 12,
                 "$type": "number",
-                "$unit": "px",
-                "$meta": {
-                  "description": "Icon size for dropdown $value",
-                  "category": "dropDown"
-                }
+                "$unit": "px"
               }
-            },
-            "$type": "component"
+            }
           },
           "options": {
             "padding": {
@@ -2931,20 +1853,12 @@
                 12
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside dropdown options",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius for dropdown options",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
           },
           "tokens": {
@@ -2956,23 +1870,14 @@
                 12
               ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding tokens for medium dropdown",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius token for medium dropdown",
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
-          },
-          "$type": "component"
+          }
         }
       }
     },
@@ -2983,32 +1888,21 @@
             "borderRadius": {
               "$value": 20,
               "$$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius of the form",
-                "category": "form"
-              }
+              "$unit": "px"
             }
           },
           "body": {
             "gap": {
               "$value": 24,
               "$$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "form"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 12,
               "$$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "form"
-              }
+              "$unit": "px"
             }
-          },
-          "$$type": "component"
+          }
         }
       }
     },
@@ -3022,29 +1916,17 @@
                 24
               ],
               "$$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding inside the form wrapper",
-                "category": "formWrapper"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 32,
               "$$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border radius of the form wrapper",
-                "category": "formWrapper"
-              }
+              "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
               "$$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Border width of the form wrapper",
-                "category": "formWrapper"
-              }
+              "$unit": "px"
             }
           },
           "header": {
@@ -3054,14 +1936,9 @@
                 0
               ],
               "$$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "description": "Padding for the header inside the form wrapper",
-                "category": "formWrapper"
-              }
+              "$unit": "px"
             }
-          },
-          "$$type": "component"
+          }
         }
       }
     },
@@ -3073,18 +1950,12 @@
             "fontStyle": {
               "$value": "label-2",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "minHeight": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -3094,18 +1965,12 @@
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "typography"
-              }
+              "$unit": ""
             },
             "minHeight": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "dropDown"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -3155,20 +2020,14 @@
             "fontStyle": {
               "$value": "label-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "description": {
             "fontStyle": {
               "$value": "body-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "typography"
-              }
+              "$unit": ""
             }
           },
           "chevron": {
@@ -3181,6 +2040,80 @@
         }
       }
     },
+    "sheet": {
+      "default": {
+        "lg": {
+          "root": {
+            "min-height": {
+              "$value": 32,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "gap": {
+              "$value": 32,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": [
+                48,
+                24,
+                24,
+                24
+              ],
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "button": {
+            "offset": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "md": {
+          "root": {
+            "min-height": {
+              "$value": 32,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "gap": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": [
+                24,
+                24
+              ],
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "button": {
+            "offset": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        }
+      }
+    },
     "snackbar": {
       "default": {
         "lg": {
@@ -3188,64 +2121,43 @@
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             },
             "paddingH": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             },
             "paddingV": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             }
           },
           "content": {
             "gap": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             }
           },
           "title": {
             "fontStyle": {
               "$value": "title-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": ""
             }
           },
           "description": {
             "fontStyle": {
               "$value": "body-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": ""
             }
           }
         },
@@ -3254,64 +2166,43 @@
             "gap": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             },
             "paddingH": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             },
             "paddingV": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             },
             "borderRadius": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             }
           },
           "content": {
             "gap": {
               "$value": 0,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": "px"
             }
           },
           "title": {
             "fontStyle": {
               "$value": "title-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": ""
             }
           },
           "description": {
             "fontStyle": {
               "$value": "body-3",
               "$type": "string",
-              "$unit": "",
-              "$meta": {
-                "category": "snackbar"
-              }
+              "$unit": ""
             }
           }
         }
@@ -3324,18 +2215,12 @@
             "gap": {
               "$value": 0,
               "$type": "number",
-              "unit": "px",
-              "meta": {
-                "category": "tree view"
-              }
+              "unit": "px"
             },
             "padding": {
               "$value": 12,
               "$type": "number",
-              "unit": "px",
-              "meta": {
-                "category": "tree view"
-              }
+              "unit": "px"
             }
           },
           "item": {
@@ -3404,36 +2289,36 @@
         "lg": {
           "root": {
             "padding": {
-              "$value": 16,
+              "$value": [
+                16,
+                0
+              ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "main header"
-              }
+              "$unit": "px"
             }
           }
         },
         "md": {
           "root": {
             "padding": {
-              "$value": 12,
+              "$value": [
+                12,
+                0
+              ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "main header"
-              }
+              "$unit": "px"
             }
           }
         },
         "sm": {
           "root": {
             "padding": {
-              "$value": 8,
+              "$value": [
+                8,
+                0
+              ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "main header"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -3444,36 +2329,36 @@
         "lg": {
           "root": {
             "padding": {
-              "$value": 16,
+              "$value": [
+                16,
+                0
+              ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "main header"
-              }
+              "$unit": "px"
             }
           }
         },
         "md": {
           "root": {
             "padding": {
-              "$value": 12,
+              "$value": [
+                12,
+                0
+              ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "main header"
-              }
+              "$unit": "px"
             }
           }
         },
         "sm": {
           "root": {
             "padding": {
-              "$value": 8,
+              "$value": [
+                8,
+                0
+              ],
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "main header"
-              }
+              "$unit": "px"
             }
           }
         }
@@ -3486,26 +2371,17 @@
             "gap": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             },
             "minWidth": {
               "$value": 88,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -3514,26 +2390,17 @@
             "gap": {
               "$value": 16,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             },
             "minWidth": {
               "$value": 76,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             }
           }
         },
@@ -3542,26 +2409,17 @@
             "gap": {
               "$value": 12,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             },
             "minWidth": {
               "$value": 64,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             },
             "padding": {
               "$value": 8,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "navigation rail"
-              }
+              "$unit": "px"
             }
           }
         }

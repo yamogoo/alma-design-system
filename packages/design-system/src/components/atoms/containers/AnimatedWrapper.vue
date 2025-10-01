@@ -2,7 +2,7 @@
 import { nextTick, ref, watch } from "vue";
 import g from "gsap";
 
-import type { AnimatedWrapperProps } from "@/components/atoms";
+import type { AnimatedWrapperProps } from "./AnimatedWrapper";
 
 const PREFIX = "animated-wrapper";
 
@@ -33,7 +33,7 @@ watch(
         duration,
         ease: "power4.out",
         onComplete: () => {
-          nextTick(() => {
+          void nextTick(() => {
             el.style.height = "auto";
           });
         },

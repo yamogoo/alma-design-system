@@ -12,7 +12,9 @@ import g from "gsap";
 
 import { px2rem } from "@/utils";
 
-import type { CarousleStackProps } from "@/components/atoms";
+import type { CarousleStackProps } from "./CarouselStack";
+
+const PREFIX = "carousel-stack";
 
 const props = withDefaults(defineProps<CarousleStackProps>(), {
   variant: "default",
@@ -212,18 +214,18 @@ watch(
   }
 );
 
-onMounted(() => {
-  nextTick(() => {
-    onAnimate(currentSid.value, 0);
-    startAutoPlay();
-    updateItemsScale();
+onMounted(async () => {
+  await nextTick();
 
-    refTrack.value?.addEventListener("pointerdown", onPointerDown);
-    refTrack.value?.addEventListener("pointermove", onPointerMove);
-    refTrack.value?.addEventListener("pointerup", onPointerUp);
-    refTrack.value?.addEventListener("pointercancel", onPointerUp);
-    refTrack.value?.addEventListener("pointerleave", onPointerUp);
-  });
+  onAnimate(currentSid.value, 0);
+  startAutoPlay();
+  updateItemsScale();
+
+  refTrack.value?.addEventListener("pointerdown", onPointerDown);
+  refTrack.value?.addEventListener("pointermove", onPointerMove);
+  refTrack.value?.addEventListener("pointerup", onPointerUp);
+  refTrack.value?.addEventListener("pointercancel", onPointerUp);
+  refTrack.value?.addEventListener("pointerleave", onPointerUp);
 });
 
 onUnmounted(() => {
@@ -257,9 +259,7 @@ const onLeave = (el: Element, done: () => void): void => {
     opacity: 0,
     ease: "power4.out",
     duration: ANIMATION_FADE_DURATION,
-    onComplete: () => {
-      done;
-    },
+    onComplete: done,
   });
 };
 </script>
@@ -267,22 +267,22 @@ const onLeave = (el: Element, done: () => void): void => {
 <template>
   <div
     ref="root"
-    class="carousel-stack"
     :class="[
-      `carousel-stack_variant-${variant}`,
+      PREFIX,
+      `${PREFIX}_variant-${variant}`,
       {
-        [`carousel-stack_size-${String(size)}`]: size!!,
-        [`carousel-stack_orientation-${orientation}`]: orientation,
-        [`carousel-stack_stretch-${stretch}`]: stretch,
-        'carousel-stack_grabbing': isCursorGrabbing,
+        [`${PREFIX}_size-${String(size)}`]: size!!,
+        [`${PREFIX}_orientation-${orientation}`]: orientation,
+        [`${PREFIX}_stretch-${stretch}`]: stretch,
+        [`${PREFIX}_grabbing`]: isCursorGrabbing,
       },
-      `carousel-stack_${isItemsClickable ? 'clickable' : 'static'}`,
+      `${PREFIX}_${isItemsClickable ? 'clickable' : 'static'}`,
     ]"
   >
     <div
       v-if="$slots.pagination"
-      class="carousel-stack__header"
-      data-testid="carousel-stack-header"
+      :class="`${PREFIX}__header`"
+      :data-testid="`${PREFIX}-header`"
     >
       <slot
         name="pagination"
@@ -292,14 +292,14 @@ const onLeave = (el: Element, done: () => void): void => {
     </div>
     <div
       ref="track"
-      class="carousel-stack__container"
+      :class="`${PREFIX}__container`"
       :style="{ gap: containerGap }"
     >
       <template v-for="idx in screenCount" :key="idx">
         <Transition :css="false" @enter="onEnter" @leave="onLeave">
           <div
             v-if="isInactiveItemUnmounted ? idx - 1 === selectedScreenId : true"
-            class="carousel-stack__screen"
+            :class="`${PREFIX}__screen`"
             :style="{ flex: `0 0 ${screenSize}px` }"
           >
             <slot
@@ -316,14 +316,16 @@ const onLeave = (el: Element, done: () => void): void => {
 <style lang="scss">
 @use "sass:map";
 
-@mixin defineSizes($map: get($atoms, "carousel-stack")) {
+$prefix: carousel-stack;
+
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $header-padding: get($val, "header.padding");
 
       &_variant-#{$variant} {
-        &.carousel-stack_size-#{$size} {
-          .carousel-stack__header {
+        &.#{$prefix}_size-#{$size} {
+          .#{$prefix}__header {
             padding: $header-padding;
           }
         }
@@ -332,7 +334,7 @@ const onLeave = (el: Element, done: () => void): void => {
   }
 }
 
-.carousel-stack {
+.#{$prefix} {
   position: relative;
   @include defineSizes();
 
@@ -348,7 +350,7 @@ const onLeave = (el: Element, done: () => void): void => {
     }
 
     &-auto {
-      &.carousel-stack_orientation {
+      &.#{$prefix}_orientation {
         &-vertical {
           @include box(auto, 100%);
         }
@@ -365,7 +367,7 @@ const onLeave = (el: Element, done: () => void): void => {
   }
 
   &_static {
-    .carousel-stack__screen {
+    .#{$prefix}__screen {
       user-select: none;
       pointer-events: none;
     }
@@ -377,13 +379,13 @@ const onLeave = (el: Element, done: () => void): void => {
 
   &_orientation {
     &-vertical {
-      .carousel-stack__container {
+      .#{$prefix}__container {
         flex-direction: column;
       }
     }
 
     &-horizontal {
-      .carousel-stack__container {
+      .#{$prefix}__container {
         flex-direction: row;
       }
     }

@@ -4,24 +4,13 @@
       "width": {
         "$value": 3,
         "$type": "number",
-        "$unit": "px",
-        "$meta": {
-          "description": "Width of the scrollbar thumb",
-          "category": "number",
-          "usage": "Internal use only"
-        }
+        "$unit": "px"
       },
       "borderRadius": {
         "$value": 1.5,
         "$type": "number",
-        "$unit": "px",
-        "$meta": {
-          "description": "Corner radius of the scrollbar thumb",
-          "category": "number",
-          "usage": "Internal use only"
-        }
+        "$unit": "px"
       }
-    },
-    "$type": "component"
+    }
   }
 }

@@ -7,7 +7,7 @@ import {
   RESIZE_BOUNDING_PREFIX,
   RESIZE_BOUNDING_PREFIX_WITH_DIVIDER,
   type ResizeBoundingProps,
-} from "@/components/atoms";
+} from "./ResizeBounding";
 
 const props = withDefaults(defineProps<ResizeBoundingProps>(), {
   variant: "default",
@@ -24,7 +24,7 @@ const emits = defineEmits<{
 const variant = props.variant;
 const size = props.size;
 
-const componentToken = tokens.atoms.resizeBounding[variant][size];
+const componentToken = tokens.components.atoms.resizeBounding[variant][size];
 const activeAreaWidth = componentToken.root.activeAreaWidth.$value;
 const isKnobShown = componentToken.knob.show.$value;
 const splitterWidth = componentToken.splitter.width.$value;
@@ -63,7 +63,7 @@ const splitterWidth = componentToken.splitter.width.$value;
 <style lang="scss">
 $prefix: "resize-bounding";
 
-@mixin defineSizes($map: get($atoms, "resize-bounding")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -81,7 +81,7 @@ $prefix: "resize-bounding";
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.resize-bounding")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -93,7 +93,7 @@ $prefix: "resize-bounding";
                 @include themify($themes) {
                   background: rgba(
                     themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.splitter.normal"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.splitter.normal"
                     ),
                     0
                   ) !important;
@@ -103,7 +103,7 @@ $prefix: "resize-bounding";
               .#{$prefix}__knob {
                 @include themify($themes) {
                   background: themed(
-                    "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.normal"
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.normal"
                   ) !important;
                 }
               }
@@ -115,7 +115,7 @@ $prefix: "resize-bounding";
                 @include themify($themes) {
                   background: rgba(
                     themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.splitter.active"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.splitter.active"
                     ),
                     1
                   ) !important;
@@ -124,7 +124,7 @@ $prefix: "resize-bounding";
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.active"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.active"
                     ) !important;
                   }
                 }

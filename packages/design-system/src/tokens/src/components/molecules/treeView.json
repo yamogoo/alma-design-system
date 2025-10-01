@@ -5,18 +5,12 @@
         "gap": {
           "$value": 0,
           "$type": "number",
-          "unit": "px",
-          "meta": {
-            "category": "tree view"
-          }
+          "unit": "px"
         },
         "padding": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "unit": "px",
-          "meta": {
-            "category": "tree view"
-          }
+          "unit": "px"
         }
       },
       "item": {

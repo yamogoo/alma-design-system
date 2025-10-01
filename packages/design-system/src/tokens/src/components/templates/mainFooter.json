@@ -3,36 +3,27 @@
     "lg": {
       "root": {
         "padding": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": ["{tokens.spacing.md.$value}", 0],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "main header"
-          }
+          "$unit": "px"
         }
       }
     },
     "md": {
       "root": {
         "padding": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": ["{tokens.spacing.sm.$value}", 0],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "main header"
-          }
+          "$unit": "px"
         }
       }
     },
     "sm": {
       "root": {
         "padding": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": ["{tokens.spacing.xs.$value}", 0],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "main header"
-          }
+          "$unit": "px"
         }
       }
     }

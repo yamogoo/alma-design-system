@@ -4,7 +4,7 @@ import g from "gsap";
 
 import { Composables, Components } from "@alma/design-system";
 
-import { AuthForm } from "@/components/organisms";
+import AuthForm from "@/components/organisms/forms/AuthForm.vue";
 
 const START_DELAY = 350;
 const MESSAGE_DURATION_IN = 0.65;
@@ -134,7 +134,7 @@ onUnmounted(() => {
   position: relative;
   align-content: center;
   @include box(100%);
-  padding: get($spacing, "lg");
+  padding: get($tokens, "spacing.lg");
   overflow: hidden;
 
   /* &__content {} */

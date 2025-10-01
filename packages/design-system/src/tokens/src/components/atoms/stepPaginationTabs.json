@@ -5,20 +5,12 @@
         "fontStyle": {
           "$value": "title-1",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for step pagination tab item on large screens",
-            "category": "typography"
-          }
+          "$unit": ""
         },
         "padding": {
           "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding for step pagination tab item on large screens",
-            "category": "spacing"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -27,20 +19,12 @@
         "fontStyle": {
           "$value": "title-2",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for step pagination tab item on medium screens",
-            "category": "typography"
-          }
+          "$unit": ""
         },
         "padding": {
           "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding for step pagination tab item on medium screens",
-            "category": "spacing"
-          }
+          "$unit": "px"
         }
       }
     }

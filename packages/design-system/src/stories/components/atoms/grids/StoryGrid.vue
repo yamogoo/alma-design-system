@@ -16,6 +16,6 @@ withDefaults(defineProps<StoryGridProps>(), {
 .sb-story-grid {
   display: grid;
   grid-template-columns: repeat(var(--story-grid-cols), 1fr);
-  gap: px2rem(get($spacing, "xxl"));
+  gap: px2rem(get($tokens, "spacing.xxl"));
 }
 </style>

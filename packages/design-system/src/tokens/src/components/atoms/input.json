@@ -5,20 +5,12 @@
         "height": {
           "$value": 52,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Height of the input field for large size",
-            "category": "input"
-          }
+          "$unit": "px"
         },
         "wholeHeight": {
           "$value": 68,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Total height including padding for large input",
-            "category": "input"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [
@@ -28,62 +20,38 @@
             "{tokens.spacing.md.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding for large input",
-            "category": "input"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for large input",
-            "category": "input"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for input $value text",
-            "category": "typography"
-          }
+          "$unit": ""
         },
         "padding-top": {
           "$value": "{tokens.spacing.xxs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Top padding for input $value text",
-            "category": "input"
-          }
+          "$unit": "px"
         }
       },
       "placeholder": {
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for placeholder text",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "error": {
         "fontStyle": {
           "$value": "caption-1",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for error text",
-            "category": "typography"
-          }
+          "$unit": ""
         },
         "padding": {
           "$value": [
@@ -93,34 +61,21 @@
             "{tokens.spacing.md.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding for error message",
-            "category": "input"
-          }
+          "$unit": "px"
         }
-      },
-      "$type": "component"
+      }
     },
     "md": {
       "root": {
         "height": {
           "$value": 44,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Height of the input field for medium size",
-            "category": "input"
-          }
+          "$unit": "px"
         },
         "wholeHeight": {
           "$value": 60,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Total height including padding for medium input",
-            "category": "input"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [
@@ -128,62 +83,38 @@
             "{tokens.spacing.md.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Horizontal padding for medium input",
-            "category": "input"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for medium input",
-            "category": "input"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for input $value text",
-            "category": "typography"
-          }
+          "$unit": ""
         },
         "paddingTop": {
           "$value": "{tokens.spacing.xxs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Top padding for input $value text",
-            "category": "input"
-          }
+          "$unit": "px"
         }
       },
       "placeholder": {
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for placeholder text",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "error": {
         "fontStyle": {
           "$value": "caption-1",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for error text",
-            "category": "typography"
-          }
+          "$unit": ""
         },
         "padding": {
           "$value": [
@@ -193,14 +124,9 @@
             "{tokens.spacing.md.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding for error message",
-            "category": "input"
-          }
+          "$unit": "px"
         }
-      },
-      "$type": "component"
+      }
     }
   }
 }

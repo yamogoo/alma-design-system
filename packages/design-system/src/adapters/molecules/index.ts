@@ -12,4 +12,8 @@ export * from "./listItem";
 // panels
 export * from "./snackbar";
 
+// sheets
+export * from "./actionSheet";
+export * from "./sheet";
+
 export * from "./treeView";

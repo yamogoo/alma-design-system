@@ -56,7 +56,7 @@ defineExpose({
 <style lang="scss">
 $prefix: icon;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $box-size: px2rem(get($val, "root.size"));
@@ -70,13 +70,13 @@ $prefix: icon;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.abstracts.label")) {
+@mixin defineThemes($map: get($themes, "light.mixins.label")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
-            fill: themed("abstracts.label.#{$mode}.#{$tone}");
+            fill: themed("mixins.label.#{$mode}.#{$tone}.normal");
           }
         }
       }

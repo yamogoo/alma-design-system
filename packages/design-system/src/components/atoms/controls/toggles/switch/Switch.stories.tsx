@@ -9,7 +9,7 @@ import {
   switchSizes,
   switchTones,
   switchVariants,
-} from "@/adapters";
+} from "@/adapters/atoms/switch";
 
 import type { SwitchProps } from "./Switch";
 import Switch from "./Switch.vue";

@@ -55,7 +55,7 @@ const onAnimate = (el: Element): void => {
 <style lang="scss">
 $prefix: skeleton;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $width: get($val, "root.width");
@@ -73,7 +73,7 @@ $prefix: skeleton;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -81,10 +81,10 @@ $prefix: skeleton;
           .skeleton__shape {
             @include themify($themes) {
               $background-in: themed(
-                "atoms.#{$prefix}.#{$mode}.#{$tone}.background-in"
+                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.background-in"
               );
               $background-out: themed(
-                "atoms.#{$prefix}.#{$mode}.#{$tone}.background-out"
+                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.background-out"
               );
               background: linear-gradient(
                 90deg,

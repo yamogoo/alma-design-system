@@ -95,7 +95,7 @@ const onAnimIcon = (isExpanded: boolean, duration = ICON_DURATION): void => {
 
 watch(
   isExpanded,
-  async (newValue) => {
+  (newValue) => {
     onAnimIcon(newValue);
   },
   {
@@ -189,7 +189,7 @@ onMounted(() => {
 $root-prefix: "tree-view";
 $prefix: "tree-view-item";
 
-@mixin defineSizes($map: get($molecules, "#{$root-prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$root-prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -234,7 +234,7 @@ $prefix: "tree-view-item";
     &.#{$prefix} {
       @include themify($themes) {
         background-color: themed(
-          "molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.root.background.#{$state}"
+          "components.molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.root.background.#{$state}"
         );
       }
     }
@@ -242,7 +242,7 @@ $prefix: "tree-view-item";
     .#{$prefix}__label {
       @include themify($themes) {
         color: themed(
-          "molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.label.color.#{$state}"
+          "components.molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.label.color.#{$state}"
         );
       }
     }
@@ -250,14 +250,16 @@ $prefix: "tree-view-item";
     .#{$prefix}__caret {
       @include themify($themes) {
         fill: themed(
-          "molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.caret.color.#{$state}"
+          "components.molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.caret.color.#{$state}"
         );
       }
     }
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.#{$root-prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.molecules.#{$root-prefix}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {

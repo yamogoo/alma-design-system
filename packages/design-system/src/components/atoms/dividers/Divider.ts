@@ -3,7 +3,7 @@ import type {
   DividerSize,
   DividerTone,
   DividerVariant,
-} from "@/adapters";
+} from "@/adapters/atoms/divider";
 
 import type {
   UIElementAlignment,

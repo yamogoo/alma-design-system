@@ -6,18 +6,12 @@
         "fontStyle": {
           "$value": "label-2",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "typography"
-          }
+          "$unit": ""
         },
         "minHeight": {
           "$value": 24,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "dropDown"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -27,18 +21,12 @@
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "typography"
-          }
+          "$unit": ""
         },
         "minHeight": {
           "$value": 24,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "dropDown"
-          }
+          "$unit": "px"
         }
       }
     }

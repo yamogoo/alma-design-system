@@ -1,0 +1,88 @@
+{
+  "neutral": {
+    "primary": {
+      "currentValue": {
+        "label": {
+          "normal": {
+            "$value": "{themes.light.mixins.label.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.light.mixins.label.neutral.primary.hovered.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "expanded": {
+            "$value": "{themes.light.mixins.label.neutral.primary.disabled.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "expandedHovered": {
+            "$value": "{themes.light.mixins.label.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        },
+        "icon": {
+          "normal": {
+            "$value": "{themes.light.mixins.label.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.light.mixins.label.neutral.primary.hovered.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "expanded": {
+            "$value": "{themes.light.mixins.label.neutral.primary.disabled.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "expandedHovered": {
+            "$value": "{themes.light.mixins.label.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        },
+        "background": {
+          "normal": {
+            "$value": "{themes.light.mixins.surface.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.light.mixins.surface.neutral.primary.hovered.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "expanded": {
+            "$value": "{themes.light.mixins.surface.neutral.primary.disabled.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "expandedHovered": {
+            "$value": "{themes.light.mixins.surface.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        }
+      },
+      "options": {
+        "background": {
+          "normal": {
+            "$value": "{themes.light.mixins.surface.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.light.mixins.surface.neutral.primary.hovered.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        }
+      }
+    }
+  }
+}

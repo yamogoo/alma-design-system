@@ -10,8 +10,12 @@ export const iconTones = Object.keys(
   tokens.themes.light.abstracts.label.neutral
 ) as IconTone[];
 
-export type IconSize = keyof typeof tokens.atoms.icon.default;
-export const iconSizes = Object.keys(tokens.atoms.icon.default) as IconSize[];
+export type IconSize = keyof typeof tokens.components.atoms.icon.default;
+export const iconSizes = Object.keys(
+  tokens.components.atoms.icon.default
+) as IconSize[];
 
-export type IconVariant = keyof typeof tokens.atoms.icon;
-export const iconVariants = Object.keys(tokens.atoms.icon) as IconVariant[];
+export type IconVariant = keyof typeof tokens.components.atoms.icon;
+export const iconVariants = Object.keys(
+  tokens.components.atoms.icon
+) as IconVariant[];

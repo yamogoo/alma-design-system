@@ -8,43 +8,26 @@
             "{tokens.spacing.lg.$value}"
           ],
           "$$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside the form wrapper",
-            "category": "formWrapper"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.xxl.$value}",
           "$$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius of the form wrapper",
-            "category": "formWrapper"
-          }
+          "$unit": "px"
         },
         "borderWidth": {
           "$value": "{tokens.outline.$value}",
           "$$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border width of the form wrapper",
-            "category": "formWrapper"
-          }
+          "$unit": "px"
         }
       },
       "header": {
         "padding": {
           "$value": ["{tokens.spacing.sm.$value}", 0],
           "$$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding for the header inside the form wrapper",
-            "category": "formWrapper"
-          }
+          "$unit": "px"
         }
-      },
-      "$$type": "component"
+      }
     }
   }
 }

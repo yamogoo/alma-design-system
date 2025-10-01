@@ -1,0 +1,330 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "tertiary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.neutral.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.neutral.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "inversed": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.neutral.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.neutral.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    }
+  },
+  "accent": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.accent.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.accent.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.accent.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.accent.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "tertiary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.accent.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.surface.accent.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "inversed": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.accent.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.accent.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    }
+  },
+  "positive": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.positive.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.surface.positive.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.positive.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.positive.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "tertiary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.positive.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.surface.positive.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "inversed": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.positive.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.positive.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    }
+  },
+  "negative": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.negative.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.surface.negative.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.negative.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.negative.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "tertiary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.negative.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.surface.negative.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    },
+    "inversed": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.negative.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        },
+        "border": {
+          "$value": "{themes.dark.mixins.border.negative.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "group"
+          }
+        }
+      }
+    }
+  }
+}

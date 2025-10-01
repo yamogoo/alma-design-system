@@ -90,6 +90,16 @@ accent.brand = oklch(0.72 0.14 250);
 
 ```
 
+```js
+shift_oklch(#6699ff, -0.05) → darken
+
+shift_oklch(#6699ff, 0.05) → lighten
+
+shift_oklch({label.neutral.primary.base}, -6%) → darken on 0.06 by L
+
+shift_oklch(mix_oklch(#f00, #00f, .5), 0.02)
+```
+
 #### Output unit control (rendering)
 
 > How the final string is emitted

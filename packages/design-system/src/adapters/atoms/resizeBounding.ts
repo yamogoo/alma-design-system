@@ -1,24 +1,25 @@
 import tokens from "@/tokens";
 
-export type ResizeBoundingVariant = keyof typeof tokens.atoms.resizeBounding;
+export type ResizeBoundingVariant =
+  keyof typeof tokens.components.atoms.resizeBounding;
 export const resizeBoundingVariants = Object.keys(
-  tokens.atoms.resizeBounding
+  tokens.components.atoms.resizeBounding
 ) as ResizeBoundingVariant[];
 
 export type ResizeBoundingSize =
-  keyof typeof tokens.atoms.resizeBounding.default;
+  keyof typeof tokens.components.atoms.resizeBounding.default;
 export const resizeBoundingSizes = Object.keys(
-  tokens.atoms.resizeBounding.default
+  tokens.components.atoms.resizeBounding.default
 ) as ResizeBoundingSize[];
 
 export type ResizeBoundingMode =
-  keyof typeof tokens.themes.light.atoms.resizeBounding;
+  keyof typeof tokens.themes.light.components.atoms.resizeBounding;
 export const resizeBoundingModes = Object.keys(
-  tokens.themes.light.atoms.resizeBounding
+  tokens.themes.light.components.atoms.resizeBounding
 ) as ResizeBoundingMode[];
 
 export type ResizeBoundingTone =
-  keyof typeof tokens.themes.light.atoms.resizeBounding.accent;
+  keyof typeof tokens.themes.light.components.atoms.resizeBounding.accent;
 export const resizeBoundingTones = Object.keys(
-  tokens.themes.light.atoms.resizeBounding.accent
+  tokens.themes.light.components.atoms.resizeBounding.accent
 ) as ResizeBoundingTone[];

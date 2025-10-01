@@ -1,0 +1,52 @@
+{
+  "state": {
+    "delta": {
+      "lightness": {
+        "idle": {
+          "value": 0.0
+        },
+        "normal": {
+          "$value": 0.0
+        },
+        "hovered": {
+          "$value": 0.03
+        },
+        "pressed": {
+          "$value": 0.06
+        },
+        "disabled": {
+          "$value": 0.12
+        },
+        "selected": {
+          "$value": 0.0
+        },
+        "focused": {
+          "$value": 0.0
+        }
+      },
+      "alpha": {
+        "idle": {
+          "$value": 0.0
+        },
+        "normal": {
+          "$value": 0.0
+        },
+        "hovered": {
+          "$value": 0.0
+        },
+        "pressed": {
+          "$value": 0.0
+        },
+        "disabled": {
+          "$value": 0.0
+        },
+        "selected": {
+          "$value": 0.0
+        },
+        "focused": {
+          "$value": 0.0
+        }
+      }
+    }
+  }
+}

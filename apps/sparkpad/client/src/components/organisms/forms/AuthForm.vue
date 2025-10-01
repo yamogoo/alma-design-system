@@ -65,7 +65,7 @@ const contentKey = computed(
       :direction="'forward'"
       :stretch="'auto'"
       :duration="FORM_VIEW_ANIMATION_DURATION"
-      :gap="Tokens.spacing.md.$value"
+      :gap="Tokens.tokens.spacing.md.$value"
     >
       <template #screen-1="{ isActive }">
         <LoginForm

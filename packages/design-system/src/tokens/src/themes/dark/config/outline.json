@@ -1,0 +1,20 @@
+{
+  "state": {
+    "delta": {
+      "lightness": {
+        "normal": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        }
+      },
+      "alpha": {
+        "normal": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        }
+      }
+    }
+  }
+}

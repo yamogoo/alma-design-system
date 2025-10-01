@@ -1,0 +1,42 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "{themes.dark.mixins.border.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        }
+      }
+    }
+  },
+  "accent": {
+    "primary": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{themes.dark.mixins.surface.accent.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "{themes.dark.mixins.border.accent.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        }
+      }
+    }
+  }
+}

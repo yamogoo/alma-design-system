@@ -39,7 +39,7 @@ defineExpose({
 <style lang="scss">
 $prefix: surface;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -57,7 +57,7 @@ $prefix: surface;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {

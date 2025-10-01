@@ -7,11 +7,11 @@ import {
   dividerModes,
   dividerSizes,
   dividerTones,
-} from "@/adapters";
+} from "@/adapters/atoms/divider";
 
-// import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
-import { Divider } from "@/components/atoms";
 import { UIElementAlignments, UIElementOrientations } from "@/typings";
+
+import Divider from "./Divider.vue";
 
 const meta = {
   title: "Atoms/Dividers/Divider",
@@ -48,7 +48,3 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {
   args: {},
 };
-
-// export const Orientations: Story = {
-//   args: {},
-// };

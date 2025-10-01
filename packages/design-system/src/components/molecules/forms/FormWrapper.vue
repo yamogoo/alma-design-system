@@ -37,7 +37,7 @@ withDefaults(defineProps<FormWrapperProps>(), {
 <style lang="scss">
 $prefix: form-wrapper;
 
-@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $padding: get($val, "root.padding");
@@ -66,17 +66,19 @@ $prefix: form-wrapper;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.molecules.#{$prefix}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "molecules.#{$prefix}.#{$mode}.#{$tone}.background"
+              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.background"
             );
             border-color: themed(
-              "molecules.#{$prefix}.#{$mode}.#{$tone}.border"
+              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.border"
             );
           }
         }

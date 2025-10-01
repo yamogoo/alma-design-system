@@ -4,44 +4,24 @@
       "borderRadius": {
         "$value": "{tokens.roundness.md.$value}",
         "$type": "number",
-        "$unit": "px",
-        "$meta": {
-          "description": "Border radius of the main container",
-          "category": "main container",
-          "status": "unused"
-        }
+        "$unit": "px"
       },
       "media": {
         "lg": {
           "padding": {
             "$value": "{tokens.spacing.xs.$value}",
             "$type": "number",
-            "$unit": "px",
-            "$meta": {
-              "description": "Padding for large screens",
-              "category": "main container",
-              "status": "unused"
-            }
+            "$unit": "px"
           }
         },
         "md": {
           "padding": {
             "$value": "{tokens.spacing.xs.$value}",
             "$type": "number",
-            "$unit": "px",
-            "$meta": {
-              "description": "Padding for medium screens",
-              "category": "main container",
-              "status": "unused"
-            }
+            "$unit": "px"
           }
         }
       }
-    },
-    "$type": "component",
-    "$meta": {
-      "status": "unused",
-      "category": "main container"
     }
   }
 }

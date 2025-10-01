@@ -55,7 +55,7 @@ const showCurrentOption = (key: T) => {
 <style lang="scss">
 $prefix: options;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $option-font-style: get($val, "option.font-style");
@@ -73,20 +73,22 @@ $prefix: options;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           .#{$prefix}__option {
             @include themify($themes) {
-              color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal");
+              color: themed(
+                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+              );
             }
 
             &:hover {
               @include themify($themes) {
                 color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.label.hovered"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.hovered"
                 );
               }
             }

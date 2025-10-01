@@ -4,7 +4,7 @@
 @mixin border($mode, $tone) {
   & {
     @include themify($themes) {
-      border-color: themed("abstracts.border.#{$mode}.#{$tone}");
+      border-color: themed("mixins.border.#{$mode}.#{$tone}.normal");
     }
   }
 }

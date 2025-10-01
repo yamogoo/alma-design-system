@@ -131,7 +131,7 @@ const onPress = (e: PointerEvent, isPressed: boolean): void => {
 <style lang="scss">
 $prefix: list-item;
 
-@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -220,30 +220,34 @@ $prefix: list-item;
   &.#{$prefix}_state-#{$state} {
     @include themify($themes) {
       background-color: themed(
-        "molecules.#{$prefix}.#{$mode}.#{$tone}.root.background.#{$state}"
+        "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.background.#{$state}"
       );
       border-color: themed(
-        "molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
+        "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
       );
     }
 
     .#{$prefix}__title {
       @include themify($themes) {
-        color: themed("molecules.#{$prefix}.#{$mode}.#{$tone}.title.#{$state}");
+        color: themed(
+          "components.molecules.#{$prefix}.#{$mode}.#{$tone}.title.#{$state}"
+        );
       }
     }
 
     .#{$prefix}__description {
       @include themify($themes) {
         fill: themed(
-          "molecules.#{$prefix}.#{$mode}.#{$tone}.description.#{$state}"
+          "components.molecules.#{$prefix}.#{$mode}.#{$tone}.description.#{$state}"
         );
       }
     }
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.molecules.#{$prefix}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -254,9 +258,9 @@ $prefix: list-item;
 
           &:focus-visible {
             @include themify($themes) {
-              outline: $outline solid
+              outline: get($tokens, "outline") solid
                 themed(
-                  "molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.outline"
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.outline"
                 );
             }
           }
@@ -268,7 +272,7 @@ $prefix: list-item;
               @include themify($themes) {
                 border-color: rgba(
                   themed(
-                    "molecules.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
                   ),
                   0
                 );
@@ -281,7 +285,7 @@ $prefix: list-item;
             .#{$prefix}__container {
               @include themify($themes) {
                 border-color: themed(
-                  "molecules.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
                 );
               }
             }
@@ -289,10 +293,10 @@ $prefix: list-item;
 
           @include themify($themes) {
             background-color: themed(
-              "molecules.#{$prefix}.#{$mode}.#{$tone}.root.background.selected"
+              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.background.selected"
             );
             border-color: themed(
-              "molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.selected"
+              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.selected"
             );
           }
 

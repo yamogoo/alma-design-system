@@ -1,0 +1,28 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "border": {
+          "$value": "{themes.light.mixins.border.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "divider"
+          }
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "border": {
+          "$value": "{themes.light.mixins.border.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "divider"
+          }
+        }
+      }
+    }
+  }
+}

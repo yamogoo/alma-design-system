@@ -2,19 +2,14 @@ import type {
   SwitchVariant,
   SwitchMode,
   SwitchSize,
-  SkeletonTone,
-} from "@/adapters";
+  SwitchTone,
+} from "@/adapters/atoms/switch";
 
 import type { UIElementStylingModifiers } from "@/typings";
 
 export interface SwitchProps
   extends Partial<
-    UIElementStylingModifiers<
-      SwitchVariant,
-      SwitchSize,
-      SwitchMode,
-      SkeletonTone
-    >
+    UIElementStylingModifiers<SwitchVariant, SwitchSize, SwitchMode, SwitchTone>
   > {
   label?: string;
   isActive?: boolean;

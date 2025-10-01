@@ -1,6 +1,7 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { CarouselStack, type CarousleStackProps } from "@/components/atoms";
+import type { CarousleStackProps } from "./CarouselStack";
+import CarouselStack from "./CarouselStack.vue";
 
 enum Classes {
   ROOT_CLASS = "carousel-stack",

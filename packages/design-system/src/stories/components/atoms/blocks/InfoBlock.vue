@@ -49,7 +49,7 @@ withDefaults(defineProps<InfoBlockProps>(), {
 <style lang="scss">
 .sb-info-block {
   display: flex;
-  gap: px2rem(get($spacing, "md"));
+  gap: px2rem(get($tokens, "spacing.md"));
 
   &_orientation {
     @include useOrientation();

@@ -1,25 +1,25 @@
 import tokens from "@/tokens";
 
 export type NavigationRailVariant =
-  keyof typeof tokens.templates.navigationRail;
+  keyof typeof tokens.components.templates.navigationRail;
 export const NavigationRailVariants = Object.keys(
-  tokens.templates.navigationRail
+  tokens.components.templates.navigationRail
 ) as Array<NavigationRailVariant>;
 
 export type NavigationRailSize =
-  keyof typeof tokens.templates.navigationRail.default;
+  keyof typeof tokens.components.templates.navigationRail.default;
 export const NavigationRailSizes = Object.keys(
-  tokens.templates.navigationRail.default
+  tokens.components.templates.navigationRail.default
 ) as Array<NavigationRailSize>;
 
 export type NavigationRailTone =
-  keyof typeof tokens.themes.light.templates.navigationRail;
+  keyof typeof tokens.themes.light.components.templates.navigationRail;
 export const NavigationRailTones = Object.keys(
-  tokens.themes.light.templates.navigationRail
+  tokens.themes.light.components.templates.navigationRail
 ) as Array<NavigationRailTone>;
 
 export type NavigationRailMode =
-  keyof typeof tokens.themes.light.templates.navigationRail.neutral;
+  keyof typeof tokens.themes.light.components.templates.navigationRail.neutral;
 export const NavigationRailModes = Object.keys(
-  tokens.themes.light.templates.navigationRail.neutral
+  tokens.themes.light.components.templates.navigationRail.neutral
 ) as Array<NavigationRailMode>;

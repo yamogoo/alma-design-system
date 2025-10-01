@@ -4,7 +4,7 @@
 @mixin surface($mode, $tone) {
   & {
     @include themify($themes) {
-      background-color: themed("abstracts.surface.#{$mode}.#{$tone}");
+      background-color: themed("mixins.surface.#{$mode}.#{$tone}.normal");
     }
   }
 }

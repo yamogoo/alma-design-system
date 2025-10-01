@@ -1,0 +1,11 @@
+{
+  "accent": {
+    "primary": {
+      "base": {
+        "$value": "{colors.blue-500}",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "neutral": {
+    "primary": {
+      "label": {
+        "normal": {
+          "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.mixins.label.neutral.primary.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.dark.mixins.label.neutral.primary.hovered.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.dark.mixins.label.neutral.primary.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    },
+    "secondary": {
+      "label": {
+        "normal": {
+          "$value": "{themes.dark.mixins.label.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.mixins.label.neutral.secondary.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.dark.mixins.label.neutral.secondary.hovered.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.dark.mixins.label.neutral.secondary.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    }
+  }
+}

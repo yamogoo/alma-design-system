@@ -177,7 +177,7 @@ onMounted(() => {
 <style lang="scss">
 $prefix: switch;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -218,7 +218,7 @@ $prefix: switch;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -229,8 +229,10 @@ $prefix: switch;
 
           &:focus-visible {
             @include themify($themes) {
-              outline: $outline solid
-                themed("atoms.#{$prefix}.#{$mode}.#{$tone}.root.outline");
+              outline: get($tokens, "outline") solid
+                themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.outline"
+                );
             }
           }
 
@@ -240,7 +242,7 @@ $prefix: switch;
                 .#{$prefix}__track {
                   @include themify($themes) {
                     background-color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.track.normal"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.normal"
                     );
                   }
                 }
@@ -248,7 +250,7 @@ $prefix: switch;
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background-color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.normal"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.normal"
                     );
                   }
                 }
@@ -256,7 +258,7 @@ $prefix: switch;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
                     );
                   }
                 }
@@ -266,7 +268,7 @@ $prefix: switch;
                 .#{$prefix}__track {
                   @include themify($themes) {
                     background-color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.track.active"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.active"
                     );
                   }
                 }
@@ -274,7 +276,7 @@ $prefix: switch;
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background-color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.active"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.active"
                     );
                   }
                 }
@@ -282,7 +284,7 @@ $prefix: switch;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.label.active"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.active"
                     );
                   }
                 }
@@ -296,7 +298,7 @@ $prefix: switch;
                 .#{$prefix}__track {
                   @include themify($themes) {
                     background-color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.track.disabled"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.disabled"
                     );
                   }
                 }
@@ -304,7 +306,7 @@ $prefix: switch;
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background-color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.disabled"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.disabled"
                     );
                   }
                 }
@@ -312,7 +314,7 @@ $prefix: switch;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
                     );
                   }
                 }
@@ -322,7 +324,7 @@ $prefix: switch;
                 .#{$prefix}__track {
                   @include themify($themes) {
                     background-color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.track.disabled"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.disabled"
                     );
                   }
                 }
@@ -330,7 +332,7 @@ $prefix: switch;
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background-color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.disabled"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.disabled"
                     );
                   }
                 }
@@ -338,7 +340,7 @@ $prefix: switch;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
                     );
                   }
                 }

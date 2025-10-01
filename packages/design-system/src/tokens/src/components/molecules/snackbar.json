@@ -5,64 +5,43 @@
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         },
         "paddingH": {
           "$value": "{tokens.spacing.lg.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         },
         "paddingV": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         }
       },
       "content": {
         "gap": {
           "$value": 0,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         }
       },
       "title": {
         "fontStyle": {
           "$value": "title-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": ""
         }
       },
       "description": {
         "fontStyle": {
           "$value": "body-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": ""
         }
       }
     },
@@ -71,64 +50,43 @@
         "gap": {
           "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         },
         "paddingH": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         },
         "paddingV": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.xs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         }
       },
       "content": {
         "gap": {
           "$value": 0,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": "px"
         }
       },
       "title": {
         "fontStyle": {
           "$value": "title-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": ""
         }
       },
       "description": {
         "fontStyle": {
           "$value": "body-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "snackbar"
-          }
+          "$unit": ""
         }
       }
     }

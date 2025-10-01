@@ -1,11 +1,9 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 import { getTypedEmittedEvent } from "@/__tests__/utils";
 
-import {
-  Options,
-  type OptionsItems,
-  type OptionsProps,
-} from "@/components/atoms";
+import type { OptionsItems, OptionsProps } from "./Options";
+
+import Options from "./Options.vue";
 
 const CLASS_NAME = "options";
 

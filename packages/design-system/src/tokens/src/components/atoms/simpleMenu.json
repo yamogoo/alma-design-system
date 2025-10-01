@@ -5,18 +5,12 @@
         "gap": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "simple menu"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": 0,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "simple menu"
-          }
+          "$unit": "px"
         }
       },
       "item": {},
@@ -24,10 +18,7 @@
         "fontStyle": {
           "$value": "label-2",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "simple menu"
-          }
+          "$unit": ""
         }
       }
     },
@@ -36,18 +27,12 @@
         "gap": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "simple menu"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": 0,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "simple menu"
-          }
+          "$unit": "px"
         }
       },
       "item": {},
@@ -55,10 +40,7 @@
         "fontStyle": {
           "$value": "label-2",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "simple menu"
-          }
+          "$unit": ""
         }
       }
     }

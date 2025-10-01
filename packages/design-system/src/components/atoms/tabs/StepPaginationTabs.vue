@@ -4,8 +4,9 @@ import g from "gsap";
 
 import tokens from "@/tokens";
 
-import { Text } from "@/components/atoms";
-import { type TextVariant } from "@/adapters";
+import { type TextVariant } from "@/adapters/atoms/text";
+
+import Text from "@/components/atoms/typography/Text.vue";
 
 import type {
   StepPaginationTabItem,
@@ -35,8 +36,8 @@ const itemStyle = computed(() => ({
 }));
 
 const textVariant = computed(() => {
-  return tokens.atoms.stepPaginationTabs.default[props.size].item.fontStyle
-    .$value as TextVariant;
+  return tokens.components.atoms.stepPaginationTabs.default[props.size].item
+    .fontStyle.$value as TextVariant;
 });
 
 const onItemClick = (item: StepPaginationTabItem): void => {
@@ -121,7 +122,7 @@ onMounted(() => {
 <style lang="scss">
 $prefix: step-pagination-tabs;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -137,17 +138,21 @@ $prefix: step-pagination-tabs;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     &_mode-#{$mode} {
       .#{$prefix}__item {
         @include themify($themes) {
-          color: themed("atoms.#{$prefix}.#{$mode}.item.label.normal");
+          color: themed(
+            "components.atoms.#{$prefix}.#{$mode}.item.label.normal"
+          );
         }
 
         &_state-active {
           @include themify($themes) {
-            color: themed("atoms.#{$prefix}.#{$mode}.item.label.active");
+            color: themed(
+              "components.atoms.#{$prefix}.#{$mode}.item.label.active"
+            );
           }
         }
       }

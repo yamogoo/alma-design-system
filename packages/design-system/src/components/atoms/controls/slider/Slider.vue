@@ -242,7 +242,7 @@ onBeforeUnmount(removeEventListeners);
 <style lang="scss">
 $prefix: slider;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -301,7 +301,7 @@ $prefix: slider;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -312,8 +312,10 @@ $prefix: slider;
 
           &:focus-visible {
             @include themify($themes) {
-              outline: $outline solid
-                themed("atoms.#{$prefix}.#{$mode}.#{$tone}.root.outline");
+              outline: get($tokens, "outline") solid
+                themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.outline"
+                );
             }
           }
 
@@ -321,7 +323,7 @@ $prefix: slider;
             .#{$prefix}__track {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.normal"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.normal"
                 );
               }
             }
@@ -330,7 +332,7 @@ $prefix: slider;
             .#{$prefix}__track::before {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.normal"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.normal"
                 );
               }
             }
@@ -338,10 +340,10 @@ $prefix: slider;
             .#{$prefix}__knob {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.normal"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.normal"
                 );
                 border-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.normal"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.normal"
                 );
               }
             }
@@ -351,7 +353,7 @@ $prefix: slider;
             .slider__track {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.hovered"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.hovered"
                 );
               }
             }
@@ -360,7 +362,7 @@ $prefix: slider;
             .#{$prefix}__track::before {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.hovered"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.hovered"
                 );
               }
             }
@@ -368,10 +370,10 @@ $prefix: slider;
             .#{$prefix}__knob {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.hovered"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.hovered"
                 );
                 border-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.hovered"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.hovered"
                 );
               }
             }
@@ -381,7 +383,7 @@ $prefix: slider;
             .#{$prefix}__track {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.disabled"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.background.disabled"
                 );
               }
             }
@@ -390,7 +392,7 @@ $prefix: slider;
             .#{$prefix}__track::before {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.disabled"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.range-track.background.disabled"
                 );
               }
             }
@@ -398,10 +400,10 @@ $prefix: slider;
             .#{$prefix}__knob {
               @include themify($themes) {
                 background: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.disabled"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.background.disabled"
                 );
                 border-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.disabled"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.border-color.disabled"
                 );
               }
             }
@@ -410,7 +412,7 @@ $prefix: slider;
           &__label {
             @include themify($themes) {
               background: themed(
-                "atoms.#{$prefix}.#{$mode}.#{$tone}.label.color.normal"
+                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.color.normal"
               );
             }
           }

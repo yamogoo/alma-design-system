@@ -1,0 +1,50 @@
+{
+  "default": {
+    "lg": {
+      "root": {
+        "minHeight": {
+          "$value": 32,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.md.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": [
+            "{tokens.spacing.xxl.$value}",
+            "{tokens.spacing.lg.$value}",
+            "{tokens.spacing.lg.$value}",
+            "{tokens.spacing.lg.$value}"
+          ],
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "md": {
+      "root": {
+        "minHeight": {
+          "$value": 32,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.sm.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": [
+            "{tokens.spacing.lg.$value}",
+            "{tokens.spacing.lg.$value}"
+          ],
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    }
+  }
+}

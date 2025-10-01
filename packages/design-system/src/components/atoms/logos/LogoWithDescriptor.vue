@@ -10,7 +10,7 @@ const PREFIX = "logo-with-descriptor";
 withDefaults(defineProps<LogoWithDescriptorProps>(), {
   variant: "default",
   size: "md",
-  mode: "default",
+  mode: "neutral",
   tone: "primary",
 });
 
@@ -48,7 +48,7 @@ const computedClass = () => {
 <style lang="scss">
 $prefix: logo-with-descriptor;
 
-@mixin defineButtonSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineButtonSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -68,12 +68,12 @@ $prefix: logo-with-descriptor;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $val in $map {
     @each $tone, $modes in $modes {
       &_tone-#{$tone} {
         &.logo-with-descriptor_mode-#{$mode} {
-          $states: get($themes, "light.#{$prefix}.default.primary.label");
+          $states: get($themes, "light.#{$prefix}.neutral.primary.label");
 
           &.#{$prefix} {
             @each $state in $states {

@@ -1,0 +1,150 @@
+{
+  "primary": {
+    "idle": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.primary.base.$value}, {themes.dark.config.divider.state.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.primary.base.$value}, {themes.dark.config.divider.state.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.primary.base.$value}, {themes.dark.config.divider.state.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.primary.base.$value}, {themes.dark.config.divider.state.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.primary.base.$value}, {themes.dark.config.divider.state.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.primary.base.$value}, {themes.dark.config.divider.state.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "outline": {
+      "$value": "{themes.dark.abstracts.outline.accent.primary.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "secondary": {
+    "idle": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.secondary.base.$value}, {themes.dark.config.divider.state.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.secondary.base.$value}, {themes.dark.config.divider.state.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.secondary.base.$value}, {themes.dark.config.divider.state.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.secondary.base.$value}, {themes.dark.config.divider.state.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.secondary.base.$value}, {themes.dark.config.divider.state.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.secondary.base.$value}, {themes.dark.config.divider.state.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "outline": {
+      "$value": "{themes.dark.abstracts.outline.accent.primary.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "tertiary": {
+    "idle": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.tertiary.base.$value}, {themes.dark.config.divider.state.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.tertiary.base.$value}, {themes.dark.config.divider.state.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.tertiary.base.$value}, {themes.dark.config.divider.state.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.tertiary.base.$value}, {themes.dark.config.divider.state.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.tertiary.base.$value}, {themes.dark.config.divider.state.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.tertiary.base.$value}, {themes.dark.config.divider.state.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "outline": {
+      "$value": "{themes.dark.abstracts.outline.accent.primary.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "inversed": {
+    "idle": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.inversed.base.$value}, {themes.dark.config.divider.state.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.inversed.base.$value}, {themes.dark.config.divider.state.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.inversed.base.$value}, {themes.dark.config.divider.state.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.inversed.base.$value}, {themes.dark.config.divider.state.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.inversed.base.$value}, {themes.dark.config.divider.state.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "shift_oklch({themes.dark.abstracts.divider.positive.inversed.base.$value}, {themes.dark.config.divider.state.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "outline": {
+      "$value": "{themes.dark.abstracts.outline.accent.primary.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

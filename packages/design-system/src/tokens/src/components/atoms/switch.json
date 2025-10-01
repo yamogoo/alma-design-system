@@ -5,44 +5,29 @@
         "width": {
           "$value": 64,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "height": {
           "$value": 20,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.gap.xs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       },
       "track": {
         "padding": {
           "$value": 2,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": 10,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       },
       "label": {
@@ -55,18 +40,12 @@
         "width": {
           "$value": 32,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "height": {
           "$value": "{components.atoms.switch.default.lg.root.height.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -75,26 +54,17 @@
         "width": {
           "$value": 54,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "height": {
           "$value": 20,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.gap.xs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       },
 
@@ -102,18 +72,12 @@
         "padding": {
           "$value": 2,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": 7,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       },
       "label": {
@@ -126,18 +90,12 @@
         "width": {
           "$value": 28,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "height": {
           "$value": "{components.atoms.switch.default.md.root.height.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -146,44 +104,29 @@
         "width": {
           "$value": 40,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "height": {
           "$value": 16,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.gap.xs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       },
       "track": {
         "padding": {
           "$value": 2,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": 6,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       },
       "label": {
@@ -196,18 +139,12 @@
         "width": {
           "$value": 24,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         },
         "height": {
           "$value": "{components.atoms.switch.default.sm.root.height.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "toggle switch"
-          }
+          "$unit": "px"
         }
       }
     }

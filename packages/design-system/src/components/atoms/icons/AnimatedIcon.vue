@@ -74,9 +74,10 @@ const onCompleted = (): void => {
 </template>
 
 <style lang="scss">
+$token-prefix: icon;
 $prefix: "animated-icon";
 
-@mixin defineSizes($map: get($atoms, "icon")) {
+@mixin defineSizes($map: get($components, "atoms.#{$token-prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -91,7 +92,7 @@ $prefix: "animated-icon";
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.abstracts.label")) {
+@mixin defineThemes($map: get($themes, "light.mixins.label")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -99,8 +100,8 @@ $prefix: "animated-icon";
           svg {
             path {
               @include themify($themes) {
-                fill: themed("abstracts.label.#{$mode}.#{$tone}");
-                stroke: themed("abstracts.label.#{$mode}.#{$tone}");
+                fill: themed("mixins.label.#{$mode}.#{$tone}.normal");
+                stroke: themed("mixins.label.#{$mode}.#{$tone}.normal");
               }
             }
           }

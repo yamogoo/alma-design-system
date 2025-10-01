@@ -52,7 +52,7 @@ const id = useId();
 <style lang="scss">
 $prefix: form;
 
-@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $border-radius: get($val, "root.border-radius");
@@ -79,18 +79,22 @@ $prefix: form;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.molecules.#{$prefix}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "molecules.#{$prefix}.#{$mode}.#{$tone}.background"
+              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.background"
             );
             @include themify($themes) {
               box-shadow: 0px 4px 32px
-                themed("molecules.#{$prefix}.#{$mode}.#{$tone}.shadow");
+                themed(
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.shadow"
+                );
             }
           }
         }

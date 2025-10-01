@@ -5,26 +5,17 @@
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "control wrapper"
-          }
+          "$unit": "px"
         },
         "paddingV": {
           "$value": "{tokens.spacing.xxs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "control wrapper"
-          }
+          "$unit": "px"
         },
         "paddingH": {
           "$value": "{tokens.spacing.xxs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "control wrapper"
-          }
+          "$unit": "px"
         }
       }
     }

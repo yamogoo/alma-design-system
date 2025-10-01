@@ -1,0 +1,9 @@
+{
+  "primary": {
+    "normal": {
+      "$value": "shift_oklch({themes.light.abstracts.outline.accent.primary.base.$value}, {themes.light.config.outline.state.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

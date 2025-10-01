@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { ResizeBounding } from "@/components/atoms";
+import ResizeBounding from "./ResizeBounding.vue";
 
 const getResizeBounding = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="resizer"]');

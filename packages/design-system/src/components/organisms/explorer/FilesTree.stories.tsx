@@ -2,11 +2,10 @@ import { ref } from "vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { http, HttpResponse } from "msw";
 
-import type {
-  TreeViewNode,
-  TreeViewSelectedItemIndexes,
-} from "@/components/molecules";
-import { FilesTree, type FilesTreeProps } from "@/components/organisms";
+import type { TreeViewSelectedItemIndexes } from "@/components/molecules";
+import type { TreeViewNode } from "@/components/molecules/explorer/tree-view/TreeViewItem";
+import type { FilesTreeProps } from "./FilesTree";
+import FilesTree from "./FilesTree.vue";
 
 const API_URL = "/api/tree";
 

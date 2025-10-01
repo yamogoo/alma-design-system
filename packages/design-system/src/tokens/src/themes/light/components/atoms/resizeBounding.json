@@ -1,0 +1,36 @@
+{
+  "accent": {
+    "primary": {
+      "splitter": {
+        "normal": {
+          "$value": "{themes.light.mixins.surface.accent.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "active": {
+          "$value": "{themes.light.mixins.surface.accent.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "knob": {
+        "normal": {
+          "$value": "{themes.light.mixins.surface.neutral.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "background"
+          }
+        },
+        "active": {
+          "$value": "{themes.light.mixins.surface.neutral.inversed.selected.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "background"
+          }
+        }
+      }
+    }
+  }
+}

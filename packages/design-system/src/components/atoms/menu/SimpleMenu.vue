@@ -75,7 +75,7 @@ const onPress = (item: IMenuItem<T>): void => {
 <style lang="scss">
 $prefix: simple-menu;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {

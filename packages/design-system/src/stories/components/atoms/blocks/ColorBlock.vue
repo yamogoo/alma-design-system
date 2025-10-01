@@ -42,12 +42,12 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
   &__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: px2rem(get($roundness, "xs"));
+    margin-bottom: px2rem(get($tokens, "roundness.xs"));
   }
 
   &__color {
     @include box(100%, px2rem(48px));
-    border-radius: px2rem(get($roundness, "xs"));
+    border-radius: px2rem(get($tokens, "roundness.xs"));
   }
 }
 </style>

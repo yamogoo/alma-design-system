@@ -41,7 +41,7 @@ useResizeObserver(refApp, (entries) => {
 });
 
 onMounted(() => {
-  initializeAuth();
+  void initializeAuth();
 });
 </script>
 
@@ -56,7 +56,7 @@ onMounted(() => {
   overflow: hidden;
 
   @include themify($themes) {
-    background-color: themed("abstracts.surface.neutral.base");
+    background-color: themed("mixins.surface.neutral.primary.idle");
   }
   @extend %base-transition;
 }

@@ -1,0 +1,74 @@
+{
+  "default": {
+    "lg": {
+      "root": {
+        "min-height": {
+          "$value": 32,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.md.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "gap": {
+          "$value": "{tokens.spacing.xl.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": [
+            "{tokens.spacing.xxl.$value}",
+            "{tokens.spacing.lg.$value}",
+            "{tokens.spacing.lg.$value}",
+            "{tokens.spacing.lg.$value}"
+          ],
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "button": {
+        "offset": {
+          "$value": "{tokens.spacing.lg.$value}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "md": {
+      "root": {
+        "min-height": {
+          "$value": 32,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.md.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "gap": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": [
+            "{tokens.spacing.lg.$value}",
+            "{tokens.spacing.lg.$value}"
+          ],
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "button": {
+        "offset": {
+          "$value": "{tokens.spacing.lg.$value}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    }
+  }
+}

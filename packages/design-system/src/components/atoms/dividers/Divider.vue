@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DividerProps } from "@/components/atoms";
+import type { DividerProps } from "./Divider";
 
 const PREFIX = "divider";
 
@@ -34,7 +34,7 @@ withDefaults(defineProps<DividerProps>(), {
 <style lang="scss">
 $prefix: divider;
 
-@mixin defineSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $border-width: px2rem(get($val, "root.border-width"));
@@ -87,7 +87,7 @@ $prefix: divider;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -96,7 +96,7 @@ $prefix: divider;
             &-horizontal {
               @include themify($themes) {
                 border-bottom-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
                 );
               }
             }
@@ -104,7 +104,7 @@ $prefix: divider;
             &-vertical {
               @include themify($themes) {
                 border-right-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
                 );
               }
             }

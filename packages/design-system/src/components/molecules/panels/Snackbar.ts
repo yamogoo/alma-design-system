@@ -3,7 +3,7 @@ import type {
   SnackbarSize,
   SnackbarTone,
   SnackbarVariant,
-} from "@/adapters";
+} from "@/adapters/molecules/snackbar";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

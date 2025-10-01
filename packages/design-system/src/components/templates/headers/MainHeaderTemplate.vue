@@ -36,32 +36,34 @@ withDefaults(defineProps<MainHeaderProps>(), {
 <style lang="scss">
 $prefix: main-header;
 
-@mixin defineSizes($map: get($templates, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "templates.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
-          $padding-v: px2rem(get($val, "root.padding"));
-          padding-top: $padding-v;
-          padding-bottom: $padding-v;
+          $padding: get($val, "root.padding");
+
+          padding: $padding;
         }
       }
     }
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.templates.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.templates.#{$prefix}")
+) {
   @each $tone, $modes in $map {
     @each $mode, $val in $modes {
       &_tone-#{$tone} {
-        &.main-footer_mode-#{$mode} {
+        &.#{$prefix}_mode-#{$mode} {
           @include themify($themes) {
             background-color: themed(
-              "templates.#{$prefix}.#{$tone}.#{$mode}.root.background.normal"
+              "components.templates.#{$prefix}.#{$tone}.#{$mode}.root.background.normal"
             );
-            border: $outline solid
+            border: get($tokens, "outline") solid
               themed(
-                "templates.#{$prefix}.#{$tone}.#{$mode}.root.border.normal"
+                "components.templates.#{$prefix}.#{$tone}.#{$mode}.root.border.normal"
               );
           }
           @extend %base-transition;

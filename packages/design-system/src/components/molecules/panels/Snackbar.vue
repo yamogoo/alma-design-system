@@ -48,7 +48,7 @@ withDefaults(defineProps<SnackbarProps>(), {
 <style lang="scss">
 $prefix: snackbar;
 
-@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));
@@ -86,7 +86,9 @@ $prefix: snackbar;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.molecules.#{$prefix}")
+) {
   @each $tone, $modes in $map {
     @each $mode, $val in $modes {
       &_tone-#{$tone} {
@@ -96,7 +98,7 @@ $prefix: snackbar;
         &.#{$prefix}_mode-#{$mode} {
           @include themify($themes) {
             background-color: themed(
-              "molecules.#{$prefix}.#{$tone}.#{$mode}.root.background"
+              "components.molecules.#{$prefix}.#{$tone}.#{$mode}.root.background"
             );
           }
 
@@ -104,14 +106,16 @@ $prefix: snackbar;
             &__content {
               &-title {
                 @include themify($themes) {
-                  color: themed("molecules.#{$prefix}.#{$tone}.#{$mode}.title");
+                  color: themed(
+                    "components.molecules.#{$prefix}.#{$tone}.#{$mode}.title"
+                  );
                 }
               }
 
               &-description {
                 @include themify($themes) {
                   color: themed(
-                    "molecules.#{$prefix}.#{$tone}.#{$mode}.description"
+                    "components.molecules.#{$prefix}.#{$tone}.#{$mode}.description"
                   );
                 }
               }

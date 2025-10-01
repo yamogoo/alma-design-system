@@ -1,0 +1,18 @@
+{
+  "primary": {
+    "item": {
+      "label": {
+        "normal": {
+          "$value": "{themes.light.mixins.label.neutral.secondary.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "active": {
+          "$value": "{themes.light.mixins.label.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    }
+  }
+}

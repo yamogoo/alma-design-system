@@ -11,7 +11,7 @@ import type {
   IconWeight,
 } from "@/components/atoms/icons/Icon";
 
-import type { ButtonProps } from "@/components/atoms/buttons/Button";
+import type { ButtonProps } from "./Button";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

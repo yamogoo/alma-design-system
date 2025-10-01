@@ -5,105 +5,63 @@
         "size": {
           "$value": 12,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Extra extra small icon size",
-            "category": "icon",
-            "tags": ["ui", "icon"]
-          }
+          "$unit": "px"
         }
-      },
-      "$type": "component"
+      }
     },
     "xs": {
       "root": {
         "size": {
           "$value": 16,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Extra small icon size",
-            "category": "icon",
-            "tags": ["ui", "icon"]
-          }
+          "$unit": "px"
         }
-      },
-      "$type": "component"
+      }
     },
     "sm": {
       "root": {
         "size": {
           "$value": 18,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Small icon size",
-            "category": "icon",
-            "tags": ["ui", "icon"]
-          }
+          "$unit": "px"
         }
-      },
-      "$type": "component"
+      }
     },
     "md": {
       "root": {
         "size": {
           "$value": 20,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Medium icon size",
-            "category": "icon",
-            "tags": ["ui", "icon"]
-          }
+          "$unit": "px"
         }
-      },
-      "$type": "component"
+      }
     },
     "lg": {
       "root": {
         "size": {
           "$value": 24,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Large icon size",
-            "category": "icon",
-            "tags": ["ui", "icon"]
-          }
+          "$unit": "px"
         }
-      },
-      "$type": "component"
+      }
     },
     "xl": {
       "root": {
         "size": {
           "$value": 32,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Extra large icon size",
-            "category": "icon",
-            "tags": ["ui", "icon"]
-          }
+          "$unit": "px"
         }
       },
-      "$type": "component"
-    },
-    "xxl": {
-      "root": {
-        "size": {
-          "$value": 48,
-          "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Extra extra large icon size",
-            "category": "icon",
-            "tags": ["ui", "icon"]
+      "xxl": {
+        "root": {
+          "size": {
+            "$value": 48,
+            "$type": "number",
+            "$unit": "px"
           }
         }
-      },
-      "$type": "component"
+      }
     }
   }
 }

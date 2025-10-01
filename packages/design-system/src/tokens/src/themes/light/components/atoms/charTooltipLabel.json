@@ -1,0 +1,92 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{themes.light.mixins.surface.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "tooltip"
+            }
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "{themes.light.mixins.border.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "tooltip"
+            }
+          }
+        }
+      },
+      "label": {
+        "normal": {
+          "$value": "{themes.light.mixins.label.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "tooltip"
+          }
+        }
+      },
+      "icon": {
+        "normal": {
+          "$value": "{themes.light.mixins.label.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "tooltip"
+          }
+        }
+      }
+    },
+    "inversed": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{themes.light.mixins.surface.neutral.inversed.normal.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "tooltip"
+            }
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "{themes.light.mixins.border.neutral.inversed.normal.$value}",
+            "$type": "color",
+            "$unit": "hex",
+            "$meta": {
+              "category": "tooltip"
+            }
+          }
+        }
+      },
+      "label": {
+        "normal": {
+          "$value": "{themes.light.mixins.label.neutral.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "tooltip"
+          }
+        }
+      },
+      "icon": {
+        "normal": {
+          "$value": "{themes.light.mixins.label.neutral.inversed.normal.$value}",
+          "$type": "color",
+          "$unit": "hex",
+          "$meta": {
+            "category": "tooltip"
+          }
+        }
+      }
+    }
+  }
+}

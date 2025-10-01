@@ -1,10 +1,13 @@
 import type {
   TreeViewNode,
   TreeViewNodeID,
+} from "@/components/molecules/explorer/tree-view/TreeViewItem";
+
+import type {
   TreeViewConfigProps,
   TreeViewControlProps,
   TreeViewStylingProps,
-} from "@/components/molecules";
+} from "@/components/molecules/explorer/tree-view/TreeView";
 
 export interface FilesTreeMessages {
   apiLoadingMessage: string;

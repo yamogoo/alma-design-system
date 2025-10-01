@@ -39,9 +39,9 @@ export default () => {
         paths: ["./src/tokens/src/", "./src/tokens/.cache"],
         mapOptions: {
           convertCase: true,
-          includeFileName: false,
+          includeFileName: true,
           convertToCSSVariables: false,
-          includeFileNameToCSSVariables: true,
+          includeFileNameToCSSVariables: false,
           excludeCSSVariables: ["./src/tokens/.cache/themes.json"],
         },
         themesDir: "./src/tokens/output/themes.json",
@@ -52,7 +52,9 @@ export default () => {
           paths: ["./src/tokens/src"],
           includeRootDirName: false,
         },
+        useFileStructureLookup: false,
         useReflectOriginalStructure: false,
+        isModulesMergedIntoEntry: true,
       }),
       VitePluginTokenLinter({
         source: "./src/tokens/src",

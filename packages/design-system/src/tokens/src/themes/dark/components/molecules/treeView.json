@@ -1,0 +1,82 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$type": "color",
+          "unit": "hex"
+        }
+      },
+      "item": {
+        "root": {
+          "background": {
+            "normal": {
+              "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "hovered": {
+              "$value": "{themes.dark.mixins.surface.neutral.primary.hovered.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "selected": {
+              "$value": "{colors.blue-900}",
+              "$type": "color",
+              "unit": "hex"
+            }
+          }
+        },
+        "label": {
+          "color": {
+            "normal": {
+              "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "hovered": {
+              "$value": "{themes.dark.mixins.label.neutral.primary.hovered.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "pressed": {
+              "$value": "{themes.dark.mixins.label.neutral.primary.pressed.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "selected": {
+              "$value": "{themes.dark.mixins.label.accent.inversed.selected.$value}",
+              "$type": "color",
+              "unit": "hex"
+            }
+          }
+        },
+        "caret": {
+          "color": {
+            "normal": {
+              "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "hovered": {
+              "$value": "{themes.dark.mixins.label.neutral.primary.hovered.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "pressed": {
+              "$value": "{themes.dark.mixins.label.neutral.primary.pressed.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "selected": {
+              "$value": "{themes.dark.mixins.label.accent.inversed.selected.$value}",
+              "$type": "color",
+              "unit": "hex"
+            }
+          }
+        }
+      }
+    }
+  }
+}

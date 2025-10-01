@@ -5,20 +5,12 @@
         "size": {
           "$value": 56,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Button height for large default button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Gap between button elements",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [
@@ -28,76 +20,47 @@
             "{tokens.spacing.xl.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside large default button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.infinity.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for large default button",
-            "category": "button"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-1",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for button label",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.sm.root.size.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Icon size in large default button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "alias": {
           "size": {
             "$value": "sm",
             "$type": "string",
-            "$unit": "",
-            "$meta": {
-              "description": "Alias for icon size",
-              "category": "button"
-            }
+            "$unit": ""
           }
         }
-      },
-      "$type": "component"
+      }
     },
     "md": {
       "root": {
         "size": {
           "$value": 44,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Medium default button height",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Gap between elements",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [
@@ -107,76 +70,47 @@
             "{tokens.spacing.lg.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside medium button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.infinity.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for medium button",
-            "category": "button"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-2",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for button label",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.xs.root.size.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Icon size in medium button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "alias": {
           "size": {
             "$value": "xs",
             "$type": "string",
-            "$unit": "",
-            "$meta": {
-              "description": "Alias for icon size",
-              "category": "button"
-            }
+            "$unit": ""
           }
         }
-      },
-      "$type": "component"
+      }
     },
     "sm": {
       "root": {
         "size": {
           "$value": 40,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Small default button height",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Gap between elements",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [
@@ -186,130 +120,80 @@
             "{tokens.spacing.sm.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside small button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.infinity.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for small button",
-            "category": "button"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for button label",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.xs.root.size.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Icon size in small button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "alias": {
           "size": {
             "$value": "xs",
             "$type": "string",
-            "$unit": "",
-            "$meta": {
-              "description": "Alias for icon size",
-              "category": "button"
-            }
+            "$unit": ""
           }
         }
-      },
-      "$type": "component"
+      }
     },
     "xs": {
       "root": {
         "size": {
           "$value": 36,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Extra small default button height",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Gap between elements",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [0, "{tokens.spacing.sm.$value}"],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside extra small button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.infinity.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for extra small button",
-            "category": "button"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for button label",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Icon size in extra small button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "alias": {
           "size": {
             "$value": "xxs",
             "$type": "string",
-            "$unit": "",
-            "$meta": {
-              "description": "Alias for icon size",
-              "category": "button"
-            }
+            "$unit": ""
           }
         }
-      },
-      "$type": "component"
+      }
     }
   },
   "rounded": {
@@ -318,168 +202,102 @@
         "size": {
           "$value": 56,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Large rounded button height",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Gap between elements",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [0, 0, 0, 0],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside large rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.infinity.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for large rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-1",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for button label",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.sm.root.size.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Icon size in large rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "alias": {
           "size": {
             "$value": "sm",
             "$type": "string",
-            "$unit": "",
-            "$meta": {
-              "description": "Alias for icon size",
-              "category": "button"
-            }
+            "$unit": ""
           }
         }
-      },
-      "$type": "component"
+      }
     },
     "md": {
       "root": {
         "size": {
           "$value": 44,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Medium rounded button height",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Gap between elements",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [0, 0, 0, 0],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside medium rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.infinity.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for medium rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for button label",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.xs.root.size.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Icon size in medium rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "alias": {
           "size": {
             "$value": "xs",
             "$type": "string",
-            "$unit": "",
-            "$meta": {
-              "description": "Alias for icon size",
-              "category": "button"
-            }
+            "$unit": ""
           }
         }
-      },
-      "$type": "component"
+      }
     },
     "sm": {
       "root": {
         "size": {
           "$value": 32,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Small rounded button height",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Gap between elements",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [
@@ -489,76 +307,47 @@
             "{tokens.spacing.lg.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside small rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.infinity.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for small rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-4",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for button label",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.xs.root.size.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Icon size in small rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "alias": {
           "size": {
             "$value": "xs",
             "$type": "string",
-            "$unit": "",
-            "$meta": {
-              "description": "Alias for icon size",
-              "category": "button"
-            }
+            "$unit": ""
           }
         }
-      },
-      "$type": "component"
+      }
     },
     "xs": {
       "root": {
         "size": {
           "$value": 24,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Extra small rounded button height",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Gap between elements",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": [
@@ -568,56 +357,35 @@
             "{tokens.spacing.lg.$value}"
           ],
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Padding inside extra small rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.infinity.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Border radius for extra small rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         }
       },
       "label": {
         "fontStyle": {
           "$value": "label-4",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "description": "Font style for button label",
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Icon size in extra small rounded button",
-            "category": "button"
-          }
+          "$unit": "px"
         },
         "alias": {
           "size": {
             "$value": "xxs",
             "$type": "string",
-            "$unit": "",
-            "$meta": {
-              "description": "Alias for icon size",
-              "category": "button"
-            }
+            "$unit": ""
           }
         }
-      },
-      "$type": "component"
+      }
     }
   }
 }

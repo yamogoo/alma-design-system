@@ -8,11 +8,7 @@
         "borderWidth": {
           "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Surface border width for large size",
-            "category": "surface"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -24,11 +20,7 @@
         "borderWidth": {
           "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Surface border width for large size",
-            "category": "surface"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -40,11 +32,7 @@
         "borderWidth": {
           "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Surface border width for medium size",
-            "category": "surface"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -56,27 +44,19 @@
         "borderWidth": {
           "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "description": "Surface border width for medium size",
-            "category": "surface"
-          }
+          "$unit": "px"
         }
-      },
-      "xs": {
-        "root": {
-          "borderRadius": {
-            "$value": "{tokens.roundness.xs.$value}"
-          },
-          "borderWidth": {
-            "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
-            "$type": "number",
-            "$unit": "px",
-            "$meta": {
-              "description": "Surface border width for medium size",
-              "category": "surface"
-            }
-          }
+      }
+    },
+    "xs": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.xs.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px"
         }
       }
     }

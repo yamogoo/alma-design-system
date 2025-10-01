@@ -5,26 +5,17 @@
         "gap": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         },
         "minWidth": {
           "$value": 88,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -33,26 +24,17 @@
         "gap": {
           "$value": "{tokens.spacing.md.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         },
         "minWidth": {
           "$value": 76,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         }
       }
     },
@@ -61,26 +43,17 @@
         "gap": {
           "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         },
         "minWidth": {
           "$value": 64,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         },
         "padding": {
           "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "navigation rail"
-          }
+          "$unit": "px"
         }
       }
     }

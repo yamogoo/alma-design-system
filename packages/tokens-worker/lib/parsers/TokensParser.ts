@@ -78,6 +78,7 @@ export interface TokensParserOptions {
   parseOptions?: Partial<ParseValueOptions>;
   useFileStructureLookup?: boolean; // enable folder-structure lookup for token refs
   useReflectOriginalStructure?: boolean;
+  isModulesMergedIntoEntry?: boolean;
   themesDir?: string;
   themesOutFile?: string; // scss
   themesIncludeRequired?: boolean;
@@ -534,6 +535,7 @@ export class TokensParser {
       ...opts,
       verbose: opts.verbose ?? false,
       cssVarsPrefer: opts.cssVarsPrefer ?? 'last',
+      isModulesMergedIntoEntry: opts.isModulesMergedIntoEntry ?? true,
 
       mapOptions: {
         convertCase: opts.mapOptions?.convertCase ?? false,
@@ -1103,6 +1105,23 @@ export class TokensParser {
         if (!base) return null;
         const amt = this.parseAmount(args[1]);
         const hex = this.relShiftLOKLCH(base.hex().toString(), -amt);
+        return this.tryToColor(hex);
+      }
+      case 'shift_oklch': {
+        // shift_oklch(color, dL)
+        // dL < 0 → darker (lower L), dL > 0 → lighter (higher L)
+        if (args.length !== 2) return null;
+
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+
+        // accepts numbers or percents, e.g. -0.05 or -5%
+        const dL = this.parseAmount(args[1]);
+
+        const [L, C, H] = this.colorToOklch(base.hex().toString());
+        const L2 = this._clamp01(L + dL);
+
+        const hex = this.oklchToHex([L2, C, H]);
         return this.tryToColor(hex);
       }
       case 'mix_oklch': {
@@ -1809,7 +1828,8 @@ export class TokensParser {
 
     try {
       const files = await fs.readdir(build);
-      const jsonFiles = files.filter((f: string) => f.endsWith('.json'));
+      const jsonFiles = files.filter((f: string) => f.endsWith('.json')).sort();
+      const moduleKeys = jsonFiles.map((file: string) => file.replace('.json', ''));
 
       const relativeImportPath = nodePath.relative(nodePath.dirname(entryFilePath), build);
 
@@ -1823,12 +1843,18 @@ export class TokensParser {
         })
         .join('\n');
 
-      const spreadList = jsonFiles.map((file: string) => file.replace('.json', '')).join(', ');
+      const moduleBody = this.opts.isModulesMergedIntoEntry
+        ? moduleKeys.join(',\n  ') // 1) { baseColors, breakpoints, ... }
+        : moduleKeys.map((name) => `...${name}`).join(',\n  '); // 2) { ...baseColors, ...breakpoints, ... }
 
-      const content = `${imports}\n\nconst module = {\n  ${spreadList
-        .split(', ')
-        .map((name: string) => `...${name}`)
-        .join(',\n  ')}\n};\n\nexport default module;\n`;
+      const content = `${imports}
+
+const module = {
+  ${moduleBody}
+};
+
+export default module;
+`;
 
       const entryDir = nodePath.dirname(entryFilePath);
       await fs.mkdir(entryDir, { recursive: true });

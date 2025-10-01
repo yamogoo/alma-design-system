@@ -42,20 +42,14 @@
         "fontStyle": {
           "$value": "label-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "description": {
         "fontStyle": {
           "$value": "body-3",
           "$type": "string",
-          "$unit": "",
-          "$meta": {
-            "category": "typography"
-          }
+          "$unit": ""
         }
       },
       "chevron": {

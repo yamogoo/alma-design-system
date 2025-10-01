@@ -4,8 +4,8 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
 
-import { type AnimatedWrapperProps } from "@/components/atoms/containers/AnimatedWrapper";
-import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
+import { type AnimatedWrapperProps } from "./AnimatedWrapper";
+import AnimatedWrapper from "./AnimatedWrapper.vue";
 import Text from "@/components/atoms/typography/Text.vue";
 import ActionButton from "@/components/atoms/buttons/ActionButton.vue";
 

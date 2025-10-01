@@ -278,7 +278,7 @@ onMounted(() => {
 <style lang="scss">
 $prefix: input;
 
-@mixin defineInputSizes($map: get($atoms, "#{$prefix}")) {
+@mixin defineInputSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $value-font-style: get($val, "label.font-style");
@@ -323,7 +323,7 @@ $prefix: input;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.atoms.#{$prefix}")) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -331,9 +331,11 @@ $prefix: input;
           &:not(.#{$prefix}_state-disabled) {
             .#{$prefix}__field {
               @include themify($themes) {
-                color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.idle");
+                color: themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.idle"
+                );
                 background-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
                 );
                 @extend %base-transition;
               }
@@ -344,10 +346,12 @@ $prefix: input;
             &.#{$prefix}_state-idle {
               .#{$prefix}__field {
                 @include themify($themes) {
-                  color: themed("atoms.input.#{$mode}.#{$tone}.label.idle");
-                  border: $outline solid
+                  color: themed(
+                    "components.atoms.input.#{$mode}.#{$tone}.label.idle"
+                  );
+                  border: get($tokens, "outline") solid
                     themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.idle"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.idle"
                     );
                 }
               }
@@ -356,7 +360,7 @@ $prefix: input;
                 .icon {
                   @include themify($themes) {
                     fill: themed(
-                      "atoms.input.#{$mode}.#{$tone}.label.disabled"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
                     );
                   }
                 }
@@ -366,10 +370,12 @@ $prefix: input;
             &.#{$prefix}_state-normal {
               .#{$prefix}__field {
                 @include themify($themes) {
-                  color: themed("atoms.input.#{$mode}.#{$tone}.label.normal");
-                  border: $outline solid
+                  color: themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                  );
+                  border: get($tokens, "outline") solid
                     themed(
-                      "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
                     );
                 }
               }
@@ -378,7 +384,7 @@ $prefix: input;
                 .icon {
                   @include themify($themes) {
                     fill: themed(
-                      "atoms.input.#{$mode}.#{$tone}.label.disabled"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
                     );
                   }
                 }
@@ -389,13 +395,15 @@ $prefix: input;
           &.#{$prefix}_state-focused {
             .#{$prefix}__field {
               @include themify($themes) {
-                color: themed("atoms.input.#{$mode}.#{$tone}.label.focused");
-                background-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.focused"
+                color: themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.focused"
                 );
-                border: $outline solid
+                background-color: themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.focused"
+                );
+                border: get($tokens, "outline") solid
                   themed(
-                    "atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.outline"
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.outline"
                   );
               }
             }
@@ -403,7 +411,9 @@ $prefix: input;
             .#{$prefix}__field-content-icon {
               .icon {
                 @include themify($themes) {
-                  fill: themed("atoms.input.#{$mode}.#{$tone}.label.focused");
+                  fill: themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.focused"
+                  );
                 }
               }
             }
@@ -412,9 +422,11 @@ $prefix: input;
           &.#{$prefix}_state-disabled {
             .#{$prefix}__field {
               @include themify($themes) {
-                color: themed("atoms.input.#{$mode}.#{$tone}.label.disabled");
+                color: themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                );
                 background-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.disabled"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.disabled"
                 );
               }
             }
@@ -422,7 +434,9 @@ $prefix: input;
             .#{$prefix}__field-content-icon {
               .icon {
                 @include themify($themes) {
-                  fill: themed("atoms.input.#{$mode}.#{$tone}.label.disabled");
+                  fill: themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                  );
                 }
               }
             }
@@ -431,9 +445,11 @@ $prefix: input;
           &.#{$prefix}_state-error {
             .#{$prefix}__field {
               @include themify($themes) {
-                color: themed("atoms.input.#{$mode}.#{$tone}.label.error");
+                color: themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.error"
+                );
                 background-color: themed(
-                  "atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.error"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.error"
                 );
               }
             }
@@ -441,7 +457,9 @@ $prefix: input;
             .#{$prefix}__field-content-icon {
               .icon {
                 @include themify($themes) {
-                  fill: themed("atoms.input.#{$mode}.#{$tone}.label.error");
+                  fill: themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.error"
+                  );
                 }
               }
             }
@@ -456,7 +474,9 @@ $prefix: input;
           .#{$prefix}__error {
             &-message {
               @include themify($themes) {
-                color: themed("atoms.#{$prefix}.#{$mode}.#{$tone}.label.error");
+                color: themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.error"
+                );
                 @extend %base-transition;
               }
             }
@@ -489,7 +509,7 @@ $prefix: input;
     &-content {
       display: flex;
       align-items: center;
-      gap: px2rem(get($gap, "xs"));
+      gap: px2rem(get($tokens, "gap.xs"));
       height: 100%;
 
       &-icon {
@@ -524,9 +544,11 @@ $prefix: input;
 
       &::selection {
         @include themify($themes) {
-          color: themed("abstracts.selection.default.label") !important;
+          color: themed(
+            "mixins.selection.neutral.primary.label.normal"
+          ) !important;
           background: themed(
-            "abstracts.selection.default.background"
+            "mixins.selection.neutral.primary.surface.normal"
           ) !important;
         }
       }

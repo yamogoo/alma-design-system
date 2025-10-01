@@ -153,7 +153,7 @@ const onOptionClick = (): void => {
 <style lang="scss">
 $prefix: "dropdown";
 
-@mixin defineSizes($map: get($molecules, "#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $min-width: px2rem(get($val, "root.min-width"));
@@ -210,7 +210,9 @@ $prefix: "dropdown";
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.molecules.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.molecules.#{$prefix}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -219,14 +221,14 @@ $prefix: "dropdown";
             .#{$prefix}__current-value {
               @include themify($themes) {
                 background-color: themed(
-                  "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.normal"
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.normal"
                 );
               }
 
               &-label {
                 @include themify($themes) {
                   color: themed(
-                    "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.normal"
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.normal"
                   );
                 }
               }
@@ -234,7 +236,7 @@ $prefix: "dropdown";
               &-icon {
                 @include themify($themes) {
                   fill: themed(
-                    "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.normal"
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.normal"
                   );
                 }
               }
@@ -242,14 +244,14 @@ $prefix: "dropdown";
               &:hover {
                 @include themify($themes) {
                   background-color: themed(
-                    "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.hovered"
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.hovered"
                   );
                 }
 
                 &-label {
                   @include themify($themes) {
                     color: themed(
-                      "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.hovered"
+                      "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.hovered"
                     );
                   }
                 }
@@ -257,7 +259,7 @@ $prefix: "dropdown";
                 &-icon {
                   @include themify($themes) {
                     fill: themed(
-                      "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.hovered"
+                      "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.hovered"
                     );
                   }
                 }
@@ -269,14 +271,14 @@ $prefix: "dropdown";
             .dropdown__current-value {
               @include themify($themes) {
                 background-color: themed(
-                  "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.expanded"
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.expanded"
                 );
               }
 
               &-label {
                 @include themify($themes) {
                   color: themed(
-                    "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.expanded"
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.expanded"
                   );
                 }
               }
@@ -284,7 +286,7 @@ $prefix: "dropdown";
               &-icon {
                 @include themify($themes) {
                   fill: themed(
-                    "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.expanded"
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.expanded"
                   );
                 }
               }
@@ -292,14 +294,14 @@ $prefix: "dropdown";
               &:hover {
                 @include themify($themes) {
                   background-color: themed(
-                    "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.expanded-hovered"
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.expanded-hovered"
                   );
                 }
 
                 &-label {
                   @include themify($themes) {
                     color: themed(
-                      "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.expanded-hovered"
+                      "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.expanded-hovered"
                     );
                   }
                 }
@@ -307,7 +309,7 @@ $prefix: "dropdown";
                 &-icon {
                   @include themify($themes) {
                     fill: themed(
-                      "molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.expanded-hovered"
+                      "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.expanded-hovered"
                     );
                   }
                 }
@@ -317,14 +319,14 @@ $prefix: "dropdown";
             .dropdown__options {
               @include themify($themes) {
                 background-color: themed(
-                  "molecules.#{$prefix}.#{$mode}.#{$tone}.options.background.normal"
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.options.background.normal"
                 );
               }
 
               &:hover {
                 @include themify($themes) {
                   background-color: themed(
-                    "molecules.#{$prefix}.#{$mode}.#{$tone}.options.background.hovered"
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.options.background.hovered"
                   );
                 }
               }
@@ -373,7 +375,7 @@ $prefix: "dropdown";
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      gap: px2rem(get($spacing, "xs"));
+      gap: px2rem(get($tokens, "spacing.xs"));
       width: 100%;
       overflow: hidden;
     }
@@ -382,7 +384,7 @@ $prefix: "dropdown";
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: px2rem(get($spacing, "xs"));
+      gap: px2rem(get($tokens, "spacing.xs"));
     }
   }
 
@@ -390,7 +392,7 @@ $prefix: "dropdown";
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding-bottom: px2rem(get($spacing, "xs"));
+    padding-bottom: px2rem(get($tokens, "spacing.xs"));
   }
 
   &__options {

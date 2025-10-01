@@ -1,4 +1,4 @@
-import type { CarousleStackSize } from "@/adapters";
+import type { CarousleStackSize } from "@/adapters/atoms/carouselStack";
 
 import type {
   UIElementAxisDirection,

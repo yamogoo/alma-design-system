@@ -63,7 +63,7 @@ const onContinueAsGuest = (): void => {
 };
 
 const onRedirectToEditor = (): void => {
-  router.push("/editor");
+  void router.push("/editor");
 };
 
 const onRedirectIfLoggedIn = (): void => {

@@ -1,22 +1,24 @@
 import tokens from "@/tokens";
 
-export type ListItemVariant = keyof typeof tokens.molecules.listItem;
+export type ListItemVariant = keyof typeof tokens.components.molecules.listItem;
 export const listItemVariants = Object.keys(
-  tokens.molecules.listItem
+  tokens.components.molecules.listItem
 ) as ListItemVariant[];
 
-export type ListItemSize = keyof typeof tokens.molecules.listItem.default;
+export type ListItemSize =
+  keyof typeof tokens.components.molecules.listItem.default;
 export const listItemSizes = Object.keys(
-  tokens.molecules.listItem.default
+  tokens.components.molecules.listItem.default
 ) as ListItemSize[];
 
-export type ListItemMode = keyof typeof tokens.themes.dark.molecules.listItem;
+export type ListItemMode =
+  keyof typeof tokens.themes.light.components.molecules.listItem;
 export const listItemModes = Object.keys(
-  tokens.themes.dark.molecules.listItem
+  tokens.themes.light.components.molecules.listItem
 ) as ListItemMode[];
 
 export type ListItemTone =
-  keyof typeof tokens.themes.dark.molecules.listItem.neutral;
+  keyof typeof tokens.themes.light.components.molecules.listItem.neutral;
 export const listItemTone = Object.keys(
-  tokens.themes.dark.molecules.listItem.neutral
+  tokens.themes.light.components.molecules.listItem.neutral
 ) as ListItemTone[];

@@ -8,14 +8,14 @@ import tokens from "./output/tokens.json";
 import typography from "./output/typography.json";
 
 const module = {
-  ...baseColors,
-  ...breakpoints,
-  ...colors,
-  ...components,
-  ...config,
-  ...themes,
-  ...tokens,
-  ...typography
+  baseColors,
+  breakpoints,
+  colors,
+  components,
+  config,
+  themes,
+  tokens,
+  typography
 };
 
 export default module;

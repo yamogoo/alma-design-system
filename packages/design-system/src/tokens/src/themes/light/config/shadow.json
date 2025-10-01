@@ -1,0 +1,116 @@
+{
+  "state": {
+    "delta": {
+      "lightness": {
+        "idle": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "normal": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "hovered": {
+          "$value": -0.06,
+          "$type": "number",
+          "$unit": ""
+        },
+        "pressed": {
+          "$value": -0.09,
+          "$type": "number",
+          "$unit": ""
+        },
+        "disabled": {
+          "$value": -0.25,
+          "$type": "number",
+          "$unit": ""
+        },
+        "selected": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "focused": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        }
+      },
+      "alpha": {
+        "idle": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "normal": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "hovered": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "pressed": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "disabled": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "selected": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        },
+        "focused": {
+          "$value": 0.0,
+          "$type": "number",
+          "$unit": ""
+        }
+      },
+      "elevation": {
+        "0": {
+          "y": {
+            "$value": 0,
+            "$type": "number",
+            "$unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "$type": "number",
+            "$unit": "px"
+          },
+          "alpha": {
+            "$value": 0,
+            "$type": "number",
+            "$unit": ""
+          }
+        },
+        "1": {
+          "y": {
+            "$value": 4,
+            "$type": "number",
+            "$unit": "px"
+          },
+          "blur": {
+            "value": 16,
+            "$type": "number",
+            "$unit": "px"
+          },
+          "alpha": {
+            "$value": 0.07,
+            "$type": "number",
+            "$unit": ""
+          }
+        }
+      }
+    }
+  }
+}

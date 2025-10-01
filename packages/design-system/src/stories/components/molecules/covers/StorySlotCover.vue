@@ -43,18 +43,18 @@ withDefaults(defineProps<StorySlotCoverProps>(), {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: px2rem(get($spacing, "md"));
+  gap: px2rem(get($tokens, "spacing.md"));
   @include box(100%);
-  padding: px2rem(get($spacing, "xl"));
+  padding: px2rem(get($tokens, "spacing.xl"));
   background-image: url("../../../../assets/images/storybook/cutting-pattern.svg");
   background-repeat: repeat;
-  background-size: px2rem(get($spacing, "lg"));
+  background-size: px2rem(get($tokens, "spacing.lg"));
   @extend %base-transition;
 
   .text {
     text-align: center;
     @include themify($themes) {
-      background-color: themed("abstracts.surface.neutral.primary");
+      background-color: themed("mixins.surface.neutral.primary.normal");
     }
   }
 }

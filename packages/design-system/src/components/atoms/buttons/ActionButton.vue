@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { ActionButtonProps } from "@/components/atoms/buttons/ActionButton";
-import Button from "@/components/atoms/buttons/Button.vue";
+import type { ActionButtonProps } from "./ActionButton";
+import Button from "./Button.vue";
 
 const props = withDefaults(defineProps<ActionButtonProps>(), {});
 

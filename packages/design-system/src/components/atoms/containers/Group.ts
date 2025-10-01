@@ -1,4 +1,9 @@
-import type { GroupMode, GroupSize, GroupVariant, GroupTone } from "@/adapters";
+import type {
+  GroupMode,
+  GroupSize,
+  GroupVariant,
+  GroupTone,
+} from "@/adapters/atoms/group";
 
 import type {
   UIElementAlignment,

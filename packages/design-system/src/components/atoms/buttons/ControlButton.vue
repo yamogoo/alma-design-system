@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { ControlButtonProps } from "@/components/atoms/buttons/ControlButton";
+import type { ControlButtonProps } from "./ControlButton";
 
-import Button from "@/components/atoms/buttons/Button.vue";
+import Button from "./Button.vue";
 
 const props = withDefaults(defineProps<ControlButtonProps>(), {
   variant: "rounded",

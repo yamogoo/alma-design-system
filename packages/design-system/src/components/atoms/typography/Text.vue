@@ -7,8 +7,6 @@ const PREFIX = "text";
 
 const props = withDefaults(defineProps<TextProps>(), {
   as: "span",
-  // mode: "neutral",
-  // tone: "primary",
 });
 
 const componentTag = props.as;
@@ -78,7 +76,7 @@ $prefix: text;
       &_mode-#{$mode} {
         &.text_tone-#{$tone} {
           @include themify($themes) {
-            color: themed("abstracts.label.#{$mode}.#{$tone}");
+            color: themed("abstracts.label.#{$mode}.#{$tone}.base");
           }
         }
       }
@@ -99,7 +97,7 @@ $prefix: text;
   b {
     &.accent {
       @include themify($themes) {
-        color: themed("abstracts.label.accent.primary");
+        color: themed("abstracts.label.accent.primary.base");
       }
     }
   }
