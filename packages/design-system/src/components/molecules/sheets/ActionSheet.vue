@@ -64,7 +64,6 @@ watch(
         PREFIX,
         `${PREFIX}_variant-${variant}`,
         `${PREFIX}_size-${size}`,
-        { [`${PREFIX}_mode-${mode}`]: !!mode },
       ]"
       :variant="variant"
       :size="size"

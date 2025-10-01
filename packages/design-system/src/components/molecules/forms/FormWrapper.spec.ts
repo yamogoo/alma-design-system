@@ -1,17 +1,37 @@
-import { mount } from "@vue/test-utils";
+import { mount, VueWrapper } from "@vue/test-utils";
 
 import { FormWrapper, type FormWrapperProps } from "@/components/molecules";
 
-const CLASS_NAME = "form-wrapper";
+enum Classes {
+  ROOT_CLASS = "form-wrapper",
+  BASE_CLASS_NAME = "surface",
+  VARIANT = `${Classes.BASE_CLASS_NAME}_variant`,
+  SIZE = `${Classes.BASE_CLASS_NAME}_size`,
+}
+
+const getSurface = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.findComponent({ name: "Surface" });
+};
 
 describe("FormWrapper", () => {
+  describe("elements", () => {
+    test("should render Surface componnt", () => {
+      const wrapper = mount(FormWrapper);
+
+      const surface = getSurface(wrapper);
+      const isSurfaceExists = surface.exists();
+
+      expect(isSurfaceExists).toBeTruthy();
+    });
+  });
+
   describe("classes", () => {
     test("renders with default class", async () => {
       const props: FormWrapperProps = {
         variant: "default",
         size: "lg",
-        mode: "neutral",
-        tone: "primary",
+        mode: "accent",
+        tone: "main",
       };
 
       const wrapper = mount(FormWrapper, {
@@ -19,14 +39,15 @@ describe("FormWrapper", () => {
       });
 
       expect(
-        wrapper.classes(`${CLASS_NAME}_variant-${props.variant}`)
+        wrapper.classes(`${Classes.VARIANT}-${props.variant}`)
       ).toBeTruthy();
-      expect(wrapper.classes(`${CLASS_NAME}_mode-${props.mode}`)).toBeTruthy();
-      expect(wrapper.classes(`${CLASS_NAME}_size-${props.size}`)).toBeTruthy();
+      expect(wrapper.classes(`${Classes.SIZE}-${props.size}`)).toBeTruthy();
 
       await wrapper.setProps({ bordered: true });
 
-      expect(wrapper.classes(`${CLASS_NAME}_bordered`)).toBeTruthy();
+      expect(
+        wrapper.classes(`${Classes.BASE_CLASS_NAME}_bordered`)
+      ).toBeTruthy();
     });
   });
 

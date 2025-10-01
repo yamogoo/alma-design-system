@@ -16,13 +16,7 @@ withDefaults(defineProps<FormWrapperProps>(), {
 
 <template>
   <Surface
-    :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
-    ]"
+    :class="[PREFIX]"
     :variant="variant"
     :size="size"
     :mode="mode"
@@ -71,6 +65,5 @@ $prefix: form-wrapper;
   @extend %base-transition;
 
   @include defineSizes();
-  @include defineThemes();
 }
 </style>
