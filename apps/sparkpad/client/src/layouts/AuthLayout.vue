@@ -12,17 +12,15 @@ const { isConnected } = storeToRefs(Stores.useConnectionStore());
   <Components.Atoms.Page>
     <AppHeader></AppHeader>
     <RouterView></RouterView>
-    <Components.Moleculas.Snackbar
-      :mode="'neutral'"
-      :tone="'inversed'"
-      :title="'Notification'"
-      :description="'Some message'"
-    ></Components.Moleculas.Snackbar>
     <AppFooter></AppFooter>
-    <Components.Atoms.ActionSheet :is-active="!isConnected" :mode="'primary'">
+    <Components.Moleculas.ActionSheet
+      :is-active="!isConnected"
+      :mode="'neutral'"
+      :tone="'primary'"
+    >
       <Components.Atoms.Text :variant="'caption-2'">
         {{ "Connection Lost" }}
       </Components.Atoms.Text>
-    </Components.Atoms.ActionSheet>
+    </Components.Moleculas.ActionSheet>
   </Components.Atoms.Page>
 </template>

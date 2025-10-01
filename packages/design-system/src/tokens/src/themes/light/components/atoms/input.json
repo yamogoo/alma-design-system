@@ -29,14 +29,14 @@
             "$unit": "hex"
           },
           "error": {
-            "$value": "{themes.light.mixins.surface.negative.secondary.normal.$value}",
+            "$value": "{themes.light.mixins.surface.negative.inversed.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }
         },
         "border": {
           "idle": {
-            "$value": "{themes.light.components.atoms.input.neutral.primary.root.background.idle.$value}",
+            "$value": "{themes.light.components.atoms.input.neutral.primary.root.background.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
@@ -89,7 +89,7 @@
           "$unit": "hex"
         },
         "error": {
-          "$value": "{themes.light.mixins.label.negative.primary.normal.$value}",
+          "$value": "{themes.light.mixins.label.negative.inversed.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -186,7 +186,7 @@
           "$unit": "hex"
         },
         "error": {
-          "$value": "{themes.light.mixins.label.negative.primary.normal.$value}",
+          "$value": "{themes.light.mixins.label.negative.inversed.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }

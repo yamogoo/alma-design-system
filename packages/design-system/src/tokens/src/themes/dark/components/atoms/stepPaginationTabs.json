@@ -8,7 +8,7 @@
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.mixins.label.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }

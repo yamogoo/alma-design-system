@@ -22,6 +22,7 @@ const symbol = computed(() => {
   const key = `${name}_${appearance}_${weight}`;
 
   const loader = iconManifest[key as IconFullName];
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return loader ? markRaw(defineAsyncComponent(loader)) : null;
 });
 
@@ -75,8 +76,12 @@ $prefix: icon;
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
-          @include themify($themes) {
-            fill: themed("mixins.label.#{$mode}.#{$tone}.normal");
+          svg {
+            path {
+              @include themify($themes) {
+                fill: themed("mixins.label.#{$mode}.#{$tone}.normal");
+              }
+            }
           }
         }
       }

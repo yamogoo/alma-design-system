@@ -3,22 +3,22 @@
     "root": {
       "background": {
         "normal": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.disabled.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.secondary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.hovered.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.secondary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.pressed.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.secondary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -70,22 +70,22 @@
     "root": {
       "background": {
         "normal": {
-          "$value": "{themes.dark.mixins.surface.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.surface.neutral.secondary.disabled.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.tertiary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.mixins.surface.neutral.secondary.hovered.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.tertiary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.dark.mixins.surface.neutral.secondary.pressed.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.tertiary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         }

@@ -8,17 +8,17 @@
       },
       "track": {
         "normal": {
-          "$value": "{themes.light.mixins.surface.neutral.secondary.normal.$value}",
+          "$value": "{themes.light.mixins.surface.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.mixins.surface.neutral.secondary.disabled.$value}",
+          "$value": "{themes.light.mixins.surface.neutral.tertiary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.light.mixins.surface.accent.inversed.normal.$value}",
+          "$value": "{themes.light.mixins.surface.accent.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }

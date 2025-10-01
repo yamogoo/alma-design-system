@@ -142,17 +142,22 @@ $prefix: step-pagination-tabs;
   @each $mode, $modes in $map {
     &_mode-#{$mode} {
       .#{$prefix}__item {
-        @include themify($themes) {
-          color: themed(
-            "components.atoms.#{$prefix}.#{$mode}.item.label.normal"
-          );
-        }
+        &_state {
+          &-current {
+            @include themify($themes) {
+              color: themed(
+                "components.atoms.#{$prefix}.#{$mode}.item.label.active"
+              );
+            }
+          }
 
-        &_state-active {
-          @include themify($themes) {
-            color: themed(
-              "components.atoms.#{$prefix}.#{$mode}.item.label.active"
-            );
+          &-next,
+          &-previous {
+            @include themify($themes) {
+              color: themed(
+                "components.atoms.#{$prefix}.#{$mode}.item.label.normal"
+              );
+            }
           }
         }
       }
@@ -190,16 +195,10 @@ $prefix: step-pagination-tabs;
 
       &-current {
         justify-content: center;
-        opacity: 1;
       }
 
       &-next {
         justify-content: flex-end;
-      }
-
-      &-next,
-      &-previous {
-        opacity: 0.5;
       }
     }
   }

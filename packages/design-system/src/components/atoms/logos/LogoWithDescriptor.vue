@@ -48,7 +48,7 @@ const computedClass = () => {
 <style lang="scss">
 $prefix: logo-with-descriptor;
 
-@mixin defineButtonSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -72,7 +72,7 @@ $prefix: logo-with-descriptor;
   @each $mode, $val in $map {
     @each $tone, $modes in $modes {
       &_tone-#{$tone} {
-        &.logo-with-descriptor_mode-#{$mode} {
+        &.#{$prefix}_mode-#{$mode} {
           $states: get($themes, "light.#{$prefix}.neutral.primary.label");
 
           &.#{$prefix} {
@@ -81,7 +81,7 @@ $prefix: logo-with-descriptor;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "#{$prefix}.#{$mode}.#{$tone}.label.#{state}"
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.#{state}"
                     );
                   }
                 }
@@ -99,6 +99,6 @@ $prefix: logo-with-descriptor;
   flex-direction: row;
   align-items: center;
 
-  @include defineButtonSizes();
+  @include defineSizes();
 }
 </style>

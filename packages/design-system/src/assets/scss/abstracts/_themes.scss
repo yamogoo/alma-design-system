@@ -27,16 +27,16 @@ $themes:(
   base: #d6e5ff
 ),
   primary: (
-  base: #1047e3
+  base: #0e3ab1
 ),
   secondary: (
-  base: #012394
+  base: #001866
 ),
   tertiary: (
-  base: #001866
+  base: #001350
 ),
   inversed: (
-  base: #001866
+  base: #001350
 )
 ),
   positive: (
@@ -91,16 +91,16 @@ $themes:(
 ),
   accent: (
   primary: (
-  base: #3877ff
+  base: #3467e1
 ),
   secondary: (
-  base: #011e7e
+  base: #001557
 ),
   tertiary: (
-  base: #001557
+  base: #001044
 ),
   inversed: (
-  base: #001557
+  base: #001044
 )
 ),
   positive: (
@@ -251,13 +251,13 @@ $themes:(
   base: #c3d1ff
 ),
   primary: (
-  base: #0130ce
-),
-  secondary: (
   base: #01259d
 ),
-  tertiary: (
+  secondary: (
   base: #001a6d
+),
+  tertiary: (
+  base: #001455
 ),
   inversed: (
   base: #000e3c
@@ -306,29 +306,6 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #0130ce,
-  disabled: #215cf8,
-  hovered: #073cd9,
-  pressed: #1047e3
-),
-  border: (
-  normal: #0130ce,
-  disabled: #215cf8,
-  hovered: #073cd9,
-  pressed: #1047e3,
-  outline: #013cfe
-)
-),
-  label: (
-  normal: #01259d,
-  disabled: #4277f2,
-  hovered: #0e3ab1,
-  pressed: #1644bb
-)
-),
-  secondary: (
-  root: (
-  background: (
   normal: #01259d,
   disabled: #1e4ec5,
   hovered: #0630a7,
@@ -349,7 +326,7 @@ $themes:(
   pressed: #1644bb
 )
 ),
-  tertiary: (
+  secondary: (
   root: (
   background: (
   normal: #001a6d,
@@ -362,6 +339,29 @@ $themes:(
   disabled: #1a3f93,
   hovered: #042476,
   pressed: #0a2d80,
+  outline: #013cfe
+)
+),
+  label: (
+  normal: #01259d,
+  disabled: #4277f2,
+  hovered: #0e3ab1,
+  pressed: #1644bb
+)
+),
+  tertiary: (
+  root: (
+  background: (
+  normal: #001455,
+  disabled: #183779,
+  hovered: #031d5e,
+  pressed: #092667
+),
+  border: (
+  normal: #001455,
+  disabled: #183779,
+  hovered: #031d5e,
+  pressed: #092667,
   outline: #013cfe
 )
 ),
@@ -381,10 +381,10 @@ $themes:(
   pressed: #071e4d00
 ),
   border: (
-  normal: #1047e3,
-  disabled: #3271ff,
-  hovered: #1952ee,
-  pressed: #215cf8,
+  normal: #0e3ab1,
+  disabled: #2f61da,
+  hovered: #1644bb,
+  pressed: #1e4ec5,
   outline: #013cfe
 )
 ),
@@ -494,16 +494,16 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #15191c,
-  disabled: #32363a,
-  hovered: #1c2023,
-  pressed: #23272a
+  normal: #242b31,
+  disabled: #424a51,
+  hovered: #2b3339,
+  pressed: #333a40
 ),
   border: (
-  normal: #15191c,
-  disabled: #32363a,
-  hovered: #1c2023,
-  pressed: #23272a,
+  normal: #242b31,
+  disabled: #424a51,
+  hovered: #2b3339,
+  pressed: #333a40,
   outline: #013cfe
 )
 ),
@@ -517,16 +517,16 @@ $themes:(
   secondary: (
   root: (
   background: (
-  normal: #242b31,
-  disabled: #424a51,
-  hovered: #2b3339,
-  pressed: #333a40
+  normal: #2f383f,
+  disabled: #4e5860,
+  hovered: #374047,
+  pressed: #3e484f
 ),
   border: (
-  normal: #242b31,
-  disabled: #424a51,
-  hovered: #2b3339,
-  pressed: #333a40,
+  normal: #2f383f,
+  disabled: #4e5860,
+  hovered: #374047,
+  pressed: #3e484f,
   outline: #013cfe
 )
 ),
@@ -753,19 +753,19 @@ $themes:(
   accent: (
   primary: (
   root: (
-  background: #0130ce,
+  background: #01259d,
   divider: #7f8488
 )
 ),
   secondary: (
   root: (
-  background: #01259d,
+  background: #001a6d,
   divider: #929ba3
 )
 ),
   ghost: (
   root: (
-  background: #0130ce00,
+  background: #01259d00,
   divider: #7f8488
 )
 )
@@ -776,18 +776,18 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #15191c,
-  normal: #15191c,
-  disabled: #32363a,
-  hovered: #1c2023,
-  focused: #1c2023,
+  idle: #242b31,
+  normal: #242b31,
+  disabled: #424a51,
+  hovered: #2b3339,
+  focused: #2b3339,
   error: #350808
 ),
   border: (
-  idle: #15191c,
-  normal: #15191c,
-  disabled: #32363a,
-  hovered: #1c2023,
+  idle: #242b31,
+  normal: #242b31,
+  disabled: #424a51,
+  hovered: #2b3339,
   outline: #013cfe
 )
 ),
@@ -866,8 +866,8 @@ $themes:(
   accent: (
   primary: (
   splitter: (
-  normal: #0130ce,
-  active: #0130ce
+  normal: #01259d,
+  active: #01259d
 ),
   knob: (
   normal: #ced5db,
@@ -906,10 +906,10 @@ $themes:(
 ),
   range-track: (
   background: (
-  normal: #0130ce,
-  hovered: #073cd9,
-  disabled: #215cf8,
-  pressed: #1047e3
+  normal: #01259d,
+  hovered: #0630a7,
+  disabled: #1e4ec5,
+  pressed: #0e3ab1
 )
 ),
   knob: (
@@ -920,10 +920,10 @@ $themes:(
   pressed: #23272a
 ),
   border-color: (
-  normal: #1047e3,
-  hovered: #1952ee,
-  disabled: #3271ff,
-  pressed: #215cf8
+  normal: #0e3ab1,
+  hovered: #1644bb,
+  disabled: #2f61da,
+  pressed: #1e4ec5
 )
 ),
   label: (
@@ -942,7 +942,7 @@ $themes:(
   item: (
   label: (
   normal: #a2b4c3,
-  active: #586976
+  active: #2f383f
 )
 )
 )
@@ -989,26 +989,26 @@ $themes:(
 ),
   primary: (
   root: (
-  background: #0130ce,
-  border: #1047e3
+  background: #01259d,
+  border: #0e3ab1
 )
 ),
   secondary: (
   root: (
-  background: #01259d,
-  border: #012394
+  background: #001a6d,
+  border: #001866
 )
 ),
   tertiary: (
   root: (
-  background: #001a6d,
-  border: #001a6d
+  background: #001455,
+  border: #001455
 )
 ),
   inversed: (
   root: (
   background: #000e3c,
-  border: #001866
+  border: #001350
 )
 )
 ),
@@ -1084,14 +1084,14 @@ $themes:(
   outline: #013cfe
 ),
   track: (
-  normal: #242b31,
-  disabled: #424a51,
-  active: #000e3c
+  normal: #2f383f,
+  disabled: #4e5860,
+  active: #2f383f
 ),
   knob: (
-  normal: #15191c,
-  disabled: #32363a,
-  active: #15191c
+  normal: #ced5db,
+  disabled: #424a51,
+  active: #ced5db
 ),
   label: (
   normal: #2f383f,
@@ -1106,9 +1106,9 @@ $themes:(
   outline: #013cfe
 ),
   track: (
-  normal: #0130ce,
+  normal: #01259d,
   disabled: #000e3c,
-  active: #0130ce
+  active: #01259d
 ),
   knob: (
   normal: #15191c,
@@ -1147,16 +1147,16 @@ $themes:(
   expanded-hovered: #2f383f
 ),
   background: (
-  normal: #eaedef,
-  hovered: #f4f7f9,
+  normal: #f1f3f5,
+  hovered: #fbfdff,
   expanded: #fdffff,
-  expanded-hovered: #eaedef
+  expanded-hovered: #f1f3f5
 )
 ),
   options: (
   background: (
-  normal: #eaedef,
-  hovered: #f4f7f9
+  normal: #f1f3f5,
+  hovered: #fbfdff
 )
 )
 )
@@ -1220,9 +1220,9 @@ $themes:(
   border: (
   normal: #23272a,
   disabled: #414649,
-  hovered: #04216f,
+  hovered: #031c59,
   pressed: #323639,
-  selected: #001866,
+  selected: #001350,
   outline: #013cfe
 )
 ),
@@ -1279,7 +1279,7 @@ $themes:(
   accent: (
   primary: (
   root: (
-  background: #0130ce
+  background: #01259d
 ),
   title: #01259d,
   description: #01259d,
@@ -1354,10 +1354,10 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #0130ce
+  normal: #01259d
 ),
   border: (
-  normal: #1047e3
+  normal: #0e3ab1
 )
 )
 )
@@ -1380,10 +1380,10 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #0130ce
+  normal: #01259d
 ),
   border: (
-  normal: #1047e3
+  normal: #0e3ab1
 )
 )
 )
@@ -1406,10 +1406,10 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #0130ce
+  normal: #01259d
 ),
   border: (
-  normal: #1047e3
+  normal: #0e3ab1
 )
 )
 )
@@ -1619,39 +1619,39 @@ $themes:(
   outline: #013cfe
 ),
   primary: (
-  idle: #1047e3,
-  normal: #1047e3,
-  disabled: #3271ff,
-  hovered: #1952ee,
-  pressed: #215cf8,
-  selected: #1047e3,
+  idle: #0e3ab1,
+  normal: #0e3ab1,
+  disabled: #2f61da,
+  hovered: #1644bb,
+  pressed: #1e4ec5,
+  selected: #0e3ab1,
   outline: #013cfe
 ),
   secondary: (
-  idle: #012394,
-  normal: #012394,
-  disabled: #1e4bbc,
-  hovered: #062e9e,
-  pressed: #0e38a8,
-  selected: #012394,
+  idle: #001866,
+  normal: #001866,
+  disabled: #193c8b,
+  hovered: #04216f,
+  pressed: #0a2b79,
+  selected: #001866,
   outline: #013cfe
 ),
   tertiary: (
-  idle: #001866,
-  normal: #001866,
-  disabled: #193c8b,
-  hovered: #04216f,
-  pressed: #0a2b79,
-  selected: #001866,
+  idle: #001350,
+  normal: #001350,
+  disabled: #183574,
+  hovered: #031c59,
+  pressed: #092462,
+  selected: #001350,
   outline: #013cfe
 ),
   inversed: (
-  idle: #001866,
-  normal: #001866,
-  disabled: #193c8b,
-  hovered: #04216f,
-  pressed: #0a2b79,
-  selected: #001866,
+  idle: #001350,
+  normal: #001350,
+  disabled: #183574,
+  hovered: #031c59,
+  pressed: #092462,
+  selected: #001350,
   outline: #013cfe
 )
 ),
@@ -1800,39 +1800,39 @@ $themes:(
   divider: (
   accent: (
   primary: (
-  idle: #74b9ff,
-  normal: #74b9ff,
-  disabled: #74b9ff,
-  hovered: #74b9ff,
-  pressed: #74b9ff,
-  selected: #74b9ff,
+  idle: #6da7ff,
+  normal: #6da7ff,
+  disabled: #6da7ff,
+  hovered: #6da7ff,
+  pressed: #6da7ff,
+  selected: #6da7ff,
   outline: #013cfe
 ),
   secondary: (
-  idle: #325dbf,
-  normal: #325dbf,
-  disabled: #325dbf,
-  hovered: #325dbf,
-  pressed: #325dbf,
-  selected: #325dbf,
+  idle: #2d4f94,
+  normal: #2d4f94,
+  disabled: #2d4f94,
+  hovered: #2d4f94,
+  pressed: #2d4f94,
+  selected: #2d4f94,
   outline: #013cfe
 ),
   tertiary: (
-  idle: #2d4f94,
-  normal: #2d4f94,
-  disabled: #2d4f94,
-  hovered: #2d4f94,
-  pressed: #2d4f94,
-  selected: #2d4f94,
+  idle: #2b477f,
+  normal: #2b477f,
+  disabled: #2b477f,
+  hovered: #2b477f,
+  pressed: #2b477f,
+  selected: #2b477f,
   outline: #013cfe
 ),
   inversed: (
-  idle: #2d4f94,
-  normal: #2d4f94,
-  disabled: #2d4f94,
-  hovered: #2d4f94,
-  pressed: #2d4f94,
-  selected: #2d4f94,
+  idle: #2b477f,
+  normal: #2b477f,
+  disabled: #2b477f,
+  hovered: #2b477f,
+  pressed: #2b477f,
+  selected: #2b477f,
   outline: #013cfe
 )
 ),
@@ -2126,14 +2126,6 @@ $themes:(
   selected: #c3d1ff
 ),
   primary: (
-  idle: #0130ce,
-  normal: #0130ce,
-  disabled: #215cf8,
-  hovered: #073cd9,
-  pressed: #1047e3,
-  selected: #0130ce
-),
-  secondary: (
   idle: #01259d,
   normal: #01259d,
   disabled: #1e4ec5,
@@ -2141,13 +2133,21 @@ $themes:(
   pressed: #0e3ab1,
   selected: #01259d
 ),
-  tertiary: (
+  secondary: (
   idle: #001a6d,
   normal: #001a6d,
   disabled: #1a3f93,
   hovered: #042476,
   pressed: #0a2d80,
   selected: #001a6d
+),
+  tertiary: (
+  idle: #001455,
+  normal: #001455,
+  disabled: #183779,
+  hovered: #031d5e,
+  pressed: #092667,
+  selected: #001455
 ),
   inversed: (
   idle: #000e3c,
@@ -2292,13 +2292,13 @@ $themes:(
   border: (
   neutral: (
   main: (
-  base: #c9cdd1
+  base: #cfd3d6
 ),
   primary: (
-  base: #d6d9db
+  base: #dddfe1
 ),
   secondary: (
-  base: #bbc2c8
+  base: #c2c8cc
 ),
   tertiary: (
   base: #939ea9
@@ -2365,7 +2365,7 @@ $themes:(
   base: #fdffff
 ),
   secondary: (
-  base: #f9ffff
+  base: #faffff
 ),
   tertiary: (
   base: #e5f2fd
@@ -2516,13 +2516,13 @@ $themes:(
   surface: (
   neutral: (
   main: (
-  base: #dce1e5
+  base: #e3e7ea
 ),
   primary: (
-  base: #eaedef
+  base: #f1f3f5
 ),
   secondary: (
-  base: #ced5db
+  base: #d5dbe0
 ),
   tertiary: (
   base: #a5b1bc
@@ -2779,39 +2779,39 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #eaedef,
-  disabled: #fdffff,
-  hovered: #f4f7f9,
-  pressed: #fdffff
+  normal: #d5dbe0,
+  disabled: #faffff,
+  hovered: #dfe5ea,
+  pressed: #e9eff4
 ),
   border: (
-  normal: #eaedef,
-  disabled: #fdffff,
-  hovered: #f4f7f9,
-  pressed: #fdffff,
+  normal: #d5dbe0,
+  disabled: #faffff,
+  hovered: #dfe5ea,
+  pressed: #e9eff4,
   outline: #013cfe
 )
 ),
   label: (
-  normal: #dce1e5,
-  disabled: #fbffff,
-  hovered: #f0f5f9,
-  pressed: #faffff
+  normal: #2f383f,
+  disabled: #737d85,
+  hovered: #3e484f,
+  pressed: #465057
 )
 ),
   secondary: (
   root: (
   background: (
-  normal: #ced5db,
-  disabled: #f5fdff,
-  hovered: #d8dfe5,
-  pressed: #e2e9ef
+  normal: #d5dbe0,
+  disabled: #faffff,
+  hovered: #dfe5ea,
+  pressed: #e9eff4
 ),
   border: (
-  normal: #ced5db,
-  disabled: #f5fdff,
-  hovered: #d8dfe5,
-  pressed: #e2e9ef,
+  normal: #d5dbe0,
+  disabled: #faffff,
+  hovered: #dfe5ea,
+  pressed: #e9eff4,
   outline: #013cfe
 )
 ),
@@ -2825,24 +2825,24 @@ $themes:(
   tertiary: (
   root: (
   background: (
-  normal: #a5b1bc,
-  disabled: #cbd7e3,
-  hovered: #aebac6,
-  pressed: #b8c4cf
+  normal: #101315,
+  disabled: #2c2f32,
+  hovered: #171a1c,
+  pressed: #1e2123
 ),
   border: (
-  normal: #a5b1bc,
-  disabled: #cbd7e3,
-  hovered: #aebac6,
-  pressed: #b8c4cf,
+  normal: #101315,
+  disabled: #2c2f32,
+  hovered: #171a1c,
+  pressed: #1e2123,
   outline: #013cfe
 )
 ),
   label: (
-  normal: #637584,
-  disabled: #aec2d2,
-  hovered: #748796,
-  pressed: #7d909f
+  normal: #dce1e5,
+  disabled: #fbffff,
+  hovered: #f0f5f9,
+  pressed: #faffff
 )
 ),
   outline: (
@@ -2854,10 +2854,10 @@ $themes:(
   pressed: #1e212300
 ),
   border: (
-  normal: #d6d9db,
-  disabled: #b0b3b4,
-  hovered: #cccfd1,
-  pressed: #c3c6c8,
+  normal: #dddfe1,
+  disabled: #b6b8ba,
+  hovered: #d3d5d7,
+  pressed: #cacbcd,
   outline: #013cfe
 )
 ),
@@ -2969,10 +2969,10 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #eaedef
+  normal: #f1f3f5
 ),
   border: (
-  normal: #d6d9db
+  normal: #dddfe1
 )
 ),
   label: (
@@ -3004,12 +3004,12 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  border: #d6d9db
+  border: #dddfe1
 )
 ),
   secondary: (
   root: (
-  border: #bbc2c8
+  border: #c2c8cc
 )
 )
 )
@@ -3018,19 +3018,19 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #eaedef,
+  background: #f1f3f5,
   divider: #feffff
 )
 ),
   secondary: (
   root: (
-  background: #ced5db,
+  background: #d5dbe0,
   divider: #fbffff
 )
 ),
   ghost: (
   root: (
-  background: #eaedef00,
+  background: #f1f3f500,
   divider: #feffff
 )
 )
@@ -3061,18 +3061,18 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #ced5db,
-  normal: #ced5db,
-  disabled: #f5fdff,
-  hovered: #d8dfe5,
-  focused: #d8dfe5,
-  error: #b41a1a
+  idle: #e9eff4,
+  normal: #d5dbe0,
+  disabled: #faffff,
+  hovered: #dfe5ea,
+  focused: #dfe5ea,
+  error: #f4b5b5
 ),
   border: (
-  idle: #ced5db,
-  normal: #ced5db,
-  disabled: #f5fdff,
-  hovered: #d8dfe5,
+  idle: #d5dbe0,
+  normal: #d5dbe0,
+  disabled: #faffff,
+  hovered: #dfe5ea,
   outline: #013cfe
 )
 ),
@@ -3082,7 +3082,7 @@ $themes:(
   disabled: #737d85,
   hovered: #3e484f,
   focused: #3e484f,
-  error: #e96b6b
+  error: #941616
 )
 )
 ),
@@ -3090,7 +3090,7 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #aabeff,
+  idle: #bdd1ff,
   normal: #aabeff,
   disabled: #d0e5ff,
   hovered: #b3c8ff,
@@ -3098,7 +3098,7 @@ $themes:(
   error: #f4b5b5
 ),
   border: (
-  idle: #aabeff,
+  idle: #bdd1ff,
   normal: #aabeff,
   disabled: #d0e5ff,
   hovered: #b3c8ff,
@@ -3111,7 +3111,7 @@ $themes:(
   disabled: #4688ff,
   hovered: #1047e3,
   focused: #1047e3,
-  error: #e96b6b
+  error: #941616
 )
 )
 )
@@ -3170,8 +3170,8 @@ $themes:(
 ),
   accent: (
   primary: (
-  background-in: #0130ce40,
-  background-out: #0130ce00
+  background-in: #01259d40,
+  background-out: #01259d00
 )
 )
 ),
@@ -3183,8 +3183,8 @@ $themes:(
 ),
   track: (
   background: (
-  normal: #eaedef,
-  hovered: #f4f7f9,
+  normal: #f1f3f5,
+  hovered: #fbfdff,
   disabled: #fdffff,
   pressed: #fdffff
 )
@@ -3199,8 +3199,8 @@ $themes:(
 ),
   knob: (
   background: (
-  normal: #eaedef,
-  hovered: #f4f7f9,
+  normal: #f1f3f5,
+  hovered: #fbfdff,
   disabled: #fdffff,
   pressed: #fdffff
 ),
@@ -3227,7 +3227,7 @@ $themes:(
   item: (
   label: (
   normal: #a2b4c3,
-  active: #586976
+  active: #2f383f
 )
 )
 )
@@ -3236,20 +3236,20 @@ $themes:(
   neutral: (
   main: (
   root: (
-  background: #dce1e5,
-  border: #c9cdd1
+  background: #e3e7ea,
+  border: #cfd3d6
 )
 ),
   primary: (
   root: (
-  background: #eaedef,
-  border: #d6d9db
+  background: #f1f3f5,
+  border: #dddfe1
 )
 ),
   secondary: (
   root: (
-  background: #ced5db,
-  border: #bbc2c8
+  background: #d5dbe0,
+  border: #c2c8cc
 )
 ),
   tertiary: (
@@ -3369,14 +3369,14 @@ $themes:(
   outline: #013cfe
 ),
   track: (
-  normal: #ced5db,
-  disabled: #f5fdff,
-  active: #aabeff
+  normal: #a5b1bc,
+  disabled: #cbd7e3,
+  active: #01259d
 ),
   knob: (
-  normal: #eaedef,
+  normal: #f1f3f5,
   disabled: #fdffff,
-  active: #eaedef
+  active: #f1f3f5
 ),
   label: (
   normal: #2f383f,
@@ -3396,9 +3396,9 @@ $themes:(
   active: #013cfe
 ),
   knob: (
-  normal: #eaedef,
-  disabled: #eaedef,
-  active: #eaedef
+  normal: #f1f3f5,
+  disabled: #f1f3f5,
+  active: #f1f3f5
 ),
   label: (
   normal: #2f383f,
@@ -3432,16 +3432,16 @@ $themes:(
   expanded-hovered: #2f383f
 ),
   background: (
-  normal: #eaedef,
-  hovered: #f4f7f9,
+  normal: #f1f3f5,
+  hovered: #fbfdff,
   expanded: #fdffff,
-  expanded-hovered: #eaedef
+  expanded-hovered: #f1f3f5
 )
 ),
   options: (
   background: (
-  normal: #eaedef,
-  hovered: #f4f7f9
+  normal: #f1f3f5,
+  hovered: #fbfdff
 )
 )
 )
@@ -3450,11 +3450,11 @@ $themes:(
   form: (
   neutral: (
   primary: (
-  background: #eaedef,
+  background: #f1f3f5,
   shadow: #060606
 ),
   secondary: (
-  background: #ced5db,
+  background: #d5dbe0,
   shadow: #060606
 )
 )
@@ -3462,12 +3462,12 @@ $themes:(
   form-wrapper: (
   neutral: (
   primary: (
-  background: #eaedef,
-  border: #d6d9db
+  background: #f1f3f5,
+  border: #dddfe1
 ),
   secondary: (
-  background: #ced5db,
-  border: #bbc2c8
+  background: #d5dbe0,
+  border: #c2c8cc
 )
 )
 ),
@@ -3496,17 +3496,17 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #eaedef,
+  normal: #f1f3f5,
   disabled: #fdffff,
   hovered: #b3c8ff,
   pressed: #fdffff,
   selected: #aabeff
 ),
   border: (
-  normal: #d6d9db,
-  disabled: #b0b3b4,
+  normal: #dddfe1,
+  disabled: #b6b8ba,
   hovered: #001a9c,
-  pressed: #c3c6c8,
+  pressed: #cacbcd,
   selected: #0127a6,
   outline: #013cfe
 )
@@ -3540,7 +3540,7 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #eaedef
+  background: #f1f3f5
 ),
   title: #2f383f,
   description: #2f383f,
@@ -3590,13 +3590,13 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #eaedef
+  background: #f1f3f5
 ),
   item: (
   root: (
   background: (
-  normal: #eaedef,
-  hovered: #f4f7f9,
+  normal: #f1f3f5,
+  hovered: #fbfdff,
   selected: #000e3c
 )
 ),
@@ -3627,10 +3627,10 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #eaedef
+  normal: #f1f3f5
 ),
   border: (
-  normal: #d6d9db
+  normal: #dddfe1
 )
 )
 )
@@ -3653,10 +3653,10 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #eaedef
+  normal: #f1f3f5
 ),
   border: (
-  normal: #d6d9db
+  normal: #dddfe1
 )
 )
 )
@@ -3679,10 +3679,10 @@ $themes:(
   primary: (
   root: (
   background: (
-  normal: #eaedef
+  normal: #f1f3f5
 ),
   border: (
-  normal: #d6d9db
+  normal: #dddfe1
 )
 )
 )
@@ -3985,30 +3985,30 @@ $themes:(
 ),
   neutral: (
   main: (
-  idle: #c9cdd1,
-  normal: #c9cdd1,
-  disabled: #a3a7ab,
-  hovered: #bfc3c7,
-  pressed: #b6babe,
-  selected: #c9cdd1,
+  idle: #cfd3d6,
+  normal: #cfd3d6,
+  disabled: #a9adb0,
+  hovered: #c5c9cc,
+  pressed: #bcc0c3,
+  selected: #cfd3d6,
   outline: #013cfe
 ),
   primary: (
-  idle: #d6d9db,
-  normal: #d6d9db,
-  disabled: #b0b3b4,
-  hovered: #cccfd1,
-  pressed: #c3c6c8,
-  selected: #d6d9db,
+  idle: #dddfe1,
+  normal: #dddfe1,
+  disabled: #b6b8ba,
+  hovered: #d3d5d7,
+  pressed: #cacbcd,
+  selected: #dddfe1,
   outline: #013cfe
 ),
   secondary: (
-  idle: #bbc2c8,
-  normal: #bbc2c8,
-  disabled: #969ca2,
-  hovered: #b2b8be,
-  pressed: #a8afb5,
-  selected: #bbc2c8,
+  idle: #c2c8cc,
+  normal: #c2c8cc,
+  disabled: #9ca2a6,
+  hovered: #b8bec2,
+  pressed: #afb5b9,
+  selected: #c2c8cc,
   outline: #013cfe
 ),
   tertiary: (
@@ -4399,7 +4399,7 @@ $themes:(
   surface: (
   accent: (
   main: (
-  idle: #c3d1ff,
+  idle: #d6e5ff,
   normal: #c3d1ff,
   disabled: #eaf9ff,
   hovered: #cddbff,
@@ -4407,7 +4407,7 @@ $themes:(
   selected: #c3d1ff
 ),
   primary: (
-  idle: #013cfe,
+  idle: #1255ff,
   normal: #013cfe,
   disabled: #246bff,
   hovered: #0849ff,
@@ -4415,7 +4415,7 @@ $themes:(
   selected: #013cfe
 ),
   secondary: (
-  idle: #0130ce,
+  idle: #1047e3,
   normal: #0130ce,
   disabled: #215cf8,
   hovered: #073cd9,
@@ -4423,7 +4423,7 @@ $themes:(
   selected: #0130ce
 ),
   tertiary: (
-  idle: #01259d,
+  idle: #0e3ab1,
   normal: #01259d,
   disabled: #1e4ec5,
   hovered: #0630a7,
@@ -4431,7 +4431,7 @@ $themes:(
   selected: #01259d
 ),
   inversed: (
-  idle: #aabeff,
+  idle: #bdd1ff,
   normal: #aabeff,
   disabled: #d0e5ff,
   hovered: #b3c8ff,
@@ -4441,7 +4441,7 @@ $themes:(
 ),
   negative: (
   main: (
-  idle: #f7caca,
+  idle: #ffdedd,
   normal: #f7caca,
   disabled: #fff1f1,
   hovered: #ffd4d4,
@@ -4449,7 +4449,7 @@ $themes:(
   selected: #f7caca
 ),
   primary: (
-  idle: #de2121,
+  idle: #f43d36,
   normal: #de2121,
   disabled: #ff5449,
   hovered: #e9302c,
@@ -4457,7 +4457,7 @@ $themes:(
   selected: #de2121
 ),
   secondary: (
-  idle: #b41a1a,
+  idle: #c9342e,
   normal: #b41a1a,
   disabled: #df4940,
   hovered: #bf2824,
@@ -4465,7 +4465,7 @@ $themes:(
   selected: #b41a1a
 ),
   tertiary: (
-  idle: #8a1414,
+  idle: #9e2b26,
   normal: #8a1414,
   disabled: #b33f37,
   hovered: #94201d,
@@ -4473,7 +4473,7 @@ $themes:(
   selected: #8a1414
 ),
   inversed: (
-  idle: #f4b5b5,
+  idle: #ffc8c8,
   normal: #f4b5b5,
   disabled: #ffdcdc,
   hovered: #febfbf,
@@ -4483,31 +4483,31 @@ $themes:(
 ),
   neutral: (
   main: (
-  idle: #dce1e5,
-  normal: #dce1e5,
-  disabled: #fbffff,
-  hovered: #e6ebef,
-  pressed: #f0f5f9,
-  selected: #dce1e5
+  idle: #f7fbfe,
+  normal: #e3e7ea,
+  disabled: #fcffff,
+  hovered: #edf1f4,
+  pressed: #f7fbfe,
+  selected: #e3e7ea
 ),
   primary: (
-  idle: #eaedef,
-  normal: #eaedef,
+  idle: #fdffff,
+  normal: #f1f3f5,
   disabled: #fdffff,
-  hovered: #f4f7f9,
+  hovered: #fbfdff,
   pressed: #fdffff,
-  selected: #eaedef
+  selected: #f1f3f5
 ),
   secondary: (
-  idle: #ced5db,
-  normal: #ced5db,
-  disabled: #f5fdff,
-  hovered: #d8dfe5,
-  pressed: #e2e9ef,
-  selected: #ced5db
+  idle: #e9eff4,
+  normal: #d5dbe0,
+  disabled: #faffff,
+  hovered: #dfe5ea,
+  pressed: #e9eff4,
+  selected: #d5dbe0
 ),
   tertiary: (
-  idle: #a5b1bc,
+  idle: #b8c4cf,
   normal: #a5b1bc,
   disabled: #cbd7e3,
   hovered: #aebac6,
@@ -4515,7 +4515,7 @@ $themes:(
   selected: #a5b1bc
 ),
   inversed: (
-  idle: #101315,
+  idle: #1e2123,
   normal: #101315,
   disabled: #2c2f32,
   hovered: #171a1c,
@@ -4525,7 +4525,7 @@ $themes:(
 ),
   positive: (
   main: (
-  idle: #c3fecb,
+  idle: #d5ffdd,
   normal: #c3fecb,
   disabled: #d5ffdd,
   hovered: #cdffd5,
@@ -4533,7 +4533,7 @@ $themes:(
   selected: #c3fecb
 ),
   primary: (
-  idle: #04fb23,
+  idle: #3eff44,
   normal: #04fb23,
   disabled: #5dff5e,
   hovered: #2aff35,
@@ -4541,7 +4541,7 @@ $themes:(
   selected: #04fb23
 ),
   secondary: (
-  idle: #03cc1c,
+  idle: #35e03b,
   normal: #03cc1c,
   disabled: #51f552,
   hovered: #23d62d,
@@ -4549,7 +4549,7 @@ $themes:(
   selected: #03cc1c
 ),
   tertiary: (
-  idle: #029c15,
+  idle: #2caf30,
   normal: #029c15,
   disabled: #45c346,
   hovered: #1ca624,
@@ -4557,7 +4557,7 @@ $themes:(
   selected: #029c15
 ),
   inversed: (
-  idle: #abfeb6,
+  idle: #bfffc9,
   normal: #abfeb6,
   disabled: #c3ffce,
   hovered: #b5ffc0,

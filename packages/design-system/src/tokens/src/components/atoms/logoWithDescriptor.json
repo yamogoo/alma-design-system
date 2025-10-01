@@ -10,7 +10,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-1",
+          "$value": "title-2",
           "$type": "string",
           "$unit": ""
         }

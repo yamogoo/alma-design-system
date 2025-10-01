@@ -114,7 +114,8 @@ $prefix: "animated-icon";
 .#{$prefix} {
   @include box(auto, inherit);
   line-height: 0;
-  fill: inherit;
+  fill: currentColor;
+  stroke: currentColor;
   @extend %base-transition;
 
   @include defineSizes();
@@ -122,11 +123,13 @@ $prefix: "animated-icon";
 
   svg {
     @include box(auto, inherit);
-    fill: inherit;
+    fill: currentColor;
+    stroke: currentColor;
     @extend %base-transition;
 
     path {
-      fill: inherit;
+      fill: currentColor;
+      stroke: currentColor;
       @extend %base-transition;
     }
   }

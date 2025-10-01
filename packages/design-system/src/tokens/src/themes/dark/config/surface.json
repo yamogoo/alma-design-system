@@ -34,7 +34,7 @@
     "delta": {
       "lightness": {
         "main": {
-          "value": 0.0
+          "$value": 0.0
         },
         "idle": {
           "value": -0.06

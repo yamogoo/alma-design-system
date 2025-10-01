@@ -140,16 +140,14 @@ export interface Props {
           :mode="'neutral'"
           :tone="'primary'"
         ></Components.Atoms.Divider>
-        <Components.Atoms.Tooltip :label="'Button'">
-          <Components.Atoms.ActionButton
-            :mode="'neutral'"
-            :tone="'outline'"
-            :size="'md'"
-            :stretch="'fill'"
-            :label="$t.auth.login.form.skip"
-            @press="onContinueAsGuest"
-          ></Components.Atoms.ActionButton>
-        </Components.Atoms.Tooltip>
+        <Components.Atoms.ActionButton
+          :mode="'neutral'"
+          :tone="'outline'"
+          :size="'md'"
+          :stretch="'fill'"
+          :label="$t.auth.login.form.skip"
+          @press="onContinueAsGuest"
+        ></Components.Atoms.ActionButton>
       </Components.Atoms.Group>
     </template>
   </Components.Moleculas.Form>

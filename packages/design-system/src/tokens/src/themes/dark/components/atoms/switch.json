@@ -8,7 +8,24 @@
       },
       "track": {
         "normal": {
-          "$value": "{themes.dark.mixins.surface.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.mixins.surface.neutral.tertiary.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "active": {
+          "$value": "{themes.dark.mixins.surface.neutral.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "knob": {
+        "normal": {
+          "$value": "{themes.dark.mixins.surface.neutral.inversed.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
@@ -18,24 +35,7 @@
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.mixins.surface.accent.inversed.normal.$value}",
-          "$type": "color",
-          "$unit": "hex"
-        }
-      },
-      "knob": {
-        "normal": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
-          "$type": "color",
-          "$unit": "hex"
-        },
-        "disabled": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.disabled.$value}",
-          "$type": "color",
-          "$unit": "hex"
-        },
-        "active": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.mixins.surface.neutral.inversed.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }

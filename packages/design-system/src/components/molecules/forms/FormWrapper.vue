@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { AnimatedWrapper } from "@/components/atoms";
-import type { FormWrapperProps } from "@/components/molecules";
+import type { FormWrapperProps } from "@/components/molecules/forms/FormWrapper";
+import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
 import Surface from "@/components/atoms/containers/Surface.vue";
 
 const PREFIX = "form-wrapper";
@@ -22,12 +22,12 @@ withDefaults(defineProps<FormWrapperProps>(), {
       `${PREFIX}_size-${size}`,
       `${PREFIX}_mode-${mode}`,
       `${PREFIX}_tone-${tone}`,
-      { [`${PREFIX}_bordered`]: bordered },
     ]"
     :variant="variant"
     :size="size"
     :mode="mode"
     :tone="tone"
+    :bordered="bordered"
     data-testid="form-wrapper"
   >
     <AnimatedWrapper :duration="duration" :content-key="contentKey ?? ''">
@@ -57,34 +57,8 @@ $prefix: form-wrapper;
           padding: $padding;
           border-radius: $border-radius;
 
-          &.#{$prefix}_bordered {
-            border-style: solid;
-            border-width: $border-width;
-          }
-
           .#{$prefix}__header {
             padding: $header-padding;
-          }
-        }
-      }
-    }
-  }
-}
-
-@mixin defineThemes(
-  $map: get($themes, "light.components.molecules.#{$prefix}")
-) {
-  @each $mode, $modes in $map {
-    @each $tone, $val in $modes {
-      &_mode-#{$mode} {
-        &.#{$prefix}_tone-#{$tone} {
-          @include themify($themes) {
-            background-color: themed(
-              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.background"
-            );
-            border-color: themed(
-              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.border"
-            );
           }
         }
       }

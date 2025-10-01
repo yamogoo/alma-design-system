@@ -2,21 +2,21 @@
   "neutral": {
     "main": {
       "base": {
-        "$value": "shift_oklch({colors.gray-100}, {themes.light.config.surface.abstract.delta.lightness.main.$value})",
+        "$value": "shift_oklch({colors.gray-75}, {themes.light.config.surface.abstract.delta.lightness.main.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "primary": {
       "base": {
-        "$value": "shift_oklch({colors.gray-50}, {themes.light.config.surface.abstract.delta.lightness.primary.$value})",
+        "$value": "shift_oklch({colors.gray-25}, {themes.light.config.surface.abstract.delta.lightness.primary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "secondary": {
       "base": {
-        "$value": "shift_oklch({colors.gray-150}, {themes.light.config.surface.abstract.delta.lightness.secondary.$value})",
+        "$value": "shift_oklch({colors.gray-125}, {themes.light.config.surface.abstract.delta.lightness.secondary.$value})",
         "$type": "color",
         "$unit": "hex"
       }
