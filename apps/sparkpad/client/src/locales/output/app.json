@@ -2,8 +2,8 @@
   "app": {
     "de": {
       "about": {
-        "title": "Alma UI Kit",
-        "description": "alma Proto Kit Kit ist eine kostenlose Open-Source-Notiz-App, die Ihnen hilft, Ihre Gedanken, Ideen und Aufgaben effizient zu organisieren. Mit einer benutzerfreundlichen Oberfläche und leistungsstarken Funktionen erleichtert Sparkpad das Erfassen und Verwalten Ihrer Notizen unterwegs.",
+        "title": "Alma Design System",
+        "description": "Alma Design System ist eine kostenlose Open-Source-Notiz-App, die Ihnen hilft, Ihre Gedanken, Ideen und Aufgaben effizient zu organisieren. Mit einer benutzerfreundlichen Oberfläche und leistungsstarken Funktionen erleichtert Sparkpad das Erfassen und Verwalten Ihrer Notizen unterwegs.",
         "version": "мersion",
         "author": "Misha Grebennikov",
         "repository": "repository",
@@ -60,8 +60,8 @@
     },
     "en": {
       "about": {
-        "title": "Alma UI Kit",
-        "description": "alma Proto Kit Kit is a free and open-source note-taking application designed to help you organize your thoughts, ideas, and tasks efficiently. With a user-friendly interface and powerful features, Sparkpad makes it easy to capture and manage your notes on the go.",
+        "title": "Alma Design System",
+        "description": "Alma Design System is a free and open-source note-taking application designed to help you organize your thoughts, ideas, and tasks efficiently. With a user-friendly interface and powerful features, Sparkpad makes it easy to capture and manage your notes on the go.",
         "version": "version",
         "author": "Misha Grebennikov",
         "repository": "repository",
@@ -118,8 +118,8 @@
     },
     "fr": {
       "about": {
-        "title": "Alma UI Kit",
-        "description": "alma Proto Kit Kit est une application de prise de notes gratuite et open source conçue pour vous aider à organiser efficacement vos pensées, vos idées et vos tâches. Grâce à son interface intuitive et à ses fonctionnalités performantes, Sparkpad simplifie la prise et la gestion de vos notes où que vous soyez.",
+        "title": "Alma Design System",
+        "description": "Alma Design System est une application de prise de notes gratuite et open source conçue pour vous aider à organiser efficacement vos pensées, vos idées et vos tâches. Grâce à son interface intuitive et à ses fonctionnalités performantes, Sparkpad simplifie la prise et la gestion de vos notes où que vous soyez.",
         "version": "version",
         "author": "Misha Grebennikov",
         "repository": "repository",
@@ -176,8 +176,8 @@
     },
     "ru": {
       "about": {
-        "title": "Alma UI Kit",
-        "description": "alma Proto Kit Kit — это бесплатное приложение с открытым исходным кодом для создания заметок, призванное помочь вам эффективно организовать мысли, идеи и задачи. Благодаря удобному интерфейсу и мощным функциям Sparkpad позволяет легко создавать и управлять заметками где угодно.",
+        "title": "Alma Design System",
+        "description": "Alma Design System — это бесплатное приложение с открытым исходным кодом для создания заметок, призванное помочь вам эффективно организовать мысли, идеи и задачи. Благодаря удобному интерфейсу и мощным функциям Sparkpad позволяет легко создавать и управлять заметками где угодно.",
         "version": "версия",
         "author": "Миша Гребенников",
         "repository": "репозиторий",

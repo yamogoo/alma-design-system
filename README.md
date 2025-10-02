@@ -1,10 +1,10 @@
-# AlmaProtoKit
+# Alma Design System
 
 ### R&D Playground for UI & System Design
 
 ### About the Project
 
-AlmaProtoKit is my personal **R&D and exploratory project** — an experimental design system platform (see [MANIFEST.md](./packages/design-system/MANIFEST.md) and [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml)).  
+Alma Design System is my personal **R&D and exploratory project** — an experimental design system platform (see [MANIFEST.md](./packages/design-system/MANIFEST.md) and [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml)).  
 Its main goal is to **experiment with design system concepts**, study different approaches, and strengthen my engineering skills.
 
 This is **not a production-ready library**, but an **evolving R&D platform** — a **sandbox for growth and research**, where I:
@@ -14,9 +14,9 @@ This is **not a production-ready library**, but an **evolving R&D platform** —
 - Experiment with iconography, type design (font making), and other aspects of UI systems;
 - Gain insights that will inform the creation of a more mature and efficient system in the future (such as Alma-UI, Alma-Tokens, Alma-Icons, or other parts of the Alma ecosystem).
 
-Think of AlmaProtoKit as a **design-system R&D playground** — a foundation for the next generation of design system work rather than a production framework.
+Think of Alma Design System as a **design-system R&D playground** — a foundation for the next generation of design system work rather than a production framework.
 
-[Design System (Storybook)](https://alma-proto-kit.netlify.app)
+[Design System (Storybook)](https://alma-design-system.netlify.app)
 
 ## 🚀 Goals
 
@@ -47,7 +47,7 @@ Components may ship with adapters, which are deliberately **thin wrappers** only
 
 **Modular Design Tokens System**
 
-> AlmaProtoKit includes a **structured token system** with support for JSON, YAML, and TypeScript.
+> Alma Design System includes a **structured token system** with support for JSON, YAML, and TypeScript.
 
 - **Source tokens** → `tokens/src`
 - **Build output** → `tokens/build`
@@ -55,7 +55,7 @@ Components may ship with adapters, which are deliberately **thin wrappers** only
 
 **🔗 Figma Integration**
 
-AlmaProtoKit provides **end-to-end integration** with **Figma**:
+Alma Design System provides **end-to-end integration** with **Figma**:
 
 - ✅ **Forward flow (Code → Figma)**: fully supported and recommended.
 - ♻️ **Backward flow (Figma → Code)**: possible for compatibility, but discouraged.
@@ -68,7 +68,7 @@ The system is **code-driven**: tokens in code are the single source of truth. Th
 git clone https://github.com/yamogoo/alma-ptoto-kit.git
 
 # Go to project folder
-cd alma-proto-kit
+cd alma-design-system
 
 # Install dependencies
 pnpm install:all
@@ -92,7 +92,7 @@ pnpm sparkpad:server:dev
 > ℹ️ **Startup**: first dev launch may take ~3-7s due to asset pre-processing and pre-bundling.  
 > **HMR is instantaneous** afterwards, so iteration speed remains high.
 
-_Then open http://localhost:3000 to see AlmaProtoKit in action._
+_Then open http://localhost:3000 to see Alma Design System in action._
 
 ## License
 

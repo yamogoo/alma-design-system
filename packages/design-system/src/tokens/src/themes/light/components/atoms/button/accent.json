@@ -3,22 +3,22 @@
     "root": {
       "background": {
         "normal": {
-          "$value": "{themes.light.mixins.surface.accent.primary.normal.$value}",
+          "$value": "{themes.light.semantics.surface.accent.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.mixins.surface.accent.primary.disabled.$value}",
+          "$value": "{themes.light.semantics.surface.accent.primary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.mixins.surface.accent.primary.hovered.$value}",
+          "$value": "{themes.light.semantics.surface.accent.primary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.light.mixins.surface.accent.primary.pressed.$value}",
+          "$value": "{themes.light.semantics.surface.accent.primary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -45,7 +45,7 @@
           "$unit": "hex"
         },
         "outline": {
-          "$value": "{themes.light.mixins.outline.neutral.primary.normal.$value}",
+          "$value": "{themes.light.semantics.outline.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -53,16 +53,16 @@
     },
     "label": {
       "normal": {
-        "$value": "{themes.light.mixins.label.accent.inversed.normal.$value}"
+        "$value": "{themes.light.semantics.label.accent.inversed.normal.$value}"
       },
       "disabled": {
-        "$value": "{themes.light.mixins.label.accent.inversed.disabled.$value}"
+        "$value": "{themes.light.semantics.label.accent.inversed.disabled.$value}"
       },
       "hovered": {
-        "$value": "{themes.light.mixins.label.accent.inversed.hovered.$value}"
+        "$value": "{themes.light.semantics.label.accent.inversed.hovered.$value}"
       },
       "pressed": {
-        "$value": "{themes.light.mixins.label.accent.inversed.pressed.$value}"
+        "$value": "{themes.light.semantics.label.accent.inversed.pressed.$value}"
       }
     }
   },
@@ -70,22 +70,22 @@
     "root": {
       "background": {
         "normal": {
-          "$value": "{themes.light.mixins.surface.accent.secondary.normal.$value}",
+          "$value": "{themes.light.semantics.surface.accent.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.mixins.surface.accent.secondary.disabled.$value}",
+          "$value": "{themes.light.semantics.surface.accent.secondary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.mixins.surface.accent.secondary.hovered.$value}",
+          "$value": "{themes.light.semantics.surface.accent.secondary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.light.mixins.surface.accent.secondary.pressed.$value}",
+          "$value": "{themes.light.semantics.surface.accent.secondary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -112,7 +112,7 @@
           "$unit": "hex"
         },
         "outline": {
-          "$value": "{themes.light.mixins.outline.neutral.primary.normal.$value}",
+          "$value": "{themes.light.semantics.outline.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -120,22 +120,22 @@
     },
     "label": {
       "normal": {
-        "$value": "{themes.light.mixins.label.accent.inversed.normal.$value}",
+        "$value": "{themes.light.semantics.label.accent.inversed.normal.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "disabled": {
-        "$value": "{themes.light.mixins.label.accent.inversed.disabled.$value}",
+        "$value": "{themes.light.semantics.label.accent.inversed.disabled.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "hovered": {
-        "$value": "{themes.light.mixins.label.accent.inversed.hovered.$value}",
+        "$value": "{themes.light.semantics.label.accent.inversed.hovered.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "pressed": {
-        "$value": "{themes.light.mixins.label.accent.inversed.pressed.$value}",
+        "$value": "{themes.light.semantics.label.accent.inversed.pressed.$value}",
         "$type": "color",
         "$unit": "hex"
       }
@@ -145,22 +145,22 @@
     "root": {
       "background": {
         "normal": {
-          "$value": "{themes.light.mixins.surface.accent.tertiary.normal.$value}",
+          "$value": "{themes.light.semantics.surface.accent.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.mixins.surface.accent.tertiary.disabled.$value}",
+          "$value": "{themes.light.semantics.surface.accent.tertiary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.mixins.surface.accent.tertiary.hovered.$value}",
+          "$value": "{themes.light.semantics.surface.accent.tertiary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.light.mixins.surface.accent.tertiary.pressed.$value}",
+          "$value": "{themes.light.semantics.surface.accent.tertiary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -187,7 +187,7 @@
           "$unit": "hex"
         },
         "outline": {
-          "$value": "{themes.light.mixins.outline.neutral.primary.normal.$value}",
+          "$value": "{themes.light.semantics.outline.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -195,22 +195,22 @@
     },
     "label": {
       "normal": {
-        "$value": "{themes.light.mixins.label.accent.tertiary.normal.$value}",
+        "$value": "{themes.light.semantics.label.accent.tertiary.normal.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "disabled": {
-        "$value": "{themes.light.mixins.label.accent.tertiary.disabled.$value}",
+        "$value": "{themes.light.semantics.label.accent.tertiary.disabled.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "hovered": {
-        "$value": "{themes.light.mixins.label.accent.tertiary.hovered.$value}",
+        "$value": "{themes.light.semantics.label.accent.tertiary.hovered.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "pressed": {
-        "$value": "{themes.light.mixins.label.accent.tertiary.pressed.$value}",
+        "$value": "{themes.light.semantics.label.accent.tertiary.pressed.$value}",
         "$type": "color",
         "$unit": "hex"
       }
@@ -220,49 +220,49 @@
     "root": {
       "background": {
         "normal": {
-          "$value": "rgba({themes.light.mixins.surface.accent.inversed.normal.$value}, 0)",
+          "$value": "rgba({themes.light.semantics.surface.accent.inversed.normal.$value}, 0)",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "rgba({themes.light.mixins.surface.accent.inversed.disabled.$value}, 0)",
+          "$value": "rgba({themes.light.semantics.surface.accent.inversed.disabled.$value}, 0)",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "rgba({themes.light.mixins.surface.accent.inversed.hovered.$value}, 0)",
+          "$value": "rgba({themes.light.semantics.surface.accent.inversed.hovered.$value}, 0)",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "rgba({themes.light.mixins.surface.accent.inversed.pressed.$value}, 0)",
+          "$value": "rgba({themes.light.semantics.surface.accent.inversed.pressed.$value}, 0)",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "border": {
         "normal": {
-          "$value": "{themes.light.mixins.border.accent.primary.normal.$value}",
+          "$value": "{themes.light.semantics.border.accent.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.mixins.border.accent.primary.disabled.$value}",
+          "$value": "{themes.light.semantics.border.accent.primary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.mixins.border.accent.primary.hovered.$value}",
+          "$value": "{themes.light.semantics.border.accent.primary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.light.mixins.border.accent.primary.pressed.$value}",
+          "$value": "{themes.light.semantics.border.accent.primary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "outline": {
-          "$value": "{themes.light.mixins.outline.neutral.primary.normal.$value}",
+          "$value": "{themes.light.semantics.outline.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -270,22 +270,22 @@
     },
     "label": {
       "normal": {
-        "$value": "{themes.light.mixins.label.accent.primary.normal.$value}",
+        "$value": "{themes.light.semantics.label.accent.primary.normal.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "disabled": {
-        "$value": "{themes.light.mixins.label.accent.primary.disabled.$value}",
+        "$value": "{themes.light.semantics.label.accent.primary.disabled.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "hovered": {
-        "$value": "{themes.light.mixins.label.accent.primary.hovered.$value}",
+        "$value": "{themes.light.semantics.label.accent.primary.hovered.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "pressed": {
-        "$value": "{themes.light.mixins.label.accent.primary.pressed.$value}",
+        "$value": "{themes.light.semantics.label.accent.primary.pressed.$value}",
         "$type": "color",
         "$unit": "hex"
       }

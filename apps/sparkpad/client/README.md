@@ -1,8 +1,8 @@
 # Sparkpad
 
-## A minimal MDX editor & demo consumer of AlmaProtoKit Design System
+## A minimal MDX editor & demo consumer of Alma Design System Design System
 
-**Sparkpad** is a lightweight playground project built to demonstrate how the AlmaProtoKit design system
+**Sparkpad** is a lightweight playground project built to demonstrate how the Alma Design System design system
 can be consumed in a real application.
 It provides a simple MDX editor with live preview, using components, tokens, and theming from the design system.
 
@@ -17,10 +17,10 @@ It provides a simple MDX editor with live preview, using components, tokens, and
 
 ```bash
 # Clone the monorepo
-git clone https://github.com/yamogoo/alma-proto-kit.git
+git clone https://github.com/yamogoo/alma-design-system.git
 
 # Go to Sparkpad client
-cd alma-proto-kit/apps/sparkpad/client
+cd alma-design-system/apps/sparkpad/client
 
 # Install dependencies (workspace-aware)
 pnpm install
@@ -38,7 +38,7 @@ in your browser.
 - Vite for dev/build
 - MDX parsing & preview
 - Pinia for state
-- AlmaProtoKit Design System for UI foundation
+- Alma Design System Design System for UI foundation
 
 ### 📖 About
 
