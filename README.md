@@ -7,7 +7,7 @@
 AlmaProtoKit is my personal **R&D and exploratory project** — an experimental design system platform (see [MANIFEST.md](./packages/design-system/MANIFEST.md) and [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml)).  
 Its main goal is to **experiment with design system concepts**, study different approaches, and strengthen my engineering skills.
 
-This is **not a polished production-ready library**, but rather a **sandbox for growth and research**, where I:
+This is **not a production-ready library**, but an **evolving R&D platform** — a **sandbox for growth and research**, where I:
 
 - Explore trade-offs between performance, developer experience, and design flexibility;
 - Test token pipelines, theming strategies, component architectures, and cross-framework integration;
