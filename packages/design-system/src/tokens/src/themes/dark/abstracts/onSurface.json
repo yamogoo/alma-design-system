@@ -2,49 +2,49 @@
   "neutral": {
     "lightest": {
       "base": {
-        "$value": "{colors.gray-950}",
+        "$value": "{colors.gray-225}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "lighter": {
       "base": {
-        "$value": "{colors.gray-900}",
+        "$value": "{colors.gray-200}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "light": {
       "base": {
-        "$value": "{colors.gray-850}",
+        "$value": "{colors.gray-175}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "normal": {
       "base": {
-        "$value": "{colors.gray-775}",
+        "$value": "{colors.gray-150}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "dark": {
       "base": {
-        "$value": "{colors.gray-650}",
+        "$value": "{colors.gray-150}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darker": {
       "base": {
-        "$value": "{colors.gray-500}",
+        "$value": "{colors.gray-0}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darkest": {
       "base": {
-        "$value": "{colors.gray-25}",
+        "$value": "{colors.gray-950}",
         "$type": "color",
         "$unit": "hex"
       }
@@ -53,49 +53,49 @@
   "accent": {
     "lightest": {
       "base": {
-        "$value": "{colors.blue-925}",
+        "$value": "{colors.blue-125}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "lighter": {
       "base": {
-        "$value": "{colors.blue-875}",
+        "$value": "{colors.blue-125}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "light": {
       "base": {
-        "$value": "{colors.blue-750}",
+        "$value": "{colors.blue-50}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "normal": {
       "base": {
-        "$value": "{colors.blue-550}",
+        "$value": "{colors.blue-50}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "dark": {
       "base": {
-        "$value": "{colors.blue-425}",
+        "$value": "{colors.blue-50}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darker": {
       "base": {
-        "$value": "{colors.blue-275}",
+        "$value": "{colors.blue-0}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darkest": {
       "base": {
-        "$value": "{colors.blue-50}",
+        "$value": "{colors.blue-400}",
         "$type": "color",
         "$unit": "hex"
       }
@@ -104,49 +104,49 @@
   "positive": {
     "lightest": {
       "base": {
-        "$value": "{colors.green-950}",
+        "$value": "{colors.green-300}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "lighter": {
       "base": {
-        "$value": "{colors.green-850}",
+        "$value": "{colors.green-200}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "light": {
       "base": {
-        "$value": "{colors.green-725}",
+        "$value": "{colors.green-100}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "normal": {
       "base": {
-        "$value": "{colors.green-650}",
+        "$value": "{colors.green-100}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "dark": {
       "base": {
-        "$value": "{colors.green-550}",
+        "$value": "{colors.green-0}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darker": {
       "base": {
-        "$value": "{colors.green-275}",
+        "$value": "{colors.green-675}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darkest": {
       "base": {
-        "$value": "{colors.green-100}",
+        "$value": "{colors.green-625}",
         "$type": "color",
         "$unit": "hex"
       }
@@ -155,49 +155,49 @@
   "negative": {
     "lightest": {
       "base": {
-        "$value": "{colors.red-900}",
+        "$value": "{colors.red-125}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "lighter": {
       "base": {
-        "$value": "{colors.red-800}",
+        "$value": "{colors.red-100}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "light": {
       "base": {
-        "$value": "{colors.red-650}",
+        "$value": "{colors.red-75}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "normal": {
       "base": {
-        "$value": "{colors.red-575}",
+        "$value": "{colors.red-50}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "dark": {
       "base": {
-        "$value": "{colors.red-425}",
+        "$value": "{colors.red-25}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darker": {
       "base": {
-        "$value": "{colors.red-150}",
+        "$value": "{colors.red-400}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darkest": {
       "base": {
-        "$value": "{colors.red-25}",
+        "$value": "{colors.red-350}",
         "$type": "color",
         "$unit": "hex"
       }
@@ -206,49 +206,49 @@
   "warning": {
     "lightest": {
       "base": {
-        "$value": "{colors.orange-875}",
+        "$value": "{colors.orange-150}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "lighter": {
       "base": {
-        "$value": "{colors.orange-750}",
+        "$value": "{colors.orange-125}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "light": {
       "base": {
-        "$value": "{colors.orange-625}",
+        "$value": "{colors.orange-100}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "normal": {
       "base": {
-        "$value": "{colors.orange-525}",
+        "$value": "{colors.orange-75}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "dark": {
       "base": {
-        "$value": "{colors.orange-425}",
+        "$value": "{colors.orange-0}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darker": {
       "base": {
-        "$value": "{colors.orange-200}",
+        "$value": "{colors.orange-650}",
         "$type": "color",
         "$unit": "hex"
       }
     },
     "darkest": {
       "base": {
-        "$value": "{colors.orange-50}",
+        "$value": "{colors.orange-550}",
         "$type": "color",
         "$unit": "hex"
       }

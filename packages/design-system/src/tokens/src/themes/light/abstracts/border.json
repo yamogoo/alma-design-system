@@ -1,147 +1,254 @@
 {
   "neutral": {
-    "main": {
+    "lightest": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.main.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.lightest.base.$value}, {themes.light.config.border.abstract.delta.lightness.lightest.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "primary": {
+    "lighter": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.primary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.lighter.base.$value}, {themes.light.config.border.abstract.delta.lightness.lighter.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "secondary": {
+    "light": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.secondary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.light.base.$value}, {themes.light.config.border.abstract.delta.lightness.light.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "tertiary": {
+    "normal": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.tertiary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.normal.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "inversed": {
+    "dark": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.inversed.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.dark.base.$value}, {themes.light.config.border.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.darker.base.$value}, {themes.light.config.border.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.neutral.darkest.base.$value}, {themes.light.config.border.abstract.delta.lightness.darkest.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     }
   },
   "accent": {
-    "main": {
+    "lightest": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.accent.main.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.accent.lightest.base.$value}, {themes.light.config.border.abstract.delta.lightness.accent.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "primary": {
+    "lighter": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.accent.primary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.accent.lighter.base.$value}, {themes.light.config.border.abstract.delta.lightness.lighter.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "secondary": {
+    "light": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.accent.secondary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.accent.light.base.$value}, {themes.light.config.border.abstract.delta.lightness.light.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "tertiary": {
+    "normal": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.accent.tertiary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.accent.normal.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "inversed": {
+    "dark": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.accent.tertiary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.accent.dark.base.$value}, {themes.light.config.border.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.accent.darker.base.$value}, {themes.light.config.border.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.accent.darkest.base.$value}, {themes.light.config.border.abstract.delta.lightness.darkest.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     }
   },
   "positive": {
-    "main": {
+    "lightest": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.positive.main.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.positive.lightest.base.$value}, {themes.light.config.border.abstract.delta.lightness.lightest.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "primary": {
+    "lighter": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.positive.primary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.positive.lighter.base.$value}, {themes.light.config.border.abstract.delta.lightness.lighter.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "secondary": {
+    "light": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.positive.secondary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.positive.light.base.$value}, {themes.light.config.border.abstract.delta.lightness.light.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "tertiary": {
+    "normal": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.positive.tertiary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.positive.normal.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "inversed": {
+    "dark": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.positive.tertiary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.positive.dark.base.$value}, {themes.light.config.border.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.positive.darker.base.$value}, {themes.light.config.border.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.positive.darkest.base.$value}, {themes.light.config.border.abstract.delta.lightness.darkest.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     }
   },
   "negative": {
-    "main": {
+    "lightest": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.negative.main.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.negative.lightest.base.$value}, {themes.light.config.border.abstract.delta.lightness.lightest.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "primary": {
+    "lighter": {
       "base": {
-        "$value": "shift_oklch({themes.light.abstracts.surface.negative.primary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.negative.lighter.base.$value}, {themes.light.config.border.abstract.delta.lightness.lighter.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "secondary": {
+    "light": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.negative.secondary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.negative.light.base.$value}, {themes.light.config.border.abstract.delta.lightness.light.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "tertiary": {
+    "normal": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.negative.tertiary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.negative.normal.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
         "$type": "color",
         "$unit": "hex"
       }
     },
-    "inversed": {
+    "dark": {
       "base": {
-        "$value": "darken({themes.light.abstracts.surface.negative.tertiary.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$value": "shift_oklch({themes.light.abstracts.surface.negative.dark.base.$value}, {themes.light.config.border.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.negative.darker.base.$value}, {themes.light.config.border.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.negative.darkest.base.$value}, {themes.light.config.border.abstract.delta.lightness.darkest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    }
+  },
+  "warning": {
+    "lightest": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.warning.lightest.base.$value}, {themes.light.config.border.abstract.delta.lightness.lightest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "lighter": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.warning.lighter.base.$value}, {themes.light.config.border.abstract.delta.lightness.lighter.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.warning.light.base.$value}, {themes.light.config.border.abstract.delta.lightness.light.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "normal": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.warning.normal.base.$value}, {themes.light.config.border.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.warning.dark.base.$value}, {themes.light.config.border.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.warning.darker.base.$value}, {themes.light.config.border.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.light.abstracts.surface.warning.darkest.base.$value}, {themes.light.config.border.abstract.delta.lightness.darkest.$value})",
         "$type": "color",
         "$unit": "hex"
       }

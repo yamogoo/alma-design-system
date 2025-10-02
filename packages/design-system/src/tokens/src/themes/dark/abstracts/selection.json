@@ -1,7 +1,7 @@
 {
   "neutral": {
     "primary": {
-      "label": {
+      "normal": {
         "base": {
           "$value": "{colors.gray-50}",
           "$type": "color",

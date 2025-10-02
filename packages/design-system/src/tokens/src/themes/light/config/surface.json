@@ -1,35 +1,4 @@
 {
-  "abstract": {
-    "delta": {
-      "lightness": {
-        "main": {
-          "$value": 0,
-          "$type": "number",
-          "$unit": ""
-        },
-        "primary": {
-          "$value": 0,
-          "$type": "number",
-          "$unit": ""
-        },
-        "secondary": {
-          "$value": 0,
-          "$type": "number",
-          "$unit": ""
-        },
-        "tertiary": {
-          "$value": 0,
-          "$type": "number",
-          "$unit": ""
-        },
-        "inversed": {
-          "$value": 0,
-          "$type": "number",
-          "$unit": ""
-        }
-      }
-    }
-  },
   "state": {
     "delta": {
       "lightness": {

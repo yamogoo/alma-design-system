@@ -53,16 +53,16 @@
     },
     "label": {
       "normal": {
-        "$value": "{themes.light.mixins.label.negative.inversed.normal.$value}"
+        "$value": "{themes.light.mixins.label.negative.primary.normal.$value}"
       },
       "disabled": {
-        "$value": "{themes.light.mixins.label.negative.inversed.disabled.$value}"
+        "$value": "{themes.light.mixins.label.negative.primary.disabled.$value}"
       },
       "hovered": {
-        "$value": "{themes.light.mixins.label.negative.inversed.hovered.$value}"
+        "$value": "{themes.light.mixins.label.negative.primary.hovered.$value}"
       },
       "pressed": {
-        "$value": "{themes.light.mixins.label.negative.inversed.pressed.$value}"
+        "$value": "{themes.light.mixins.label.negative.primary.pressed.$value}"
       }
     }
   },
@@ -120,22 +120,22 @@
     },
     "label": {
       "normal": {
-        "$value": "{themes.light.mixins.label.negative.inversed.normal.$value}",
+        "$value": "{themes.light.mixins.label.negative.secondary.normal.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "disabled": {
-        "$value": "{themes.light.mixins.label.negative.inversed.disabled.$value}",
+        "$value": "{themes.light.mixins.label.negative.secondary.disabled.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "hovered": {
-        "$value": "{themes.light.mixins.label.negative.inversed.hovered.$value}",
+        "$value": "{themes.light.mixins.label.negative.secondary.hovered.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "pressed": {
-        "$value": "{themes.light.mixins.label.negative.inversed.pressed.$value}",
+        "$value": "{themes.light.mixins.label.negative.secondary.pressed.$value}",
         "$type": "color",
         "$unit": "hex"
       }

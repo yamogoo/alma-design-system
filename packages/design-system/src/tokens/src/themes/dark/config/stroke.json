@@ -1,0 +1,43 @@
+{
+  "abstract": {
+    "delta": {
+      "lightness": {
+        "lightest": {
+          "$value": 0.04,
+          "$type": "number",
+          "$unit": ""
+        },
+        "lighter": {
+          "$value": 0.04,
+          "$type": "number",
+          "$unit": ""
+        },
+        "light": {
+          "$value": 0.04,
+          "$type": "number",
+          "$unit": ""
+        },
+        "normal": {
+          "$value": 0.04,
+          "$type": "number",
+          "$unit": ""
+        },
+        "dark": {
+          "$value": 0.04,
+          "$type": "number",
+          "$unit": ""
+        },
+        "darker": {
+          "$value": 0.04,
+          "$type": "number",
+          "$unit": ""
+        },
+        "darkest": {
+          "$value": 0.04,
+          "$type": "number",
+          "$unit": ""
+        }
+      }
+    }
+  }
+}

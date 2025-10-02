@@ -1,0 +1,257 @@
+{
+  "neutral": {
+    "lightest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.neutral.lightest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lightest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "lighter": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.neutral.lighter.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lighter.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.neutral.light.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.light.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "normal": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.neutral.normal.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.neutral.dark.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.neutral.darker.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.neutral.darkest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darkest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    }
+  },
+  "accent": {
+    "lightest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.accent.lightest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.accent.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "lighter": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.accent.lighter.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lighter.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.accent.light.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.light.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "normal": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.accent.normal.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.accent.dark.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.accent.darker.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.accent.darkest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darkest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    }
+  },
+  "positive": {
+    "lightest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.positive.lightest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lightest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "lighter": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.positive.lighter.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lighter.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.positive.light.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.light.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "normal": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.positive.normal.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.positive.dark.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.positive.darker.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.positive.darkest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darkest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    }
+  },
+  "negative": {
+    "lightest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.negative.lightest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lightest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "lighter": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.negative.lighter.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lighter.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.negative.light.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.light.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "normal": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.negative.normal.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.negative.dark.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.negative.darker.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.negative.darkest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darkest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    }
+  },
+  "warning": {
+    "lightest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.warning.lightest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lightest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "lighter": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.warning.lighter.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.lighter.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.warning.light.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.light.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "normal": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.warning.normal.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.normal.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.warning.dark.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.dark.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darker": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.warning.darker.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darker.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    },
+    "darkest": {
+      "base": {
+        "$value": "shift_oklch({themes.dark.abstracts.surface.warning.darkest.base.$value}, {themes.light.config.stroke.abstract.delta.lightness.darkest.$value})",
+        "$type": "color",
+        "$unit": "hex"
+      }
+    }
+  }
+}

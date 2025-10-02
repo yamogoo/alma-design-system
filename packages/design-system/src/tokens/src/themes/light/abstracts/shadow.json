@@ -1,6 +1,6 @@
 {
   "neutral": {
-    "primary": {
+    "normal": {
       "base": {
         "$value": "rgba({colors.black-1000}, 0.075)",
         "$type": "color",

@@ -1,6 +1,6 @@
 {
   "accent": {
-    "primary": {
+    "normal": {
       "base": {
         "$value": "{colors.blue-500}",
         "$type": "color",
