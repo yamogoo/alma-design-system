@@ -3,22 +3,22 @@
     "primary": {
       "label": {
         "normal": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.pressed.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -27,22 +27,22 @@
     "secondary": {
       "label": {
         "normal": {
-          "$value": "{themes.dark.mixins.label.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.label.neutral.secondary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.mixins.label.neutral.secondary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.dark.mixins.label.neutral.secondary.pressed.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         }

@@ -20,7 +20,7 @@ const symbol = computed(() => {
     throw new Error(`SVG not found: ${path}`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
   return defineAsyncComponent(loader as any);
 });
 </script>
@@ -64,13 +64,15 @@ $prefix: svg-image;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.mixins.label")) {
+@mixin defineThemes($map: get($themes, "light.contracts.interactive.label")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
-            fill: themed("mixins.label.#{$mode}.#{$tone}.normal");
+            fill: themed(
+              "contracts.interactive.label.#{$mode}.#{$tone}.normal"
+            );
           }
         }
       }

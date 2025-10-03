@@ -1,9 +1,0 @@
-{
-  "primary": {
-    "normal": {
-      "$value": "shift_oklch({themes.light.abstracts.shadow.neutral.primary.base.$value}, {themes.light.config.shadow.state.delta.lightness.normal.$value})",
-      "$type": "color",
-      "$unit": "hex"
-    }
-  }
-}

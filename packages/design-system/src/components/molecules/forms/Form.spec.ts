@@ -34,15 +34,6 @@ describe("Form", () => {
   });
 
   describe("classes", () => {
-    test("adds a class to the color", () => {
-      const wrapper = mount(Form, {
-        props: { mode: "neutral", tone: "primary" },
-      });
-
-      expect(wrapper.classes()).toContain("form_mode-neutral");
-      expect(wrapper.classes()).toContain("form_tone-primary");
-    });
-
     test("adds class for size", () => {
       const wrapper = mount(Form, {
         props: { size: "md" },

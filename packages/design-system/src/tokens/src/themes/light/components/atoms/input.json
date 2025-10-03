@@ -89,7 +89,7 @@
           "$unit": "hex"
         },
         "error": {
-          "$value": "{themes.light.contracts.interactive.label.negative.secondary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.label.negative.tertiary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -186,7 +186,7 @@
           "$unit": "hex"
         },
         "error": {
-          "$value": "{themes.light.mixins.label.negative.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.negative.tertiary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         }

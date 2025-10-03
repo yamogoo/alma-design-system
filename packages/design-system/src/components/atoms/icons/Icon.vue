@@ -71,7 +71,7 @@ $prefix: icon;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.mixins.label")) {
+@mixin defineThemes($map: get($themes, "light.contracts.interactive.label")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -79,7 +79,9 @@ $prefix: icon;
           svg {
             path {
               @include themify($themes) {
-                fill: themed("mixins.label.#{$mode}.#{$tone}.normal");
+                fill: themed(
+                  "contracts.interactive.label.#{$mode}.#{$tone}.normal"
+                );
               }
             }
           }

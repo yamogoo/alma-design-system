@@ -54,7 +54,9 @@ withDefaults(defineProps<StorySlotCoverProps>(), {
   .text {
     text-align: center;
     @include themify($themes) {
-      background-color: themed("mixins.surface.neutral.primary.normal");
+      background-color: themed(
+        "contracts.interactive.surface.neutral.primary.normal"
+      );
     }
   }
 }

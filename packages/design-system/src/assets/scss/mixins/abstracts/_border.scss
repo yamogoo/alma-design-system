@@ -4,7 +4,9 @@
 @mixin border($mode, $tone) {
   & {
     @include themify($themes) {
-      border-color: themed("mixins.border.#{$mode}.#{$tone}.normal");
+      border-color: themed(
+        "contracts.interactive.border.#{$mode}.#{$tone}.normal"
+      );
     }
   }
 }

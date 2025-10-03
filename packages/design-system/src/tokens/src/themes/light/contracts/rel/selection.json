@@ -1,17 +1,19 @@
 {
   "neutral": {
-    "label": {
-      "base": {
-        "$value": "{colors.gray-950}",
-        "$type": "color",
-        "$unit": "hex"
-      }
-    },
-    "surface": {
-      "base": {
-        "$value": "{colors.yellow-300}",
-        "$type": "color",
-        "$unit": "hex"
+    "primary": {
+      "label": {
+        "base": {
+          "$value": "{colors.gray-950}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "surface": {
+        "base": {
+          "$value": "{colors.yellow-300}",
+          "$type": "color",
+          "$unit": "hex"
+        }
       }
     }
   }

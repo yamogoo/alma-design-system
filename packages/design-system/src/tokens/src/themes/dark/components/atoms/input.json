@@ -186,7 +186,7 @@
           "$unit": "hex"
         },
         "error": {
-          "$value": "{themes.dark.mixins.label.negative.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.negative.tertiary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         }

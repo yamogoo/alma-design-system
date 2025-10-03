@@ -12,7 +12,10 @@
 /* Track */
 ::-webkit-scrollbar-track {
   @include themify($themes) {
-    background: rgba(themed("mixins.label.neutral.primary.disabled"), 0);
+    background: rgba(
+      themed("contracts.interactive.label.neutral.primary.disabled"),
+      0
+    );
   }
 }
 
@@ -23,14 +26,14 @@
     "atoms.scrollbar.default.thumb.border-radius"
   );
   @include themify($themes) {
-    background: themed("mixins.label.neutral.primary.normal");
+    background: themed("contracts.interactive.label.neutral.primary.normal");
   }
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   @include themify($themes) {
-    background: themed("mixins.label.accent.primary.normal");
+    background: themed("contracts.interactive.label.accent.primary.normal");
   }
 }
 

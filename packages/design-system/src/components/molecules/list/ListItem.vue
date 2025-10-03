@@ -38,10 +38,7 @@ const hasUserContent = computed(() => {
 
 const isSelected = computed(() => {
   if (!ctx?.selectedItemId) return false;
-  const sel = ctx.selectedItemId.value as
-    | ListItemProps["id"]
-    | ListItemProps["id"][]
-    | null;
+  const sel = ctx.selectedItemId.value;
   return Array.isArray(sel) ? sel.includes(props.id) : sel === props.id;
 });
 
@@ -260,7 +257,7 @@ $prefix: list-item;
             @include themify($themes) {
               outline: get($tokens, "outline") solid
                 themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.outline"
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
                 );
             }
           }

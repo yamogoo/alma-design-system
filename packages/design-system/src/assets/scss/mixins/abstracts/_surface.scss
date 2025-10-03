@@ -4,7 +4,9 @@
 @mixin surface($mode, $tone) {
   & {
     @include themify($themes) {
-      background-color: themed("mixins.surface.#{$mode}.#{$tone}.normal");
+      background-color: themed(
+        "contracts.interactive.surface.#{$mode}.#{$tone}.normal"
+      );
     }
   }
 }

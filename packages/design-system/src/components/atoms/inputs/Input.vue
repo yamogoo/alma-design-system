@@ -545,10 +545,10 @@ $prefix: input;
       &::selection {
         @include themify($themes) {
           color: themed(
-            "mixins.selection.neutral.primary.label.normal"
+            "contracts.rel.selection.neutral.primary.label.base"
           ) !important;
           background: themed(
-            "mixins.selection.neutral.primary.surface.normal"
+            "contracts.rel.selection.neutral.primary.surface.base"
           ) !important;
         }
       }
