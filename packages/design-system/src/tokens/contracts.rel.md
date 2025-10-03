@@ -1,6 +1,6 @@
 # Relational Color System — Usage Manifest (v1)
 
-_Last updated: 2025-10-03_
+_Last updated: 2025-10-04_
 
 ## 0) Scope & Goal
 
@@ -24,8 +24,8 @@ This document defines how to **use** the relational color system in products, co
 - `Label` — text/labels (generic / more detached from specific surfaces).
 - `Border` — convenience alias derived from `Stroke` for component borders/dividers.
 
-**Tones (ladder):** `xxl-lighter, xl-lighter, lighter, base, darker, xl-darker, xxl-darker`  
-(Alternatively use numeric steps; the ladder must be **monotonic**.)
+**Tones (numeric ladder):** `base-3, base-2, base-1, base, base+1, base+2, base+3`  
+(Base±N is theme-agnostic and must be **monotonic** by lightness.)
 
 **States:** `idle, hover, pressed, focus, disabled` (state values are **derived** via deltas).
 
@@ -68,7 +68,7 @@ contracts/rel/<plane>/<role>/<tone>/<state>
 **Component tokens map** to `contracts/rel/*` and expose domain semantics:
 
 ```
-components/button/accent/primary/background -> contracts/rel/surface/accent/lighter/idle
+components/button/accent/primary/background -> contracts/rel/surface/accent/base-2/idle
 components/button/accent/primary/label      -> contracts/rel/label/accent/base/idle
 ```
 
@@ -113,7 +113,7 @@ All states must be **deterministic** and computed by the tokens pipeline; avoid 
 
 ## 8) Lint Rules (Enforcement)
 
-- **Path pattern:** any component token value must resolve to `^contracts/rel/(surface|stroke|onSurface|label|border)/(neutral|accent|positive|negative|warning)/[a-z0-9-]+/(idle|hover|pressed|focus|disabled)$`.
+- **Path pattern:** any component token value must resolve to `^contracts/rel/(surface|stroke|onSurface|label|border)/(neutral|accent|positive|negative|warning)/base([+-][1-3])?/(idle|hover|pressed|focus|disabled)$`.
 - **Ban raw hex in components.** Raw hex is permitted only in base palettes and generator inputs.
 - **Contrast check:** CI verifies `foreground` vs `background` ratio per WCAG thresholds.
 - **Origin metadata:** each token sets `meta.origin` to one of: `curated | generated | override`.
@@ -125,7 +125,7 @@ All states must be **deterministic** and computed by the tokens pipeline; avoid 
 
 1. Choose **role** for the component variant (e.g., `Accent.Primary`).
 2. Map properties to **planes** using the contract table (Section 3).
-3. Pick **tone** (`lighter/base/darker/...`) from the relational matrix.
+3. Pick **tone** `base±N` from the relational matrix.
 4. States come **for free** via deltas.
 5. CI validates contrast; Storybook renders the matrix and components for visual QA.
 
@@ -136,16 +136,16 @@ All states must be **deterministic** and computed by the tokens pipeline; avoid 
 **Button (Accent.Primary)**
 
 ```
-background: contracts/rel/surface/accent/lighter/idle
-border:     contracts/rel/stroke/accent/lighter/idle
+background: contracts/rel/surface/accent/base-2/idle
+border:     contracts/rel/stroke/accent/base-2/idle
 foreground: contracts/rel/label/accent/base/idle  (must pass contrast)
 ```
 
 **Button (Neutral.Outline)**
 
 ```
-background: contracts/rel/surface/neutral/darkest/idle (0α or transparent surface per theme)
-border:     contracts/rel/stroke/neutral/darkest/idle
+background: contracts/rel/surface/neutral/base+3/idle (0α or transparent surface per theme)
+border:     contracts/rel/stroke/neutral/base+3/idle
 foreground: contracts/rel/label/neutral/base/idle
 ```
 
@@ -200,7 +200,9 @@ Overrides are allowed only when a product requirement cannot be met with the cur
 ## 16) Appendix: Reference Regex
 
 ```
-^contracts/rel/(surface|stroke|onSurface|label|border)/(neutral|accent|positive|negative|warning)/([a-z0-9-]+)/((idle|hover|pressed|focus|disabled))$
+^contracts/rel/(surface|stroke|onSurface|label|border)/(neutral|accent|positive|negative|warning)/base([+-][1-3])?/((idle|hover|pressed|focus|disabled))$
 ```
+
+> Migration note: legacy tone names map as `lightest→base-3`, `lighter→base-2`, `light→base-1`, `normal→base`, `dark→base+1`, `darker→base+2`, `darkest→base+3`.
 
 > This manifest makes the relational color matrix self-documenting and enforceable. Follow the contracts, keep roles cohesive, and let deltas and contrast rules do the heavy lifting.
