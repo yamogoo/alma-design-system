@@ -4493,7 +4493,7 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#15191c",
+                  "$value": "#242b3100",
                   "$type": "color",
                   "unit": "hex"
                 }
@@ -4502,17 +4502,22 @@
                 "root": {
                   "background": {
                     "normal": {
-                      "$value": "#15191c",
+                      "$value": "#242b3100",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "hovered": {
-                      "$value": "#1c2023",
+                      "$value": "#00124d",
+                      "$type": "color",
+                      "unit": "hex"
+                    },
+                    "pressed": {
+                      "$value": "#001350",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "selected": {
-                      "$value": "#000e3c",
+                      "$value": "#00124d",
                       "$type": "color",
                       "unit": "hex"
                     }
@@ -4521,22 +4526,22 @@
                 "label": {
                   "color": {
                     "normal": {
-                      "$value": "#2f383f",
+                      "$value": "#c7cfd5",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "hovered": {
-                      "$value": "#3e484f",
+                      "$value": "#d5dbe0",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "pressed": {
-                      "$value": "#465057",
+                      "$value": "#dce1e5",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "selected": {
-                      "$value": "#01259d",
+                      "$value": "#c7cfd5",
                       "$type": "color",
                       "unit": "hex"
                     }
@@ -4545,22 +4550,22 @@
                 "caret": {
                   "color": {
                     "normal": {
-                      "$value": "#2f383f",
+                      "$value": "#c7cfd5",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "hovered": {
-                      "$value": "#3e484f",
+                      "$value": "#d5dbe0",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "pressed": {
-                      "$value": "#465057",
+                      "$value": "#dce1e5",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "selected": {
-                      "$value": "#01259d",
+                      "$value": "#c7cfd5",
                       "$type": "color",
                       "unit": "hex"
                     }
@@ -18037,7 +18042,7 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#f1f3f5",
+                  "$value": "#e3e7ea00",
                   "$type": "color",
                   "unit": "hex"
                 }
@@ -18046,17 +18051,22 @@
                 "root": {
                   "background": {
                     "normal": {
-                      "$value": "#f1f3f5",
+                      "$value": "#e3e7ea00",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "hovered": {
-                      "$value": "#fbfdff",
+                      "$value": "#d0dbff",
+                      "$type": "color",
+                      "unit": "hex"
+                    },
+                    "pressed": {
+                      "$value": "#dde5ff",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "selected": {
-                      "$value": "#000e3c",
+                      "$value": "#1048fe",
                       "$type": "color",
                       "unit": "hex"
                     }
@@ -18065,22 +18075,22 @@
                 "label": {
                   "color": {
                     "normal": {
-                      "$value": "#2f383f",
+                      "$value": "#637584",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "hovered": {
-                      "$value": "#3e484f",
+                      "$value": "#436ffe",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "pressed": {
-                      "$value": "#465057",
+                      "$value": "#4c76fe",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "selected": {
-                      "$value": "#c3d1ff",
+                      "$value": "#dbe3ff",
                       "$type": "color",
                       "unit": "hex"
                     }
@@ -18089,22 +18099,22 @@
                 "caret": {
                   "color": {
                     "normal": {
-                      "$value": "#2f383f",
+                      "$value": "#637584",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "hovered": {
-                      "$value": "#3e484f",
+                      "$value": "#436ffe",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "pressed": {
-                      "$value": "#465057",
+                      "$value": "#4c76fe",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "selected": {
-                      "$value": "#c3d1ff",
+                      "$value": "#dbe3ff",
                       "$type": "color",
                       "unit": "hex"
                     }

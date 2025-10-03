@@ -1611,30 +1611,31 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #15191c
+  background: #242b3100
 ),
   item: (
   root: (
   background: (
-  normal: #15191c,
-  hovered: #1c2023,
-  selected: #000e3c
+  normal: #242b3100,
+  hovered: #00124d,
+  pressed: #001350,
+  selected: #00124d
 )
 ),
   label: (
   color: (
-  normal: #2f383f,
-  hovered: #3e484f,
-  pressed: #465057,
-  selected: #01259d
+  normal: #c7cfd5,
+  hovered: #d5dbe0,
+  pressed: #dce1e5,
+  selected: #c7cfd5
 )
 ),
   caret: (
   color: (
-  normal: #2f383f,
-  hovered: #3e484f,
-  pressed: #465057,
-  selected: #01259d
+  normal: #c7cfd5,
+  hovered: #d5dbe0,
+  pressed: #dce1e5,
+  selected: #c7cfd5
 )
 )
 )
@@ -5721,30 +5722,31 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #f1f3f5
+  background: #e3e7ea00
 ),
   item: (
   root: (
   background: (
-  normal: #f1f3f5,
-  hovered: #fbfdff,
-  selected: #000e3c
+  normal: #e3e7ea00,
+  hovered: #d0dbff,
+  pressed: #dde5ff,
+  selected: #1048fe
 )
 ),
   label: (
   color: (
-  normal: #2f383f,
-  hovered: #3e484f,
-  pressed: #465057,
-  selected: #c3d1ff
+  normal: #637584,
+  hovered: #436ffe,
+  pressed: #4c76fe,
+  selected: #dbe3ff
 )
 ),
   caret: (
   color: (
-  normal: #2f383f,
-  hovered: #3e484f,
-  pressed: #465057,
-  selected: #c3d1ff
+  normal: #637584,
+  hovered: #436ffe,
+  pressed: #4c76fe,
+  selected: #dbe3ff
 )
 )
 )

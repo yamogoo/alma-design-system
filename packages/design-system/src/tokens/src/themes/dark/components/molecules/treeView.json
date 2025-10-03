@@ -3,7 +3,7 @@
     "primary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$value": "rgba({themes.dark.contracts.mixins.common.interactive.surface.neutral.primary.normal.$value}, 0)",
           "$type": "color",
           "unit": "hex"
         }
@@ -12,17 +12,22 @@
         "root": {
           "background": {
             "normal": {
-              "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+              "$value": "rgba({themes.dark.contracts.mixins.common.interactive.surface.neutral.primary.normal.$value}, 0)",
               "$type": "color",
               "unit": "hex"
             },
             "hovered": {
-              "$value": "{themes.dark.mixins.surface.neutral.primary.hovered.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.surface.accent.primary.hovered.$value}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "pressed": {
+              "$value": "{themes.dark.contracts.mixins.common.interactive.surface.accent.primary.pressed.$value}",
               "$type": "color",
               "unit": "hex"
             },
             "selected": {
-              "$value": "{colors.blue-900}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.surface.accent.primary.hovered.$value}",
               "$type": "color",
               "unit": "hex"
             }
@@ -31,22 +36,22 @@
         "label": {
           "color": {
             "normal": {
-              "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.primary.normal.$value}",
               "$type": "color",
               "unit": "hex"
             },
             "hovered": {
-              "$value": "{themes.dark.mixins.label.neutral.primary.hovered.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.primary.hovered.$value}",
               "$type": "color",
               "unit": "hex"
             },
             "pressed": {
-              "$value": "{themes.dark.mixins.label.neutral.primary.pressed.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.primary.pressed.$value}",
               "$type": "color",
               "unit": "hex"
             },
             "selected": {
-              "$value": "{themes.dark.mixins.label.accent.inversed.selected.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.primary.selected.$value}",
               "$type": "color",
               "unit": "hex"
             }
@@ -55,22 +60,22 @@
         "caret": {
           "color": {
             "normal": {
-              "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.primary.normal.$value}",
               "$type": "color",
               "unit": "hex"
             },
             "hovered": {
-              "$value": "{themes.dark.mixins.label.neutral.primary.hovered.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.primary.hovered.$value}",
               "$type": "color",
               "unit": "hex"
             },
             "pressed": {
-              "$value": "{themes.dark.mixins.label.neutral.primary.pressed.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.primary.pressed.$value}",
               "$type": "color",
               "unit": "hex"
             },
             "selected": {
-              "$value": "{themes.dark.mixins.label.accent.inversed.selected.$value}",
+              "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.primary.selected.$value}",
               "$type": "color",
               "unit": "hex"
             }
