@@ -3,19 +3,19 @@
     "primary": {
       "splitter": {
         "normal": {
-          "$value": "{themes.light.mixins.surface.accent.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.light.mixins.surface.accent.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "knob": {
         "normal": {
-          "$value": "{themes.light.mixins.surface.neutral.inversed.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.quaternary.normal.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -23,7 +23,7 @@
           }
         },
         "active": {
-          "$value": "{themes.light.mixins.surface.neutral.inversed.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.quaternary.selected.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {

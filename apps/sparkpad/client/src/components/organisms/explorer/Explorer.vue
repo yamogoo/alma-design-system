@@ -20,7 +20,7 @@ const onResetValue = (): void => {
     :variant="'default'"
     :size="'lg'"
     :mode="'neutral'"
-    :tone="'primary'"
+    :tone="'canvas'"
   >
     <Components.Atoms.SearchInput
       v-model.trim="searchingPhrase"

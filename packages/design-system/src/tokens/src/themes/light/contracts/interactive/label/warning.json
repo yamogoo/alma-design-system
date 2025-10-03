@@ -1,0 +1,162 @@
+{
+  "primary": {
+    "idle": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.primary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.primary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.primary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.primary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.primary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.primary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "secondary": {
+    "idle": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.secondary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.secondary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.secondary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.secondary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.secondary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.secondary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "tertiary": {
+    "idle": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.tertiary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.tertiary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.tertiary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.tertiary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.tertiary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.tertiary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "quaternary": {
+    "idle": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.quaternary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.quaternary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.quaternary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.quaternary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.quaternary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.quaternary.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "outline": {
+    "idle": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.outline.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.outline.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.outline.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.outline.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.outline.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "lightness({themes.light.contracts.semantic.warning.outline.label.$value}, {themes.light.abstracts.config.states.label.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

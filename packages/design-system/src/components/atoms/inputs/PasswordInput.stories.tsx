@@ -58,7 +58,7 @@ export const Playground: Story = {
   },
 };
 
-export const Colors: Story = {
+export const Sizes: Story = {
   args: {
     value: "",
     placeholder: "placeholder",
@@ -106,7 +106,7 @@ export const Colors: Story = {
   }),
 };
 
-export const Sizes: Story = {
+export const Colors: Story = {
   args: {
     value: "",
     placeholder: "placeholder",

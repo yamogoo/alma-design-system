@@ -1,12 +1,12 @@
-# AlmaProtoKit
+# Alma Design System
 
 ### R&D Playground for UI & System Design
 
-> AlmaProtoKit is my personal R&D project — an experimental design system platform (see [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml)) where I explore new approaches to UI development, design tokens, iconography, type design (font making), and cross-framework integration.
+> Alma Design System is my personal R&D project — an experimental design system platform (see [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml)) where I explore new approaches to UI development, design tokens, iconography, type design (font making), and cross-framework integration.
 
 This is not a production-ready library, but rather a prototype environment where I test ideas that may later evolve into Alma-UI, Alma-Tokens, Alma-Icons, or other parts of the Alma ecosystem.
 
-Think of AlmaProtoKit as a design-system R&D playground rather than a production framework.
+Think of Alma Design System as a design-system R&D playground rather than a production framework.
 
 [Design System (Storybook)](https://alma-proto-kit.netlify.app)
 
@@ -39,7 +39,7 @@ Components may ship with adapters, which are deliberately **thin wrappers** only
 
 **Modular Design Tokens System**
 
-> AlmaProtoKit includes a **structured token system** with support for JSON, YAML, and TypeScript.
+> Alma Design System includes a **structured token system** with support for JSON, YAML, and TypeScript.
 
 - **Source tokens** → `tokens/src`
 - **Build output** → `tokens/build`
@@ -47,7 +47,7 @@ Components may ship with adapters, which are deliberately **thin wrappers** only
 
 **🔗 Figma Integration**
 
-AlmaProtoKit provides **end-to-end integration** with **Figma**:
+Alma Design System provides **end-to-end integration** with **Figma**:
 
 - ✅ **Forward flow (Code → Figma)**: fully supported and recommended.
 - ♻️ **Backward flow (Figma → Code)**: possible for compatibility, but discouraged.
@@ -84,7 +84,7 @@ pnpm sparkpad:server:dev
 > ℹ️ **Startup**: first dev launch may take ~3-7s due to asset pre-processing and pre-bundling.  
 > **HMR is instantaneous** afterwards, so iteration speed remains high.
 
-_Then open http://localhost:3000 to see AlmaProtoKit in action._
+_Then open http://localhost:3000 to see Alma Design System in action._
 
 ## License
 

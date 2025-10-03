@@ -2,57 +2,57 @@
   "neutral": {
     "primary": {
       "root": {
-        "outline": "{themes.dark.mixins.outline.neutral.primary.normal.$value}",
+        "highlight": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "track": {
         "normal": {
-          "$value": "{themes.dark.mixins.surface.neutral.tertiary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.surface.neutral.tertiary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.mixins.surface.neutral.tertiary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "knob": {
         "normal": {
-          "$value": "{themes.dark.mixins.surface.neutral.inversed.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.surface.neutral.secondary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.mixins.surface.neutral.inversed.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "label": {
         "normal": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -62,57 +62,57 @@
   "accent": {
     "primary": {
       "root": {
-        "outline": "{themes.dark.mixins.outline.neutral.primary.normal.$value}",
+        "highlight": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
         "$type": "color",
         "$unit": "hex"
       },
       "track": {
         "normal": {
-          "$value": "{themes.dark.mixins.surface.accent.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.surface.accent.inversed.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.mixins.surface.accent.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "knob": {
         "normal": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "label": {
         "normal": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.mixins.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }

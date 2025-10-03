@@ -9,7 +9,7 @@ withDefaults(defineProps<FormWrapperProps>(), {
   variant: "default",
   size: "lg",
   mode: "neutral",
-  tone: "main",
+  tone: "canvas",
   bordered: false,
 });
 </script>

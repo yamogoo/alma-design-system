@@ -39,7 +39,12 @@ const computedClass = () => {
     ]"
   >
     <Logo data-testid="logo" />
-    <Text variant="body-2" :class="`${PREFIX}__label`">
+    <Text
+      variant="body-2"
+      :class="`${PREFIX}__label`"
+      :mode="'neutral'"
+      :tone="'primary'"
+    >
       {{ name }}
     </Text>
   </div>
@@ -75,7 +80,15 @@ $prefix: logo-with-descriptor;
         &.#{$prefix}_mode-#{$mode} {
           $states: get($themes, "light.#{$prefix}.neutral.primary.label");
 
-          &.#{$prefix} {
+          .#{$prefix}__label {
+            @include themify($themes) {
+              color: themed(
+                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+              );
+            }
+          }
+
+          /* &.#{$prefix} {
             @each $state in $states {
               &._state-#{$state} {
                 .#{$prefix}__label {
@@ -87,7 +100,7 @@ $prefix: logo-with-descriptor;
                 }
               }
             }
-          }
+          } */
         }
       }
     }

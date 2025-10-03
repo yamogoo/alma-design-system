@@ -44,7 +44,7 @@ const contentKey = computed(
     class="auth-form"
     variant="default"
     mode="neutral"
-    tone="primary"
+    tone="canvas"
     size="lg"
     bordered
     :content-key="contentKey"

@@ -11,7 +11,7 @@ import { Components } from "@alma/design-system";
       :variant="'default'"
       :size="'lg'"
       :mode="'neutral'"
-      :tone="'primary'"
+      :tone="'canvas'"
     >
       <Components.Atoms.Text :variant="'body-2'">
         {{ "Notes" }}

@@ -1,0 +1,164 @@
+{
+  "canvas": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.neutral.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.neutral.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.neutral.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.neutral.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.neutral.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "primary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.neutral.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.neutral.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.neutral.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.neutral.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.neutral.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "secondary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "tertiary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.neutral.base-up-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.neutral.base-up-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.neutral.base-up-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.neutral.base-up-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.neutral.base-up-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "quaternary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.neutral.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.neutral.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.neutral.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.neutral.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.neutral.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "outline": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.neutral.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "rgba({themes.light.contracts.rel.surface.neutral.base.$value}, 0)",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

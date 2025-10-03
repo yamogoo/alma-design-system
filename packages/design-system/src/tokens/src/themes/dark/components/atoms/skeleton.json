@@ -2,7 +2,7 @@
   "neutral": {
     "primary": {
       "backgroundIn": {
-        "$value": "rgba({themes.light.mixins.surface.neutral.tertiary.disabled.$value}, 0.25)",
+        "$value": "rgba({themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}, 0.25)",
         "$type": "color",
         "$unit": "hex",
         "$meta": {
@@ -10,7 +10,7 @@
         }
       },
       "backgroundOut": {
-        "$value": "rgba({themes.light.mixins.surface.neutral.tertiary.disabled.$value}, 0)",
+        "$value": "rgba({themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}, 0)",
         "$type": "color",
         "$unit": "hex",
         "$meta": {
@@ -22,7 +22,7 @@
   "accent": {
     "primary": {
       "backgroundIn": {
-        "$value": "rgba({themes.light.mixins.surface.accent.primary.normal.$value}, 0.25)",
+        "$value": "rgba({themes.dark.contracts.interactive.surface.accent.tertiary.disabled.$value}, 0.25)",
         "$type": "color",
         "$unit": "hex",
         "$meta": {
@@ -30,7 +30,7 @@
         }
       },
       "backgroundOut": {
-        "$value": "rgba({themes.light.mixins.surface.accent.primary.normal.$value}, 0)",
+        "$value": "rgba({themes.dark.contracts.interactive.surface.accent.tertiary.disabled.$value}, 0)",
         "$type": "color",
         "$unit": "hex",
         "$meta": {

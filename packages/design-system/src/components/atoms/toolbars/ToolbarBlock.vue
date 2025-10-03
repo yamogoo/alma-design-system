@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<ToolbarBlockProps>(), {
   variant: "block",
   size: "md",
   mode: "neutral",
-  tone: "primary",
+  tone: "canvas",
 });
 </script>
 

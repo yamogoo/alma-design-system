@@ -23,8 +23,6 @@ const id = useId();
       PREFIX,
       { [`${PREFIX}_variant-${variant}`]: !!variant },
       { [`${PREFIX}_size-${size}`]: !!size },
-      { [`${PREFIX}_mode-${mode}`]: !!mode },
-      { [`${PREFIX}_tone-${tone}`]: !!tone },
     ]"
     @submit.prevent
   >
@@ -79,36 +77,11 @@ $prefix: form;
   }
 }
 
-@mixin defineThemes(
-  $map: get($themes, "light.components.molecules.#{$prefix}")
-) {
-  @each $mode, $modes in $map {
-    @each $tone, $val in $modes {
-      &_mode-#{$mode} {
-        &.#{$prefix}_tone-#{$tone} {
-          @include themify($themes) {
-            background-color: themed(
-              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.background"
-            );
-            @include themify($themes) {
-              box-shadow: 0px 4px 32px
-                themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.shadow"
-                );
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 .#{$prefix} {
   width: 100%;
   @extend %base-transition;
 
   @include defineSizes();
-  @include defineThemes();
 
   &__container {
     @include transition(height, 250ms, ease-in-out);

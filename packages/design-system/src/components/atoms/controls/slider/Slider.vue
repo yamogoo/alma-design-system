@@ -314,7 +314,7 @@ $prefix: slider;
             @include themify($themes) {
               outline: get($tokens, "outline") solid
                 themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.outline"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.highlight"
                 );
             }
           }

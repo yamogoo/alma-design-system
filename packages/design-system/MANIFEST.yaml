@@ -1,8 +1,8 @@
-# AlmaProtoKit — MANIFEST.yaml
+# Alma Design System — MANIFEST.yaml
 # Prototype UI Kit & design system infrastructure
 
 project:
-  name: AlmaProtoKit
+  name: Alma Design System
   type: design-system
   description: >
     Experimental design system platform unifying components, tokens, fonts, icons,
@@ -120,5 +120,5 @@ summary:
     - utils
     - figma integration
   philosophy: >
-    AlmaProtoKit is not a production library but an experimental R&D platform,
+    Alma Design System is not a production library but an experimental R&D platform,
     where tokens and code are the single source of truth.

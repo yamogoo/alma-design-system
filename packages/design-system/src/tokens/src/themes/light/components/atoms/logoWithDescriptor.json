@@ -3,17 +3,17 @@
     "primary": {
       "label": {
         "normal": {
-          "$value": "{themes.light.mixins.label.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.mixins.label.neutral.primary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.primary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.light.mixins.label.neutral.primary.pressed.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.primary.pressed.$value}",
           "$type": "color",
           "$unit": "hex"
         }

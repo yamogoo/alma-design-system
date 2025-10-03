@@ -3,12 +3,12 @@
     "item": {
       "label": {
         "normal": {
-          "$value": "{themes.light.mixins.label.neutral.secondary.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.primary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.light.mixins.label.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }

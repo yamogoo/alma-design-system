@@ -4,59 +4,59 @@
       "root": {
         "background": {
           "idle": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.accent.primary.idle.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.accent.primary.idle.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "normal": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.disabled.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.hovered.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "focused": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.hovered.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "error": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.negative.primary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.negative.primary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }
         },
         "border": {
           "idle": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.stroke.neutral.secondary.idle.$value}",
+            "$value": "{themes.dark.contracts.interactive.stroke.neutral.secondary.idle.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "normal": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.stroke.neutral.secondary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.stroke.neutral.secondary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.stroke.neutral.secondary.disabled.$value}",
+            "$value": "{themes.dark.contracts.interactive.stroke.neutral.secondary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.stroke.neutral.secondary.hovered.$value}",
+            "$value": "{themes.dark.contracts.interactive.stroke.neutral.secondary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "highlight": {
-            "$value": "{themes.dark.contracts.mixins.common.static.highlight.accent.normal.$value}",
+            "$value": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -64,32 +64,32 @@
       },
       "label": {
         "idle": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.secondary.idle.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.idle.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "normal": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.secondary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.secondary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "focused": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.neutral.secondary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "error": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.label.negative.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.negative.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -101,59 +101,59 @@
       "root": {
         "background": {
           "idle": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.idle.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.idle.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "normal": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.disabled.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.hovered.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "focused": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.hovered.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "error": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }
         },
         "border": {
           "idle": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.stroke.accent.secondary.idle.$value}",
+            "$value": "{themes.dark.contracts.interactive.stroke.accent.secondary.idle.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "normal": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.stroke.accent.secondary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.stroke.accent.secondary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.stroke.accent.secondary.disabled.$value}",
+            "$value": "{themes.dark.contracts.interactive.stroke.accent.secondary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.dark.contracts.mixins.common.interactive.stroke.accent.secondary.hovered.$value}",
+            "$value": "{themes.dark.contracts.interactive.stroke.accent.secondary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "highlight": {
-            "$value": "{themes.dark.contracts.mixins.common.static.highlight.accent.normal.$value}",
+            "$value": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -161,27 +161,27 @@
       },
       "label": {
         "idle": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.accent.secondary.idle.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.idle.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "normal": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.accent.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.accent.secondary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.disabled.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "focused": {
-          "$value": "{themes.dark.contracts.mixins.common.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },

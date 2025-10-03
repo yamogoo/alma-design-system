@@ -1,0 +1,164 @@
+{
+  "canvas": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.accent.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.accent.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.accent.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.accent.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.accent.base-down-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "primary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.accent.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.accent.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.accent.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.accent.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.accent.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "secondary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.accent.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.accent.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.accent.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.accent.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.accent.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "tertiary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "quaternary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.accent.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.accent.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.accent.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.accent.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.accent.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "outline": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "rgba({themes.light.contracts.rel.surface.accent.base.$value}, 0)",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

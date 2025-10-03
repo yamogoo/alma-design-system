@@ -41,6 +41,5 @@ import { EditorView, SidebarMenu } from "@/components/organisms";
 .editor-main-page {
   box-sizing: border-box;
   position: relative;
-  padding: 12px 4px;
 }
 </style>

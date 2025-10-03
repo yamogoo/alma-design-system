@@ -28,7 +28,7 @@ const onChangeTheme = () => toggleTheme();
       :is-active="!isLightTheme"
       :size="'sm'"
       :mode="'neutral'"
-      :tone="'disabled'"
+      :tone="'primary'"
     ></Components.Atoms.AnimatedIcon>
     <Components.Atoms.Switch
       data-testid="theme-switch"
