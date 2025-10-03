@@ -3,12 +3,12 @@
     "primary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.mixins.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.dark.mixins.divider.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.border.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -17,12 +17,12 @@
     "secondary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.mixins.surface.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.dark.mixins.divider.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -31,12 +31,12 @@
     "ghost": {
       "root": {
         "background": {
-          "$value": "rgba({themes.dark.mixins.surface.neutral.primary.normal.$value}, 0)",
+          "$value": "rgba({themes.dark.contracts.mixins.common.interactive.surface.neutral.primary.normal.$value}, 0)",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.dark.mixins.divider.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.border.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -47,12 +47,12 @@
     "primary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.mixins.surface.accent.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.surface.accent.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.dark.mixins.divider.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.border.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -61,12 +61,12 @@
     "secondary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.mixins.surface.accent.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.surface.accent.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.dark.mixins.divider.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.border.neutral.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -75,12 +75,12 @@
     "ghost": {
       "root": {
         "background": {
-          "$value": "rgba({themes.dark.mixins.surface.accent.primary.normal.$value}, 0)",
+          "$value": "rgba({themes.dark.contracts.mixins.common.interactive.surface.accent.primary.normal.$value}, 0)",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.dark.mixins.divider.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.mixins.common.interactive.surface.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         }

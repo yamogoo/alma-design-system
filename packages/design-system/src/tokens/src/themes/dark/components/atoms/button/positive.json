@@ -44,7 +44,7 @@
           "$type": "color",
           "$unit": "hex"
         },
-        "outline": {
+        "highlight": {
           "$value": "{themes.dark.contracts.mixins.common.static.highlight.accent.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -119,7 +119,7 @@
           "$type": "color",
           "$unit": "hex"
         },
-        "outline": {
+        "highlight": {
           "$value": "{themes.dark.contracts.mixins.common.static.highlight.accent.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -194,7 +194,7 @@
           "$type": "color",
           "$unit": "hex"
         },
-        "outline": {
+        "highlight": {
           "$value": "{themes.dark.contracts.mixins.common.static.highlight.accent.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -269,7 +269,7 @@
           "$type": "color",
           "$unit": "hex"
         },
-        "outline": {
+        "highlight": {
           "$value": "{themes.dark.contracts.mixins.common.static.highlight.accent.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -344,7 +344,7 @@
           "$type": "color",
           "$unit": "hex"
         },
-        "outline": {
+        "highlight": {
           "$value": "{themes.dark.contracts.mixins.common.static.highlight.accent.normal.$value}",
           "$type": "color",
           "$unit": "hex"

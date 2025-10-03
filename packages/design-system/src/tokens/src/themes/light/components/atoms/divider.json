@@ -3,7 +3,7 @@
     "primary": {
       "root": {
         "border": {
-          "$value": "{themes.light.mixins.border.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.mixins.common.interactive.border.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {
@@ -15,7 +15,7 @@
     "secondary": {
       "root": {
         "border": {
-          "$value": "{themes.light.mixins.border.neutral.secondary.normal.$value}",
+          "$value": "{themes.light.contracts.mixins.common.interactive.border.neutral.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex",
           "$meta": {

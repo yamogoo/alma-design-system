@@ -413,7 +413,7 @@ $themes:(
   disabled: #042167,
   hovered: #031c57,
   pressed: #031c59,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -436,7 +436,7 @@ $themes:(
   disabled: #042167,
   hovered: #031c57,
   pressed: #031c59,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -459,7 +459,7 @@ $themes:(
   disabled: #3f6df9,
   hovered: #114af7,
   pressed: #1850f7,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -482,7 +482,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #ffffff,
   pressed: #ffffff,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -505,7 +505,7 @@ $themes:(
   disabled: #3f6df9,
   hovered: #114af7,
   pressed: #1850f7,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -530,7 +530,7 @@ $themes:(
   disabled: #821e1c,
   hovered: #6e1917,
   pressed: #711a18,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -553,7 +553,7 @@ $themes:(
   disabled: #821e1c,
   hovered: #6e1917,
   pressed: #711a18,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -576,7 +576,7 @@ $themes:(
   disabled: #de524e,
   hovered: #d62d28,
   pressed: #d8322e,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -599,7 +599,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #ffffff,
   pressed: #ffffff,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -622,7 +622,7 @@ $themes:(
   disabled: #de524e,
   hovered: #d62d28,
   pressed: #d8322e,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -647,7 +647,7 @@ $themes:(
   disabled: #364047,
   hovered: #2e363c,
   pressed: #2f383e,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -670,7 +670,7 @@ $themes:(
   disabled: #4b5862,
   hovered: #404a53,
   pressed: #414c55,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -693,7 +693,7 @@ $themes:(
   disabled: #9dacb8,
   hovered: #7f93a2,
   pressed: #8497a5,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -716,7 +716,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #ffffff,
   pressed: #ffffff,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -739,7 +739,7 @@ $themes:(
   disabled: #4b5862,
   hovered: #404a53,
   pressed: #414c55,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -764,7 +764,7 @@ $themes:(
   disabled: #14741d,
   hovered: #116318,
   pressed: #116519,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -787,7 +787,7 @@ $themes:(
   disabled: #14741d,
   hovered: #116318,
   pressed: #116519,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -810,7 +810,7 @@ $themes:(
   disabled: #38dd41,
   hovered: #22c92b,
   pressed: #23cf2d,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -833,7 +833,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #e9ffec,
   pressed: #f6fff8,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -856,7 +856,7 @@ $themes:(
   disabled: #38dd41,
   hovered: #22c92b,
   pressed: #23cf2d,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -881,7 +881,7 @@ $themes:(
   disabled: #b37717,
   hovered: #986513,
   pressed: #9c6814,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -904,7 +904,7 @@ $themes:(
   disabled: #b37717,
   hovered: #986513,
   pressed: #9c6814,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -927,7 +927,7 @@ $themes:(
   disabled: #fec264,
   hovered: #fdad2f,
   pressed: #fdb037,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -950,7 +950,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #ffffff,
   pressed: #ffffff,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -973,7 +973,7 @@ $themes:(
   disabled: #fec264,
   hovered: #fdad2f,
   pressed: #fdb037,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -1025,12 +1025,12 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  border: #23272a
+  border: #3b4248
 )
 ),
   secondary: (
   root: (
-  border: #333a40
+  border: #4c565f
 )
 )
 )
@@ -1039,40 +1039,40 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #15191c,
-  divider: #7f8488
+  background: #242b31,
+  divider: #3b4248
 )
 ),
   secondary: (
   root: (
-  background: #242b31,
-  divider: #929ba3
+  background: #343e46,
+  divider: #343e46
 )
 ),
   ghost: (
   root: (
-  background: #15191c00,
-  divider: #7f8488
+  background: #242b3100,
+  divider: #3b4248
 )
 )
 ),
   accent: (
   primary: (
   root: (
-  background: #01259d,
-  divider: #7f8488
+  background: #001149,
+  divider: #3b4248
 )
 ),
   secondary: (
   root: (
-  background: #001a6d,
-  divider: #929ba3
+  background: #011f85,
+  divider: #4c565f
 )
 ),
   ghost: (
   root: (
-  background: #01259d00,
-  divider: #7f8488
+  background: #00114900,
+  divider: #242b31
 )
 )
 )
@@ -1082,28 +1082,28 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #242b31,
-  normal: #242b31,
-  disabled: #424a51,
-  hovered: #2b3339,
-  focused: #2b3339,
-  error: #350808
+  idle: #001149,
+  normal: #343e46,
+  disabled: #414d57,
+  hovered: #37424a,
+  focused: #37424a,
+  error: #5f0e0e
 ),
   border: (
-  idle: #242b31,
-  normal: #242b31,
-  disabled: #424a51,
-  hovered: #2b3339,
-  outline: #013cfe
+  idle: #3c464e,
+  normal: #3c464e,
+  disabled: #4b5862,
+  hovered: #404a53,
+  highlight: #013cfe
 )
 ),
   label: (
-  idle: #637584,
-  normal: #2f383f,
-  disabled: #737d85,
-  hovered: #3e484f,
-  focused: #3e484f,
-  error: #e96b6b
+  idle: #ced5db,
+  normal: #ced5db,
+  disabled: #ffffff,
+  hovered: #dde2e6,
+  focused: #dde2e6,
+  error: #de2121
 )
 )
 ),
@@ -1111,27 +1111,27 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #000e3c,
-  normal: #000e3c,
-  disabled: #162e5e,
-  hovered: #031644,
-  focused: #031644,
-  error: #350808
+  idle: #343e46,
+  normal: #343e46,
+  disabled: #414d57,
+  hovered: #37424a,
+  focused: #37424a,
+  error: #343e46
 ),
   border: (
-  idle: #000e3c,
-  normal: #000e3c,
-  disabled: #162e5e,
-  hovered: #031644,
-  outline: #013cfe
+  idle: #05298f,
+  normal: #05298f,
+  disabled: #0633b3,
+  hovered: #052b98,
+  highlight: #013cfe
 )
 ),
   label: (
-  idle: #6286fe,
-  normal: #6286fe,
-  disabled: #acd8ff,
-  hovered: #7399ff,
-  focused: #7399ff,
+  idle: #dbe3ff,
+  normal: #dbe3ff,
+  disabled: #ffffff,
+  hovered: #f7f9ff,
+  focused: #f7f9ff,
   error: #e96b6b
 )
 )
@@ -4523,7 +4523,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #dce2f9,
   pressed: #e7ebfb,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4546,7 +4546,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #dce2f9,
   pressed: #e7ebfb,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4569,7 +4569,7 @@ $themes:(
   disabled: #3158ff,
   hovered: #0332ff,
   pressed: #0a38ff,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4592,7 +4592,7 @@ $themes:(
   disabled: #000741,
   hovered: #000637,
   pressed: #000739,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4615,7 +4615,7 @@ $themes:(
   disabled: #3158ff,
   hovered: #0332ff,
   pressed: #0a38ff,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4640,7 +4640,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #f3d4d4,
   pressed: #f6dede,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4663,7 +4663,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #f3d4d4,
   pressed: #f6dede,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4686,7 +4686,7 @@ $themes:(
   disabled: #e15f62,
   hovered: #d9363a,
   pressed: #db3c40,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4709,7 +4709,7 @@ $themes:(
   disabled: #510205,
   hovered: #450204,
   pressed: #470204,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4732,7 +4732,7 @@ $themes:(
   disabled: #e15f62,
   hovered: #d9363a,
   pressed: #db3c40,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4757,7 +4757,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #e8eaec,
   pressed: #eff1f2,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4780,7 +4780,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #d9dde1,
   pressed: #e0e4e7,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4803,7 +4803,7 @@ $themes:(
   disabled: #a9b3bd,
   hovered: #8a99a5,
   pressed: #8f9da9,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4826,7 +4826,7 @@ $themes:(
   disabled: #0d1011,
   hovered: #0b0e0f,
   pressed: #0b0e0f,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4849,7 +4849,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #d9dde1,
   pressed: #e0e4e7,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4874,7 +4874,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #c3f7ca,
   pressed: #cef8d3,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4897,7 +4897,7 @@ $themes:(
   disabled: #ffffff,
   hovered: #c3f7ca,
   pressed: #cef8d3,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4920,7 +4920,7 @@ $themes:(
   disabled: #00d400,
   hovered: #00b400,
   pressed: #00b900,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4943,7 +4943,7 @@ $themes:(
   disabled: #002401,
   hovered: #001f01,
   pressed: #002001,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4966,7 +4966,7 @@ $themes:(
   disabled: #00d400,
   hovered: #00b400,
   pressed: #00b900,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -4991,7 +4991,7 @@ $themes:(
   disabled: #fdf8ee,
   hovered: #f7dbaa,
   pressed: #f8e0b4,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -5014,7 +5014,7 @@ $themes:(
   disabled: #fdf8ee,
   hovered: #f7dbaa,
   pressed: #f8e0b4,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -5037,7 +5037,7 @@ $themes:(
   disabled: #ffa815,
   hovered: #ea9300,
   pressed: #f19800,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -5060,7 +5060,7 @@ $themes:(
   disabled: #513100,
   hovered: #452900,
   pressed: #472b00,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -5083,7 +5083,7 @@ $themes:(
   disabled: #ffa815,
   hovered: #ea9300,
   pressed: #f19800,
-  outline: #013cfe
+  highlight: #013cfe
 )
 ),
   label: (
@@ -5135,12 +5135,12 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  border: #dddfe1
+  border: #c6cacd
 )
 ),
   secondary: (
   root: (
-  border: #c2c8cc
+  border: #b8bec3
 )
 )
 )
@@ -5149,40 +5149,40 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #f1f3f5,
-  divider: #feffff
+  background: #e3e7ea,
+  divider: #c6cacd
 )
 ),
   secondary: (
   root: (
   background: #d5dbe0,
-  divider: #fbffff
+  divider: #d5dbe0
 )
 ),
   ghost: (
   root: (
-  background: #f1f3f500,
-  divider: #feffff
+  background: #e3e7ea00,
+  divider: #c6cacd
 )
 )
 ),
   accent: (
   primary: (
   root: (
-  background: #0130ce,
-  divider: #feffff
+  background: #cfdaff,
+  divider: #c6cacd
 )
 ),
   secondary: (
   root: (
-  background: #01259d,
-  divider: #fbffff
+  background: #b6c7ff,
+  divider: #b8bec3
 )
 ),
   ghost: (
   root: (
-  background: #0130ce00,
-  divider: #feffff
+  background: #cfdaff00,
+  divider: #e3e7ea
 )
 )
 )
@@ -5192,28 +5192,28 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #e9eff4,
+  idle: #cfdaff,
   normal: #d5dbe0,
-  disabled: #faffff,
-  hovered: #dfe5ea,
-  focused: #dfe5ea,
-  error: #f4b5b5
+  disabled: #ffffff,
+  hovered: #e4e8eb,
+  focused: #e4e8eb,
+  error: #f7caca
 ),
   border: (
-  idle: #d5dbe0,
-  normal: #d5dbe0,
-  disabled: #faffff,
-  hovered: #dfe5ea,
-  outline: #013cfe
+  idle: #cbd1d6,
+  normal: #cbd1d6,
+  disabled: #ffffff,
+  hovered: #d9dde1,
+  highlight: #013cfe
 )
 ),
   label: (
-  idle: #637584,
-  normal: #2f383f,
-  disabled: #737d85,
-  hovered: #3e484f,
-  focused: #3e484f,
-  error: #941616
+  idle: #43505a,
+  normal: #43505a,
+  disabled: #546471,
+  hovered: #47555f,
+  focused: #47555f,
+  error: #e54b4b
 )
 )
 ),
@@ -5221,28 +5221,28 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #bdd1ff,
-  normal: #aabeff,
-  disabled: #d0e5ff,
-  hovered: #b3c8ff,
-  focused: #b3c8ff,
-  error: #f4b5b5
+  idle: #d5dbe0,
+  normal: #d5dbe0,
+  disabled: #ffffff,
+  hovered: #e4e8eb,
+  focused: #e4e8eb,
+  error: #d5dbe0
 ),
   border: (
-  idle: #bdd1ff,
-  normal: #aabeff,
-  disabled: #d0e5ff,
-  hovered: #b3c8ff,
-  outline: #013cfe
+  idle: #adbdf5,
+  normal: #adbdf5,
+  disabled: #ffffff,
+  hovered: #c3cff8,
+  highlight: #013cfe
 )
 ),
   label: (
-  idle: #0130ce,
-  normal: #0130ce,
-  disabled: #4688ff,
-  hovered: #1047e3,
-  focused: #1047e3,
-  error: #941616
+  idle: #3161fe,
+  normal: #3161fe,
+  disabled: #7c9bfe,
+  hovered: #436ffe,
+  focused: #436ffe,
+  error: #e96b6b
 )
 )
 )
