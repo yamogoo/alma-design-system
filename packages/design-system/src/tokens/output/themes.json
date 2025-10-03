@@ -2804,28 +2804,22 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#15191c",
+                    "$value": "#242b31",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "tooltip"
-                    }
+                    "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#23272a",
+                    "$value": "#3b4248",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "tooltip"
-                    }
+                    "$unit": "hex"
                   }
                 }
               },
               "label": {
                 "normal": {
-                  "$value": "#2f383f",
+                  "$value": "#97a5b1",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -2835,7 +2829,7 @@
               },
               "icon": {
                 "normal": {
-                  "$value": "#586976",
+                  "$value": "#7b8e9c",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -2848,28 +2842,22 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#ced5db",
+                    "$value": "#f1f3f5",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "tooltip"
-                    }
+                    "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#e2e9ef",
+                    "$value": "#fdffff",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "tooltip"
-                    }
+                    "$unit": "hex"
                   }
                 }
               },
               "label": {
                 "normal": {
-                  "$value": "#dce1e5",
+                  "$value": "#101315",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -2879,7 +2867,7 @@
               },
               "icon": {
                 "normal": {
-                  "$value": "#dce1e5",
+                  "$value": "#eaedef",
                   "$type": "color",
                   "$unit": "hex",
                   "$meta": {
@@ -4491,14 +4479,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#15191c",
+                    "$value": "#242b31",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#23272a",
+                    "$value": "#3b4248",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4511,14 +4499,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#01259d",
+                    "$value": "#001149",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#0e3ab1",
+                    "$value": "#001149",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4533,22 +4521,16 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#15191c",
+                    "$value": "#242b31",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "main header"
-                    }
+                    "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#23272a",
+                    "$value": "#3b4248",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "main header"
-                    }
+                    "$unit": "hex"
                   }
                 }
               }
@@ -4559,14 +4541,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#01259d",
+                    "$value": "#242b31",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#0e3ab1",
+                    "$value": "#3b4248",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4581,14 +4563,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#15191c",
+                    "$value": "#242b31",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#23272a",
+                    "$value": "#3b4248",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4601,14 +4583,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#01259d",
+                    "$value": "#0f2a63",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#0e3ab1",
+                    "$value": "#0f2a63",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -16392,43 +16374,31 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#e3e7ea",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "tooltip"
-                    }
+                    "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#dddfe1",
+                    "$value": "#c6cacd",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "tooltip"
-                    }
+                    "$unit": "hex"
                   }
                 }
               },
               "label": {
                 "normal": {
-                  "$value": "#2f383f",
+                  "$value": "#3e4a53",
                   "$type": "color",
-                  "$unit": "hex",
-                  "$meta": {
-                    "category": "tooltip"
-                  }
+                  "$unit": "hex"
                 }
               },
               "icon": {
                 "normal": {
-                  "$value": "#586976",
+                  "$value": "#637584",
                   "$type": "color",
-                  "$unit": "hex",
-                  "$meta": {
-                    "category": "tooltip"
-                  }
+                  "$unit": "hex"
                 }
               }
             },
@@ -16438,41 +16408,29 @@
                   "normal": {
                     "$value": "#101315",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "tooltip"
-                    }
+                    "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#050708",
+                    "$value": "#020304",
                     "$type": "color",
-                    "$unit": "hex",
-                    "$meta": {
-                      "category": "tooltip"
-                    }
+                    "$unit": "hex"
                   }
                 }
               },
               "label": {
                 "normal": {
-                  "$value": "#dce1e5",
+                  "$value": "#ced5db",
                   "$type": "color",
-                  "$unit": "hex",
-                  "$meta": {
-                    "category": "tooltip"
-                  }
+                  "$unit": "hex"
                 }
               },
               "icon": {
                 "normal": {
-                  "$value": "#dce1e5",
+                  "$value": "#101315",
                   "$type": "color",
-                  "$unit": "hex",
-                  "$meta": {
-                    "category": "tooltip"
-                  }
+                  "$unit": "hex"
                 }
               }
             }
@@ -18079,14 +18037,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#e3e7ea",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#dddfe1",
+                    "$value": "#c6cacd",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -18099,14 +18057,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#0130ce",
+                    "$value": "#cfdaff",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#0011b9",
+                    "$value": "#cfdaff",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -18121,14 +18079,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#e3e7ea",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#dddfe1",
+                    "$value": "#c6cacd",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -18141,14 +18099,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#0130ce",
+                    "$value": "#e3e7ea",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#0011b9",
+                    "$value": "#c6cacd",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -18163,14 +18121,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#e3e7ea",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#dddfe1",
+                    "$value": "#c6cacd",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -18183,14 +18141,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#0130ce",
+                    "$value": "#b2bde1",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#0011b9",
+                    "$value": "#b2bde1",
                     "$type": "color",
                     "$unit": "hex"
                   }
