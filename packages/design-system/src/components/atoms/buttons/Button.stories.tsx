@@ -168,38 +168,36 @@ export const Colors: Story = {
           <PageHeader
             title={"Button colors"}
             description={
-              "Shows how mode and tone combinations affect the button’s appearance for each variant."
+              "Shows how mode and tone combinations affect the button's appearance for each variant."
             }
           ></PageHeader>
-          <StoryGrid columns={4}>
-            {buttonVariants.map((variant) =>
-              buttonModes.map((mode) =>
-                buttonTones.map((tone) => {
-                  const title = `${variant} / ${tone} / ${mode}`;
-                  const label = variant === "default" ? `Button` : undefined;
-                  return (
-                    <InfoBlock
-                      key={`${variant}-${mode}-${tone}`}
-                      title={title}
-                      align={"center"}
-                      orientation={"vertical"}
-                    >
-                      <Button
-                        {...args}
-                        variant={variant}
-                        mode={mode}
-                        tone={tone}
-                        size={"md"}
-                        stretch="auto"
-                        label={label}
-                        prependIconName={"check"}
-                        prependIconStyle={"outline"}
-                        prependIconWeight={"400"}
-                      />
-                    </InfoBlock>
-                  );
-                })
-              )
+          <StoryGrid columns={5}>
+            {buttonModes.map((mode) =>
+              buttonTones.map((tone) => {
+                const title = `${tone} / ${mode}`;
+                const label = "Button";
+                return (
+                  <InfoBlock
+                    key={`${mode}-${tone}`}
+                    title={title}
+                    align={"center"}
+                    orientation={"vertical"}
+                  >
+                    <Button
+                      {...args}
+                      variant={"default"}
+                      mode={mode}
+                      tone={tone}
+                      size={"md"}
+                      stretch="auto"
+                      label={label}
+                      prependIconName={"check"}
+                      prependIconStyle={"outline"}
+                      prependIconWeight={"400"}
+                    />
+                  </InfoBlock>
+                );
+              })
             )}
           </StoryGrid>
         </>

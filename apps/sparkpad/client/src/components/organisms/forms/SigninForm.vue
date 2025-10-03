@@ -126,7 +126,7 @@ export interface Props {
     <template #footer>
       <Components.Atoms.ActionButton
         :mode="'accent'"
-        :tone="'primary'"
+        :tone="'tertiary'"
         :size="'md'"
         :stretch="'fill'"
         :label="$t.auth.signin.form.register"

@@ -1,0 +1,9 @@
+{
+  "accent": {
+    "normal": {
+      "$value": "{themes.light.contracts.rel.highlight.accent.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

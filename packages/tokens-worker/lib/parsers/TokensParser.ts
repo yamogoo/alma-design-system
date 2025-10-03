@@ -1057,6 +1057,21 @@ export class TokensParser {
         out = base.darken(amt);
         break;
       }
+      case 'lightness': {
+        // lightness(color, amount)
+        // amount > 0 -> lighten(amount), amount < 0 -> darken(|amount|)
+        if (args.length !== 2) return null;
+
+        const base = resolveMaybeFunction(args[0]);
+        if (!base) return null;
+
+        // supports "0.1" or "10%" etc.
+        const amt = this.parseAmount(args[1]);
+        if (amt === 0) return base;
+
+        // use Color.js lighten/darken (HSL-based), to keep parity with existing funcs
+        return amt > 0 ? base.lighten(amt) : base.darken(-amt);
+      }
       case 'saturate': {
         if (args.length !== 2) return null;
         const base = resolveMaybeFunction(args[0]);

@@ -125,7 +125,7 @@ export interface Props {
       >
         <Components.Atoms.ActionButton
           :mode="'accent'"
-          :tone="'primary'"
+          :tone="'tertiary'"
           :size="'md'"
           :stretch="'fill'"
           :label="$t.auth.login.form.login"

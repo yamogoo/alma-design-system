@@ -1,0 +1,137 @@
+{
+  "primary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.warning.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.warning.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.warning.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.warning.base-down-2.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "secondary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.warning.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.warning.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.warning.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.warning.base-down-1.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "tertiary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "quaternary": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.warning.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.warning.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.warning.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "{themes.light.contracts.rel.surface.warning.base-up-3.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "outline": {
+    "border": {
+      "$value": "{themes.light.contracts.rel.border.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "stroke": {
+      "$value": "{themes.light.contracts.rel.stroke.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "label": {
+      "$value": "{themes.light.contracts.rel.label.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "onSurface": {
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base.$value}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "surface": {
+      "$value": "rgba({themes.light.contracts.rel.surface.warning.base.$value}, 0)",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}
