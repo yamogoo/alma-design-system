@@ -1453,28 +1453,28 @@ $themes:(
   primary: (
   current-value: (
   label: (
-  normal: #2f383f,
-  hovered: #3e484f,
-  expanded: #737d85,
-  expanded-hovered: #2f383f
+  normal: #b9c3cb,
+  hovered: #c6ced5,
+  expanded: #f1f3f4,
+  expanded-hovered: #b9c3cb
 ),
   icon: (
-  normal: #2f383f,
-  hovered: #3e484f,
-  expanded: #737d85,
-  expanded-hovered: #2f383f
+  normal: #b9c3cb,
+  hovered: #c6ced5,
+  expanded: #f1f3f4,
+  expanded-hovered: #b9c3cb
 ),
   background: (
-  normal: #f1f3f5,
-  hovered: #fbfdff,
-  expanded: #fdffff,
-  expanded-hovered: #f1f3f5
+  normal: #242b31,
+  hovered: #262e34,
+  expanded: #2d363d,
+  expanded-hovered: #242b31
 )
 ),
   options: (
   background: (
-  normal: #f1f3f5,
-  hovered: #fbfdff
+  normal: #242b31,
+  hovered: #242b31
 )
 )
 )
@@ -1483,24 +1483,24 @@ $themes:(
   form: (
   neutral: (
   primary: (
-  background: #15191c,
-  shadow: #586976
+  background: #242b31,
+  shadow: #242b31
 ),
   secondary: (
-  background: #242b31,
-  shadow: #586976
+  background: #343e46,
+  shadow: #242b31
 )
 )
 ),
   form-wrapper: (
   neutral: (
   primary: (
-  background: #15191c,
-  border: #23272a
+  background: #242b31,
+  border: #3b4248
 ),
   secondary: (
-  background: #242b31,
-  border: #333a40
+  background: #343e46,
+  border: #4c565f
 )
 )
 ),
@@ -1573,21 +1573,21 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #15191c
+  background: #242b31
 ),
-  title: #2f383f,
-  description: #2f383f,
+  title: #c7cfd5,
+  description: #c7cfd5,
   close-button: (
   tone: neutral,
   mode: secondary
 )
 ),
-  inversed: (
+  quaternary: (
   root: (
-  background: #ced5db
+  background: #f1f3f5
 ),
-  title: #dce1e5,
-  description: #dce1e5,
+  title: #101315,
+  description: #101315,
   close-button: (
   tone: neutral,
   mode: primary
@@ -1597,21 +1597,21 @@ $themes:(
   accent: (
   primary: (
   root: (
-  background: #01259d
+  background: #001149
 ),
-  title: #01259d,
-  description: #01259d,
+  title: #b6c7ff,
+  description: #b6c7ff,
   close-button: (
   tone: neutral,
   mode: secondary
 )
 ),
-  inversed: (
+  quaternary: (
   root: (
-  background: #000e3c
+  background: #dbe3ff
 ),
-  title: #6286fe,
-  description: #6286fe,
+  title: #3161fe,
+  description: #3161fe,
   close-button: (
   tone: neutral,
   mode: secondary
@@ -5607,28 +5607,28 @@ $themes:(
   primary: (
   current-value: (
   label: (
-  normal: #2f383f,
-  hovered: #3e484f,
-  expanded: #737d85,
-  expanded-hovered: #2f383f
+  normal: #2a3138,
+  hovered: #2d343b,
+  expanded: #353d46,
+  expanded-hovered: #2a3138
 ),
   icon: (
-  normal: #2f383f,
-  hovered: #3e484f,
-  expanded: #737d85,
-  expanded-hovered: #2f383f
+  normal: #2a3138,
+  hovered: #2d343b,
+  expanded: #353d46,
+  expanded-hovered: #2a3138
 ),
   background: (
-  normal: #f1f3f5,
-  hovered: #fbfdff,
-  expanded: #fdffff,
-  expanded-hovered: #f1f3f5
+  normal: #e3e7ea,
+  hovered: #f3f5f6,
+  expanded: #ffffff,
+  expanded-hovered: #e3e7ea
 )
 ),
   options: (
   background: (
-  normal: #f1f3f5,
-  hovered: #fbfdff
+  normal: #e3e7ea,
+  hovered: #e3e7ea
 )
 )
 )
@@ -5637,24 +5637,24 @@ $themes:(
   form: (
   neutral: (
   primary: (
-  background: #f1f3f5,
-  shadow: #060606
+  background: #e3e7ea,
+  shadow: #e3e7ea
 ),
   secondary: (
   background: #d5dbe0,
-  shadow: #060606
+  shadow: #e3e7ea
 )
 )
 ),
   form-wrapper: (
   neutral: (
   primary: (
-  background: #f1f3f5,
-  border: #dddfe1
+  background: #e3e7ea,
+  border: #c6cacd
 ),
   secondary: (
   background: #d5dbe0,
-  border: #c2c8cc
+  border: #b8bec3
 )
 )
 ),
@@ -5727,21 +5727,21 @@ $themes:(
   neutral: (
   primary: (
   root: (
-  background: #f1f3f5
+  background: #e3e7ea
 ),
-  title: #2f383f,
-  description: #2f383f,
+  title: #637584,
+  description: #637584,
   close-button: (
   tone: neutral,
   mode: secondary
 )
 ),
-  inversed: (
+  quaternary: (
   root: (
   background: #101315
 ),
-  title: #dce1e5,
-  description: #dce1e5,
+  title: #ced5db,
+  description: #ced5db,
   close-button: (
   tone: neutral,
   mode: primary
@@ -5751,21 +5751,21 @@ $themes:(
   accent: (
   primary: (
   root: (
-  background: #0130ce
+  background: #cfdaff
 ),
-  title: #c3d1ff,
-  description: #c3d1ff,
+  title: #4a74fe,
+  description: #4a74fe,
   close-button: (
   tone: neutral,
   mode: secondary
 )
 ),
-  inversed: (
+  quaternary: (
   root: (
-  background: #aabeff
+  background: #000e3c
 ),
-  title: #0130ce,
-  description: #0130ce,
+  title: #b6c7ff,
+  description: #b6c7ff,
   close-button: (
   tone: neutral,
   mode: secondary

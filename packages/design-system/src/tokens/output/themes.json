@@ -3941,66 +3941,66 @@
               "currentValue": {
                 "label": {
                   "normal": {
-                    "$value": "#2f383f",
+                    "$value": "#b9c3cb",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#3e484f",
+                    "$value": "#c6ced5",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#737d85",
+                    "$value": "#f1f3f4",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#2f383f",
+                    "$value": "#b9c3cb",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "icon": {
                   "normal": {
-                    "$value": "#2f383f",
+                    "$value": "#b9c3cb",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#3e484f",
+                    "$value": "#c6ced5",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#737d85",
+                    "$value": "#f1f3f4",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#2f383f",
+                    "$value": "#b9c3cb",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#242b31",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#fbfdff",
+                    "$value": "#262e34",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#fdffff",
+                    "$value": "#2d363d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#f1f3f5",
+                    "$value": "#242b31",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4009,12 +4009,12 @@
               "options": {
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#242b31",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#fbfdff",
+                    "$value": "#242b31",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4027,26 +4027,38 @@
           "neutral": {
             "primary": {
               "background": {
-                "$value": "#15191c",
+                "$value": "#242b31",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               },
               "shadow": {
-                "$value": "#586976",
+                "$value": "#242b31",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               }
             },
             "secondary": {
               "background": {
-                "$value": "#242b31",
+                "$value": "#343e46",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               },
               "shadow": {
-                "$value": "#586976",
+                "$value": "#242b31",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               }
             }
           }
@@ -4055,26 +4067,38 @@
           "neutral": {
             "primary": {
               "background": {
-                "$value": "#15191c",
+                "$value": "#242b31",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               },
               "border": {
-                "$value": "#23272a",
+                "$value": "#3b4248",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               }
             },
             "secondary": {
               "background": {
-                "$value": "#242b31",
+                "$value": "#343e46",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               },
               "border": {
-                "$value": "#333a40",
+                "$value": "#4c565f",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               }
             }
           }
@@ -4259,18 +4283,18 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#15191c",
+                  "$value": "#242b31",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#2f383f",
+                "$value": "#c7cfd5",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#2f383f",
+                "$value": "#c7cfd5",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -4287,21 +4311,21 @@
                 }
               }
             },
-            "inversed": {
+            "quaternary": {
               "root": {
                 "background": {
-                  "$value": "#ced5db",
+                  "$value": "#f1f3f5",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#dce1e5",
+                "$value": "#101315",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#dce1e5",
+                "$value": "#101315",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -4323,18 +4347,18 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#01259d",
+                  "$value": "#001149",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#01259d",
+                "$value": "#b6c7ff",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#01259d",
+                "$value": "#b6c7ff",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -4351,21 +4375,21 @@
                 }
               }
             },
-            "inversed": {
+            "quaternary": {
               "root": {
                 "background": {
-                  "$value": "#000e3c",
+                  "$value": "#dbe3ff",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#6286fe",
+                "$value": "#3161fe",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#6286fe",
+                "$value": "#3161fe",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -17499,66 +17523,66 @@
               "currentValue": {
                 "label": {
                   "normal": {
-                    "$value": "#2f383f",
+                    "$value": "#2a3138",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#3e484f",
+                    "$value": "#2d343b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#737d85",
+                    "$value": "#353d46",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#2f383f",
+                    "$value": "#2a3138",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "icon": {
                   "normal": {
-                    "$value": "#2f383f",
+                    "$value": "#2a3138",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#3e484f",
+                    "$value": "#2d343b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#737d85",
+                    "$value": "#353d46",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#2f383f",
+                    "$value": "#2a3138",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#e3e7ea",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#fbfdff",
+                    "$value": "#f3f5f6",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#fdffff",
+                    "$value": "#ffffff",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#f1f3f5",
+                    "$value": "#e3e7ea",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -17567,12 +17591,12 @@
               "options": {
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#e3e7ea",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#fbfdff",
+                    "$value": "#e3e7ea",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -17585,26 +17609,38 @@
           "neutral": {
             "primary": {
               "background": {
-                "$value": "#f1f3f5",
+                "$value": "#e3e7ea",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               },
               "shadow": {
-                "$value": "#060606",
+                "$value": "#e3e7ea",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               }
             },
             "secondary": {
               "background": {
                 "$value": "#d5dbe0",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               },
               "shadow": {
-                "$value": "#060606",
+                "$value": "#e3e7ea",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               }
             }
           }
@@ -17613,26 +17649,38 @@
           "neutral": {
             "primary": {
               "background": {
-                "$value": "#f1f3f5",
+                "$value": "#e3e7ea",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               },
               "border": {
-                "$value": "#dddfe1",
+                "$value": "#c6cacd",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               }
             },
             "secondary": {
               "background": {
                 "$value": "#d5dbe0",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               },
               "border": {
-                "$value": "#c2c8cc",
+                "$value": "#b8bec3",
                 "$type": "color",
-                "$unit": "hex"
+                "$unit": "hex",
+                "$meta": {
+                  "status": "unused"
+                }
               }
             }
           }
@@ -17817,18 +17865,18 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#f1f3f5",
+                  "$value": "#e3e7ea",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#2f383f",
+                "$value": "#637584",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#2f383f",
+                "$value": "#637584",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -17845,7 +17893,7 @@
                 }
               }
             },
-            "inversed": {
+            "quaternary": {
               "root": {
                 "background": {
                   "$value": "#101315",
@@ -17854,12 +17902,12 @@
                 }
               },
               "title": {
-                "$value": "#dce1e5",
+                "$value": "#ced5db",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#dce1e5",
+                "$value": "#ced5db",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -17881,18 +17929,18 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#0130ce",
+                  "$value": "#cfdaff",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#c3d1ff",
+                "$value": "#4a74fe",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#c3d1ff",
+                "$value": "#4a74fe",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -17909,21 +17957,21 @@
                 }
               }
             },
-            "inversed": {
+            "quaternary": {
               "root": {
                 "background": {
-                  "$value": "#aabeff",
+                  "$value": "#000e3c",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#0130ce",
+                "$value": "#b6c7ff",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#0130ce",
+                "$value": "#b6c7ff",
                 "$type": "color",
                 "$unit": "hex"
               },

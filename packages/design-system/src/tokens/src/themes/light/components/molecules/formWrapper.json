@@ -2,26 +2,38 @@
   "neutral": {
     "primary": {
       "background": {
-        "$value": "{themes.light.mixins.surface.neutral.primary.normal.$value}",
+        "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal.$value}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "status": "unused"
+        }
       },
       "border": {
-        "$value": "{themes.light.mixins.border.neutral.primary.normal.$value}",
+        "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal.$value}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "status": "unused"
+        }
       }
     },
     "secondary": {
       "background": {
-        "$value": "{themes.light.mixins.surface.neutral.secondary.normal.$value}",
+        "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal.$value}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "status": "unused"
+        }
       },
       "border": {
-        "$value": "{themes.light.mixins.border.neutral.secondary.normal.$value}",
+        "$value": "{themes.light.contracts.interactive.border.neutral.secondary.normal.$value}",
         "$type": "color",
-        "$unit": "hex"
+        "$unit": "hex",
+        "$meta": {
+          "status": "unused"
+        }
       }
     }
   }

@@ -363,8 +363,9 @@ $prefix: "dropdown";
     }
 
     span,
-    .dropdown__expand-icon,
-    .dropdown__reset-icon {
+    .#{$prefix}__expand-icon,
+    .#{$prefix}__reset-icon,
+    .#{$prefix}__current-value {
       @extend %base-transition;
     }
   }
