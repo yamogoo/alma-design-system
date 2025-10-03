@@ -612,6 +612,43 @@ $components:(
   border-width: 1px
 )
 )
+),
+  container: (
+  xl: (
+  root: (
+  border-radius: 24px,
+  border-width: 1px,
+  padding: 32px
+)
+),
+  lg: (
+  root: (
+  border-radius: 20px,
+  border-width: 1px,
+  padding: 32px
+)
+),
+  md: (
+  root: (
+  border-radius: 16px,
+  border-width: 1px,
+  padding: 24px
+)
+),
+  sm: (
+  root: (
+  border-radius: 12px,
+  border-width: 1px,
+  padding: 16px
+)
+),
+  xs: (
+  root: (
+  border-radius: 8px,
+  border-width: 1px,
+  padding: 12px
+)
+)
 )
 ),
   switch: (

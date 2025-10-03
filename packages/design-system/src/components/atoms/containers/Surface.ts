@@ -17,6 +17,7 @@ export interface SurfaceProps
     >
   > {
   as?: UIElementBlockTag;
+  isContainer?: boolean;
   hasElevation?: boolean;
   /** not use yet */
   bordered?: boolean;

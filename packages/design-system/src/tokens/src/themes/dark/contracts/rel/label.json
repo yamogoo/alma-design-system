@@ -1,0 +1,187 @@
+{
+  "neutral": {
+    "base-down-3": {
+      "$value": "{colors.gray-650}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.gray-575}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.gray-450}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.gray-350}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.gray-275}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.gray-225}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.gray-50}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "accent": {
+    "base-down-3": {
+      "$value": "{colors.blue-575}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.blue-450}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.blue-400}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.blue-350}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.blue-300}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.blue-225}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "positive": {
+    "base-down-3": {
+      "$value": "{colors.green-750}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.green-700}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.green-650}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.green-600}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.green-550}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.green-425}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.green-325}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "negative": {
+    "base-down-3": {
+      "$value": "{colors.red-675}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.red-625}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.red-500}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.red-475}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.red-400}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.red-300}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.red-100}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "warning": {
+    "base-down-3": {
+      "$value": "{colors.orange-775}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.orange-700}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.orange-625}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.orange-625}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.orange-425}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.orange-300}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.orange-175}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

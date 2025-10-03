@@ -60,5 +60,92 @@
         }
       }
     }
+  },
+  "container": {
+    "xl": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.xl.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": "{tokens.spacing.xl.$value}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "lg": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.lg.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": "{tokens.spacing.xl.$value}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "md": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.md.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": "{tokens.spacing.lg.$value}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "sm": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.sm.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "xs": {
+      "root": {
+        "borderRadius": {
+          "$value": "{tokens.roundness.xs.$value}"
+        },
+        "borderWidth": {
+          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    }
   }
 }

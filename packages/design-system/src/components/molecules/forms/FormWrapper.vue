@@ -16,7 +16,16 @@ withDefaults(defineProps<FormWrapperProps>(), {
 
 <template>
   <Surface
-    :class="[PREFIX]"
+    :class="[
+      PREFIX,
+      {
+        [`${PREFIX}_variant-${variant}`]: !!variant,
+        [`${PREFIX}_size-${size}`]: !!size,
+        [`${PREFIX}_mode-${mode}`]: !!mode,
+        [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${PREFIX}_bordered`]: bordered,
+      },
+    ]"
     :variant="variant"
     :size="size"
     :mode="mode"

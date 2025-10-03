@@ -1500,6 +1500,93 @@
             }
           }
         }
+      },
+      "container": {
+        "xl": {
+          "root": {
+            "borderRadius": {
+              "$value": 24
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 32,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "lg": {
+          "root": {
+            "borderRadius": {
+              "$value": 20
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 32,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "md": {
+          "root": {
+            "borderRadius": {
+              "$value": 16
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "sm": {
+          "root": {
+            "borderRadius": {
+              "$value": 12
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "xs": {
+          "root": {
+            "borderRadius": {
+              "$value": 8
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 12,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        }
       }
     },
     "switch": {

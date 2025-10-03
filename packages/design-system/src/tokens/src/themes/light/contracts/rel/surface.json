@@ -1,0 +1,187 @@
+{
+  "neutral": {
+    "base-down-3": {
+      "$value": "{colors.gray-0}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.gray-50}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.gray-75}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.gray-125}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.gray-175}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.gray-400}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.gray-950}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "accent": {
+    "base-down-3": {
+      "$value": "{colors.blue-25}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.blue-75}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.blue-125}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.blue-500}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.blue-650}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.blue-800}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.blue-900}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "positive": {
+    "base-down-3": {
+      "$value": "{colors.green-75}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.green-125}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.green-200}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.green-650}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.green-750}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.green-825}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.green-950}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "negative": {
+    "base-down-3": {
+      "$value": "{colors.red-50}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.red-100}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.red-150}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.red-450}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.red-600}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.red-675}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.red-850}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "warning": {
+    "base-down-3": {
+      "$value": "{colors.orange-100}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-2": {
+      "$value": "{colors.orange-175}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-down-1": {
+      "$value": "{colors.orange-275}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.orange-550}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-1": {
+      "$value": "{colors.orange-650}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-2": {
+      "$value": "{colors.orange-775}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base-up-3": {
+      "$value": "{colors.orange-875}",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "delta": {
+    "lightness": {
+      "base-down-3": {
+        "$value": 0.03,
+        "$type": "number",
+        "$unit": ""
+      },
+      "base-down-2": {
+        "$value": 0.03,
+        "$type": "number",
+        "$unit": ""
+      },
+      "base-down-1": {
+        "$value": 0.03,
+        "$type": "number",
+        "$unit": ""
+      },
+      "base": {
+        "$value": 0.03,
+        "$type": "number",
+        "$unit": ""
+      },
+      "base-up-1": {
+        "$value": 0.03,
+        "$type": "number",
+        "$unit": ""
+      },
+      "base-up-2": {
+        "$value": 0.03,
+        "$type": "number",
+        "$unit": ""
+      },
+      "base-up-3": {
+        "$value": 0.03,
+        "$type": "number",
+        "$unit": ""
+      }
+    }
+  }
+}
