@@ -3498,6 +3498,381 @@
                 }
               }
             }
+          },
+          "positive": {
+            "primary": {
+              "root": {
+                "highlight": "#013cfe"
+              },
+              "track": {
+                "background": {
+                  "normal": {
+                    "$value": "#343e46",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#37424a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#414d57",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#39444c",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "rangeTrack": {
+                "background": {
+                  "normal": {
+                    "$value": "#03b419",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#03bf1a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#04e11f",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#03c41b",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "knob": {
+                "background": {
+                  "normal": {
+                    "$value": "#242b31",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#262e34",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#2d363d",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#272f35",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                },
+                "borderColor": {
+                  "normal": {
+                    "$value": "#03b419",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#03bf1a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#04e11f",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#03c41b",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "label": {
+                "color": {
+                  "normal": {
+                    "$value": "#029c15",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#02c31a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#02a516",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#02aa17",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              }
+            }
+          },
+          "negative": {
+            "primary": {
+              "root": {
+                "highlight": "#013cfe"
+              },
+              "track": {
+                "background": {
+                  "normal": {
+                    "$value": "#343e46",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#37424a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#414d57",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#39444c",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "rangeTrack": {
+                "background": {
+                  "normal": {
+                    "$value": "#bf1c1c",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#ca1e1e",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#e13131",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#d01f1f",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "knob": {
+                "background": {
+                  "normal": {
+                    "$value": "#242b31",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#262e34",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#2d363d",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#272f35",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                },
+                "borderColor": {
+                  "normal": {
+                    "$value": "#bf1c1c",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#ca1e1e",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#e13131",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#d01f1f",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "label": {
+                "color": {
+                  "normal": {
+                    "$value": "#a91919",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#d31f1f",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#b31a1a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#b81b1b",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              }
+            }
+          },
+          "warning": {
+            "primary": {
+              "root": {
+                "highlight": "#013cfe"
+              },
+              "track": {
+                "background": {
+                  "normal": {
+                    "$value": "#343e46",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#37424a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#414d57",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#39444c",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "rangeTrack": {
+                "background": {
+                  "normal": {
+                    "$value": "#f39c00",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#ffa503",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffb531",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#ffa70a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "knob": {
+                "background": {
+                  "normal": {
+                    "$value": "#242b31",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#262e34",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#2d363d",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#272f35",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                },
+                "borderColor": {
+                  "normal": {
+                    "$value": "#f39c00",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#ffa503",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffb531",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#ffa70a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "label": {
+                "color": {
+                  "normal": {
+                    "$value": "#9e6500",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#c67e00",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#a76b00",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#ac6e00",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              }
+            }
           }
         },
         "stepPaginationTabs": {
@@ -4625,6 +5000,7 @@
         }
       }
     },
+    "config": {},
     "contracts": {
       "interactive": {
         "border": {
@@ -10496,7 +10872,8 @@
           }
         }
       }
-    }
+    },
+    "mixins": {}
   },
   "light": {
     "abstracts": {
@@ -13985,6 +14362,381 @@
                 }
               }
             }
+          },
+          "positive": {
+            "primary": {
+              "root": {
+                "highlight": "#013cfe"
+              },
+              "track": {
+                "background": {
+                  "normal": {
+                    "$value": "#d5dbe0",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#e4e8eb",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#eceef1",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "rangeTrack": {
+                "background": {
+                  "normal": {
+                    "$value": "#03b419",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#03bf1a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#04e11f",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#03c41b",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "knob": {
+                "background": {
+                  "normal": {
+                    "$value": "#e3e7ea",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#f3f5f6",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#fbfbfc",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                },
+                "borderColor": {
+                  "normal": {
+                    "$value": "#03b419",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#03bf1a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#04e11f",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#03c41b",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "label": {
+                "color": {
+                  "normal": {
+                    "$value": "#03cc1c",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#07fb26",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#03d81e",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#03de1f",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              }
+            }
+          },
+          "negative": {
+            "primary": {
+              "root": {
+                "highlight": "#013cfe"
+              },
+              "track": {
+                "background": {
+                  "normal": {
+                    "$value": "#d5dbe0",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#e4e8eb",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#eceef1",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "rangeTrack": {
+                "background": {
+                  "normal": {
+                    "$value": "#e23636",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#e44545",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#eb7373",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#e54c4c",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "knob": {
+                "background": {
+                  "normal": {
+                    "$value": "#e3e7ea",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#f3f5f6",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#fbfbfc",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                },
+                "borderColor": {
+                  "normal": {
+                    "$value": "#e23636",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#e44545",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#eb7373",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#e54c4c",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "label": {
+                "color": {
+                  "normal": {
+                    "$value": "#e86060",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#f2a8a8",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#ea7171",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#ec7a7a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              }
+            }
+          },
+          "warning": {
+            "primary": {
+              "root": {
+                "highlight": "#013cfe"
+              },
+              "track": {
+                "background": {
+                  "normal": {
+                    "$value": "#d5dbe0",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#e4e8eb",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#eceef1",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "rangeTrack": {
+                "background": {
+                  "normal": {
+                    "$value": "#e79400",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#f59d00",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffb022",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#fca100",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "knob": {
+                "background": {
+                  "normal": {
+                    "$value": "#e3e7ea",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#f3f5f6",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#fbfbfc",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                },
+                "borderColor": {
+                  "normal": {
+                    "$value": "#e79400",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#f59d00",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffb022",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#fca100",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "label": {
+                "color": {
+                  "normal": {
+                    "$value": "#e79400",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffb022",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#f59d00",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#fca100",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              }
+            }
           }
         },
         "stepPaginationTabs": {
@@ -15112,6 +15864,7 @@
         }
       }
     },
+    "config": {},
     "contracts": {
       "interactive": {
         "border": {
@@ -20983,6 +21736,7 @@
           }
         }
       }
-    }
+    },
+    "mixins": {}
   }
 }

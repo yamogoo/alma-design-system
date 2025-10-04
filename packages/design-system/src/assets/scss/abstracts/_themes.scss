@@ -1253,6 +1253,141 @@ $themes:(
 )
 )
 )
+),
+  positive: (
+  primary: (
+  root: (
+  highlight: #013cfe
+),
+  track: (
+  background: (
+  normal: #343e46,
+  hovered: #37424a,
+  disabled: #414d57,
+  pressed: #39444c
+)
+),
+  range-track: (
+  background: (
+  normal: #03b419,
+  hovered: #03bf1a,
+  disabled: #04e11f,
+  pressed: #03c41b
+)
+),
+  knob: (
+  background: (
+  normal: #242b31,
+  hovered: #262e34,
+  disabled: #2d363d,
+  pressed: #272f35
+),
+  border-color: (
+  normal: #03b419,
+  hovered: #03bf1a,
+  disabled: #04e11f,
+  pressed: #03c41b
+)
+),
+  label: (
+  color: (
+  normal: #029c15,
+  disabled: #02c31a,
+  hovered: #02a516,
+  pressed: #02aa17
+)
+)
+)
+),
+  negative: (
+  primary: (
+  root: (
+  highlight: #013cfe
+),
+  track: (
+  background: (
+  normal: #343e46,
+  hovered: #37424a,
+  disabled: #414d57,
+  pressed: #39444c
+)
+),
+  range-track: (
+  background: (
+  normal: #bf1c1c,
+  hovered: #ca1e1e,
+  disabled: #e13131,
+  pressed: #d01f1f
+)
+),
+  knob: (
+  background: (
+  normal: #242b31,
+  hovered: #262e34,
+  disabled: #2d363d,
+  pressed: #272f35
+),
+  border-color: (
+  normal: #bf1c1c,
+  hovered: #ca1e1e,
+  disabled: #e13131,
+  pressed: #d01f1f
+)
+),
+  label: (
+  color: (
+  normal: #a91919,
+  disabled: #d31f1f,
+  hovered: #b31a1a,
+  pressed: #b81b1b
+)
+)
+)
+),
+  warning: (
+  primary: (
+  root: (
+  highlight: #013cfe
+),
+  track: (
+  background: (
+  normal: #343e46,
+  hovered: #37424a,
+  disabled: #414d57,
+  pressed: #39444c
+)
+),
+  range-track: (
+  background: (
+  normal: #f39c00,
+  hovered: #ffa503,
+  disabled: #ffb531,
+  pressed: #ffa70a
+)
+),
+  knob: (
+  background: (
+  normal: #242b31,
+  hovered: #262e34,
+  disabled: #2d363d,
+  pressed: #272f35
+),
+  border-color: (
+  normal: #f39c00,
+  hovered: #ffa503,
+  disabled: #ffb531,
+  pressed: #ffa70a
+)
+),
+  label: (
+  color: (
+  normal: #9e6500,
+  disabled: #c67e00,
+  hovered: #a76b00,
+  pressed: #ac6e00
+)
+)
+)
 )
 ),
   step-pagination-tabs: (
@@ -1735,6 +1870,9 @@ $themes:(
 )
 )
 )
+),
+  config: (
+  
 ),
   contracts: (
   interactive: (
@@ -3287,6 +3425,9 @@ $themes:(
 )
 )
 )
+),
+  mixins: (
+  
 )
 ),
   light: (
@@ -4540,6 +4681,141 @@ $themes:(
 )
 )
 )
+),
+  positive: (
+  primary: (
+  root: (
+  highlight: #013cfe
+),
+  track: (
+  background: (
+  normal: #d5dbe0,
+  hovered: #e4e8eb,
+  disabled: #ffffff,
+  pressed: #eceef1
+)
+),
+  range-track: (
+  background: (
+  normal: #03b419,
+  hovered: #03bf1a,
+  disabled: #04e11f,
+  pressed: #03c41b
+)
+),
+  knob: (
+  background: (
+  normal: #e3e7ea,
+  hovered: #f3f5f6,
+  disabled: #ffffff,
+  pressed: #fbfbfc
+),
+  border-color: (
+  normal: #03b419,
+  hovered: #03bf1a,
+  disabled: #04e11f,
+  pressed: #03c41b
+)
+),
+  label: (
+  color: (
+  normal: #03cc1c,
+  disabled: #07fb26,
+  hovered: #03d81e,
+  pressed: #03de1f
+)
+)
+)
+),
+  negative: (
+  primary: (
+  root: (
+  highlight: #013cfe
+),
+  track: (
+  background: (
+  normal: #d5dbe0,
+  hovered: #e4e8eb,
+  disabled: #ffffff,
+  pressed: #eceef1
+)
+),
+  range-track: (
+  background: (
+  normal: #e23636,
+  hovered: #e44545,
+  disabled: #eb7373,
+  pressed: #e54c4c
+)
+),
+  knob: (
+  background: (
+  normal: #e3e7ea,
+  hovered: #f3f5f6,
+  disabled: #ffffff,
+  pressed: #fbfbfc
+),
+  border-color: (
+  normal: #e23636,
+  hovered: #e44545,
+  disabled: #eb7373,
+  pressed: #e54c4c
+)
+),
+  label: (
+  color: (
+  normal: #e86060,
+  disabled: #f2a8a8,
+  hovered: #ea7171,
+  pressed: #ec7a7a
+)
+)
+)
+),
+  warning: (
+  primary: (
+  root: (
+  highlight: #013cfe
+),
+  track: (
+  background: (
+  normal: #d5dbe0,
+  hovered: #e4e8eb,
+  disabled: #ffffff,
+  pressed: #eceef1
+)
+),
+  range-track: (
+  background: (
+  normal: #e79400,
+  hovered: #f59d00,
+  disabled: #ffb022,
+  pressed: #fca100
+)
+),
+  knob: (
+  background: (
+  normal: #e3e7ea,
+  hovered: #f3f5f6,
+  disabled: #ffffff,
+  pressed: #fbfbfc
+),
+  border-color: (
+  normal: #e79400,
+  hovered: #f59d00,
+  disabled: #ffb022,
+  pressed: #fca100
+)
+),
+  label: (
+  color: (
+  normal: #e79400,
+  disabled: #ffb022,
+  hovered: #f59d00,
+  pressed: #fca100
+)
+)
+)
 )
 ),
   step-pagination-tabs: (
@@ -5022,6 +5298,9 @@ $themes:(
 )
 )
 )
+),
+  config: (
+  
 ),
   contracts: (
   interactive: (
@@ -6574,6 +6853,9 @@ $themes:(
 )
 )
 )
+),
+  mixins: (
+  
 )
 )
 );

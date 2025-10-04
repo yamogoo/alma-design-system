@@ -146,7 +146,7 @@ export const Orientation: Story = {
 
 export const Size: Story = {
   args: {
-    mode: "neutral",
+    mode: "accent",
     tone: "secondary",
     stretch: "auto",
   },
