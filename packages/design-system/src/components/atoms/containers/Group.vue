@@ -9,8 +9,6 @@ const props = withDefaults(defineProps<GroupProps>(), {
   as: "div",
   role: "group",
   size: "md",
-  mode: "neutral",
-  tone: "canvas",
   ariaLabel: "group",
 });
 

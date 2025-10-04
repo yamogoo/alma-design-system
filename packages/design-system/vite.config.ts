@@ -80,9 +80,6 @@ export default () => {
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),
-        "@alma/tokens/": fileURLToPath(
-          new URL("./src/tokens", import.meta.url)
-        ),
       },
       dedupe: ["vue"],
     },

@@ -40,7 +40,7 @@ const contentKey = computed(
 </script>
 
 <template>
-  <Components.Moleculas.FormWrapper
+  <Components.Molecules.FormWrapper
     class="auth-form"
     variant="default"
     mode="neutral"
@@ -80,7 +80,7 @@ const contentKey = computed(
         ></SigninForm>
       </template>
     </Components.Atoms.CarouselStack>
-  </Components.Moleculas.FormWrapper>
+  </Components.Molecules.FormWrapper>
 </template>
 
 <style lang="scss">

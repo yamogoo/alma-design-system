@@ -23,7 +23,7 @@
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.sm.$value}",
           "$type": "number",
           "$unit": "px"
         }
@@ -86,7 +86,7 @@
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.md.$value}",
+          "$value": "{tokens.roundness.sm.$value}",
           "$type": "number",
           "$unit": "px"
         }

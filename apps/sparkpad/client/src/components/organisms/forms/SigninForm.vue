@@ -81,7 +81,7 @@ export interface Props {
 </script>
 
 <template>
-  <Components.Moleculas.Form
+  <Components.Molecules.Form
     variant="default"
     :size="'md'"
     :mode="'neutral'"
@@ -135,5 +135,5 @@ export interface Props {
         @key.enter="onSubmit"
       ></Components.Atoms.ActionButton>
     </template>
-  </Components.Moleculas.Form>
+  </Components.Molecules.Form>
 </template>

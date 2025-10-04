@@ -17,7 +17,7 @@ const onSelectKey = (key: Locale) => {
 </script>
 
 <template>
-  <Components.Moleculas.Dropdown
+  <Components.Molecules.Dropdown
     class="language-menu"
     :size="'md'"
     :color="'primary'"
@@ -37,7 +37,7 @@ const onSelectKey = (key: Locale) => {
         {{ `${value}`.toUpperCase() }}
       </template>
     </Components.Atoms.Options>
-  </Components.Moleculas.Dropdown>
+  </Components.Molecules.Dropdown>
 </template>
 
 <style lang="scss">

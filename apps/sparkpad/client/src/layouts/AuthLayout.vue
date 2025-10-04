@@ -13,7 +13,7 @@ const { isConnected } = storeToRefs(Stores.useConnectionStore());
     <AppHeader></AppHeader>
     <RouterView></RouterView>
     <AppFooter></AppFooter>
-    <Components.Moleculas.ActionSheet
+    <Components.Molecules.ActionSheet
       :is-active="!isConnected"
       :mode="'neutral'"
       :tone="'primary'"
@@ -21,6 +21,6 @@ const { isConnected } = storeToRefs(Stores.useConnectionStore());
       <Components.Atoms.Text :variant="'caption-2'">
         {{ "Connection Lost" }}
       </Components.Atoms.Text>
-    </Components.Moleculas.ActionSheet>
+    </Components.Molecules.ActionSheet>
   </Components.Atoms.Page>
 </template>

@@ -99,7 +99,7 @@ export default (opts: { mode: string }) => {
       alias: {
         "~": fileURLToPath(new URL("./", import.meta.url)),
         "@": fileURLToPath(new URL("./src", import.meta.url)),
-        "@lp": fileURLToPath(new URL("./landing-src", import.meta.url)),
+        "@lp": fileURLToPath(new URL("./landing-page", import.meta.url)),
       },
     },
     css: {

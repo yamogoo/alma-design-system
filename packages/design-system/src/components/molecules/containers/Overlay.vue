@@ -1,4 +1,3 @@
-<!-- is the base for components that float over the rest of the page -->
 <script setup lang="ts">
 import type { OverlayProps } from "./Overlay";
 
@@ -6,19 +5,30 @@ import Surface from "@/components/atoms/containers/Surface.vue";
 
 const PREFIX = "overlay";
 
-withDefaults(defineProps<OverlayProps>(), {
+const props = withDefaults(defineProps<OverlayProps>(), {
+  containerId: "body",
   variant: "default",
 });
+
+const emit = defineEmits<{
+  (e: "update:is-open", isOpen: boolean): void;
+}>();
+
+const onClose = (): void => {
+  emit("update:is-open", false);
+};
 </script>
 
 <template>
-  <Surface
-    :class="[PREFIX]"
-    :variant="variant"
-    :size="size"
-    :mode="mode"
-    :tone="tone"
-  ></Surface>
+  <Teleport :to="containerId">
+    <Surface
+      v-if="props.isOpen"
+      :class="[PREFIX]"
+      v-bind="props"
+      @click.self="onClose"
+    >
+      <slot></slot> </Surface
+  ></Teleport>
 </template>
 
 <style lang="scss">

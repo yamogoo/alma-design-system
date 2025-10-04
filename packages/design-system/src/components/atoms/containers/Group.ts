@@ -8,7 +8,7 @@ import type {
   UIElementStretch,
   UIElementStylingModifiers,
 } from "@/typings";
-import type { SurfaceMode, SurfaceTone } from "~/src/adapters/atoms/surface";
+import type { SurfaceMode, SurfaceTone } from "@/adapters/atoms/surface";
 
 export type GroupOrientation = UIElementOrientation;
 export type GroupDirection = UIElementAxisDirection;

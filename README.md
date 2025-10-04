@@ -23,9 +23,8 @@ Key goals:
 - Deterministic state generation: hover/pressed/focus/disabled derived via perceptual OKLCH deltas per theme.
 - Base±N tone scale: numeric, theme-agnostic tone ladder (`base-3 … base+3`) replacing ambiguous “light/dark” names.
 - Contracts and lintable paths: component tokens must resolve to `contracts/rel/<plane>/<role>/<tone>/<state>`; no raw hex in components.
-- Accessibility first: contrast checks planned in CI; foreground tokens must pass WCAG thresholds against their surface.
-- Tokens worker pipeline: code-first tokens, resolvers, converters, build outputs (JSON, CSS vars).
-- Storybook branding and matrix: custom theme + live visualization of role × tone × state.
+- Tokens worker pipeline (developed using AI): code-first tokens, resolvers, converters, build outputs (JSON, CSS vars).
+- Storybook: custom theme + live visualization of role × tone × state.
 
 ## 🎯 Status
 
@@ -39,8 +38,9 @@ Experimental & evolving — expect breaking changes. Adapters are deliberately t
 - Design tokens & themes (code-first)
 - Storybook (docs, a11y, interactions)
 - GSAP for motion
-- tokens-worker (build/link pipeline)
-- Alma Icons; Vue3ResizeBounding
+- tokens-worker (developed using AI)
+- [Alma Icons](https://almaicons.netlify.app/icons)
+- [Vue3ResizeBounding](https://resize-bounding.netlify.app/) for resizable UI
 - Structure docs: [MANIFEST.md](./packages/design-system/MANIFEST.md), [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml)
 
 **Modular Tokens System**
@@ -78,10 +78,10 @@ pnpm sparkpad:server:dev # run demo app (server)
 
 > For details on project structure and module definitions, see [MANIFEST.md](./packages/design-system/MANIFEST.md) and [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml).
 
-> ℹ️ **Startup**: first dev launch may take ~3-7s due to asset pre-processing and pre-bundling.  
+> ℹ️ **Startup**: first dev launch may take ~10-20s due to asset pre-processing and pre-bundling.  
 > **HMR is instantaneous** afterwards, so iteration speed remains high.
 
-Open Storybook at http://localhost:6006 or the app at http://localhost:3000.
+Open Storybook at http://localhost:6006 or the app at http://localhost:5041.
 
 ## 🧭 Roadmap (abridged)
 

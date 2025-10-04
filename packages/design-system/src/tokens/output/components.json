@@ -816,7 +816,7 @@
               "$unit": "px"
             },
             "borderRadius": {
-              "$value": 16,
+              "$value": 12,
               "$type": "number",
               "$unit": "px"
             }
@@ -879,7 +879,7 @@
               "$unit": "px"
             },
             "borderRadius": {
-              "$value": 16,
+              "$value": 12,
               "$type": "number",
               "$unit": "px"
             }

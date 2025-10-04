@@ -6,6 +6,7 @@ import { Group } from "@/components/atoms";
 const PREFIX = "toolbar-block";
 
 const props = withDefaults(defineProps<ToolbarBlockProps>(), {
+  as: "div",
   variant: "block",
   size: "md",
   mode: "neutral",
