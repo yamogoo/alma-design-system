@@ -3906,6 +3906,11 @@
                   "$value": "#303539",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#303539",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -3917,6 +3922,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#3b4248",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#3b4248",
                   "$type": "color",
                   "$unit": "hex"
@@ -3934,6 +3944,11 @@
                   "$value": "#4c565f",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#4c565f",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -3948,6 +3963,11 @@
                   "$value": "#889dae",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#889dae",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -3959,6 +3979,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#fdffff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#fdffff",
                   "$type": "color",
                   "$unit": "hex"
@@ -3978,6 +4003,11 @@
                   "$value": "#0d2249",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#0d2249",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -3989,6 +4019,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#0f2a63",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#0f2a63",
                   "$type": "color",
                   "$unit": "hex"
@@ -4006,6 +4041,11 @@
                   "$value": "#153da2",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#153da2",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -4020,6 +4060,11 @@
                   "$value": "#1a59ff",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#1a59ff",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -4031,6 +4076,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#f6feff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#f6feff",
                   "$type": "color",
                   "$unit": "hex"
@@ -4050,6 +4100,11 @@
                   "$value": "#183b1b",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#183b1b",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -4061,6 +4116,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#266e29",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#266e29",
                   "$type": "color",
                   "$unit": "hex"
@@ -4078,6 +4138,11 @@
                   "$value": "#36ad39",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#36ad39",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -4092,6 +4157,11 @@
                   "$value": "#3fd241",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#3fd241",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -4103,6 +4173,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#d5ffdd",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#d5ffdd",
                   "$type": "color",
                   "$unit": "hex"
@@ -4122,6 +4197,11 @@
                   "$value": "#4f201d",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#4f201d",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -4133,6 +4213,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#7b2b26",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#7b2b26",
                   "$type": "color",
                   "$unit": "hex"
@@ -4150,6 +4235,11 @@
                   "$value": "#be3a33",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#be3a33",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -4164,6 +4254,11 @@
                   "$value": "#df4239",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#df4239",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -4175,6 +4270,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#fffafa",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#fffafa",
                   "$type": "color",
                   "$unit": "hex"
@@ -14770,6 +14870,11 @@
                   "$value": "#dadbdc",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#dadbdc",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14781,6 +14886,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#c6cacd",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#c6cacd",
                   "$type": "color",
                   "$unit": "hex"
@@ -14798,6 +14908,11 @@
                   "$value": "#b8bec3",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#b8bec3",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14812,6 +14927,11 @@
                   "$value": "#6e7e8b",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#6e7e8b",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14823,6 +14943,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#020304",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#020304",
                   "$type": "color",
                   "$unit": "hex"
@@ -14842,6 +14967,11 @@
                   "$value": "#cacfe1",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#cacfe1",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14853,6 +14983,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#b2bde1",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#b2bde1",
                   "$type": "color",
                   "$unit": "hex"
@@ -14870,6 +15005,11 @@
                   "$value": "#9aaae1",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#9aaae1",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14884,6 +15024,11 @@
                   "$value": "#0000dd",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#0000dd",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14895,6 +15040,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#000023",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#000023",
                   "$type": "color",
                   "$unit": "hex"
@@ -14914,6 +15064,11 @@
                   "$value": "#b2e0b8",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#b2e0b8",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14925,6 +15080,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#9ae0a3",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#9ae0a3",
                   "$type": "color",
                   "$unit": "hex"
@@ -14942,6 +15102,11 @@
                   "$value": "#75df85",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#75df85",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14956,6 +15121,11 @@
                   "$value": "#009700",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#009700",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14967,6 +15137,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#000f00",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#000f00",
                   "$type": "color",
                   "$unit": "hex"
@@ -14986,6 +15161,11 @@
                   "$value": "#dcc2c2",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#dcc2c2",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -14997,6 +15177,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#d9adad",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#d9adad",
                   "$type": "color",
                   "$unit": "hex"
@@ -15014,6 +15199,11 @@
                   "$value": "#d69999",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#d69999",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -15028,6 +15218,11 @@
                   "$value": "#c10018",
                   "$type": "color",
                   "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#c10018",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             },
@@ -15039,6 +15234,11 @@
                   "$unit": "hex"
                 },
                 "border": {
+                  "$value": "#2f0000",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
                   "$value": "#2f0000",
                   "$type": "color",
                   "$unit": "hex"

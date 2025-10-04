@@ -66,7 +66,7 @@ const meta = {
   args: {
     size: "md",
     mode: "neutral",
-    tone: "ghost",
+    tone: "canvas",
     role: "group",
     ariaLabel: "Example group",
   },

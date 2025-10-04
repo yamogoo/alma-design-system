@@ -1405,31 +1405,36 @@ $themes:(
   canvas: (
   root: (
   background: #1a1f23,
-  border: #303539
+  border: #303539,
+  divider: #303539
 )
 ),
   primary: (
   root: (
   background: #242b31,
-  border: #3b4248
+  border: #3b4248,
+  divider: #3b4248
 )
 ),
   secondary: (
   root: (
   background: #343e46,
-  border: #4c565f
+  border: #4c565f,
+  divider: #4c565f
 )
 ),
   tertiary: (
   root: (
   background: #6d8292,
-  border: #889dae
+  border: #889dae,
+  divider: #889dae
 )
 ),
   quaternary: (
   root: (
   background: #f1f3f5,
-  border: #fdffff
+  border: #fdffff,
+  divider: #fdffff
 )
 )
 ),
@@ -1437,31 +1442,36 @@ $themes:(
   canvas: (
   root: (
   background: #000b30,
-  border: #0d2249
+  border: #0d2249,
+  divider: #0d2249
 )
 ),
   primary: (
   root: (
   background: #001149,
-  border: #0f2a63
+  border: #0f2a63,
+  divider: #0f2a63
 )
 ),
   secondary: (
   root: (
   background: #011f85,
-  border: #153da2
+  border: #153da2,
+  divider: #153da2
 )
 ),
   tertiary: (
   root: (
   background: #0136e6,
-  border: #1a59ff
+  border: #1a59ff,
+  divider: #1a59ff
 )
 ),
   quaternary: (
   root: (
   background: #dbe3ff,
-  border: #f6feff
+  border: #f6feff,
+  divider: #f6feff
 )
 )
 ),
@@ -1469,31 +1479,36 @@ $themes:(
   canvas: (
   root: (
   background: #012405,
-  border: #183b1b
+  border: #183b1b,
+  divider: #183b1b
 )
 ),
   primary: (
   root: (
   background: #01540c,
-  border: #266e29
+  border: #266e29,
+  divider: #266e29
 )
 ),
   secondary: (
   root: (
   background: #029014,
-  border: #36ad39
+  border: #36ad39,
+  divider: #36ad39
 )
 ),
   tertiary: (
   root: (
   background: #03b419,
-  border: #3fd241
+  border: #3fd241,
+  divider: #3fd241
 )
 ),
   quaternary: (
   root: (
   background: #c3fecb,
-  border: #d5ffdd
+  border: #d5ffdd,
+  divider: #d5ffdd
 )
 )
 ),
@@ -1501,31 +1516,36 @@ $themes:(
   canvas: (
   root: (
   background: #350808,
-  border: #4f201d
+  border: #4f201d,
+  divider: #4f201d
 )
 ),
   primary: (
   root: (
   background: #5f0e0e,
-  border: #7b2b26
+  border: #7b2b26,
+  divider: #7b2b26
 )
 ),
   secondary: (
   root: (
   background: #9f1717,
-  border: #be3a33
+  border: #be3a33,
+  divider: #be3a33
 )
 ),
   tertiary: (
   root: (
   background: #bf1c1c,
-  border: #df4239
+  border: #df4239,
+  divider: #df4239
 )
 ),
   quaternary: (
   root: (
   background: #fceaea,
-  border: #fffafa
+  border: #fffafa,
+  divider: #fffafa
 )
 )
 )
@@ -4833,31 +4853,36 @@ $themes:(
   canvas: (
   root: (
   background: #f8f9fa,
-  border: #dadbdc
+  border: #dadbdc,
+  divider: #dadbdc
 )
 ),
   primary: (
   root: (
   background: #e3e7ea,
-  border: #c6cacd
+  border: #c6cacd,
+  divider: #c6cacd
 )
 ),
   secondary: (
   root: (
   background: #d5dbe0,
-  border: #b8bec3
+  border: #b8bec3,
+  divider: #b8bec3
 )
 ),
   tertiary: (
   root: (
   background: #8999a7,
-  border: #6e7e8b
+  border: #6e7e8b,
+  divider: #6e7e8b
 )
 ),
   quaternary: (
   root: (
   background: #101315,
-  border: #020304
+  border: #020304,
+  divider: #020304
 )
 )
 ),
@@ -4865,31 +4890,36 @@ $themes:(
   canvas: (
   root: (
   background: #e7ecff,
-  border: #cacfe1
+  border: #cacfe1,
+  divider: #cacfe1
 )
 ),
   primary: (
   root: (
   background: #cfdaff,
-  border: #b2bde1
+  border: #b2bde1,
+  divider: #b2bde1
 )
 ),
   secondary: (
   root: (
   background: #b6c7ff,
-  border: #9aaae1
+  border: #9aaae1,
+  divider: #9aaae1
 )
 ),
   tertiary: (
   root: (
   background: #013cfe,
-  border: #0000dd
+  border: #0000dd,
+  divider: #0000dd
 )
 ),
   quaternary: (
   root: (
   background: #000e3c,
-  border: #000023
+  border: #000023,
+  divider: #000023
 )
 )
 ),
@@ -4897,31 +4927,36 @@ $themes:(
   canvas: (
   root: (
   background: #cffed5,
-  border: #b2e0b8
+  border: #b2e0b8,
+  divider: #b2e0b8
 )
 ),
   primary: (
   root: (
   background: #b7fec0,
-  border: #9ae0a3
+  border: #9ae0a3,
+  divider: #9ae0a3
 )
 ),
   secondary: (
   root: (
   background: #93fda1,
-  border: #75df85
+  border: #75df85,
+  divider: #75df85
 )
 ),
   tertiary: (
   root: (
   background: #03b419,
-  border: #009700
+  border: #009700,
+  divider: #009700
 )
 ),
   quaternary: (
   root: (
   background: #012405,
-  border: #000f00
+  border: #000f00,
+  divider: #000f00
 )
 )
 ),
@@ -4929,31 +4964,36 @@ $themes:(
   canvas: (
   root: (
   background: #fadfdf,
-  border: #dcc2c2
+  border: #dcc2c2,
+  divider: #dcc2c2
 )
 ),
   primary: (
   root: (
   background: #f7caca,
-  border: #d9adad
+  border: #d9adad,
+  divider: #d9adad
 )
 ),
   secondary: (
   root: (
   background: #f4b5b5,
-  border: #d69999
+  border: #d69999,
+  divider: #d69999
 )
 ),
   tertiary: (
   root: (
   background: #e23636,
-  border: #c10018
+  border: #c10018,
+  divider: #c10018
 )
 ),
   quaternary: (
   root: (
   background: #4a0b0b,
-  border: #2f0000
+  border: #2f0000,
+  divider: #2f0000
 )
 )
 )

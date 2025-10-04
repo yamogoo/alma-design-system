@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { GroupProps } from "./Group";
+import Surface from "./Surface.vue";
 
 const PREFIX = "group";
 
@@ -9,7 +10,7 @@ const props = withDefaults(defineProps<GroupProps>(), {
   role: "group",
   size: "md",
   mode: "neutral",
-  tone: "ghost",
+  tone: "canvas",
   ariaLabel: "group",
 });
 
@@ -17,15 +18,13 @@ const componentTag = props.as;
 </script>
 
 <template>
-  <component
-    :is="componentTag"
+  <Surface
+    :as="componentTag"
     :class="[
       PREFIX,
       `${PREFIX}_variant-${variant}`,
       `${PREFIX}_size-${size}`,
       {
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
         [`${PREFIX}_direction-${direction}`]: !!direction,
         [`${PREFIX}_orientation-${orientation}`]: !!orientation,
         [`${PREFIX}_align-vertical-${verticalAlignment}`]: !!verticalAlignment,
@@ -36,12 +35,14 @@ const componentTag = props.as;
         [`${PREFIX}_divider`]: divider,
       },
     ]"
+    :mode="mode"
+    :tone="tone"
     :role="role"
     :aria-label="ariaLabel"
     :style="{ gap: gapY ? gapY : undefined }"
   >
     <slot></slot>
-  </component>
+  </Surface>
 </template>
 
 <style lang="scss">
@@ -80,46 +81,11 @@ $prefix: "group";
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
-  @each $mode, $modes in $map {
-    @each $tone, $val in $modes {
-      &_mode-#{$mode} {
-        &.#{$prefix}_tone-#{$tone} {
-          @include themify($themes) {
-            background-color: themed(
-              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background"
-            );
-          }
-
-          &.#{$prefix}divider {
-            &.#{$prefix}orientation-horizontal {
-              @include themify($themes) {
-                border-right-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
-                );
-              }
-            }
-
-            &.#{$prefix}orientation-vertical {
-              @include themify($themes) {
-                border-bottom-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
-                );
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 .group {
   display: flex;
   @extend %base-transition;
 
   @include defineSizes();
-  @include defineThemes();
 
   &_orientation {
     @include useOrientation();

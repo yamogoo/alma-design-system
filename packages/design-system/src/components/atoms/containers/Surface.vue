@@ -63,6 +63,25 @@ $prefix: surface;
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include defineSurfaceThemes($prefix, $mode, $tone);
+
+          // divider
+          &.#{$prefix}divider {
+            &.#{$prefix}orientation-horizontal {
+              @include themify($themes) {
+                border-right-color: themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
+                );
+              }
+            }
+
+            &.#{$prefix}orientation-vertical {
+              @include themify($themes) {
+                border-bottom-color: themed(
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
+                );
+              }
+            }
+          }
         }
       }
     }

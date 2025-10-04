@@ -1,9 +1,4 @@
-import type {
-  GroupMode,
-  GroupSize,
-  GroupVariant,
-  GroupTone,
-} from "@/adapters/atoms/group";
+import type { GroupVariant, GroupSize } from "@/adapters/atoms/group";
 
 import type {
   UIElementAlignment,
@@ -13,6 +8,7 @@ import type {
   UIElementStretch,
   UIElementStylingModifiers,
 } from "@/typings";
+import type { SurfaceMode, SurfaceTone } from "~/src/adapters/atoms/surface";
 
 export type GroupOrientation = UIElementOrientation;
 export type GroupDirection = UIElementAxisDirection;
@@ -22,7 +18,7 @@ export type GroupAsTag = UIElementBlockTag;
 
 export interface GroupProps
   extends Partial<
-    UIElementStylingModifiers<GroupVariant, GroupSize, GroupMode, GroupTone>
+    UIElementStylingModifiers<GroupVariant, GroupSize, SurfaceMode, SurfaceTone>
   > {
   as?: GroupAsTag;
   orientation?: GroupOrientation;

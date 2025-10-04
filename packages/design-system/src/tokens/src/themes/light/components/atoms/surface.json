@@ -11,6 +11,11 @@
           "$value": "{themes.light.contracts.semantic.neutral.canvas.border.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.semantic.neutral.canvas.border.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -22,6 +27,11 @@
           "$unit": "hex"
         },
         "border": {
+          "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
           "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -39,6 +49,11 @@
           "$value": "{themes.light.contracts.interactive.border.neutral.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.interactive.border.neutral.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -53,6 +68,11 @@
           "$value": "{themes.light.contracts.interactive.border.neutral.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.interactive.border.neutral.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -64,6 +84,11 @@
           "$unit": "hex"
         },
         "border": {
+          "$value": "{themes.light.contracts.interactive.border.neutral.quaternary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
           "$value": "{themes.light.contracts.interactive.border.neutral.quaternary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -83,6 +108,11 @@
           "$value": "{themes.light.contracts.semantic.accent.canvas.border.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.semantic.accent.canvas.border.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -94,6 +124,11 @@
           "$unit": "hex"
         },
         "border": {
+          "$value": "{themes.light.contracts.interactive.border.accent.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
           "$value": "{themes.light.contracts.interactive.border.accent.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -111,6 +146,11 @@
           "$value": "{themes.light.contracts.interactive.border.accent.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.interactive.border.accent.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -125,6 +165,11 @@
           "$value": "{themes.light.contracts.interactive.border.accent.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.interactive.border.accent.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -136,6 +181,11 @@
           "$unit": "hex"
         },
         "border": {
+          "$value": "{themes.light.contracts.interactive.border.accent.quaternary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
           "$value": "{themes.light.contracts.interactive.border.accent.quaternary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -155,6 +205,11 @@
           "$value": "{themes.light.contracts.semantic.positive.canvas.border.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.semantic.positive.canvas.border.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -166,6 +221,11 @@
           "$unit": "hex"
         },
         "border": {
+          "$value": "{themes.light.contracts.interactive.border.positive.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
           "$value": "{themes.light.contracts.interactive.border.positive.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -183,6 +243,11 @@
           "$value": "{themes.light.contracts.interactive.border.positive.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.interactive.border.positive.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -197,6 +262,11 @@
           "$value": "{themes.light.contracts.interactive.border.positive.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.interactive.border.positive.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -208,6 +278,11 @@
           "$unit": "hex"
         },
         "border": {
+          "$value": "{themes.light.contracts.interactive.border.positive.quaternary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
           "$value": "{themes.light.contracts.interactive.border.positive.quaternary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -227,6 +302,11 @@
           "$value": "{themes.light.contracts.semantic.negative.canvas.border.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.semantic.negative.canvas.border.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -238,6 +318,11 @@
           "$unit": "hex"
         },
         "border": {
+          "$value": "{themes.light.contracts.interactive.border.negative.primary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
           "$value": "{themes.light.contracts.interactive.border.negative.primary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
@@ -255,6 +340,11 @@
           "$value": "{themes.light.contracts.interactive.border.negative.secondary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.interactive.border.negative.secondary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -269,6 +359,11 @@
           "$value": "{themes.light.contracts.interactive.border.negative.tertiary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
+        },
+        "divider": {
+          "$value": "{themes.light.contracts.interactive.border.negative.tertiary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
         }
       }
     },
@@ -280,6 +375,11 @@
           "$unit": "hex"
         },
         "border": {
+          "$value": "{themes.light.contracts.interactive.border.negative.quaternary.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "divider": {
           "$value": "{themes.light.contracts.interactive.border.negative.quaternary.normal.$value}",
           "$type": "color",
           "$unit": "hex"
