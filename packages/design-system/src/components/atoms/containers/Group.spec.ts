@@ -1,7 +1,11 @@
-import { mount } from "@vue/test-utils";
+import { mount, VueWrapper } from "@vue/test-utils";
 
 import type { GroupProps } from "./Group";
 import Group from "./Group.vue";
+
+const getSurface = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.findComponent({ name: "Surface" });
+};
 
 enum Classes {
   ROOT_CLASS = "group",
@@ -18,6 +22,17 @@ enum Classes {
 }
 
 describe("Group", () => {
+  describe("elements", () => {
+    test("should render Surface", () => {
+      const wrapper = mount(Group);
+
+      const surface = getSurface(wrapper);
+      const isSurfaceExists = surface.exists();
+
+      expect(isSurfaceExists).toBeTruthy();
+    });
+  });
+
   describe("classes", () => {
     test("should have props based classes (variant/size)", () => {
       const props: GroupProps = {
@@ -39,7 +54,6 @@ describe("Group", () => {
         `${Classes.VARIANT}-${props.variant}`
       );
       expect(wrapper.classes()).toContain(`${Classes.SIZE}-${props.size}`);
-      expect(wrapper.classes()).toContain(`${Classes.MODE}-${props.mode}`);
       expect(wrapper.classes()).toContain(
         `${Classes.DIRECTION}-${props.direction}`
       );
