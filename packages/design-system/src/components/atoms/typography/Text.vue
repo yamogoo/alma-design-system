@@ -85,6 +85,7 @@ $prefix: text;
 }
 
 .#{$prefix} {
+  white-space: pre-line;
   b {
     font-style: inherit;
     font-weight: inherit;

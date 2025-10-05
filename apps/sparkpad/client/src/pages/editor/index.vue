@@ -3,11 +3,13 @@ import { storeToRefs } from "pinia";
 
 import { Constants } from "@/constants";
 
-import { useEditorLayout } from "@/stores/useEditorLayout";
+import { useSettingsStore, useEditorLayout } from "@/stores";
 
 import { Components } from "@alma/design-system";
-import { Explorer } from "@/components/organisms";
 
+import { EditorView, SidebarMenu, Explorer } from "@/components/organisms";
+
+const { isOpen: isSettingsOpen } = storeToRefs(useSettingsStore());
 const { navigatorWidth, isNavigatorShown } = storeToRefs(useEditorLayout());
 const { setNavigatorWidth } = useEditorLayout();
 
@@ -15,12 +17,12 @@ const onUpdateWidth = (width: number) => {
   setNavigatorWidth(width);
 };
 
-import { EditorView, SidebarMenu } from "@/components/organisms";
+const onOpenSettings = (): void => {};
 </script>
 
 <template>
   <Components.Atoms.Page class="editor-main-page" orientation="horizontal">
-    <SidebarMenu></SidebarMenu>
+    <SidebarMenu @open:settings="onOpenSettings"></SidebarMenu>
     <Components.Atoms.ResizeBounding
       v-if="isNavigatorShown"
       class="editor-view__navigator"
@@ -35,6 +37,13 @@ import { EditorView, SidebarMenu } from "@/components/organisms";
     </Components.Atoms.ResizeBounding>
     <EditorView></EditorView>
   </Components.Atoms.Page>
+  <Components.Molecules.Overlay v-model:is-open="isSettingsOpen">
+    <Components.Atoms.Surface>
+      <Components.Atoms.Text>
+        {{ "Settings" }}
+      </Components.Atoms.Text>
+    </Components.Atoms.Surface>
+  </Components.Molecules.Overlay>
 </template>
 
 <style lang="scss">

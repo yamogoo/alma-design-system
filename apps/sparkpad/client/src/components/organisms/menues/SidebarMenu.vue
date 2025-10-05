@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { Components } from "@alma/design-system";
 
-const onLogin = (): void => {};
+const emit = defineEmits<{
+  (e: "open:settings"): void;
+}>();
 
-const onOpenSettings = (): void => {};
+const onLogin = (): void => {
+  emit("open:settings");
+};
+
+const onOpenSettings = (): void => {
+  emit("open:settings");
+};
 </script>
 
 <template>
@@ -19,7 +27,7 @@ const onOpenSettings = (): void => {};
       <Components.Atoms.Group
         :variant="'block'"
         :mode="'neutral'"
-        :tone="'ghost'"
+        :tone="'canvas'"
         :size="'md'"
         :orientation="'vertical'"
       >

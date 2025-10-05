@@ -20,11 +20,11 @@ Key goals:
 ## ✨ What’s New (Core Features)
 
 - Relational color matrix (contracts.rel): single source of truth for colors across planes/roles/tones/states. See: `packages/design-system/src/tokens/contracts.rel.md`.
-- Deterministic state generation: hover/pressed/focus/disabled derived via perceptual OKLCH deltas per theme.
+- Deterministic state generation: normal/hover/pressed/focus/disabled derived via perceptual OKLCH deltas per theme.
 - Base±N tone scale: numeric, theme-agnostic tone ladder (`base-3 … base+3`) replacing ambiguous “light/dark” names.
-- Contracts and lintable paths: component tokens must resolve to `contracts/rel/<plane>/<role>/<tone>/<state>`; no raw hex in components.
-- Tokens worker pipeline (developed using AI): code-first tokens, resolvers, converters, build outputs (JSON, CSS vars).
-- Storybook: custom theme + live visualization of role × tone × state.
+- Contracts and lintable paths: component tokens must resolve to `contracts/rel/<mode>/<tone>/<state>`; no raw hex in components.
+- Tokens worker pipeline (developed using AI): code-first tokens, resolvers, converters, build outputs (JSON, SCSS maps, CSS).
+- Storybook: custom theme + live visualization of varinat x size x mode × tone × state.
 
 ## 🎯 Status
 
@@ -36,7 +36,7 @@ Experimental & evolving — expect breaking changes. Adapters are deliberately t
 - Custom SCSS core (mixins, abstracts)
 - OKLCH color math for deltas
 - Design tokens & themes (code-first)
-- Storybook (docs, a11y, interactions)
+- Storybook
 - GSAP for motion
 - tokens-worker (developed using AI)
 - [Alma Icons](https://almaicons.netlify.app/icons)
@@ -54,7 +54,6 @@ Experimental & evolving — expect breaking changes. Adapters are deliberately t
 **🔗 Figma Integration**
 
 - Forward (Code → Figma): supported and recommended.
-- Backward (Figma → Code): compatible but discouraged — code is the source of truth.
 
 ## 💻 Quick Start
 
@@ -86,9 +85,8 @@ Open Storybook at http://localhost:6006 or the app at http://localhost:5041.
 ## 🧭 Roadmap (abridged)
 
 - Token path linter + contrast CI for contracts/rel
-- Visual matrix stories (role × base±N × state)
-- Migrate fully to base±N tone naming; deprecate legacy labels
-- Cross-framework adapters and publishable packages
+- Visual matrix stories mode (role) × \<base\>\<up/down\>-N × state
+- Migrate fully to base-(up | down)-N tone naming; deprecate legacy labels
 
 ## License
 

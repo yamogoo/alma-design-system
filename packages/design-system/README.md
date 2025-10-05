@@ -4,32 +4,43 @@
 
 R&D playground for UI systems: components, tokens, theming, and tooling.
 
-— Live docs: https://alma-proto-kit.netlify.app
+— Live docs: https://alma-design-system.netlify.app
 
-> Prototype environment to explore UI architecture, tokens, iconography, type workflows, and cross-framework integration. See [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml).
+### About
+
+Alma Design System is an experimental, code-first platform for researching design-system architecture. It is not a production-ready UI kit, but a focused lab for ideas that can later evolve into stable packages.
+
+Key goals:
+
+- Explore trade-offs between performance, DX, and design flexibility.
+- Test token pipelines, theming strategies, component contracts.
+- Prototype iconography and type workflows.
+- Bridge design tools and developer platforms.
 
 ## ✨ What’s New (Core Features)
 
-- Relational color matrix (contracts.rel): single source of truth for planes/roles/tones/states. See: `src/tokens/contracts.rel.md`.
-- Deterministic states via OKLCH deltas: hover/pressed/focus/disabled generated from base tones per theme.
-- Base±N tone scale: numeric tone ladder (`base-3 … base+3`) for both light and dark themes.
-- Contracts and lintable paths: component tokens must resolve to `contracts/rel/<plane>/<role>/<tone>/<state>`; no raw hex in component tokens.
-- Storybook branding theme + token stories: visualize role × tone × state and verify contrast.
-- Tokens worker: resolvers/converters and build outputs.
+- Relational color matrix (contracts.rel): single source of truth for colors across planes/roles/tones/states. See: `src/tokens/contracts.rel.md`.
+- Deterministic state generation: normal/hover/pressed/focus/disabled derived via perceptual OKLCH deltas per theme.
+- Base±N tone scale: numeric, theme-agnostic tone ladder (`base-3 … base+3`) replacing ambiguous “light/dark” names.
+- Contracts and lintable paths: component tokens must resolve to `contracts/rel/<mode>/<tone>/<state>`; no raw hex in components.
+- Tokens worker pipeline (developed using AI): code-first tokens, resolvers, converters, build outputs (JSON, SCSS maps, CSS).
+- Storybook: custom theme + live visualization of varinat x size x mode × tone × state.
 
 ## 🎯 Status
 
-Experimental & evolving — expect breaking changes. Adapters remain thin wrappers.
+Experimental & evolving — expect breaking changes. Adapters are deliberately thin.
 
 ## 🛠 Stack & Tech
 
 - Vue 3 + TypeScript, Vite
-- SCSS core (mixins, abstracts)
+- Custom SCSS core (mixins, abstracts)
 - OKLCH color math for deltas
-- Storybook (docs, a11y, interactions)
+- Design tokens & themes (code-first)
+- Storybook
 - GSAP for motion
-- tokens-worker (build/link pipeline)
-- Alma Icons; Vue3ResizeBounding
+- tokens-worker (developed using AI)
+- [Alma Icons](https://almaicons.netlify.app/icons)
+- [Vue3ResizeBounding](https://resize-bounding.netlify.app/) for resizable UI
 - Structure docs: [MANIFEST.md](./MANIFEST.md), [MANIFEST.yaml](./MANIFEST.yaml)
 
 **Modular Tokens System**
@@ -43,9 +54,8 @@ Experimental & evolving — expect breaking changes. Adapters remain thin wrappe
 **🔗 Figma Integration**
 
 - Forward (Code → Figma): supported and recommended.
-- Backward (Figma → Code): compatible but discouraged — code is the source of truth.
 
-## 💻 Demo
+## 💻 Quick Start
 
 ```bash
 git clone https://github.com/yamogoo/alma-proto-kit.git
@@ -67,16 +77,22 @@ pnpm sparkpad:server:dev # run demo app (server)
 
 > For details on project structure and module definitions, see [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml).
 
-> ℹ️ **Startup**: first dev launch may take ~3-7s due to asset pre-processing and pre-bundling.  
+> ℹ️ **Startup**: first dev launch may take ~10-20s due to asset pre-processing and pre-bundling.  
 > **HMR is instantaneous** afterwards, so iteration speed remains high.
 
-Open Storybook at http://localhost:6006 or the app at http://localhost:3000.
+Open Storybook at http://localhost:6006 or the app at http://localhost:5041.
+
+## 🧭 Roadmap (abridged)
+
+- Token path linter + contrast CI for contracts/rel
+- Visual matrix stories (role × base±N × state)
+- Migrate fully to base-(up | down)-N tone naming; deprecate legacy labels
 
 ## License
 
 MIT for code. Icons and creative assets are licensed under CC BY-NC (Creative Commons Attribution–NonCommercial).
 
-[MIT](https://github.com/yamogoo/alma-proto-kit/blob/main/LICENSE)
+[MIT](https://github.com/yamogoo/alma-design-system/blob/main/LICENSE)
 
 ## Author
 
