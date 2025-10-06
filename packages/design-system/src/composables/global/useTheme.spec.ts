@@ -7,7 +7,7 @@ import { useTheme, type UseThemeOptions } from "./useTheme";
 
 describe("useTheme", () => {
   const opts: UseThemeOptions = {
-    prefix: "theme--",
+    prefix: "t--",
   };
 
   test("should set dark theme", async () => {
@@ -24,7 +24,7 @@ describe("useTheme", () => {
       expect(classes).toContain(className);
       expect(classes).toMatchInlineSnapshot(`
         DOMTokenList {
-          "0": "theme--dark",
+          "0": "t--dark",
         }
       `);
     }
@@ -45,7 +45,7 @@ describe("useTheme", () => {
       expect(classes).toContain(className);
       expect(classes).toMatchInlineSnapshot(`
         DOMTokenList {
-          "0": "theme--light",
+          "0": "t--light",
         }
       `);
     }
@@ -98,7 +98,7 @@ describe("useTheme", () => {
         expect(isClassExists).toBeFalsy();
         expect(classes).toMatchInlineSnapshot(`
           DOMTokenList {
-            "0": "theme-light",
+            "0": "t-light",
           }
         `);
       }
