@@ -1,22 +1,22 @@
 {
   "neutral": {
     "base-down-3": {
-      "$value": "{colors.gray-700}",
-      "$type": "color",
-      "$unit": "hex"
-    },
-    "base-down-2": {
       "$value": "{colors.gray-750}",
       "$type": "color",
       "$unit": "hex"
     },
-    "base-down-1": {
+    "base-down-2": {
       "$value": "{colors.gray-800}",
       "$type": "color",
       "$unit": "hex"
     },
-    "base": {
+    "base-down-1": {
       "$value": "{colors.gray-850}",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "base": {
+      "$value": "{colors.gray-900}",
       "$type": "color",
       "$unit": "hex"
     },

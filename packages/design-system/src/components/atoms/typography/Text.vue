@@ -78,16 +78,12 @@ $prefix: text;
 ) {
   @each $mode, $modes in $map {
     @each $tone, $states in $modes {
-      @each $state, $val in $states {
-        &_mode-#{$mode} {
-          &.#{$prefix}_tone-#{$tone} {
-            &.#{$prefix}_state-#{$state} {
-              @include themify($themes) {
-                color: themed(
-                  "contracts.interactive.#{$token-prefix}.#{$mode}.#{$tone}.#{$state}"
-                );
-              }
-            }
+      &_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
+          @include themify($themes) {
+            color: themed(
+              "contracts.interactive.#{$token-prefix}.#{$mode}.#{$tone}.normal"
+            );
           }
         }
       }

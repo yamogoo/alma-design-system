@@ -21,8 +21,8 @@ setup((app: App) => {
 const withTheme = (Story: any, context: any) => {
   const theme = context.globals.theme || "light";
 
-  document.body.classList.remove("theme-light", "theme-dark");
-  document.body.classList.add(`theme-${theme}`);
+  document.body.classList.remove("t-light", "t-dark");
+  document.body.classList.add(`t-${theme}`);
 
   return Story();
 };

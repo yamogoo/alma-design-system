@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, useTemplateRef, watch } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import { useHover } from "@/composables/local";
 
@@ -85,7 +85,7 @@ const onAnimIcon = (isExpanded: boolean, duration = ICON_DURATION): void => {
   const el = refIcon.value?.root;
 
   if (el) {
-    g.to(el, {
+    gsap.to(el, {
       rotate: isExpanded ? 0 : -90,
       ease: "power4.out",
       duration: duration,

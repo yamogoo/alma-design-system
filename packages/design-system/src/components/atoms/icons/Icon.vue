@@ -12,7 +12,6 @@ const PREFIX = "icon";
 
 const props = withDefaults(defineProps<IconProps>(), {
   variant: "default",
-  state: "normal",
 });
 
 const root = useTemplateRef<HTMLDivElement | null>("root");
@@ -42,7 +41,6 @@ defineExpose({
         [`${PREFIX}_size-${size}`]: !!size,
         [`${PREFIX}_mode-${mode}`]: !!mode,
         [`${PREFIX}_tone-${tone}`]: !!tone,
-        [`${PREFIX}_state-${state}`]: !!state,
       },
     ]"
     data-testid="icon"
@@ -76,20 +74,14 @@ $prefix: icon;
 @mixin defineThemes($map: get($themes, "light.contracts.interactive.label")) {
   @each $mode, $modes in $map {
     @each $tone, $states in $modes {
-      @each $state, $val in $states {
-        @each $state, $val in $states {
-          &_mode-#{$mode} {
-            &.#{$prefix}_tone-#{$tone} {
-              &.#{$prefix}_state-#{$state} {
-                svg {
-                  path {
-                    @include themify($themes) {
-                      fill: themed(
-                        "contracts.interactive.label.#{$mode}.#{$tone}.#{$state}"
-                      );
-                    }
-                  }
-                }
+      &_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
+          svg {
+            path {
+              @include themify($themes) {
+                fill: themed(
+                  "contracts.interactive.label.#{$mode}.#{$tone}.normal"
+                );
               }
             }
           }

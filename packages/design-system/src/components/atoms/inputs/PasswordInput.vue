@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import {
   Input,
@@ -61,7 +61,7 @@ const onReset = (): void => {
 /* * * Animations * * */
 
 const onAnimMaskedButtonEnter = (el: Element, done: () => void): void => {
-  g.fromTo(
+  gsap.fromTo(
     el,
     { scale: MASKED_BUTTON_SCALE_OUT, opacity: 0 },
     {
@@ -75,7 +75,7 @@ const onAnimMaskedButtonEnter = (el: Element, done: () => void): void => {
 };
 
 const onAnimMaskedButtonLeave = (el: Element, done: () => void): void => {
-  g.to(el, {
+  gsap.to(el, {
     scale: MASKED_BUTTON_SCALE_OUT,
     opacity: 0,
     ease: "power4.out",

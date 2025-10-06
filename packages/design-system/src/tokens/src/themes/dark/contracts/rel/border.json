@@ -1,7 +1,7 @@
 {
   "neutral": {
     "base-down-3": {
-      "$value": "{colors.gray-1000}",
+      "$value": "shift_oklch({themes.dark.contracts.rel.surface.neutral.base-down-3.$value}, {themes.dark.abstracts.config.rel.border.delta.lightness.base-down-3.$value})",
       "$type": "color",
       "$unit": "hex"
     },

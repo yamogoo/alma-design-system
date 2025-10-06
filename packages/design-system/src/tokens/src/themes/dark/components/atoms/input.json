@@ -29,7 +29,7 @@
             "$unit": "hex"
           },
           "error": {
-            "$value": "{themes.dark.contracts.interactive.surface.negative.primary.normal.$value}",
+            "$value": "rgba({themes.dark.contracts.interactive.surface.negative.primary.normal.$value}, .3)",
             "$type": "color",
             "$unit": "hex"
           }
@@ -165,7 +165,7 @@
             "$unit": "hex"
           },
           "error": {
-            "$value": "{themes.dark.contracts.interactive.surface.negative.primary.normal.$value}",
+            "$value": "rgba({themes.dark.contracts.interactive.surface.negative.primary.normal.$value}, 0.35)",
             "$type": "color",
             "$unit": "hex"
           },

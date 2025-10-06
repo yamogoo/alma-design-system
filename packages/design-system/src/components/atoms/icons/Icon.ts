@@ -31,13 +31,7 @@ export interface IconComponentProps {
 
 export interface IconProps
   extends Partial<
-      UIElementStylingModifiers<
-        IconVariant,
-        IconSize,
-        IconMode,
-        IconTone,
-        IconState
-      >
+      UIElementStylingModifiers<IconVariant, IconSize, IconMode, IconTone>
     >,
     IconStyleProps {}
 

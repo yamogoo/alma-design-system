@@ -83,20 +83,6 @@ $prefix: logo-with-descriptor;
               );
             }
           }
-
-          /* &.#{$prefix} {
-            @each $state in $states {
-              &._state-#{$state} {
-                .#{$prefix}__label {
-                  @include themify($themes) {
-                    color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.#{state}"
-                    );
-                  }
-                }
-              }
-            }
-          } */
         }
       }
     }

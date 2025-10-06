@@ -1,27 +1,27 @@
 {
   "canvas": {
     "border": {
-      "$value": "{themes.dark.contracts.rel.border.neutral.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.border.neutral.base-down-3.$value}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.dark.contracts.rel.stroke.neutral.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.stroke.neutral.base-down-3.$value}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.dark.contracts.rel.label.neutral.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.label.neutral.base-down-3.$value}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.dark.contracts.rel.onSurface.neutral.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.onSurface.neutral.base-down-3.$value}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.dark.contracts.rel.surface.neutral.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.surface.neutral.base-down-3.$value}",
       "$type": "color",
       "$unit": "hex"
     }

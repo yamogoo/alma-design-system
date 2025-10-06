@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch, onBeforeUnmount, useTemplateRef } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import { useHover } from "@/composables/local";
 
@@ -168,7 +168,7 @@ watch(isHovered, (state) => {
   const el = refKnob.value;
 
   if (el) {
-    g.to(el, {
+    gsap.to(el, {
       scale: state ? props.knobAnimScaleActive : props.knobAnimScaleNormal,
       duration: props.knobAnimDuration,
       ease: "power4.out",

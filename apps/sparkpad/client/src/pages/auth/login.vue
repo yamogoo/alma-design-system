@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onUnmounted, useTemplateRef } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import { Composables, Components } from "@alma/design-system";
 
@@ -34,7 +34,7 @@ const messageAnimTimer = Composables.Local.useTimeout(() => {
 }, START_DELAY);
 
 const onAnimContainerEnter = (el: Element): void => {
-  g.to(el, {
+  gsap.to(el, {
     y: 0,
     ease: "power4.out",
     duration: CONTAINER_DURATION_IN,
@@ -45,7 +45,7 @@ const onAnimContainerEnter = (el: Element): void => {
 const onAnimFormEnter = (el: Element): void => {
   const height = el.clientHeight / 3;
 
-  g.fromTo(
+  gsap.fromTo(
     el,
     {
       y: height,
@@ -62,7 +62,7 @@ const onAnimFormEnter = (el: Element): void => {
 };
 
 const onAnimMessageEnter = (el: Element): void => {
-  g.fromTo(
+  gsap.fromTo(
     el,
     {
       scale: 0.85,
@@ -88,7 +88,7 @@ const setContainerStartPosition = (): void => {
   const el = refContent.value;
   if (!el) return;
 
-  g.set(el, {
+  gsap.set(el, {
     y: containerToCenterOffset(),
     duration: 0,
   });

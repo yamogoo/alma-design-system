@@ -1,5 +1,5 @@
 import { mount, shallowMount, VueWrapper } from "@vue/test-utils";
-import g from "gsap";
+import gsap from "gsap";
 
 import type { ButtonProps } from "./Button";
 import Button from "./Button.vue";
@@ -81,7 +81,7 @@ describe("Button.vue", () => {
         .element as HTMLButtonElement;
 
       await wrapper.get("[data-testid='button']").trigger("pointerdown");
-      expect(g.to).toHaveBeenLastCalledWith(
+      expect(gsap.to).toHaveBeenLastCalledWith(
         btnEl,
         expect.objectContaining({
           scale: 0.95,
@@ -91,7 +91,7 @@ describe("Button.vue", () => {
       );
 
       await wrapper.get("[data-testid='button']").trigger("pointerup");
-      expect(g.to).toHaveBeenLastCalledWith(
+      expect(gsap.to).toHaveBeenLastCalledWith(
         btnEl,
         expect.objectContaining({
           scale: 1,
@@ -115,7 +115,7 @@ describe("Button.vue", () => {
 
       await wrapper.get("[data-testid='button']").trigger("pointerdown");
 
-      expect(g.to).toHaveBeenCalledWith(
+      expect(gsap.to).toHaveBeenCalledWith(
         btnEl,
         expect.objectContaining({
           scale: 0.8,

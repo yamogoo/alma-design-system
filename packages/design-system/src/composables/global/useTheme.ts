@@ -27,7 +27,7 @@ export const useTheme = (
   opts?: UseThemeOptions
 ) => {
   const { selector, prefix, key, systemKey } = {
-    prefix: "theme-",
+    prefix: "t-",
     selector: "body",
     key: "THEME",
     systemKey: "IS_SYSTEM_THEME_ENABLED",

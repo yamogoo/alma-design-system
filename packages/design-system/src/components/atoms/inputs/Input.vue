@@ -9,7 +9,7 @@ import {
   onMounted,
 } from "vue";
 import { useFocus } from "@vueuse/core";
-import g from "gsap";
+import gsap from "gsap";
 
 import { sanitizeInput } from "@/utils";
 
@@ -55,8 +55,8 @@ const refMessage = ref<HTMLDivElement | null>(null);
 const id = useId();
 const localModelValue = ref(props.value);
 
-const sanitize = () =>
-  (localModelValue.value = sanitizeInput(localModelValue.value));
+const sanitize = async () =>
+  (localModelValue.value = await sanitizeInput(localModelValue.value));
 
 const isResetButtonShown = computed(() => localModelValue.value !== "");
 
@@ -121,7 +121,7 @@ const onAnimInputValue = (
     OPACITY_OUT = 0;
 
   if (input) {
-    g.to(input, {
+    gsap.to(input, {
       opacity: isFocused ? OPACITY_IN : isEmpty ? OPACITY_OUT : OPACITY_IN,
       duration: 0.1 * durationFactor,
       ease: "power4.out",
@@ -148,7 +148,7 @@ const onAnimPlaceholder = (
     OPACITY_OUT = 0.65;
 
   if (placeholder)
-    g.to(placeholder, {
+    gsap.to(placeholder, {
       y: isFocused ? OFFSET_OUT : isEmpty ? OFFSET_IN_INVERSED : OFFSET_OUT,
       top: isFocused ? OFFSET_OUT : isEmpty ? OFFSET_IN : OFFSET_OUT,
       scale: isFocused ? SCALE_OUT : isEmpty ? SCALE_IN : SCALE_OUT,
@@ -171,7 +171,7 @@ const onAnimErrorMessage = (
     POS_Y_OUT = messageHeight;
 
   if (message) {
-    g.to(message, {
+    gsap.to(message, {
       opacity: isError ? OPACITY_IN : OPACITY_OUT,
       y: isError ? POS_Y_IN : POS_Y_OUT,
       duration: 0.1 * durationFactor,
@@ -206,7 +206,7 @@ onMounted(() => {
 // reset button
 
 const onAnimResetButtonEnter = (el: Element, done: () => void): void => {
-  g.fromTo(
+  gsap.fromTo(
     el,
     { scale: RESET_BUTTON_SCALE_OUT, opacity: 0 },
     {
@@ -220,7 +220,7 @@ const onAnimResetButtonEnter = (el: Element, done: () => void): void => {
 };
 
 const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
-  g.to(el, {
+  gsap.to(el, {
     scale: RESET_BUTTON_SCALE_OUT,
     opacity: 0,
     ease: "power4.out",

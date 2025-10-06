@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watch, computed, useTemplateRef, ref, onMounted } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import tokens from "@/tokens";
 
@@ -57,7 +57,7 @@ const getItemState = (idx: number) => {
 /* * * Animations * * */
 
 const onAnimTrackAndItem = (id: number, duration = 0.55) => {
-  const tl = g.timeline({ defaults: { duration, ease: "power4.out" } });
+  const tl = gsap.timeline({ defaults: { duration, ease: "power4.out" } });
 
   if (refTrack.value) {
     tl.to(

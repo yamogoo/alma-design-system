@@ -1,7 +1,6 @@
 import type {
   SurfaceMode,
   SurfaceSize,
-  SurfaceState,
   SurfaceTone,
   SurfaceVariant,
 } from "@/adapters/atoms/surface";
@@ -14,8 +13,7 @@ export interface SurfaceProps
       SurfaceVariant,
       SurfaceSize,
       SurfaceMode,
-      SurfaceTone,
-      SurfaceState
+      SurfaceTone
     >
   > {
   as?: UIElementBlockTag;

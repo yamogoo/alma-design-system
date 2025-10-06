@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onUnmounted, ref, useId, watch } from "vue";
 import { useFocus } from "@vueuse/core";
-import g from "gsap";
+import gsap from "gsap";
 
 import { useHover, useTimeout } from "@/composables/local";
 
@@ -64,7 +64,7 @@ onUnmounted(() => {
 /* * * Animations * * */
 
 const onTooltipEnter = (el: Element, done: () => void): void => {
-  g.fromTo(
+  gsap.fromTo(
     el,
     {
       opacity: TOOLTIP_OPACITY_OUT,
@@ -81,7 +81,7 @@ const onTooltipEnter = (el: Element, done: () => void): void => {
 };
 
 const onTooltipLeave = (el: Element, done: () => void): void => {
-  g.to(el, {
+  gsap.to(el, {
     opacity: TOOLTIP_OPACITY_OUT,
     scale: TOOLTIP_SCALE_OUT,
     duration: TOOLTIP_DURATION_OUT,

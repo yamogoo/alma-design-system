@@ -7,7 +7,6 @@ const PREFIX = "surface";
 
 withDefaults(defineProps<SurfaceProps>(), {
   as: "div",
-  state: "normal",
   bordered: false,
   elevated: false,
 });

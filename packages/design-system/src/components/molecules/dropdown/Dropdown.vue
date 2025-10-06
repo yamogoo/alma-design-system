@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { onMounted, ref, watch, toValue, useTemplateRef } from "vue";
-import g from "gsap";
 
 import { useClickOutside } from "@/composables/local";
 
 import { Icon } from "@/components/atoms";
 import { type DropdownProps } from "@/components/molecules";
+
+import gsap from "gsap";
 
 const PREFIX = "dropdown";
 
@@ -53,7 +54,7 @@ const setIconState = (isExpanded: boolean, isAnimate = true): void => {
 };
 
 const onAnimExpandIconIn = (el: HTMLDivElement, duration: number): void => {
-  g.fromTo(
+  gsap.fromTo(
     el,
     {
       rotate: ARROW_ICON_ROTATION_SHRINKED,
@@ -67,7 +68,7 @@ const onAnimExpandIconIn = (el: HTMLDivElement, duration: number): void => {
 };
 
 const onAnimExpandIconOut = (el: HTMLDivElement, duration: number): void => {
-  g.to(el, {
+  gsap.to(el, {
     rotate: ARROW_ICON_ROTATION_SHRINKED,
     duration,
     ease: "power4.in",

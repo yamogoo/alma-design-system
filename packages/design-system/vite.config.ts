@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { visualizer } from "rollup-plugin-visualizer";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+
 import path from "path";
 import { fileURLToPath, URL } from "node:url";
 
@@ -20,6 +22,7 @@ export default () => {
     cacheDir: "../../.vite",
     plugins: [
       vue(),
+      visualizer({ filename: "stats.html", gzipSize: true }),
       vueJsx({
         transformOn: true,
         mergeProps: true,
@@ -83,6 +86,10 @@ export default () => {
       },
       dedupe: ["vue"],
     },
+    optimizeDeps: {
+      include: ["vue", "vue-router", "pinia"],
+      exclude: ["dompurify"],
+    },
     build: {
       lib: {
         entry: path.resolve(__dirname, "src/index.ts"),
@@ -91,22 +98,36 @@ export default () => {
         fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
       },
       rollupOptions: {
-        external: ["vue", "pinia", "vue-router", "alma-icons", "@alma/tokens/"],
+        external: [
+          "vue",
+          "pinia",
+          "vue-router",
+          "alma-icons",
+          "@alma/tokens/",
+          "gsap",
+          "vue3-lottie",
+        ],
         output: {
           globals: { vue: "Vue" },
           assetFileNames: (info) =>
             info.name?.endsWith(".css")
               ? "style.css"
               : "assets/[name]-[hash][extname]",
+          manualChunks(id) {
+            if (id.includes("dompurify")) return "dompurify";
+            if (id.includes("/tokens/output/")) return "tokens";
+          },
         },
       },
       cssCodeSplit: false,
-      sourcemap: true,
+      sourcemap: false,
       target: "es2019",
       emptyOutDir: true,
       outDir: "dist",
+      cssMinify: "lightningcss",
     },
     css: {
+      transformer: "lightningcss",
       modules: {
         generateScopedName: "[hash:base64:5]",
         scopeBehaviour: "local",

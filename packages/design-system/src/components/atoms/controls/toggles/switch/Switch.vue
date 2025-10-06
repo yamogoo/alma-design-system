@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useAttrs, useId, onMounted, watch, useTemplateRef, ref } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import { usePressed } from "@/composables/local";
 
@@ -80,7 +80,7 @@ const onAnimateKnob = (duration = 0.25): void => {
   if (refKnob.value) {
     const knobPosX = localIsActive.value ? offsetX : 0;
 
-    g.to(refKnob.value, {
+    gsap.to(refKnob.value, {
       x: knobPosX,
       duration,
       ease: "power4.out",

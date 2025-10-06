@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import type { SkeletonProps } from "@/components/atoms";
 
@@ -20,7 +20,7 @@ onMounted(() => {
 const onAnimate = (el: Element): void => {
   const width = el.clientWidth;
 
-  g.fromTo(
+  gsap.fromTo(
     el,
     {
       x: -width,

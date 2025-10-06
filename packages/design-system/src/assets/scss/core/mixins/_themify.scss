@@ -24,7 +24,7 @@ $use-css-variables: false !default;
   $flag: if($useCSSVariables == null, $use-css-variables, $useCSSVariables);
 
   @each $theme, $map in $themes {
-    .theme-#{$theme} & {
+    .t-#{$theme} & {
       $theme-map: $map !global;
 
       @if $flag {

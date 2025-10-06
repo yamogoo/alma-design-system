@@ -8,7 +8,7 @@ import {
   watch,
   useTemplateRef,
 } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import { px2rem } from "@/utils";
 
@@ -109,7 +109,7 @@ const updateItemsScale = () => {
   const scale = props.isDruggable ? (props.editScale ?? 1) : 1;
 
   children.forEach((el) => {
-    g.to(el, {
+    gsap.to(el, {
       scale,
       duration: props.duration,
       ease: "power4.out",
@@ -137,7 +137,7 @@ const onPointerMove = (e: PointerEvent) => {
   delta.value = currentCoord - startCoord.value;
   const moveOffset = trackOffset(currentSid.value) + delta.value;
 
-  g.set(refTrack.value, {
+  gsap.set(refTrack.value, {
     [props.orientation === "vertical" ? "y" : "x"]: moveOffset,
   });
 };
@@ -179,7 +179,7 @@ const onAnimate = (idx: number, duration = props.duration): void => {
   const offset = -(screenSize.value ?? 0) * idx - props.gap * idx;
 
   if (el) {
-    g.to(el, {
+    gsap.to(el, {
       ...(props.orientation === "vertical" ? { y: offset } : { x: offset }),
       duration,
       ease: "power4.out",
@@ -240,7 +240,7 @@ onUnmounted(() => {
 /* * * Animations * * */
 
 const onEnter = (el: Element, done: () => void): void => {
-  g.fromTo(
+  gsap.fromTo(
     el,
     {
       opacity: 0,
@@ -255,7 +255,7 @@ const onEnter = (el: Element, done: () => void): void => {
 };
 
 const onLeave = (el: Element, done: () => void): void => {
-  g.to(el, {
+  gsap.to(el, {
     opacity: 0,
     ease: "power4.out",
     duration: ANIMATION_FADE_DURATION,

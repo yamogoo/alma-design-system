@@ -7,7 +7,7 @@ import {
   useTemplateRef,
   type ComputedRef,
 } from "vue";
-import g from "gsap";
+import gsap from "gsap";
 
 import tokens from "@/tokens";
 
@@ -70,7 +70,7 @@ const onUp = (e: PointerEvent) => {
 /* * * Animations * * */
 
 const onAnim = (el: HTMLButtonElement, isPressed: boolean): void => {
-  g.to(el, {
+  gsap.to(el, {
     scale: isPressed ? props.scalePressed : 1,
     duration: 0.05,
     ease: isPressed ? "power4.out" : "power4.in",
