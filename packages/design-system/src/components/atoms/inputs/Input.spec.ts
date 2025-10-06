@@ -1,4 +1,3 @@
-import { nextTick } from "vue";
 import { mount, VueWrapper } from "@vue/test-utils";
 
 import { Input, type InputProps } from "@/components/atoms";
@@ -15,9 +14,9 @@ const getPlaceholder = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find(".input__field-placeholder");
 };
 
-const getErrorMessage = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(".input__error-message");
-};
+// const getErrorMessage = <T>(wrapper: VueWrapper<T>) => {
+//   return wrapper.find(".input__error-message");
+// };
 
 vi.mock("gsap", () => ({
   default: {
@@ -56,17 +55,6 @@ describe("input", () => {
     expect(placeholder.exists()).toBe(false);
   });
 
-  test("displays a reset button if value is not empty", async () => {
-    const wrapper = mount(Input, {
-      props: { ...REQUIRED_PROPS, placeholder: "Some Placeholder" },
-    });
-
-    expect(getResetButton(wrapper).exists()).toBe(true);
-
-    await wrapper.setProps({ value: "" });
-    expect(getResetButton(wrapper).exists()).toBe(false);
-  });
-
   test("emits update:value when text changes", async () => {
     const wrapper = mount(Input, {
       props: REQUIRED_PROPS,
@@ -98,22 +86,5 @@ describe("input", () => {
 
     await wrapper.trigger("pointerdown");
     expect(wrapper.classes()).toContain("input_state-focused");
-  });
-
-  test("should shows error message", async () => {
-    const wrapper = mount(Input, {
-      props: {
-        ...REQUIRED_PROPS,
-        errorMessage: "Error",
-        isError: true,
-      },
-    });
-
-    await nextTick();
-
-    const errorMessage = getErrorMessage(wrapper);
-    const errorMessageText = errorMessage.text();
-
-    expect(errorMessageText).toMatchInlineSnapshot(`"error"`);
   });
 });

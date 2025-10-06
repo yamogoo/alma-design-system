@@ -33,7 +33,7 @@
         },
         "label": {
           "fontStyle": {
-            "$value": "label-2",
+            "$value": "body-2",
             "$type": "string",
             "$unit": ""
           }
@@ -109,7 +109,7 @@
         },
         "label": {
           "fontStyle": {
-            "$value": "label-3",
+            "$value": "body-2",
             "$type": "string",
             "$unit": ""
           }

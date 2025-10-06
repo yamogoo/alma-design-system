@@ -30,9 +30,9 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
-          "$unit": ""
+          "$unit": "alias"
         },
         "padding-top": {
           "$value": "{tokens.spacing.xxs.$value}",
@@ -42,16 +42,16 @@
       },
       "placeholder": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
-          "$unit": ""
+          "$unit": "alias"
         }
       },
-      "error": {
+      "validationMessage": {
         "fontStyle": {
-          "$value": "caption-1",
+          "$value": "label-1",
           "$type": "string",
-          "$unit": ""
+          "$unit": "alias"
         },
         "padding": {
           "$value": [
@@ -93,9 +93,9 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
-          "$unit": ""
+          "$unit": "alias"
         },
         "paddingTop": {
           "$value": "{tokens.spacing.xxs.$value}",
@@ -105,16 +105,16 @@
       },
       "placeholder": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
-          "$unit": ""
+          "$unit": "alias"
         }
       },
-      "error": {
+      "validationMessage": {
         "fontStyle": {
-          "$value": "caption-1",
+          "$value": "label-1",
           "$type": "string",
-          "$unit": ""
+          "$unit": "alias"
         },
         "padding": {
           "$value": [

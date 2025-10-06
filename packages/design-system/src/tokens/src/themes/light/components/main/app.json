@@ -1,0 +1,7 @@
+{
+  "root": {
+    "background": {
+      "$value": "{themes.light.contracts.semantic.neutral.primary.surface.$value}"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "neutral": {
+    "primary": {
+      "$value": "rgba({colors.gray-1000}, .05)",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "accent": {
+    "primary": {
+      "$value": "rgba({colors.blue-1000}, .05)",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

@@ -2,64 +2,41 @@
   "xxs": {
     "$value": 4,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Extra extra small border radius",
-      "category": "radius"
-    }
+    "$unit": "px"
   },
   "xs": {
     "$value": 8,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Extra small border radius",
-      "category": "radius"
-    }
+    "$unit": "px"
   },
   "sm": {
     "$value": 12,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Small border radius", "category": "radius" }
+    "$unit": "px"
   },
   "md": {
     "$value": 16,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Medium border radius", "category": "radius" }
+    "$unit": "px"
   },
   "lg": {
     "$value": 20,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Large border radius", "category": "radius" }
+    "$unit": "px"
   },
   "xl": {
     "$value": 24,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Extra large border radius",
-      "category": "radius"
-    }
+    "$unit": "px"
   },
   "xxl": {
     "$value": 32,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Extra extra large border radius",
-      "category": "radius"
-    }
+    "$unit": "px"
   },
   "infinity": {
     "$value": 9999,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Fully rounded / pill shape",
-      "category": "radius"
-    }
+    "$unit": "px"
   }
 }

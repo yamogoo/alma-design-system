@@ -11,13 +11,19 @@ export const surfaceSizes = Object.keys(
 ) as SurfaceSize[];
 
 export type SurfaceMode =
-  keyof typeof tokens.themes.light.components.atoms.surface;
+  keyof typeof tokens.themes.light.contracts.interactive.surface;
 export const surfaceModes = Object.keys(
-  tokens.themes.light.components.atoms.surface
+  tokens.themes.light.contracts.interactive.surface
 ) as SurfaceMode[];
 
 export type SurfaceTone =
-  keyof typeof tokens.themes.light.components.atoms.surface.accent;
+  keyof typeof tokens.themes.light.contracts.interactive.surface.accent;
 export const surfaceTones = Object.keys(
-  tokens.themes.light.components.atoms.surface.accent
+  tokens.themes.light.contracts.interactive.surface.accent
 ) as SurfaceTone[];
+
+export type SurfaceState =
+  keyof typeof tokens.themes.light.contracts.interactive.surface.accent.primary;
+export const surfaceStates = Object.keys(
+  tokens.themes.light.contracts.interactive.surface.accent.primary
+) as SurfaceState[];

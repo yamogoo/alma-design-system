@@ -46,12 +46,14 @@ const contentKey = computed(
     mode="neutral"
     tone="canvas"
     size="lg"
-    bordered
+    :bordered="true"
+    :elevated="true"
     :content-key="contentKey"
     :duration="FORM_ANIMATION_DURATION"
   >
     <template #header>
       <Components.Atoms.StepPaginationTabs
+        :size="'lg'"
         :selected-item-id="selectedFormId"
         :items="formPaginationItems"
         @update:selected-item-id="onUpdateSelectedFormId"
@@ -84,7 +86,7 @@ const contentKey = computed(
 </template>
 
 <style lang="scss">
-$max-width: 378px;
+$max-width: 400px;
 
 .auth-form {
   box-sizing: border-box;

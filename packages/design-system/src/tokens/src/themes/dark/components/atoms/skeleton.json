@@ -4,18 +4,12 @@
       "backgroundIn": {
         "$value": "rgba({themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}, 0.25)",
         "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "sheet"
-        }
+        "$unit": "hex"
       },
       "backgroundOut": {
         "$value": "rgba({themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}, 0)",
         "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "sheet"
-        }
+        "$unit": "hex"
       }
     }
   },
@@ -24,18 +18,12 @@
       "backgroundIn": {
         "$value": "rgba({themes.dark.contracts.interactive.surface.accent.tertiary.disabled.$value}, 0.25)",
         "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "sheet"
-        }
+        "$unit": "hex"
       },
       "backgroundOut": {
         "$value": "rgba({themes.dark.contracts.interactive.surface.accent.tertiary.disabled.$value}, 0)",
         "$type": "color",
-        "$unit": "hex",
-        "$meta": {
-          "category": "sheet"
-        }
+        "$unit": "hex"
       }
     }
   }

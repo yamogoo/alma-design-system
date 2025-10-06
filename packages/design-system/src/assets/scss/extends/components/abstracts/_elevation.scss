@@ -1,0 +1,15 @@
+@use "../../../abstracts/themes" as *;
+@use "../../../abstracts/tokens" as *;
+@use "../../../app.core.scss" as *;
+
+@mixin useElevation($mode: "neutral", $tone: "primary", $size: "lg") {
+  $offset-x: get($tokens, "elevation.#{$size}.offset-x");
+  $offset-y: get($tokens, "elevation.#{$size}.offset-y");
+  $blur: get($tokens, "elevation.#{$size}.blur");
+
+  @include themify($themes) {
+    $color: themed("contracts.rel.elevation.#{$mode}.#{$tone}");
+
+    box-shadow: $offset-x $offset-y $blur $color;
+  }
+}

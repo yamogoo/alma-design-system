@@ -21,8 +21,7 @@
 
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["src/*"],
-      "@lp/*": ["landing-page/*"]
+      "@/*": ["src/*"]
     },
     "types": ["gsap/types", "vitest/globals", "unplugin-vue-router/client"]
   },

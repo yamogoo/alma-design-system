@@ -4,7 +4,7 @@
       "root": {},
       "item": {
         "fontStyle": {
-          "$value": "label-2",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         },
@@ -19,7 +19,7 @@
       "root": {},
       "item": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         },

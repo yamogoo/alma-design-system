@@ -20,7 +20,7 @@ src/tokens/
     typography/                 # typography (tokens + styles)
       tokens.json
       styles/
-        body-1.json
+        body-2.json
         body-2.json
         display-1.json
         ...

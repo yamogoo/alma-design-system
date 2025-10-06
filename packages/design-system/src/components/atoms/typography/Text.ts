@@ -1,4 +1,4 @@
-import type { TextVariant, TextMode, TextTone } from "@/adapters";
+import type { TextVariant, TextMode, TextTone, TextState } from "@/adapters";
 
 import type { UIElementTypographyTag } from "@/typings";
 
@@ -19,6 +19,7 @@ export interface TextProps {
   variant?: TextVariant;
   mode?: TextMode;
   tone?: TextTone;
+  state?: TextState;
   display?: "inline-block" | "block";
   color?: string;
   weight?: string;

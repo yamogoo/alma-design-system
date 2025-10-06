@@ -51,7 +51,7 @@ const preview: Preview = {
     },
     actions: { argTypesRegex: "^on[A-Z].*" },
   },
-  loaders: [mswLoader],
+  // loaders: [mswLoader],
   decorators: [
     withTheme,
     () => ({

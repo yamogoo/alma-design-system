@@ -1,8 +1,14 @@
-import type { IconSize, IconMode, IconTone, IconVariant } from "@/adapters";
+import type {
+  IconSize,
+  IconMode,
+  IconTone,
+  IconVariant,
+  IconState,
+} from "@/adapters";
 
 import { iconNames, iconStyles, iconWeights } from "alma-icons";
 
-import type { UIElementStylingModifiers, UIElementVariant } from "@/typings";
+import type { UIElementStylingModifiers } from "@/typings";
 
 export type IconName = (typeof iconNames)[number];
 
@@ -25,13 +31,14 @@ export interface IconComponentProps {
 
 export interface IconProps
   extends Partial<
-      UIElementStylingModifiers<IconVariant, IconSize, IconMode, IconTone>
+      UIElementStylingModifiers<
+        IconVariant,
+        IconSize,
+        IconMode,
+        IconTone,
+        IconState
+      >
     >,
-    IconStyleProps {
-  variant?: UIElementVariant;
-  size?: IconSize;
-  mode?: IconMode;
-  tone?: IconTone;
-}
+    IconStyleProps {}
 
 export * from "alma-icons";

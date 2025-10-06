@@ -1,0 +1,32 @@
+{
+  "fontFamily": {
+    "$value": "{typography.tokens.fontFamily.primary.$value}",
+    "$type": "fontFamily",
+    "$unit": ""
+  },
+  "fontSize": {
+    "$value": 13,
+    "$type": "number",
+    "$unit": "px"
+  },
+  "fontStyle": {
+    "$value": "normal",
+    "$type": "fontStyle",
+    "$unit": ""
+  },
+  "fontWeight": {
+    "$value": "{typography.tokens.fontWeight.medium.$value}",
+    "$type": "fontWeight",
+    "$unit": ""
+  },
+  "lineHeight": {
+    "$value": 20,
+    "$type": "number",
+    "$unit": "px"
+  },
+  "letterSpacing": {
+    "$value": 0.48,
+    "$type": "letterSpacing",
+    "$unit": "px"
+  }
+}

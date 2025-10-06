@@ -109,7 +109,7 @@ export interface Props {
       :is-error="localIsError"
     ></Components.Atoms.PasswordInput>
     <Components.Atoms.Text
-      :variant="'caption-2'"
+      :variant="'label-1'"
       :mode="'neutral'"
       :tone="'secondary'"
     >
@@ -118,7 +118,7 @@ export interface Props {
     <Components.Atoms.Text
       v-if="localIsError"
       :data-testid="'auth-form-error'"
-      :variant="'caption-1'"
+      :variant="'label-1'"
       :text-color="'error'"
     >
       {{ loginError }}

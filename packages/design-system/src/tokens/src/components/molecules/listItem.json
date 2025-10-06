@@ -40,14 +40,14 @@
       },
       "title": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }
       },
       "description": {
         "fontStyle": {
-          "$value": "body-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }

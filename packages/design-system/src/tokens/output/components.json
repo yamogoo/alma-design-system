@@ -32,7 +32,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-1",
+              "$value": "body-1",
               "$type": "string",
               "$unit": ""
             }
@@ -55,7 +55,7 @@
         "md": {
           "root": {
             "size": {
-              "$value": 44,
+              "$value": 48,
               "$type": "number",
               "$unit": "px"
             },
@@ -82,7 +82,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-2",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -132,7 +132,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -180,7 +180,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -232,7 +232,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-1",
+              "$value": "body-1",
               "$type": "string",
               "$unit": ""
             }
@@ -282,7 +282,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -332,7 +332,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-4",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -382,7 +382,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-4",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -823,9 +823,9 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
-              "$unit": ""
+              "$unit": "alias"
             },
             "padding-top": {
               "$value": 4,
@@ -835,16 +835,16 @@
           },
           "placeholder": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
-              "$unit": ""
+              "$unit": "alias"
             }
           },
-          "error": {
+          "validationMessage": {
             "fontStyle": {
-              "$value": "caption-1",
+              "$value": "label-1",
               "$type": "string",
-              "$unit": ""
+              "$unit": "alias"
             },
             "padding": {
               "$value": [
@@ -886,9 +886,9 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
-              "$unit": ""
+              "$unit": "alias"
             },
             "paddingTop": {
               "$value": 4,
@@ -898,16 +898,16 @@
           },
           "placeholder": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
-              "$unit": ""
+              "$unit": "alias"
             }
           },
-          "error": {
+          "validationMessage": {
             "fontStyle": {
-              "$value": "caption-1",
+              "$value": "label-1",
               "$type": "string",
-              "$unit": ""
+              "$unit": "alias"
             },
             "padding": {
               "$value": [
@@ -975,7 +975,7 @@
         "lg": {
           "option": {
             "fontStyle": {
-              "$value": "label-2",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             },
@@ -989,7 +989,7 @@
         "md": {
           "option": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             },
@@ -1110,7 +1110,7 @@
           "item": {},
           "item-label": {
             "fontStyle": {
-              "$value": "label-2",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -1132,7 +1132,7 @@
           "item": {},
           "item-label": {
             "fontStyle": {
-              "$value": "label-2",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -1278,7 +1278,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-2",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -1338,7 +1338,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-2",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -1398,7 +1398,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-2",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -1623,7 +1623,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "alias"
             }
           },
@@ -1672,7 +1672,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "alias"
             }
           },
@@ -1721,7 +1721,7 @@
           },
           "label": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "alias"
             }
           },
@@ -1832,7 +1832,7 @@
             },
             "label": {
               "fontStyle": {
-                "$value": "label-2",
+                "$value": "body-2",
                 "$type": "string",
                 "$unit": ""
               }
@@ -1918,7 +1918,7 @@
             },
             "label": {
               "fontStyle": {
-                "$value": "label-3",
+                "$value": "body-2",
                 "$type": "string",
                 "$unit": ""
               }
@@ -1989,6 +1989,18 @@
               "$$type": "number",
               "$unit": "px"
             }
+          },
+          "footer": {
+            "paddingTop": {
+              "$value": 16,
+              "$$type": "number",
+              "$unit": "px"
+            },
+            "paddingBottom": {
+              "$value": 12,
+              "$$type": "number",
+              "$unit": "px"
+            }
           }
         }
       }
@@ -1999,7 +2011,7 @@
           "root": {
             "padding": {
               "$value": [
-                16,
+                24,
                 24
               ],
               "$$type": "number",
@@ -2035,7 +2047,7 @@
           "root": {},
           "item": {
             "fontStyle": {
-              "$value": "label-2",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             },
@@ -2050,7 +2062,7 @@
           "root": {},
           "item": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             },
@@ -2105,14 +2117,14 @@
           },
           "title": {
             "fontStyle": {
-              "$value": "label-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
           },
           "description": {
             "fontStyle": {
-              "$value": "body-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -2235,14 +2247,14 @@
           },
           "title": {
             "fontStyle": {
-              "$value": "title-3",
+              "$value": "title-1",
               "$type": "string",
               "$unit": ""
             }
           },
           "description": {
             "fontStyle": {
-              "$value": "body-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -2280,14 +2292,14 @@
           },
           "title": {
             "fontStyle": {
-              "$value": "title-3",
+              "$value": "title-1",
               "$type": "string",
               "$unit": ""
             }
           },
           "description": {
             "fontStyle": {
-              "$value": "body-3",
+              "$value": "body-2",
               "$type": "string",
               "$unit": ""
             }
@@ -2347,7 +2359,7 @@
             },
             "label": {
               "fontStyle": {
-                "$value": "label-3",
+                "$value": "body-2",
                 "$type": "alias",
                 "unit": "",
                 "meta": {

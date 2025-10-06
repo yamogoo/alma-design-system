@@ -1,17 +1,17 @@
 {
   "neutral": {
     "base-down-3": {
-      "$value": "{colors.gray-350}",
+      "$value": "{colors.gray-950}",
       "$type": "color",
       "$unit": "hex"
     },
     "base-down-2": {
-      "$value": "{colors.gray-450}",
+      "$value": "{colors.gray-825}",
       "$type": "color",
       "$unit": "hex"
     },
     "base-down-1": {
-      "$value": "{colors.gray-550}",
+      "$value": "{colors.gray-775}",
       "$type": "color",
       "$unit": "hex"
     },
@@ -21,17 +21,17 @@
       "$unit": "hex"
     },
     "base-up-1": {
-      "$value": "{colors.gray-775}",
+      "$value": "{colors.gray-550}",
       "$type": "color",
       "$unit": "hex"
     },
     "base-up-2": {
-      "$value": "{colors.gray-825}",
+      "$value": "{colors.gray-450}",
       "$type": "color",
       "$unit": "hex"
     },
     "base-up-3": {
-      "$value": "{colors.gray-950}",
+      "$value": "{colors.gray-350}",
       "$type": "color",
       "$unit": "hex"
     }

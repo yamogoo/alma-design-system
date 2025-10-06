@@ -17,18 +17,12 @@
         "normal": {
           "$value": "{themes.dark.contracts.interactive.surface.accent.quaternary.normal.$value}",
           "$type": "color",
-          "$unit": "hex",
-          "$meta": {
-            "category": "background"
-          }
+          "$unit": "hex"
         },
         "active": {
           "$value": "{themes.dark.contracts.interactive.surface.accent.quaternary.selected.$value}",
           "$type": "color",
-          "$unit": "hex",
-          "$meta": {
-            "category": "background"
-          }
+          "$unit": "hex"
         }
       }
     }

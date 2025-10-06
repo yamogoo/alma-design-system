@@ -16,7 +16,7 @@
       "item": {},
       "item-label": {
         "fontStyle": {
-          "$value": "label-2",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }
@@ -38,7 +38,7 @@
       "item": {},
       "item-label": {
         "fontStyle": {
-          "$value": "label-2",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }

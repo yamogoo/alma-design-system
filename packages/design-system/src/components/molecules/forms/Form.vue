@@ -32,7 +32,7 @@ const id = useId();
         :class="`${PREFIX}__header`"
         data-testid="form-header"
       >
-        <Text :variant="'title-2'" :mode="'neutral'" :tone="'primary'">
+        <Text :variant="'title-1'" :mode="'neutral'" :tone="'primary'">
           {{ title }}
         </Text>
         <slot name="header"></slot>
@@ -58,6 +58,9 @@ $prefix: form;
       $body-gap: get($val, "body.gap");
       $body-padding: get($val, "body.padding");
 
+      $footer-padding-top: get($val, "footer.padding-top");
+      $footer-padding-bottom: get($val, "footer.padding-bottom");
+
       &_size-#{$size} {
         border-radius: $border-radius;
 
@@ -67,9 +70,13 @@ $prefix: form;
 
         .#{$prefix} {
           &__header,
-          &__body,
-          &__footer {
+          &__body {
             padding: $body-padding 0;
+          }
+
+          &__footer {
+            padding-top: $footer-padding-top;
+            padding-bottom: $footer-padding-bottom;
           }
         }
       }

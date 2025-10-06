@@ -58,7 +58,7 @@ export const Playground: Story = {
           <StoryGrid columns={1}>
             <AnimatedWrapper {...args} contentKey={`${isPressed.value}`}>
               <StorySlotCover style={computedHeight.value}>
-                <Text variant={"label-3"} mode={"accent"} tone={"primary"}>
+                <Text variant={"body-2"} mode={"accent"} tone={"primary"}>
                   Content height: {title.value}
                 </Text>
                 <ActionButton

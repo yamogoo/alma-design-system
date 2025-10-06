@@ -12,8 +12,6 @@ import packageJson from "./package.json";
 import vueRouter from "unplugin-vue-router/vite";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 
-import { JSONBuilderPlugin } from "@alma/tokens-worker";
-
 import VueRouterPlugin from "unplugin-vue-router/vite";
 
 export default (opts: { mode: string }) => {
@@ -66,14 +64,6 @@ export default (opts: { mode: string }) => {
       }),
       svgLoader({ defaultImport: "component" }),
       // Generate locales JSON from directory structure
-      JSONBuilderPlugin({
-        format: "json",
-        paths: ["./src/locales/src"],
-        outDir: "./src/locales/output",
-        entryFilePath: "./src/locales/index.ts",
-        includeRootDirName: true,
-        includeRootNames: true,
-      }),
     ],
     optimizeDeps: {
       include: ["@vue/babel-plugin-jsx"],
@@ -99,7 +89,6 @@ export default (opts: { mode: string }) => {
       alias: {
         "~": fileURLToPath(new URL("./", import.meta.url)),
         "@": fileURLToPath(new URL("./src", import.meta.url)),
-        "@lp": fileURLToPath(new URL("./landing-page", import.meta.url)),
       },
     },
     css: {

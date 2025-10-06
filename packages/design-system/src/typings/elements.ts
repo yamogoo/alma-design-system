@@ -107,9 +107,16 @@ export interface UIElementUnionProps<V = UIElementVariant> {
   variant?: V;
 }
 
-export interface UIElementStylingModifiers<V, S, M = unknown, T = unknown> {
+export interface UIElementStylingModifiers<
+  V,
+  SZ,
+  M = unknown,
+  T = unknown,
+  ST = unknown,
+> {
   variant: V;
-  size: S;
+  size: SZ;
   mode: M;
   tone: T;
+  state: ST;
 }

@@ -2,64 +2,36 @@
   "fontFamily": {
     "$value": "{typography.tokens.fontFamily.primary.$value}",
     "$type": "fontFamily",
-    "$unit": "",
-    "$meta": {
-      "description": "Title-1 font family",
-      "category": "typography"
-    }
+    "$unit": ""
   },
   "fontSize": {
-    "$value": 22,
+    "$value": 18,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Title-1 font size",
-      "category": "typography"
-    }
+    "$unit": "px"
   },
   "fontStyle": {
     "$value": "normal",
     "$type": "fontStyle",
-    "$unit": "",
-    "$meta": {
-      "description": "Title-1 font style",
-      "category": "typography"
-    }
+    "$unit": ""
   },
   "fontWeight": {
     "$value": "{typography.tokens.fontWeight.semibold.$value}",
     "$type": "fontWeight",
-    "$unit": "",
-    "$meta": {
-      "description": "Title-1 font weight",
-      "category": "typography"
-    }
+    "$unit": ""
   },
   "lineHeight": {
-    "$value": 30,
+    "$value": 24,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Title-1 line height",
-      "category": "typography"
-    }
+    "$unit": "px"
   },
   "letterSpacing": {
     "$value": -0.3,
     "$type": "letterSpacing",
-    "$unit": "px",
-    "$meta": {
-      "description": "Title-1 letter spacing",
-      "category": "typography"
-    }
+    "$unit": "px"
   },
   "marginBottom": {
     "$value": "{tokens.spacing.xs.$value}",
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Title-1 bottom margin",
-      "category": "spacing"
-    }
+    "$unit": "px"
   }
 }

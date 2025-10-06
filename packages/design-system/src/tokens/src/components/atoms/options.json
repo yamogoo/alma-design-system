@@ -3,7 +3,7 @@
     "lg": {
       "option": {
         "fontStyle": {
-          "$value": "label-2",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         },
@@ -17,7 +17,7 @@
     "md": {
       "option": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         },

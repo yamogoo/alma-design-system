@@ -1,7 +1,14 @@
 {
   "neutral": {
-    "base": {
-      "$value": "rgba({colors.gray-600}, .035)",
+    "primary": {
+      "$value": "rgba({baseColors.black.$value}, .0)",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
+  "accent": {
+    "primary": {
+      "$value": "rgba({colors.blue-1000}, .05)",
       "$type": "color",
       "$unit": "hex"
     }

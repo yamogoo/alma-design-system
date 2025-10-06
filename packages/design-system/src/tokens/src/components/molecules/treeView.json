@@ -50,7 +50,7 @@
         },
         "label": {
           "fontStyle": {
-            "$value": "label-3",
+            "$value": "body-2",
             "$type": "alias",
             "unit": "",
             "meta": {

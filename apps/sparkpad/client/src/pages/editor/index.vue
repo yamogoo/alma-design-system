@@ -38,7 +38,7 @@ const onOpenSettings = (): void => {};
     <EditorView></EditorView>
   </Components.Atoms.Page>
   <Components.Molecules.Overlay v-model:is-open="isSettingsOpen">
-    <Components.Atoms.Surface>
+    <Components.Atoms.Surface bordered>
       <Components.Atoms.Text>
         {{ "Settings" }}
       </Components.Atoms.Text>

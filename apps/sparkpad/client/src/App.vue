@@ -55,11 +55,10 @@ onMounted(() => {
   @include box(100vw, 100dvh);
   overflow: hidden;
 
-  @include themify($themes) {
-    background-color: themed(
-      "contracts.interactive.surface.neutral.primary.normal"
-    );
-  }
   @extend %base-transition;
+
+  @include themify($themes) {
+    background-color: themed("components.main.app.root.background");
+  }
 }
 </style>

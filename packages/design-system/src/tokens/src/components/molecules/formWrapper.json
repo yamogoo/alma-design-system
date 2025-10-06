@@ -4,7 +4,7 @@
       "root": {
         "padding": {
           "$value": [
-            "{tokens.spacing.md.$value}",
+            "{tokens.spacing.lg.$value}",
             "{tokens.spacing.lg.$value}"
           ],
           "$$type": "number",

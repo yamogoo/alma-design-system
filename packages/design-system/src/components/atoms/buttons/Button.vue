@@ -29,6 +29,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   appendIconStyle: "outline",
   appendIconWeight: "500",
   scalePressed: 0.95,
+  bordered: false,
 });
 
 defineOptions({
@@ -119,6 +120,7 @@ const onKeyup = (e: KeyboardEvent) => {
         [`${PREFIX}_direction-${contentDirection}`]: !!contentDirection,
         [`${PREFIX}_stretch-${stretch}`]: !!stretch,
         [`${PREFIX}_state-disabled`]: isDisabled,
+        [`${PREFIX}_state-bordered`]: bordered,
       },
     ]"
     data-testid="button"
@@ -213,10 +215,21 @@ $prefix: "button";
       background-color: themed(
         "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.#{$state}"
       );
-      border: get($tokens, "outline") solid
-        themed(
-          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
-        );
+
+      &.#{$prefix}_bordered {
+        border: get($tokens, "outline") solid
+          themed(
+            "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
+          );
+      }
+
+      // exception: outline state
+      &-outline {
+        border: get($tokens, "outline") solid
+          themed(
+            "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
+          );
+      }
     }
 
     .#{$prefix}__label {

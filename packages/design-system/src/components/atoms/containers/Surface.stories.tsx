@@ -44,6 +44,7 @@ const meta = {
     size: "lg",
     mode: "neutral",
     tone: "secondary",
+    bordered: true,
   },
 } satisfies Meta<typeof Surface>;
 
@@ -54,7 +55,7 @@ export const Playground: Story = {
   render: (args: SurfaceProps) => ({
     setup() {
       return () => (
-        <StoryGrid columns={5}>
+        <StoryGrid columns={6}>
           <StoryBox width="100%">
             <Surface {...args}></Surface>
           </StoryBox>
@@ -73,7 +74,7 @@ export const Size: Story = {
             title={"Surface size"}
             description={"Available options and sizes"}
           ></PageHeader>
-          <StoryGrid columns={5}>
+          <StoryGrid columns={6}>
             {surfaceVariants.map((variant) =>
               surfaceSizes.map((size) => (
                 <InfoBlock
@@ -109,7 +110,7 @@ export const Color: Story = {
             title={"Surface colors"}
             description={"Combinations of mode and tone"}
           ></PageHeader>
-          <StoryGrid columns={5}>
+          <StoryGrid columns={6}>
             {surfaceModes.map((mode) =>
               surfaceTones.map((tone) => (
                 <InfoBlock

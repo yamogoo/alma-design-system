@@ -21,20 +21,14 @@
         "normal": {
           "$value": "{themes.dark.contracts.interactive.label.neutral.secondary.normal.$value}",
           "$type": "color",
-          "$unit": "hex",
-          "$meta": {
-            "category": "tooltip"
-          }
+          "$unit": "hex"
         }
       },
       "icon": {
         "normal": {
           "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
           "$type": "color",
-          "$unit": "hex",
-          "$meta": {
-            "category": "tooltip"
-          }
+          "$unit": "hex"
         }
       }
     },
@@ -59,20 +53,14 @@
         "normal": {
           "$value": "{themes.dark.contracts.interactive.onSurface.neutral.quaternary.normal.$value}",
           "$type": "color",
-          "$unit": "hex",
-          "$meta": {
-            "category": "tooltip"
-          }
+          "$unit": "hex"
         }
       },
       "icon": {
         "normal": {
           "$value": "{themes.dark.contracts.interactive.label.neutral.quaternary.normal.$value}",
           "$type": "color",
-          "$unit": "hex",
-          "$meta": {
-            "category": "tooltip"
-          }
+          "$unit": "hex"
         }
       }
     }

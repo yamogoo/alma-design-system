@@ -2,37 +2,31 @@
   "xxs": {
     "$value": 4,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Extra extra small gap", "category": "spacing" }
+    "$unit": "px"
   },
   "xs": {
     "$value": 10,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Extra small gap", "category": "spacing" }
+    "$unit": "px"
   },
   "sm": {
     "$value": 12,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Small gap", "category": "spacing" }
+    "$unit": "px"
   },
   "md": {
     "$value": 14,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Medium gap", "category": "spacing" }
+    "$unit": "px"
   },
   "lg": {
     "$value": 24,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Large gap", "category": "spacing" }
+    "$unit": "px"
   },
   "xl": {
     "$value": 32,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Extra large gap", "category": "spacing" }
+    "$unit": "px"
   }
 }

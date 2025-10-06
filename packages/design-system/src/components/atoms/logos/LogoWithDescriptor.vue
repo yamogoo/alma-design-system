@@ -39,12 +39,7 @@ const computedClass = () => {
     ]"
   >
     <Logo data-testid="logo" />
-    <Text
-      variant="body-2"
-      :class="`${PREFIX}__label`"
-      :mode="'neutral'"
-      :tone="'primary'"
-    >
+    <Text :class="`${PREFIX}__label`" :mode="'neutral'" :tone="'primary'">
       {{ name }}
     </Text>
   </div>
@@ -63,9 +58,10 @@ $prefix: logo-with-descriptor;
 
           gap: $gap;
 
-          &.#{$prefix}__label {
+          .#{$prefix}__label {
             @extend %t__#{$label-font-style};
             line-height: 1;
+            margin: 0;
           }
         }
       }

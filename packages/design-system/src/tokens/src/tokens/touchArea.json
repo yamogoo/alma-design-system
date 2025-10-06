@@ -3,8 +3,7 @@
     "size": {
       "$value": 36,
       "$type": "number",
-      "$unit": "px",
-      "$meta": { "description": "Small touch target area", "category": "size" }
+      "$unit": "px"
     }
   }
 }

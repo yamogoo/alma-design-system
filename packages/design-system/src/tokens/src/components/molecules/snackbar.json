@@ -32,14 +32,14 @@
       },
       "title": {
         "fontStyle": {
-          "$value": "title-3",
+          "$value": "title-1",
           "$type": "string",
           "$unit": ""
         }
       },
       "description": {
         "fontStyle": {
-          "$value": "body-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }
@@ -77,14 +77,14 @@
       },
       "title": {
         "fontStyle": {
-          "$value": "title-3",
+          "$value": "title-1",
           "$type": "string",
           "$unit": ""
         }
       },
       "description": {
         "fontStyle": {
-          "$value": "body-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }

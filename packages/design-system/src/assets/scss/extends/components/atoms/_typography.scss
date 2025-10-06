@@ -13,8 +13,14 @@
       @each $key, $value in $v {
         $result: $value;
 
-        @if $key == "font-size" or $key == "letter-spacing" {
-          #{$key}: px2em($result);
+        @if $key ==
+          "font-size" or
+          $key ==
+          "letter-spacing" or
+          $key ==
+          "line-height"
+        {
+          #{$key}: $result; // px2em($result);
         } @else {
           #{$key}: $result;
         }

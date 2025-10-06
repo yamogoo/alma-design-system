@@ -7,6 +7,9 @@ import { useAuthStore, useLocaleStore } from "@/stores";
 
 import { Components } from "@alma/design-system";
 
+const MIN_PASSWORD_LENGTH =
+  +import.meta.env.VITE__FORM_PASSWORD_MIN_LENGTH || 6;
+
 withDefaults(defineProps<Props>(), {
   isLoginError: false,
 });
@@ -19,11 +22,8 @@ const { $t } = storeToRefs(useLocaleStore());
 
 const router = useRouter();
 
-const { isLoggedIn, errors, isLoading } = storeToRefs(useAuthStore());
+const { isLoggedIn, errors } = storeToRefs(useAuthStore());
 const { login } = useAuthStore();
-
-const MIN_PASSWORD_LENGTH =
-  +import.meta.env.VITE__FORM_PASSWORD_MIN_LENGTH || 6;
 
 const localEmail = ref("");
 const localPassword = ref("");
@@ -110,7 +110,7 @@ export interface Props {
       :error-message="passwordError"
     ></Components.Atoms.PasswordInput>
     <Components.Atoms.Text
-      :variant="'caption-2'"
+      :variant="'label-1'"
       :mode="'neutral'"
       :tone="'secondary'"
     >
@@ -129,7 +129,7 @@ export interface Props {
           :size="'md'"
           :stretch="'fill'"
           :label="$t.auth.login.form.login"
-          :is-disabled="!isValid || isLoading"
+          :is-disabled="!isValid"
           @press="onSubmit"
           @key.enter="onSubmit"
         >
@@ -142,7 +142,7 @@ export interface Props {
         ></Components.Atoms.Divider>
         <Components.Atoms.ActionButton
           :mode="'neutral'"
-          :tone="'outline'"
+          :tone="'primary'"
           :size="'md'"
           :stretch="'fill'"
           :label="$t.auth.login.form.skip"

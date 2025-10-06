@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { computed, ref, watch } from "vue";
+import g from "gsap";
+
 import {
   Input,
   ControlButton,
   type PasswordInputProps,
 } from "@/components/atoms";
-import { ref, watch } from "vue";
+
+const MASKED_BUTTON_SCALE_OUT = 0.75,
+  MASKED_BUTTON_SCALE_IN = 1;
+
+const MASKED_BUTTON_DURATION = 0.15;
 
 const props = withDefaults(defineProps<PasswordInputProps>(), {
   isMaskIconShown: true,
@@ -19,6 +26,11 @@ const emit = defineEmits<{
 }>();
 
 const localMasked = ref(props.masked);
+
+const isMarkedButtonShown = computed(() => {
+  const isValueEmpty = props.value !== "";
+  return isValueEmpty;
+});
 
 const onMaskValue = (): void => {
   const newValue = !localMasked.value;
@@ -45,6 +57,32 @@ const onUpdateValue = (value: string | number): void => {
 const onReset = (): void => {
   emit("reset:value");
 };
+
+/* * * Animations * * */
+
+const onAnimMaskedButtonEnter = (el: Element, done: () => void): void => {
+  g.fromTo(
+    el,
+    { scale: MASKED_BUTTON_SCALE_OUT, opacity: 0 },
+    {
+      scale: MASKED_BUTTON_SCALE_IN,
+      opacity: 1,
+      ease: "power4.out",
+      duration: MASKED_BUTTON_DURATION,
+      onComplete: done,
+    }
+  );
+};
+
+const onAnimMaskedButtonLeave = (el: Element, done: () => void): void => {
+  g.to(el, {
+    scale: MASKED_BUTTON_SCALE_OUT,
+    opacity: 0,
+    ease: "power4.out",
+    duration: MASKED_BUTTON_DURATION,
+    onComplete: done,
+  });
+};
 </script>
 
 <template>
@@ -56,19 +94,26 @@ const onReset = (): void => {
     @update:value="onUpdateValue"
   >
     <template #controls>
-      <ControlButton
-        data-testid="input-mask-button"
-        :size="'xs'"
-        :icon-size="'xs'"
-        :mode="!isError ? 'neutral' : 'negative'"
-        :tone="'primary'"
-        :icon-name="!localMasked ? 'eye' : 'eyeDisabled'"
-        :icon-style="'outline'"
-        :icon-weight="'400'"
-        role="button"
-        :aria-label="'mask button'"
-        @click="onMaskValue"
-      />
+      <Transition
+        :css="false"
+        @enter="onAnimMaskedButtonEnter"
+        @leave="onAnimMaskedButtonLeave"
+      >
+        <ControlButton
+          v-if="isMarkedButtonShown"
+          data-testid="input-mask-button"
+          :size="'xs'"
+          :icon-size="'xs'"
+          :mode="!isError ? 'neutral' : 'negative'"
+          :tone="'primary'"
+          :icon-name="!localMasked ? 'eye' : 'eyeDisabled'"
+          :icon-style="'outline'"
+          :icon-weight="'400'"
+          role="button"
+          :aria-label="'mask button'"
+          @click="onMaskValue"
+        />
+      </Transition>
     </template>
   </Input>
 </template>

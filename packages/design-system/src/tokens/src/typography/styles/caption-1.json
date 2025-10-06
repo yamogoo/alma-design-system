@@ -2,55 +2,31 @@
   "fontFamily": {
     "$value": "{typography.tokens.fontFamily.primary.$value}",
     "$type": "fontFamily",
-    "$unit": "",
-    "$meta": {
-      "description": "Caption-1 font family",
-      "category": "typography"
-    }
+    "$unit": ""
   },
   "fontSize": {
-    "$value": 12,
+    "$value": 10,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Caption-1 font size",
-      "category": "typography"
-    }
+    "$unit": "px"
   },
   "fontStyle": {
     "$value": "normal",
     "$type": "fontStyle",
-    "$unit": "",
-    "$meta": {
-      "description": "Caption-1 font style",
-      "category": "typography"
-    }
+    "$unit": ""
   },
   "fontWeight": {
-    "$value": "{typography.tokens.fontWeight.regular.$value}",
+    "$value": "{typography.tokens.fontWeight.medium.$value}",
     "$type": "fontWeight",
-    "$unit": "",
-    "$meta": {
-      "description": "Caption-1 font weight",
-      "category": "typography"
-    }
+    "$unit": ""
   },
   "lineHeight": {
-    "$value": 17,
+    "$value": 14,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Caption-1 line height",
-      "category": "typography"
-    }
+    "$unit": "px"
   },
   "letterSpacing": {
     "$value": 0.48,
     "$type": "letterSpacing",
-    "$unit": "px",
-    "$meta": {
-      "description": "Caption-1 letter spacing",
-      "category": "typography"
-    }
+    "$unit": "px"
   }
 }

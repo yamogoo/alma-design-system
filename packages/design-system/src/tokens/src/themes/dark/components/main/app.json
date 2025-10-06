@@ -1,0 +1,7 @@
+{
+  "root": {
+    "background": {
+      "$value": "{themes.dark.contracts.semantic.neutral.canvas.surface.$value}"
+    }
+  }
+}

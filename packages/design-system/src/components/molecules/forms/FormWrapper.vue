@@ -21,16 +21,16 @@ withDefaults(defineProps<FormWrapperProps>(), {
       {
         [`${PREFIX}_variant-${variant}`]: !!variant,
         [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
-        [`${PREFIX}_bordered`]: bordered,
       },
     ]"
     :variant="variant"
     :size="size"
     :mode="mode"
     :tone="tone"
+    :state="state"
     :bordered="bordered"
+    :elevated="elevated"
+    :is-container="isContainer"
     data-testid="form-wrapper"
   >
     <AnimatedWrapper :duration="duration" :content-key="contentKey ?? ''">

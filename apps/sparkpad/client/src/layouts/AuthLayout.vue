@@ -18,7 +18,7 @@ const { isConnected } = storeToRefs(Stores.useConnectionStore());
       :mode="'neutral'"
       :tone="'primary'"
     >
-      <Components.Atoms.Text :variant="'caption-2'">
+      <Components.Atoms.Text :variant="'caption-1'">
         {{ "Connection Lost" }}
       </Components.Atoms.Text>
     </Components.Molecules.ActionSheet>

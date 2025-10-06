@@ -18,14 +18,14 @@ withDefaults(defineProps<StorySlotCoverProps>(), {
     <template v-if="!$slots.default">
       <Text
         class="story-slot-cover__title"
-        :variant="'label-3'"
+        :variant="'body-2'"
         :mode="'accent'"
         :tone="'primary'"
         >{{ title }}</Text
       >
       <Text
         class="story-slot-cover__description"
-        :variant="'caption-2'"
+        :variant="'caption-1'"
         :mode="'accent'"
         :tone="'primary'"
         >{{ description }}</Text

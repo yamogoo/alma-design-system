@@ -1,4 +1,36 @@
 {
+  "canvas": {
+    "idle": {
+      "$value": "lightness({themes.light.contracts.semantic.neutral.canvas.onSurface.$value}, {themes.light.abstracts.config.states.onSurface.delta.lightness.idle.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "normal": {
+      "$value": "lightness({themes.light.contracts.semantic.neutral.canvas.onSurface.$value}, {themes.light.abstracts.config.states.onSurface.delta.lightness.normal.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "disabled": {
+      "$value": "lightness({themes.light.contracts.semantic.neutral.canvas.onSurface.$value}, {themes.light.abstracts.config.states.onSurface.delta.lightness.disabled.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "hovered": {
+      "$value": "lightness({themes.light.contracts.semantic.neutral.canvas.onSurface.$value}, {themes.light.abstracts.config.states.onSurface.delta.lightness.hovered.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "pressed": {
+      "$value": "lightness({themes.light.contracts.semantic.neutral.canvas.onSurface.$value}, {themes.light.abstracts.config.states.onSurface.delta.lightness.pressed.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    },
+    "selected": {
+      "$value": "lightness({themes.light.contracts.semantic.neutral.canvas.onSurface.$value}, {themes.light.abstracts.config.states.onSurface.delta.lightness.selected.$value})",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  },
   "primary": {
     "idle": {
       "$value": "lightness({themes.light.contracts.semantic.neutral.primary.onSurface.$value}, {themes.light.abstracts.config.states.onSurface.delta.lightness.idle.$value})",

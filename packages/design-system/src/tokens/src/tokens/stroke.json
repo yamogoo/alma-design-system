@@ -2,28 +2,21 @@
   "sm": {
     "$value": 1,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Thin stroke width", "category": "border" }
+    "$unit": "px"
   },
   "md": {
     "$value": 2,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Medium stroke width", "category": "border" }
+    "$unit": "px"
   },
   "lg": {
     "$value": 3,
     "$type": "number",
-    "$unit": "px",
-    "$meta": { "description": "Large stroke width", "category": "border" }
+    "$unit": "px"
   },
   "xl": {
     "$value": 4,
     "$type": "number",
-    "$unit": "px",
-    "$meta": {
-      "description": "Extra large stroke width",
-      "category": "border"
-    }
+    "$unit": "px"
   }
 }

@@ -30,7 +30,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-1",
+          "$value": "body-1",
           "$type": "string",
           "$unit": ""
         }
@@ -53,7 +53,7 @@
     "md": {
       "root": {
         "size": {
-          "$value": 44,
+          "$value": 48,
           "$type": "number",
           "$unit": "px"
         },
@@ -80,7 +80,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-2",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }
@@ -130,7 +130,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }
@@ -175,7 +175,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }
@@ -222,7 +222,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-1",
+          "$value": "body-1",
           "$type": "string",
           "$unit": ""
         }
@@ -267,7 +267,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-3",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }
@@ -317,7 +317,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-4",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }
@@ -367,7 +367,7 @@
       },
       "label": {
         "fontStyle": {
-          "$value": "label-4",
+          "$value": "body-2",
           "$type": "string",
           "$unit": ""
         }

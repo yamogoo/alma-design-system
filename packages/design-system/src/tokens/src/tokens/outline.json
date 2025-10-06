@@ -1,6 +1,5 @@
 {
   "$value": "{tokens.stroke.sm.$value}",
   "$type": "number",
-  "$unit": "px",
-  "$meta": { "description": "Default outline width", "category": "border" }
+  "$unit": "px"
 }

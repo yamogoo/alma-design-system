@@ -5,10 +5,7 @@
         "border": {
           "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal.$value}",
           "$type": "color",
-          "$unit": "hex",
-          "$meta": {
-            "category": "divider"
-          }
+          "$unit": "hex"
         }
       }
     },
@@ -17,10 +14,7 @@
         "border": {
           "$value": "{themes.light.contracts.interactive.border.neutral.secondary.normal.$value}",
           "$type": "color",
-          "$unit": "hex",
-          "$meta": {
-            "category": "divider"
-          }
+          "$unit": "hex"
         }
       }
     }

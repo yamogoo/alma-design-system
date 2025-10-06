@@ -7,7 +7,9 @@ const PREFIX = "surface";
 
 withDefaults(defineProps<SurfaceProps>(), {
   as: "div",
+  state: "normal",
   bordered: false,
+  elevated: false,
 });
 
 const root = useTemplateRef("root");
@@ -28,7 +30,8 @@ defineExpose({
         [`${PREFIX}_size-${size}`]: !!size,
         [`${PREFIX}_mode-${mode}`]: !!mode,
         [`${PREFIX}_tone-${tone}`]: !!tone,
-        [`${PREFIX}_bordered`]: bordered,
+        [`${PREFIX}_bordered`]: !!bordered,
+        [`${PREFIX}_elevated`]: !!elevated,
       },
     ]"
   >
@@ -98,5 +101,9 @@ $prefix: surface;
 
   @include defineSizes();
   @include defineThemes();
+
+  &_elevated {
+    @include useElevation();
+  }
 }
 </style>

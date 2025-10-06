@@ -7,13 +7,13 @@ describe("Text", () => {
     test("should have variant class", () => {
       const wrapper = shallowMount(Text, {
         props: {
-          variant: "body-1",
+          variant: "body-2",
         },
       });
 
       const el = wrapper.find(".text");
 
-      expect(el.classes("text_variant-body-1")).toBeTruthy();
+      expect(el.classes("text_variant-body-2")).toBeTruthy();
     });
 
     test("should have color class", () => {

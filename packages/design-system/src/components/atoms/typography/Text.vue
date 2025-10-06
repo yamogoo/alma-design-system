@@ -7,6 +7,7 @@ const PREFIX = "text";
 
 const props = withDefaults(defineProps<TextProps>(), {
   as: "span",
+  state: "normal",
 });
 
 const componentTag = props.as;
@@ -42,6 +43,7 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
         [`${PREFIX}_variant-${variant}`]: !!variant,
         [`${PREFIX}_mode-${mode}`]: !!mode,
         [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${PREFIX}_state-${state}`]: !!state,
       },
     ]"
     :style="computedStyle"
@@ -52,6 +54,7 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
 </template>
 
 <style lang="scss">
+$token-prefix: "label";
 $prefix: text;
 
 @mixin defineVariants($map: get($typography, "styles")) {
@@ -70,13 +73,21 @@ $prefix: text;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.abstracts.label")) {
+@mixin defineThemes(
+  $map: get($themes, "light.contracts.interactive.#{$token-prefix}")
+) {
   @each $mode, $modes in $map {
-    @each $tone, $val in $modes {
-      &_mode-#{$mode} {
-        &.text_tone-#{$tone} {
-          @include themify($themes) {
-            color: themed("abstracts.label.#{$mode}.#{$tone}.base");
+    @each $tone, $states in $modes {
+      @each $state, $val in $states {
+        &_mode-#{$mode} {
+          &.#{$prefix}_tone-#{$tone} {
+            &.#{$prefix}_state-#{$state} {
+              @include themify($themes) {
+                color: themed(
+                  "contracts.interactive.#{$token-prefix}.#{$mode}.#{$tone}.#{$state}"
+                );
+              }
+            }
           }
         }
       }
@@ -94,13 +105,5 @@ $prefix: text;
 
   @include defineVariants();
   @include defineThemes();
-
-  b {
-    &.accent {
-      @include themify($themes) {
-        color: themed("abstracts.label.accent.primary.base");
-      }
-    }
-  }
 }
 </style>

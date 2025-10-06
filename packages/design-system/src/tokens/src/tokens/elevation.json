@@ -1,0 +1,19 @@
+{
+  "lg": {
+    "offsetX": {
+      "$value": 0,
+      "$type": "number",
+      "$unit": "px"
+    },
+    "offsetY": {
+      "$value": 32,
+      "$type": "number",
+      "$unit": "px"
+    },
+    "blur": {
+      "$value": 64,
+      "$type": "number",
+      "$unit": "px"
+    }
+  }
+}

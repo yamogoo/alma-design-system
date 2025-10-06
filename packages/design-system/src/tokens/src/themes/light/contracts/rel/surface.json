@@ -11,7 +11,7 @@
       "$unit": "hex"
     },
     "base-down-1": {
-      "$value": "{colors.gray-75}",
+      "$value": "{colors.gray-100}",
       "$type": "color",
       "$unit": "hex"
     },

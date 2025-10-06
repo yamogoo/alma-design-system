@@ -5,7 +5,10 @@ import { Skeleton, type SVGImageProps } from "@/components/atoms";
 
 const PREFIX = "svg-image";
 
-const props = defineProps<SVGImageProps>();
+const props = withDefaults(defineProps<SVGImageProps>(), {
+  variant: "default",
+  state: "normal",
+});
 
 const modules = import.meta.glob("../../../assets/images/**/*.svg", {
   eager: false,
@@ -31,9 +34,11 @@ const symbol = computed(() => {
     :class="[
       PREFIX,
       {
+        [`${PREFIX}_variant-${variant}`]: !!variant,
         [`${PREFIX}_size-${size}`]: !!size,
         [`${PREFIX}_mode-${mode}`]: !!mode,
         [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${PREFIX}_state-${state}`]: !!state,
       },
     ]"
   >
@@ -66,13 +71,19 @@ $prefix: svg-image;
 
 @mixin defineThemes($map: get($themes, "light.contracts.interactive.label")) {
   @each $mode, $modes in $map {
-    @each $tone, $val in $modes {
-      &_mode-#{$mode} {
-        &.#{$prefix}_tone-#{$tone} {
-          @include themify($themes) {
-            fill: themed(
-              "contracts.interactive.label.#{$mode}.#{$tone}.normal"
-            );
+    @each $tone, $states in $modes {
+      @each $state, $val in $states {
+        &_mode-#{$mode} {
+          &.#{$prefix}_tone-#{$tone} {
+            svg {
+              path {
+                @include themify($themes) {
+                  fill: themed(
+                    "contracts.interactive.label.#{$mode}.#{$tone}.normal"
+                  );
+                }
+              }
+            }
           }
         }
       }

@@ -11,11 +11,13 @@ const { $t } = storeToRefs(useLocaleStore());
 <template>
   <Components.Templates.MainFooterTemplate
     :as="'footer'"
+    :variant="'default'"
+    :size="'md'"
     class="app-footer"
     :is-main-element="true"
   >
     <Components.Atoms.Text
-      :variant="'caption-2'"
+      :variant="'label-1'"
       :mode="'neutral'"
       :tone="'secondary'"
     >

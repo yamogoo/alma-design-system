@@ -19,6 +19,18 @@
           "$$type": "number",
           "$unit": "px"
         }
+      },
+      "footer": {
+        "paddingTop": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$$type": "number",
+          "$unit": "px"
+        },
+        "paddingBottom": {
+          "$value": "{tokens.spacing.sm.$value}",
+          "$$type": "number",
+          "$unit": "px"
+        }
       }
     }
   }

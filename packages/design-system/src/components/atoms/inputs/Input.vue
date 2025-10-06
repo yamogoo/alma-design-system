@@ -22,6 +22,11 @@ import {
 
 const PREFIX = "input";
 
+const RESET_BUTTON_SCALE_IN = 1,
+  RESET_BUTTON_SCALE_OUT = 0.75;
+
+const RESET_BUTTON_DURATION = 0.15;
+
 const props = withDefaults(defineProps<InputProps>(), {
   variant: "default",
   mode: "neutral",
@@ -197,10 +202,37 @@ watch(
 onMounted(() => {
   animate(0);
 });
+
+// reset button
+
+const onAnimResetButtonEnter = (el: Element, done: () => void): void => {
+  g.fromTo(
+    el,
+    { scale: RESET_BUTTON_SCALE_OUT, opacity: 0 },
+    {
+      scale: RESET_BUTTON_SCALE_IN,
+      opacity: 1,
+      ease: "power4.out",
+      duration: RESET_BUTTON_DURATION,
+      onComplete: done,
+    }
+  );
+};
+
+const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
+  g.to(el, {
+    scale: RESET_BUTTON_SCALE_OUT,
+    opacity: 0,
+    ease: "power4.out",
+    duration: RESET_BUTTON_DURATION,
+    onComplete: done,
+  });
+};
 </script>
 
 <template>
   <AnimatedWrapper
+    :id="id"
     :content-key="String(errorMessage)"
     :duration="0.3"
     :class="[
@@ -247,27 +279,33 @@ onMounted(() => {
           />
         </div>
         <slot name="controls"></slot>
-        <ControlButton
-          v-if="isResetButtonShown"
-          type="reset"
-          :class="`${PREFIX}__field-reset-button`"
-          data-testid="input__field-reset-button"
-          :size="'xs'"
-          :mode="!isError ? 'neutral' : 'negative'"
-          :tone="'primary'"
-          :icon-name="'cross'"
-          :icon-style="'outline'"
-          :icon-weight="'500'"
-          @input="sanitize"
-          @click="onReset"
-        />
+        <Transition
+          :css="false"
+          @enter="onAnimResetButtonEnter"
+          @leave="onAnimResetButtonLeave"
+        >
+          <ControlButton
+            v-if="isResetButtonShown"
+            type="reset"
+            :class="`${PREFIX}__field-reset-button`"
+            data-testid="input__field-reset-button"
+            :size="'xs'"
+            :mode="!isError ? 'neutral' : 'negative'"
+            :tone="'primary'"
+            :icon-name="'cross'"
+            :icon-style="'outline'"
+            :icon-weight="'500'"
+            @input="sanitize"
+            @click="onReset"
+          />
+        </Transition>
       </div>
     </div>
-    <div ref="refMessage" class="input__error">
+    <div ref="refMessage" :class="`${PREFIX}__validatoin`">
       <Text
         v-if="!!errorMessage"
-        :class="`${PREFIX}__error-message`"
-        :variant="'caption-2'"
+        :class="`${PREFIX}__validation-message`"
+        :variant="'caption-1'"
       >
         {{ errorMessage.toLowerCase() }}
       </Text>
@@ -283,7 +321,10 @@ $prefix: input;
     @each $size, $val in $sizes {
       $value-font-style: get($val, "label.font-style");
       $placeholder-font-style: get($val, "placeholder.font-style");
-      $error-font-style: get($val, "error.font-style");
+      $validation-message-font-style: get(
+        $val,
+        "validation-message.font-style"
+      );
 
       $value-padding-top: px2rem(get($val, "label.padding-top"));
 
@@ -291,7 +332,7 @@ $prefix: input;
       $whole-height: get($val, "root.whole-height");
       $padding: get($val, "root.padding");
       $border-radius: get($val, "root.border-radius");
-      $error-padding: get($val, "error.padding");
+      $validation-message-padding: get($val, "validation-message.padding");
 
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
@@ -310,11 +351,11 @@ $prefix: input;
             @extend %t__#{$placeholder-font-style};
           }
 
-          .#{$prefix}__error {
-            padding: $error-padding;
+          .#{$prefix}__validation-message {
+            padding: $validation-message-padding;
 
             &-message {
-              @extend %t__#{$error-font-style};
+              @extend %t__#{$validation-message-font-style};
             }
           }
         }
@@ -342,101 +383,113 @@ $prefix: input;
             }
           }
 
-          &:not(.#{$prefix}_state-focused) {
-            &.#{$prefix}_state-idle {
-              .#{$prefix}__field {
-                @include themify($themes) {
-                  color: themed(
-                    "components.atoms.input.#{$mode}.#{$tone}.label.idle"
-                  );
-                  border: get($tokens, "outline") solid
-                    themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.idle"
+          &:not(.#{$prefix}_state-error) {
+            &:not(.#{$prefix}_state-focused) {
+              &.#{$prefix}_state-idle {
+                .#{$prefix}__field {
+                  @include themify($themes) {
+                    color: themed(
+                      "components.atoms.input.#{$mode}.#{$tone}.label.idle"
                     );
+                    background-color: themed(
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.idle"
+                    );
+                    border: get($tokens, "outline") solid
+                      themed(
+                        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.idle"
+                      );
+                  }
+                }
+
+                .#{$prefix}__field-content-icon {
+                  .icon {
+                    @include themify($themes) {
+                      fill: themed(
+                        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                      );
+                    }
+                  }
                 }
               }
 
-              .#{$prefix}__field-content-icon {
-                .icon {
+              &.#{$prefix}_state-normal {
+                .#{$prefix}__field {
                   @include themify($themes) {
-                    fill: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                    color: themed(
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
                     );
+                    background-color: themed(
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+                    );
+                    border: get($tokens, "outline") solid
+                      themed(
+                        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
+                      );
+                  }
+                }
+
+                .#{$prefix}__field-content-icon {
+                  .icon {
+                    @include themify($themes) {
+                      fill: themed(
+                        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                      );
+                    }
                   }
                 }
               }
             }
 
-            &.#{$prefix}_state-normal {
+            &.#{$prefix}_state-focused {
               .#{$prefix}__field {
                 @include themify($themes) {
                   color: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
-                  );
-                  border: get($tokens, "outline") solid
-                    themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
-                    );
-                }
-              }
-
-              .#{$prefix}__field-content-icon {
-                .icon {
-                  @include themify($themes) {
-                    fill: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
-                    );
-                  }
-                }
-              }
-            }
-          }
-
-          &.#{$prefix}_state-focused {
-            .#{$prefix}__field {
-              @include themify($themes) {
-                color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.focused"
-                );
-                background-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.focused"
-                );
-                border: get($tokens, "outline") solid
-                  themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
-                  );
-              }
-            }
-
-            .#{$prefix}__field-content-icon {
-              .icon {
-                @include themify($themes) {
-                  fill: themed(
                     "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.focused"
                   );
+                  background-color: themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.focused"
+                  );
+                  border: get($tokens, "outline") solid
+                    themed(
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
+                    );
+                }
+              }
+
+              .#{$prefix}__field-content-icon {
+                .icon {
+                  @include themify($themes) {
+                    fill: themed(
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.focused"
+                    );
+                  }
                 }
               }
             }
-          }
 
-          &.#{$prefix}_state-disabled {
-            .#{$prefix}__field {
-              @include themify($themes) {
-                color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
-                );
-                background-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.disabled"
-                );
-              }
-            }
-
-            .#{$prefix}__field-content-icon {
-              .icon {
+            &.#{$prefix}_state-disabled {
+              .#{$prefix}__field {
                 @include themify($themes) {
-                  fill: themed(
+                  color: themed(
                     "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
                   );
+                  background-color: themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.disabled"
+                  );
+                  border: get($tokens, "outline") solid
+                    themed(
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.disabled"
+                    );
+                }
+              }
+
+              .#{$prefix}__field-content-icon {
+                .icon {
+                  @include themify($themes) {
+                    fill: themed(
+                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                    );
+                  }
                 }
               }
             }
@@ -451,6 +504,10 @@ $prefix: input;
                 background-color: themed(
                   "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.error"
                 );
+                border: get($tokens, "outline") solid
+                  themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.error"
+                  );
               }
             }
 
@@ -471,11 +528,11 @@ $prefix: input;
             @extend %base-transition;
           }
 
-          .#{$prefix}__error {
+          .#{$prefix}__validation-message {
             &-message {
               @include themify($themes) {
                 color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.error"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.validation.message"
                 );
                 @extend %base-transition;
               }

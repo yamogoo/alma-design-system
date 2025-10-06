@@ -37,7 +37,7 @@ withDefaults(defineProps<InfoBlockProps>(), {
     >
     <Text
       v-if="description"
-      :variant="'caption-2'"
+      :variant="'caption-1'"
       :mode="'neutral'"
       :tone="'secondary'"
       >{{ description }}</Text
