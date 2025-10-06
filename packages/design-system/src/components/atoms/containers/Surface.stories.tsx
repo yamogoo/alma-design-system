@@ -44,7 +44,8 @@ const meta = {
     size: "lg",
     mode: "neutral",
     tone: "secondary",
-    bordered: true,
+    borderSides: "hv",
+    rounded: true,
   },
 } satisfies Meta<typeof Surface>;
 

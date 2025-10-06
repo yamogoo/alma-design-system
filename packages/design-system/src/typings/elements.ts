@@ -36,6 +36,18 @@ export type UIElementAxisDirection = (typeof UIElementAxisDirections)[number];
 export const UIElementPositions = ["left", "top", "bottom", "right"] as const;
 export type UIElementPosition = (typeof UIElementPositions)[number];
 
+export enum UIElementShortPositions {
+  RIGHT = "r",
+  LEFT = "l",
+  TOP = "t",
+  BOTTOM = "b",
+}
+
+export enum UIElementShortPositionAliases {
+  HORIZONTAL = "h",
+  VERTICAL = "v",
+}
+
 export const UIElementOrientations = ["horizontal", "vertical"] as const;
 export type UIElementOrientation = (typeof UIElementOrientations)[number];
 

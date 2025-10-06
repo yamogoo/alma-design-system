@@ -31,7 +31,8 @@ describe("FormWrapper", () => {
         variant: "default",
         size: "lg",
         mode: "accent",
-        tone: "main",
+        tone: "canvas",
+        borderSides: "r",
       };
 
       const wrapper = mount(FormWrapper, {
@@ -46,7 +47,7 @@ describe("FormWrapper", () => {
       await wrapper.setProps({ bordered: true });
 
       expect(
-        wrapper.classes(`${Classes.BASE_CLASS_NAME}_bordered`)
+        wrapper.classes(`${Classes.BASE_CLASS_NAME}_border-r`)
       ).toBeTruthy();
     });
   });

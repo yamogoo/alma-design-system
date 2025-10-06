@@ -6,6 +6,13 @@ import type {
 } from "@/adapters/atoms/surface";
 
 import type { UIElementBlockTag, UIElementStylingModifiers } from "@/typings";
+import {
+  UIElementShortPositionAliases,
+  UIElementShortPositions,
+} from "@/typings";
+
+export const SurfaceBorderPositions = UIElementShortPositions;
+export const SurfaceBorderPositionAliases = UIElementShortPositionAliases;
 
 export interface SurfaceProps
   extends Partial<
@@ -18,6 +25,8 @@ export interface SurfaceProps
   > {
   as?: UIElementBlockTag;
   isContainer?: boolean;
-  bordered?: boolean;
+  /** ltrb hv */
+  borderSides?: string;
   elevated?: boolean;
+  rounded?: boolean;
 }

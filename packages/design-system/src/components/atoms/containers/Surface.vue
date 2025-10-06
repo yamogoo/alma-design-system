@@ -1,17 +1,55 @@
 <script setup lang="ts">
-import { useTemplateRef } from "vue";
+import { computed, useTemplateRef, watchEffect } from "vue";
 
-import type { SurfaceProps } from "./Surface";
+import {
+  SurfaceBorderPositionAliases,
+  SurfaceBorderPositions,
+  type SurfaceProps,
+} from "./Surface";
+import type {
+  UIElementShortPositionAliases,
+  UIElementShortPositions,
+} from "@/typings";
 
 const PREFIX = "surface";
 
-withDefaults(defineProps<SurfaceProps>(), {
+const props = withDefaults(defineProps<SurfaceProps>(), {
   as: "div",
-  bordered: false,
+  borderSides: "rl",
   elevated: false,
+  rounded: false,
 });
 
 const root = useTemplateRef("root");
+
+const getDirectionAlias = (
+  d: UIElementShortPositions
+): UIElementShortPositionAliases => {
+  if (d === SurfaceBorderPositions.LEFT || d === SurfaceBorderPositions.RIGHT)
+    return SurfaceBorderPositionAliases.HORIZONTAL;
+  return SurfaceBorderPositionAliases.VERTICAL;
+};
+
+const computedBorderClass = computed(() => {
+  const sides = props.borderSides;
+
+  return Object.values(SurfaceBorderPositions).map((position) => {
+    const isPosition =
+      RegExp(position).test(sides) ||
+      RegExp(getDirectionAlias(position)).test(sides);
+
+    console.log(isPosition);
+
+    if (isPosition) {
+      const className = `${PREFIX}_border-${position}`;
+      return className;
+    }
+  });
+});
+
+watchEffect(() => {
+  console.log(computedBorderClass.value);
+});
 
 defineExpose({
   root,
@@ -29,9 +67,10 @@ defineExpose({
         [`${PREFIX}_size-${size}`]: !!size,
         [`${PREFIX}_mode-${mode}`]: !!mode,
         [`${PREFIX}_tone-${tone}`]: !!tone,
-        [`${PREFIX}_bordered`]: !!bordered,
+        [`${PREFIX}_rounded`]: !!rounded,
         [`${PREFIX}_elevated`]: !!elevated,
       },
+      computedBorderClass,
     ]"
   >
     <slot></slot>
@@ -48,10 +87,27 @@ $prefix: surface;
         &.#{$prefix}_size-#{$size} {
           $border-radius: px2rem(get($val, "root.border-radius"));
           $border-width: px2rem(get($val, "root.border-width"));
-          border-radius: $border-radius;
 
-          &.#{$prefix}_bordered {
-            border-width: $border-width;
+          &.#{$prefix}_rounded {
+            border-radius: $border-radius;
+          }
+
+          &.#{$prefix}_border {
+            &-l {
+              border-left-width: $border-width;
+            }
+
+            &-r {
+              border-right-width: $border-width;
+            }
+
+            &-t {
+              border-top-width: $border-width;
+            }
+
+            &-b {
+              border-bottom-width: $border-width;
+            }
           }
         }
       }
