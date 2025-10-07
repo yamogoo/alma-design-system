@@ -1,4 +1,9 @@
-import type { InputSize, InputMode, InputTone, InputVariant } from "@/adapters";
+import type {
+  InputSize,
+  InputMode,
+  InputTone,
+  InputVariant,
+} from "@/adapters/atoms/input";
 
 import type { InputTypeHTMLAttribute } from "vue";
 

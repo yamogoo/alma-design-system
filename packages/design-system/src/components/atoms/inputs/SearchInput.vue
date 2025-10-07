@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { onUnmounted, ref, watch } from "vue";
 
-import { Input, Icon, type SearchFieldProps } from "@/components/atoms";
+import { type SearchFieldProps } from "./SearchInput";
+import Input from "@/components/atoms/inputs/Input.vue";
+import Icon from "@/components/atoms/icons/Icon.vue";
 
 const props = withDefaults(defineProps<SearchFieldProps>(), {
   variant: "default",

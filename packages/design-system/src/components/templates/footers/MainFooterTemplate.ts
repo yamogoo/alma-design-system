@@ -3,7 +3,7 @@ import type {
   MainFooterSize,
   MainFooterTone,
   MainFooterVariant,
-} from "@/adapters";
+} from "@/adapters/templates/mainFooter";
 
 import type { UIElementFooterTag, UIElementStylingModifiers } from "@/typings";
 

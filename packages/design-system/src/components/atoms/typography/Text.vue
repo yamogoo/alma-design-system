@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, type ComputedRef, type CSSProperties } from "vue";
 
-import type { TextProps } from "@/components/atoms";
+import type { TextProps } from "@/components/atoms/typography/Text";
 
 const PREFIX = "text";
 

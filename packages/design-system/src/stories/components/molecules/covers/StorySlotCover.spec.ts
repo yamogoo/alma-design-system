@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { StorySlotCover } from "@/stories/components";
+import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
 
 const getTitle = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find(".story-slot-cover__title");

@@ -3,7 +3,7 @@ import type {
   MainHeaderSize,
   MainHeaderTone,
   MainHeaderVariant,
-} from "@/adapters";
+} from "@/adapters/templates/mainHeader";
 
 import type { UIElementHeaderTag, UIElementStylingModifiers } from "@/typings";
 

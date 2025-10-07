@@ -3,7 +3,7 @@ import { useTemplateRef, watch } from "vue";
 
 import { usePressed } from "@/composables/local";
 
-import type { MenuItemProps } from "@/components/atoms";
+import type { MenuItemProps } from "@/components/atoms/menu/MenuItem";
 
 const PREFIX = "menu-item";
 

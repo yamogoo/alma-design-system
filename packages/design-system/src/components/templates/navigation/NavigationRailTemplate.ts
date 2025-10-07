@@ -3,7 +3,7 @@ import type {
   NavigationRailSize,
   NavigationRailTone,
   NavigationRailVariant,
-} from "@/adapters";
+} from "@/adapters/templates/navigationRail";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

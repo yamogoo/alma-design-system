@@ -4,8 +4,12 @@ import gsap from "gsap";
 
 import { useHover } from "@/composables/local";
 
-import { Icon, Text } from "@/components/atoms";
-import type { TreeViewItemProps, TreeViewNode } from "@/components/molecules";
+import Icon from "@/components/atoms/icons/Icon.vue";
+import Text from "@/components/atoms/typography/Text.vue";
+import type {
+  TreeViewItemProps,
+  TreeViewNode,
+} from "@/components/molecules/explorer/tree-view/TreeViewItem";
 
 defineOptions({ name: "TreeViewItem" });
 

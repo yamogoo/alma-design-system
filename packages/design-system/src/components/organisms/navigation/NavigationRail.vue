@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { ControlButton, Group, Logo, SimpleMenu } from "@/components/atoms";
+import Logo from "@/components/atoms/logos/Logo.vue";
 
-import { NavigationRailTemplate } from "@/components/templates";
-import { type NavigationRailProps } from "@/components/organisms";
+import SimpleMenu from "@/components/atoms/menu/SimpleMenu.vue";
+import Group from "@/components/atoms/containers/Group.vue";
+import ControlButton from "@/components/atoms/buttons/ControlButton.vue";
+import { type NavigationRailProps } from "@/components/organisms/navigation/NavigationRail";
+import NavigationRailTemplate from "@/components/templates/navigation/NavigationRailTemplate.vue";
 
 withDefaults(defineProps<NavigationRailProps>(), {});
 </script>

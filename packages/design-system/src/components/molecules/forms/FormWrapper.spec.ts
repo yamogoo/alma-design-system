@@ -1,6 +1,7 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { FormWrapper, type FormWrapperProps } from "@/components/molecules";
+import { type FormWrapperProps } from "@/components/molecules/forms/FormWrapper";
+import FormWrapper from "@/components/molecules/forms/FormWrapper.vue";
 
 enum Classes {
   ROOT_CLASS = "form-wrapper",

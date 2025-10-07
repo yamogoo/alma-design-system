@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ControlWrapperProps } from "@/components/atoms";
+import type { ControlWrapperProps } from "./ControlWrapper";
 
 const PREFIX = "control-wrapper";
 

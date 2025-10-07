@@ -1,4 +1,7 @@
-import type { ControlWrapperSize, ControlWrapperVariant } from "@/adapters";
+import type {
+  ControlWrapperSize,
+  ControlWrapperVariant,
+} from "@/adapters/atoms/controlWrapper";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

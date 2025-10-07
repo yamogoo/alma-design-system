@@ -1,7 +1,8 @@
 import { type DOMWrapper, mount, VueWrapper } from "@vue/test-utils";
 import { describe, test, expect } from "vitest";
 
-import { SearchInput, type SearchFieldProps } from "@/components/atoms";
+import { type SearchFieldProps } from "@/components/atoms/inputs/SearchInput";
+import SearchInput from "@/components/atoms/inputs/SearchInput.vue";
 
 const getInput = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="input"]');

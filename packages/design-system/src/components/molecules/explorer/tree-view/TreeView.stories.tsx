@@ -8,13 +8,13 @@ import {
   treeViewSizes,
   treeViewTones,
   treeViewVariants,
-} from "@/adapters";
+} from "@/adapters/molecules/treeView";
 
 import {
-  TreeView,
   type TreeViewNodes,
   type TreeViewProps,
-} from "@/components/molecules";
+} from "@/components/molecules/explorer/tree-view/TreeView";
+import TreeView from "@/components/molecules/explorer/tree-view/TreeView.vue";
 
 const meta = {
   title: "Molecules/Explorer/TreeView",

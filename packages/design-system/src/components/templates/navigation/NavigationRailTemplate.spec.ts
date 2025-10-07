@@ -1,9 +1,7 @@
 import { mount } from "@vue/test-utils";
 
-import {
-  NavigationRailTemplate,
-  type NavigationRailTemplateProps,
-} from "@/components/templates";
+import { type NavigationRailTemplateProps } from "@/components/templates/navigation/NavigationRailTemplate";
+import NavigationRailTemplate from "@/components/templates/navigation/NavigationRailTemplate.vue";
 
 enum Classes {
   ROOT_CLASS = "navigation-rail",
@@ -59,9 +57,13 @@ describe("NavigationRailTemplate", () => {
     test("does not render header/body/footer wrappers without corresponding slots", () => {
       const wrapper = mount(NavigationRailTemplate);
 
-      expect(wrapper.find(".navigation-rail-rail__header").exists()).toBe(false);
+      expect(wrapper.find(".navigation-rail-rail__header").exists()).toBe(
+        false
+      );
       expect(wrapper.find(".navigation-rail-rail__body").exists()).toBe(false);
-      expect(wrapper.find(".navigation-rail-rail__footer").exists()).toBe(false);
+      expect(wrapper.find(".navigation-rail-rail__footer").exists()).toBe(
+        false
+      );
     });
   });
 

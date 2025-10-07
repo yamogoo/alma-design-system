@@ -7,7 +7,7 @@ import {
   charTooltipLabelSizes,
   charTooltipLabelTones,
   charTooltipLabelVariants,
-} from "@/adapters";
+} from "@/adapters/atoms/charTooltipLabel";
 
 import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";

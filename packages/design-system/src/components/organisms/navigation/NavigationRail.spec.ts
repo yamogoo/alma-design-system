@@ -1,9 +1,7 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import {
-  NavigationRail,
-  type NavigationRailProps,
-} from "@/components/organisms";
+import NavigationRail from "@/components/organisms/navigation/NavigationRail.vue";
+import { type NavigationRailProps } from "@/components/organisms/navigation/NavigationRail";
 
 const getHeaderGroup = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="navigation-rail-header"]');

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useId } from "vue";
 
-import { Text } from "@/components/atoms";
-import type { FormProps } from "@/components/molecules";
+import type { FormProps } from "@/components/molecules/forms/Form";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const PREFIX = "form";
 

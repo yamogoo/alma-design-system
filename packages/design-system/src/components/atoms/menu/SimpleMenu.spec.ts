@@ -2,7 +2,8 @@ import { mount } from "@vue/test-utils";
 
 import { getTypedEmittedEvent } from "@/__tests__/utils";
 
-import { SimpleMenu, type MenuItems } from "@/components/atoms";
+import { type MenuItems } from "@/components/atoms/menu/menu";
+import SimpleMenu from "@/components/atoms/menu/SimpleMenu.vue";
 
 const items: MenuItems = [
   {

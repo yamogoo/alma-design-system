@@ -1,10 +1,10 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
 import {
-  TreeViewItem,
   type TreeViewItemProps,
   type TreeViewNode,
-} from "@/components/molecules";
+} from "@/components/molecules/explorer/tree-view/TreeViewItem";
+import TreeViewItem from "@/components/molecules/explorer/tree-view/TreeViewItem.vue";
 
 const getCaret = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find(".tree-view-item__caret");

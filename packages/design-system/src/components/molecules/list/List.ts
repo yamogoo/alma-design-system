@@ -1,4 +1,9 @@
-import type { ListMode, ListSize, ListVariant, ListTone } from "@/adapters";
+import type {
+  ListMode,
+  ListSize,
+  ListVariant,
+  ListTone,
+} from "@/adapters/molecules/list";
 
 import type {
   UIElementMaybeListOrBlockTag,

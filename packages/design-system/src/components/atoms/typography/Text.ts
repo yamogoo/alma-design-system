@@ -1,4 +1,9 @@
-import type { TextVariant, TextMode, TextTone, TextState } from "@/adapters";
+import type {
+  TextVariant,
+  TextMode,
+  TextTone,
+  TextState,
+} from "@/adapters/atoms/text";
 
 import type { UIElementTypographyTag } from "@/typings";
 

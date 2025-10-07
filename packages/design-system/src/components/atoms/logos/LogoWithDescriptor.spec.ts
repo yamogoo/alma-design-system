@@ -2,10 +2,8 @@ import { mount, VueWrapper } from "@vue/test-utils";
 
 import { getText } from "@/__tests__/utils";
 
-import {
-  LogoWithDescriptor,
-  type LogoWithDescriptorProps,
-} from "@/components/atoms";
+import { type LogoWithDescriptorProps } from "@/components/atoms/logos/LogoWithDescriptor";
+import LogoWithDescriptor from "@/components/atoms/logos/LogoWithDescriptor.vue";
 
 enum Classes {
   ROOT_CLASS = "logo-with-descriptor",
@@ -25,7 +23,7 @@ describe("LogoWithDescriptor", () => {
       const props: LogoWithDescriptorProps = {
         variant: "default",
         size: "md",
-        mode: "default",
+        mode: "neutral",
         tone: "primary",
       };
 

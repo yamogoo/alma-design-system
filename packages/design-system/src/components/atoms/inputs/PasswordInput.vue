@@ -2,11 +2,9 @@
 import { computed, ref, watch } from "vue";
 import gsap from "gsap";
 
-import {
-  Input,
-  ControlButton,
-  type PasswordInputProps,
-} from "@/components/atoms";
+import { type PasswordInputProps } from "./PasswordInput";
+import Input from "@/components/atoms/inputs/Input.vue";
+import ControlButton from "@/components/atoms/buttons/ControlButton.vue";
 
 const MASKED_BUTTON_SCALE_OUT = 0.75,
   MASKED_BUTTON_SCALE_IN = 1;

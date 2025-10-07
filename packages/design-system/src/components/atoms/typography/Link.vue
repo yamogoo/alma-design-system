@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 
-import { Text, type LinkProps } from "@/components/atoms";
+import { type LinkProps } from "@/components/atoms/typography/Link";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const PREFIX = "link";
 

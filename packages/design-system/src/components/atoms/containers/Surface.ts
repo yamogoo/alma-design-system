@@ -29,4 +29,5 @@ export interface SurfaceProps
   borderSides?: string;
   elevated?: boolean;
   rounded?: boolean;
+  divider?: string;
 }

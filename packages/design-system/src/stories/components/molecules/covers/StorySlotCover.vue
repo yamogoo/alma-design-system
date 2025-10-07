@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { Text } from "@/components/atoms";
-
 import type { StorySlotCoverProps } from "./StorySlotCover";
+import Text from "@/components/atoms/typography/Text.vue";
 
 defineOptions({
   inheritAttrs: true,

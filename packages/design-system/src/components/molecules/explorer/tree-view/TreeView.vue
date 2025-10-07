@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { nextTick, ref, useTemplateRef, watch } from "vue";
 
-import {
-  TreeViewItem,
-  type TreeViewNode,
-  type TreeViewNodeID,
-  type TreeViewProps,
-} from "@/components/molecules";
+import { type TreeViewProps } from "@/components/molecules/explorer/tree-view/TreeView";
+import type {
+  TreeViewNode,
+  TreeViewNodeID,
+} from "@/components/molecules/explorer/tree-view/TreeViewItem";
+import TreeViewItem from "@/components/molecules/explorer/tree-view/TreeViewItem.vue";
 
 const PREFIX = "tree-view";
 
@@ -49,15 +49,15 @@ watch(
         ? (newIndexes as TreeViewNodeID[])
         : newIndexes == null
           ? []
-          : [newIndexes as TreeViewNodeID];
+          : [newIndexes];
     else
       localSelectedItemIndexes.value = Array.isArray(newIndexes)
         ? newIndexes[0]
-          ? [newIndexes[0] as TreeViewNodeID]
+          ? [newIndexes[0]]
           : []
         : newIndexes == null
           ? []
-          : [newIndexes as TreeViewNodeID];
+          : [newIndexes];
   },
   { immediate: true }
 );

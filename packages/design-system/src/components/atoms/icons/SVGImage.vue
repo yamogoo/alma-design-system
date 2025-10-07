@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { defineAsyncComponent, computed } from "vue";
 
-import { Skeleton, type SVGImageProps } from "@/components/atoms";
+import { type SVGImageProps } from "./SVGImage";
+
+import Skeleton from "@/components/atoms/skeletons/Skeleton.vue";
 
 const PREFIX = "svg-image";
 

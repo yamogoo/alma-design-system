@@ -9,7 +9,11 @@ import type { IconSize } from "@/adapters/atoms/icon";
 
 import type { UIElementStylingModifiers } from "@/typings";
 
-import type { IconName, IconStyle, IconWeight } from "@/components/atoms";
+import type {
+  IconName,
+  IconStyle,
+  IconWeight,
+} from "@/components/atoms/icons/Icon";
 
 export interface CharTooltipLabelProps
   extends Partial<

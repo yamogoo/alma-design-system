@@ -66,7 +66,15 @@ export default (opts: { mode: string }) => {
       // Generate locales JSON from directory structure
     ],
     optimizeDeps: {
-      include: ["@vue/babel-plugin-jsx"],
+      include: [
+        "@vue/babel-plugin-jsx",
+        "vue",
+        "@vue/runtime-dom",
+        "@vue/runtime-core",
+        "@vue/reactivity",
+        "@vue/shared",
+      ],
+      exclude: ["@alma/design-system"],
     },
     esbuild: {
       jsxFactory: "h",
@@ -86,6 +94,8 @@ export default (opts: { mode: string }) => {
       },
     },
     resolve: {
+      preserveSymlinks: false,
+      dedupe: ["vue"],
       alias: {
         "~": fileURLToPath(new URL("./", import.meta.url)),
         "@": fileURLToPath(new URL("./src", import.meta.url)),

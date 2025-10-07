@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 import { booleanOptions, enumOptions } from "@/stories/utils";
 
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
+import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
 
 import type { SliderProps } from "./Slider";
 import Slider from "./Slider.vue";
@@ -12,7 +14,7 @@ import {
   sliderSizes,
   sliderTones,
   sliderVariants,
-} from "@/adapters";
+} from "@/adapters/atoms/slider";
 
 const meta = {
   title: "Atoms/Controls/Toggles/Slider/Slider",

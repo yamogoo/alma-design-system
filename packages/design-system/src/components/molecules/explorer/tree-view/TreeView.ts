@@ -3,7 +3,7 @@ import type {
   TreeViewSize,
   TreeViewTone,
   TreeViewVariant,
-} from "@/adapters";
+} from "@/adapters/molecules/treeView";
 
 import type {
   TreeViewNodeID,

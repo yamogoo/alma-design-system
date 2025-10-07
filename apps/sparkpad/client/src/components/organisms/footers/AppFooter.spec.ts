@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 
-import { AppFooter } from "@/components/organisms";
+import AppFooter from "@/components/organisms/footers/AppFooter.vue";
 
 describe("AppFooter", () => {
   describe("elements", () => {

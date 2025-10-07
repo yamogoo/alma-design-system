@@ -2,7 +2,7 @@
 import { ref, toValue, watch } from "vue";
 import { Vue3Lottie as LottieAnimation } from "vue3-lottie";
 
-import type { AnimatedIconProps } from "@/components/atoms";
+import type { AnimatedIconProps } from "./AnimatedIcon";
 
 const PREFIX = "animated-icon";
 

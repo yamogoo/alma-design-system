@@ -3,7 +3,9 @@ import { useTemplateRef } from "vue";
 
 import { useHover, usePressed } from "@/composables/local";
 
-import { Logo, Text, type LogoWithDescriptorProps } from "@/components/atoms";
+import { type LogoWithDescriptorProps } from "@/components/atoms/logos/LogoWithDescriptor";
+import Logo from "@/components/atoms/logos/Logo.vue";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const PREFIX = "logo-with-descriptor";
 

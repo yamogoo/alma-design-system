@@ -1,9 +1,7 @@
 import { mount } from "@vue/test-utils";
 
-import {
-  MainFooterTemplate,
-  type MainFooterProps,
-} from "@/components/templates";
+import { type MainFooterProps } from "@/components/templates/footers/MainFooterTemplate";
+import MainFooterTemplate from "@/components/templates/footers/MainFooterTemplate.vue";
 
 enum Classes {
   ROOT_CLASS = "main-footer",

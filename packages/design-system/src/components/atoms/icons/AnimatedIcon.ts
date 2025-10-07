@@ -2,7 +2,12 @@ import { Vue3Lottie as LottieAnimation } from "vue3-lottie";
 
 import type { UIElementStylingModifiers } from "@/typings";
 
-import type { IconSize, IconMode, IconTone, IconVariant } from "@/adapters";
+import type {
+  IconSize,
+  IconMode,
+  IconTone,
+  IconVariant,
+} from "@/adapters/atoms/icon";
 
 export interface AnimatedIconProps
   extends Partial<

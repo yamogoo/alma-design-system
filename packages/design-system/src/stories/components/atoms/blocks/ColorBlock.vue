@@ -2,7 +2,7 @@
 import { computed, type ComputedRef, type CSSProperties } from "vue";
 
 import type { ColorBlockProps } from "./ColorBlock";
-import { Text } from "@/components/atoms";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const props = defineProps<ColorBlockProps>();
 

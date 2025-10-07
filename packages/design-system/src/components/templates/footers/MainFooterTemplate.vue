@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MainFooterProps } from "@/components/templates";
+import type { MainFooterProps } from "@/components/templates/footers/MainFooterTemplate";
 
 const PREFIX = "main-footer";
 

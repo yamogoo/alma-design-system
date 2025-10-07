@@ -3,12 +3,10 @@ import { useTemplateRef } from "vue";
 
 import { useMenuNavigation } from "@/composables/local";
 
-import {
-  MenuItem,
-  Text,
-  type IMenuItem,
-  type SimpleMenuProps,
-} from "@/components/atoms";
+import { type SimpleMenuProps } from "@/components/atoms/menu/SimpleMenu";
+import type { IMenuItem } from "@/components/atoms/menu/menu";
+import MenuItem from "@/components/atoms/menu/MenuItem.vue";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const PREFIX = "simple-menu";
 

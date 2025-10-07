@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Text } from "@/components/atoms";
-
 import type { UIElementAlignment, UIElementOrientation } from "@/typings";
+
+import Text from "@/components/atoms/typography/Text.vue";
 
 type InfoBlockAlignment = UIElementAlignment;
 

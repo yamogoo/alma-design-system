@@ -1,4 +1,9 @@
-import type { InputMode, InputSize, InputTone, InputVariant } from "@/adapters";
+import type {
+  InputMode,
+  InputSize,
+  InputTone,
+  InputVariant,
+} from "@/adapters/atoms/input";
 
 import type { UIElementStylingModifiers } from "@/typings";
 import type { InputProps } from "./Input";

@@ -2,13 +2,11 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 import abstractColors from "@/tokens/output/colors.json";
 
-import {
-  StoryGrid,
-  InfoBlock,
-  ColorBlock,
-  PageHeader,
-  type ColorBlockProps,
-} from "@/stories/components";
+import { type ColorBlockProps } from "@/stories/components/atoms/blocks/ColorBlock";
+import ColorBlock from "@/stories/components/atoms/blocks/ColorBlock.vue";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
+import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
 
 const meta = {
   title: "Abstracts/Palette",

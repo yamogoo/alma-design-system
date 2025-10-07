@@ -1,4 +1,9 @@
-import type { IconMode, IconSize, IconTone, IconVariant } from "@/adapters";
+import type {
+  IconMode,
+  IconSize,
+  IconTone,
+  IconVariant,
+} from "@/adapters/atoms/icon";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

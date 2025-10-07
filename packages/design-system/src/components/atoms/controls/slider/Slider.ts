@@ -3,7 +3,7 @@ import type {
   SliderSize,
   SliderTone,
   SliderVariant,
-} from "@/adapters";
+} from "@/adapters/atoms/slider";
 
 import type {
   UIElementAxisDirection,

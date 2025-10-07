@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, useTemplateRef, watchEffect } from "vue";
+import { computed, useTemplateRef } from "vue";
 
 import {
   SurfaceBorderPositionAliases,
@@ -15,7 +15,7 @@ const PREFIX = "surface";
 
 const props = withDefaults(defineProps<SurfaceProps>(), {
   as: "div",
-  borderSides: "rl",
+  borderSides: "",
   elevated: false,
   rounded: false,
 });
@@ -38,17 +38,11 @@ const computedBorderClass = computed(() => {
       RegExp(position).test(sides) ||
       RegExp(getDirectionAlias(position)).test(sides);
 
-    console.log(isPosition);
-
     if (isPosition) {
       const className = `${PREFIX}_border-${position}`;
       return className;
     }
   });
-});
-
-watchEffect(() => {
-  console.log(computedBorderClass.value);
 });
 
 defineExpose({
@@ -83,33 +77,12 @@ $prefix: surface;
 @mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      &_variant-#{$variant} {
-        &.#{$prefix}_size-#{$size} {
-          $border-radius: px2rem(get($val, "root.border-radius"));
-          $border-width: px2rem(get($val, "root.border-width"));
+      $radius: px2rem(get($val, "root.border-radius"));
+      $bwidth: px2rem(get($val, "root.border-width"));
 
-          &.#{$prefix}_rounded {
-            border-radius: $border-radius;
-          }
-
-          &.#{$prefix}_border {
-            &-l {
-              border-left-width: $border-width;
-            }
-
-            &-r {
-              border-right-width: $border-width;
-            }
-
-            &-t {
-              border-top-width: $border-width;
-            }
-
-            &-b {
-              border-bottom-width: $border-width;
-            }
-          }
-        }
+      :where(&.#{$prefix}_variant-#{$variant}.#{$prefix}_size-#{$size}) {
+        --#{$prefix}-radius: #{$radius};
+        --#{$prefix}-b-width: #{$bwidth};
       }
     }
   }
@@ -123,8 +96,8 @@ $prefix: surface;
           @include defineSurfaceThemes($prefix, $mode, $tone);
 
           // divider
-          &.#{$prefix}divider {
-            &.#{$prefix}orientation-horizontal {
+          &.#{$prefix}_divider {
+            &-orientation-horizontal {
               @include themify($themes) {
                 border-right-color: themed(
                   "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
@@ -132,7 +105,7 @@ $prefix: surface;
               }
             }
 
-            &.#{$prefix}orientation-vertical {
+            &-orientation-vertical {
               @include themify($themes) {
                 border-bottom-color: themed(
                   "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
@@ -159,6 +132,25 @@ $prefix: surface;
 
   &_elevated {
     @include useElevation();
+  }
+
+  &_rounded {
+    border-radius: var(--#{$prefix}-radius);
+  }
+
+  &_border {
+    &-l {
+      border-left-width: var(--#{$prefix}-b-width);
+    }
+    &-r {
+      border-right-width: var(--#{$prefix}-b-width);
+    }
+    &-t {
+      border-top-width: var(--#{$prefix}-b-width);
+    }
+    &-b {
+      border-bottom-width: var(--#{$prefix}-b-width);
+    }
   }
 }
 </style>

@@ -1,6 +1,7 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { Input, type InputProps } from "@/components/atoms";
+import { type InputProps } from "@/components/atoms/inputs/Input";
+import Input from "@/components/atoms/inputs/Input.vue";
 
 const REQUIRED_PROPS: InputProps = {
   value: "some-value",

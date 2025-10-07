@@ -1,6 +1,7 @@
 import { mount } from "@vue/test-utils";
 
-import { Divider, type DividerProps } from "@/components/atoms";
+import { type DividerProps } from "@/components/atoms/dividers/Divider";
+import Divider from "@/components/atoms/dividers/Divider.vue";
 
 enum Classes {
   ROOT_CLASS = "divider",

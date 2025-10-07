@@ -16,11 +16,12 @@ const onResetValue = (): void => {
   <Components.Atoms.Surface
     class="explorer"
     :as="'div'"
-    bordered
     :variant="'default'"
     :size="'lg'"
     :mode="'neutral'"
     :tone="'canvas'"
+    :border-sides="'hv'"
+    :rounded="true"
   >
     <Components.Atoms.SearchInput
       v-model.trim="searchingPhrase"

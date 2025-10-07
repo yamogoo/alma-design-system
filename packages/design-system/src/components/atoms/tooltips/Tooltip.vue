@@ -5,7 +5,8 @@ import gsap from "gsap";
 
 import { useHover, useTimeout } from "@/composables/local";
 
-import { CharTooltipLabel, type TooltipProps } from "@/components/atoms";
+import { type TooltipProps } from "@/components/atoms/tooltips/Tooltip";
+import CharTooltipLabel from "@/components/atoms/tooltips/CharTooltipLabel.vue";
 
 const PREFIX = "tooltip";
 

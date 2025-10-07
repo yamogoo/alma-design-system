@@ -1,6 +1,6 @@
 import type { UIElementAlignment } from "@/typings";
 
-import type { CharTooltipLabelProps } from "@/components/atoms";
+import type { CharTooltipLabelProps } from "@/components/atoms/tooltips/CharTooltipLabel";
 
 export type TooltipAlign = UIElementAlignment;
 

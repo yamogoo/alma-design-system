@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 import { useHover } from "@/composables/local";
 
-import { type SliderProps } from "@/components/atoms";
+import { type SliderProps } from "./Slider";
 
 const PREFIX = "slider";
 

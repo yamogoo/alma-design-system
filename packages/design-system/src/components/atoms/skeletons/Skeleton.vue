@@ -2,7 +2,7 @@
 import { onMounted, ref } from "vue";
 import gsap from "gsap";
 
-import type { SkeletonProps } from "@/components/atoms";
+import type { SkeletonProps } from "@/components/atoms/skeletons/Skeleton";
 
 const PREFIX = "skeleton";
 

@@ -108,15 +108,17 @@ export default () => {
           "vue3-lottie",
         ],
         output: {
+          preserveModules: true,
+          preserveModulesRoot: "src",
           globals: { vue: "Vue" },
           assetFileNames: (info) =>
             info.name?.endsWith(".css")
               ? "style.css"
               : "assets/[name]-[hash][extname]",
-          manualChunks(id) {
-            if (id.includes("dompurify")) return "dompurify";
-            if (id.includes("/tokens/output/")) return "tokens";
-          },
+          // manualChunks(id) {
+          //   if (id.includes("dompurify")) return "dompurify";
+          //   if (id.includes("/tokens/output/")) return "tokens";
+          // },
         },
       },
       cssCodeSplit: false,

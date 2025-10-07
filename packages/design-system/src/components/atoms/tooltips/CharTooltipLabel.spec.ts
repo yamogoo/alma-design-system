@@ -1,9 +1,7 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import {
-  CharTooltipLabel,
-  type CharTooltipLabelProps,
-} from "@/components/atoms";
+import { type CharTooltipLabelProps } from "@/components/atoms/tooltips/CharTooltipLabel";
+import CharTooltipLabel from "@/components/atoms/tooltips/CharTooltipLabel.vue";
 
 const getIcon = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="icon"]');

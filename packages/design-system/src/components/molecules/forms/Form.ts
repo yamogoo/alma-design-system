@@ -1,4 +1,9 @@
-import type { FormMode, FormSize, FormTone, FormVariant } from "@/adapters";
+import type {
+  FormMode,
+  FormSize,
+  FormTone,
+  FormVariant,
+} from "@/adapters/molecules/form";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { defineAsyncComponent, computed, markRaw, useTemplateRef } from "vue";
 
-import {
-  Skeleton,
-  iconManifest,
-  type IconFullName,
-  type IconProps,
-} from "@/components/atoms";
+import { iconManifest, type IconFullName, type IconProps } from "./Icon";
+
+import Skeleton from "@/components/atoms/skeletons/Skeleton.vue";
 
 const PREFIX = "icon";
 

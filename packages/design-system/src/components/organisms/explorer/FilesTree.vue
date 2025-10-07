@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 
-import { Text } from "@/components/atoms";
-import {
-  TreeView,
-  type TreeViewNode,
-  type TreeViewNodeID,
-  type TreeViewSelectedItemIndexes,
-} from "@/components/molecules";
-import type { FilesTreeProps } from "@/components/organisms";
+import type {
+  TreeViewNode,
+  TreeViewNodeID,
+} from "@/components/molecules/explorer/tree-view/TreeViewItem";
+import type { TreeViewSelectedItemIndexes } from "@/components/molecules/explorer/tree-view/TreeView";
+import type { FilesTreeProps } from "@/components/organisms/explorer/FilesTree";
+import TreeView from "@/components/molecules/explorer/tree-view/TreeView.vue";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const PREFIX = "files-tree";
+
+interface ResponseError {
+  message: string;
+}
 
 const props = withDefaults(defineProps<FilesTreeProps>(), {
   variant: "default",
@@ -33,7 +37,7 @@ const emit = defineEmits<{
 
 const rootNodes = ref<TreeViewNode[]>([]);
 const rootLoading = ref(true);
-const loadError = ref<unknown | null>(null);
+const loadError = ref<ResponseError | null>(null);
 
 const expandedItemIndexes = ref<Set<TreeViewNodeID>>(new Set());
 const loadingItemIndexes = ref<Set<TreeViewNodeID>>(new Set());
@@ -76,7 +80,7 @@ const fetchChildren = async (
     const res = await fetch(url.toString(), { headers: props.headers });
     if (!res.ok) throw new Error(`Request failed: ${res.status}`);
 
-    const raw = await res.json();
+    const raw = (await res.json()) as unknown;
     const items = props.mapResponse
       ? props.mapResponse(raw)
       : (raw as TreeViewNode[]);
@@ -86,9 +90,10 @@ const fetchChildren = async (
     loadError.value = null;
 
     return items;
-  } catch (e) {
-    emit("error", e);
-    loadError.value = e;
+  } catch (e: unknown) {
+    const error = e as ResponseError;
+    emit("error", error);
+    loadError.value = error;
 
     return [];
   }

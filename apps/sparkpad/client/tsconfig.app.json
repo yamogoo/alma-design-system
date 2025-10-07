@@ -39,7 +39,14 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/layouts/AuthLayout copy.vue.temp",
+    "src/pages/editor/index copy.vue.temp",
+    "src/components/organisms/explorer/Explorer copy.vue.temp",
+    "src/components/organisms/explorer/FilesNavigator copy.vue.temp",
+    "src/components/organisms/headers/AppHeader copy.vue.temp",
+    "src/components/organisms/forms/AuthForm copy.vue.temp",
+    "src/components/organisms/footers/AppFooter copy.vue.temp"
   ],
   "exclude": ["**/__tests__/*", "**/*.__draft", "**/*.temp", "**/*.cache"]
 }

@@ -28,7 +28,7 @@ withDefaults(defineProps<FormWrapperProps>(), {
     :mode="mode"
     :tone="tone"
     :state="state"
-    :bordered="bordered"
+    :border-sides="borderSides"
     :elevated="elevated"
     :is-container="isContainer"
     data-testid="form-wrapper"

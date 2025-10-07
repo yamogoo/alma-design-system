@@ -2,7 +2,7 @@
 import { Components } from "@alma/design-system";
 
 import { LanguageMenu, ThemeSwitch, MainLogo } from "@/components/molecules";
-import { MainMenu } from "@/components/organisms";
+import MainMenu from "@/components/organisms/menues/MainMenu.vue";
 </script>
 
 <template>

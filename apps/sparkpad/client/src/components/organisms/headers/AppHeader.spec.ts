@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 
-import { AppHeader } from "@/components/organisms";
+import AppHeader from "@/components/organisms/headers/AppHeader.vue";
 
 describe("AppHeader", () => {
   describe("elements", () => {

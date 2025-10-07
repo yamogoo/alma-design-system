@@ -1,5 +1,5 @@
 export const DEFAULT_IS_NAVIGATOR_SHOWN =
-  +import.meta.env.VITE_DEFAULT_IS_NAVIGATOR_SHOWN || false;
+  +import.meta.env.VITE_DEFAULT_IS_NAVIGATOR_SHOWN || true;
 export const DEFAULT_NAVIGATOR_WIDTH =
   +import.meta.env.VITE_DEFAULT_NAVIGATOR_WIDTH || 320;
 export const DEFAULT_NAVIGATOR_MIN_WIDTH =

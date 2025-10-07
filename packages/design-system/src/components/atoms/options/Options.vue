@@ -1,5 +1,6 @@
 <script setup lang="ts" generic="T">
-import { Text, type OptionsProps } from "@/components/atoms";
+import { type OptionsProps } from "@/components/atoms/options/Options";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const PREFIX = "options";
 

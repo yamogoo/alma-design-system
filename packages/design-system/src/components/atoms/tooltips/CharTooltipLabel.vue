@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useTemplateRef } from "vue";
 
-import { Icon, Text, type CharTooltipLabelProps } from "@/components/atoms";
+import { type CharTooltipLabelProps } from "@/components/atoms/tooltips/CharTooltipLabel";
+import Text from "@/components/atoms/typography/Text.vue";
+import Icon from "@/components/atoms/icons/Icon.vue";
 
 const PREFIX = "char-tooltip-label";
 

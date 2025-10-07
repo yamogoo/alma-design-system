@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NavigationRailTemplateProps } from "@/components/templates";
+import type { NavigationRailTemplateProps } from "@/components/templates/navigation/NavigationRailTemplate";
 
 const PREFIX = "navigation-rail";
 

@@ -1,11 +1,14 @@
-import type { SimpleMenuSize, SimpleMenuVariant } from "@/adapters";
+import type {
+  SimpleMenuSize,
+  SimpleMenuVariant,
+} from "@/adapters/atoms/simpleMenu";
 
 import type {
   UIElementOrientation,
   UIElementStylingModifiers,
 } from "@/typings";
 
-import type { MenuItems } from "@/components/atoms";
+import type { MenuItems } from "@/components/atoms/menu/menu";
 
 export type SimpleMenuOrientation = UIElementOrientation;
 

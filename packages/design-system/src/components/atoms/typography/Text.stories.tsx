@@ -2,10 +2,14 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 import { enumOptions } from "@/stories/utils";
 
-import { textModes, textTones, textVariants } from "@/adapters";
+import { textModes, textTones, textVariants } from "@/adapters/atoms/text";
 
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
-import { Text, type TextProps } from "@/components/atoms";
+import { type TextProps } from "@/components/atoms/typography/Text";
+import Text from "@/components/atoms/typography/Text.vue";
+
+import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
 
 const meta = {
   title: "Atoms/Typography/Text",

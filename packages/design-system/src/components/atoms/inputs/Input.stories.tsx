@@ -2,10 +2,19 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 import { booleanOptions, enumOptions } from "@/stories";
 
-import { inputModes, inputSizes, inputTones, inputVariants } from "@/adapters";
+import {
+  inputModes,
+  inputSizes,
+  inputTones,
+  inputVariants,
+} from "@/adapters/atoms/input";
 
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
-import { Input, type InputProps } from "@/components/atoms";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
+import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
+
+import { type InputProps } from "@/components/atoms/inputs/Input";
+import Input from "@/components/atoms/inputs/Input.vue";
 
 const meta = {
   title: "Atoms/Inputs/Input",

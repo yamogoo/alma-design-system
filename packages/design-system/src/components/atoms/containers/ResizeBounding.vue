@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Resizer from "vue3-resize-bounding";
 
-import tokens from "@/tokens";
+import resizeBounding from "@/tokens/src/components/atoms/resizeBounding.json";
 
 import {
   RESIZE_BOUNDING_PREFIX,
@@ -24,7 +24,7 @@ const emits = defineEmits<{
 const variant = props.variant;
 const size = props.size;
 
-const componentToken = tokens.components.atoms.resizeBounding[variant][size];
+const componentToken = resizeBounding[variant][size];
 const activeAreaWidth = componentToken.root.activeAreaWidth.$value;
 const isKnobShown = componentToken.knob.show.$value;
 const splitterWidth = componentToken.splitter.width.$value;

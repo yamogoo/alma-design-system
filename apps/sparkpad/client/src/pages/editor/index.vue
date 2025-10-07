@@ -9,15 +9,21 @@ import { Components } from "@alma/design-system";
 
 import { EditorView, SidebarMenu, Explorer } from "@/components/organisms";
 
-const { isOpen: isSettingsOpen } = storeToRefs(useSettingsStore());
-const { navigatorWidth, isNavigatorShown } = storeToRefs(useEditorLayout());
-const { setNavigatorWidth } = useEditorLayout();
+const settings = useSettingsStore();
+const { isOpen: isSettingsOpen } = storeToRefs(settings);
+const { setIsOpen } = settings;
+
+const layout = useEditorLayout();
+const { navigatorWidth, isNavigatorShown } = storeToRefs(layout);
+const { setNavigatorWidth } = layout;
 
 const onUpdateWidth = (width: number) => {
   setNavigatorWidth(width);
 };
 
-const onOpenSettings = (): void => {};
+const onOpenSettings = (): void => {
+  setIsOpen(true);
+};
 </script>
 
 <template>
@@ -27,7 +33,7 @@ const onOpenSettings = (): void => {};
       v-if="isNavigatorShown"
       class="editor-view__navigator"
       data-test="editor-navigator"
-      :directions="'r'"
+      directions="'r'"
       :width="navigatorWidth"
       :min-width="Constants.DEFAULT_NAVIGATOR_MIN_WIDTH"
       :max-width="Constants.DEFAULT_NAVIGATOR_MAX_WIDTH"
@@ -37,7 +43,12 @@ const onOpenSettings = (): void => {};
     </Components.Atoms.ResizeBounding>
     <EditorView></EditorView>
   </Components.Atoms.Page>
-  <Components.Molecules.Overlay v-model:is-open="isSettingsOpen">
+  <Components.Molecules.Overlay
+    :is-open="isSettingsOpen"
+    :variant="'container'"
+    :mode="'neutral'"
+    :tone="'primary'"
+  >
     <Components.Atoms.Surface bordered>
       <Components.Atoms.Text>
         {{ "Settings" }}

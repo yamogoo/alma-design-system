@@ -2,16 +2,24 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 import { enumOptions } from "@/stories/utils";
 
-import { iconModes, iconSizes, iconTones, iconVariants } from "@/adapters";
-
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
 import {
-  Icon,
+  iconModes,
+  iconSizes,
+  iconTones,
+  iconVariants,
+} from "@/adapters/atoms/icon";
+
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
+import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
+
+import {
   iconNames,
   iconStyles,
   iconWeights,
   type IconProps,
-} from "@/components/atoms";
+} from "@/components/atoms/icons/Icon";
+import Icon from "@/components/atoms/icons/Icon.vue";
 
 const meta = {
   title: "Atoms/Icons/Icon",

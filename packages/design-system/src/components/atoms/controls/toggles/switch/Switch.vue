@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 import { usePressed } from "@/composables/local";
 
-import type { SwitchProps } from "@/components/atoms";
+import type { SwitchProps } from "./Switch";
 
 const PREFIX = "switch";
 

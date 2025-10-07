@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { watch } from "vue";
 import type { OverlayProps } from "./Overlay";
 
 import Surface from "@/components/atoms/containers/Surface.vue";
@@ -13,6 +14,13 @@ const props = withDefaults(defineProps<OverlayProps>(), {
 const emit = defineEmits<{
   (e: "update:is-open", isOpen: boolean): void;
 }>();
+
+watch(
+  () => props.isOpen,
+  () => {
+    emit("update:is-open", true);
+  }
+);
 
 const onClose = (): void => {
   emit("update:is-open", false);
@@ -34,10 +42,13 @@ const onClose = (): void => {
 <style lang="scss">
 $prefix: overlay;
 
-.overlay {
+.#{$prefix} {
   position: fixed;
   inset: 0;
-  z-index: 1000;
-  pointer-events: none;
+  /* pointer-events: none; */
+
+  :where(&) {
+    z-index: 1000;
+  }
 }
 </style>

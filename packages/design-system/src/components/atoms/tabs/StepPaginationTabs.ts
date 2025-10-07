@@ -1,4 +1,7 @@
-import type { StepPaginationTabMode, StepPaginationTabSize } from "@/adapters";
+import type {
+  StepPaginationTabMode,
+  StepPaginationTabSize,
+} from "@/adapters/atoms/stepPaginationTabs";
 
 import type { UIElementUnionProps } from "@/typings";
 

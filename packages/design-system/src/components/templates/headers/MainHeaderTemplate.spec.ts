@@ -1,9 +1,7 @@
 import { mount } from "@vue/test-utils";
 
-import {
-  MainHeaderTemplate,
-  type MainHeaderProps,
-} from "@/components/templates";
+import { type MainHeaderProps } from "@/components/templates/headers/MainHeaderTemplate";
+import MainHeaderTemplate from "@/components/templates/headers/MainHeaderTemplate.vue";
 
 enum Classes {
   ROOT_CLASS = "main-header",

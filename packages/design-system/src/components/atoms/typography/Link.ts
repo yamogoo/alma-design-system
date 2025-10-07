@@ -1,4 +1,4 @@
-import type { TextProps } from "@/components/atoms";
+import type { TextProps } from "@/components/atoms/typography/Text";
 
 import type { Route } from "@/typings/routes";
 

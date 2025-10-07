@@ -3,7 +3,7 @@ import type {
   LogoWithDescriptorSize,
   LogoWithDescriptorTone,
   LogoWithDescriptorVariant,
-} from "@/adapters";
+} from "@/adapters/atoms/logoWithDescriptor";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

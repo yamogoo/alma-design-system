@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ToolbarBlockProps } from "./ToolbarBlock";
 
-import { Group } from "@/components/atoms";
+import Group from "@/components/atoms/containers/Group.vue";
 
 const PREFIX = "toolbar-block";
 

@@ -5,12 +5,16 @@ import {
   skeletonSizes,
   skeletonTones,
   skeletonVariants,
-} from "@/adapters";
+} from "@/adapters/atoms/skeleton";
 
 import { enumOptions } from "@/stories";
 
-import { StoryGrid, InfoBlock, PageHeader } from "@/stories/components";
-import { Skeleton, type SkeletonProps } from "@/components/atoms";
+import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
+
+import { type SkeletonProps } from "@/components/atoms/skeletons/Skeleton";
+import Skeleton from "@/components/atoms/skeletons/Skeleton.vue";
 
 const meta = {
   title: "Atoms/Skeletons/Skeleton",

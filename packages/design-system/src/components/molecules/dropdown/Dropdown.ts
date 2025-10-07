@@ -3,7 +3,7 @@ import type {
   DropdownSize,
   DropdownVariant,
   DropdownTone,
-} from "@/adapters";
+} from "@/adapters/molecules/dropdown";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

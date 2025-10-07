@@ -13,12 +13,11 @@ import gsap from "gsap";
 
 import { sanitizeInput } from "@/utils";
 
-import {
-  Text,
-  ControlButton,
-  AnimatedWrapper,
-  type InputProps,
-} from "@/components/atoms";
+import { type InputProps } from "@/components/atoms/inputs/Input";
+
+import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
+import ControlButton from "@/components/atoms/buttons/ControlButton.vue";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const PREFIX = "input";
 

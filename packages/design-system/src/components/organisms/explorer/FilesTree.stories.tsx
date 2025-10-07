@@ -2,7 +2,7 @@ import { ref } from "vue";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { http, HttpResponse } from "msw";
 
-import type { TreeViewSelectedItemIndexes } from "@/components/molecules";
+import type { TreeViewSelectedItemIndexes } from "@/components/molecules/explorer/tree-view/TreeView";
 import type { TreeViewNode } from "@/components/molecules/explorer/tree-view/TreeViewItem";
 import type { FilesTreeProps } from "./FilesTree";
 import FilesTree from "./FilesTree.vue";

@@ -3,8 +3,8 @@ import { onMounted, ref, watch, toValue, useTemplateRef } from "vue";
 
 import { useClickOutside } from "@/composables/local";
 
-import { Icon } from "@/components/atoms";
-import { type DropdownProps } from "@/components/molecules";
+import Icon from "@/components/atoms/icons/Icon.vue";
+import { type DropdownProps } from "@/components/molecules/dropdown/Dropdown";
 
 import gsap from "gsap";
 

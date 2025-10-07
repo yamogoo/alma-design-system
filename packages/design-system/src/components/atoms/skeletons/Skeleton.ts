@@ -3,7 +3,7 @@ import type {
   SkeletonSize,
   SkeletonTone,
   SkeletonVariant,
-} from "@/adapters";
+} from "@/adapters/atoms/skeleton";
 
 import type { UIElementStylingModifiers } from "@/typings";
 

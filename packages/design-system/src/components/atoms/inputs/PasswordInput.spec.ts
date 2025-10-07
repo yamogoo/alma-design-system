@@ -1,6 +1,7 @@
 import { mount, type VueWrapper } from "@vue/test-utils";
 
-import { PasswordInput, type PasswordInputProps } from "@/components/atoms";
+import { type PasswordInputProps } from "@/components/atoms/inputs/PasswordInput";
+import PasswordInput from "@/components/atoms/inputs/PasswordInput.vue";
 
 // const getMaskButton = <T>(wrapper: VueWrapper<T>) => {
 //   return wrapper.find('[data-testid="input-mask-button"]');

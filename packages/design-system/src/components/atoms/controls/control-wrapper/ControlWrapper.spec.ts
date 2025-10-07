@@ -1,6 +1,7 @@
 import { mount } from "@vue/test-utils";
 
-import { ControlWrapper, type ControlWrapperProps } from "@/components/atoms";
+import { type ControlWrapperProps } from "@/components/atoms/controls/control-wrapper/ControlWrapper";
+import ControlWrapper from "@/components/atoms/controls/control-wrapper/ControlWrapper.vue";
 
 enum Classes {
   ROOT_CLASS = "control-wrapper",

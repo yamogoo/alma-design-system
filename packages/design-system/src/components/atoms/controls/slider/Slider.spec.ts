@@ -1,6 +1,7 @@
 import { mount } from "@vue/test-utils";
 
-import { Slider, type SliderProps } from "@/components/atoms";
+import { type SliderProps } from "@/components/atoms/controls/slider/Slider";
+import Slider from "@/components/atoms/controls/slider/Slider.vue";
 
 enum Classes {
   ROOT_CLASS = "slider",
