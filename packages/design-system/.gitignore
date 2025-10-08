@@ -32,3 +32,4 @@ electron
 *storybook.log
 storybook-static
 tests-report
+stats.html
