@@ -26,7 +26,7 @@
       "category": "config",
       "build": {
         "web": {
-          "exportAsVar": false,
+          "exportAsVar": true,
           "varName": "--scale-factor"
         },
         "ios": {
@@ -38,6 +38,27 @@
           "status": "unused"
         }
       }
+    }
+  },
+  "DENSITY_SPACE": {
+    "$value": 1,
+    "$type": "number",
+    "meta": {
+      "build": { "web": { "exportAsVar": true, "varName": "--density-space" } }
+    }
+  },
+  "DENSITY_LINE": {
+    "$value": 1.35,
+    "$type": "number",
+    "meta": {
+      "build": { "web": { "exportAsVar": true, "varName": "--density-line" } }
+    }
+  },
+  "DENSITY_TARGET": {
+    "$value": 40,
+    "$type": "number",
+    "meta": {
+      "build": { "web": { "exportAsVar": true, "varName": "--density-target" } }
     }
   }
 }

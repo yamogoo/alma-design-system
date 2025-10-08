@@ -16,7 +16,7 @@ import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import type { ListItems } from "./List";
 import List from "./List.vue";
 
-import ListItem from "./ListItem.vue";
+import ListItem from "@/components/atoms/list/ListItem.vue";
 
 const meta = {
   title: "Molecules/List/List",
@@ -72,11 +72,12 @@ export const Playground: Story = {
     setup() {
       return () => (
         <StoryGrid columns={1}>
-          <List isSelectable={false} isMultiple={false} isJoined={false}>
-            {ITEMS.map((item) => (
-              <ListItem id={item} title={item}></ListItem>
-            ))}
-          </List>
+          <List
+            isSelectable={false}
+            isMultiple={false}
+            isJoined={false}
+            items={ITEMS}
+          ></List>
         </StoryGrid>
       );
     },

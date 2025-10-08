@@ -4,7 +4,10 @@ import type { ListItemProps } from "./ListItem";
 
 import { useHover } from "@/composables/local";
 
-import { ListInjectionKey, type ListInjection } from "./List";
+import {
+  ListInjectionKey,
+  type ListInjection,
+} from "@/components/molecules/list/List";
 
 import Text from "@/components/atoms/typography/Text.vue";
 import Icon from "@/components/atoms/icons/Icon.vue";
@@ -44,6 +47,10 @@ const hasUserContent = computed(() => {
 const { isHovered } = useHover(root);
 
 const isSelected = computed(() => {
+  // control selected state via props:
+  if (props.isActive !== undefined) return props.isActive;
+
+  // control selected state via injected:
   if (!ctx?.selectedItemIndexes) return false;
   const sid = ctx.selectedItemIndexes.value;
   return Array.isArray(sid) ? sid.includes(props.id) : sid === props.id;
@@ -55,9 +62,16 @@ const effectiveState = computed<"normal" | "hovered" | "selected">(() => {
   return isHovered.value ? "hovered" : "normal";
 });
 
-const cursor = computed(() =>
-  ctx?.isSelectable && ctx.isSelectable.value === false ? "auto" : "pointer"
+const cursor = computed(() => (isSelectable.value ? "pointer" : "auto"));
+
+const isSelectable = computed(() => Boolean(ctx?.isSelectable?.value));
+const role = computed(() => (isSelectable.value ? "option" : "listitem"));
+
+const ariaSelected = computed(() =>
+  isSelectable.value ? String(isSelected.value) : undefined
 );
+
+const tabIndex = computed(() => (props.isFocused ? 0 : -1));
 
 const localIsJoined = computed(() => {
   return ctx?.isJoined ? ctx.isJoined.value : props.isJoined;
@@ -109,9 +123,9 @@ const onFocusPrev = (): void => {
       { [`${PREFIX}_joined`]: localIsJoined },
     ]"
     :style="{ cursor }"
-    :role="ctx ? 'option' : undefined"
-    :aria-selected="ctx ? isSelected : undefined"
-    tabindex="-1"
+    :role="role"
+    :aria-selected="ariaSelected"
+    :tabindex="tabIndex"
     :aria-current="isCurrentItemShown && isSelected ? true : undefined"
     @pointerdown="(e: PointerEvent) => onPress(e, true)"
     @pointerup="(e: PointerEvent) => onPress(e, false)"

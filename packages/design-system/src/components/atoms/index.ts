@@ -20,6 +20,8 @@ export * from "./icons";
 // Inputs: Input, PasswordInput, and other text fields
 export * from "./inputs";
 
+export * from "./list";
+
 export * from "./options";
 
 export * from "./logos";

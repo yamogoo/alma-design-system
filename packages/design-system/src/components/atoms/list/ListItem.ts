@@ -33,5 +33,7 @@ export interface ListItemProps
       >
     > {
   as?: UIElementMaybeListItemOrBlockTag;
+  isActive?: boolean;
+  isFocused?: boolean;
   isSelectOnRelease?: boolean;
 }

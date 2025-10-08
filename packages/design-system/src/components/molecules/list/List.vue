@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { computed, Fragment, h, provide, ref, useSlots, watch } from "vue";
+import { computed, provide, ref, watch } from "vue";
 
 import {
   ListInjectionKey,
@@ -9,13 +9,11 @@ import {
   type ListSelectedItemIndexes,
 } from "./List";
 
-import type { IListItem } from "./ListItem";
-import ListItem from "./ListItem.vue";
+import type { IListItem } from "@/components/atoms/list/ListItem";
+import ListItem from "@/components/atoms/list/ListItem.vue";
 import Group from "@/components/atoms/containers/Group.vue";
 
 const PREFIX = "list";
-
-const slots = useSlots();
 
 const props = withDefaults(defineProps<ListProps>(), {
   as: "div",
@@ -117,34 +115,50 @@ const normalizedItems = computed<IListItem[] | null>(() => {
   return items as IListItem[];
 });
 
-const renderWithSlot = () => {
-  if (!normalizedItems.value) return null;
+const isSelectedById = (id: IListItem["id"]) =>
+  Array.isArray(selectedItemIndexes.value)
+    ? selectedItemIndexes.value.includes(id)
+    : selectedItemIndexes.value === id;
 
-  const children = normalizedItems.value.map((item) => {
-    const { id, title, description } = item;
-    const onSelect = () => setSelectedItemIndexes(id);
+const asTagForItem = computed(() => (rootTag.value === "ul" ? "li" : "div"));
 
-    const vnodeFromSlot = slots.default?.({
-      item,
-      isSelected: Array.isArray(selectedItemIndexes.value)
-        ? selectedItemIndexes.value.includes(id)
-        : selectedItemIndexes.value === id,
-      onSelect,
-    });
+const onSelectById = (id: IListItem["id"]) => () => setSelectedItemIndexes(id);
 
-    if (vnodeFromSlot && vnodeFromSlot.length) {
-      return vnodeFromSlot;
-    }
-    return h(ListItem, {
-      key: String(id),
-      as: rootTag.value === "ul" ? "li" : "div",
-      id,
-      title,
-      description,
-    });
-  });
+/* * * Keyboard * * */
 
-  return h(Fragment, null, children);
+const focusIndex = ref(0);
+
+const move = (dir: -1 | 1) => {
+  if (!normalizedItems.value?.length) return;
+
+  const len = normalizedItems.value.length;
+  focusIndex.value = (focusIndex.value + dir + len) % len;
+};
+
+const onKeydown = (e: KeyboardEvent) => {
+  if (!normalizedItems.value?.length) return;
+  const idAt = (i: number) => normalizedItems.value![i].id;
+
+  switch (e.key) {
+    case "ArrowDown":
+    case "ArrowRight":
+      move(1);
+      break;
+    case "ArrowUp":
+    case "ArrowLeft":
+      move(-1);
+      break;
+    case "Home":
+      focusIndex.value = 0;
+      break;
+    case "End":
+      focusIndex.value = normalizedItems.value.length - 1;
+      break;
+    case "Enter":
+    case " ":
+      setSelectedItemIndexes(idAt(focusIndex.value));
+      break;
+  }
 };
 </script>
 
@@ -169,12 +183,28 @@ const renderWithSlot = () => {
     :stretch="stretch"
     :role="isSelectable ? 'listbox' : 'list'"
     :aria-multiselectable="isSelectable ? isMultiple : undefined"
+    @keydown.stop.prevent="onKeydown"
   >
     <slot v-if="!normalizedItems" :selected-id="selectedItemIndexes"></slot>
     <template v-else>
-      <component :is="'template'">
-        <component :is="{ render: () => renderWithSlot() }" />
-      </component>
+      <template v-for="(item, i) in normalizedItems" :key="item.id">
+        <slot
+          :item="item"
+          :isSelected="isSelectedById(item.id)"
+          :onSelect="onSelectById(item.id)"
+          :isFocused="i === focusIndex"
+        >
+          <ListItem
+            :as="asTagForItem"
+            :id="item.id"
+            :title="item.title"
+            :description="item.description"
+            :is-active="isSelectedById(item.id)"
+            :is-focused="i === focusIndex"
+            @click="onSelectById(item.id)"
+          />
+        </slot>
+      </template>
     </template>
   </Group>
 </template>
