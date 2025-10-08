@@ -6,8 +6,8 @@ const PREFIX = "navigation-rail";
 withDefaults(defineProps<NavigationRailTemplateProps>(), {
   variant: "default",
   size: "lg",
-  mode: "primary",
-  tone: "neutral",
+  mode: "neutral",
+  tone: "primary",
 });
 </script>
 

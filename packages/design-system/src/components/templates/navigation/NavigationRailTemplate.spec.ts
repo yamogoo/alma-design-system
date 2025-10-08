@@ -21,8 +21,8 @@ describe("NavigationRailTemplate", () => {
           "navigation-rail",
           "navigation-rail-rail_variant-default",
           "navigation-rail-rail_size-lg",
-          "navigation-rail-rail_mode-primary",
-          "navigation-rail-rail_tone-neutral",
+          "navigation-rail-rail_mode-neutral",
+          "navigation-rail-rail_tone-primary",
         ])
       );
     });
@@ -33,8 +33,8 @@ describe("NavigationRailTemplate", () => {
       const props: NavigationRailTemplateProps = {
         variant: "default",
         size: "md",
-        tone: "neutral",
-        mode: "primary",
+        tone: "primary",
+        mode: "neutral",
       };
 
       const wrapper = mount(NavigationRailTemplate, { props });
