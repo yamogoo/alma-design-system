@@ -3,7 +3,7 @@
     "md": {
       "root": {
         "minHeight": {
-          "$value": 24,
+          "$value": 44,
           "$type": "number",
           "$unit": "px"
         },

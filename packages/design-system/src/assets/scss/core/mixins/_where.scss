@@ -1,0 +1,11 @@
+@use "sass:string" as *;
+
+@function where($sel) {
+  @return string.unquote(":where(#{$sel})");
+}
+
+@mixin where($sel) {
+  :where(#{$sel}) {
+    @content;
+  }
+}

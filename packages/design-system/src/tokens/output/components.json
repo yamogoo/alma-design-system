@@ -1002,7 +1002,7 @@
         "md": {
           "root": {
             "minHeight": {
-              "$value": 24,
+              "$value": 44,
               "$type": "number",
               "$unit": "px"
             },
@@ -1382,7 +1382,7 @@
               "$unit": "px"
             },
             "touchArea": {
-              "$value": 44,
+              "$value": 36,
               "$type": "number",
               "$unit": "px"
             }
@@ -1447,7 +1447,7 @@
               "$unit": "px"
             },
             "touchArea": {
-              "$value": 44,
+              "$value": 36,
               "$type": "number",
               "$unit": "px"
             }
@@ -1512,7 +1512,7 @@
               "$unit": "px"
             },
             "touchArea": {
-              "$value": 44,
+              "$value": 36,
               "$type": "number",
               "$unit": "px"
             }
@@ -1764,7 +1764,7 @@
               "$unit": "px"
             },
             "touchArea": {
-              "$value": 44,
+              "$value": 36,
               "$type": "number",
               "$unit": "px"
             }
@@ -1818,7 +1818,7 @@
               "$unit": "px"
             },
             "touchArea": {
-              "$value": 44,
+              "$value": 36,
               "$type": "number",
               "$unit": "px"
             }
@@ -1872,7 +1872,7 @@
               "$unit": "px"
             },
             "touchArea": {
-              "$value": 36,
+              "$value": 24,
               "$type": "number",
               "$unit": "px"
             }

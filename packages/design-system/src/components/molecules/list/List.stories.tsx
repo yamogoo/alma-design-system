@@ -17,6 +17,8 @@ import type { ListItems } from "./List";
 import List from "./List.vue";
 
 import ListItem from "@/components/atoms/list/ListItem.vue";
+import Slider from "@/components/atoms/controls/slider/Slider.vue";
+import Switch from "@/components/atoms/controls/toggles/switch/Switch.vue";
 
 const meta = {
   title: "Molecules/List/List",
@@ -78,6 +80,12 @@ export const Playground: Story = {
             isJoined={false}
             items={ITEMS}
           ></List>
+          <List
+            isSelectable={false}
+            isMultiple={false}
+            isJoined={true}
+            items={ITEMS_2}
+          ></List>
         </StoryGrid>
       );
     },
@@ -115,6 +123,47 @@ export const MultipleSelection: Story = {
                 description={description}
               ></ListItem>
             ))}
+          </List>
+        </StoryGrid>
+      );
+    },
+  }),
+};
+
+export const Controls: Story = {
+  args: {},
+  render: () => ({
+    setup() {
+      return () => (
+        <StoryGrid columns={1}>
+          <List isMultiple={false} isSelectable={false}>
+            <ListItem
+              id={ITEMS_2[0].id}
+              title={ITEMS_2[0].title}
+              v-slots={{
+                append: () => <Switch isActive={false}></Switch>,
+              }}
+            ></ListItem>
+            <ListItem
+              id={ITEMS_2[1].id}
+              title={ITEMS_2[1].title}
+              v-slots={{
+                append: () => <Switch isActive={false}></Switch>,
+              }}
+            ></ListItem>
+            <ListItem
+              id={ITEMS_2[0].id}
+              title={ITEMS_2[0].title}
+              v-slots={{
+                append: () => (
+                  <Slider
+                    value={100}
+                    max={100}
+                    style={{ width: "240px" }}
+                  ></Slider>
+                ),
+              }}
+            ></ListItem>
           </List>
         </StoryGrid>
       );

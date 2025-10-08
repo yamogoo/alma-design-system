@@ -1,14 +1,14 @@
 {
   "md": {
     "size": {
-      "$value": 44,
+      "$value": 36,
       "$type": "number",
       "$unit": "px"
     }
   },
   "sm": {
     "size": {
-      "$value": 36,
+      "$value": 24,
       "$type": "number",
       "$unit": "px"
     }

@@ -48,7 +48,7 @@ const { isHovered } = useHover(root);
 
 const isSelected = computed(() => {
   // control selected state via props:
-  if (props.isActive !== undefined) return props.isActive;
+  // if (props.isActive !== undefined) return props.isActive;
 
   // control selected state via injected:
   if (!ctx?.selectedItemIndexes) return false;
@@ -209,7 +209,7 @@ $prefix: list-item;
             }
 
             &_joined {
-              // border
+              // top:
               &:first-child {
                 border-radius: $border-radius $border-radius 0 0;
                 border-left-width: $border-width;
@@ -217,13 +217,7 @@ $prefix: list-item;
                 border-right-width: $border-width;
               }
 
-              &:last-child {
-                border-radius: 0 0 $border-radius $border-radius;
-                border-left-width: $border-width;
-                border-bottom-width: $border-width;
-                border-right-width: $border-width;
-              }
-
+              // middle:
               &:not(:last-child, :first-child) {
                 border-left-width: $border-width;
                 border-right-width: $border-width;
@@ -232,6 +226,21 @@ $prefix: list-item;
                   border-bottom-style: solid;
                   border-bottom-width: $container-border-width;
                 }
+              }
+
+              // bottom:
+              &:last-child {
+                border-radius: 0 0 $border-radius $border-radius;
+                border-left-width: $border-width;
+                border-bottom-width: $border-width;
+                border-right-width: $border-width;
+              }
+
+              // one in list:
+              &:first-child:last-child {
+                border-radius: $border-radius $border-radius;
+                border-width: $border-width;
+                border-width: $border-width;
               }
 
               // divider:
@@ -250,15 +259,13 @@ $prefix: list-item;
             }
           }
 
-          .#{$prefix}__title {
+          @include where(".#{$prefix}__title") {
             @extend %t__#{$title-font-style};
           }
-
-          .#{$prefix}__description {
+          @include where(".#{$prefix}__description") {
             @extend %t__#{$description-font-style};
           }
-
-          .#{$prefix}__chevron {
+          @include where(".#{$prefix}__chevron") {
             @include box($chevron-size);
           }
         }
@@ -363,16 +370,21 @@ $prefix: list-item;
   overflow: hidden;
   @extend %base-transition;
 
-  &__container {
+  @include where(".#{$prefix}__container") {
     display: flex;
     flex-direction: row;
     @extend %base-transition;
   }
 
-  &__content {
+  @include where(".#{$prefix}__content") {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
+  }
+
+  @include where(".#{$prefix}__append") {
+    align-content: center;
   }
 
   &__append {
