@@ -37,7 +37,7 @@ const rootTag = computed(
 );
 
 const localSelectedItemIndexes = ref<
-  IListItem["id"] | IListItem["id"][] | null
+  ListSelectedItemIndex | ListSelectedItemIndex[] | null
 >(props.selectedItemIndexes ?? (props.isMultiple ? [] : null));
 
 const selectedItemIndexes = computed({
@@ -115,14 +115,15 @@ const normalizedItems = computed<IListItem[] | null>(() => {
   return items as IListItem[];
 });
 
-const isSelectedById = (id: IListItem["id"]) =>
+const isSelectedById = (id: ListSelectedItemIndex) =>
   Array.isArray(selectedItemIndexes.value)
     ? selectedItemIndexes.value.includes(id)
     : selectedItemIndexes.value === id;
 
 const asTagForItem = computed(() => (rootTag.value === "ul" ? "li" : "div"));
 
-const onSelectById = (id: IListItem["id"]) => () => setSelectedItemIndexes(id);
+const onSelectById = (id: ListSelectedItemIndex) => () =>
+  setSelectedItemIndexes(id);
 
 /* * * Keyboard * * */
 
@@ -165,21 +166,16 @@ const onKeydown = (e: KeyboardEvent) => {
 <template>
   <Group
     :is="rootTag"
-    :class="[
-      PREFIX,
-      `${PREFIX}_variant-${effectiveVariant}`,
-      {
-        [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
-      },
-    ]"
+    :class="PREFIX"
+    data-testid="group"
     :variant="effectiveVariant"
     :size="size"
     :mode="mode"
     :tone="tone"
     :direction="direction"
     :orientation="orientation"
+    :vertical-alignment="verticalAlignment"
+    :horizontal-alignment="horizontalAlignment"
     :stretch="stretch"
     :role="isSelectable ? 'listbox' : 'list'"
     :aria-multiselectable="isSelectable ? isMultiple : undefined"

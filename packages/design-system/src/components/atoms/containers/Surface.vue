@@ -68,6 +68,7 @@ defineExpose({
       },
       computedBorderClass,
     ]"
+    data-testid="surface"
   >
     <slot></slot>
   </component>

@@ -40,6 +40,7 @@ const componentTag = props.as;
     :role="role"
     :aria-label="ariaLabel"
     :style="{ gap: gapY ? gapY : undefined }"
+    data-testid="group"
   >
     <slot></slot>
   </Surface>
