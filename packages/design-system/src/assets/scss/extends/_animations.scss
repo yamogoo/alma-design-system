@@ -3,10 +3,10 @@
 @use "../abstracts/config" as *;
 @use "../core/mixins/transition" as *;
 
-$IS_THEME_TRANSITIONS_ENABLED: map.get($config, is_theme_transitions_enabled);
+$is-theme-transitions-enabled: map.get($config, is_theme_transitions_enabled);
 
 %base-transition {
-  @if ($IS_THEME_TRANSITIONS_ENABLED) {
+  @if ($is-theme-transitions-enabled) {
     @include transition(
       color background background-color linear-gradient fill stroke border
         border-color opacity,

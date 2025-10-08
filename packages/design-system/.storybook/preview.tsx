@@ -5,6 +5,7 @@ import { createPinia } from "pinia";
 import { initialize, mswLoader } from "msw-storybook-addon";
 
 import "./storybook.theme.scss";
+import "../src/app.runtime.scss";
 
 import "@/assets/scss/app.global.styles.scss";
 import "@/assets/fonts/_fonts.scss";

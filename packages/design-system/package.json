@@ -50,6 +50,7 @@
       "import": "./dist/composables/*.js",
       "types": "./dist/composables/*.d.ts"
     },
+    "./styles.runtime.css": "./src/assets/scss/app.runtime.scss",
     "./style.css": "./dist/style.css",
     "./core.scss": "./src/_index.scss",
     "./global.styles.scss": "./src/assets/scss/app.global.styles.scss"

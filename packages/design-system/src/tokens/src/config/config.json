@@ -1,5 +1,5 @@
 {
-  "IS_THEME_TRANSITIONS_ENABLED": {
+  "isThemeTransitionsEnabled": {
     "$value": true,
     "$type": "boolean",
     "$unit": "",
@@ -8,7 +8,7 @@
       "category": "config"
     }
   },
-  "IS_FULL_RUNTIME": {
+  "isFullRuntime": {
     "$value": true,
     "$type": "boolean",
     "$unit": "",
@@ -17,7 +17,7 @@
       "category": "config"
     }
   },
-  "SCALE_FACTOR": {
+  "scaleFactor": {
     "$value": 1,
     "$type": "number",
     "$unit": "",
@@ -40,21 +40,21 @@
       }
     }
   },
-  "DENSITY_SPACE": {
+  "densitySpace": {
     "$value": 1,
     "$type": "number",
     "meta": {
       "build": { "web": { "exportAsVar": true, "varName": "--density-space" } }
     }
   },
-  "DENSITY_LINE": {
+  "densityLine": {
     "$value": 1.35,
     "$type": "number",
     "meta": {
       "build": { "web": { "exportAsVar": true, "varName": "--density-line" } }
     }
   },
-  "DENSITY_TARGET": {
+  "densityTarget": {
     "$value": 40,
     "$type": "number",
     "meta": {

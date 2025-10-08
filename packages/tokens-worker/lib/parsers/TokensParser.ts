@@ -65,6 +65,14 @@ export interface JSONToSCSSOptions {
   varsOptions?: Partial<ParseValueOptions>;
 }
 
+export interface CssVarOptions {
+  convertToCSSVariables?: boolean;
+  includeFileNameToCSSVariables?: boolean;
+  excludeCSSVariables?: string[];
+  useSeparateFile?: boolean;
+  fileNamePrefix?: string;
+}
+
 export interface TokensParserOptions {
   builder?: JSONBuilderOptions;
   source?: string;
@@ -74,6 +82,7 @@ export interface TokensParserOptions {
   build?: string;
   entryFilePath?: string;
   mapOptions?: Partial<ParseValueOptions>;
+  cssVarOptions?: CssVarOptions;
   varsOptions?: Partial<ParseValueOptions>;
   parseOptions?: Partial<ParseValueOptions>;
   useFileStructureLookup?: boolean; // enable folder-structure lookup for token refs
@@ -277,7 +286,10 @@ export class SCSSParser extends Parser {
       const tokenObj = obj as IMap;
 
       // --- check exclude list for CSS variables ---
-      const excludeList = this.tokensParser.opts?.mapOptions?.excludeCSSVariables ?? [];
+      const excludeList =
+        this.tokensParser.opts?.cssVarOptions?.excludeCSSVariables ??
+        this.tokensParser.opts?.mapOptions?.excludeCSSVariables ??
+        [];
       const candidates = buildExcludeCandidates();
 
       let isExcluded = false;
@@ -295,7 +307,10 @@ export class SCSSParser extends Parser {
       const valueVal = this.tokensParser.getTokenField(tokenObj, 'value');
 
       // --- determine whether we must export this token as CSS var ---
-      const globalMapFlag = this.tokensParser.opts?.mapOptions?.convertToCSSVariables ?? false;
+      const globalMapFlag =
+        this.tokensParser.opts?.cssVarOptions?.convertToCSSVariables ??
+        this.tokensParser.opts?.mapOptions?.convertToCSSVariables ??
+        false;
       const localMapFlag = opts?.convertToCSSVariables ?? false;
       const shouldExportAsVar =
         !isExcluded &&
@@ -317,11 +332,12 @@ export class SCSSParser extends Parser {
           : pathPart || (filePart ? `${filePart}` : '');
 
         // include file name into var if requested
-        if (
-          !explicitVarName &&
-          this.tokensParser.opts?.mapOptions?.includeFileNameToCSSVariables &&
-          filePart
-        ) {
+        const includeFileNameToCSS =
+          this.tokensParser.opts?.cssVarOptions?.includeFileNameToCSSVariables ??
+          this.tokensParser.opts?.mapOptions?.includeFileNameToCSSVariables ??
+          false;
+
+        if (!explicitVarName && includeFileNameToCSS && filePart) {
           if (!computedNameSource.startsWith(filePart)) {
             computedNameSource = computedNameSource
               ? `${filePart}-${computedNameSource}`
@@ -540,9 +556,24 @@ export class TokensParser {
       mapOptions: {
         convertCase: opts.mapOptions?.convertCase ?? false,
         includeFileName: opts.mapOptions?.includeFileName ?? true,
-        convertToCSSVariables: opts.mapOptions?.convertToCSSVariables ?? false,
-        includeFileNameToCSSVariables: opts.mapOptions?.includeFileNameToCSSVariables ?? false,
-        excludeCSSVariables: opts.mapOptions?.excludeCSSVariables ?? [],
+        convertToCSSVariables: opts.mapOptions?.convertToCSSVariables ?? false, // Legacy
+        includeFileNameToCSSVariables: opts.mapOptions?.includeFileNameToCSSVariables ?? false, // Legacy
+        excludeCSSVariables: opts.mapOptions?.excludeCSSVariables ?? [], // Legacy
+      },
+
+      cssVarOptions: {
+        convertToCSSVariables:
+          opts.cssVarOptions?.convertToCSSVariables ??
+          opts.mapOptions?.convertToCSSVariables ??
+          false,
+        includeFileNameToCSSVariables:
+          opts.cssVarOptions?.includeFileNameToCSSVariables ??
+          opts.mapOptions?.includeFileNameToCSSVariables ??
+          false,
+        excludeCSSVariables:
+          opts.cssVarOptions?.excludeCSSVariables ?? opts.mapOptions?.excludeCSSVariables ?? [],
+        useSeparateFile: opts.cssVarOptions?.useSeparateFile ?? false,
+        fileNamePrefix: opts.cssVarOptions?.fileNamePrefix ?? '_runtime.',
       },
 
       builder: {
@@ -1665,7 +1696,24 @@ export class TokensParser {
       if (this.parser instanceof SCSSParser) {
         const cssVarsBlock = this.parser.getCssVarsBlock();
         if (cssVarsBlock) {
-          content += cssVarsBlock;
+          const cssOpts = this.opts.cssVarOptions ?? {};
+          const useSeparate = cssOpts.useSeparateFile ?? false;
+
+          if (useSeparate) {
+            const prefix = cssOpts.fileNamePrefix ?? '__';
+            const baseName =
+              parseMapOptions.fileName || outputFileName.replace(/^_/, '').replace(/\.scss$/, '');
+            const cssFileName = `${prefix}${baseName}.css`;
+
+            const cssOutDir = this.opts.cssVarsOutDir || outputDir;
+            const cssOutPath = `${cssOutDir}/${cssFileName}`;
+
+            await fs.mkdir(cssOutDir, { recursive: true });
+            await fs.writeFile(cssOutPath, cssVarsBlock.trimStart());
+            console.log(`CSS variables written to ${cssOutPath}`);
+          } else {
+            content += cssVarsBlock;
+          }
         }
       }
 

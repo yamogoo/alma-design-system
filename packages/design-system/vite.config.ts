@@ -43,9 +43,13 @@ export default () => {
         mapOptions: {
           convertCase: true,
           includeFileName: true,
+        },
+        cssVarOptions: {
           convertToCSSVariables: false,
           includeFileNameToCSSVariables: false,
           excludeCSSVariables: ["./src/tokens/.cache/themes.json"],
+          useSeparateFile: true,
+          fileNamePrefix: "_runtime.",
         },
         themesDir: "./src/tokens/output/themes.json",
         themesOutFile: "./src/assets/scss/abstracts/_runtime_themes.scss",

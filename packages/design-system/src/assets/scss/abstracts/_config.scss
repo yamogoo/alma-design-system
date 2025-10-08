@@ -3,18 +3,11 @@
 
 $config:(
   config: (
-  is_theme_transitions_enabled: true,
-  is_full_runtime: true,
-  scale_factor: 1,
-  density_space: 1px,
-  density_line: 1.35px,
-  density_target: 40px
+  is-theme-transitions-enabled: true,
+  is-full-runtime: true,
+  scale-factor: 1,
+  density-space: 1px,
+  density-line: 1.35px,
+  density-target: 40px
 )
 );
-
-:root {
-  --density-line: 1.35px;
-  --density-space: 1px;
-  --density-target: 40px;
-  --scale-factor: 1;
-}
