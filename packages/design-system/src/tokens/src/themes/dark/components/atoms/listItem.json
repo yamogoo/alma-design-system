@@ -1,5 +1,143 @@
 {
   "neutral": {
+    "canvas": {
+      "root": {
+        "background": {
+          "normal": {
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal.$value}",
+            "$type": "color",
+            "unit": "hex"
+          },
+          "disabled": {
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.disabled.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.dark.contracts.interactive.surface.accent.secondary.hovered.$value}",
+            "$type": "color",
+            "unit": "hex"
+          },
+          "pressed": {
+            "$value": "{themes.dark.contracts.interactive.surface.accent.secondary.pressed.$value}",
+            "$type": "color",
+            "unit": "hex"
+          },
+          "selected": {
+            "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.selected.$value}",
+            "$type": "color",
+            "unit": "hex"
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "{themes.dark.contracts.interactive.stroke.neutral.canvas.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "disabled": {
+            "$value": "{themes.dark.contracts.interactive.stroke.neutral.canvas.disabled.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.dark.contracts.interactive.surface.accent.secondary.hovered.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "pressed": {
+            "$value": "{themes.dark.contracts.interactive.surface.accent.secondary.pressed.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "selected": {
+            "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.selected.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "highlight": {
+            "$value": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        }
+      },
+      "divider": {
+        "border": {
+          "normal": {
+            "$value": "{themes.dark.contracts.interactive.border.neutral.canvas.selected.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        }
+      },
+      "title": {
+        "normal": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "description": {
+        "normal": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "chevron": {
+        "normal": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    },
     "primary": {
       "root": {
         "background": {

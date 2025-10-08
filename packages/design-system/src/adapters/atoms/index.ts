@@ -17,6 +17,8 @@ export * from "./icon";
 // inputs
 export * from "./input";
 
+export * from "./listItem";
+
 // logos
 export * from "./logoWithDescriptor";
 

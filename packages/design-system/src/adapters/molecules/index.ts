@@ -7,7 +7,6 @@ export * from "./formWrapper";
 
 // options
 export * from "./list";
-export * from "./listItem";
 
 // panels
 export * from "./snackbar";

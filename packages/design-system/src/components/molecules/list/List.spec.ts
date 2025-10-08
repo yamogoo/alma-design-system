@@ -29,6 +29,10 @@ const getItem = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.findAllComponents({ name: "ListItem" });
 };
 
+const getItems = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.findAllComponents({ name: "ListItem" });
+};
+
 const ITEMS: ListItems = [
   {
     id: String(crypto.randomUUID()),
@@ -137,11 +141,6 @@ describe("List", () => {
       expect(items[2].text()).toContain("Baz");
     });
   });
-
-  const getGroup = <T>(wrapper: VueWrapper<T>) =>
-    wrapper.find('[data-testid="group"]');
-  const getItems = <T>(wrapper: VueWrapper<T>) =>
-    wrapper.findAllComponents({ name: "ListItem" });
 
   describe("selection & behavior", () => {
     const ITEMS = [

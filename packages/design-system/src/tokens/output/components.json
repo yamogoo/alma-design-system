@@ -997,6 +997,72 @@
         }
       }
     },
+    "listItem": {
+      "default": {
+        "md": {
+          "root": {
+            "minHeight": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "paddingHorizontal": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "paddingVertical": {
+              "$value": 12,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "borderRadius": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "gap": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": "number"
+            }
+          },
+          "divider": {
+            "borderWidth": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": "number"
+            }
+          },
+          "title": {
+            "fontStyle": {
+              "$value": "body-2",
+              "$type": "string",
+              "$unit": ""
+            }
+          },
+          "description": {
+            "fontStyle": {
+              "$value": "body-3",
+              "$type": "string",
+              "$unit": ""
+            }
+          },
+          "chevron": {
+            "size": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": "number"
+            }
+          }
+        }
+      }
+    },
     "logoWithDescriptor": {
       "default": {
         "md": {
@@ -2174,72 +2240,6 @@
               "$value": 24,
               "$type": "number",
               "$unit": "px"
-            }
-          }
-        }
-      }
-    },
-    "listItem": {
-      "default": {
-        "md": {
-          "root": {
-            "minHeight": {
-              "$value": 24,
-              "$type": "number",
-              "$unit": "px"
-            },
-            "paddingHorizontal": {
-              "$value": 16,
-              "$unit": "px",
-              "$type": "number"
-            },
-            "paddingVertical": {
-              "$value": 12,
-              "$unit": "px",
-              "$type": "number"
-            },
-            "borderRadius": {
-              "$value": 16,
-              "$unit": "px",
-              "$type": "number"
-            },
-            "borderWidth": {
-              "$value": 1,
-              "$unit": "px",
-              "$type": "number"
-            },
-            "gap": {
-              "$value": 1,
-              "$unit": "px",
-              "$type": "number"
-            }
-          },
-          "divider": {
-            "borderWidth": {
-              "$value": 1,
-              "$unit": "px",
-              "$type": "number"
-            }
-          },
-          "title": {
-            "fontStyle": {
-              "$value": "body-2",
-              "$type": "string",
-              "$unit": ""
-            }
-          },
-          "description": {
-            "fontStyle": {
-              "$value": "body-3",
-              "$type": "string",
-              "$unit": ""
-            }
-          },
-          "chevron": {
-            "size": {
-              "$value": 16,
-              "$unit": "px",
-              "$type": "number"
             }
           }
         }

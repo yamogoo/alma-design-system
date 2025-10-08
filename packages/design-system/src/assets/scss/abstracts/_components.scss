@@ -379,6 +379,32 @@ $components:(
 )
 )
 ),
+  list-item: (
+  default: (
+  md: (
+  root: (
+  min-height: 24px,
+  padding-horizontal: 16px,
+  padding-vertical: 12px,
+  border-radius: 16px,
+  border-width: 1px,
+  gap: 1px
+),
+  divider: (
+  border-width: 1px
+),
+  title: (
+  font-style: body-2
+),
+  description: (
+  font-style: body-3
+),
+  chevron: (
+  size: 16px
+)
+)
+)
+),
   logo-with-descriptor: (
   default: (
   md: (
@@ -868,32 +894,6 @@ $components:(
   item: (
   font-style: body-2,
   min-height: 24px
-)
-)
-)
-),
-  list-item: (
-  default: (
-  md: (
-  root: (
-  min-height: 24px,
-  padding-horizontal: 16px,
-  padding-vertical: 12px,
-  border-radius: 16px,
-  border-width: 1px,
-  gap: 1px
-),
-  divider: (
-  border-width: 1px
-),
-  title: (
-  font-style: body-2
-),
-  description: (
-  font-style: body-3
-),
-  chevron: (
-  size: 16px
 )
 )
 )

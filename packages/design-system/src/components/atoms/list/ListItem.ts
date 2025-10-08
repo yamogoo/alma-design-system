@@ -3,7 +3,7 @@ import type {
   ListItemSize,
   ListItemTone,
   ListItemVariant,
-} from "@/adapters/molecules/listItem";
+} from "@/adapters/atoms/listItem";
 
 import type {
   UIElementMaybeListItemOrBlockTag,

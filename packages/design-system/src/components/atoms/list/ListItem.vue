@@ -180,7 +180,7 @@ const onFocusPrev = (): void => {
 <style lang="scss">
 $prefix: list-item;
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -271,17 +271,17 @@ $prefix: list-item;
   &.#{$prefix}_state-#{$state} {
     @include themify($themes) {
       background-color: themed(
-        "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.background.#{$state}"
+        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.#{$state}"
       );
       border-color: themed(
-        "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
+        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
       );
     }
 
     .#{$prefix}__title {
       @include themify($themes) {
         color: themed(
-          "components.molecules.#{$prefix}.#{$mode}.#{$tone}.title.#{$state}"
+          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.title.#{$state}"
         );
       }
     }
@@ -289,7 +289,7 @@ $prefix: list-item;
     .#{$prefix}__description {
       @include themify($themes) {
         color: themed(
-          "components.molecules.#{$prefix}.#{$mode}.#{$tone}.description.#{$state}"
+          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.description.#{$state}"
         );
       }
     }
@@ -297,16 +297,14 @@ $prefix: list-item;
     .#{$prefix}__chevron {
       @include themify($themes) {
         fill: themed(
-          "components.molecules.#{$prefix}.#{$mode}.#{$tone}.chevron.#{$state}"
+          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.chevron.#{$state}"
         );
       }
     }
   }
 }
 
-@mixin defineThemes(
-  $map: get($themes, "light.components.molecules.#{$prefix}")
-) {
+@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -319,7 +317,7 @@ $prefix: list-item;
             @include themify($themes) {
               outline: get($tokens, "outline") solid
                 themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
                 );
             }
           }
@@ -331,7 +329,7 @@ $prefix: list-item;
               @include themify($themes) {
                 border-color: rgba(
                   themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
                   ),
                   0
                 );
@@ -344,7 +342,7 @@ $prefix: list-item;
             .#{$prefix}__container {
               @include themify($themes) {
                 border-color: themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
+                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
                 );
               }
             }

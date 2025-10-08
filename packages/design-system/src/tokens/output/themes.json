@@ -2612,6 +2612,286 @@
             }
           }
         },
+        "listItem": {
+          "neutral": {
+            "canvas": {
+              "root": {
+                "background": {
+                  "normal": {
+                    "$value": "#111213",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#151718",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#01218d",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#012291",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "selected": {
+                    "$value": "#0136e6",
+                    "$type": "color",
+                    "unit": "hex"
+                  }
+                },
+                "border": {
+                  "normal": {
+                    "$value": "#18191a",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#1e1f21",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#01218d",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#012291",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "selected": {
+                    "$value": "#0136e6",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "highlight": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "divider": {
+                "border": {
+                  "normal": {
+                    "$value": "#262728",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "title": {
+                "normal": {
+                  "$value": "#d2d5d7",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#ffffff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#f7f9ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "description": {
+                "normal": {
+                  "$value": "#d2d5d7",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#ffffff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#f7f9ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "chevron": {
+                "normal": {
+                  "$value": "#d2d5d7",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#ffffff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#f7f9ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "primary": {
+              "root": {
+                "background": {
+                  "normal": {
+                    "$value": "#282b2d",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#323638",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#01218d",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#012291",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "selected": {
+                    "$value": "#0136e6",
+                    "$type": "color",
+                    "unit": "hex"
+                  }
+                },
+                "border": {
+                  "normal": {
+                    "$value": "#2f3235",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#3b3f42",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#01218d",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#012291",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "selected": {
+                    "$value": "#0136e6",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "highlight": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "divider": {
+                "border": {
+                  "normal": {
+                    "$value": "#3f4244",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "title": {
+                "normal": {
+                  "$value": "#c5c9cc",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#fafbfb",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#f7f9ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "description": {
+                "normal": {
+                  "$value": "#c5c9cc",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#fafbfb",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#f7f9ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "chevron": {
+                "normal": {
+                  "$value": "#c5c9cc",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#fafbfb",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#f7f9ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            }
+          }
+        },
         "logoWithDescriptor": {
           "neutral": {
             "primary": {
@@ -4006,148 +4286,6 @@
                 },
                 "pressed": {
                   "$value": "#6f787e",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            }
-          }
-        },
-        "listItem": {
-          "neutral": {
-            "primary": {
-              "root": {
-                "background": {
-                  "normal": {
-                    "$value": "#282b2d",
-                    "$type": "color",
-                    "unit": "hex"
-                  },
-                  "disabled": {
-                    "$value": "#323638",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "hovered": {
-                    "$value": "#01218d",
-                    "$type": "color",
-                    "unit": "hex"
-                  },
-                  "pressed": {
-                    "$value": "#012291",
-                    "$type": "color",
-                    "unit": "hex"
-                  },
-                  "selected": {
-                    "$value": "#0136e6",
-                    "$type": "color",
-                    "unit": "hex"
-                  }
-                },
-                "border": {
-                  "normal": {
-                    "$value": "#2f3235",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "disabled": {
-                    "$value": "#3b3f42",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "hovered": {
-                    "$value": "#01218d",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "pressed": {
-                    "$value": "#012291",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "selected": {
-                    "$value": "#0136e6",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "highlight": {
-                    "$value": "#013cfe",
-                    "$type": "color",
-                    "$unit": "hex"
-                  }
-                }
-              },
-              "divider": {
-                "border": {
-                  "normal": {
-                    "$value": "#3f4244",
-                    "$type": "color",
-                    "$unit": "hex"
-                  }
-                }
-              },
-              "title": {
-                "normal": {
-                  "$value": "#c5c9cc",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "disabled": {
-                  "$value": "#fafbfb",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "hovered": {
-                  "$value": "#f7f9ff",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "selected": {
-                  "$value": "#dbe3ff",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              },
-              "description": {
-                "normal": {
-                  "$value": "#c5c9cc",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "disabled": {
-                  "$value": "#fafbfb",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "hovered": {
-                  "$value": "#f7f9ff",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "selected": {
-                  "$value": "#dbe3ff",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              },
-              "chevron": {
-                "normal": {
-                  "$value": "#c5c9cc",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "disabled": {
-                  "$value": "#fafbfb",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "hovered": {
-                  "$value": "#f7f9ff",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "selected": {
-                  "$value": "#dbe3ff",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13814,6 +13952,286 @@
             }
           }
         },
+        "listItem": {
+          "neutral": {
+            "canvas": {
+              "root": {
+                "background": {
+                  "normal": {
+                    "$value": "#f9f9f9",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#d0dbff",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#dde5ff",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "selected": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "unit": "hex"
+                  }
+                },
+                "border": {
+                  "normal": {
+                    "$value": "#efefef",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#d0dbff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#dde5ff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "selected": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "highlight": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "divider": {
+                "border": {
+                  "normal": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "title": {
+                "normal": {
+                  "$value": "#3f4347",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#4f5459",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0139f4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "description": {
+                "normal": {
+                  "$value": "#3f4347",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#4f5459",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0139f4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "chevron": {
+                "normal": {
+                  "$value": "#3f4347",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#4f5459",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0139f4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "primary": {
+              "root": {
+                "background": {
+                  "normal": {
+                    "$value": "#dfe1e3",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#d0dbff",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#dde5ff",
+                    "$type": "color",
+                    "unit": "hex"
+                  },
+                  "selected": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "unit": "hex"
+                  }
+                },
+                "border": {
+                  "normal": {
+                    "$value": "#d5d7d9",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "disabled": {
+                    "$value": "#ffffff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "hovered": {
+                    "$value": "#d0dbff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "pressed": {
+                    "$value": "#dde5ff",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "selected": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "highlight": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "divider": {
+                "border": {
+                  "normal": {
+                    "$value": "#c2c4c6",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
+                }
+              },
+              "title": {
+                "normal": {
+                  "$value": "#282b2d",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#323638",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0139f4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "description": {
+                "normal": {
+                  "$value": "#282b2d",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#323638",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0139f4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "chevron": {
+                "normal": {
+                  "$value": "#282b2d",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#323638",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0139f4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            }
+          }
+        },
         "logoWithDescriptor": {
           "neutral": {
             "primary": {
@@ -15208,148 +15626,6 @@
                 },
                 "pressed": {
                   "$value": "#91999f",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            }
-          }
-        },
-        "listItem": {
-          "neutral": {
-            "primary": {
-              "root": {
-                "background": {
-                  "normal": {
-                    "$value": "#dfe1e3",
-                    "$type": "color",
-                    "unit": "hex"
-                  },
-                  "disabled": {
-                    "$value": "#ffffff",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "hovered": {
-                    "$value": "#d0dbff",
-                    "$type": "color",
-                    "unit": "hex"
-                  },
-                  "pressed": {
-                    "$value": "#dde5ff",
-                    "$type": "color",
-                    "unit": "hex"
-                  },
-                  "selected": {
-                    "$value": "#013cfe",
-                    "$type": "color",
-                    "unit": "hex"
-                  }
-                },
-                "border": {
-                  "normal": {
-                    "$value": "#d5d7d9",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "disabled": {
-                    "$value": "#ffffff",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "hovered": {
-                    "$value": "#d0dbff",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "pressed": {
-                    "$value": "#dde5ff",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "selected": {
-                    "$value": "#013cfe",
-                    "$type": "color",
-                    "$unit": "hex"
-                  },
-                  "highlight": {
-                    "$value": "#013cfe",
-                    "$type": "color",
-                    "$unit": "hex"
-                  }
-                }
-              },
-              "divider": {
-                "border": {
-                  "normal": {
-                    "$value": "#c2c4c6",
-                    "$type": "color",
-                    "$unit": "hex"
-                  }
-                }
-              },
-              "title": {
-                "normal": {
-                  "$value": "#282b2d",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "disabled": {
-                  "$value": "#323638",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "hovered": {
-                  "$value": "#0139f4",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "selected": {
-                  "$value": "#dbe3ff",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              },
-              "description": {
-                "normal": {
-                  "$value": "#282b2d",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "disabled": {
-                  "$value": "#323638",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "hovered": {
-                  "$value": "#0139f4",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "selected": {
-                  "$value": "#dbe3ff",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              },
-              "chevron": {
-                "normal": {
-                  "$value": "#282b2d",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "disabled": {
-                  "$value": "#323638",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "hovered": {
-                  "$value": "#0139f4",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "selected": {
-                  "$value": "#dbe3ff",
                   "$type": "color",
                   "$unit": "hex"
                 }

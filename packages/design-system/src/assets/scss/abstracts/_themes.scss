@@ -863,6 +863,94 @@ $themes:(
 )
 )
 ),
+  list-item: (
+  neutral: (
+  canvas: (
+  root: (
+  background: (
+  normal: #111213,
+  disabled: #151718,
+  hovered: #01218d,
+  pressed: #012291,
+  selected: #0136e6
+),
+  border: (
+  normal: #18191a,
+  disabled: #1e1f21,
+  hovered: #01218d,
+  pressed: #012291,
+  selected: #0136e6,
+  highlight: #013cfe
+)
+),
+  divider: (
+  border: (
+  normal: #262728
+)
+),
+  title: (
+  normal: #d2d5d7,
+  disabled: #ffffff,
+  hovered: #f7f9ff,
+  selected: #dbe3ff
+),
+  description: (
+  normal: #d2d5d7,
+  disabled: #ffffff,
+  hovered: #f7f9ff,
+  selected: #dbe3ff
+),
+  chevron: (
+  normal: #d2d5d7,
+  disabled: #ffffff,
+  hovered: #f7f9ff,
+  selected: #dbe3ff
+)
+),
+  primary: (
+  root: (
+  background: (
+  normal: #282b2d,
+  disabled: #323638,
+  hovered: #01218d,
+  pressed: #012291,
+  selected: #0136e6
+),
+  border: (
+  normal: #2f3235,
+  disabled: #3b3f42,
+  hovered: #01218d,
+  pressed: #012291,
+  selected: #0136e6,
+  highlight: #013cfe
+)
+),
+  divider: (
+  border: (
+  normal: #3f4244
+)
+),
+  title: (
+  normal: #c5c9cc,
+  disabled: #fafbfb,
+  hovered: #f7f9ff,
+  selected: #dbe3ff
+),
+  description: (
+  normal: #c5c9cc,
+  disabled: #fafbfb,
+  hovered: #f7f9ff,
+  selected: #dbe3ff
+),
+  chevron: (
+  normal: #c5c9cc,
+  disabled: #fafbfb,
+  hovered: #f7f9ff,
+  selected: #dbe3ff
+)
+)
+)
+),
   logo-with-descriptor: (
   neutral: (
   primary: (
@@ -1396,52 +1484,6 @@ $themes:(
   disabled: #818990,
   hovered: #6c757b,
   pressed: #6f787e
-)
-)
-)
-),
-  list-item: (
-  neutral: (
-  primary: (
-  root: (
-  background: (
-  normal: #282b2d,
-  disabled: #323638,
-  hovered: #01218d,
-  pressed: #012291,
-  selected: #0136e6
-),
-  border: (
-  normal: #2f3235,
-  disabled: #3b3f42,
-  hovered: #01218d,
-  pressed: #012291,
-  selected: #0136e6,
-  highlight: #013cfe
-)
-),
-  divider: (
-  border: (
-  normal: #3f4244
-)
-),
-  title: (
-  normal: #c5c9cc,
-  disabled: #fafbfb,
-  hovered: #f7f9ff,
-  selected: #dbe3ff
-),
-  description: (
-  normal: #c5c9cc,
-  disabled: #fafbfb,
-  hovered: #f7f9ff,
-  selected: #dbe3ff
-),
-  chevron: (
-  normal: #c5c9cc,
-  disabled: #fafbfb,
-  hovered: #f7f9ff,
-  selected: #dbe3ff
 )
 )
 )
@@ -4243,6 +4285,94 @@ $themes:(
 )
 )
 ),
+  list-item: (
+  neutral: (
+  canvas: (
+  root: (
+  background: (
+  normal: #f9f9f9,
+  disabled: #ffffff,
+  hovered: #d0dbff,
+  pressed: #dde5ff,
+  selected: #013cfe
+),
+  border: (
+  normal: #efefef,
+  disabled: #ffffff,
+  hovered: #d0dbff,
+  pressed: #dde5ff,
+  selected: #013cfe,
+  highlight: #013cfe
+)
+),
+  divider: (
+  border: (
+  normal: #ffffff
+)
+),
+  title: (
+  normal: #3f4347,
+  disabled: #4f5459,
+  hovered: #0139f4,
+  selected: #dbe3ff
+),
+  description: (
+  normal: #3f4347,
+  disabled: #4f5459,
+  hovered: #0139f4,
+  selected: #dbe3ff
+),
+  chevron: (
+  normal: #3f4347,
+  disabled: #4f5459,
+  hovered: #0139f4,
+  selected: #dbe3ff
+)
+),
+  primary: (
+  root: (
+  background: (
+  normal: #dfe1e3,
+  disabled: #ffffff,
+  hovered: #d0dbff,
+  pressed: #dde5ff,
+  selected: #013cfe
+),
+  border: (
+  normal: #d5d7d9,
+  disabled: #ffffff,
+  hovered: #d0dbff,
+  pressed: #dde5ff,
+  selected: #013cfe,
+  highlight: #013cfe
+)
+),
+  divider: (
+  border: (
+  normal: #c2c4c6
+)
+),
+  title: (
+  normal: #282b2d,
+  disabled: #323638,
+  hovered: #0139f4,
+  selected: #dbe3ff
+),
+  description: (
+  normal: #282b2d,
+  disabled: #323638,
+  hovered: #0139f4,
+  selected: #dbe3ff
+),
+  chevron: (
+  normal: #282b2d,
+  disabled: #323638,
+  hovered: #0139f4,
+  selected: #dbe3ff
+)
+)
+)
+),
   logo-with-descriptor: (
   neutral: (
   primary: (
@@ -4776,52 +4906,6 @@ $themes:(
   disabled: #a9afb4,
   hovered: #8d949b,
   pressed: #91999f
-)
-)
-)
-),
-  list-item: (
-  neutral: (
-  primary: (
-  root: (
-  background: (
-  normal: #dfe1e3,
-  disabled: #ffffff,
-  hovered: #d0dbff,
-  pressed: #dde5ff,
-  selected: #013cfe
-),
-  border: (
-  normal: #d5d7d9,
-  disabled: #ffffff,
-  hovered: #d0dbff,
-  pressed: #dde5ff,
-  selected: #013cfe,
-  highlight: #013cfe
-)
-),
-  divider: (
-  border: (
-  normal: #c2c4c6
-)
-),
-  title: (
-  normal: #282b2d,
-  disabled: #323638,
-  hovered: #0139f4,
-  selected: #dbe3ff
-),
-  description: (
-  normal: #282b2d,
-  disabled: #323638,
-  hovered: #0139f4,
-  selected: #dbe3ff
-),
-  chevron: (
-  normal: #282b2d,
-  disabled: #323638,
-  hovered: #0139f4,
-  selected: #dbe3ff
 )
 )
 )
