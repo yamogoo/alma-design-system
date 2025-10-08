@@ -1057,44 +1057,44 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#272f35",
+                    "$value": "#2c2f31",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#2b3339",
+                    "$value": "#2f3235",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#364047",
+                    "$value": "#3b3f42",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#2e363c",
+                    "$value": "#323538",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#2f383e",
+                    "$value": "#33373a",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -1107,22 +1107,22 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#c0c9d0",
+                  "$value": "#c5c9cc",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#f9fafb",
+                  "$value": "#fafbfb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#ced5da",
+                  "$value": "#d2d5d7",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#d5dbdf",
+                  "$value": "#d8dbdd",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -1132,44 +1132,44 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#343e46",
+                    "$value": "#393d41",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#414d57",
+                    "$value": "#474c51",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#37424a",
+                    "$value": "#3c4145",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#39444c",
+                    "$value": "#3e4247",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#3c464e",
+                    "$value": "#414549",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#4b5862",
+                    "$value": "#51565b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#404a53",
+                    "$value": "#45494d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#414c55",
+                    "$value": "#474b50",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -1182,22 +1182,22 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#c0c9d0",
+                  "$value": "#c5c9cc",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#f9fafb",
+                  "$value": "#fafbfb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#ced5da",
+                  "$value": "#d2d5d7",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#d5dbdf",
+                  "$value": "#d8dbdd",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -1207,44 +1207,44 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#6d8292",
+                    "$value": "#778088",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#92a1ad",
+                    "$value": "#99a0a6",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#768a99",
+                    "$value": "#7f888f",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#7a8d9c",
+                    "$value": "#838b93",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#768b9b",
+                    "$value": "#808991",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#9dacb8",
+                    "$value": "#a5abb1",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#7f93a2",
+                    "$value": "#899199",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#8497a5",
+                    "$value": "#8d959c",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -1257,7 +1257,7 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#f8f9fa",
+                  "$value": "#f9f9f9",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -1282,7 +1282,7 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#f2f3f4",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -1304,7 +1304,7 @@
                 },
                 "border": {
                   "normal": {
-                    "$value": "#fbfdff",
+                    "$value": "#fcfdfe",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -1332,22 +1332,22 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#101315",
+                  "$value": "#111213",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#14181a",
+                  "$value": "#151718",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#111416",
+                  "$value": "#121314",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#111517",
+                  "$value": "#131415",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -1357,44 +1357,44 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#343e4600",
+                    "$value": "#393d4100",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#414d5700",
+                    "$value": "#474c5100",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#37424a00",
+                    "$value": "#3c414500",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#39444c00",
+                    "$value": "#3e424700",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#3c464e",
+                    "$value": "#414549",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#4b5862",
+                    "$value": "#51565b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#404a53",
+                    "$value": "#45494d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#414c55",
+                    "$value": "#474b50",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -1407,22 +1407,22 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#97a5b1",
+                  "$value": "#9ea5aa",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#c6ced4",
+                  "$value": "#caced0",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#a2afb9",
+                  "$value": "#a8afb3",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#a8b4be",
+                  "$value": "#aeb4b8",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2190,14 +2190,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#3b4248",
+                    "$value": "#3f4244",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -2205,14 +2205,14 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#97a5b1",
+                  "$value": "#9ea5aa",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "icon": {
                 "normal": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2222,14 +2222,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#f1f3f5",
+                    "$value": "#f2f3f4",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#fdffff",
+                    "$value": "#feffff",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -2237,14 +2237,14 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#101315",
+                  "$value": "#111213",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "icon": {
                 "normal": {
-                  "$value": "#4e5d68",
+                  "$value": "#555c61",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2257,7 +2257,7 @@
             "primary": {
               "root": {
                 "border": {
-                  "$value": "#3b4248",
+                  "$value": "#3f4244",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2266,7 +2266,7 @@
             "secondary": {
               "root": {
                 "border": {
-                  "$value": "#4c565f",
+                  "$value": "#515559",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2279,12 +2279,12 @@
             "canvas": {
               "root": {
                 "background": {
-                  "$value": "#101315",
+                  "$value": "#111213",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#25282a",
+                  "$value": "#262728",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2293,12 +2293,12 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#3b4248",
+                  "$value": "#3f4244",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2307,12 +2307,12 @@
             "secondary": {
               "root": {
                 "background": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2321,12 +2321,12 @@
             "ghost": {
               "root": {
                 "background": {
-                  "$value": "#242b3100",
+                  "$value": "#282b2d00",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#3b4248",
+                  "$value": "#3f4244",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2356,7 +2356,7 @@
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#3b4248",
+                  "$value": "#3f4244",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2370,7 +2370,7 @@
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#4c565f",
+                  "$value": "#515559",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2384,7 +2384,7 @@
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2398,27 +2398,27 @@
               "root": {
                 "background": {
                   "idle": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "focused": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -2430,22 +2430,22 @@
                 },
                 "border": {
                   "idle": {
-                    "$value": "#2b3339",
+                    "$value": "#2f3235",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "normal": {
-                    "$value": "#2b3339",
+                    "$value": "#2f3235",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#364047",
+                    "$value": "#3b3f42",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#2e363c",
+                    "$value": "#323538",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -2463,27 +2463,27 @@
               },
               "label": {
                 "idle": {
-                  "$value": "#c0c9d0",
+                  "$value": "#c5c9cc",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "normal": {
-                  "$value": "#c0c9d0",
+                  "$value": "#c5c9cc",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#f9fafb",
+                  "$value": "#fafbfb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#ced5da",
+                  "$value": "#d2d5d7",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "focused": {
-                  "$value": "#ced5da",
+                  "$value": "#d2d5d7",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -2507,32 +2507,32 @@
               "root": {
                 "background": {
                   "idle": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "error": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "focused": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -2617,17 +2617,17 @@
             "primary": {
               "label": {
                 "normal": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#b9c2ca",
+                  "$value": "#bec2c5",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#bfc7cf",
+                  "$value": "#c3c7ca",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2640,22 +2640,22 @@
             "primary": {
               "label": {
                 "normal": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#e0e4e8",
+                  "$value": "#e2e4e6",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#b9c2ca",
+                  "$value": "#bec2c5",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2664,22 +2664,22 @@
             "secondary": {
               "label": {
                 "normal": {
-                  "$value": "#97a5b1",
+                  "$value": "#9ea5aa",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#e0e4e8",
+                  "$value": "#e2e4e6",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#b9c2ca",
+                  "$value": "#bec2c5",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -2721,12 +2721,12 @@
           "neutral": {
             "primary": {
               "backgroundIn": {
-                "$value": "#92a1ad40",
+                "$value": "#99a0a640",
                 "$type": "color",
                 "$unit": "hex"
               },
               "backgroundOut": {
-                "$value": "#92a1ad00",
+                "$value": "#99a0a600",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -2756,22 +2756,22 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#343e46",
+                    "$value": "#393d41",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#37424a",
+                    "$value": "#3c4145",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#414d57",
+                    "$value": "#474c51",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#39444c",
+                    "$value": "#3e4247",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -2804,22 +2804,22 @@
               "knob": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#272f35",
+                    "$value": "#2c2f31",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -2881,22 +2881,22 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#343e46",
+                    "$value": "#393d41",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#37424a",
+                    "$value": "#3c4145",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#414d57",
+                    "$value": "#474c51",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#39444c",
+                    "$value": "#3e4247",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -2929,22 +2929,22 @@
               "knob": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#272f35",
+                    "$value": "#2c2f31",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -3006,22 +3006,22 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#343e46",
+                    "$value": "#393d41",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#37424a",
+                    "$value": "#3c4145",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#414d57",
+                    "$value": "#474c51",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#39444c",
+                    "$value": "#3e4247",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -3054,22 +3054,22 @@
               "knob": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#272f35",
+                    "$value": "#2c2f31",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -3131,22 +3131,22 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#343e46",
+                    "$value": "#393d41",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#37424a",
+                    "$value": "#3c4145",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#414d57",
+                    "$value": "#474c51",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#39444c",
+                    "$value": "#3e4247",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -3179,22 +3179,22 @@
               "knob": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#272f35",
+                    "$value": "#2c2f31",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -3254,12 +3254,12 @@
             "item": {
               "label": {
                 "normal": {
-                  "$value": "#778a9a",
+                  "$value": "#818990",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3272,17 +3272,17 @@
             "canvas": {
               "root": {
                 "background": {
-                  "$value": "#101315",
+                  "$value": "#111213",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#25282a",
+                  "$value": "#262728",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#25282a",
+                  "$value": "#262728",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3291,17 +3291,17 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#3b4248",
+                  "$value": "#3f4244",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#3b4248",
+                  "$value": "#3f4244",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3310,17 +3310,17 @@
             "secondary": {
               "root": {
                 "background": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#4c565f",
+                  "$value": "#515559",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#4c565f",
+                  "$value": "#515559",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3329,17 +3329,17 @@
             "tertiary": {
               "root": {
                 "background": {
-                  "$value": "#6d8292",
+                  "$value": "#778088",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#889dae",
+                  "$value": "#929ba3",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#889dae",
+                  "$value": "#929ba3",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3348,17 +3348,17 @@
             "quaternary": {
               "root": {
                 "background": {
-                  "$value": "#f1f3f5",
+                  "$value": "#f2f3f4",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#fdffff",
+                  "$value": "#feffff",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#fdffff",
+                  "$value": "#feffff",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3667,24 +3667,24 @@
               },
               "track": {
                 "normal": {
-                  "$value": "#6d8292",
+                  "$value": "#778088",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#92a1ad",
+                  "$value": "#99a0a6",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#6d8292",
+                  "$value": "#778088",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "knob": {
                 "normal": {
-                  "$value": "#f1f3f5",
+                  "$value": "#f2f3f4",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -3694,24 +3694,24 @@
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#f1f3f5",
+                  "$value": "#f2f3f4",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "label": {
                 "normal": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#e0e4e8",
+                  "$value": "#e2e4e6",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3732,7 +3732,7 @@
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#92a1ad",
+                  "$value": "#99a0a6",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -3744,34 +3744,34 @@
               },
               "knob": {
                 "normal": {
-                  "$value": "#6d8292",
+                  "$value": "#778088",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#92a1ad",
+                  "$value": "#99a0a6",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#6d8292",
+                  "$value": "#778088",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "label": {
                 "normal": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#acb7c1",
+                  "$value": "#b2b7bb",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3784,7 +3784,7 @@
         "app": {
           "root": {
             "background": {
-              "$value": "#101315"
+              "$value": "#111213"
             }
           }
         }
@@ -3799,66 +3799,66 @@
               "currentValue": {
                 "label": {
                   "normal": {
-                    "$value": "#5d6f7d",
+                    "$value": "#666e74",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#637684",
+                    "$value": "#6c757b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#778a9a",
+                    "$value": "#818990",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#5d6f7d",
+                    "$value": "#666e74",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "icon": {
                   "normal": {
-                    "$value": "#5d6f7d",
+                    "$value": "#666e74",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#637684",
+                    "$value": "#6c757b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#778a9a",
+                    "$value": "#818990",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#5d6f7d",
+                    "$value": "#666e74",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#262e34",
+                    "$value": "#2a2e30",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -3867,12 +3867,12 @@
               "options": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -3885,7 +3885,7 @@
           "neutral": {
             "primary": {
               "background": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -3893,7 +3893,7 @@
                 }
               },
               "shadow": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -3903,7 +3903,7 @@
             },
             "secondary": {
               "background": {
-                "$value": "#343e46",
+                "$value": "#393d41",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -3911,7 +3911,7 @@
                 }
               },
               "shadow": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -3925,7 +3925,7 @@
           "neutral": {
             "primary": {
               "background": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -3933,7 +3933,7 @@
                 }
               },
               "border": {
-                "$value": "#3b4248",
+                "$value": "#3f4244",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -3943,7 +3943,7 @@
             },
             "secondary": {
               "background": {
-                "$value": "#343e46",
+                "$value": "#393d41",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -3951,7 +3951,7 @@
                 }
               },
               "border": {
-                "$value": "#4c565f",
+                "$value": "#515559",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -3966,22 +3966,22 @@
             "primary": {
               "label": {
                 "normal": {
-                  "$value": "#5d6f7d",
+                  "$value": "#666e74",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#778a9a",
+                  "$value": "#818990",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#637684",
+                  "$value": "#6c757b",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#657988",
+                  "$value": "#6f787e",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -3990,22 +3990,22 @@
             "secondary": {
               "label": {
                 "normal": {
-                  "$value": "#5d6f7d",
+                  "$value": "#666e74",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#778a9a",
+                  "$value": "#818990",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#637684",
+                  "$value": "#6c757b",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#657988",
+                  "$value": "#6f787e",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -4019,12 +4019,12 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#2d363d",
+                    "$value": "#323638",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -4046,12 +4046,12 @@
                 },
                 "border": {
                   "normal": {
-                    "$value": "#2b3339",
+                    "$value": "#2f3235",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#364047",
+                    "$value": "#3b3f42",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -4080,7 +4080,7 @@
               "divider": {
                 "border": {
                   "normal": {
-                    "$value": "#3b4248",
+                    "$value": "#3f4244",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4088,44 +4088,66 @@
               },
               "title": {
                 "normal": {
-                  "$value": "#c0c9d0",
+                  "$value": "#c5c9cc",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#f9fafb",
+                  "$value": "#fafbfb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#ced5da",
+                  "$value": "#f7f9ff",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#c0c9d0",
+                  "$value": "#dbe3ff",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "description": {
                 "normal": {
-                  "$value": "#c0c9d0",
+                  "$value": "#c5c9cc",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#f9fafb",
+                  "$value": "#fafbfb",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#d0dbff",
+                  "$value": "#f7f9ff",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#b6c7ff",
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "chevron": {
+                "normal": {
+                  "$value": "#c5c9cc",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#fafbfb",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#f7f9ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -4141,18 +4163,18 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -4172,18 +4194,18 @@
             "quaternary": {
               "root": {
                 "background": {
-                  "$value": "#f1f3f5",
+                  "$value": "#f2f3f4",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -4271,7 +4293,7 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#242b3100",
+                  "$value": "#282b2d00",
                   "$type": "color",
                   "unit": "hex"
                 }
@@ -4280,7 +4302,7 @@
                 "root": {
                   "background": {
                     "normal": {
-                      "$value": "#242b3100",
+                      "$value": "#282b2d00",
                       "$type": "color",
                       "unit": "hex"
                     },
@@ -4304,22 +4326,22 @@
                 "label": {
                   "color": {
                     "normal": {
-                      "$value": "#c0c9d0",
+                      "$value": "#c5c9cc",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "hovered": {
-                      "$value": "#ced5da",
+                      "$value": "#d2d5d7",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "pressed": {
-                      "$value": "#d5dbdf",
+                      "$value": "#d8dbdd",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "selected": {
-                      "$value": "#c0c9d0",
+                      "$value": "#c5c9cc",
                       "$type": "color",
                       "unit": "hex"
                     }
@@ -4328,22 +4350,22 @@
                 "caret": {
                   "color": {
                     "normal": {
-                      "$value": "#c0c9d0",
+                      "$value": "#c5c9cc",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "hovered": {
-                      "$value": "#ced5da",
+                      "$value": "#d2d5d7",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "pressed": {
-                      "$value": "#d5dbdf",
+                      "$value": "#d8dbdd",
                       "$type": "color",
                       "unit": "hex"
                     },
                     "selected": {
-                      "$value": "#c0c9d0",
+                      "$value": "#c5c9cc",
                       "$type": "color",
                       "unit": "hex"
                     }
@@ -4361,14 +4383,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#3b4248",
+                    "$value": "#3f4244",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4403,14 +4425,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#3b4248",
+                    "$value": "#3f4244",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4423,14 +4445,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#3b4248",
+                    "$value": "#3f4244",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4445,14 +4467,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#242b31",
+                    "$value": "#282b2d",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#3b4248",
+                    "$value": "#3f4244",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -4877,140 +4899,140 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#25282a",
+                "$value": "#262728",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#25282a",
+                "$value": "#262728",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#2e3235",
+                "$value": "#303132",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#272a2d",
+                "$value": "#28292a",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#282c2e",
+                "$value": "#292b2c",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#25282a",
+                "$value": "#262728",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#3b4248",
+                "$value": "#3f4244",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#3b4248",
+                "$value": "#3f4244",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#4a535a",
+                "$value": "#4f5255",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#3f464c",
+                "$value": "#434648",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#40484e",
+                "$value": "#45484a",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#3b4248",
+                "$value": "#3f4244",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#4c565f",
+                "$value": "#515559",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#4c565f",
+                "$value": "#515559",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#5f6c77",
+                "$value": "#656a6f",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#515b65",
+                "$value": "#565a5e",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#535e68",
+                "$value": "#585d61",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#4c565f",
+                "$value": "#515559",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#889dae",
+                "$value": "#929ba3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#889dae",
+                "$value": "#929ba3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#b6c3cd",
+                "$value": "#bcc1c6",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#93a6b6",
+                "$value": "#9ca4ab",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#99abb9",
+                "$value": "#a1a9b0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#889dae",
+                "$value": "#929ba3",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#fdffff",
+                "$value": "#feffff",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#fdffff",
+                "$value": "#feffff",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -5030,39 +5052,39 @@
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#fdffff",
+                "$value": "#feffff",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#4c565f",
+                "$value": "#515559",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#4c565f",
+                "$value": "#515559",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#5f6c77",
+                "$value": "#656a6f",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#515b65",
+                "$value": "#565a5e",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#535e68",
+                "$value": "#585d61",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#4c565f",
+                "$value": "#515559",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -5849,12 +5871,12 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#eaedef",
+                "$value": "#ecedee",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#eaedef",
+                "$value": "#ecedee",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -5864,7 +5886,7 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#fafbfb",
+                "$value": "#fbfbfb",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -5874,167 +5896,167 @@
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#eaedef",
+                "$value": "#ecedee",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#acb7c1",
+                "$value": "#b2b7bb",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#acb7c1",
+                "$value": "#b2b7bb",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#e0e4e8",
+                "$value": "#e2e4e6",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#b9c2ca",
+                "$value": "#bec2c5",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#bfc7cf",
+                "$value": "#c3c7ca",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#acb7c1",
+                "$value": "#b2b7bb",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#c6ced4",
+                "$value": "#caced0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#a2afb9",
+                "$value": "#a8afb3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#a8b4be",
+                "$value": "#aeb4b8",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#5d6f7d",
+                "$value": "#666e74",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#5d6f7d",
+                "$value": "#666e74",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#778a9a",
+                "$value": "#818990",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#637684",
+                "$value": "#6c757b",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#657988",
+                "$value": "#6f787e",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#5d6f7d",
+                "$value": "#666e74",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#4e5d68",
+                "$value": "#555c61",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#4e5d68",
+                "$value": "#555c61",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#627482",
+                "$value": "#6a7379",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#53636e",
+                "$value": "#5a6267",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#556571",
+                "$value": "#5d646a",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#4e5d68",
+                "$value": "#555c61",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#c6ced4",
+                "$value": "#caced0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#a2afb9",
+                "$value": "#a8afb3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#a8b4be",
+                "$value": "#aeb4b8",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -6821,12 +6843,12 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#ced5db",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#ced5db",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -6836,93 +6858,93 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#dde2e6",
+                "$value": "#e0e2e3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#e4e8eb",
+                "$value": "#e6e8e9",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#ced5db",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#f9fafb",
+                "$value": "#fafbfb",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#ced5da",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#d5dbdf",
+                "$value": "#d8dbdd",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#f9fafb",
+                "$value": "#fafbfb",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#ced5da",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#d5dbdf",
+                "$value": "#d8dbdd",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -6942,71 +6964,71 @@
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#14181a",
+                "$value": "#151718",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#111416",
+                "$value": "#121314",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#111517",
+                "$value": "#131415",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#f9fafb",
+                "$value": "#fafbfb",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#ced5da",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#d5dbdf",
+                "$value": "#d8dbdd",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#c0c9d0",
+                "$value": "#c5c9cc",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -7793,140 +7815,140 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#171a1c",
+                "$value": "#18191a",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#171a1c",
+                "$value": "#18191a",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#1d2123",
+                "$value": "#1e1f21",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#181c1e",
+                "$value": "#191b1c",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#191c1f",
+                "$value": "#1a1b1c",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#171a1c",
+                "$value": "#18191a",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#2b3339",
+                "$value": "#2f3235",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#2b3339",
+                "$value": "#2f3235",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#364047",
+                "$value": "#3b3f42",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#2e363c",
+                "$value": "#323538",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#2f383e",
+                "$value": "#33373a",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#2b3339",
+                "$value": "#2f3235",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#3c464e",
+                "$value": "#414549",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#3c464e",
+                "$value": "#414549",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#4b5862",
+                "$value": "#51565b",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#404a53",
+                "$value": "#45494d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#414c55",
+                "$value": "#474b50",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#3c464e",
+                "$value": "#414549",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#768b9b",
+                "$value": "#808991",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#768b9b",
+                "$value": "#808991",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#9dacb8",
+                "$value": "#a5abb1",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#7f93a2",
+                "$value": "#899199",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#8497a5",
+                "$value": "#8d959c",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#768b9b",
+                "$value": "#808991",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#fbfdff",
+                "$value": "#fcfdfe",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#fbfdff",
+                "$value": "#fcfdfe",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -7946,39 +7968,39 @@
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#fbfdff",
+                "$value": "#fcfdfe",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#3c464e",
+                "$value": "#414549",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#3c464e",
+                "$value": "#414549",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#4b5862",
+                "$value": "#51565b",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#404a53",
+                "$value": "#45494d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#414c55",
+                "$value": "#474b50",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#3c464e",
+                "$value": "#414549",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -8765,140 +8787,140 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#14181a",
+                "$value": "#151718",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#111416",
+                "$value": "#121314",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#111517",
+                "$value": "#131415",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#2d363d",
+                "$value": "#323638",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#262e34",
+                "$value": "#2a2e30",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#272f35",
+                "$value": "#2c2f31",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#343e46",
+                "$value": "#393d41",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#343e46",
+                "$value": "#393d41",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#414d57",
+                "$value": "#474c51",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#37424a",
+                "$value": "#3c4145",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#39444c",
+                "$value": "#3e4247",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#343e46",
+                "$value": "#393d41",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#6d8292",
+                "$value": "#778088",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#6d8292",
+                "$value": "#778088",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#92a1ad",
+                "$value": "#99a0a6",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#768a99",
+                "$value": "#7f888f",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#7a8d9c",
+                "$value": "#838b93",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#6d8292",
+                "$value": "#778088",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#f1f3f5",
+                "$value": "#f2f3f4",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#f1f3f5",
+                "$value": "#f2f3f4",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -8918,39 +8940,39 @@
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#f1f3f5",
+                "$value": "#f2f3f4",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#343e4600",
+                "$value": "#393d4100",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#343e4600",
+                "$value": "#393d4100",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#414d5700",
+                "$value": "#474c5100",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#37424a00",
+                "$value": "#3c414500",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#39444c00",
+                "$value": "#3e424700",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#343e4600",
+                "$value": "#393d4100",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -9350,37 +9372,37 @@
         "border": {
           "neutral": {
             "base-down-3": {
-              "$value": "#25282a",
+              "$value": "#262728",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#303539",
+              "$value": "#323536",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#3b4248",
+              "$value": "#3f4244",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#4c565f",
+              "$value": "#515559",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#677782",
+              "$value": "#6e767b",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#889dae",
+              "$value": "#929ba3",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#fdffff",
+              "$value": "#feffff",
               "$type": "color",
               "$unit": "hex"
             }
@@ -9537,7 +9559,7 @@
         "elevation": {
           "neutral": {
             "primary": {
-              "$value": "#5869760d",
+              "$value": "#61686e0d",
               "$type": "color",
               "$unit": "hex"
             }
@@ -9562,37 +9584,37 @@
         "label": {
           "neutral": {
             "base-down-3": {
-              "$value": "#eaedef",
+              "$value": "#ecedee",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#b9c3cb",
+              "$value": "#bec3c6",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#acb7c1",
+              "$value": "#b2b7bb",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#97a5b1",
+              "$value": "#9ea5aa",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#7b8e9c",
+              "$value": "#848c93",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#5d6f7d",
+              "$value": "#666e74",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#4e5d68",
+              "$value": "#555c61",
               "$type": "color",
               "$unit": "hex"
             }
@@ -9749,37 +9771,37 @@
         "onSurface": {
           "neutral": {
             "base-down-3": {
-              "$value": "#ced5db",
+              "$value": "#d2d5d7",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#c7cfd5",
+              "$value": "#cbcfd1",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#c0c9d0",
+              "$value": "#c5c9cc",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#c0c9d0",
+              "$value": "#c5c9cc",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#ced5db",
+              "$value": "#d2d5d7",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#f8f9fa",
+              "$value": "#f9f9f9",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#101315",
+              "$value": "#111213",
               "$type": "color",
               "$unit": "hex"
             }
@@ -9938,7 +9960,7 @@
             "primary": {
               "label": {
                 "base": {
-                  "$value": "#eaedef",
+                  "$value": "#ecedee",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -9972,37 +9994,37 @@
         "stroke": {
           "neutral": {
             "base-down-3": {
-              "$value": "#171a1c",
+              "$value": "#18191a",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#21262a",
+              "$value": "#232627",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#2b3339",
+              "$value": "#2f3235",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#3c464e",
+              "$value": "#414549",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#566571",
+              "$value": "#5d646a",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#768b9b",
+              "$value": "#808991",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#fbfdff",
+              "$value": "#fcfdfe",
               "$type": "color",
               "$unit": "hex"
             }
@@ -10159,37 +10181,37 @@
         "surface": {
           "neutral": {
             "base-down-3": {
-              "$value": "#101315",
+              "$value": "#111213",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#1a1f23",
+              "$value": "#1c1f20",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#242b31",
+              "$value": "#282b2d",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#343e46",
+              "$value": "#393d41",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#4e5d68",
+              "$value": "#555c61",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#6d8292",
+              "$value": "#778088",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#f1f3f5",
+              "$value": "#f2f3f4",
               "$type": "color",
               "$unit": "hex"
             }
@@ -10676,162 +10698,162 @@
         "neutral": {
           "canvas": {
             "border": {
-              "$value": "#25282a",
+              "$value": "#262728",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#171a1c",
+              "$value": "#18191a",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#eaedef",
+              "$value": "#ecedee",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#ced5db",
+              "$value": "#d2d5d7",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#101315",
+              "$value": "#111213",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "primary": {
             "border": {
-              "$value": "#3b4248",
+              "$value": "#3f4244",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#2b3339",
+              "$value": "#2f3235",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#acb7c1",
+              "$value": "#b2b7bb",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#c0c9d0",
+              "$value": "#c5c9cc",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#242b31",
+              "$value": "#282b2d",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "secondary": {
             "border": {
-              "$value": "#4c565f",
+              "$value": "#515559",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#3c464e",
+              "$value": "#414549",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#97a5b1",
+              "$value": "#9ea5aa",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#c0c9d0",
+              "$value": "#c5c9cc",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#343e46",
+              "$value": "#393d41",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "tertiary": {
             "border": {
-              "$value": "#889dae",
+              "$value": "#929ba3",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#768b9b",
+              "$value": "#808991",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#5d6f7d",
+              "$value": "#666e74",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#f8f9fa",
+              "$value": "#f9f9f9",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#6d8292",
+              "$value": "#778088",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "quaternary": {
             "border": {
-              "$value": "#fdffff",
+              "$value": "#feffff",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#fbfdff",
+              "$value": "#fcfdfe",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#4e5d68",
+              "$value": "#555c61",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#101315",
+              "$value": "#111213",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#f1f3f5",
+              "$value": "#f2f3f4",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "outline": {
             "border": {
-              "$value": "#4c565f",
+              "$value": "#515559",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#3c464e",
+              "$value": "#414549",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#97a5b1",
+              "$value": "#9ea5aa",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#c0c9d0",
+              "$value": "#c5c9cc",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#343e4600",
+              "$value": "#393d4100",
               "$type": "color",
               "$unit": "hex"
             }
@@ -12237,7 +12259,7 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12247,19 +12269,19 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#f3f5f6",
+                    "$value": "#f5f5f6",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#d2d7db",
+                    "$value": "#d5d7d9",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12269,12 +12291,12 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e0e4e6",
+                    "$value": "#e3e4e5",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#e7eaec",
+                    "$value": "#e9eaeb",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12287,22 +12309,22 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#2d363d",
+                  "$value": "#323638",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#262e34",
+                  "$value": "#2a2e30",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#272f35",
+                  "$value": "#2c2f31",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -12312,7 +12334,7 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#d5dbe0",
+                    "$value": "#d8dbdd",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12322,19 +12344,19 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e4e8eb",
+                    "$value": "#e6e8e9",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#eceef1",
+                    "$value": "#edeeef",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#cbd1d6",
+                    "$value": "#ced1d3",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12344,12 +12366,12 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#d9dde1",
+                    "$value": "#dbdddf",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#e0e4e7",
+                    "$value": "#e2e4e5",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12362,22 +12384,22 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#1a1f23",
+                  "$value": "#1c1f20",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#21272c",
+                  "$value": "#232728",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#1c2125",
+                  "$value": "#1e2122",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#1c2226",
+                  "$value": "#1f2223",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -12387,44 +12409,44 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#8999a7",
+                    "$value": "#91999e",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#b5bfc7",
+                    "$value": "#b9bec1",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#93a2af",
+                    "$value": "#9ba2a7",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#99a7b3",
+                    "$value": "#9fa6ab",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#80909e",
+                    "$value": "#889095",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#a9b3bd",
+                    "$value": "#aeb3b7",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#8a99a5",
+                    "$value": "#91989d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#8f9da9",
+                    "$value": "#969da1",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12437,7 +12459,7 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#f8f9fa",
+                  "$value": "#f9f9f9",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -12462,44 +12484,44 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#101315",
+                    "$value": "#111213",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#14181a",
+                    "$value": "#151718",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#111416",
+                    "$value": "#121314",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#111517",
+                    "$value": "#131415",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#0a0d0e",
+                    "$value": "#0b0c0d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#0d1011",
+                    "$value": "#0e0f10",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#0b0e0f",
+                    "$value": "#0c0d0e",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#0b0e0f",
+                    "$value": "#0c0d0e",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12512,7 +12534,7 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#ced5db",
+                  "$value": "#d2d5d7",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -12522,12 +12544,12 @@
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#dde2e6",
+                  "$value": "#e0e2e3",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#e4e8eb",
+                  "$value": "#e6e8e9",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -12537,7 +12559,7 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#d5dbe000",
+                    "$value": "#d8dbdd00",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12547,19 +12569,19 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e4e8eb00",
+                    "$value": "#e6e8e900",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#eceef100",
+                    "$value": "#edeeef00",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#cbd1d6",
+                    "$value": "#ced1d3",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12569,12 +12591,12 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#d9dde1",
+                    "$value": "#dbdddf",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#e0e4e7",
+                    "$value": "#e2e4e5",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -12587,22 +12609,22 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#3e4a53",
+                  "$value": "#44494d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#4e5d68",
+                  "$value": "#555b60",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#424e58",
+                  "$value": "#484d52",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#44515a",
+                  "$value": "#4a5054",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13370,14 +13392,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#bfc4c8",
+                    "$value": "#c2c4c6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -13385,14 +13407,14 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#3e4a53",
+                  "$value": "#44494d",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "icon": {
                 "normal": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13402,14 +13424,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#101315",
+                    "$value": "#111213",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#020304",
+                    "$value": "#020303",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -13417,14 +13439,14 @@
               },
               "label": {
                 "normal": {
-                  "$value": "#ced5db",
+                  "$value": "#d2d5d7",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "icon": {
                 "normal": {
-                  "$value": "#97a5b1",
+                  "$value": "#9ea5aa",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13437,7 +13459,7 @@
             "primary": {
               "root": {
                 "border": {
-                  "$value": "#bfc4c8",
+                  "$value": "#c2c4c6",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13446,7 +13468,7 @@
             "secondary": {
               "root": {
                 "border": {
-                  "$value": "#b8bec3",
+                  "$value": "#bbbec0",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13459,7 +13481,7 @@
             "canvas": {
               "root": {
                 "background": {
-                  "$value": "#f8f9fa",
+                  "$value": "#f9f9f9",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -13473,12 +13495,12 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#dce1e5",
+                  "$value": "#dfe1e3",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#bfc4c8",
+                  "$value": "#c2c4c6",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13487,12 +13509,12 @@
             "secondary": {
               "root": {
                 "background": {
-                  "$value": "#d5dbe0",
+                  "$value": "#d8dbdd",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#d5dbe0",
+                  "$value": "#d8dbdd",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13501,12 +13523,12 @@
             "ghost": {
               "root": {
                 "background": {
-                  "$value": "#dce1e500",
+                  "$value": "#dfe1e300",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#bfc4c8",
+                  "$value": "#c2c4c6",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13536,7 +13558,7 @@
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#bfc4c8",
+                  "$value": "#c2c4c6",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13550,7 +13572,7 @@
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#b8bec3",
+                  "$value": "#bbbec0",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13564,7 +13586,7 @@
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#dce1e5",
+                  "$value": "#dfe1e3",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13578,12 +13600,12 @@
               "root": {
                 "background": {
                   "idle": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -13593,12 +13615,12 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "focused": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -13610,12 +13632,12 @@
                 },
                 "border": {
                   "idle": {
-                    "$value": "#d2d7db",
+                    "$value": "#d5d7d9",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "normal": {
-                    "$value": "#d2d7db",
+                    "$value": "#d5d7d9",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -13625,7 +13647,7 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e0e4e6",
+                    "$value": "#e3e4e5",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -13643,27 +13665,27 @@
               },
               "label": {
                 "idle": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "normal": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#2d363d",
+                  "$value": "#323638",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#262e34",
+                  "$value": "#2a2e30",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "focused": {
-                  "$value": "#262e34",
+                  "$value": "#2a2e30",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -13687,12 +13709,12 @@
               "root": {
                 "background": {
                   "idle": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -13702,17 +13724,17 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "error": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "focused": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -13797,17 +13819,17 @@
             "primary": {
               "label": {
                 "normal": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#37424a",
+                  "$value": "#3c4145",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#39444c",
+                  "$value": "#3e4247",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13820,22 +13842,22 @@
             "primary": {
               "label": {
                 "normal": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#414d57",
+                  "$value": "#474c51",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#37424a",
+                  "$value": "#3c4145",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13844,22 +13866,22 @@
             "secondary": {
               "label": {
                 "normal": {
-                  "$value": "#3e4a53",
+                  "$value": "#44494d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#414d57",
+                  "$value": "#474c51",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#37424a",
+                  "$value": "#3c4145",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13901,12 +13923,12 @@
           "neutral": {
             "primary": {
               "backgroundIn": {
-                "$value": "#b5bfc740",
+                "$value": "#b9bec140",
                 "$type": "color",
                 "$unit": "hex"
               },
               "backgroundOut": {
-                "$value": "#b5bfc700",
+                "$value": "#b9bec100",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -13936,12 +13958,12 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#d5dbe0",
+                    "$value": "#d8dbdd",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e4e8eb",
+                    "$value": "#e6e8e9",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -13951,7 +13973,7 @@
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#eceef1",
+                    "$value": "#edeeef",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -13984,12 +14006,12 @@
               "knob": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -13999,7 +14021,7 @@
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#f3f5f6",
+                    "$value": "#f5f5f6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14061,12 +14083,12 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#d5dbe0",
+                    "$value": "#d8dbdd",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e4e8eb",
+                    "$value": "#e6e8e9",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -14076,7 +14098,7 @@
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#eceef1",
+                    "$value": "#edeeef",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14109,12 +14131,12 @@
               "knob": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -14124,7 +14146,7 @@
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#f3f5f6",
+                    "$value": "#f5f5f6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14186,12 +14208,12 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#d5dbe0",
+                    "$value": "#d8dbdd",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e4e8eb",
+                    "$value": "#e6e8e9",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -14201,7 +14223,7 @@
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#eceef1",
+                    "$value": "#edeeef",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14234,12 +14256,12 @@
               "knob": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -14249,7 +14271,7 @@
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#f3f5f6",
+                    "$value": "#f5f5f6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14311,12 +14333,12 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#d5dbe0",
+                    "$value": "#d8dbdd",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e4e8eb",
+                    "$value": "#e6e8e9",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -14326,7 +14348,7 @@
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#eceef1",
+                    "$value": "#edeeef",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14359,12 +14381,12 @@
               "knob": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -14374,7 +14396,7 @@
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#f3f5f6",
+                    "$value": "#f5f5f6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14434,12 +14456,12 @@
             "item": {
               "label": {
                 "normal": {
-                  "$value": "#a3b0ba",
+                  "$value": "#a9afb4",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -14452,7 +14474,7 @@
             "canvas": {
               "root": {
                 "background": {
-                  "$value": "#f8f9fa",
+                  "$value": "#f9f9f9",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -14471,17 +14493,17 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#dce1e5",
+                  "$value": "#dfe1e3",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#bfc4c8",
+                  "$value": "#c2c4c6",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#bfc4c8",
+                  "$value": "#c2c4c6",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -14490,17 +14512,17 @@
             "secondary": {
               "root": {
                 "background": {
-                  "$value": "#d5dbe0",
+                  "$value": "#d8dbdd",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#b8bec3",
+                  "$value": "#bbbec0",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#b8bec3",
+                  "$value": "#bbbec0",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -14509,17 +14531,17 @@
             "tertiary": {
               "root": {
                 "background": {
-                  "$value": "#8999a7",
+                  "$value": "#91999e",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#6e7e8b",
+                  "$value": "#767e83",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#6e7e8b",
+                  "$value": "#767e83",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -14528,17 +14550,17 @@
             "quaternary": {
               "root": {
                 "background": {
-                  "$value": "#101315",
+                  "$value": "#111213",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "border": {
-                  "$value": "#020304",
+                  "$value": "#020303",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "divider": {
-                  "$value": "#020304",
+                  "$value": "#020303",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -14847,24 +14869,24 @@
               },
               "track": {
                 "normal": {
-                  "$value": "#8999a7",
+                  "$value": "#91999e",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#b5bfc7",
+                  "$value": "#b9bec1",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#8999a7",
+                  "$value": "#91999e",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "knob": {
                 "normal": {
-                  "$value": "#dce1e5",
+                  "$value": "#dfe1e3",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -14874,24 +14896,24 @@
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#dce1e5",
+                  "$value": "#dfe1e3",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "label": {
                 "normal": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#414d57",
+                  "$value": "#474c51",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -14912,7 +14934,7 @@
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#b5bfc7",
+                  "$value": "#b9bec1",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -14924,7 +14946,7 @@
               },
               "knob": {
                 "normal": {
-                  "$value": "#dce1e5",
+                  "$value": "#dfe1e3",
                   "$type": "color",
                   "$unit": "hex"
                 },
@@ -14934,24 +14956,24 @@
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#dce1e5",
+                  "$value": "#dfe1e3",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "label": {
                 "normal": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#343e46",
+                  "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -14964,7 +14986,7 @@
         "app": {
           "root": {
             "background": {
-              "$value": "#dce1e5"
+              "$value": "#dfe1e3"
             }
           }
         }
@@ -14979,56 +15001,56 @@
               "currentValue": {
                 "label": {
                   "normal": {
-                    "$value": "#7b8e9c",
+                    "$value": "#848c93",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#8596a3",
+                    "$value": "#8d949b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#a3b0ba",
+                    "$value": "#a9afb4",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#7b8e9c",
+                    "$value": "#848c93",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "icon": {
                   "normal": {
-                    "$value": "#7b8e9c",
+                    "$value": "#848c93",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#8596a3",
+                    "$value": "#8d949b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expanded": {
-                    "$value": "#a3b0ba",
+                    "$value": "#a9afb4",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#7b8e9c",
+                    "$value": "#848c93",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#ebeef0",
+                    "$value": "#edeff0",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -15038,7 +15060,7 @@
                     "$unit": "hex"
                   },
                   "expandedHovered": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -15047,12 +15069,12 @@
               "options": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -15065,7 +15087,7 @@
           "neutral": {
             "primary": {
               "background": {
-                "$value": "#dce1e5",
+                "$value": "#dfe1e3",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -15073,7 +15095,7 @@
                 }
               },
               "shadow": {
-                "$value": "#dce1e5",
+                "$value": "#dfe1e3",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -15083,7 +15105,7 @@
             },
             "secondary": {
               "background": {
-                "$value": "#d5dbe0",
+                "$value": "#d8dbdd",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -15091,7 +15113,7 @@
                 }
               },
               "shadow": {
-                "$value": "#dce1e5",
+                "$value": "#dfe1e3",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -15105,7 +15127,7 @@
           "neutral": {
             "primary": {
               "background": {
-                "$value": "#dce1e5",
+                "$value": "#dfe1e3",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -15113,7 +15135,7 @@
                 }
               },
               "border": {
-                "$value": "#bfc4c8",
+                "$value": "#c2c4c6",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -15123,7 +15145,7 @@
             },
             "secondary": {
               "background": {
-                "$value": "#d5dbe0",
+                "$value": "#d8dbdd",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -15131,7 +15153,7 @@
                 }
               },
               "border": {
-                "$value": "#b8bec3",
+                "$value": "#bbbec0",
                 "$type": "color",
                 "$unit": "hex",
                 "$meta": {
@@ -15146,22 +15168,22 @@
             "primary": {
               "label": {
                 "normal": {
-                  "$value": "#7b8e9c",
+                  "$value": "#848c93",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#a3b0ba",
+                  "$value": "#a9afb4",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#8596a3",
+                  "$value": "#8d949b",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#899aa7",
+                  "$value": "#91999f",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -15170,22 +15192,22 @@
             "secondary": {
               "label": {
                 "normal": {
-                  "$value": "#7b8e9c",
+                  "$value": "#848c93",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#a3b0ba",
+                  "$value": "#a9afb4",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#8596a3",
+                  "$value": "#8d949b",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "pressed": {
-                  "$value": "#899aa7",
+                  "$value": "#91999f",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -15199,7 +15221,7 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "unit": "hex"
                   },
@@ -15226,7 +15248,7 @@
                 },
                 "border": {
                   "normal": {
-                    "$value": "#d2d7db",
+                    "$value": "#d5d7d9",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -15260,7 +15282,7 @@
               "divider": {
                 "border": {
                   "normal": {
-                    "$value": "#bfc4c8",
+                    "$value": "#c2c4c6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -15268,44 +15290,66 @@
               },
               "title": {
                 "normal": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#2d363d",
+                  "$value": "#323638",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#262e34",
+                  "$value": "#0139f4",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#242b31",
+                  "$value": "#dbe3ff",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "description": {
                 "normal": {
-                  "$value": "#242b31",
+                  "$value": "#282b2d",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#2d363d",
+                  "$value": "#323638",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#1048fe",
+                  "$value": "#0139f4",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#013cfe",
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "chevron": {
+                "normal": {
+                  "$value": "#282b2d",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#323638",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0139f4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -15321,18 +15365,18 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#dce1e5",
+                  "$value": "#dfe1e3",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -15352,18 +15396,18 @@
             "quaternary": {
               "root": {
                 "background": {
-                  "$value": "#101315",
+                  "$value": "#111213",
                   "$type": "color",
                   "$unit": "hex"
                 }
               },
               "title": {
-                "$value": "#ced5db",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "description": {
-                "$value": "#ced5db",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -15451,7 +15495,7 @@
             "primary": {
               "root": {
                 "background": {
-                  "$value": "#dce1e500",
+                  "$value": "#dfe1e300",
                   "$type": "color",
                   "unit": "hex"
                 }
@@ -15460,7 +15504,7 @@
                 "root": {
                   "background": {
                     "normal": {
-                      "$value": "#dce1e500",
+                      "$value": "#dfe1e300",
                       "$type": "color",
                       "unit": "hex"
                     },
@@ -15484,7 +15528,7 @@
                 "label": {
                   "color": {
                     "normal": {
-                      "$value": "#242b31",
+                      "$value": "#282b2d",
                       "$type": "color",
                       "unit": "hex"
                     },
@@ -15508,7 +15552,7 @@
                 "caret": {
                   "color": {
                     "normal": {
-                      "$value": "#242b31",
+                      "$value": "#282b2d",
                       "$type": "color",
                       "unit": "hex"
                     },
@@ -15541,14 +15585,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#bfc4c8",
+                    "$value": "#c2c4c6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -15583,14 +15627,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#bfc4c8",
+                    "$value": "#c2c4c6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -15603,14 +15647,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#bfc4c8",
+                    "$value": "#c2c4c6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -15625,14 +15669,14 @@
               "root": {
                 "background": {
                   "normal": {
-                    "$value": "#dce1e5",
+                    "$value": "#dfe1e3",
                     "$type": "color",
                     "$unit": "hex"
                   }
                 },
                 "border": {
                   "normal": {
-                    "$value": "#bfc4c8",
+                    "$value": "#c2c4c6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -16089,160 +16133,160 @@
             },
             "primary": {
               "idle": {
-                "$value": "#bfc4c8",
+                "$value": "#c2c4c6",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#bfc4c8",
+                "$value": "#c2c4c6",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#f4f4f5",
+                "$value": "#f5f5f5",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#ccd0d3",
+                "$value": "#ced0d1",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#d2d5d8",
+                "$value": "#d4d6d7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#bfc4c8",
+                "$value": "#c2c4c6",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#b8bec3",
+                "$value": "#bbbec0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#b8bec3",
+                "$value": "#bbbec0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#ebedee",
+                "$value": "#ecedee",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#c4c9cd",
+                "$value": "#c7c9cb",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#cacfd3",
+                "$value": "#cdcfd0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#b8bec3",
+                "$value": "#bbbec0",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#6e7e8b",
+                "$value": "#767e83",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#6e7e8b",
+                "$value": "#767e83",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#909da7",
+                "$value": "#969da1",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#768592",
+                "$value": "#7e858a",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#7a8996",
+                "$value": "#81898e",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#6e7e8b",
+                "$value": "#767e83",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#020304",
+                "$value": "#020303",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#020304",
+                "$value": "#020303",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#030405",
+                "$value": "#030404",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#020304",
+                "$value": "#020303",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#020304",
+                "$value": "#020303",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#020304",
+                "$value": "#020303",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#b8bec3",
+                "$value": "#bbbec0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#b8bec3",
+                "$value": "#bbbec0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#ebedee",
+                "$value": "#ecedee",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#c4c9cd",
+                "$value": "#c7c9cb",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#cacfd3",
+                "$value": "#cdcfd0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#b8bec3",
+                "$value": "#bbbec0",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -17029,192 +17073,192 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#14181a",
+                "$value": "#151718",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#111416",
+                "$value": "#121314",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#111517",
+                "$value": "#131415",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#343e46",
+                "$value": "#393d41",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#343e46",
+                "$value": "#393d41",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#414d57",
+                "$value": "#474c51",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#37424a",
+                "$value": "#3c4145",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#39444c",
+                "$value": "#3e4247",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#343e46",
+                "$value": "#393d41",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#3e4a53",
+                "$value": "#44494d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#3e4a53",
+                "$value": "#44494d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#4e5d68",
+                "$value": "#555b60",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#424e58",
+                "$value": "#484d52",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#44515a",
+                "$value": "#4a5054",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#3e4a53",
+                "$value": "#44494d",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#7b8e9c",
+                "$value": "#848c93",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#7b8e9c",
+                "$value": "#848c93",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#a3b0ba",
+                "$value": "#a9afb4",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#8596a3",
+                "$value": "#8d949b",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#899aa7",
+                "$value": "#91999f",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#7b8e9c",
+                "$value": "#848c93",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#c6ced4",
+                "$value": "#caced0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#a2afb9",
+                "$value": "#a8afb3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#a8b4be",
+                "$value": "#aeb4b8",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#97a5b1",
+                "$value": "#9ea5aa",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#3e4a53",
+                "$value": "#44494d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#3e4a53",
+                "$value": "#44494d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#4e5d68",
+                "$value": "#555b60",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#424e58",
+                "$value": "#484d52",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#44515a",
+                "$value": "#4a5054",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#3e4a53",
+                "$value": "#44494d",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -18001,108 +18045,108 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#39444c",
+                "$value": "#3f4347",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#39444c",
+                "$value": "#3f4347",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#47555f",
+                "$value": "#4f5459",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#3c4851",
+                "$value": "#43474b",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#3e4a53",
+                "$value": "#45494d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#39444c",
+                "$value": "#3f4347",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#2d363d",
+                "$value": "#323638",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#262e34",
+                "$value": "#2a2e30",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#272f35",
+                "$value": "#2c2f31",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#242b31",
+                "$value": "#282b2d",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#1a1f23",
+                "$value": "#1c1f20",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#1a1f23",
+                "$value": "#1c1f20",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#21272c",
+                "$value": "#232728",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#1c2125",
+                "$value": "#1e2122",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#1c2226",
+                "$value": "#1f2223",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#1a1f23",
+                "$value": "#1c1f20",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -18122,19 +18166,19 @@
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#ced5db",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#ced5db",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -18144,49 +18188,49 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#dde2e6",
+                "$value": "#e0e2e3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#e4e8eb",
+                "$value": "#e6e8e9",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#ced5db",
+                "$value": "#d2d5d7",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#1a1f23",
+                "$value": "#1c1f20",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#1a1f23",
+                "$value": "#1c1f20",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#21272c",
+                "$value": "#232728",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#1c2125",
+                "$value": "#1e2122",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#1c2226",
+                "$value": "#1f2223",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#1a1f23",
+                "$value": "#1c1f20",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -18973,12 +19017,12 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#eeeff0",
+                "$value": "#efefef",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#eeeff0",
+                "$value": "#efefef",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -18998,19 +19042,19 @@
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#eeeff0",
+                "$value": "#efefef",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#d2d7db",
+                "$value": "#d5d7d9",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#d2d7db",
+                "$value": "#d5d7d9",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -19020,29 +19064,29 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#e0e4e6",
+                "$value": "#e3e4e5",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#e7eaec",
+                "$value": "#e9eaeb",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#d2d7db",
+                "$value": "#d5d7d9",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#cbd1d6",
+                "$value": "#ced1d3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#cbd1d6",
+                "$value": "#ced1d3",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -19052,93 +19096,93 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#d9dde1",
+                "$value": "#dbdddf",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#e0e4e7",
+                "$value": "#e2e4e5",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#cbd1d6",
+                "$value": "#ced1d3",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#80909e",
+                "$value": "#889095",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#80909e",
+                "$value": "#889095",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#a9b3bd",
+                "$value": "#aeb3b7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#8a99a5",
+                "$value": "#91989d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#8f9da9",
+                "$value": "#969da1",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#80909e",
+                "$value": "#889095",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#0a0d0e",
+                "$value": "#0b0c0d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#0a0d0e",
+                "$value": "#0b0c0d",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#0d1011",
+                "$value": "#0e0f10",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#0b0e0f",
+                "$value": "#0c0d0e",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#0b0e0f",
+                "$value": "#0c0d0e",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#0a0d0e",
+                "$value": "#0b0c0d",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#cbd1d6",
+                "$value": "#ced1d3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#cbd1d6",
+                "$value": "#ced1d3",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -19148,17 +19192,17 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#d9dde1",
+                "$value": "#dbdddf",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#e0e4e7",
+                "$value": "#e2e4e5",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#cbd1d6",
+                "$value": "#ced1d3",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -19945,12 +19989,12 @@
           "neutral": {
             "canvas": {
               "idle": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -19970,19 +20014,19 @@
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#f8f9fa",
+                "$value": "#f9f9f9",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "primary": {
               "idle": {
-                "$value": "#dce1e5",
+                "$value": "#dfe1e3",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#dce1e5",
+                "$value": "#dfe1e3",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -19992,29 +20036,29 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#ebeef0",
+                "$value": "#edeff0",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#f3f5f6",
+                "$value": "#f5f5f6",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#dce1e5",
+                "$value": "#dfe1e3",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "secondary": {
               "idle": {
-                "$value": "#d5dbe0",
+                "$value": "#d8dbdd",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#d5dbe0",
+                "$value": "#d8dbdd",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -20024,93 +20068,93 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#e4e8eb",
+                "$value": "#e6e8e9",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#eceef1",
+                "$value": "#edeeef",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#d5dbe0",
+                "$value": "#d8dbdd",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "tertiary": {
               "idle": {
-                "$value": "#8999a7",
+                "$value": "#91999e",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#8999a7",
+                "$value": "#91999e",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#b5bfc7",
+                "$value": "#b9bec1",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#93a2af",
+                "$value": "#9ba2a7",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#99a7b3",
+                "$value": "#9fa6ab",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#8999a7",
+                "$value": "#91999e",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "quaternary": {
               "idle": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               },
               "disabled": {
-                "$value": "#14181a",
+                "$value": "#151718",
                 "$type": "color",
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#111416",
+                "$value": "#121314",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#111517",
+                "$value": "#131415",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#101315",
+                "$value": "#111213",
                 "$type": "color",
                 "$unit": "hex"
               }
             },
             "outline": {
               "idle": {
-                "$value": "#d5dbe000",
+                "$value": "#d8dbdd00",
                 "$type": "color",
                 "$unit": "hex"
               },
               "normal": {
-                "$value": "#d5dbe000",
+                "$value": "#d8dbdd00",
                 "$type": "color",
                 "$unit": "hex"
               },
@@ -20120,17 +20164,17 @@
                 "$unit": "hex"
               },
               "hovered": {
-                "$value": "#e4e8eb00",
+                "$value": "#e6e8e900",
                 "$type": "color",
                 "$unit": "hex"
               },
               "pressed": {
-                "$value": "#eceef100",
+                "$value": "#edeeef00",
                 "$type": "color",
                 "$unit": "hex"
               },
               "selected": {
-                "$value": "#d5dbe000",
+                "$value": "#d8dbdd00",
                 "$type": "color",
                 "$unit": "hex"
               }
@@ -20535,32 +20579,32 @@
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#cdd0d1",
+              "$value": "#cfd0d0",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#bfc4c8",
+              "$value": "#c2c4c6",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#b8bec3",
+              "$value": "#bbbec0",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#abb2b8",
+              "$value": "#aeb2b4",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#6e7e8b",
+              "$value": "#767e83",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#020304",
+              "$value": "#020303",
               "$type": "color",
               "$unit": "hex"
             }
@@ -20717,7 +20761,7 @@
         "elevation": {
           "neutral": {
             "primary": {
-              "$value": "#0506070d",
+              "$value": "#0606060d",
               "$type": "color",
               "$unit": "hex"
             }
@@ -20742,37 +20786,37 @@
         "label": {
           "neutral": {
             "base-down-3": {
-              "$value": "#101315",
+              "$value": "#111213",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#2a3138",
+              "$value": "#2e3134",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#343e46",
+              "$value": "#393d41",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#3e4a53",
+              "$value": "#44494d",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#637584",
+              "$value": "#6c747b",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#7b8e9c",
+              "$value": "#848c93",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#97a5b1",
+              "$value": "#9ea5aa",
               "$type": "color",
               "$unit": "hex"
             }
@@ -20929,37 +20973,37 @@
         "onSurface": {
           "neutral": {
             "base-down-3": {
-              "$value": "#39444c",
+              "$value": "#3f4347",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#2f383f",
+              "$value": "#33373a",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#242b31",
+              "$value": "#282b2d",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#1a1f23",
+              "$value": "#1c1f20",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#1a1f23",
+              "$value": "#1c1f20",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#f8f9fa",
+              "$value": "#f9f9f9",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#ced5db",
+              "$value": "#d2d5d7",
               "$type": "color",
               "$unit": "hex"
             }
@@ -21118,7 +21162,7 @@
             "primary": {
               "label": {
                 "base": {
-                  "$value": "#101315",
+                  "$value": "#111213",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -21136,7 +21180,7 @@
         "shadow": {
           "neutral": {
             "base": {
-              "$value": "#05060713",
+              "$value": "#06060613",
               "$type": "color",
               "$unit": "hex"
             }
@@ -21145,37 +21189,37 @@
         "stroke": {
           "neutral": {
             "base-down-3": {
-              "$value": "#eeeff0",
+              "$value": "#efefef",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#e0e3e5",
+              "$value": "#e2e3e4",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#d2d7db",
+              "$value": "#d5d7d9",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#cbd1d6",
+              "$value": "#ced1d3",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#bdc5cb",
+              "$value": "#c1c5c7",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#80909e",
+              "$value": "#889095",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#0a0d0e",
+              "$value": "#0b0c0d",
               "$type": "color",
               "$unit": "hex"
             }
@@ -21332,37 +21376,37 @@
         "surface": {
           "neutral": {
             "base-down-3": {
-              "$value": "#f8f9fa",
+              "$value": "#f9f9f9",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-2": {
-              "$value": "#eaedef",
+              "$value": "#ecedee",
               "$type": "color",
               "$unit": "hex"
             },
             "base-down-1": {
-              "$value": "#dce1e5",
+              "$value": "#dfe1e3",
               "$type": "color",
               "$unit": "hex"
             },
             "base": {
-              "$value": "#d5dbe0",
+              "$value": "#d8dbdd",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-1": {
-              "$value": "#c7cfd5",
+              "$value": "#cbcfd1",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-2": {
-              "$value": "#8999a7",
+              "$value": "#91999e",
               "$type": "color",
               "$unit": "hex"
             },
             "base-up-3": {
-              "$value": "#101315",
+              "$value": "#111213",
               "$type": "color",
               "$unit": "hex"
             }
@@ -21854,157 +21898,157 @@
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#eeeff0",
+              "$value": "#efefef",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#101315",
+              "$value": "#111213",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#39444c",
+              "$value": "#3f4347",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#f8f9fa",
+              "$value": "#f9f9f9",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "primary": {
             "border": {
-              "$value": "#bfc4c8",
+              "$value": "#c2c4c6",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#d2d7db",
+              "$value": "#d5d7d9",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#343e46",
+              "$value": "#393d41",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#242b31",
+              "$value": "#282b2d",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#dce1e5",
+              "$value": "#dfe1e3",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "secondary": {
             "border": {
-              "$value": "#b8bec3",
+              "$value": "#bbbec0",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#cbd1d6",
+              "$value": "#ced1d3",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#3e4a53",
+              "$value": "#44494d",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#1a1f23",
+              "$value": "#1c1f20",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#d5dbe0",
+              "$value": "#d8dbdd",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "tertiary": {
             "border": {
-              "$value": "#6e7e8b",
+              "$value": "#767e83",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#80909e",
+              "$value": "#889095",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#7b8e9c",
+              "$value": "#848c93",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#f8f9fa",
+              "$value": "#f9f9f9",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#8999a7",
+              "$value": "#91999e",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "quaternary": {
             "border": {
-              "$value": "#020304",
+              "$value": "#020303",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#0a0d0e",
+              "$value": "#0b0c0d",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#97a5b1",
+              "$value": "#9ea5aa",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#ced5db",
+              "$value": "#d2d5d7",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#101315",
+              "$value": "#111213",
               "$type": "color",
               "$unit": "hex"
             }
           },
           "outline": {
             "border": {
-              "$value": "#b8bec3",
+              "$value": "#bbbec0",
               "$type": "color",
               "$unit": "hex"
             },
             "stroke": {
-              "$value": "#cbd1d6",
+              "$value": "#ced1d3",
               "$type": "color",
               "$unit": "hex"
             },
             "label": {
-              "$value": "#3e4a53",
+              "$value": "#44494d",
               "$type": "color",
               "$unit": "hex"
             },
             "onSurface": {
-              "$value": "#1a1f23",
+              "$value": "#1c1f20",
               "$type": "color",
               "$unit": "hex"
             },
             "surface": {
-              "$value": "#d5dbe000",
+              "$value": "#d8dbdd00",
               "$type": "color",
               "$unit": "hex"
             }

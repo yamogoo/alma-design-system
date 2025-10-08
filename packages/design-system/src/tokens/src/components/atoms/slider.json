@@ -16,6 +16,11 @@
           "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",
           "$unit": "px"
+        },
+        "touchArea": {
+          "$value": "{tokens.touchArea.md.size.$value}",
+          "$type": "number",
+          "$unit": "px"
         }
       },
       "track": {
@@ -76,6 +81,11 @@
           "$value": "{tokens.spacing.xs.$value}",
           "$type": "number",
           "$unit": "px"
+        },
+        "touchArea": {
+          "$value": "{tokens.touchArea.md.size.$value}",
+          "$type": "number",
+          "$unit": "px"
         }
       },
       "track": {
@@ -134,6 +144,11 @@
         },
         "padding": {
           "$value": "{tokens.spacing.xs.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "touchArea": {
+          "$value": "{tokens.touchArea.md.size.$value}",
           "$type": "number",
           "$unit": "px"
         }

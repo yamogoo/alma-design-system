@@ -1,4 +1,11 @@
 {
+  "md": {
+    "size": {
+      "$value": 44,
+      "$type": "number",
+      "$unit": "px"
+    }
+  },
   "sm": {
     "size": {
       "$value": 36,

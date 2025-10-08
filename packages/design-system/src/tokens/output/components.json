@@ -649,6 +649,80 @@
           }
         }
       },
+      "content": {
+        "lg": {
+          "root": {
+            "gap": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "md": {
+          "root": {
+            "gap": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "sm": {
+          "root": {
+            "gap": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 0,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        }
+      },
       "block": {
         "lg": {
           "root": {
@@ -1240,6 +1314,11 @@
               "$value": 8,
               "$type": "number",
               "$unit": "px"
+            },
+            "touchArea": {
+              "$value": 44,
+              "$type": "number",
+              "$unit": "px"
             }
           },
           "track": {
@@ -1300,6 +1379,11 @@
               "$value": 8,
               "$type": "number",
               "$unit": "px"
+            },
+            "touchArea": {
+              "$value": 44,
+              "$type": "number",
+              "$unit": "px"
             }
           },
           "track": {
@@ -1358,6 +1442,11 @@
             },
             "padding": {
               "$value": 8,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "touchArea": {
+              "$value": 44,
               "$type": "number",
               "$unit": "px"
             }
@@ -1607,6 +1696,11 @@
               "$value": 10,
               "$type": "number",
               "$unit": "px"
+            },
+            "touchArea": {
+              "$value": 44,
+              "$type": "number",
+              "$unit": "px"
             }
           },
           "track": {
@@ -1656,6 +1750,11 @@
               "$value": 10,
               "$type": "number",
               "$unit": "px"
+            },
+            "touchArea": {
+              "$value": 44,
+              "$type": "number",
+              "$unit": "px"
             }
           },
           "track": {
@@ -1703,6 +1802,11 @@
             },
             "gap": {
               "$value": 10,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "touchArea": {
+              "$value": 36,
               "$type": "number",
               "$unit": "px"
             }
@@ -2082,10 +2186,7 @@
             "minHeight": {
               "$value": 24,
               "$type": "number",
-              "$unit": "px",
-              "$meta": {
-                "category": "dropDown"
-              }
+              "$unit": "px"
             },
             "paddingHorizontal": {
               "$value": 16,
@@ -2103,6 +2204,11 @@
               "$type": "number"
             },
             "borderWidth": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "gap": {
               "$value": 1,
               "$unit": "px",
               "$type": "number"
@@ -2124,7 +2230,7 @@
           },
           "description": {
             "fontStyle": {
-              "$value": "body-2",
+              "$value": "body-3",
               "$type": "string",
               "$unit": ""
             }

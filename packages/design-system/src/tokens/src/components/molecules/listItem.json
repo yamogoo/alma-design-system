@@ -5,10 +5,7 @@
         "minHeight": {
           "$value": 24,
           "$type": "number",
-          "$unit": "px",
-          "$meta": {
-            "category": "dropDown"
-          }
+          "$unit": "px"
         },
         "paddingHorizontal": {
           "$value": "{tokens.spacing.md.$value}",
@@ -26,6 +23,11 @@
           "$type": "number"
         },
         "borderWidth": {
+          "$value": "{tokens.stroke.sm.$value}",
+          "$unit": "px",
+          "$type": "number"
+        },
+        "gap": {
           "$value": "{tokens.stroke.sm.$value}",
           "$unit": "px",
           "$type": "number"
@@ -47,7 +49,7 @@
       },
       "description": {
         "fontStyle": {
-          "$value": "body-2",
+          "$value": "body-3",
           "$type": "string",
           "$unit": ""
         }

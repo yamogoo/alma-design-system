@@ -3,15 +3,15 @@ import type { IListItem } from "./ListItem";
 import type { GroupProps } from "@/components/atoms/containers/Group";
 
 export type ListSelectedItemIndex = IListItem["id"];
-export type ListSelectedItemIndexes = [
-  (ListSelectedItemIndex | ListSelectedItemIndex[]) | null,
-];
+export type ListSelectedItemIndexes =
+  | (ListSelectedItemIndex | ListSelectedItemIndex[])[]
+  | null;
 
 export type ListItems = Array<IListItem> | Array<string>;
 
 export interface ListProps extends Omit<GroupProps, "as"> {
   as?: UIElementMaybeListOrBlockTag;
-  selectedItemIndexes?: IListItem["id"] | IListItem["id"][] | null;
+  selectedItemIndexes?: ListSelectedItemIndexes;
   items?: ListItems;
   isCurrentItemShown?: boolean;
   isSelectable?: boolean;
@@ -20,10 +20,8 @@ export interface ListProps extends Omit<GroupProps, "as"> {
 }
 
 export interface ListInjection {
-  selectedItemIndexes:
-    | import("vue").Ref<IListItem["id"] | IListItem["id"][] | null>
-    | null;
-  setSelectedItemIndexes: (id: IListItem["id"] | null) => void;
+  selectedItemIndexes: import("vue").Ref<ListSelectedItemIndexes> | null;
+  setSelectedItemIndexes: (id: ListSelectedItemIndex | null) => void;
   isCurrentItemShown: import("vue").ComputedRef<boolean> | null;
   isSelectable: import("vue").ComputedRef<boolean> | null;
   isJoined: import("vue").ComputedRef<boolean> | null;

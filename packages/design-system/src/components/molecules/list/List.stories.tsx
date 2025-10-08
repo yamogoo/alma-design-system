@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import {
   listModes,
   listSizes,
-  listTone,
+  listTones,
   listVariants,
 } from "@/adapters/molecules/list";
 
@@ -17,7 +17,6 @@ import type { ListItems } from "./List";
 import List from "./List.vue";
 
 import ListItem from "./ListItem.vue";
-import Group from "../../atoms/containers/Group.vue";
 
 const meta = {
   title: "Molecules/List/List",
@@ -36,7 +35,7 @@ const meta = {
     variant: enumOptions(listVariants),
     size: enumOptions(listSizes),
     mode: enumOptions(listModes),
-    tone: enumOptions(listTone),
+    tone: enumOptions(listTones),
     items: { control: "object" },
   },
   args: {
@@ -49,6 +48,23 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const ITEMS: ListItems = ["First", "Second", "Third", "Fourth", "Fifth"];
+const ITEMS_2: ListItems = [
+  {
+    id: String(crypto.randomUUID()),
+    title: "First",
+    description: "Some description",
+  },
+  {
+    id: String(crypto.randomUUID()),
+    title: "Second",
+    description: "Some description",
+  },
+  {
+    id: String(crypto.randomUUID()),
+    title: "Third",
+    description: "Some description",
+  },
+];
 
 export const Playground: Story = {
   args: {},
@@ -56,11 +72,9 @@ export const Playground: Story = {
     setup() {
       return () => (
         <StoryGrid columns={1}>
-          <List isMultiple={false}>
+          <List isSelectable={false} isMultiple={false} isJoined={false}>
             {ITEMS.map((item) => (
-              <Group variant={"block"} size={"md"}>
-                <ListItem id={item} title={item} isJoined={false}></ListItem>
-              </Group>
+              <ListItem id={item} title={item}></ListItem>
             ))}
           </List>
         </StoryGrid>
@@ -93,8 +107,12 @@ export const MultipleSelection: Story = {
       return () => (
         <StoryGrid columns={1}>
           <List isMultiple={true}>
-            {ITEMS.map((item) => (
-              <ListItem id={item} title={item}></ListItem>
+            {ITEMS_2.map(({ id, title, description }) => (
+              <ListItem
+                id={id}
+                title={title}
+                description={description}
+              ></ListItem>
             ))}
           </List>
         </StoryGrid>

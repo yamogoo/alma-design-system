@@ -83,12 +83,12 @@
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.selected.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -105,12 +105,34 @@
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.accent.primary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.accent.primary.selected.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "chevron": {
+        "normal": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.selected.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.disabled.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
           "$type": "color",
           "$unit": "hex"
         }

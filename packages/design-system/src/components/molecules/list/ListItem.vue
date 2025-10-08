@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { computed, inject, useSlots } from "vue";
+import { computed, inject, useSlots, useTemplateRef } from "vue";
 import type { ListItemProps } from "./ListItem";
+
+import { useHover } from "@/composables/local";
 
 import { ListInjectionKey, type ListInjection } from "./List";
 
@@ -27,8 +29,11 @@ const slots = useSlots();
 const emit = defineEmits<{
   (e: "press", ev: PointerEvent): void;
   (e: "select"): void;
+  (e: "focus:next"): void;
+  (e: "focus:prev"): void;
 }>();
 
+const root = useTemplateRef<HTMLDivElement | null>("root");
 const ctx = inject<ListInjection | null>(ListInjectionKey, null);
 
 const hasUserContent = computed(() => {
@@ -36,10 +41,26 @@ const hasUserContent = computed(() => {
   return !!(s && s.length);
 });
 
+const { isHovered } = useHover(root);
+
 const isSelected = computed(() => {
-  if (!ctx?.selectedItemId) return false;
-  const sel = ctx.selectedItemId.value;
-  return Array.isArray(sel) ? sel.includes(props.id) : sel === props.id;
+  if (!ctx?.selectedItemIndexes) return false;
+  const sid = ctx.selectedItemIndexes.value;
+  return Array.isArray(sid) ? sid.includes(props.id) : sid === props.id;
+});
+
+const effectiveState = computed<"normal" | "hovered" | "selected">(() => {
+  if (ctx?.isSelectable && ctx.isSelectable.value === false) return "normal";
+  if (isSelected.value) return "selected";
+  return isHovered.value ? "hovered" : "normal";
+});
+
+const cursor = computed(() =>
+  ctx?.isSelectable && ctx.isSelectable.value === false ? "auto" : "pointer"
+);
+
+const localIsJoined = computed(() => {
+  return ctx?.isJoined ? ctx.isJoined.value : props.isJoined;
 });
 
 const isCurrentItemShown = computed(() => {
@@ -57,14 +78,25 @@ const onPress = (e: PointerEvent, isPressed: boolean): void => {
 
   e.preventDefault();
 
-  if (ctx?.selectedItemId) ctx.setSelectedItemId(props.id);
+  if (ctx?.selectedItemIndexes) ctx.setSelectedItemIndexes(props.id);
   emit("press", e);
+};
+
+/* * * Keyboard * * */
+
+const onFocusNext = (): void => {
+  emit("focus:next");
+};
+
+const onFocusPrev = (): void => {
+  emit("focus:prev");
 };
 </script>
 
 <template>
   <component
     :is="as"
+    ref="root"
     :class="[
       PREFIX,
       {
@@ -73,15 +105,19 @@ const onPress = (e: PointerEvent, isPressed: boolean): void => {
         [`${PREFIX}_mode-${mode}`]: !!mode,
         [`${PREFIX}_tone-${tone}`]: !!tone,
       },
-      `${PREFIX}_state-${isSelected ? 'selected' : 'normal'}`,
-      { [`${PREFIX}_joined`]: isJoined },
-      { [`${PREFIX}_divider`]: divider },
+      `${PREFIX}_state-${effectiveState}`,
+      { [`${PREFIX}_joined`]: localIsJoined },
     ]"
-    role="listitem"
+    :style="{ cursor }"
+    :role="ctx ? 'option' : undefined"
+    :aria-selected="ctx ? isSelected : undefined"
     tabindex="-1"
     :aria-current="isCurrentItemShown && isSelected ? true : undefined"
     @pointerdown="(e: PointerEvent) => onPress(e, true)"
     @pointerup="(e: PointerEvent) => onPress(e, false)"
+    @keydown.enter.space.prevent="ctx?.setSelectedItemIndexes?.(props.id)"
+    @keydown.arrow-down.prevent="onFocusNext"
+    @keydown.arrow-up.prevent="onFocusPrev"
   >
     <div class="list-item__container">
       <slot name="prepend">
@@ -112,15 +148,17 @@ const onPress = (e: PointerEvent, isPressed: boolean): void => {
           </Text>
         </div>
       </template>
-      <slot name="append">
-        <Icon
-          :class="`${PREFIX}__chevron`"
-          :name="'right'"
-          :appearance="'outline'"
-          :weight="'300'"
-          :size="iconSize"
-        ></Icon>
-      </slot>
+      <div :class="`${PREFIX}__append`">
+        <slot name="append">
+          <Icon
+            :class="`${PREFIX}__chevron`"
+            :name="'right'"
+            :appearance="'outline'"
+            :weight="'300'"
+            :size="iconSize"
+          ></Icon>
+        </slot>
+      </div>
     </div>
   </component>
 </template>
@@ -133,6 +171,7 @@ $prefix: list-item;
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
+          $content-gap: px2rem(get($val, "root.gap"));
           $min-height: px2rem(get($val, "root.min-height"));
           $padding-horizontal: px2rem(get($val, "root.padding-horizontal"));
           $padding-vertical: px2rem(get($val, "root.padding-vertical"));
@@ -151,6 +190,7 @@ $prefix: list-item;
             padding: 0 $padding-horizontal;
 
             .#{$prefix}__container {
+              gap: $content-gap;
               padding: $padding-vertical 0;
             }
 
@@ -234,8 +274,16 @@ $prefix: list-item;
 
     .#{$prefix}__description {
       @include themify($themes) {
-        fill: themed(
+        color: themed(
           "components.molecules.#{$prefix}.#{$mode}.#{$tone}.description.#{$state}"
+        );
+      }
+    }
+
+    .#{$prefix}__chevron {
+      @include themify($themes) {
+        fill: themed(
+          "components.molecules.#{$prefix}.#{$mode}.#{$tone}.chevron.#{$state}"
         );
       }
     }
@@ -288,15 +336,6 @@ $prefix: list-item;
             }
           }
 
-          @include themify($themes) {
-            background-color: themed(
-              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.background.selected"
-            );
-            border-color: themed(
-              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.border.selected"
-            );
-          }
-
           @each $state in ("normal", "disabled", "hovered", "selected") {
             @include defineStates($prefix, $mode, $tone, $state);
           }
@@ -310,7 +349,6 @@ $prefix: list-item;
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  cursor: pointer;
   @extend %base-transition;
 
   &__container {
@@ -320,7 +358,13 @@ $prefix: list-item;
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+  }
+
+  &__append {
+    align-content: center;
   }
 
   @include defineSizes();

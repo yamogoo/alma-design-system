@@ -1,77 +1,108 @@
 <script setup lang="tsx">
-import { computed, Fragment, h, provide, ref, useSlots } from "vue";
+import { computed, Fragment, h, provide, ref, useSlots, watch } from "vue";
 
-import { ListInjectionKey, type ListInjection, type ListProps } from "./List";
+import {
+  ListInjectionKey,
+  type ListInjection,
+  type ListProps,
+  type ListSelectedItemIndex,
+  type ListSelectedItemIndexes,
+} from "./List";
+
 import type { IListItem } from "./ListItem";
-
 import ListItem from "./ListItem.vue";
+import Group from "@/components/atoms/containers/Group.vue";
 
 const PREFIX = "list";
 
+const slots = useSlots();
+
 const props = withDefaults(defineProps<ListProps>(), {
   as: "div",
-  variant: "default",
+  stretch: "fill",
+  orientation: "vertical",
   isCurrentItemShown: false,
   isMultiple: false,
   isSelectable: true,
+  isJoined: true,
 });
 
-const slots = useSlots();
+const emit = defineEmits<{
+  "update:selectedItemIndexes": ListSelectedItemIndexes;
+  change: ListSelectedItemIndexes;
+}>();
 
 const rootTag = computed(
-  () => props.as ?? (props.items?.length ? "ul" : "div")
+  () =>
+    props.as ??
+    (props.isSelectable ? "div" : props.items?.length ? "ul" : "div")
 );
 
-const localSelectedItemId = ref<IListItem["id"] | IListItem["id"][] | null>(
-  props.selectedItemId ?? (props.isMultiple ? [] : null)
-);
+const localSelectedItemIndexes = ref<
+  IListItem["id"] | IListItem["id"][] | null
+>(props.selectedItemIndexes ?? (props.isMultiple ? [] : null));
 
-const selectedItemId = computed({
+const selectedItemIndexes = computed({
   get: () => {
-    return props.selectedItemId !== undefined
-      ? (props.selectedItemId ?? null)
-      : localSelectedItemId.value;
+    return props.selectedItemIndexes !== undefined
+      ? (props.selectedItemIndexes ?? null)
+      : localSelectedItemIndexes.value;
   },
   set: (value) => {
     // Update local state only when uncontrolled
-    if (props.selectedItemId === undefined) localSelectedItemId.value = value;
+    if (props.selectedItemIndexes === undefined)
+      localSelectedItemIndexes.value = value;
   },
 });
+const commit = (
+  val: ListSelectedItemIndex | ListSelectedItemIndex[] | null
+) => {
+  if (props.selectedItemIndexes === undefined) selectedItemIndexes.value = val;
+  emit("update:selectedItemIndexes", val);
+  emit("change", val);
+};
 
-const setSelectedItemId = (id: IListItem["id"] | null) => {
+const setSelectedItemIndexes = (id: ListSelectedItemIndex | null) => {
   if (!props.isSelectable) return;
 
   if (props.isMultiple) {
-    const current = (selectedItemId.value ?? []) as IListItem["id"][];
-    const next = Array.isArray(current) ? [...current] : [];
+    const current = (selectedItemIndexes.value ??
+      []) as ListSelectedItemIndex[];
+    if (id == null) return commit([]);
 
-    const idx = next.findIndex((v) => v === id);
-    if (id == null) {
-      // clear selection
-      localSelectedItemId.value = [];
-      return;
-    }
-    if (idx >= 0) {
-      next.splice(idx, 1);
-    } else {
-      next.push(id);
-    }
-    if (props.selectedItemId === undefined) localSelectedItemId.value = next;
+    const next = current.includes(id)
+      ? current.filter((v) => v !== id)
+      : [...current, id];
+
+    return commit(next);
   } else {
-    const current = selectedItemId.value as IListItem["id"] | null;
+    const current = selectedItemIndexes.value as ListSelectedItemIndex | null;
     const next = current === id ? null : id;
-    if (props.selectedItemId === undefined) localSelectedItemId.value = next;
+    return commit(next);
   }
 };
 
+watch(
+  () => props.selectedItemIndexes,
+  (v) => {
+    localSelectedItemIndexes.value = v ?? (props.isMultiple ? [] : null);
+  }
+);
+
+const effectiveVariant = computed(() =>
+  props.isJoined ? "content" : (props.variant ?? "default")
+);
+
 const isCurrentItemShown = computed(() => !!props.isCurrentItemShown);
 const isSelectable = computed(() => !!props.isSelectable);
+const isJoined = computed(() => !!props.isJoined);
 
 provide<ListInjection>(ListInjectionKey, {
-  selectedItemId,
-  setSelectedItemId,
+  selectedItemIndexes,
+  setSelectedItemIndexes,
   isCurrentItemShown,
   isSelectable,
+  isJoined,
 });
 
 const normalizedItems = computed<IListItem[] | null>(() => {
@@ -91,13 +122,13 @@ const renderWithSlot = () => {
 
   const children = normalizedItems.value.map((item) => {
     const { id, title, description } = item;
-    const onSelect = () => setSelectedItemId(id);
+    const onSelect = () => setSelectedItemIndexes(id);
 
     const vnodeFromSlot = slots.default?.({
       item,
-      isSelected: Array.isArray(selectedItemId.value)
-        ? selectedItemId.value.includes(id)
-        : selectedItemId.value === id,
+      isSelected: Array.isArray(selectedItemIndexes.value)
+        ? selectedItemIndexes.value.includes(id)
+        : selectedItemIndexes.value === id,
       onSelect,
     });
 
@@ -118,26 +149,34 @@ const renderWithSlot = () => {
 </script>
 
 <template>
-  <component
+  <Group
     :is="rootTag"
     :class="[
       PREFIX,
+      `${PREFIX}_variant-${effectiveVariant}`,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
         [`${PREFIX}_size-${size}`]: !!size,
         [`${PREFIX}_mode-${mode}`]: !!mode,
         [`${PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
-    role="list"
+    :variant="effectiveVariant"
+    :size="size"
+    :mode="mode"
+    :tone="tone"
+    :direction="direction"
+    :orientation="orientation"
+    :stretch="stretch"
+    :role="isSelectable ? 'listbox' : 'list'"
+    :aria-multiselectable="isSelectable ? isMultiple : undefined"
   >
-    <slot v-if="!normalizedItems" :selected-id="selectedItemId"></slot>
+    <slot v-if="!normalizedItems" :selected-id="selectedItemIndexes"></slot>
     <template v-else>
       <component :is="'template'">
         <component :is="{ render: () => renderWithSlot() }" />
       </component>
     </template>
-  </component>
+  </Group>
 </template>
 
 <style lang="scss">

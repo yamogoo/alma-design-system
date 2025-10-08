@@ -245,6 +245,32 @@ $components:(
 )
 )
 ),
+  content: (
+  lg: (
+  root: (
+  gap: 0px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+),
+  md: (
+  root: (
+  gap: 0px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+),
+  sm: (
+  root: (
+  gap: 0px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+)
+),
   block: (
   lg: (
   root: (
@@ -506,7 +532,8 @@ $components:(
   root: (
   gap: 12px,
   min-width: 64px,
-  padding: 8px
+  padding: 8px,
+  touch-area: 44px
 ),
   track: (
   height: 24px,
@@ -526,7 +553,8 @@ $components:(
   root: (
   gap: 8px,
   min-width: 64px,
-  padding: 8px
+  padding: 8px,
+  touch-area: 44px
 ),
   track: (
   height: 16px,
@@ -546,7 +574,8 @@ $components:(
   root: (
   gap: 8px,
   min-width: 64px,
-  padding: 8px
+  padding: 8px,
+  touch-area: 44px
 ),
   track: (
   height: 12px,
@@ -657,7 +686,8 @@ $components:(
   root: (
   width: 64px,
   height: 20px,
-  gap: 10px
+  gap: 10px,
+  touch-area: 44px
 ),
   track: (
   padding: 2px,
@@ -675,7 +705,8 @@ $components:(
   root: (
   width: 54px,
   height: 20px,
-  gap: 10px
+  gap: 10px,
+  touch-area: 44px
 ),
   track: (
   padding: 2px,
@@ -693,7 +724,8 @@ $components:(
   root: (
   width: 40px,
   height: 16px,
-  gap: 10px
+  gap: 10px,
+  touch-area: 36px
 ),
   track: (
   padding: 2px,
@@ -848,7 +880,8 @@ $components:(
   padding-horizontal: 16px,
   padding-vertical: 12px,
   border-radius: 16px,
-  border-width: 1px
+  border-width: 1px,
+  gap: 1px
 ),
   divider: (
   border-width: 1px
@@ -857,7 +890,7 @@ $components:(
   font-style: body-2
 ),
   description: (
-  font-style: body-2
+  font-style: body-3
 ),
   chevron: (
   size: 16px

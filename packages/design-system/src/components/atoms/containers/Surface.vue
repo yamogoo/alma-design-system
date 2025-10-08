@@ -15,6 +15,7 @@ const PREFIX = "surface";
 
 const props = withDefaults(defineProps<SurfaceProps>(), {
   as: "div",
+  stretch: "fill",
   borderSides: "",
   elevated: false,
   rounded: false,
@@ -61,6 +62,7 @@ defineExpose({
         [`${PREFIX}_size-${size}`]: !!size,
         [`${PREFIX}_mode-${mode}`]: !!mode,
         [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${PREFIX}_stretch-${stretch}`]: !!stretch,
         [`${PREFIX}_rounded`]: !!rounded,
         [`${PREFIX}_elevated`]: !!elevated,
       },
@@ -122,13 +124,22 @@ $prefix: surface;
 .#{$prefix} {
   position: relative;
   display: block;
-  @include box(100%);
   border-style: solid;
   border-width: 0;
   @extend %base-transition;
 
   @include defineSizes();
   @include defineThemes();
+
+  &_stretch {
+    &-fill {
+      @include box(100%);
+    }
+
+    &-auto {
+      @include box(max-content);
+    }
+  }
 
   &_elevated {
     @include useElevation();

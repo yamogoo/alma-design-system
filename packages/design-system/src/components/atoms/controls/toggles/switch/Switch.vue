@@ -185,6 +185,7 @@ $prefix: switch;
           $gap: get($val, "root.gap");
           $width: px2rem(get($val, "root.width"));
           $height: px2rem(get($val, "root.height"));
+          $touch-area: px2rem(get($val, "root.touch-area"));
 
           $track-padding: px2rem(get($val, "track.padding"));
           $label-font-style: get($val, "label.font-style");
@@ -195,6 +196,7 @@ $prefix: switch;
 
           gap: $gap;
           border-radius: $height;
+          height: $touch-area;
 
           .#{$prefix} {
             &__track {

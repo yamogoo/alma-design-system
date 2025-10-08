@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<GroupProps>(), {
   role: "group",
   size: "md",
   ariaLabel: "group",
+  stretch: "auto",
 });
 
 const componentTag = props.as;
@@ -35,6 +36,7 @@ const componentTag = props.as;
     ]"
     :mode="mode"
     :tone="tone"
+    :stretch="stretch"
     :role="role"
     :aria-label="ariaLabel"
     :style="{ gap: gapY ? gapY : undefined }"

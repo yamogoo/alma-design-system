@@ -250,6 +250,7 @@ $prefix: slider;
           $gap: px2rem(get($val, "root.gap"));
           $min-width: px2rem(get($val, "root.min-width"));
           $padding: px2rem(get($val, "root.padding"));
+          $touch-area: px2rem(get($val, "root.touch-area"));
 
           $knob-width: px2rem(get($val, "knob.width"));
           $knob-height: px2rem(get($val, "knob.height"));
@@ -264,7 +265,7 @@ $prefix: slider;
 
           gap: $gap;
           min-width: $min-width;
-          min-height: $knob-height;
+          min-height: $touch-area;
           padding: $padding;
 
           .#{$prefix}__track {

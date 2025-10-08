@@ -64,7 +64,8 @@ const { focused: isLocalFocused } = useFocus(refInput, {
 });
 
 const isIdle = computed(() => {
-  return localModelValue.value === "";
+  const value = localModelValue.value === "";
+  return value;
 });
 
 watchEffect(() => {

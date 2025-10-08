@@ -16,6 +16,11 @@
           "$value": "{tokens.gap.xs.$value}",
           "$type": "number",
           "$unit": "px"
+        },
+        "touchArea": {
+          "$value": "{tokens.touchArea.md.size.$value}",
+          "$type": "number",
+          "$unit": "px"
         }
       },
       "track": {
@@ -63,6 +68,11 @@
         },
         "gap": {
           "$value": "{tokens.gap.xs.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "touchArea": {
+          "$value": "{tokens.touchArea.md.size.$value}",
           "$type": "number",
           "$unit": "px"
         }
@@ -113,6 +123,11 @@
         },
         "gap": {
           "$value": "{tokens.gap.xs.$value}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "touchArea": {
+          "$value": "{tokens.touchArea.sm.size.$value}",
           "$type": "number",
           "$unit": "px"
         }
