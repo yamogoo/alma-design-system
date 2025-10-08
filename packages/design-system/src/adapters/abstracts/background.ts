@@ -2,7 +2,7 @@ import tokens from "@/tokens";
 
 export type AbstractSurfaceMode =
   keyof typeof tokens.themes.light.contracts.interactive.surface;
-export const abstracSurfaceModes = Object.keys(
+export const abstractSurfaceModes = Object.keys(
   tokens.themes.light.contracts.interactive.surface
 ) as AbstractSurfaceMode[];
 
