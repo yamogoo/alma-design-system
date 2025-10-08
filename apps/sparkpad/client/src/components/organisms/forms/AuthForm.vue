@@ -14,7 +14,7 @@ const FORM_ANIMATION_DURATION = 0.35,
 
 const { $t } = storeToRefs(useLocaleStore());
 
-const selectedFormId = ref(0);
+const selectedFormIndex = ref(0);
 const isLoginError = ref(false);
 const isSigninError = ref(false);
 
@@ -25,8 +25,8 @@ const formPaginationItems = computed(() => {
   ];
 });
 
-const onUpdateSelectedFormId = (id: number): void => {
-  selectedFormId.value = id;
+const onUpdateSelectedFormIndex = (id: number): void => {
+  selectedFormIndex.value = id;
 
   // if (selectedId === 1) {
   //   emit("update:email", localEmail.value);
@@ -35,7 +35,8 @@ const onUpdateSelectedFormId = (id: number): void => {
 };
 
 const contentKey = computed(
-  () => `${selectedFormId.value}${+isLoginError.value}${+isSigninError.value}`
+  () =>
+    `${selectedFormIndex.value}${+isLoginError.value}${+isSigninError.value}`
 );
 </script>
 
@@ -54,14 +55,14 @@ const contentKey = computed(
     <template #header>
       <Components.Atoms.StepPaginationTabs
         :size="'lg'"
-        :selected-item-id="selectedFormId"
+        :selected-item-index="selectedFormIndex"
         :items="formPaginationItems"
-        @update:selected-item-id="onUpdateSelectedFormId"
+        @update:selected-item-index="onUpdateSelectedFormIndex"
       >
       </Components.Atoms.StepPaginationTabs>
     </template>
     <Components.Atoms.CarouselStack
-      :selected-screen-id="selectedFormId"
+      :selected-screen-id="selectedFormIndex"
       :screen-count="2"
       :orientation="'horizontal'"
       :direction="'forward'"

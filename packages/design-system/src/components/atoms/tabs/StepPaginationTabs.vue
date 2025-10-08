@@ -17,13 +17,14 @@ const PREFIX = "step-pagination-tabs";
 
 const props = withDefaults(defineProps<StepPaginationTabsProps>(), {
   variant: "default",
-  selectedItemId: 0,
-  mode: "primary",
+  mode: "neutral",
+  tone: "primary",
   size: "md",
+  selectedItemIndex: 0,
 });
 
 const emit = defineEmits<{
-  (e: "update:selected-item-id", selectedItemId: number): void;
+  (e: "update:selected-item-index", selectedItemIndex: number): void;
 }>();
 
 const refsItems = ref<Array<HTMLElement>>([]);
@@ -41,16 +42,16 @@ const textVariant = computed(() => {
 });
 
 const onItemClick = (item: StepPaginationTabItem): void => {
-  if (item.id !== props.selectedItemId) {
-    emit("update:selected-item-id", item.id);
+  if (item.id !== props.selectedItemIndex) {
+    emit("update:selected-item-index", item.id);
   }
 };
 
 const getItemState = (idx: number) => {
-  if (idx === props.selectedItemId) return "current";
-  if (idx === props.selectedItemId + 1 && idx < props.items.length)
+  if (idx === props.selectedItemIndex) return "current";
+  if (idx === props.selectedItemIndex + 1 && idx < props.items.length)
     return "next";
-  if (idx === props.selectedItemId - 1 && idx >= 0) return "previous";
+  if (idx === props.selectedItemIndex - 1 && idx >= 0) return "previous";
   return "normal";
 };
 
@@ -74,14 +75,14 @@ const onAnimTrackAndItem = (id: number, duration = 0.55) => {
 };
 
 watch(
-  () => props.selectedItemId,
+  () => props.selectedItemIndex,
   (id) => {
     onAnimTrackAndItem(id);
   }
 );
 
 onMounted(() => {
-  onAnimTrackAndItem(props.selectedItemId, 0);
+  onAnimTrackAndItem(props.selectedItemIndex, 0);
 });
 </script>
 
@@ -91,8 +92,10 @@ onMounted(() => {
       PREFIX,
       `${PREFIX}_variant-${variant}`,
       {
+        [`${PREFIX}_size-${String(variant)}`]: !!variant,
         [`${PREFIX}_size-${String(size)}`]: !!size,
         [`${PREFIX}_mode-${String(mode)}`]: !!mode,
+        [`${PREFIX}_tone-${String(tone)}`]: !!tone,
       },
     ]"
   >
@@ -140,23 +143,27 @@ $prefix: step-pagination-tabs;
 
 @mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
   @each $mode, $modes in $map {
-    &_mode-#{$mode} {
-      .#{$prefix}__item {
-        &_state {
-          &-current {
-            @include themify($themes) {
-              color: themed(
-                "components.atoms.#{$prefix}.#{$mode}.item.label.active"
-              );
-            }
-          }
+    @each $tone, $val in $modes {
+      &_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
+          .#{$prefix}__item {
+            &_state {
+              &-current {
+                @include themify($themes) {
+                  color: themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.item.label.active"
+                  );
+                }
+              }
 
-          &-next,
-          &-previous {
-            @include themify($themes) {
-              color: themed(
-                "components.atoms.#{$prefix}.#{$mode}.item.label.normal"
-              );
+              &-next,
+              &-previous {
+                @include themify($themes) {
+                  color: themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.item.label.normal"
+                  );
+                }
+              }
             }
           }
         }

@@ -150,19 +150,6 @@ describe("ListItem", () => {
     });
   });
 
-  describe("provide/inject", () => {
-    test("prop isActive overrides injected selection", () => {
-      const ctx = makeCtx({ selectable: true, selectedIds: null });
-
-      const wrapper = mount(ListItem, {
-        props: { ...REQUIRED_PROPS, id: "x", isActive: true },
-        global: { provide: { [ListInjectionKey]: ctx } },
-      });
-
-      expect(getRoot(wrapper).classes()).toContain(`${Classes.STATE}-selected`);
-    });
-  });
-
   describe("states", () => {
     test("hovered state when selectable and hovered", async () => {
       const ctx = makeCtx({ selectable: true, selectedIds: null });

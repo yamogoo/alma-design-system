@@ -13,7 +13,7 @@ const getFooterGroup = <T>(wrapper: VueWrapper<T>) => {
 
 const REQUIRED_PROPS: NavigationRailProps = {
   items: [],
-  selectedItemId: 0,
+  selectedItemIndex: 0,
 };
 
 describe("NavigationRail", () => {

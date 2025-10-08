@@ -3,4 +3,4 @@ import type { NavigationRailTemplateProps } from "@/components/templates/navigat
 
 export interface NavigationRailProps
   extends NavigationRailTemplateProps,
-    Pick<SimpleMenuProps, "items" | "selectedItemId"> {}
+    Pick<SimpleMenuProps, "items" | "selectedItemIndex"> {}

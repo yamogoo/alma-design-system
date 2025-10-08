@@ -19,6 +19,6 @@ export const listItemModes = Object.keys(
 
 export type ListItemTone =
   keyof typeof tokens.themes.light.components.atoms.listItem.neutral;
-export const listItemTone = Object.keys(
+export const listItemTones = Object.keys(
   tokens.themes.light.components.atoms.listItem.neutral
 ) as ListItemTone[];

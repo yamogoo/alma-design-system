@@ -27,7 +27,7 @@ export interface SimpleMenuProps
 }
 
 export interface SimpleMenuProps<T = string> {
-  selectedItemId: number;
+  selectedItemIndex: number;
   items: MenuItems<T>;
   orientation?: SimpleMenuOrientation;
 }

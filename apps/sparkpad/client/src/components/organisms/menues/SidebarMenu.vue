@@ -18,7 +18,7 @@ const onOpenSettings = (): void => {
   <Components.Organisms.NavigationRail
     class="sidebar-menu"
     :items="[]"
-    :selected-item-id="1"
+    :selected-item-index="1"
   >
     <template #header>
       <Components.Atoms.Logo></Components.Atoms.Logo>

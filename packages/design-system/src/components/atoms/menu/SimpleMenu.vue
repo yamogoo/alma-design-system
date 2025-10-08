@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<SimpleMenuProps<T>>(), {
 
 const emit = defineEmits<{
   (e: "select", item: IMenuItem<T>): void;
-  (e: "update:selected-item-id", id: number): void;
+  (e: "update:selected-item-index", id: number): void;
 }>();
 
 const refRoot = useTemplateRef<HTMLDivElement | null>("root");
@@ -32,7 +32,7 @@ const onPress = (item: IMenuItem<T>): void => {
   emit("select", item);
 
   const { id } = item;
-  emit("update:selected-item-id", id);
+  emit("update:selected-item-index", id);
 };
 
 /* * * Keyboard * * */
@@ -52,11 +52,11 @@ const onPress = (item: IMenuItem<T>): void => {
     <MenuItem
       v-for="item in items"
       :key="item.id"
-      v-memo="[item.id === selectedItemId]"
-      :is-active="item.id === selectedItemId"
+      v-memo="[item.id === selectedItemIndex]"
+      :is-active="item.id === selectedItemIndex"
       role="menuitem"
       data-testid="simple-menu-item"
-      :tabindex="item.id === selectedItemId ? 0 : -1"
+      :tabindex="item.id === selectedItemIndex ? 0 : -1"
       @is-pressed="onPress(item)"
     >
       <Text

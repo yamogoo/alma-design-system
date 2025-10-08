@@ -26,7 +26,7 @@ withDefaults(defineProps<NavigationRailProps>(), {});
     <SimpleMenu
       v-if="items"
       :items="items"
-      :selected-item-id="selectedItemId"
+      :selected-item-index="selectedItemIndex"
       orientation="vertical"
     ></SimpleMenu>
     <slot></slot>

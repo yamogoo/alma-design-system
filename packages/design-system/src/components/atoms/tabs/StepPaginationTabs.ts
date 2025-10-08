@@ -1,18 +1,28 @@
 import type {
   StepPaginationTabMode,
   StepPaginationTabSize,
+  StepPaginationTabTone,
+  StepPaginationTabVariant,
 } from "@/adapters/atoms/stepPaginationTabs";
 
-import type { UIElementUnionProps } from "@/typings";
+import type { UIElementStylingModifiers } from "@/typings";
 
 export interface StepPaginationTabItem {
   id: number;
   label: string;
 }
 
-export interface StepPaginationTabsProps extends Partial<UIElementUnionProps> {
+export interface StepPaginationTabsProps
+  extends Partial<
+    UIElementStylingModifiers<
+      StepPaginationTabVariant,
+      StepPaginationTabSize,
+      StepPaginationTabMode,
+      StepPaginationTabTone
+    >
+  > {
   items: StepPaginationTabItem[];
-  selectedItemId?: number;
+  selectedItemIndex?: number;
   size?: StepPaginationTabSize;
   mode?: StepPaginationTabMode;
 }

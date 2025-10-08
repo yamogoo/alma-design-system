@@ -18,6 +18,6 @@ export const optionsModes = Object.keys(
 
 export type OptionsTone =
   keyof typeof tokens.themes.light.components.atoms.options.neutral;
-export const optionsTone = Object.keys(
+export const optionsTones = Object.keys(
   tokens.themes.light.components.atoms.options.neutral
 ) as OptionsTone[];

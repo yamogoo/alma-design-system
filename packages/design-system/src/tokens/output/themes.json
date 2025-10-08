@@ -3530,18 +3530,20 @@
           }
         },
         "stepPaginationTabs": {
-          "primary": {
-            "item": {
-              "label": {
-                "normal": {
-                  "$value": "#818990",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "active": {
-                  "$value": "#b2b7bb",
-                  "$type": "color",
-                  "$unit": "hex"
+          "neutral": {
+            "primary": {
+              "item": {
+                "label": {
+                  "normal": {
+                    "$value": "#818990",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "active": {
+                    "$value": "#b2b7bb",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
                 }
               }
             }
@@ -14870,18 +14872,20 @@
           }
         },
         "stepPaginationTabs": {
-          "primary": {
-            "item": {
-              "label": {
-                "normal": {
-                  "$value": "#a9afb4",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "active": {
-                  "$value": "#393d41",
-                  "$type": "color",
-                  "$unit": "hex"
+          "neutral": {
+            "primary": {
+              "item": {
+                "label": {
+                  "normal": {
+                    "$value": "#a9afb4",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "active": {
+                    "$value": "#393d41",
+                    "$type": "color",
+                    "$unit": "hex"
+                  }
                 }
               }
             }

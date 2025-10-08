@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 import { Components } from "@alma/design-system";
 
-const selectedItemId = ref(0);
+const selectedItemIndex = ref(0);
 
 const items: Components.Atoms.MenuItems<string> = [
   {
@@ -21,7 +21,7 @@ const items: Components.Atoms.MenuItems<string> = [
 
 <template>
   <Components.Atoms.SimpleMenu
-    :selected-item-id="selectedItemId"
+    :selected-item-index="selectedItemIndex"
     :items
   ></Components.Atoms.SimpleMenu>
 </template>

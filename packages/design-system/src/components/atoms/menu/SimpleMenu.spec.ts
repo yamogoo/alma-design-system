@@ -23,7 +23,7 @@ describe("SimpleMenu", () => {
     test("should render items from props", () => {
       const wrapper = mount(SimpleMenu, {
         props: {
-          selectedItemId: 0,
+          selectedItemIndex: 0,
           items,
         },
       });
@@ -38,7 +38,7 @@ describe("SimpleMenu", () => {
     test("should render Text component", () => {
       const wrapper = mount(SimpleMenu, {
         props: {
-          selectedItemId: 0,
+          selectedItemIndex: 0,
           items,
         },
       });
@@ -61,7 +61,7 @@ describe("SimpleMenu", () => {
     test("should emit 'select' event", async () => {
       const wrapper = mount(SimpleMenu, {
         props: {
-          selectedItemId: 0,
+          selectedItemIndex: 0,
           items,
         },
       });
@@ -71,7 +71,7 @@ describe("SimpleMenu", () => {
       await itemEls[0].trigger("pointerdown");
       const emittedEvent = getTypedEmittedEvent(wrapper, "select")[0][0];
 
-      expect(wrapper.emitted()).toHaveProperty("update:selected-item-id");
+      expect(wrapper.emitted()).toHaveProperty("update:selected-item-index");
       expect(wrapper.emitted()).toHaveProperty("select");
       expect(emittedEvent).toMatchInlineSnapshot(`
         {
@@ -84,7 +84,7 @@ describe("SimpleMenu", () => {
       await itemEls[1].trigger("pointerdown");
       const emittedEvent2 = getTypedEmittedEvent(wrapper, "select")[1][0];
 
-      expect(wrapper.emitted()).toHaveProperty("update:selected-item-id");
+      expect(wrapper.emitted()).toHaveProperty("update:selected-item-index");
       expect(wrapper.emitted()).toHaveProperty("select");
       expect(emittedEvent2).toMatchInlineSnapshot(`
         {

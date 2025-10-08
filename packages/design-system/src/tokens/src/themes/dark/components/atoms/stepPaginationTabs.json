@@ -1,16 +1,18 @@
 {
-  "primary": {
-    "item": {
-      "label": {
-        "normal": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.disabled.$value}",
-          "$type": "color",
-          "$unit": "hex"
-        },
-        "active": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
-          "$type": "color",
-          "$unit": "hex"
+  "neutral": {
+    "primary": {
+      "item": {
+        "label": {
+          "normal": {
+            "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.disabled.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "active": {
+            "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
         }
       }
     }
