@@ -19,6 +19,6 @@ export const dropdownModes = Object.keys(
 
 export type DropdownTone =
   keyof typeof tokens.themes.light.components.molecules.dropdown.neutral;
-export const dropdownTone = Object.keys(
+export const dropdownTones = Object.keys(
   tokens.themes.light.components.molecules.dropdown.neutral
 ) as DropdownTone[];

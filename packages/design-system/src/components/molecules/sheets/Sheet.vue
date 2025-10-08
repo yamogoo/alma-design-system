@@ -6,6 +6,8 @@ import Surface from "@/components/atoms/containers/Surface.vue";
 const PREFIX = "sheet";
 
 withDefaults(defineProps<SheetProps>(), {
+  variant: "container",
+  size: "md",
   isOpen: false,
   isDialog: false,
 });
