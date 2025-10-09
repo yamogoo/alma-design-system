@@ -1,0 +1,31 @@
+{
+  "default": {
+    "lg": {
+      "root": {
+        "min-height": {
+          "$value": 56,
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "md": {
+      "root": {
+        "min-height": {
+          "$value": 44,
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "sm": {
+      "root": {
+        "min-height": {
+          "$value": 44,
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    }
+  }
+}

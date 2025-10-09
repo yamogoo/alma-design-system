@@ -11,6 +11,7 @@ const props = withDefaults(defineProps<GroupProps>(), {
   size: "md",
   ariaLabel: "group",
   stretch: "auto",
+  bordered: false,
 });
 
 const componentTag = props.as;
@@ -39,6 +40,7 @@ const componentTag = props.as;
     :stretch="stretch"
     :role="role"
     :aria-label="ariaLabel"
+    :border-sides="bordered ? 'rtlb' : undefined"
     :style="{ gap: gapY ? gapY : undefined }"
     data-testid="group"
   >

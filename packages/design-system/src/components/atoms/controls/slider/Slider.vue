@@ -206,7 +206,7 @@ onBeforeUnmount(removeEventListeners);
       `${PREFIX}_mode-${mode}`,
       `${PREFIX}_tone-${tone}`,
       isDisabled
-        ? `${PREFIX}-disabled`
+        ? `${PREFIX}_state-disabled`
         : `${PREFIX}_state-${isHovered ? 'hovered' : 'normal'}`,
     ]"
     @pointerdown="onTrackPress"

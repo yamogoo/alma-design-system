@@ -6,6 +6,11 @@ import {
 } from "@/components/molecules/explorer/tree-view/TreeViewItem";
 import TreeViewItem from "@/components/molecules/explorer/tree-view/TreeViewItem.vue";
 
+enum Classes {
+  ROOT_CLASS = "tree-view-item",
+  STATE = `${Classes.ROOT_CLASS}_state`,
+}
+
 const getCaret = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find(".tree-view-item__caret");
 };
@@ -46,7 +51,7 @@ const node: TreeViewNode = {
 };
 
 describe("TreeViewItem", () => {
-  vi.mock("@/composables/local", () => ({
+  vi.mock("@/composables/local/actions/useHover", () => ({
     useHover: () => ({ isHovered: { value: true } }),
   }));
 
@@ -125,22 +130,6 @@ describe("TreeViewItem", () => {
       expect(isGroupExists).toBeTruthy();
     });
 
-    test("should select items via props", async () => {
-      const wrapper = mount(TreeViewItem, {
-        props: {
-          ...REQUIRED_PROPS,
-          expandedItemIndexes: [],
-          node,
-          isSelectOnRelease: true,
-        },
-      });
-
-      const root = getRoot(wrapper);
-
-      await wrapper.setProps({ selectedItemIndexes: [node.id] });
-      expect(root.classes()).toContain("tree-view-item_state-selected");
-    });
-
     test("selected single value works", () => {
       const wrapper = mount(TreeViewItem, {
         props: { ...REQUIRED_PROPS, selectedItemIndexes: "1" },
@@ -180,6 +169,32 @@ describe("TreeViewItem", () => {
   });
 
   describe("classes/attributes", () => {
+    test("hovered class applied when hovered", () => {
+      const wrapper = mount(TreeViewItem, { props: REQUIRED_PROPS });
+      expect(getRoot(wrapper).classes()).toContain(`${Classes.STATE}-hovered`);
+    });
+
+    test("hovered class applied when hovered", () => {
+      const wrapper = mount(TreeViewItem, { props: REQUIRED_PROPS });
+      expect(getRoot(wrapper).classes()).toContain(`${Classes.STATE}-hovered`);
+    });
+
+    test("should select items via props", async () => {
+      const wrapper = mount(TreeViewItem, {
+        props: {
+          ...REQUIRED_PROPS,
+          expandedItemIndexes: [],
+          node,
+          isSelectOnRelease: true,
+        },
+      });
+
+      const root = getRoot(wrapper);
+
+      await wrapper.setProps({ selectedItemIndexes: [node.id] });
+      expect(root.classes()).toContain(`${Classes.STATE}-selected`);
+    });
+
     test("has treeitem role and correct aria-level/selected", () => {
       const wrapper = mount(TreeViewItem, {
         props: {
@@ -193,20 +208,6 @@ describe("TreeViewItem", () => {
       expect(root.attributes("role")).toBe("treeitem");
       expect(root.attributes("aria-level")).toBe("2");
       expect(root.attributes("aria-selected")).toBe("true");
-    });
-
-    test("hovered class applied when hovered", () => {
-      const wrapper = mount(TreeViewItem, { props: REQUIRED_PROPS });
-      expect(getRoot(wrapper).classes()).toContain(
-        "tree-view-item_state-hovered"
-      );
-    });
-
-    test("hovered class applied when hovered", () => {
-      const wrapper = mount(TreeViewItem, { props: REQUIRED_PROPS });
-      expect(getRoot(wrapper).classes()).toContain(
-        "tree-view-item_state-hovered"
-      );
     });
 
     test("data-node-id is stringified", () => {

@@ -962,6 +962,25 @@ $components:(
 )
 )
 ),
+  toolbar-group: (
+  default: (
+  lg: (
+  root: (
+  min-height: 56px
+)
+),
+  md: (
+  root: (
+  min-height: 44px
+)
+),
+  sm: (
+  root: (
+  min-height: 44px
+)
+)
+)
+),
   tree-view: (
   default: (
   md: (

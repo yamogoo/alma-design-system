@@ -33,7 +33,6 @@ describe("Slider", () => {
     expect(wrapper.classes()).toContain(`${Classes.SIZE}-${props.size}`);
     expect(wrapper.classes()).toContain(`${Classes.MODE}-${props.mode}`);
     expect(wrapper.classes()).toContain(`${Classes.TONE}-${props.tone}`);
-    // initial hover state is false -> normal
     expect(wrapper.classes()).toContain("slider_state-normal");
   });
 
@@ -50,6 +49,7 @@ describe("Slider", () => {
     const wrapper = mount(Slider, { props: { ...REQIERED_PROPS, ...props } });
 
     const knob = wrapper.find('[role="slider"]');
+
     expect(knob.exists()).toBe(true);
     expect(knob.attributes("aria-valuemin")).toBe(String(props.min));
     expect(knob.attributes("aria-valuemax")).toBe(String(props.max));

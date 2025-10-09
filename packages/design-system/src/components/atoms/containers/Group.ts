@@ -28,6 +28,7 @@ export interface GroupProps
   stretch?: GroupStretch;
   wrap?: boolean;
   divider?: boolean;
+  bordered?: boolean;
   gapX?: string;
   gapY?: string;
   role?: string;

@@ -20,12 +20,12 @@ import MainMenu from "@/components/organisms/menues/MainMenu.vue";
         :orientation="'horizontal'"
         :size="'md'"
       >
-        <Components.Atoms.ToolbarBlock
+        <Components.Molecules.ToolbarGroup
           ><LanguageMenu></LanguageMenu
-        ></Components.Atoms.ToolbarBlock>
-        <Components.Atoms.ToolbarBlock
+        ></Components.Molecules.ToolbarGroup>
+        <Components.Molecules.ToolbarGroup
           ><ThemeSwitch></ThemeSwitch
-        ></Components.Atoms.ToolbarBlock>
+        ></Components.Molecules.ToolbarGroup>
       </Components.Atoms.Group>
     </template>
   </Components.Templates.MainHeaderTemplate>

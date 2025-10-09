@@ -42,8 +42,5 @@ export * from "./tabs";
 // Tooltips: CharTooltipLabel, Tooltip, etc.
 export * from "./tooltips";
 
-// Toolbars: ToolbarBlock, etc.
-export * from "./toolbars";
-
 // Typography: Text, Link, and other text-based primitives
 export * from "./typography";

@@ -18,3 +18,6 @@ export * from "./panels";
 
 // Sheets: ActionSheet, Sheet, and their variations
 export * from "./sheets";
+
+// Toolbars: ToolbarBlock, etc.
+export * from "./toolbars";

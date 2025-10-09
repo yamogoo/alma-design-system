@@ -6,7 +6,7 @@ import ListItem from "./ListItem.vue";
 import type { ListItemProps } from "./ListItem";
 
 const __isHovered = ref(false);
-vi.mock("@/composables/local", () => ({
+vi.mock("@/composables/local/actions/useHover", () => ({
   useHover: () => ({ isHovered: __isHovered }),
 }));
 
@@ -162,7 +162,7 @@ describe("ListItem", () => {
       expect(getRoot(wrapper).classes()).toContain(`${Classes.STATE}-normal`);
 
       __isHovered.value = true;
-      await wrapper.vm.$nextTick();
+      await nextTick();
 
       expect(getRoot(wrapper).classes()).toContain(`${Classes.STATE}-hovered`);
     });
