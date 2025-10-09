@@ -117,11 +117,11 @@ $prefix: "group";
   }
 
   &_divider {
-    &.#{$prefix}orientation-horizontal {
+    &.#{$prefix}_orientation-horizontal {
       border-right-style: solid;
     }
 
-    &.#{$prefix}orientation-vertical {
+    &.#{$prefix}_orientation-vertical {
       border-bottom-style: solid;
     }
   }

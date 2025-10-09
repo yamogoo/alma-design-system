@@ -101,9 +101,10 @@ const onChange = (e: Event): void => {
 };
 
 const onReset = (): void => {
+  localModelValue.value = "";
+
   emit("reset:value");
   emit("update:value", localModelValue.value);
-  localModelValue.value = "";
 };
 
 /* * * Animations * * */

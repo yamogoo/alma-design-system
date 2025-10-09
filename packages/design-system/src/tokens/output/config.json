@@ -4,7 +4,7 @@
     "$type": "string",
     "$unit": "alias",
     "$meta": {
-      "descritpion": "Global component prefix",
+      "description": "Global component prefix",
       "category": "config"
     }
   },
@@ -13,7 +13,7 @@
     "$type": "boolean",
     "$unit": "",
     "$meta": {
-      "descritpion": "Enable transitions while theme changing",
+      "description": "Enable transitions while theme changing",
       "category": "config"
     }
   },
@@ -22,7 +22,7 @@
     "$type": "boolean",
     "$unit": "",
     "$meta": {
-      "descritpion": "Switch between hybrid and full runtime modes",
+      "description": "Switch between hybrid and full runtime modes",
       "category": "config"
     }
   },
