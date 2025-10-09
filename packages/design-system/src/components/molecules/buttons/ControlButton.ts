@@ -7,7 +7,7 @@ import type {
 
 import type { UIElementStylingModifiers } from "@/typings";
 
-import type { ButtonProps } from "./Button";
+import type { ButtonProps } from "@/components/atoms/buttons/Button";
 
 import type { IconComponentProps } from "@/components/atoms/icons/Icon";
 

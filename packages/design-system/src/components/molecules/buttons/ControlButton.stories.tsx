@@ -21,8 +21,8 @@ import {
   iconWeights,
 } from "@/components/atoms/icons/Icon";
 
-import type { ButtonProps } from "@/components/atoms/buttons/Button";
-import ControlButton from "@/components/atoms/buttons/ControlButton.vue";
+import type { ControlButtonProps } from "./ControlButton";
+import ControlButton from "./ControlButton.vue";
 
 const meta = {
   title: "Atoms/Buttons/ControlButton",
@@ -74,7 +74,7 @@ export const Variants: Story = {
     iconWeight: "400",
     size: "md",
   },
-  render: (args: ButtonProps) => ({
+  render: (args: ControlButtonProps) => ({
     setup() {
       return () => (
         <>

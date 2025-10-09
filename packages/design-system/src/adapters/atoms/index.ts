@@ -30,8 +30,6 @@ export * from "./simpleMenu";
 // skeletons
 export * from "./skeleton";
 
-export * from "./options";
-
 export * from "./slider";
 
 // switches

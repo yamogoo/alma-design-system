@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import type { ActionButtonProps } from "./ActionButton";
-import Button from "./Button.vue";
+import type { ControlButtonProps } from "./ControlButton";
 
-const props = withDefaults(defineProps<ActionButtonProps>(), {});
+import Button from "@/components/atoms/buttons/Button.vue";
+
+const props = withDefaults(defineProps<ControlButtonProps>(), {
+  variant: "rounded",
+});
 
 const emit = defineEmits<{
   (e: "press", ev: PointerEvent): void;
@@ -26,14 +29,8 @@ const onPointerDown = (e: PointerEvent): void => {
     :prepend-icon-name="iconName"
     :prepend-icon-style="iconStyle"
     :prepend-icon-weight="iconWeight"
+    :icon-size="iconSize"
     @pointerup="onPointerUp"
     @pointerdown="onPointerDown"
-  >
-    <template #prepend-icon>
-      <slot name="prepend-icon"></slot>
-    </template>
-    <template #append-icon>
-      <slot name="append-icon"></slot>
-    </template>
-  </Button>
+  ></Button>
 </template>

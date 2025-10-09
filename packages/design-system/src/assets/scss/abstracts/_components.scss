@@ -432,22 +432,6 @@ $components:(
 )
 )
 ),
-  options: (
-  default: (
-  lg: (
-  option: (
-  font-style: body-2,
-  min-height: 24px
-)
-),
-  md: (
-  option: (
-  font-style: body-2,
-  min-height: 24px
-)
-)
-)
-),
   progressbar: (
   default: (
   lg: (
@@ -892,6 +876,22 @@ $components:(
   
 ),
   item: (
+  font-style: body-2,
+  min-height: 24px
+)
+)
+)
+),
+  options: (
+  default: (
+  lg: (
+  option: (
+  font-style: body-2,
+  min-height: 24px
+)
+),
+  md: (
+  option: (
   font-style: body-2,
   min-height: 24px
 )

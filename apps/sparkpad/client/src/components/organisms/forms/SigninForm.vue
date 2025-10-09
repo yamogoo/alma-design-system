@@ -124,7 +124,7 @@ export interface Props {
       {{ loginError }}
     </Components.Atoms.Text>
     <template #footer>
-      <Components.Atoms.ActionButton
+      <Components.Molecules.ActionButton
         :mode="'accent'"
         :tone="'tertiary'"
         :size="'md'"
@@ -133,7 +133,7 @@ export interface Props {
         :is-disabled="!isValid"
         @press="onSubmit"
         @key.enter="onSubmit"
-      ></Components.Atoms.ActionButton>
+      ></Components.Molecules.ActionButton>
     </template>
   </Components.Molecules.Form>
 </template>

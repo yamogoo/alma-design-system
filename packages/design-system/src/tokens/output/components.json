@@ -1110,38 +1110,6 @@
         }
       }
     },
-    "options": {
-      "default": {
-        "lg": {
-          "option": {
-            "fontStyle": {
-              "$value": "body-2",
-              "$type": "string",
-              "$unit": ""
-            },
-            "minHeight": {
-              "$value": 24,
-              "$type": "number",
-              "$unit": "px"
-            }
-          }
-        },
-        "md": {
-          "option": {
-            "fontStyle": {
-              "$value": "body-2",
-              "$type": "string",
-              "$unit": ""
-            },
-            "minHeight": {
-              "$value": 24,
-              "$type": "number",
-              "$unit": "px"
-            }
-          }
-        }
-      }
-    },
     "progressbar": {
       "default": {
         "lg": {
@@ -2231,6 +2199,38 @@
         "md": {
           "root": {},
           "item": {
+            "fontStyle": {
+              "$value": "body-2",
+              "$type": "string",
+              "$unit": ""
+            },
+            "minHeight": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "default": {
+        "lg": {
+          "option": {
+            "fontStyle": {
+              "$value": "body-2",
+              "$type": "string",
+              "$unit": ""
+            },
+            "minHeight": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "md": {
+          "option": {
             "fontStyle": {
               "$value": "body-2",
               "$type": "string",

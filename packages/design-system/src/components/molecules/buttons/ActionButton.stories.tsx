@@ -21,7 +21,7 @@ import {
   iconWeights,
 } from "@/components/atoms/icons/Icon";
 
-import type { ButtonProps } from "./Button";
+import type { ActionButtonProps } from "./ActionButton";
 import ActionButton from "./ActionButton.vue";
 
 const meta = {
@@ -73,7 +73,7 @@ export const Variants: Story = {
     tone: "primary",
     size: "md",
   },
-  render: (args: ButtonProps) => ({
+  render: (args: ActionButtonProps) => ({
     setup() {
       return () => (
         <>

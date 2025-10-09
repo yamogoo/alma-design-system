@@ -22,8 +22,6 @@ export * from "./inputs";
 
 export * from "./list";
 
-export * from "./options";
-
 export * from "./logos";
 
 export * from "./menu";

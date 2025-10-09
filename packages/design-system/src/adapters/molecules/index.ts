@@ -5,8 +5,10 @@ export * from "./dropdown";
 export * from "./form";
 export * from "./formWrapper";
 
-// options
+// list/options
 export * from "./list";
+
+export * from "./options";
 
 // panels
 export * from "./snackbar";

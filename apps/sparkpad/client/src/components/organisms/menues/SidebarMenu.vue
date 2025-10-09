@@ -31,7 +31,7 @@ const onOpenSettings = (): void => {
         :size="'md'"
         :orientation="'vertical'"
       >
-        <Components.Atoms.ControlButton
+        <Components.Molecules.ControlButton
           :variant="'rounded'"
           :size="'md'"
           :mode="'neutral'"
@@ -41,8 +41,8 @@ const onOpenSettings = (): void => {
           :icon-style="'outline'"
           :icon-weight="'300'"
           @press="onLogin"
-        ></Components.Atoms.ControlButton>
-        <Components.Atoms.ControlButton
+        ></Components.Molecules.ControlButton>
+        <Components.Molecules.ControlButton
           :variant="'rounded'"
           :size="'md'"
           :mode="'neutral'"
@@ -52,7 +52,7 @@ const onOpenSettings = (): void => {
           :icon-style="'outline'"
           :icon-weight="'300'"
           @press="onOpenSettings"
-        ></Components.Atoms.ControlButton>
+        ></Components.Molecules.ControlButton>
       </Components.Atoms.Group>
     </template>
   </Components.Organisms.NavigationRail>

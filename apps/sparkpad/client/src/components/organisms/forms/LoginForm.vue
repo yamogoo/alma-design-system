@@ -123,7 +123,7 @@ export interface Props {
         :size="'sm'"
         :stretch="'fill'"
       >
-        <Components.Atoms.ActionButton
+        <Components.Molecules.ActionButton
           :mode="'accent'"
           :tone="'tertiary'"
           :size="'md'"
@@ -133,21 +133,21 @@ export interface Props {
           @press="onSubmit"
           @key.enter="onSubmit"
         >
-        </Components.Atoms.ActionButton>
+        </Components.Molecules.ActionButton>
         <Components.Atoms.Divider
           :orientation="'horizontal'"
           :size="'md'"
           :mode="'neutral'"
           :tone="'primary'"
         ></Components.Atoms.Divider>
-        <Components.Atoms.ActionButton
+        <Components.Molecules.ActionButton
           :mode="'neutral'"
           :tone="'primary'"
           :size="'md'"
           :stretch="'fill'"
           :label="$t.auth.login.form.skip"
           @press="onContinueAsGuest"
-        ></Components.Atoms.ActionButton>
+        ></Components.Molecules.ActionButton>
       </Components.Atoms.Group>
     </template>
   </Components.Molecules.Form>

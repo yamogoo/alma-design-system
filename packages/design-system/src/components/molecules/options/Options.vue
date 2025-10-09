@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="T">
-import { type OptionsProps } from "@/components/atoms/options/Options";
+import { type OptionsProps } from "@/components/molecules/options/Options";
 import Text from "@/components/atoms/typography/Text.vue";
 
 const PREFIX = "options";
@@ -56,7 +56,7 @@ const showCurrentOption = (key: T) => {
 <style lang="scss">
 $prefix: options;
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $option-font-style: get($val, "option.font-style");
@@ -74,7 +74,9 @@ $prefix: options;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.molecules.#{$prefix}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -82,14 +84,14 @@ $prefix: options;
           .#{$prefix}__option {
             @include themify($themes) {
               color: themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                "components.molecules.#{$prefix}.#{$mode}.#{$tone}.label.normal"
               );
             }
 
             &:hover {
               @include themify($themes) {
                 color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.hovered"
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.label.hovered"
                 );
               }
             }
