@@ -4,10 +4,10 @@
 @mixin defineSurfaceThemes($prefix: "", $mode: "", $tone: "") {
   @include themify($themes) {
     background-color: themed(
-      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background"
+      "contracts.interactive.surface.#{$mode}.#{$tone}.normal"
     );
     border-color: themed(
-      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
+      "contracts.interactive.border.#{$mode}.#{$tone}.normal"
     );
   }
 }

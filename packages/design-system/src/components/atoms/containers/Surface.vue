@@ -91,7 +91,9 @@ $prefix: surface;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.contracts.interactive.#{$prefix}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -103,7 +105,7 @@ $prefix: surface;
             &-orientation-horizontal {
               @include themify($themes) {
                 border-right-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
+                  "contracts.interactive.border.#{$mode}.#{$tone}.normal"
                 );
               }
             }
@@ -111,7 +113,7 @@ $prefix: surface;
             &-orientation-vertical {
               @include themify($themes) {
                 border-bottom-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.divider"
+                  "contracts.interactive.border.#{$mode}.#{$tone}.normal"
                 );
               }
             }
