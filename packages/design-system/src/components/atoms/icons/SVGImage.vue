@@ -9,6 +9,7 @@ const PREFIX = "svg-image";
 
 const props = withDefaults(defineProps<SVGImageProps>(), {
   variant: "default",
+  ariaLabel: "image",
 });
 
 const modules = import.meta.glob("../../../assets/images/**/*.svg", {
@@ -41,6 +42,9 @@ const symbol = computed(() => {
         [`${PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
+    role="img"
+    :aria-label="ariaLabel"
+    :aria-hidden="ariaHidden"
   >
     <Suspense>
       <component :is="symbol" v-if="symbol" viewBox="0 0 24 24"></component>

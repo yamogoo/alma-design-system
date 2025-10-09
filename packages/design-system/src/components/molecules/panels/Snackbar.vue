@@ -12,6 +12,14 @@ withDefaults(defineProps<SnackbarProps>(), {
   size: "md",
   isCloseButtonShown: false,
 });
+
+const emit = defineEmits<{
+  (e: "close"): void;
+}>();
+
+const onClose = (): void => {
+  emit("close");
+};
 </script>
 
 <template>
@@ -33,6 +41,7 @@ withDefaults(defineProps<SnackbarProps>(), {
       </Text>
     </div>
     <ControlButton
+      v-if="isCloseButtonShown"
       :class="`${PREFIX}__close-button`"
       :variant="'rounded'"
       :size="'xs'"
@@ -41,7 +50,8 @@ withDefaults(defineProps<SnackbarProps>(), {
       :icon-name="'cross'"
       :icon-style="'outline'"
       :icon-weight="'300'"
-      :aria-label="'Close nottification'"
+      :aria-label="'Close notification'"
+      @click="onClose"
     ></ControlButton>
   </div>
 </template>

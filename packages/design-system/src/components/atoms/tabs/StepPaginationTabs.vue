@@ -91,12 +91,9 @@ onMounted(() => {
     :class="[
       PREFIX,
       `${PREFIX}_variant-${variant}`,
-      {
-        [`${PREFIX}_size-${String(variant)}`]: !!variant,
-        [`${PREFIX}_size-${String(size)}`]: !!size,
-        [`${PREFIX}_mode-${String(mode)}`]: !!mode,
-        [`${PREFIX}_tone-${String(tone)}`]: !!tone,
-      },
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mode-${mode}`,
+      `${PREFIX}_tone-${tone}`,
     ]"
   >
     <div ref="track" :class="`${PREFIX}__track`">

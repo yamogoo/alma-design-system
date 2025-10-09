@@ -19,9 +19,7 @@ withDefaults(defineProps<ToolbarGroupProps>(), {
 
 <template>
   <Group
-    :class="
-      (PREFIX, [`${PREFIX}_variant-${variant}`, `${PREFIX}_size-${size}`])
-    "
+    :class="[PREFIX, `${PREFIX}_variant-${variant}`, `${PREFIX}_size-${size}`]"
     :variant="'block'"
     :size="size"
     :mode="mode"

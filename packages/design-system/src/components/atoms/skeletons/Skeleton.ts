@@ -17,6 +17,4 @@ export interface SkeletonProps
     >
   > {
   speed?: number;
-  ariaLabel?: string;
-  ariaBusy?: boolean;
 }

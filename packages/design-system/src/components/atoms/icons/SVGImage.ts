@@ -5,11 +5,13 @@ import type {
   IconVariant,
 } from "@/adapters/atoms/icon";
 
-import type { UIElementStylingModifiers } from "@/typings";
+import type { UIElementBooleanish, UIElementStylingModifiers } from "@/typings";
 
 export interface SVGImageProps
   extends Partial<
     UIElementStylingModifiers<IconVariant, IconSize, IconMode, IconTone>
   > {
   name: string;
+  ariaLabel?: string;
+  ariaHidden?: UIElementBooleanish | undefined;
 }

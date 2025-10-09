@@ -1,3 +1,5 @@
+export type UIElementBooleanish = "true" | "false";
+
 export type UIElementColor =
   | `${"primary" | "secondary"}${"" | "-inversed" | "-transparental"}`
   | `${"transclucent"}${"" | "-inversed"}`

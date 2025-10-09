@@ -17,8 +17,8 @@ const emit = defineEmits<{
 
 watch(
   () => props.isOpen,
-  () => {
-    emit("update:is-open", true);
+  (newValue, oldValue) => {
+    if (newValue !== oldValue) emit("update:is-open", newValue);
   }
 );
 

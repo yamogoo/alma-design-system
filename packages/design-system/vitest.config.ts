@@ -13,7 +13,7 @@ export default mergeConfig(
       reporters: ["html", "verbose"],
       outputFile: "./tests-report/index.html",
       globals: true,
-      setupFiles: "./vitest.setup.ts",
+      setupFiles: ["./vitest.setup.ts"],
       server: {
         deps: {
           inline: ["vitest-canvas-mock"],
@@ -24,6 +24,7 @@ export default mergeConfig(
           resources: "usable",
         },
       },
+
       css: {
         modules: {
           classNameStrategy: "non-scoped",

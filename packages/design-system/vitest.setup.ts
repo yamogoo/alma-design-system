@@ -3,6 +3,7 @@ import { beforeEach, vi } from "vitest";
 import { config } from "@vue/test-utils";
 
 import "vitest-canvas-mock";
+import "@/__tests__/mocks/gsap.ts";
 
 beforeEach(() => {
   const pinia = createPinia();

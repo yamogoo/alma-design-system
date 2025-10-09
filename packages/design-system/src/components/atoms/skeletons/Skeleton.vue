@@ -13,6 +13,9 @@ const props = withDefaults(defineProps<SkeletonProps>(), {
 });
 const refShape = ref<HTMLDivElement | null>(null);
 
+const ariaLabel = "skeleton";
+const ariaBusy = "true";
+
 onMounted(() => {
   if (refShape.value) onAnimate(refShape.value);
 });
