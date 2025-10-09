@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { nextTick, ref, watch } from "vue";
+import { nextTick, useTemplateRef, watch } from "vue";
 import gsap from "gsap";
 
-import type { AnimatedWrapperProps } from "./AnimatedWrapper";
-
-const PREFIX = "animated-wrapper";
+import { PREFIX, type AnimatedWrapperProps } from "./AnimatedWrapper";
 
 const props = withDefaults(defineProps<AnimatedWrapperProps>(), {
   duration: 0.4,
 });
 
-const refWrapper = ref<HTMLElement>();
+const refWrapper = useTemplateRef<HTMLDivElement | null>("root");
 
 watch(
   () => props.contentKey,
@@ -44,13 +42,14 @@ watch(
 </script>
 
 <template>
-  <div ref="refWrapper" :class="PREFIX">
+  <div ref="root" :class="PREFIX">
     <slot></slot>
   </div>
 </template>
 
 <style lang="scss">
-$prefix: animated-wrapper;
+$tokenName: "animated-wrapper";
+$prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   position: relative;

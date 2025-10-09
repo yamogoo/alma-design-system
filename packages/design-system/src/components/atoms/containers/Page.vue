@@ -7,7 +7,7 @@ import { createCustomEvent } from "@/utils/events";
 
 import { usePageTransition } from "@/composables/local/pages/usePageTransition";
 
-import type { PageProps } from "./Page";
+import { PREFIX, type PageProps } from "./Page";
 
 const props = withDefaults(defineProps<PageProps>(), {
   isFooterShown: true,
@@ -455,23 +455,23 @@ onUnmounted(() => {
     <div
       v-if="isMounted"
       ref="root"
-      class="page"
       :class="[
+        PREFIX,
         {
-          [`page_orientation-${orientation}`]: !!orientation,
-          [`page_mode-${tone}`]: !!tone,
+          [`${PREFIX}_orientation-${orientation}`]: !!orientation,
+          [`${PREFIX}_mode-${tone}`]: !!tone,
         },
       ]"
       @pointerdown="onPointerDown"
     >
-      <div v-if="$slots.header" class="page__header">
+      <div v-if="$slots.header" :class="`${PREFIX}__header`">
         <slot name="header"></slot>
       </div>
-      <div class="page__body">
+      <div :class="`${PREFIX}__body`">
         <slot></slot>
       </div>
       <Transition :css="false" @enter="onFooterEnter" @leave="onFooterLeave">
-        <div v-if="$slots.footer && isFooterShown" class="page__footer">
+        <div v-if="$slots.footer && isFooterShown" :class="`${PREFIX}__footer`">
           <slot name="footer"></slot>
         </div>
       </Transition>
@@ -480,7 +480,10 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss">
-.page {
+$tokenName: "page";
+$prefix: getPrefix($tokenName);
+
+.#{$prefix} {
   box-sizing: border-box;
   position: absolute;
   inset: 0;
@@ -493,13 +496,13 @@ onUnmounted(() => {
 
   &_orientation {
     &-horizontal {
-      .page__body {
+      .#{$prefix}__body {
         flex-direction: row;
       }
     }
 
     &-vertical {
-      .page__body {
+      .#{$prefix}__body {
         flex-direction: column;
       }
     }

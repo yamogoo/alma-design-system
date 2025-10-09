@@ -7,7 +7,7 @@ import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover
 import { type AnimatedWrapperProps } from "./AnimatedWrapper";
 import AnimatedWrapper from "./AnimatedWrapper.vue";
 import Text from "@/components/atoms/typography/Text.vue";
-import ActionButton from "@/components/atoms/buttons/ActionButton.vue";
+import ActionButton from "@/components/molecules/buttons/ActionButton.vue";
 
 const meta = {
   title: "Atoms/Containers/AnimatedWrapper",

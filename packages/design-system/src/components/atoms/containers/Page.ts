@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   TransitionType,
   UIElementColor,
@@ -16,3 +18,5 @@ export interface PageProps {
   tone?: PageTone;
   orientation?: PageOrientations;
 }
+
+export const PREFIX = `${NAME_SPACE}page`;

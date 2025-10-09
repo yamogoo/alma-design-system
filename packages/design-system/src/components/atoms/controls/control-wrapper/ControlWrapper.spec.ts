@@ -1,13 +1,16 @@
 import { mount } from "@vue/test-utils";
 
-import { type ControlWrapperProps } from "@/components/atoms/controls/control-wrapper/ControlWrapper";
+import {
+  PREFIX,
+  type ControlWrapperProps,
+} from "@/components/atoms/controls/control-wrapper/ControlWrapper";
 import ControlWrapper from "@/components/atoms/controls/control-wrapper/ControlWrapper.vue";
 
-enum Classes {
-  ROOT_CLASS = "control-wrapper",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-}
+const Classes = {
+  ROOT_CLASS: PREFIX,
+  VARIANT: `${PREFIX}_variant`,
+  SIZE: `${PREFIX}_size`,
+};
 
 describe("ControlWrapper", () => {
   describe("classes", () => {

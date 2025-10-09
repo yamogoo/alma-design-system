@@ -12,9 +12,7 @@ import gsap from "gsap";
 
 import { px2rem } from "@/utils/px2rem";
 
-import type { CarousleStackProps } from "./CarouselStack";
-
-const PREFIX = "carousel-stack";
+import { PREFIX, type CarousleStackProps } from "./CarouselStack";
 
 const props = withDefaults(defineProps<CarousleStackProps>(), {
   variant: "default",
@@ -282,7 +280,7 @@ const onLeave = (el: Element, done: () => void): void => {
     <div
       v-if="$slots.pagination"
       :class="`${PREFIX}__header`"
-      :data-testid="`${PREFIX}-header`"
+      :data-testid="`${PREFIX}__header`"
     >
       <slot
         name="pagination"
@@ -316,9 +314,10 @@ const onLeave = (el: Element, done: () => void): void => {
 <style lang="scss">
 @use "sass:map";
 
-$prefix: carousel-stack;
+$tokenName: "carousel-stack";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $header-padding: get($val, "header.padding");

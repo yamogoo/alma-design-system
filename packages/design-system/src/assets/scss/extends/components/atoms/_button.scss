@@ -3,9 +3,13 @@
 @use "../../components/atoms/typography" as *;
 @use "../../../extends/animations" as *;
 
+$tokenName: "button";
+$prefix: getPrefix($tokenName);
+
 @mixin defineButtonSizes(
-  $prefix: "button",
-  $map: get($components, "atoms.button")
+  $prefix: $prefix,
+  $tokenName: $tokenName,
+  $map: get($components, "atoms.#{$tokenName}")
 ) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
@@ -45,8 +49,9 @@
 }
 
 @mixin defineButtonThemes(
-  $prefix: "button",
-  $map: get($themes, "light.components.atoms.button")
+  $prefix: $prefix,
+  $tokenName: $tokenName,
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
 ) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
@@ -55,17 +60,17 @@
           // %button_mode-#{$tone}_tone-#{$mode}
           @include themify($themes) {
             color: themed(
-              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+              "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
             );
             fill: themed(
-              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+              "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
             );
             background-color: themed(
-              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+              "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.normal"
             );
             border: get($tokens, "outline") solid
               themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.normal"
               );
           }
           @extend %base-transition;
@@ -74,7 +79,7 @@
             @include themify($themes) {
               outline: get($tokens, "outline") solid
                 themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.highlight"
                 );
             }
           }
@@ -82,21 +87,21 @@
           &.button_hovered {
             @include themify($themes) {
               background-color: themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.hovered"
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.hovered"
               );
               border: get($tokens, "outline") solid
                 themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.hovered"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.hovered"
                 );
             }
 
             .button__label {
               @include themify($themes) {
                 color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.hovered"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.hovered"
                 );
                 fill: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.hovered"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.hovered"
                 );
               }
             }
@@ -105,21 +110,21 @@
           &.button_pressed {
             @include themify($themes) {
               background-color: themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.pressed"
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.pressed"
               );
               border: get($tokens, "outline") solid
                 themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.pressed"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.pressed"
                 );
             }
 
             .button__label {
               @include themify($themes) {
                 color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.pressed"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.pressed"
                 );
                 fill: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.pressed"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.pressed"
                 );
               }
             }
@@ -132,17 +137,17 @@
               );
               border: get($tokens, "outline") solid
                 themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.disabled"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.disabled"
                 );
             }
 
             .button__label {
               @include themify($themes) {
                 color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
                 );
                 fill: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
                 );
               }
             }

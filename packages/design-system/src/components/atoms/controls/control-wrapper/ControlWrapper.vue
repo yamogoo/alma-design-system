@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import type { ControlWrapperProps } from "./ControlWrapper";
-
-const PREFIX = "control-wrapper";
+import { PREFIX, type ControlWrapperProps } from "./ControlWrapper";
 
 withDefaults(defineProps<ControlWrapperProps>(), {
   variant: "default",
@@ -24,9 +22,10 @@ withDefaults(defineProps<ControlWrapperProps>(), {
 </template>
 
 <style lang="scss">
-$prefix: control-wrapper;
+$tokenName: "control-wrapper";
+$prefix: getPrefix($tokenName);
 
-@mixin defineButtonSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineButtonSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));

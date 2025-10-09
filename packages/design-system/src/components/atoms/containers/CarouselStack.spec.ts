@@ -1,21 +1,21 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import type { CarousleStackProps } from "./CarouselStack";
+import { PREFIX, type CarousleStackProps } from "./CarouselStack";
 import CarouselStack from "./CarouselStack.vue";
 
-enum Classes {
-  ROOT_CLASS = "carousel-stack",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  ORIENTATION = `${Classes.ROOT_CLASS}_orientation`,
-  STRETCH = `${Classes.ROOT_CLASS}_stretch`,
-  GRABBING = `${Classes.ROOT_CLASS}_grabbing`,
-  CLICKABLE = `${Classes.ROOT_CLASS}_clickable`,
-  STATIC = `${Classes.ROOT_CLASS}_static`,
-}
+const Classes = {
+  ROOT_CLASS: PREFIX,
+  VARIANT: `${PREFIX}_variant`,
+  SIZE: `${PREFIX}_size`,
+  ORIENTATION: `${PREFIX}_orientation`,
+  STRETCH: `${PREFIX}_stretch`,
+  GRABBING: `${PREFIX}_grabbing`,
+  CLICKABLE: `${PREFIX}_clickable`,
+  STATIC: `${PREFIX}_static`,
+} as const;
 
 const getHeader = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find('[data-testid="carousel-stack-header"]');
+  return wrapper.find(`[data-testid="${PREFIX}__header"]`);
 };
 
 describe("CarouselStack", () => {
