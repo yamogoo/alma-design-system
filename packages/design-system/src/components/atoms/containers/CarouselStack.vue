@@ -10,7 +10,7 @@ import {
 } from "vue";
 import gsap from "gsap";
 
-import { px2rem } from "@/utils";
+import { px2rem } from "@/utils/px2rem";
 
 import type { CarousleStackProps } from "./CarouselStack";
 

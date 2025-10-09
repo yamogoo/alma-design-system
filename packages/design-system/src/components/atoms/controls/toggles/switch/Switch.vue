@@ -1,8 +1,16 @@
 <script setup lang="ts">
-import { useAttrs, useId, onMounted, watch, useTemplateRef, ref } from "vue";
+import {
+  useAttrs,
+  useId,
+  onMounted,
+  watch,
+  useTemplateRef,
+  ref,
+  computed,
+} from "vue";
 import gsap from "gsap";
 
-import { usePressed } from "@/composables/local";
+import { usePressed } from "@/composables/local/actions/usePressed";
 
 import type { SwitchProps } from "./Switch";
 
@@ -69,6 +77,18 @@ const onKeyDown = (e: KeyboardEvent): void => {
   }
 };
 
+/* * * a11y * * */
+
+const ariaLabelId = `${PREFIX}__label-${id}`;
+
+const ariaLebelledBy = computed(() => {
+  return props.label && props.label.trim() ? ariaLabelId : undefined;
+});
+
+const ariaLabel = computed(() => {
+  return !props.label || !props.label.trim() ? "Switch" : undefined;
+});
+
 /* * * Animations * * */
 
 const onAnimateKnob = (duration = 0.25): void => {
@@ -127,7 +147,8 @@ onMounted(() => {
         { [`${PREFIX}_state-disabled`]: isDisabled },
       ]"
       role="switch"
-      :aria-labelledby="`label-${id}`"
+      :aria-labelledby="ariaLebelledBy"
+      :aria-label="ariaLabel"
       :aria-checked="localIsActive"
       :aria-disabled="isDisabled"
       tabindex="0"
@@ -138,13 +159,15 @@ onMounted(() => {
           <span ref="knob" :class="`${PREFIX}__knob`"></span>
         </div>
       </div>
-      <span v-if="label" class="switch__label">{{ label }}</span>
+      <span v-if="label" :id="ariaLabelId" :class="`${PREFIX}__label`">{{
+        label
+      }}</span>
     </div>
   </template>
   <template v-if="useNative">
     <label
       ref="root"
-      :for="id"
+      :for="`${PREFIX}_id-${id}`"
       :class="[
         PREFIX,
         `${PREFIX}_variant-${variant}`,
@@ -154,14 +177,16 @@ onMounted(() => {
         `${PREFIX}_state-${isActive ? 'active' : 'normal'}`,
         { [`${PREFIX}_state-disabled`]: isDisabled },
       ]"
-      :aria-labelledby="`label-${id}`"
       tabindex="0"
     >
       <input
-        :id
         v-bind="$attrs"
+        :id="`${PREFIX}_id-${id}`"
         type="checkbox"
         :checked="isActive"
+        :disabled="isDisabled"
+        :aria-labelledby="ariaLebelledBy"
+        :aria-label="ariaLabel"
         @change="onChange"
       />
       <div :class="`${PREFIX}__track`">
@@ -169,7 +194,9 @@ onMounted(() => {
           <span ref="knob" :class="`${PREFIX}__knob`"></span>
         </div>
       </div>
-      <span v-if="label" :class="`${PREFIX}__label`">{{ label }}</span>
+      <span v-if="label" :id="ariaLabelId" :class="`${PREFIX}__label`">{{
+        label
+      }}</span>
     </label>
   </template>
 </template>

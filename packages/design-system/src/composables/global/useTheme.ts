@@ -13,7 +13,7 @@ import { Constants } from "@/constants";
 
 import type { Theme, SystemTheme, LocalStorageKey } from "@/typings";
 
-import { useTypedLocalStorage } from "@/composables/local";
+import { useTypedLocalStorage } from "@/composables/local/storage/useTypedLocalStorage";
 
 export interface UseThemeOptions {
   prefix?: string;

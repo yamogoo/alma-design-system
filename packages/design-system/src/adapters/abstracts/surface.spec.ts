@@ -1,24 +1,24 @@
 import tokens from "@/tokens";
 
 import {
-  abstractSurfaceModes,
-  abstractSurfaceTones,
-  abstractSurfaceStates,
-} from "./background";
+  getAbstractSurfaceTones,
+  getAbstractSurfaceModes,
+  getAbstractSurfaceStates,
+} from "./surface";
 
 describe("abstracSurface adapter", () => {
   test("exports modes from the light theme", () => {
-    expect(abstractSurfaceModes).toEqual(
+    expect(getAbstractSurfaceModes()).toEqual(
       Object.keys(tokens.themes.light.contracts.interactive.surface)
     );
   });
   test("exports tones for neutral", () => {
-    expect(abstractSurfaceTones).toEqual(
+    expect(getAbstractSurfaceTones()).toEqual(
       Object.keys(tokens.themes.light.contracts.interactive.surface.neutral)
     );
   });
   test("exports states for primary", () => {
-    expect(abstractSurfaceStates).toEqual(
+    expect(getAbstractSurfaceStates()).toEqual(
       Object.keys(
         tokens.themes.light.contracts.interactive.surface.neutral.primary
       )

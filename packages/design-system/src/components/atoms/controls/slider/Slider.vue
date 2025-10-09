@@ -2,7 +2,7 @@
 import { ref, computed, watch, onBeforeUnmount, useTemplateRef } from "vue";
 import gsap from "gsap";
 
-import { useHover } from "@/composables/local";
+import { useHover } from "@/composables/local/actions/useHover";
 
 import { type SliderProps } from "./Slider";
 
@@ -201,12 +201,12 @@ onBeforeUnmount(removeEventListeners);
       `${PREFIX}_mode-${mode}`,
       `${PREFIX}_tone-${tone}`,
       isDisabled
-        ? `slider_state-disabled`
-        : `slider_state-${isHovered ? 'hovered' : 'normal'}`,
+        ? `${PREFIX}-disabled`
+        : `${PREFIX}_state-${isHovered ? 'hovered' : 'normal'}`,
     ]"
     @pointerdown="onTrackPress"
   >
-    <div class="slider__track">
+    <div :class="`${PREFIX}__track`">
       <div
         ref="track"
         :class="`${PREFIX}__track-container`"

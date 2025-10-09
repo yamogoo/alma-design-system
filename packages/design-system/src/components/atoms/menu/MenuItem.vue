@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTemplateRef, watch } from "vue";
 
-import { usePressed } from "@/composables/local";
+import { usePressed } from "@/composables/local/actions/usePressed";
 
 import type { MenuItemProps } from "@/components/atoms/menu/MenuItem";
 

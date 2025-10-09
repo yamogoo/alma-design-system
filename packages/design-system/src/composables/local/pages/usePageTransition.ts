@@ -1,9 +1,9 @@
 import { ref, toValue, watch, type Ref } from "vue";
 import type { RouteMeta } from "@/typings";
 
-import { getPathSegment } from "@/utils";
+import { getPathSegment } from "@/utils/getPathSegment";
 
-import { useRouteHistory } from "@/composables/local";
+import { useRouteHistory } from "@/composables/local/router/useRouteHistory";
 
 import type { TransitionType } from "@/typings";
 

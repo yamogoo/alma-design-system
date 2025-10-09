@@ -3,9 +3,9 @@ gsap
 import { computed, onMounted, onUnmounted, ref, useTemplateRef } from "vue";
 import gsap from "gsap";
 
-import { createCustomEvent } from "@/utils";
+import { createCustomEvent } from "@/utils/events";
 
-import { usePageTransition } from "@/composables/local";
+import { usePageTransition } from "@/composables/local/pages/usePageTransition";
 
 import type { PageProps } from "./Page";
 

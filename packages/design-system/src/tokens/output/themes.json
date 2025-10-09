@@ -14378,22 +14378,22 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#d8dbdd",
+                    "$value": "#91999e",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e6e8e9",
+                    "$value": "#9ba2a7",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#ffffff",
+                    "$value": "#b9bec1",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#edeeef",
+                    "$value": "#9fa6ab",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14503,22 +14503,22 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#d8dbdd",
+                    "$value": "#91999e",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e6e8e9",
+                    "$value": "#9ba2a7",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#ffffff",
+                    "$value": "#b9bec1",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#edeeef",
+                    "$value": "#9fa6ab",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14628,22 +14628,22 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#d8dbdd",
+                    "$value": "#91999e",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e6e8e9",
+                    "$value": "#9ba2a7",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#ffffff",
+                    "$value": "#b9bec1",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#edeeef",
+                    "$value": "#9fa6ab",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -14753,22 +14753,22 @@
               "track": {
                 "background": {
                   "normal": {
-                    "$value": "#d8dbdd",
+                    "$value": "#91999e",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#e6e8e9",
+                    "$value": "#9ba2a7",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#ffffff",
+                    "$value": "#b9bec1",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "pressed": {
-                    "$value": "#edeeef",
+                    "$value": "#9fa6ab",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -15301,7 +15301,7 @@
                   "$unit": "hex"
                 },
                 "active": {
-                  "$value": "#91999e",
+                  "$value": "#013cfe",
                   "$type": "color",
                   "$unit": "hex"
                 }

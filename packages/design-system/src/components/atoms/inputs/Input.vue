@@ -11,7 +11,7 @@ import {
 import { useFocus } from "@vueuse/core";
 import gsap from "gsap";
 
-import { sanitizeInput } from "@/utils";
+import { sanitizeInput } from "@/utils/sanitize";
 
 import { type InputProps } from "@/components/atoms/inputs/Input";
 

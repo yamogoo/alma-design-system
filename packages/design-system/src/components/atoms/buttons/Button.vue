@@ -11,7 +11,7 @@ import gsap from "gsap";
 
 import tokens from "@/tokens";
 
-import { useHover } from "@/composables/local";
+import { useHover } from "@/composables/local/actions/useHover";
 
 import type { IconSize } from "@/adapters/atoms/icon";
 

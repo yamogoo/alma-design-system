@@ -7,22 +7,22 @@
       "track": {
         "background": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.pressed.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.pressed.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -132,22 +132,22 @@
       "track": {
         "background": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.pressed.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.pressed.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -257,22 +257,22 @@
       "track": {
         "background": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.pressed.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.pressed.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -382,22 +382,22 @@
       "track": {
         "background": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.pressed.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.tertiary.pressed.$value}",
             "$type": "color",
             "$unit": "hex"
           }

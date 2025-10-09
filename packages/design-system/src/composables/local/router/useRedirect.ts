@@ -5,7 +5,7 @@ import {
   type RouteLocationRaw,
 } from "vue-router";
 
-import { useTimeout } from "@/composables/local";
+import { useTimeout } from "@/composables/local/timers/useTimeout";
 
 export type Routes = RouteLocationRaw;
 

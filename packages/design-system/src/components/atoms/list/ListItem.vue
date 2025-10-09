@@ -2,7 +2,7 @@
 import { computed, inject, useSlots, useTemplateRef } from "vue";
 import type { ListItemProps } from "./ListItem";
 
-import { useHover } from "@/composables/local";
+import { useHover } from "@/composables/local/actions/useHover";
 
 import {
   ListInjectionKey,

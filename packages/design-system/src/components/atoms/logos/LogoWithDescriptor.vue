@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTemplateRef } from "vue";
 
-import { useHover, usePressed } from "@/composables/local";
+import { useHover, usePressed } from "@/composables/local/actions";
 
 import { type LogoWithDescriptorProps } from "@/components/atoms/logos/LogoWithDescriptor";
 import Logo from "@/components/atoms/logos/Logo.vue";

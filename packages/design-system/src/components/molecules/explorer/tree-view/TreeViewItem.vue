@@ -2,7 +2,7 @@
 import { computed, onMounted, useTemplateRef, watch } from "vue";
 import gsap from "gsap";
 
-import { useHover } from "@/composables/local";
+import { useHover } from "@/composables/local/actions/useHover";
 
 import Icon from "@/components/atoms/icons/Icon.vue";
 import Text from "@/components/atoms/typography/Text.vue";

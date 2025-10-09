@@ -17,7 +17,7 @@ import {
 } from "@/adapters/atoms/slider";
 
 const meta = {
-  title: "Atoms/Controls/Toggles/Slider/Slider",
+  title: "Atoms/Controls/Slider/Slider",
   tags: ["autodocs"],
   component: Slider,
   parameters: {

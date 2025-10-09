@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch, toValue, useTemplateRef } from "vue";
 
-import { useClickOutside } from "@/composables/local";
+import { useClickOutside } from "@/composables/local/actions/useClickOutside";
 
 import Icon from "@/components/atoms/icons/Icon.vue";
 import { type DropdownProps } from "@/components/molecules/dropdown/Dropdown";
