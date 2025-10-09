@@ -12,9 +12,7 @@ import gsap from "gsap";
 
 import { usePressed } from "@/composables/local/actions/usePressed";
 
-import type { SwitchProps } from "./Switch";
-
-const PREFIX = "switch";
+import { PREFIX, type SwitchProps } from "./Switch";
 
 defineOptions({
   inheritAttrs: false,
@@ -202,13 +200,14 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-$prefix: switch;
+$tokenName: "switch";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.switch_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           $gap: get($val, "root.gap");
           $width: px2rem(get($val, "root.width"));
           $height: px2rem(get($val, "root.height"));
@@ -247,7 +246,9 @@ $prefix: switch;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -261,7 +262,7 @@ $prefix: switch;
               @include themify($themes) {
                 outline: get($tokens, "outline") solid
                   themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.highlight"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.highlight"
                   );
               }
             }
@@ -273,7 +274,7 @@ $prefix: switch;
                 .#{$prefix}__track {
                   @include themify($themes) {
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.normal"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.track.normal"
                     );
                   }
                 }
@@ -281,7 +282,7 @@ $prefix: switch;
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.normal"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.normal"
                     );
                   }
                 }
@@ -289,7 +290,7 @@ $prefix: switch;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
                     );
                   }
                 }
@@ -299,7 +300,7 @@ $prefix: switch;
                 .#{$prefix}__track {
                   @include themify($themes) {
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.active"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.track.active"
                     );
                   }
                 }
@@ -307,7 +308,7 @@ $prefix: switch;
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.active"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.active"
                     );
                   }
                 }
@@ -315,7 +316,7 @@ $prefix: switch;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.active"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.active"
                     );
                   }
                 }
@@ -329,7 +330,7 @@ $prefix: switch;
                 .#{$prefix}__track {
                   @include themify($themes) {
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.disabled"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.track.disabled"
                     );
                   }
                 }
@@ -337,7 +338,7 @@ $prefix: switch;
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.disabled"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.disabled"
                     );
                   }
                 }
@@ -345,7 +346,7 @@ $prefix: switch;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
                     );
                   }
                 }
@@ -355,7 +356,7 @@ $prefix: switch;
                 .#{$prefix}__track {
                   @include themify($themes) {
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.track.disabled"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.track.disabled"
                     );
                   }
                 }
@@ -363,7 +364,7 @@ $prefix: switch;
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.disabled"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.disabled"
                     );
                   }
                 }
@@ -371,7 +372,7 @@ $prefix: switch;
                 .#{$prefix}__label {
                   @include themify($themes) {
                     color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
                     );
                   }
                 }

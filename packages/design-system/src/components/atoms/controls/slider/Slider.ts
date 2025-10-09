@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   SliderMode,
   SliderSize,
@@ -32,3 +34,5 @@ export interface SliderProps
   knobAnimScaleNormal?: number;
   knobAnimDuration?: number;
 }
+
+export const PREFIX = `${NAME_SPACE}slider`;

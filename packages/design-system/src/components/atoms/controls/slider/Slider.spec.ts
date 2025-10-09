@@ -1,15 +1,18 @@
 import { mount } from "@vue/test-utils";
 
-import { type SliderProps } from "@/components/atoms/controls/slider/Slider";
+import {
+  PREFIX,
+  type SliderProps,
+} from "@/components/atoms/controls/slider/Slider";
 import Slider from "@/components/atoms/controls/slider/Slider.vue";
 
-enum Classes {
-  ROOT_CLASS = "slider",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  TONE = `${Classes.ROOT_CLASS}_tone`,
-}
+const Classes = {
+  ROOT_CLASS: PREFIX,
+  VARIANT: `${PREFIX}_variant`,
+  SIZE: `${PREFIX}_size`,
+  MODE: `${PREFIX}_mode`,
+  TONE: `${PREFIX}_tone`,
+};
 
 const REQIERED_PROPS: SliderProps = {
   value: 0,
@@ -33,14 +36,14 @@ describe("Slider", () => {
     expect(wrapper.classes()).toContain(`${Classes.SIZE}-${props.size}`);
     expect(wrapper.classes()).toContain(`${Classes.MODE}-${props.mode}`);
     expect(wrapper.classes()).toContain(`${Classes.TONE}-${props.tone}`);
-    expect(wrapper.classes()).toContain("slider_state-normal");
+    expect(wrapper.classes()).toContain(`${PREFIX}_state-normal`);
   });
 
   test("applies disabled state class when isDisabled=true", () => {
     const wrapper = mount(Slider, {
       props: { ...REQIERED_PROPS, isDisabled: true },
     });
-    expect(wrapper.classes()).toContain("slider_state-disabled");
+    expect(wrapper.classes()).toContain(`${PREFIX}_state-disabled`);
   });
 
   test("knob exposes ARIA attributes bound to value/min/max", () => {
