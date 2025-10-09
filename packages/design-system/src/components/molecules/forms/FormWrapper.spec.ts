@@ -1,14 +1,16 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
+import { PREFIX } from "@/components/atoms/containers/Surface";
+
 import { type FormWrapperProps } from "@/components/molecules/forms/FormWrapper";
 import FormWrapper from "@/components/molecules/forms/FormWrapper.vue";
 
-enum Classes {
-  ROOT_CLASS = "form-wrapper",
-  BASE_CLASS_NAME = "surface",
-  VARIANT = `${Classes.BASE_CLASS_NAME}_variant`,
-  SIZE = `${Classes.BASE_CLASS_NAME}_size`,
-}
+const Classes = {
+  ROOT_CLASS: "form-wrapper",
+  BASE_CLASS_NAME: PREFIX,
+  VARIANT: `${PREFIX}_variant`,
+  SIZE: `${PREFIX}_size`,
+};
 
 const getSurface = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.findComponent({ name: "Surface" });

@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   SurfaceMode,
   SurfaceSize,
@@ -37,3 +39,5 @@ export interface SurfaceProps
   rounded?: boolean;
   divider?: string;
 }
+
+export const PREFIX = `${NAME_SPACE}surface`;

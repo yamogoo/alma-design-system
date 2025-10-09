@@ -15,10 +15,8 @@ import { useHover } from "@/composables/local/actions/useHover";
 
 import type { IconSize } from "@/adapters/atoms/icon";
 
-import type { ButtonProps } from "./Button";
+import { PREFIX, type ButtonProps } from "./Button";
 import Icon from "@/components/atoms/icons/Icon.vue";
-
-const PREFIX = "button";
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   variant: "default",
@@ -123,7 +121,7 @@ const onKeyup = (e: KeyboardEvent) => {
         [`${PREFIX}_state-bordered`]: bordered,
       },
     ]"
-    data-testid="button"
+    :data-testid="PREFIX"
     :aria-label="label || arialLabel || 'button'"
     :aria-disabled="isDisabled"
     :disabled="as === 'button' ? isDisabled : undefined"
@@ -141,7 +139,7 @@ const onKeyup = (e: KeyboardEvent) => {
       <Icon
         v-if="prependIconName"
         :class="`${PREFIX}__icon`"
-        :data-testid="'button__icon'"
+        :data-testid="`${PREFIX}__icon`"
         :name="prependIconName"
         :appearance="prependIconStyle"
         :weight="prependIconWeight"
@@ -152,9 +150,12 @@ const onKeyup = (e: KeyboardEvent) => {
     <div v-if="$slots.content" :class="`${PREFIX}__content`">
       <slot name="content"></slot>
     </div>
-    <span v-if="label" :class="`${PREFIX}__label`" data-testid="button-label">{{
-      label
-    }}</span>
+    <span
+      v-if="label"
+      :class="`${PREFIX}__label`"
+      :data-testid="`${PREFIX}__label`"
+      >{{ label }}</span
+    >
     <slot name="append-icon">
       <Icon
         v-if="appendIconName"
@@ -170,7 +171,7 @@ const onKeyup = (e: KeyboardEvent) => {
 </template>
 
 <style lang="scss">
-$prefix: "button";
+$prefix: getPrefix("button");
 
 @mixin defineButtonSizes($prefix, $map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {

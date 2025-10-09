@@ -1,4 +1,13 @@
 {
+  "namespace": {
+    "$value": "al-",
+    "$type": "string",
+    "$unit": "alias",
+    "$meta": {
+      "descritpion": "Global component prefix",
+      "category": "config"
+    }
+  },
   "isThemeTransitionsEnabled": {
     "$value": true,
     "$type": "boolean",

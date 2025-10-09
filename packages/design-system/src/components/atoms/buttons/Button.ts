@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   ButtonMode,
   ButtonSize,
@@ -44,3 +46,5 @@ export interface ButtonProps extends Partial<ButtonRequiredProps> {
   arialLabel?: string;
   bordered?: boolean;
 }
+
+export const PREFIX = `${NAME_SPACE}button`;

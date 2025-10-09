@@ -1,17 +1,17 @@
 import { mount } from "@vue/test-utils";
 
-import type { SurfaceProps } from "./Surface";
+import { PREFIX, type SurfaceProps } from "./Surface";
 import Surface from "./Surface.vue";
 
-enum Classes {
-  ROOT_CLASS = "surface",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  TONE = `${Classes.ROOT_CLASS}_tone`,
-  ELEVATED = `${Classes.ROOT_CLASS}_elevated`,
-  BORDER_SIDES = `${Classes.ROOT_CLASS}_border`,
-}
+const Classes = {
+  ROOT_CLASS: PREFIX,
+  VARIANT: `${PREFIX}_variant`,
+  SIZE: `${PREFIX}_size`,
+  MODE: `${PREFIX}_mode`,
+  TONE: `${PREFIX}_tone`,
+  ELEVATED: `${PREFIX}_elevated`,
+  BORDER_SIDES: `${PREFIX}_border`,
+} as const;
 
 describe("Surface", () => {
   describe("classes", () => {

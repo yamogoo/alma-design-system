@@ -16,10 +16,6 @@ export const getIconByClassName = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="icon"]');
 };
 
-export const getButtonIconByClassName = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find('[data-testid="button__icon"]');
-};
-
 export const getDivider = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.findComponent({ name: "Divider" });
 };

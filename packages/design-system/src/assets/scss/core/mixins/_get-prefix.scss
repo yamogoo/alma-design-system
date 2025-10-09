@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "../../abstracts/config" as *;
+
+$namespace: map.get($config, "namespace");
+
+@function getPrefix($prefix: "") {
+  @return "#{$namespace}#{$prefix}";
+}

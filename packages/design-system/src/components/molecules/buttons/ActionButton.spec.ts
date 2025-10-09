@@ -1,9 +1,13 @@
-import { mount } from "@vue/test-utils";
+import { mount, VueWrapper } from "@vue/test-utils";
 
-import { getButtonIconByClassName } from "@/__tests__/utils";
+import { PREFIX } from "@/components/atoms/buttons/Button";
 
 import type { ActionButtonProps } from "./ActionButton";
 import ActionButton from "./ActionButton.vue";
+
+export const getButtonIconByClassName = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`[data-testid="${PREFIX}__icon"]`);
+};
 
 const REQUIRED_PROPS: ActionButtonProps = {
   size: "sm",
@@ -18,7 +22,7 @@ describe("ActionButton", () => {
         props: { ...REQUIRED_PROPS },
       });
 
-      const buttonEl = wrapper.find('[data-testid="button"]');
+      const buttonEl = wrapper.find(`[data-testid="${PREFIX}"]`);
       const isButtonExists = buttonEl.exists();
 
       expect(isButtonExists).toBeTruthy();

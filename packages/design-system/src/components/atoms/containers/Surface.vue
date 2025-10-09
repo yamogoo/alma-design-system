@@ -2,6 +2,7 @@
 import { computed, useTemplateRef } from "vue";
 
 import {
+  PREFIX,
   SurfaceBorderPositionAliases,
   SurfaceBorderPositions,
   type SurfaceProps,
@@ -10,8 +11,6 @@ import type {
   UIElementShortPositionAliases,
   UIElementShortPositions,
 } from "@/typings";
-
-const PREFIX = "surface";
 
 const props = withDefaults(defineProps<SurfaceProps>(), {
   as: "div",
@@ -75,7 +74,7 @@ defineExpose({
 </template>
 
 <style lang="scss">
-$prefix: surface;
+$prefix: getPrefix("surface");
 
 @mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
   @each $variant, $sizes in $map {
