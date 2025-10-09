@@ -696,7 +696,8 @@ $components:(
   lg: (
   root: (
   min-width: 76px,
-  height: 56px
+  height: 56px,
+  border-width: 1px
 ),
   current-value: (
   root: (
@@ -723,7 +724,8 @@ $components:(
   md: (
   root: (
   min-width: 76px,
-  height: 44px
+  height: 44px,
+  border-width: 1px
 ),
   current-value: (
   root: (

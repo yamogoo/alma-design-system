@@ -2,9 +2,11 @@
   "neutral": {
     "primary": {
       "root": {
-        "highlight": "{themes.light.contracts.static.highlight.accent.normal.$value}",
-        "$type": "color",
-        "$unit": "hex"
+        "highlight": {
+          "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
       },
       "track": {
         "normal": {
@@ -25,7 +27,7 @@
       },
       "knob": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.normal.$value}",
           "$type": "color",
           "$unit": "hex"
         },

@@ -1,47 +1,54 @@
 {
   "neutral": {
     "primary": {
+      "root": {
+        "highlight": {
+          "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
       "currentValue": {
         "label": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "expanded": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "expandedHovered": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }
         },
         "icon": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.hovered.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "expanded": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.disabled.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "expandedHovered": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -58,12 +65,34 @@
             "$unit": "hex"
           },
           "expanded": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.primary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "expandedHovered": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        },
+        "border": {
+          "normal": {
+            "$value": "{themes.light.contracts.interactive.stroke.neutral.primary.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.light.contracts.interactive.stroke.neutral.primary.hovered.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "expanded": {
+            "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "expandedHovered": {
+            "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -72,12 +101,12 @@
       "options": {
         "background": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }

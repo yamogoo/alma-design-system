@@ -257,11 +257,13 @@ $prefix: switch;
           }
 
           &:focus-visible {
-            @include themify($themes) {
-              outline: get($tokens, "outline") solid
-                themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.highlight"
-                );
+            .#{$prefix}__track {
+              @include themify($themes) {
+                outline: get($tokens, "outline") solid
+                  themed(
+                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.highlight"
+                  );
+              }
             }
           }
 

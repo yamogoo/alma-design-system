@@ -1137,9 +1137,9 @@ $themes:(
   highlight: #013cfe
 ),
   track: (
-  normal: #778088,
-  disabled: #99a0a6,
-  active: #778088
+  normal: #282b2d,
+  disabled: #323638,
+  active: #0136e6
 ),
   knob: (
   normal: #f2f3f4,
@@ -1202,30 +1202,39 @@ $themes:(
   dropdown: (
   neutral: (
   primary: (
+  root: (
+  highlight: #013cfe
+),
   current-value: (
   label: (
-  normal: #666e74,
-  hovered: #6c757b,
-  expanded: #818990,
-  expanded-hovered: #666e74
+  normal: #b2b7bb,
+  hovered: #bec2c5,
+  expanded: #e2e4e6,
+  expanded-hovered: #b2b7bb
 ),
   icon: (
-  normal: #666e74,
-  hovered: #6c757b,
-  expanded: #818990,
-  expanded-hovered: #666e74
+  normal: #b2b7bb,
+  hovered: #bec2c5,
+  expanded: #e2e4e6,
+  expanded-hovered: #b2b7bb
 ),
   background: (
   normal: #282b2d,
   hovered: #2a2e30,
   expanded: #323638,
   expanded-hovered: #282b2d
+),
+  border: (
+  normal: #2f3235,
+  hovered: #323538,
+  expanded: #013cfe,
+  expanded-hovered: #013cfe
 )
 ),
   options: (
   background: (
   normal: #282b2d,
-  hovered: #282b2d
+  hovered: #323638
 )
 )
 )
@@ -4425,7 +4434,7 @@ $themes:(
   active: #013cfe
 ),
   knob: (
-  normal: #dfe1e3,
+  normal: #f9f9f9,
   disabled: #ffffff,
   active: #dfe1e3
 ),
@@ -4485,30 +4494,39 @@ $themes:(
   dropdown: (
   neutral: (
   primary: (
+  root: (
+  highlight: #013cfe
+),
   current-value: (
   label: (
-  normal: #848c93,
-  hovered: #8d949b,
-  expanded: #a9afb4,
-  expanded-hovered: #848c93
+  normal: #393d41,
+  hovered: #3c4145,
+  expanded: #474c51,
+  expanded-hovered: #393d41
 ),
   icon: (
-  normal: #848c93,
-  hovered: #8d949b,
-  expanded: #a9afb4,
-  expanded-hovered: #848c93
+  normal: #393d41,
+  hovered: #3c4145,
+  expanded: #474c51,
+  expanded-hovered: #393d41
 ),
   background: (
   normal: #dfe1e3,
   hovered: #edeff0,
-  expanded: #ffffff,
-  expanded-hovered: #dfe1e3
+  expanded: #f9f9f9,
+  expanded-hovered: #f9f9f9
+),
+  border: (
+  normal: #d5d7d9,
+  hovered: #e3e4e5,
+  expanded: #013cfe,
+  expanded-hovered: #013cfe
 )
 ),
   options: (
   background: (
-  normal: #dfe1e3,
-  hovered: #dfe1e3
+  normal: #f9f9f9,
+  hovered: #f9f9f9
 )
 )
 )

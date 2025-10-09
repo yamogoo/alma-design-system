@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { onMounted, ref, watch, toValue, useTemplateRef } from "vue";
+import {
+  nextTick,
+  onMounted,
+  ref,
+  watch,
+  toValue,
+  useTemplateRef,
+  useId,
+} from "vue";
 
 import { useClickOutside } from "@/composables/local/actions/useClickOutside";
 
@@ -25,16 +33,44 @@ const props = withDefaults(defineProps<DropdownProps>(), {
 });
 
 const refRoot = useTemplateRef<HTMLDivElement | null>("root");
+const refTrigger = useTemplateRef<HTMLButtonElement | null>("trigger");
+const refOptions = useTemplateRef<HTMLDivElement | null>("options");
 
 const isExpanded = ref(false);
 
 useClickOutside(refRoot, () => {
-  isExpanded.value = false;
+  if (!isExpanded.value) return;
+  void closeOptions(false);
 });
 
-const onExpand = (): void => {
-  isExpanded.value = !isExpanded.value;
+const openOptions = async () => {
+  if (isExpanded.value) return;
+  isExpanded.value = true;
+  await nextTick();
+  refOptions.value?.focus();
 };
+
+const closeOptions = async (shouldFocusTrigger = true) => {
+  if (!isExpanded.value) return;
+  isExpanded.value = false;
+  if (!shouldFocusTrigger) return;
+  await nextTick();
+  refTrigger.value?.focus();
+};
+
+const toggleOptions = async () => {
+  if (isExpanded.value) {
+    await closeOptions();
+    return;
+  }
+  await openOptions();
+};
+
+/* * * a11y * * */
+
+const idSuffix = useId();
+const triggerId = `${PREFIX}_trigger-${idSuffix}`;
+const optionsId = `${PREFIX}_options-${idSuffix}`;
 
 /* * * Animations * * */
 
@@ -90,7 +126,40 @@ watch(
 );
 
 const onOptionClick = (): void => {
-  if (props.closeOnOptionClick) isExpanded.value = false;
+  if (props.closeOnOptionClick) void closeOptions();
+};
+
+/* * * Keyboard * * */
+
+const onTriggerKeydown = async (event: KeyboardEvent) => {
+  switch (event.key) {
+    case "Enter":
+    case " ":
+      event.preventDefault();
+      await toggleOptions();
+      break;
+    case "ArrowDown":
+    case "ArrowUp":
+      event.preventDefault();
+      await openOptions();
+      break;
+    case "Escape":
+      event.preventDefault();
+      await closeOptions();
+      break;
+  }
+};
+
+const onOptionsKeydown = async (event: KeyboardEvent) => {
+  switch (event.key) {
+    case "Escape":
+      event.preventDefault();
+      await closeOptions();
+      break;
+    case "Tab":
+      await closeOptions(false);
+      break;
+  }
 };
 </script>
 
@@ -99,7 +168,6 @@ const onOptionClick = (): void => {
 <template>
   <div
     ref="root"
-    role="menu"
     data-testid="dropdown"
     :class="[
       PREFIX,
@@ -111,13 +179,18 @@ const onOptionClick = (): void => {
       },
       `${PREFIX}_state-${isExpanded ? 'expanded' : 'normal'}`,
     ]"
-    :aria-expanded="isExpanded"
   >
-    <div
+    <button
+      ref="trigger"
       :class="`${PREFIX}__current-value`"
       data-testid="dropdown-value"
       aria-haspopup="listbox"
-      @click="onExpand"
+      :aria-controls="optionsId"
+      :aria-expanded="isExpanded"
+      :id="triggerId"
+      type="button"
+      @click="toggleOptions"
+      @keydown="onTriggerKeydown"
     >
       <div :class="`${PREFIX}__current-value-container`">
         <div :class="`${PREFIX}__current-value-content`">
@@ -135,12 +208,18 @@ const onOptionClick = (): void => {
           :weight="'500'"
         ></Icon>
       </div>
-    </div>
+    </button>
     <Transition :css="false">
       <div
         v-if="isExpanded"
+        ref="options"
+        :id="optionsId"
         :class="`${PREFIX}__options`"
+        role="listbox"
+        :aria-labelledby="triggerId"
+        tabindex="0"
         @click="onOptionClick"
+        @keydown="onOptionsKeydown"
       >
         <div v-if="$slots.controlbar" :class="`${PREFIX}__controlbar`">
           <slot name="controlbar"></slot>
@@ -159,6 +238,7 @@ $prefix: "dropdown";
     @each $size, $val in $sizes {
       $min-width: px2rem(get($val, "root.min-width"));
       $height: px2rem(get($val, "root.height"));
+      $border-width: px2rem(get($val, "root.border-width"));
 
       $value-gap: px2rem(get($val, "current-value.root.gap"));
       $value-padding: get($val, "current-value.root.padding");
@@ -178,12 +258,14 @@ $prefix: "dropdown";
           &.#{$prefix}_state-normal {
             .#{$prefix}__current-value {
               border-radius: $value-border-radius;
+              border-width: $border-width;
             }
           }
 
           &.#{$prefix}_state-expanded {
             .#{$prefix}__current-value {
               border-radius: $value-border-radius $value-border-radius 0 0;
+              border-width: $border-width;
             }
           }
 
@@ -191,6 +273,8 @@ $prefix: "dropdown";
             height: $height;
             gap: $value-gap;
             padding: $value-padding;
+
+            border-style: solid;
 
             &-label {
               @extend %t__#{$value-font-style};
@@ -204,6 +288,10 @@ $prefix: "dropdown";
           .#{$prefix}__options {
             padding: $options-padding;
             border-radius: 0 0 $options-border-radius $options-border-radius;
+            border-left-width: $border-width;
+            border-bottom-width: $border-width;
+            border-right-width: $border-width;
+            border-style: solid;
           }
         }
       }
@@ -218,12 +306,32 @@ $prefix: "dropdown";
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
+          .#{$prefix}__current-value {
+            &:focus {
+              outline: none;
+            }
+
+            &:focus-visible {
+              @include themify($themes) {
+                outline: get($tokens, "outline") solid
+                  themed(
+                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.highlight"
+                  );
+              }
+            }
+          }
+
           &.#{$prefix}_state-normal {
             .#{$prefix}__current-value {
               @include themify($themes) {
+                $border-color: themed(
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.border.normal"
+                );
+
                 background-color: themed(
                   "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.normal"
                 );
+                border-color: $border-color;
               }
 
               &-label {
@@ -271,9 +379,17 @@ $prefix: "dropdown";
           &.dropdown_state-expanded {
             .dropdown__current-value {
               @include themify($themes) {
+                $border-color: themed(
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.border.expanded"
+                );
+
                 background-color: themed(
                   "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.expanded"
                 );
+                border-left-color: $border-color;
+                border-top-color: $border-color;
+                border-right-color: $border-color;
+                border-bottom-color: rgba($border-color, 0);
               }
 
               &-label {
@@ -322,6 +438,10 @@ $prefix: "dropdown";
                 background-color: themed(
                   "components.molecules.#{$prefix}.#{$mode}.#{$tone}.options.background.normal"
                 );
+                $border-color: themed(
+                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.border.expanded"
+                );
+                border-color: $border-color;
               }
 
               &:hover {

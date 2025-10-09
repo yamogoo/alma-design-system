@@ -11,6 +11,11 @@
           "$value": 56,
           "$type": "number",
           "$unit": "px"
+        },
+        "borderWidth": {
+          "$value": "{tokens.outline.$value}",
+          "$type": "number",
+          "$unit": "px"
         }
       },
       "currentValue": {
@@ -85,6 +90,11 @@
         },
         "height": {
           "$value": 44,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderWidth": {
+          "$value": "{tokens.outline.$value}",
           "$type": "number",
           "$unit": "px"
         }

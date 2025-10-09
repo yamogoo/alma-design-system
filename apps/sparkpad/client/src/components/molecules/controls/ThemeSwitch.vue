@@ -4,7 +4,7 @@ import { storeToRefs } from "pinia";
 
 import { useConfigStore } from "@/stores";
 
-import { Assets, Components } from "@alma/design-system";
+import { Components } from "@alma/design-system";
 
 const { currentTheme } = storeToRefs(useConfigStore());
 const { toggleTheme } = useConfigStore();
@@ -22,19 +22,19 @@ const onChangeTheme = () => toggleTheme();
 
 <template>
   <Components.Atoms.ControlWrapper class="theme-switch" :size="'md'">
-    <Components.Atoms.AnimatedIcon
+    <!-- <Components.Atoms.AnimatedIcon
       :animation-data="Assets.Animations.themeIcon"
       :speed="1.33"
       :is-active="!isLightTheme"
       :size="'sm'"
       :mode="'neutral'"
       :tone="'primary'"
-    ></Components.Atoms.AnimatedIcon>
+    ></Components.Atoms.AnimatedIcon> -->
     <Components.Atoms.Switch
       data-testid="theme-switch"
       :is-active="!isLightTheme"
       :is-disabled="false"
-      :size="'sm'"
+      :size="'md'"
       aria-label="change-theme"
       @update:is-active="onChangeTheme"
     ></Components.Atoms.Switch>

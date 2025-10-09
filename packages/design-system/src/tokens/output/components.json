@@ -1719,6 +1719,11 @@
               "$value": 56,
               "$type": "number",
               "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
             }
           },
           "currentValue": {
@@ -1803,6 +1808,11 @@
             },
             "height": {
               "$value": 44,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
               "$type": "number",
               "$unit": "px"
             }
