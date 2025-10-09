@@ -122,7 +122,7 @@ const onKeyup = (e: KeyboardEvent) => {
       },
     ]"
     :data-testid="PREFIX"
-    :aria-label="label || arialLabel || 'button'"
+    :aria-label="label || ariaLabel || 'button'"
     :aria-disabled="isDisabled"
     :disabled="as === 'button' ? isDisabled : undefined"
     :tabindex="as !== 'button' ? (isDisabled ? -1 : 0) : undefined"

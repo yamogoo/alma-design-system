@@ -6,7 +6,7 @@ import { PREFIX } from "@/components/atoms/inputs/Input";
 
 import { type PasswordInputProps } from "./PasswordInput";
 import Input from "@/components/atoms/inputs/Input.vue";
-import ControlButton from "@/components/molecules/buttons/ControlButton.vue";
+import ControlButton from "@/components/molecules/buttons/aliases/ControlButton.vue";
 
 const MASKED_BUTTON_SCALE_OUT = 0.75,
   MASKED_BUTTON_SCALE_IN = 1;
@@ -104,9 +104,7 @@ const onAnimMaskedButtonLeave = (el: Element, done: () => void): void => {
           :data-testid="`${PREFIX}__mask-button`"
           :size="'xs'"
           :icon-size="'xs'"
-          :mode="
-            !isError ? (mode === 'neutral' ? 'neutral' : 'accent') : 'negative'
-          "
+          :mode="!isError ? 'neutral' : 'negative'"
           :tone="'primary'"
           :icon-name="!localMasked ? 'eye' : 'eyeDisabled'"
           :icon-style="'outline'"

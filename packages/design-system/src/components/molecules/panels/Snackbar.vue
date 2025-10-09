@@ -2,7 +2,7 @@
 import { type SnackbarProps } from "@/components/molecules/panels/Snackbar";
 
 import Text from "@/components/atoms/typography/Text.vue";
-import ControlButton from "@/components/molecules/buttons/ControlButton.vue";
+import ControlButton from "@/components/molecules/buttons/aliases/ControlButton.vue";
 
 const PREFIX = "snackbar";
 

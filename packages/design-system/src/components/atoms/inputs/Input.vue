@@ -17,7 +17,7 @@ import { sanitizeInput } from "@/utils/sanitize";
 import { PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
 
 import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
-import ControlButton from "@/components/molecules/buttons/ControlButton.vue";
+import ControlButton from "@/components/molecules/buttons/aliases/ControlButton.vue";
 import Text from "@/components/atoms/typography/Text.vue";
 
 const RESET_BUTTON_SCALE_IN = 1,
