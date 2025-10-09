@@ -74,9 +74,10 @@ defineExpose({
 </template>
 
 <style lang="scss">
-$prefix: getPrefix("surface");
+$tokenName: "surface";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $radius: px2rem(get($val, "root.border-radius"));
@@ -91,7 +92,7 @@ $prefix: getPrefix("surface");
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.contracts.interactive.#{$prefix}")
+  $map: get($themes, "light.contracts.interactive.#{$tokenName}")
 ) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {

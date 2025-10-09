@@ -2,7 +2,6 @@
 
 
 $config:(
-  config: (
   namespace: al-,
   is-theme-transitions-enabled: true,
   is-full-runtime: true,
@@ -10,5 +9,4 @@ $config:(
   density-space: 1px,
   density-line: 1.35px,
   density-target: 40px
-)
 );

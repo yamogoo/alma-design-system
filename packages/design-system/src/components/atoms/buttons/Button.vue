@@ -171,9 +171,13 @@ const onKeyup = (e: KeyboardEvent) => {
 </template>
 
 <style lang="scss">
-$prefix: getPrefix("button");
+$tokenName: "button";
+$prefix: getPrefix($tokenName);
 
-@mixin defineButtonSizes($prefix, $map: get($components, "atoms.#{$prefix}")) {
+@mixin defineButtonSizes(
+  $prefix,
+  $map: get($components, "atoms.#{$tokenName}")
+) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $button-size: px2rem(get($val, "root.size"));
@@ -214,13 +218,13 @@ $prefix: getPrefix("button");
   &.#{$prefix}_state-#{$state} {
     @include themify($themes) {
       background-color: themed(
-        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.#{$state}"
+        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.#{$state}"
       );
 
       &.#{$prefix}_bordered {
         border: get($tokens, "outline") solid
           themed(
-            "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
+            "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.#{$state}"
           );
       }
 
@@ -228,7 +232,7 @@ $prefix: getPrefix("button");
       &-outline {
         border: get($tokens, "outline") solid
           themed(
-            "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
+            "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.#{$state}"
           );
       }
     }
@@ -236,10 +240,10 @@ $prefix: getPrefix("button");
     .#{$prefix}__label {
       @include themify($themes) {
         color: themed(
-          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.#{$state}"
+          "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.#{$state}"
         );
         fill: themed(
-          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.#{$state}"
+          "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.#{$state}"
         );
       }
     }
@@ -247,14 +251,16 @@ $prefix: getPrefix("button");
     .#{$prefix}__icon {
       @include themify($themes) {
         fill: themed(
-          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.#{$state}"
+          "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.#{$state}"
         );
       }
     }
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -267,7 +273,7 @@ $prefix: getPrefix("button");
             @include themify($themes) {
               outline: get($tokens, "outline") solid
                 themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.highlight"
                 );
             }
           }

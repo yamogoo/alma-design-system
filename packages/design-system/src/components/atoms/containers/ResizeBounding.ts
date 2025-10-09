@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type { Props } from "vue3-resize-bounding";
 
 import type {
@@ -9,9 +11,6 @@ import type {
 
 import type { UIElementStylingModifiers } from "@/typings";
 
-export const RESIZE_BOUNDING_PREFIX = "resize-bounding";
-export const RESIZE_BOUNDING_PREFIX_WITH_DIVIDER = `${RESIZE_BOUNDING_PREFIX}__`;
-
 export interface ResizeBoundingProps
   extends Partial<
       UIElementStylingModifiers<
@@ -22,3 +21,7 @@ export interface ResizeBoundingProps
       >
     >,
     Omit<Props, "styles" | "options"> {}
+
+export const SUFIX = "resize-bounding";
+export const PREFIX_WITH_DIVIDER = `${NAME_SPACE}${SUFIX}__`;
+export const PREFIX = `${NAME_SPACE}${SUFIX}`;

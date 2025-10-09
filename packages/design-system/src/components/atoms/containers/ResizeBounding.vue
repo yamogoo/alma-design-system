@@ -4,8 +4,8 @@ import Resizer from "vue3-resize-bounding";
 import resizeBounding from "@/tokens/src/components/atoms/resizeBounding.json";
 
 import {
-  RESIZE_BOUNDING_PREFIX,
-  RESIZE_BOUNDING_PREFIX_WITH_DIVIDER,
+  PREFIX,
+  PREFIX_WITH_DIVIDER,
   type ResizeBoundingProps,
 } from "./ResizeBounding";
 
@@ -33,15 +33,15 @@ const splitterWidth = componentToken.splitter.width.$value;
 <template>
   <Resizer
     v-bind="props"
-    data-testid="resizer"
+    :data-testid="PREFIX"
     :class="[
-      `${RESIZE_BOUNDING_PREFIX}_variant-${variant}`,
-      `${RESIZE_BOUNDING_PREFIX}_size-${size}`,
-      `${RESIZE_BOUNDING_PREFIX}_mdoe-${tone}`,
-      `${RESIZE_BOUNDING_PREFIX}_tone-${mode}`,
+      `${PREFIX}_variant-${variant}`,
+      `${PREFIX}_size-${size}`,
+      `${PREFIX}_mdoe-${tone}`,
+      `${PREFIX}_tone-${mode}`,
     ]"
     :options="{
-      prefix: RESIZE_BOUNDING_PREFIX_WITH_DIVIDER,
+      prefix: PREFIX_WITH_DIVIDER,
       width: 4,
       splitterWidthNormal: splitterWidth,
       splitterWidthActive: splitterWidth,
@@ -61,9 +61,10 @@ const splitterWidth = componentToken.splitter.width.$value;
 </template>
 
 <style lang="scss">
-$prefix: "resize-bounding";
+$tokenName: "resize-bounding";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -81,7 +82,9 @@ $prefix: "resize-bounding";
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -93,7 +96,7 @@ $prefix: "resize-bounding";
                 @include themify($themes) {
                   background: rgba(
                     themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.splitter.normal"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.splitter.normal"
                     ),
                     0
                   ) !important;
@@ -103,7 +106,7 @@ $prefix: "resize-bounding";
               .#{$prefix}__knob {
                 @include themify($themes) {
                   background: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.normal"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.normal"
                   ) !important;
                 }
               }
@@ -115,7 +118,7 @@ $prefix: "resize-bounding";
                 @include themify($themes) {
                   background: rgba(
                     themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.splitter.active"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.splitter.active"
                     ),
                     1
                   ) !important;
@@ -124,7 +127,7 @@ $prefix: "resize-bounding";
                 .#{$prefix}__knob {
                   @include themify($themes) {
                     background: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.knob.active"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.active"
                     ) !important;
                   }
                 }

@@ -1,88 +1,86 @@
 {
-  "config": {
-    "namespace": {
-      "$value": "al-",
-      "$type": "string",
-      "$unit": "alias",
-      "$meta": {
-        "descritpion": "Global component prefix",
-        "category": "config"
-      }
-    },
-    "isThemeTransitionsEnabled": {
-      "$value": true,
-      "$type": "boolean",
-      "$unit": "",
-      "$meta": {
-        "descritpion": "Enable transitions while theme changing",
-        "category": "config"
-      }
-    },
-    "isFullRuntime": {
-      "$value": true,
-      "$type": "boolean",
-      "$unit": "",
-      "$meta": {
-        "descritpion": "Switch between hybrid and full runtime modes",
-        "category": "config"
-      }
-    },
-    "scaleFactor": {
-      "$value": 1,
-      "$type": "number",
-      "$unit": "",
-      "$meta": {
-        "description": "Global font scale factor to unify font sizes across platforms. Implementation for mobile platforms is not active yet",
-        "category": "config",
-        "build": {
-          "web": {
-            "exportAsVar": true,
-            "varName": "--scale-factor"
-          },
-          "ios": {
-            "applyMultiplier": true,
-            "status": "unused"
-          },
-          "android": {
-            "applyMultiplier": true,
-            "status": "unused"
-          }
+  "namespace": {
+    "$value": "al-",
+    "$type": "string",
+    "$unit": "alias",
+    "$meta": {
+      "descritpion": "Global component prefix",
+      "category": "config"
+    }
+  },
+  "isThemeTransitionsEnabled": {
+    "$value": true,
+    "$type": "boolean",
+    "$unit": "",
+    "$meta": {
+      "descritpion": "Enable transitions while theme changing",
+      "category": "config"
+    }
+  },
+  "isFullRuntime": {
+    "$value": true,
+    "$type": "boolean",
+    "$unit": "",
+    "$meta": {
+      "descritpion": "Switch between hybrid and full runtime modes",
+      "category": "config"
+    }
+  },
+  "scaleFactor": {
+    "$value": 1,
+    "$type": "number",
+    "$unit": "",
+    "$meta": {
+      "description": "Global font scale factor to unify font sizes across platforms. Implementation for mobile platforms is not active yet",
+      "category": "config",
+      "build": {
+        "web": {
+          "exportAsVar": true,
+          "varName": "--scale-factor"
+        },
+        "ios": {
+          "applyMultiplier": true,
+          "status": "unused"
+        },
+        "android": {
+          "applyMultiplier": true,
+          "status": "unused"
         }
       }
-    },
-    "densitySpace": {
-      "$value": 1,
-      "$type": "number",
-      "meta": {
-        "build": {
-          "web": {
-            "exportAsVar": true,
-            "varName": "--density-space"
-          }
+    }
+  },
+  "densitySpace": {
+    "$value": 1,
+    "$type": "number",
+    "meta": {
+      "build": {
+        "web": {
+          "exportAsVar": true,
+          "varName": "--density-space"
         }
       }
-    },
-    "densityLine": {
-      "$value": 1.35,
-      "$type": "number",
-      "meta": {
-        "build": {
-          "web": {
-            "exportAsVar": true,
-            "varName": "--density-line"
-          }
+    }
+  },
+  "densityLine": {
+    "$value": 1.35,
+    "$type": "number",
+    "meta": {
+      "build": {
+        "web": {
+          "exportAsVar": true,
+          "varName": "--density-line"
         }
       }
-    },
-    "densityTarget": {
-      "$value": 40,
-      "$type": "number",
-      "meta": {
-        "build": {
-          "web": {
-            "exportAsVar": true,
-            "varName": "--density-target"
-          }
+    }
+  },
+  "densityTarget": {
+    "$value": 40,
+    "$type": "number",
+    "meta": {
+      "build": {
+        "web": {
+          "exportAsVar": true,
+          "varName": "--density-target"
         }
       }
     }
