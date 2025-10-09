@@ -24,7 +24,7 @@ const onOpenSettings = (): void => {
       <Components.Atoms.Logo></Components.Atoms.Logo>
     </template>
     <template #footer>
-      <Components.Atoms.Group
+      <Components.Molecules.Group
         :variant="'block'"
         :mode="'neutral'"
         :tone="'canvas'"
@@ -53,7 +53,7 @@ const onOpenSettings = (): void => {
           :icon-weight="'300'"
           @press="onOpenSettings"
         ></Components.Molecules.ControlButton>
-      </Components.Atoms.Group>
+      </Components.Molecules.Group>
     </template>
   </Components.Organisms.NavigationRail>
 </template>

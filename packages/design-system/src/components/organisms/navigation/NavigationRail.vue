@@ -2,7 +2,7 @@
 import Logo from "@/components/atoms/logos/Logo.vue";
 
 import SimpleMenu from "@/components/atoms/menu/SimpleMenu.vue";
-import Group from "@/components/atoms/containers/Group.vue";
+import Group from "@/components/molecules/containers/Group.vue";
 import ControlButton from "@/components/molecules/buttons/ControlButton.vue";
 import { type NavigationRailProps } from "@/components/organisms/navigation/NavigationRail";
 import NavigationRailTemplate from "@/components/templates/navigation/NavigationRailTemplate.vue";

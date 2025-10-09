@@ -11,7 +11,7 @@ import {
 
 import type { IListItem } from "@/components/atoms/list/ListItem";
 import ListItem from "@/components/atoms/list/ListItem.vue";
-import Group from "@/components/atoms/containers/Group.vue";
+import Group from "@/components/molecules/containers/Group.vue";
 
 const PREFIX = "list";
 

@@ -17,6 +17,10 @@
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
+  "sideEffects": [
+    "**/*.scss",
+    "**/*.css"
+  ],
   "scripts": {
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "dev": "vite",

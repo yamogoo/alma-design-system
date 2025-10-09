@@ -1,6 +1,6 @@
 import type { UIElementMaybeListOrBlockTag } from "@/typings";
 import type { IListItem } from "@/components/atoms/list/ListItem";
-import type { GroupProps } from "@/components/atoms/containers/Group";
+import type { GroupProps } from "@/components/molecules/containers/Group";
 
 export type ListSelectedItemIndex = IListItem["id"];
 export type ListSelectedItemIndexes = [

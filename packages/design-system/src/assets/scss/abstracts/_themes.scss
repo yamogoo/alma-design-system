@@ -741,60 +741,6 @@ $themes:(
 )
 )
 ),
-  group: (
-  neutral: (
-  canvas: (
-  root: (
-  background: #111213,
-  divider: #262728
-)
-),
-  primary: (
-  root: (
-  background: #282b2d,
-  divider: #3f4244
-)
-),
-  secondary: (
-  root: (
-  background: #393d41,
-  divider: #393d41
-)
-),
-  ghost: (
-  root: (
-  background: #282b2d00,
-  divider: #3f4244
-)
-)
-),
-  accent: (
-  canvas: (
-  root: (
-  background: #000b30,
-  divider: #0d2249
-)
-),
-  primary: (
-  root: (
-  background: #001149,
-  divider: #3f4244
-)
-),
-  secondary: (
-  root: (
-  background: #011f85,
-  divider: #515559
-)
-),
-  ghost: (
-  root: (
-  background: #00114900,
-  divider: #282b2d
-)
-)
-)
-),
   input: (
   neutral: (
   primary: (
@@ -1233,8 +1179,17 @@ $themes:(
 ),
   main: (
   app: (
+  neutral: (
+  primary: (
   root: (
   background: #111213
+)
+),
+  secondary: (
+  root: (
+  background: #282b2d
+)
+)
 )
 )
 ),
@@ -1297,6 +1252,60 @@ $themes:(
   secondary: (
   background: #393d41,
   border: #515559
+)
+)
+),
+  group: (
+  neutral: (
+  canvas: (
+  root: (
+  background: #111213,
+  divider: #262728
+)
+),
+  primary: (
+  root: (
+  background: #282b2d,
+  divider: #3f4244
+)
+),
+  secondary: (
+  root: (
+  background: #393d41,
+  divider: #393d41
+)
+),
+  ghost: (
+  root: (
+  background: #282b2d00,
+  divider: #3f4244
+)
+)
+),
+  accent: (
+  canvas: (
+  root: (
+  background: #000b30,
+  divider: #0d2249
+)
+),
+  primary: (
+  root: (
+  background: #001149,
+  divider: #3f4244
+)
+),
+  secondary: (
+  root: (
+  background: #011f85,
+  divider: #515559
+)
+),
+  ghost: (
+  root: (
+  background: #00114900,
+  divider: #282b2d
+)
 )
 )
 ),
@@ -4015,60 +4024,6 @@ $themes:(
 )
 )
 ),
-  group: (
-  neutral: (
-  canvas: (
-  root: (
-  background: #f9f9f9,
-  divider: #ffffff
-)
-),
-  primary: (
-  root: (
-  background: #dfe1e3,
-  divider: #c2c4c6
-)
-),
-  secondary: (
-  root: (
-  background: #d8dbdd,
-  divider: #d8dbdd
-)
-),
-  ghost: (
-  root: (
-  background: #dfe1e300,
-  divider: #c2c4c6
-)
-)
-),
-  accent: (
-  canvas: (
-  root: (
-  background: #e7ecff,
-  divider: #cacfe1
-)
-),
-  primary: (
-  root: (
-  background: #cfdaff,
-  divider: #c2c4c6
-)
-),
-  secondary: (
-  root: (
-  background: #b6c7ff,
-  divider: #bbbec0
-)
-),
-  ghost: (
-  root: (
-  background: #cfdaff00,
-  divider: #dfe1e3
-)
-)
-)
-),
   input: (
   neutral: (
   primary: (
@@ -4507,8 +4462,17 @@ $themes:(
 ),
   main: (
   app: (
+  neutral: (
+  primary: (
   root: (
   background: #dfe1e3
+)
+),
+  secondary: (
+  root: (
+  background: #dfe1e3
+)
+)
 )
 )
 ),
@@ -4571,6 +4535,60 @@ $themes:(
   secondary: (
   background: #d8dbdd,
   border: #bbbec0
+)
+)
+),
+  group: (
+  neutral: (
+  canvas: (
+  root: (
+  background: #f9f9f9,
+  divider: #ffffff
+)
+),
+  primary: (
+  root: (
+  background: #dfe1e3,
+  divider: #c2c4c6
+)
+),
+  secondary: (
+  root: (
+  background: #d8dbdd,
+  divider: #d8dbdd
+)
+),
+  ghost: (
+  root: (
+  background: #dfe1e300,
+  divider: #c2c4c6
+)
+)
+),
+  accent: (
+  canvas: (
+  root: (
+  background: #e7ecff,
+  divider: #cacfe1
+)
+),
+  primary: (
+  root: (
+  background: #cfdaff,
+  divider: #c2c4c6
+)
+),
+  secondary: (
+  root: (
+  background: #b6c7ff,
+  divider: #bbbec0
+)
+),
+  ghost: (
+  root: (
+  background: #cfdaff00,
+  divider: #dfe1e3
+)
 )
 )
 ),

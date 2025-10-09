@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { GroupProps } from "./Group";
-import Surface from "./Surface.vue";
+import Surface from "@/components/atoms/containers/Surface.vue";
 
 const PREFIX = "group";
 
@@ -53,7 +53,7 @@ const componentTag = props.as;
 
 $prefix: "group";
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));
@@ -84,7 +84,7 @@ $prefix: "group";
   }
 }
 
-.group {
+.#{$prefix} {
   display: flex;
   @extend %base-transition;
 
@@ -126,7 +126,7 @@ $prefix: "group";
     }
   }
 
-  @each $variant, $sizes in get($components, "atoms.group") {
+  @each $variant, $sizes in get($components, "molecules.group") {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.#{$prefix}size-#{$size} {

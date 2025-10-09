@@ -4,16 +4,16 @@ import {
   surfaceTones,
   type SurfaceMode,
   type SurfaceTone,
-} from "./surface";
+} from "@/adapters/atoms/surface";
 
-export type GroupVariant = keyof typeof tokens.components.atoms.group;
+export type GroupVariant = keyof typeof tokens.components.molecules.group;
 export const groupVariants = Object.keys(
-  tokens.components.atoms.group
+  tokens.components.molecules.group
 ) as GroupVariant[];
 
-export type GroupSize = keyof typeof tokens.components.atoms.group.default;
+export type GroupSize = keyof typeof tokens.components.molecules.group.default;
 export const groupSizes = Object.keys(
-  tokens.components.atoms.group.default
+  tokens.components.molecules.group.default
 ) as GroupSize[];
 
 export type GroupMode = SurfaceMode;

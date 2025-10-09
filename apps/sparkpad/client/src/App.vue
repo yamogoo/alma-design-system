@@ -58,7 +58,9 @@ onMounted(() => {
   @extend %base-transition;
 
   @include themify($themes) {
-    background-color: themed("components.main.app.root.background");
+    background-color: themed(
+      "components.main.app.neutral.secondary.root.background"
+    );
   }
 }
 </style>

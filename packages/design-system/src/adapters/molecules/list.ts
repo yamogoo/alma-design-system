@@ -3,7 +3,7 @@ import {
   groupSizes,
   groupTones,
   groupVariants,
-} from "@/adapters/atoms/group";
+} from "@/adapters/molecules/group";
 
 export const listVariants = groupVariants;
 export const listSizes = groupSizes;

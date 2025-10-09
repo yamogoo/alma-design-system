@@ -3,7 +3,6 @@ export * from "./button";
 
 // containers
 export * from "./carouselStack";
-export * from "./group";
 
 // controls
 export * from "./controlWrapper";

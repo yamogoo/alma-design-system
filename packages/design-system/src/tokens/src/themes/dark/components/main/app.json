@@ -1,7 +1,22 @@
 {
-  "root": {
-    "background": {
-      "$value": "{themes.dark.contracts.semantic.neutral.canvas.surface.$value}"
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.contracts.semantic.neutral.canvas.surface.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    },
+    "secondary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.contracts.semantic.neutral.primary.surface.$value}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
     }
   }
 }

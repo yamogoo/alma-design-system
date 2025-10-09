@@ -118,7 +118,7 @@ export interface Props {
     </Components.Atoms.Text>
 
     <template #footer>
-      <Components.Atoms.Group
+      <Components.Molecules.Group
         :orientation="'vertical'"
         :size="'sm'"
         :stretch="'fill'"
@@ -148,7 +148,7 @@ export interface Props {
           :label="$t.auth.login.form.skip"
           @press="onContinueAsGuest"
         ></Components.Molecules.ActionButton>
-      </Components.Atoms.Group>
+      </Components.Molecules.Group>
     </template>
   </Components.Molecules.Form>
 </template>

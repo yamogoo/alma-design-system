@@ -1,4 +1,4 @@
-import type { GroupVariant, GroupSize } from "@/adapters/atoms/group";
+import type { GroupVariant, GroupSize } from "@/adapters/molecules/group";
 
 import type {
   UIElementAlignment,

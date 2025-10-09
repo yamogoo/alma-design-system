@@ -218,86 +218,6 @@ $components:(
 )
 )
 ),
-  group: (
-  default: (
-  lg: (
-  root: (
-  gap: 24px,
-  padding: 0px,
-  border-radius: 0px,
-  border-width: 1px
-)
-),
-  md: (
-  root: (
-  gap: 16px,
-  padding: 0px,
-  border-radius: 0px,
-  border-width: 1px
-)
-),
-  sm: (
-  root: (
-  gap: 12px,
-  padding: 0px,
-  border-radius: 0px,
-  border-width: 1px
-)
-)
-),
-  content: (
-  lg: (
-  root: (
-  gap: 0px,
-  padding: 0px,
-  border-radius: 0px,
-  border-width: 1px
-)
-),
-  md: (
-  root: (
-  gap: 0px,
-  padding: 0px,
-  border-radius: 0px,
-  border-width: 1px
-)
-),
-  sm: (
-  root: (
-  gap: 0px,
-  padding: 0px,
-  border-radius: 0px,
-  border-width: 1px
-)
-)
-),
-  block: (
-  lg: (
-  root: (
-  gap: 24px,
-  padding: 4px,
-  border-radius: 16px,
-  border-width: 1px
-)
-),
-  md: (
-  root: (
-  gap: 12px,
-  padding: 4px,
-  border-radius: 12px,
-  border-width: 1px
-)
-),
-  sm: (
-  root: (
-  gap: 8px,
-  padding: 4px,
-  border-radius: 8px,
-  border-width: 1px
-)
-)
-)
-),
   icon: (
   default: (
   xxs: (
@@ -856,6 +776,86 @@ $components:(
 ),
   header: (
   padding: 12px 0px
+)
+)
+)
+),
+  group: (
+  default: (
+  lg: (
+  root: (
+  gap: 24px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+),
+  md: (
+  root: (
+  gap: 16px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+),
+  sm: (
+  root: (
+  gap: 12px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+)
+),
+  content: (
+  lg: (
+  root: (
+  gap: 0px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+),
+  md: (
+  root: (
+  gap: 0px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+),
+  sm: (
+  root: (
+  gap: 0px,
+  padding: 0px,
+  border-radius: 0px,
+  border-width: 1px
+)
+)
+),
+  block: (
+  lg: (
+  root: (
+  gap: 24px,
+  padding: 4px,
+  border-radius: 16px,
+  border-width: 1px
+)
+),
+  md: (
+  root: (
+  gap: 12px,
+  padding: 4px,
+  border-radius: 12px,
+  border-width: 1px
+)
+),
+  sm: (
+  root: (
+  gap: 8px,
+  padding: 4px,
+  border-radius: 8px,
+  border-width: 1px
 )
 )
 )

@@ -81,7 +81,7 @@ const onKeyDown = (e: KeyboardEvent): void => {
 
 const ariaLabelId = `${PREFIX}__label-${id}`;
 
-const ariaLebelledBy = computed(() => {
+const ariaLabelledBy = computed(() => {
   return props.label && props.label.trim() ? ariaLabelId : undefined;
 });
 
@@ -147,7 +147,7 @@ onMounted(() => {
         { [`${PREFIX}_state-disabled`]: isDisabled },
       ]"
       role="switch"
-      :aria-labelledby="ariaLebelledBy"
+      :aria-labelledby="ariaLabelledBy"
       :aria-label="ariaLabel"
       :aria-checked="localIsActive"
       :aria-disabled="isDisabled"
@@ -185,7 +185,7 @@ onMounted(() => {
         type="checkbox"
         :checked="isActive"
         :disabled="isDisabled"
-        :aria-labelledby="ariaLebelledBy"
+        :aria-labelledby="ariaLabelledBy"
         :aria-label="ariaLabel"
         @change="onChange"
       />

@@ -24,7 +24,7 @@ const onSelectKey = (key: Locale) => {
     :value="currentLocale.toUpperCase()"
     :close-on-option-click="true"
   >
-    <Components.Atoms.Options
+    <Components.Molecules.Options
       :variant="'default'"
       :size="'md'"
       :mode="'neutral'"
@@ -36,7 +36,7 @@ const onSelectKey = (key: Locale) => {
       <template #default="{ value }">
         {{ `${value}`.toUpperCase() }}
       </template>
-    </Components.Atoms.Options>
+    </Components.Molecules.Options>
   </Components.Molecules.Dropdown>
 </template>
 

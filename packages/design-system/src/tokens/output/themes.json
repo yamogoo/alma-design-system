@@ -2274,124 +2274,6 @@
             }
           }
         },
-        "group": {
-          "neutral": {
-            "canvas": {
-              "root": {
-                "background": {
-                  "$value": "#111213",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#262728",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "primary": {
-              "root": {
-                "background": {
-                  "$value": "#282b2d",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#3f4244",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "secondary": {
-              "root": {
-                "background": {
-                  "$value": "#393d41",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#393d41",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "ghost": {
-              "root": {
-                "background": {
-                  "$value": "#282b2d00",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#3f4244",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            }
-          },
-          "accent": {
-            "canvas": {
-              "root": {
-                "background": {
-                  "$value": "#000b30",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#0d2249",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "primary": {
-              "root": {
-                "background": {
-                  "$value": "#001149",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#3f4244",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "secondary": {
-              "root": {
-                "background": {
-                  "$value": "#011f85",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#515559",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "ghost": {
-              "root": {
-                "background": {
-                  "$value": "#00114900",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#282b2d",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            }
-          }
-        },
         "input": {
           "neutral": {
             "primary": {
@@ -3622,9 +3504,24 @@
       },
       "main": {
         "app": {
-          "root": {
-            "background": {
-              "$value": "#111213"
+          "neutral": {
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#111213",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#282b2d",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
             }
           }
         }
@@ -3796,6 +3693,124 @@
                 "$unit": "hex",
                 "$meta": {
                   "status": "unused"
+                }
+              }
+            }
+          }
+        },
+        "group": {
+          "neutral": {
+            "canvas": {
+              "root": {
+                "background": {
+                  "$value": "#111213",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#262728",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#282b2d",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#3f4244",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#393d41",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#393d41",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "ghost": {
+              "root": {
+                "background": {
+                  "$value": "#282b2d00",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#3f4244",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            }
+          },
+          "accent": {
+            "canvas": {
+              "root": {
+                "background": {
+                  "$value": "#000b30",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#0d2249",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#001149",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#3f4244",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#011f85",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#515559",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "ghost": {
+              "root": {
+                "background": {
+                  "$value": "#00114900",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#282b2d",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             }
@@ -13226,124 +13241,6 @@
             }
           }
         },
-        "group": {
-          "neutral": {
-            "canvas": {
-              "root": {
-                "background": {
-                  "$value": "#f9f9f9",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#ffffff",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "primary": {
-              "root": {
-                "background": {
-                  "$value": "#dfe1e3",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#c2c4c6",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "secondary": {
-              "root": {
-                "background": {
-                  "$value": "#d8dbdd",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#d8dbdd",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "ghost": {
-              "root": {
-                "background": {
-                  "$value": "#dfe1e300",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#c2c4c6",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            }
-          },
-          "accent": {
-            "canvas": {
-              "root": {
-                "background": {
-                  "$value": "#e7ecff",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#cacfe1",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "primary": {
-              "root": {
-                "background": {
-                  "$value": "#cfdaff",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#c2c4c6",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "secondary": {
-              "root": {
-                "background": {
-                  "$value": "#b6c7ff",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#bbbec0",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            },
-            "ghost": {
-              "root": {
-                "background": {
-                  "$value": "#cfdaff00",
-                  "$type": "color",
-                  "$unit": "hex"
-                },
-                "divider": {
-                  "$value": "#dfe1e3",
-                  "$type": "color",
-                  "$unit": "hex"
-                }
-              }
-            }
-          }
-        },
         "input": {
           "neutral": {
             "primary": {
@@ -14574,9 +14471,24 @@
       },
       "main": {
         "app": {
-          "root": {
-            "background": {
-              "$value": "#dfe1e3"
+          "neutral": {
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#dfe1e3",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#dfe1e3",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
             }
           }
         }
@@ -14748,6 +14660,124 @@
                 "$unit": "hex",
                 "$meta": {
                   "status": "unused"
+                }
+              }
+            }
+          }
+        },
+        "group": {
+          "neutral": {
+            "canvas": {
+              "root": {
+                "background": {
+                  "$value": "#f9f9f9",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#ffffff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#dfe1e3",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#c2c4c6",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#d8dbdd",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#d8dbdd",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "ghost": {
+              "root": {
+                "background": {
+                  "$value": "#dfe1e300",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#c2c4c6",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            }
+          },
+          "accent": {
+            "canvas": {
+              "root": {
+                "background": {
+                  "$value": "#e7ecff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#cacfe1",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "primary": {
+              "root": {
+                "background": {
+                  "$value": "#cfdaff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#c2c4c6",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "secondary": {
+              "root": {
+                "background": {
+                  "$value": "#b6c7ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#bbbec0",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            },
+            "ghost": {
+              "root": {
+                "background": {
+                  "$value": "#cfdaff00",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "divider": {
+                  "$value": "#dfe1e3",
+                  "$type": "color",
+                  "$unit": "hex"
                 }
               }
             }

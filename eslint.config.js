@@ -113,6 +113,12 @@ export default tseslint.config(
       "vue/html-self-closing": "off",
       "vue/max-attributes-per-line": "off",
       "no-undef": "off",
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: ["@alma/design-system/*"],
+        },
+      ],
     },
   }
 );

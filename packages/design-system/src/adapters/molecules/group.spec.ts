@@ -1,16 +1,18 @@
 import tokens from "@/tokens";
 
 import { groupVariants, groupSizes, groupModes, groupTones } from "./group";
-import { surfaceModes, surfaceTones } from "./surface";
+import { surfaceModes, surfaceTones } from "@/adapters/atoms/surface";
 
 describe("group adapter", () => {
   test("exports all variants of the group", () => {
-    expect(groupVariants).toEqual(Object.keys(tokens.components.atoms.group));
+    expect(groupVariants).toEqual(
+      Object.keys(tokens.components.molecules.group)
+    );
   });
 
   test("exports sizes for variant default", () => {
     expect(groupSizes).toEqual(
-      Object.keys(tokens.components.atoms.group.default)
+      Object.keys(tokens.components.molecules.group.default)
     );
   });
 

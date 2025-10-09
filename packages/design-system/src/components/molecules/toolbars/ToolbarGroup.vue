@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ToolbarGroupProps } from "./ToolbarGroup";
 
-import Group from "@/components/atoms/containers/Group.vue";
+import Group from "@/components/molecules/containers/Group.vue";
 
 const PREFIX = "toolbar-group";
 

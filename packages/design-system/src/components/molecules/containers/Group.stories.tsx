@@ -7,7 +7,7 @@ import {
   groupSizes,
   groupTones,
   groupVariants,
-} from "@/adapters/atoms/group";
+} from "@/adapters/molecules/group";
 
 import {
   UIElementAlignments,
@@ -26,7 +26,7 @@ import Group from "./Group.vue";
 import Button from "@/components/atoms/buttons/Button.vue";
 
 const meta = {
-  title: "Atoms/Containers/Group",
+  title: "Molecules/Containers/Group",
   component: Group,
   tags: ["autodocs"],
   parameters: {

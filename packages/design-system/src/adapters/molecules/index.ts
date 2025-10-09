@@ -5,6 +5,8 @@ export * from "./dropdown";
 export * from "./form";
 export * from "./formWrapper";
 
+export * from "./group";
+
 // list/options
 export * from "./list";
 

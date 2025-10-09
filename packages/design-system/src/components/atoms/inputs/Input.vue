@@ -271,7 +271,7 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
             :type
             :class="`${PREFIX}__field-value`"
             data-testid="input-value"
-            :areaPlaceholder="areaPlaceholder ?? placeholder"
+            :area-placeholder="areaPlaceholder ?? placeholder"
             :disabled="isDisabled"
             :autocomplete
             :spellcheck="'false'"

@@ -15,7 +15,7 @@ import MainMenu from "@/components/organisms/menues/MainMenu.vue";
     </template>
     <MainMenu v-if="false" data-testid="app-header-menu"></MainMenu>
     <template #right>
-      <Components.Atoms.Group
+      <Components.Molecules.Group
         :direction="'forward'"
         :orientation="'horizontal'"
         :size="'md'"
@@ -26,7 +26,7 @@ import MainMenu from "@/components/organisms/menues/MainMenu.vue";
         <Components.Molecules.ToolbarGroup
           ><ThemeSwitch></ThemeSwitch
         ></Components.Molecules.ToolbarGroup>
-      </Components.Atoms.Group>
+      </Components.Molecules.Group>
     </template>
   </Components.Templates.MainHeaderTemplate>
 </template>
