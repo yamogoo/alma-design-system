@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, useTemplateRef } from "vue";
 import gsap from "gsap";
 
 import type { SkeletonProps } from "@/components/atoms/skeletons/Skeleton";
@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<SkeletonProps>(), {
   tone: "primary",
   speed: 1,
 });
-const refShape = ref<HTMLDivElement | null>(null);
+const refShape = useTemplateRef<HTMLDivElement | null>("shape");
 
 const ariaLabel = "skeleton";
 const ariaBusy = "true";
@@ -48,10 +48,11 @@ const onAnimate = (el: Element): void => {
       `${PREFIX}_mode-${mode}`,
       `${PREFIX}_tone-${tone}`,
     ]"
+    :data-testid="`${PREFIX}`"
     :aria-label="ariaLabel"
     :aria-busy="ariaBusy"
   >
-    <div ref="refShape" :class="`${PREFIX}__shape`"></div>
+    <div ref="shape" :class="`${PREFIX}__shape`"></div>
   </div>
 </template>
 
