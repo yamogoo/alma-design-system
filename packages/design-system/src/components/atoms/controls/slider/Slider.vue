@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<SliderProps>(), {
   max: 100,
   step: 10,
   value: 0,
-  /** New: Stick to steps when dragging/clicking on a track */
+  /** Stick to steps when dragging/clicking on a track */
   isSnapToStep: false,
   /** Sticking threshold in pixels relative to track width (px) */
   snapThreshold: 10,
@@ -67,7 +67,7 @@ watch(localValue, (newValue) =>
   emit("update:value", clamp(newValue, props.min, props.max))
 );
 
-/** Without snapping */
+/* * * Without Snapping * * */
 const rawValueFromClientX = (clientX: number): number => {
   const track = trackRect ?? refTrack.value?.getBoundingClientRect() ?? null;
 
@@ -80,7 +80,8 @@ const rawValueFromClientX = (clientX: number): number => {
   return clamp(raw, props.min, props.max);
 };
 
-/** with snapping */
+/* * * Snapping * * */
+
 const computedValueFromClientX = (clientX: number): number => {
   const track = trackRect ?? refTrack.value?.getBoundingClientRect() ?? null;
   const raw = rawValueFromClientX(clientX);
@@ -139,7 +140,12 @@ const onDragEnd = () => {
   localValue.value = roundToStep(localValue.value, props.step, props.min);
 };
 
-/* Keyboard (by step) */
+/* * * a11y * * */
+
+const ariaLabel = `${PREFIX}`;
+
+/* * * Keyboard * * */
+
 const onKnobKeydown = (e: KeyboardEvent) => {
   let delta = 0;
 
@@ -176,7 +182,6 @@ watch(isHovered, (state) => {
   }
 });
 
-/* Listeners */
 const addEventListeners = (): void => {
   window.addEventListener("pointermove", onDragMove, { passive: true });
   window.addEventListener("pointerup", onDragEnd, { passive: true });
@@ -217,12 +222,6 @@ onBeforeUnmount(removeEventListeners);
         <div
           ref="knob"
           :class="`${PREFIX}__knob`"
-          role="slider"
-          aria-orientation="horizontal"
-          tabindex="0"
-          :aria-valuemin="min"
-          :aria-valuemax="max"
-          :aria-valuenow="localValue"
           :style="{
             position: 'absolute',
             left: 'calc(var(--p) * 100%)',
@@ -231,6 +230,13 @@ onBeforeUnmount(removeEventListeners);
             cursor: 'grab',
             zIndex: 1,
           }"
+          role="slider"
+          aria-orientation="horizontal"
+          :aria-label="ariaLabel"
+          :aria-valuemin="min"
+          :aria-valuemax="max"
+          :aria-valuenow="localValue"
+          tabindex="0"
           @pointerdown="onKnobPress"
           @keydown="onKnobKeydown"
         ></div>
