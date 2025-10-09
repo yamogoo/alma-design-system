@@ -772,6 +772,10 @@ $themes:(
 ),
   validation: (
   message: #a91919
+),
+  button: (
+  mode: neutral,
+  tone: primary
 )
 )
 ),
@@ -779,12 +783,12 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #282b2d,
-  normal: #282b2d,
-  disabled: #323638,
-  hovered: #2a2e30,
-  error: #282b2d,
-  focused: #2a2e30
+  idle: #001149,
+  normal: #001149,
+  disabled: #00155b,
+  hovered: #00124d,
+  error: #001149,
+  focused: #00124d
 ),
   border: (
   idle: #031a52,
@@ -805,6 +809,10 @@ $themes:(
 ),
   validation: (
   message: #b31a1a
+),
+  button: (
+  mode: accent,
+  tone: primary
 )
 )
 )
@@ -4064,6 +4072,10 @@ $themes:(
 ),
   validation: (
   message: #ea7171
+),
+  button: (
+  mode: neutral,
+  tone: primary
 )
 )
 ),
@@ -4071,12 +4083,12 @@ $themes:(
   primary: (
   root: (
   background: (
-  idle: #dfe1e3,
-  normal: #dfe1e3,
+  idle: #cfdaff,
+  normal: #cfdaff,
   disabled: #ffffff,
-  hovered: #edeff0,
-  error: #dfe1e3,
-  focused: #edeff0
+  hovered: #ebefff,
+  error: #cfdaff,
+  focused: #ebefff
 ),
   border: (
   idle: #c5d0f5,
@@ -4097,6 +4109,10 @@ $themes:(
 ),
   validation: (
   message: #e86060
+),
+  button: (
+  mode: accent,
+  tone: primary
 )
 )
 )

@@ -9,22 +9,28 @@ import {
   inputVariants,
 } from "@/adapters/atoms/input";
 
-import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
+import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
 
-import { type InputProps } from "@/components/atoms/inputs/Input";
-import Input from "@/components/atoms/inputs/Input.vue";
+import { type SearchFieldProps } from "./SearchInput";
+import SearchInput from "./SearchInput.vue";
 
 const meta = {
-  title: "Atoms/Inputs/Input",
-  component: Input,
+  title: "Molecules/Inputs/SearchInput",
+  component: SearchInput,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
-        component:
-          "Input is the base text field component of the design system. It supports key modifiers such as variant, size, mode, and tone, and includes properties for placeholder, value, error messages, and state flags like disabled or error. Serves as the foundation for specialized inputs like PasswordInput.",
+        component: `**SearchField** is a controlled search input that wraps the atomic \`Input\` and forwards styling modifiers (**variant**, **size**, **mode**, **tone**) while managing focus state.
+**Key points**
+- Predictable two-way data flow via \`value\` / \`update:value\`.
+- Emits \`update:focused\` on focus/blur and \`reset:value\` when cleared.
+- Optional search icon is decorative (\`aria-hidden="true"\`) for accessible UI.
+- Supports optional auto-clear on unmount to prevent stale state.
+- Aligned with design-token-driven theming and BEM-style class naming.
+`,
       },
     },
   },
@@ -39,18 +45,11 @@ const meta = {
     },
     placeholder: {
       type: "string",
-      defaultValue: "placeholder",
+      defaultValue: "search",
     },
-    errorMessage: {
-      type: "string",
-      defaultValue: "error",
-    },
-    isFocused: booleanOptions(false),
     isDisabled: booleanOptions(false),
-    isError: booleanOptions(false),
-    isRestButtonEnabled: booleanOptions(false),
   },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof SearchInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -61,26 +60,26 @@ export const Playground: Story = {
     mode: "neutral",
     tone: "primary",
     value: "",
-    placeholder: "login",
+    placeholder: "Search",
   },
 };
 
 export const Colors: Story = {
   args: {
     value: "",
-    placeholder: "placeholder",
+    placeholder: "search",
     mode: "neutral",
     tone: "primary",
     size: "md",
   },
-  render: (args: InputProps) => ({
+  render: (args: SearchFieldProps) => ({
     setup() {
       return () => (
         <>
           <PageHeader
-            title={"Input colors"}
+            title={"Input sizes"}
             description={
-              "Shows variant and size combinations with consistent mode and tone."
+              "Demonstrates all available input sizes across modes and tones."
             }
           ></PageHeader>
           <StoryGrid columns={2}>
@@ -94,7 +93,7 @@ export const Colors: Story = {
                     align={"center"}
                     orientation={"vertical"}
                   >
-                    <Input
+                    <SearchInput
                       {...args}
                       variant={"default"}
                       mode={mode}
@@ -116,19 +115,18 @@ export const Colors: Story = {
 export const Sizes: Story = {
   args: {
     value: "",
-    placeholder: "placeholder",
+    placeholder: "Search",
     mode: "neutral",
-    // tone: "primary",
     size: "md",
   },
-  render: (args: InputProps) => ({
+  render: (args: SearchFieldProps) => ({
     setup() {
       return () => (
         <>
           <PageHeader
-            title={"Input sizes"}
+            title={"Input colors"}
             description={
-              "Demonstrates all available input sizes across modes and tones."
+              "Shows how variant and size combinations appear under neutral mode and primary tone."
             }
           ></PageHeader>
           <StoryGrid columns={2}>
@@ -142,7 +140,7 @@ export const Sizes: Story = {
                     align={"center"}
                     orientation={"vertical"}
                   >
-                    <Input
+                    <SearchInput
                       {...args}
                       variant={variant}
                       mode={"neutral"}

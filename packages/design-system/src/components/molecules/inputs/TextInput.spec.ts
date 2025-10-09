@@ -1,24 +1,22 @@
 import { mount, type VueWrapper } from "@vue/test-utils";
 
-import { type PasswordInputProps } from "@/components/atoms/inputs/PasswordInput";
-import PasswordInput from "@/components/atoms/inputs/PasswordInput.vue";
+import { PREFIX } from "@/components/atoms/inputs/Input";
 
-// const getMaskButton = <T>(wrapper: VueWrapper<T>) => {
-//   return wrapper.find('[data-testid="input-mask-button"]');
-// };
+import { type TextInputProps } from "./TextInput";
+import TextInput from "./TextInput.vue";
 
 const getInput = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find('[data-testid="input"]');
+  return wrapper.find(`[data-testid="${PREFIX}"]`);
 };
 
-const REQUIRED_PROPS: PasswordInputProps = {
+const REQUIRED_PROPS: TextInputProps = {
   value: "",
 };
 
 describe("PasswordInput", () => {
   describe("elements", () => {
     test("should render Input component", () => {
-      const wrapper = mount(PasswordInput, {
+      const wrapper = mount(TextInput, {
         props: REQUIRED_PROPS,
       });
 

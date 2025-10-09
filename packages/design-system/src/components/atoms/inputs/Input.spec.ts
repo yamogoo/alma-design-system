@@ -1,6 +1,6 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { type InputProps } from "@/components/atoms/inputs/Input";
+import { PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
 import Input from "@/components/atoms/inputs/Input.vue";
 
 const REQUIRED_PROPS: InputProps = {
@@ -8,15 +8,19 @@ const REQUIRED_PROPS: InputProps = {
 };
 
 const getResetButton = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find('[data-testid="input__field-reset-button"]');
+  return wrapper.find(`[data-testid="${PREFIX}__field-reset-button"]`);
 };
 
 const getPlaceholder = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(".input__field-placeholder");
+  return wrapper.find(`.${PREFIX}__field-placeholder`);
+};
+
+const getValue = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`[data-testid="${PREFIX}__value"]`);
 };
 
 // const getErrorMessage = <T>(wrapper: VueWrapper<T>) => {
-//   return wrapper.find(".input__error-message");
+//   return wrapper.find(`.${PREFIX}__error-message`);
 // };
 
 vi.mock("gsap", () => ({
@@ -61,7 +65,7 @@ describe("input", () => {
       props: REQUIRED_PROPS,
     });
 
-    const input = wrapper.find('[data-testid="input-value"]');
+    const input = getValue(wrapper);
     await input.setValue("new text");
 
     expect(wrapper.emitted("update:value")).toBeTruthy();
@@ -86,6 +90,6 @@ describe("input", () => {
     });
 
     await wrapper.trigger("pointerdown");
-    expect(wrapper.classes()).toContain("input_state-focused");
+    expect(wrapper.classes()).toContain(`${PREFIX}_state-focused`);
   });
 });

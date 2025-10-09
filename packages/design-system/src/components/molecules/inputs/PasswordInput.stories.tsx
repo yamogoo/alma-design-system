@@ -13,11 +13,11 @@ import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
 import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
 
-import { type PasswordInputProps } from "@/components/atoms/inputs/PasswordInput";
-import PasswordInput from "@/components/atoms/inputs/PasswordInput.vue";
+import { type PasswordInputProps } from "./PasswordInput";
+import PasswordInput from "./PasswordInput.vue";
 
 const meta = {
-  title: "Atoms/Inputs/PasswordInput",
+  title: "Molecules/Inputs/PasswordInput",
   component: PasswordInput,
   tags: ["autodocs"],
   parameters: {

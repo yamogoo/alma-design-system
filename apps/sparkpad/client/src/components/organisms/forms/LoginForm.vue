@@ -94,21 +94,21 @@ export interface Props {
     :tone="'primary'"
     :aria-label="'Signin'"
   >
-    <Components.Atoms.Input
+    <Components.Molecules.TextInput
       v-model:value="localEmail"
       :placeholder="$t.auth.login.form.userName"
       :type="'text'"
       :is-error="!!emailError"
       :error-message="emailError"
-    ></Components.Atoms.Input>
-    <Components.Atoms.PasswordInput
+    ></Components.Molecules.TextInput>
+    <Components.Molecules.PasswordInput
       v-model:value="localPassword"
       v-model:masked="localIsPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.login.form.password"
       :is-error="!!passwordError"
       :error-message="passwordError"
-    ></Components.Atoms.PasswordInput>
+    ></Components.Molecules.PasswordInput>
     <Components.Atoms.Text
       :variant="'label-1'"
       :mode="'neutral'"

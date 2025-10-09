@@ -88,26 +88,26 @@ export interface Props {
     :tone="'primary'"
     :aria-label="'Login'"
   >
-    <Components.Atoms.Input
+    <Components.Molecules.TextInput
       v-model:value="localEmail"
       :placeholder="$t.auth.signin.form.userName"
       :type="'text'"
       :is-error="localIsError"
-    ></Components.Atoms.Input>
-    <Components.Atoms.PasswordInput
+    ></Components.Molecules.TextInput>
+    <Components.Molecules.PasswordInput
       v-model:value="localPassword"
       v-model:masked="localIsPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.signin.form.password"
       :is-error="localIsError"
-    ></Components.Atoms.PasswordInput>
-    <Components.Atoms.PasswordInput
+    ></Components.Molecules.PasswordInput>
+    <Components.Molecules.PasswordInput
       v-model:value="localRepeatedPassword"
       v-model:masked="localIsRepeatedPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.signin.form.repeatPassword"
       :is-error="localIsError"
-    ></Components.Atoms.PasswordInput>
+    ></Components.Molecules.PasswordInput>
     <Components.Atoms.Text
       :variant="'label-1'"
       :mode="'neutral'"

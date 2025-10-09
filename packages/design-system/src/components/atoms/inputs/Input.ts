@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   InputSize,
   InputMode,
@@ -26,3 +28,5 @@ export interface InputProps
   type?: InputTypeHTMLAttribute;
   errorMessage?: string | null;
 }
+
+export const PREFIX = `${NAME_SPACE}input`;

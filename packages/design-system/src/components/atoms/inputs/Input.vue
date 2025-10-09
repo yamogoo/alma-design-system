@@ -7,19 +7,18 @@ import {
   computed,
   toValue,
   onMounted,
+  useTemplateRef,
 } from "vue";
 import { useFocus } from "@vueuse/core";
 import gsap from "gsap";
 
 import { sanitizeInput } from "@/utils/sanitize";
 
-import { type InputProps } from "@/components/atoms/inputs/Input";
+import { PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
 
 import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
 import ControlButton from "@/components/molecules/buttons/ControlButton.vue";
 import Text from "@/components/atoms/typography/Text.vue";
-
-const PREFIX = "input";
 
 const RESET_BUTTON_SCALE_IN = 1,
   RESET_BUTTON_SCALE_OUT = 0.75;
@@ -47,9 +46,9 @@ const emit = defineEmits<{
 
 defineOptions({ inheritAttrs: false });
 
-const refInput = ref<HTMLInputElement | null>(null);
-const refPlaceholder = ref<HTMLLabelElement | null>(null);
-const refMessage = ref<HTMLDivElement | null>(null);
+const refInput = useTemplateRef<HTMLInputElement | null>("input");
+const refPlaceholder = useTemplateRef<HTMLLabelElement | null>("placeholder");
+const refMessage = useTemplateRef<HTMLDivElement | null>("message");
 
 const id = useId();
 const localModelValue = ref(props.value);
@@ -248,17 +247,17 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
         [`${PREFIX}_state-focused`]: isLocalFocused,
       },
     ]"
-    data-testid="input"
+    :data-testid="PREFIX"
   >
-    <div class="input__field" @pointerdown="onFocus">
+    <div :class="`${PREFIX}__field`" @pointerdown="onFocus">
       <div :class="`${PREFIX}__field-content`">
         <div v-if="$slots.icon" :class="`${PREFIX}__field-content-icon`">
           <slot name="icon"></slot>
         </div>
-        <div class="input__field-inner-content">
+        <div :class="`${PREFIX}__field-inner-content`">
           <label
             v-if="placeholder || placeholder === ''"
-            ref="refPlaceholder"
+            ref="placeholder"
             :for="id"
             :class="`${PREFIX}__field-placeholder`"
           >
@@ -266,11 +265,11 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
           </label>
           <input
             :id
-            ref="refInput"
+            ref="input"
             v-model="localModelValue"
             :type
             :class="`${PREFIX}__field-value`"
-            data-testid="input-value"
+            :data-testid="`${PREFIX}__value`"
             :area-placeholder="areaPlaceholder ?? placeholder"
             :disabled="isDisabled"
             :autocomplete
@@ -288,9 +287,15 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
             v-if="isResetButtonShown"
             type="reset"
             :class="`${PREFIX}__field-reset-button`"
-            data-testid="input__field-reset-button"
+            :data-testid="`${PREFIX}__field-reset-button`"
             :size="'xs'"
-            :mode="!isError ? 'neutral' : 'negative'"
+            :mode="
+              !isError
+                ? mode === 'neutral'
+                  ? 'neutral'
+                  : 'accent'
+                : 'negative'
+            "
             :tone="'primary'"
             :icon-name="'cross'"
             :icon-style="'outline'"
@@ -301,7 +306,7 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
         </Transition>
       </div>
     </div>
-    <div ref="refMessage" :class="`${PREFIX}__validatoin`">
+    <div ref="message" :class="`${PREFIX}__validatoin`">
       <Text
         v-if="!!errorMessage"
         :class="`${PREFIX}__validation-message`"
@@ -314,9 +319,10 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
 </template>
 
 <style lang="scss">
-$prefix: input;
+$tokenName: "input";
+$prefix: getPrefix($tokenName);
 
-@mixin defineInputSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineInputSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $value-font-style: get($val, "label.font-style");
@@ -364,7 +370,9 @@ $prefix: input;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -373,10 +381,10 @@ $prefix: input;
             .#{$prefix}__field {
               @include themify($themes) {
                 color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.idle"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.idle"
                 );
                 background-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.normal"
                 );
                 @extend %base-transition;
               }
@@ -389,14 +397,14 @@ $prefix: input;
                 .#{$prefix}__field {
                   @include themify($themes) {
                     color: themed(
-                      "components.atoms.input.#{$mode}.#{$tone}.label.idle"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.idle"
                     );
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.idle"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.idle"
                     );
                     border: get($tokens, "outline") solid
                       themed(
-                        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.idle"
+                        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.idle"
                       );
                   }
                 }
@@ -405,7 +413,7 @@ $prefix: input;
                   .icon {
                     @include themify($themes) {
                       fill: themed(
-                        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
                       );
                     }
                   }
@@ -416,14 +424,14 @@ $prefix: input;
                 .#{$prefix}__field {
                   @include themify($themes) {
                     color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
                     );
                     background-color: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.normal"
                     );
                     border: get($tokens, "outline") solid
                       themed(
-                        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
+                        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.normal"
                       );
                   }
                 }
@@ -432,7 +440,7 @@ $prefix: input;
                   .icon {
                     @include themify($themes) {
                       fill: themed(
-                        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
                       );
                     }
                   }
@@ -444,14 +452,14 @@ $prefix: input;
               .#{$prefix}__field {
                 @include themify($themes) {
                   color: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.focused"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.focused"
                   );
                   background-color: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.focused"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.focused"
                   );
                   border: get($tokens, "outline") solid
                     themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.highlight"
                     );
                 }
               }
@@ -460,7 +468,7 @@ $prefix: input;
                 .icon {
                   @include themify($themes) {
                     fill: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.focused"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.focused"
                     );
                   }
                 }
@@ -471,14 +479,14 @@ $prefix: input;
               .#{$prefix}__field {
                 @include themify($themes) {
                   color: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
                   );
                   background-color: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.disabled"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.disabled"
                   );
                   border: get($tokens, "outline") solid
                     themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.disabled"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.disabled"
                     );
                 }
               }
@@ -487,7 +495,7 @@ $prefix: input;
                 .icon {
                   @include themify($themes) {
                     fill: themed(
-                      "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.disabled"
+                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
                     );
                   }
                 }
@@ -499,14 +507,14 @@ $prefix: input;
             .#{$prefix}__field {
               @include themify($themes) {
                 color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.error"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.error"
                 );
                 background-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.error"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.error"
                 );
                 border: get($tokens, "outline") solid
                   themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.error"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.error"
                   );
               }
             }
@@ -515,7 +523,7 @@ $prefix: input;
               .icon {
                 @include themify($themes) {
                   fill: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.error"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.error"
                   );
                 }
               }
@@ -532,7 +540,7 @@ $prefix: input;
             &-message {
               @include themify($themes) {
                 color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.validation.message"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.validation.message"
                 );
                 @extend %base-transition;
               }

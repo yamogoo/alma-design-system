@@ -13,24 +13,18 @@ import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
 import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
 
-import { type SearchFieldProps } from "@/components/atoms/inputs/SearchInput";
-import SearchInput from "@/components/atoms/inputs/SearchInput.vue";
+import { type TextInputProps } from "./TextInput";
+import TextInput from "./TextInput.vue";
 
 const meta = {
-  title: "Atoms/Inputs/SearchInput",
-  component: SearchInput,
+  title: "Molecules/Inputs/TextInput",
+  component: TextInput,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
-        component: `**SearchField** is a controlled search input that wraps the atomic \`Input\` and forwards styling modifiers (**variant**, **size**, **mode**, **tone**) while managing focus state.
-**Key points**
-- Predictable two-way data flow via \`value\` / \`update:value\`.
-- Emits \`update:focused\` on focus/blur and \`reset:value\` when cleared.
-- Optional search icon is decorative (\`aria-hidden="true"\`) for accessible UI.
-- Supports optional auto-clear on unmount to prevent stale state.
-- Aligned with design-token-driven theming and BEM-style class naming.
-`,
+        component:
+          "TextInput extends the base Input component of input text. It supports all base Input modifiers (variant, size, mode, tone)",
       },
     },
   },
@@ -45,11 +39,18 @@ const meta = {
     },
     placeholder: {
       type: "string",
-      defaultValue: "search",
+      defaultValue: "placeholder",
     },
+    errorMessage: {
+      type: "string",
+      defaultValue: "error",
+    },
+    isFocused: booleanOptions(false),
     isDisabled: booleanOptions(false),
+    isError: booleanOptions(false),
+    isRestButtonEnabled: booleanOptions(false),
   },
-} satisfies Meta<typeof SearchInput>;
+} satisfies Meta<typeof TextInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -60,19 +61,19 @@ export const Playground: Story = {
     mode: "neutral",
     tone: "primary",
     value: "",
-    placeholder: "Search",
+    placeholder: "login",
   },
 };
 
-export const Colors: Story = {
+export const Sizes: Story = {
   args: {
     value: "",
-    placeholder: "search",
+    placeholder: "placeholder",
     mode: "neutral",
     tone: "primary",
     size: "md",
   },
-  render: (args: SearchFieldProps) => ({
+  render: (args: TextInputProps) => ({
     setup() {
       return () => (
         <>
@@ -93,7 +94,7 @@ export const Colors: Story = {
                     align={"center"}
                     orientation={"vertical"}
                   >
-                    <SearchInput
+                    <TextInput
                       {...args}
                       variant={"default"}
                       mode={mode}
@@ -112,14 +113,15 @@ export const Colors: Story = {
   }),
 };
 
-export const Sizes: Story = {
+export const Colors: Story = {
   args: {
     value: "",
-    placeholder: "Search",
+    placeholder: "placeholder",
     mode: "neutral",
+    // tone: "primary",
     size: "md",
   },
-  render: (args: SearchFieldProps) => ({
+  render: (args: TextInputProps) => ({
     setup() {
       return () => (
         <>
@@ -140,7 +142,7 @@ export const Sizes: Story = {
                     align={"center"}
                     orientation={"vertical"}
                   >
-                    <SearchInput
+                    <TextInput
                       {...args}
                       variant={variant}
                       mode={"neutral"}

@@ -6,7 +6,8 @@ import type {
 } from "@/adapters/atoms/input";
 
 import type { UIElementStylingModifiers } from "@/typings";
-import type { InputProps } from "./Input";
+
+import type { InputProps } from "@/components/atoms/inputs/Input";
 
 export interface SearchFieldProps
   extends Partial<

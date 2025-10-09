@@ -34,7 +34,7 @@ $prefix: getPrefix($tokenName);
       $padding: $padding-v $padding-h;
 
       &_variant-#{$variant} {
-        &.control-wrapper_size-#{$size} {
+        &.#{$prefix} _size-#{$size} {
           gap: $gap;
           padding: $padding;
         }
@@ -43,7 +43,7 @@ $prefix: getPrefix($tokenName);
   }
 }
 
-.control-wrapper {
+.#{$prefix} {
   box-sizing: border-box;
   position: relative;
   display: flex;

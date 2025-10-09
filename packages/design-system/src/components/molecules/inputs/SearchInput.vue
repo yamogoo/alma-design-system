@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onUnmounted, ref, watch } from "vue";
 
+import { PREFIX } from "@/components/atoms/inputs/Input";
+
 import { type SearchFieldProps } from "./SearchInput";
 import Input from "@/components/atoms/inputs/Input.vue";
 import Icon from "@/components/atoms/icons/Icon.vue";
@@ -70,7 +72,7 @@ onUnmounted(() => {
   >
     <template v-if="isSearchIconShown" #icon>
       <Icon
-        :class="`icon-preview`"
+        :class="`${PREFIX}__icon-preview`"
         :size="'sm'"
         :name="'search'"
         :appearance="'outline'"

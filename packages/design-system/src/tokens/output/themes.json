@@ -2381,6 +2381,18 @@
                   "$type": "color",
                   "$unit": "hex"
                 }
+              },
+              "button": {
+                "mode": {
+                  "$value": "neutral",
+                  "$type": "string",
+                  "$unit": "alias"
+                },
+                "tone": {
+                  "$value": "primary",
+                  "$type": "string",
+                  "$unit": "alias"
+                }
               }
             }
           },
@@ -2389,32 +2401,32 @@
               "root": {
                 "background": {
                   "idle": {
-                    "$value": "#282b2d",
+                    "$value": "#001149",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "normal": {
-                    "$value": "#282b2d",
+                    "$value": "#001149",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "disabled": {
-                    "$value": "#323638",
+                    "$value": "#00155b",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#2a2e30",
+                    "$value": "#00124d",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "error": {
-                    "$value": "#282b2d",
+                    "$value": "#001149",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "focused": {
-                    "$value": "#2a2e30",
+                    "$value": "#00124d",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -2489,6 +2501,18 @@
                   "$value": "#b31a1a",
                   "$type": "color",
                   "$unit": "hex"
+                }
+              },
+              "button": {
+                "mode": {
+                  "$value": "accent",
+                  "$type": "string",
+                  "$unit": "alias"
+                },
+                "tone": {
+                  "$value": "primary",
+                  "$type": "string",
+                  "$unit": "alias"
                 }
               }
             }
@@ -13377,6 +13401,18 @@
                   "$type": "color",
                   "$unit": "hex"
                 }
+              },
+              "button": {
+                "mode": {
+                  "$value": "neutral",
+                  "$type": "string",
+                  "$unit": "alias"
+                },
+                "tone": {
+                  "$value": "primary",
+                  "$type": "string",
+                  "$unit": "alias"
+                }
               }
             }
           },
@@ -13385,12 +13421,12 @@
               "root": {
                 "background": {
                   "idle": {
-                    "$value": "#dfe1e3",
+                    "$value": "#cfdaff",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "normal": {
-                    "$value": "#dfe1e3",
+                    "$value": "#cfdaff",
                     "$type": "color",
                     "$unit": "hex"
                   },
@@ -13400,17 +13436,17 @@
                     "$unit": "hex"
                   },
                   "hovered": {
-                    "$value": "#edeff0",
+                    "$value": "#ebefff",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "error": {
-                    "$value": "#dfe1e3",
+                    "$value": "#cfdaff",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "focused": {
-                    "$value": "#edeff0",
+                    "$value": "#ebefff",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -13485,6 +13521,18 @@
                   "$value": "#e86060",
                   "$type": "color",
                   "$unit": "hex"
+                }
+              },
+              "button": {
+                "mode": {
+                  "$value": "accent",
+                  "$type": "string",
+                  "$unit": "alias"
+                },
+                "tone": {
+                  "$value": "primary",
+                  "$type": "string",
+                  "$unit": "alias"
                 }
               }
             }
