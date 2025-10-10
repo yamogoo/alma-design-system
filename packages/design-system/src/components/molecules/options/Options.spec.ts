@@ -1,16 +1,27 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 import { getTypedEmittedEvent } from "@/__tests__/utils";
 
-import type { OptionsItems, OptionsProps } from "./Options";
+import {
+  OPTIONS_PREFIX,
+  type OptionsItems,
+  type OptionsProps,
+} from "./Options";
 
+import { UIFACETS } from "@/constants/ui";
 import Options from "./Options.vue";
 
-const CLASS_NAME = "options";
+const Classes = {
+  ROOT_CLASS: OPTIONS_PREFIX,
+  VARIANT: `${OPTIONS_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${OPTIONS_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${OPTIONS_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${OPTIONS_PREFIX}_${UIFACETS.TONE}`,
+} as const;
 
 const items: OptionsItems<string> = ["First", "Second", "Third"];
 
 const getOptions = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.findAll('[data-testid="options__option"]');
+  return wrapper.findAll(`[data-testid="${Classes.ROOT_CLASS}__option"]`);
 };
 
 describe("Options", () => {
@@ -30,11 +41,11 @@ describe("Options", () => {
       });
 
       expect(
-        wrapper.classes(`${CLASS_NAME}_variant-${props.variant}`)
+        wrapper.classes(`${Classes.VARIANT}-${props.variant}`)
       ).toBeTruthy();
-      expect(wrapper.classes(`${CLASS_NAME}_size-${props.size}`)).toBeTruthy();
-      expect(wrapper.classes(`${CLASS_NAME}_mode-${props.mode}`)).toBeTruthy();
-      expect(wrapper.classes(`${CLASS_NAME}_tone-${props.tone}`)).toBeTruthy();
+      expect(wrapper.classes(`${Classes.SIZE}-${props.size}`)).toBeTruthy();
+      expect(wrapper.classes(`${Classes.MODE}-${props.mode}`)).toBeTruthy();
+      expect(wrapper.classes(`${Classes.TONE}-${props.tone}`)).toBeTruthy();
     });
   });
 

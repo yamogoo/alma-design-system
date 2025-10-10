@@ -1,8 +1,11 @@
 <script setup lang="ts" generic="T">
-import { type OptionsProps } from "@/components/molecules/options/Options";
-import Text from "@/components/atoms/typography/Text.vue";
+import { UIFACETS } from "@/constants/ui";
 
-const PREFIX = "options";
+import {
+  OPTIONS_PREFIX,
+  type OptionsProps,
+} from "@/components/molecules/options/Options";
+import Text from "@/components/atoms/typography/Text.vue";
 
 const props = withDefaults(defineProps<OptionsProps<T>>(), {
   variant: "default",
@@ -29,12 +32,12 @@ const showCurrentOption = (key: T) => {
 <template>
   <ul
     :class="[
-      PREFIX,
+      OPTIONS_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${OPTIONS_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${OPTIONS_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
+        [`${OPTIONS_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
+        [`${OPTIONS_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
       },
     ]"
   >
@@ -42,8 +45,8 @@ const showCurrentOption = (key: T) => {
       <Text
         v-if="showCurrentOption(key)"
         :as="'li'"
-        :class="`${PREFIX}__option`"
-        data-testid="options__option"
+        :class="`${OPTIONS_PREFIX}__option`"
+        :data-testid="`${OPTIONS_PREFIX}__option`"
         @click="onSelect(key)"
       >
         {{ `${typeof key === "string" && !$slots.default ? key : ""}` }}
@@ -54,9 +57,10 @@ const showCurrentOption = (key: T) => {
 </template>
 
 <style lang="scss">
-$prefix: options;
+$tokenName: "options";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $option-font-style: get($val, "option.font-style");
@@ -75,7 +79,7 @@ $prefix: options;
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.components.molecules.#{$prefix}")
+  $map: get($themes, "light.components.molecules.#{$tokenName}")
 ) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
@@ -84,14 +88,14 @@ $prefix: options;
           .#{$prefix}__option {
             @include themify($themes) {
               color: themed(
-                "components.molecules.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
               );
             }
 
             &:hover {
               @include themify($themes) {
                 color: themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.label.hovered"
+                  "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.label.hovered"
                 );
               }
             }

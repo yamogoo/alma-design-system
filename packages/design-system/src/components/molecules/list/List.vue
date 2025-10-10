@@ -211,9 +211,6 @@ $prefix: "list";
   margin: 0;
   padding: 0;
 
-  /* @include defineSizes(); */
-  /* @include defineThemes(); */
-
   &__option {
     list-style: none;
     cursor: pointer;

@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { type SnackbarProps } from "@/components/molecules/panels/Snackbar";
+import { UIFACETS } from "@/constants/ui";
+
+import {
+  SNACKBAR_PREFIX,
+  type SnackbarProps,
+} from "@/components/molecules/panels/Snackbar";
 
 import Text from "@/components/atoms/typography/Text.vue";
 import ControlButton from "@/components/molecules/buttons/aliases/ControlButton.vue";
-
-const PREFIX = "snackbar";
 
 withDefaults(defineProps<SnackbarProps>(), {
   variant: "default",
@@ -26,24 +29,34 @@ const onClose = (): void => {
 <template>
   <div
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
+      SNACKBAR_PREFIX,
+      `${SNACKBAR_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${SNACKBAR_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${SNACKBAR_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${SNACKBAR_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
     :role="status === 'info' ? 'status' : 'alert'"
   >
     <slot v-if="$slots.default"></slot>
-    <div v-if="!$slots.default" :class="`${PREFIX}__content`">
-      <Text v-if="title" :class="`${PREFIX}__content-title`"> {{ title }}</Text>
-      <Text v-if="description" :class="`${PREFIX}__content-description`">
+    <div v-if="!$slots.default" :class="`${SNACKBAR_PREFIX}__content`">
+      <Text
+        v-if="title"
+        :class="`${SNACKBAR_PREFIX}__content-title`"
+        :data-testid="`${SNACKBAR_PREFIX}__title`"
+      >
+        {{ title }}</Text
+      >
+      <Text
+        v-if="description"
+        :class="`${SNACKBAR_PREFIX}__content-description`"
+        :data-testid="`${SNACKBAR_PREFIX}__description`"
+      >
         {{ description }}
       </Text>
     </div>
     <ControlButton
       v-if="isCloseButtonShown"
-      :class="`${PREFIX}__close-button`"
+      :class="`${SNACKBAR_PREFIX}__close-button`"
       :variant="'rounded'"
       :size="'xs'"
       :mode="'neutral'"
@@ -58,9 +71,10 @@ const onClose = (): void => {
 </template>
 
 <style lang="scss">
-$prefix: snackbar;
+$tokenName: "snackbar";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));
@@ -99,18 +113,18 @@ $prefix: snackbar;
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.components.molecules.#{$prefix}")
+  $map: get($themes, "light.components.molecules.#{$tokenName}")
 ) {
-  @each $tone, $modes in $map {
-    @each $mode, $val in $modes {
-      &_tone-#{$tone} {
-        $close-button-tone: get($val, "close-button.tone");
+  @each $mode, $modes in $map {
+    @each $tone, $val in $modes {
+      &_mode-#{$mode} {
         $close-button-mode: get($val, "close-button.mode");
+        $close-button-tone: get($val, "close-button.tone");
 
-        &.#{$prefix}_mode-#{$mode} {
+        &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "components.molecules.#{$prefix}.#{$tone}.#{$mode}.root.background"
+              "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.root.background"
             );
           }
 
@@ -119,7 +133,7 @@ $prefix: snackbar;
               &-title {
                 @include themify($themes) {
                   color: themed(
-                    "components.molecules.#{$prefix}.#{$tone}.#{$mode}.title"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.title"
                   );
                 }
               }
@@ -127,7 +141,7 @@ $prefix: snackbar;
               &-description {
                 @include themify($themes) {
                   color: themed(
-                    "components.molecules.#{$prefix}.#{$tone}.#{$mode}.description"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.description"
                   );
                 }
               }
@@ -143,7 +157,7 @@ $prefix: snackbar;
   }
 }
 
-.snackbar {
+.#{$prefix} {
   display: flex;
   @extend %base-transition;
 
@@ -153,6 +167,7 @@ $prefix: snackbar;
   &__content {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 }
 </style>

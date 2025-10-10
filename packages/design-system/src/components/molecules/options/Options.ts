@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   OptionsMode,
   OptionsSize,
@@ -22,3 +24,5 @@ export interface OptionsProps<T>
   items: OptionsItems<T>;
   isCurrentOptionShown?: boolean;
 }
+
+export const OPTIONS_PREFIX = `${NAME_SPACE}options`;

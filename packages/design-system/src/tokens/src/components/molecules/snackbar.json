@@ -32,7 +32,7 @@
       },
       "title": {
         "fontStyle": {
-          "$value": "title-1",
+          "$value": "title-2",
           "$type": "string",
           "$unit": ""
         }
