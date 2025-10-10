@@ -14,10 +14,15 @@ structure:
   components: Vue components (atoms, molecules, organisms, templates)
   composables: Vue composables (global and local hooks)
   constants: UI constants
+  stores: Pinia stores for shared state experiments
   stories: Storybook stories (components, tokens, pages)
-  tokens: design tokens (JSON), theming (light/dark), build outputs
+  tokens: design tokens source (JSON) and generated outputs (JSON/CSS vars)
   typings: TypeScript types (UI, API, router, etc.)
   utils: helper utilities (units, events, sanitization, testing)
+  tests: Vitest fixtures, DOM helpers, setup
+  styles:
+    _index.scss: Storybook SCSS bundle entry
+    app.runtime.scss: consumer-facing runtime stylesheet
   manifest:
     - MANIFEST.yaml (machine-readable specification)
     - MANIFEST.md (human-readable documentation)
@@ -42,21 +47,23 @@ modules:
       core: mixins & functions (px2rem, themify, map-get)
       extends: animations, containers, component styles
       mixins: reusable mixins
-      app: global entry points (app.*.scss)
+      app: runtime/global entry points (app.*.scss)
+    images: static imagery for docs and Storybook
 
   components:
     implementation: ".vue + .ts"
-    typings: "Props & contracts in .ts files"
+    typings: "Props & contracts exported from colocated .ts files"
     tests: "Unit tests in .spec.ts"
-    stories: "Optional .stories.tsx"
+    stories: "Storybook coverage in .stories.ts[x]"
     categories:
       atoms: buttons, icons, inputs, typography, tooltips
-      molecules: forms, dropdowns, snackbar
-      organisms: editor, navigation
+      molecules: dropdowns, forms, snackbar
+      organisms: navigation, editor, complex layouts
       templates: headers, footers, menus
+    exports: aggregated via components/index.ts
 
   composables:
-    global: theme, meta, connection
+    global: theme, meta, connection state
     local:
       - hover
       - clickOutside
@@ -66,22 +73,36 @@ modules:
       - timers
       - storage
 
+  constants:
+    app: application-wide defaults and flags
+    config: runtime configuration maps
+    ui: UI primitives (themes, modes, breakpoints)
+
+  stores:
+    library: Pinia
+    entries:
+      - useConnectionStore
+    purpose: share lightweight state across component experiments
+
   tokens:
     src:
-      abstracts: background, border, shadow, base colors
-      atoms: per-component tokens
-      molecules: per-component tokens
-      templates: per-component tokens
-      themes: light & dark
+      _colors.json: master palette contracts
+      baseColors.json: canonical base palette
+      breakpoints.json: responsive breakpoints
+      colors.json: resolved relational color map
+      components: per-component tokens (atoms, molecules, organisms, templates)
+      config.json: token pipeline configuration
+      themes: light, dark, and experimental themes
       typography: text styles and type scale
       tokens: spacing, stroke, roundness, gap, touchArea
     build:
-      outputs: [scss maps, css vars, json]
-      status: generated-only, excluded from git
+      source: packages/design-system/src/tokens/src
+      outputs:
+        - packages/design-system/src/tokens/output/*.json
+      status: generated-only, excluded from manual edits
     docs: structure.md
     figma:
       forward: Code → Figma (fully supported)
-      backward: Figma → Code (compatibility only, not recommended)
       philosophy: Code-first, tokens are the single source of truth
 
   stories:
@@ -94,7 +115,8 @@ modules:
     - px2rem
     - getPathSegment
     - event helpers
-    - unit testing (Vitest setup)
+    - sanitize
+    - gsapSafe (guards animation imports)
 
   typings:
     - ui
@@ -104,11 +126,27 @@ modules:
     - themes
     - declarations (.d.ts)
 
+  tests:
+    location: __tests__/
+    tooling:
+      runner: Vitest
+      environment: jsdom
+      setup: vitest.setup.ts
+
 rules:
-  - tokens/build excluded from git
+  - tokens/output excluded from manual edits (generated)
   - fonts shipped offline-first
   - each component must include .vue + .ts + .spec.ts
   - adapters must remain thin wrappers, no heavy UI logic
+  - temporary experiments live under **/*.temp/ and are ignored by git
+
+tooling:
+  tokens_worker:
+    package: "@alma/tokens-worker"
+    location: packages/tokens-worker
+    role: compile token sources into runtime outputs
+    inputs: packages/design-system/src/tokens/src
+    outputs: packages/design-system/src/tokens/output
 
 summary:
   keywords:
@@ -118,7 +156,9 @@ summary:
     - adapters
     - composables
     - utils
-    - figma integration
+    - stores
+    - storybook
+    - tokens-worker
   philosophy: >
     Alma Design System is not a production library but an experimental R&D platform,
     where tokens and code are the single source of truth.

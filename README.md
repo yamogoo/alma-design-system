@@ -1,99 +1,99 @@
-![image](https://github.com/yamogoo/alma-design-system/blob/main/shared/images/logo-with-descriptor.svg)
+![Alma Design System mark](https://github.com/yamogoo/alma-design-system/blob/main/shared/images/logo-with-descriptor.svg)
 
-# Alma Design System
+# Alma Design System Monorepo
 
-R&D playground for UI systems: components, tokens, theming, and tooling.
+Code-first R&D space for UI systems: Vue components, design tokens, adapters, Storybook tooling, and consumer playground apps.
 
-— Live docs: https://alma-design-system.netlify.app
+– Live docs: https://alma-design-system.netlify.app
 
-### About
+## Why This Exists
 
-Alma Design System is an experimental, code-first platform for researching design-system architecture. It is not a production-ready UI kit, but a focused lab for ideas that can later evolve into stable packages.
+Alma Design System is a laboratory for testing component architecture, token pipelines, theming strategies, and design-to-code workflows. It is intentionally experimental and subject to breaking changes while ideas are validated.
 
-Key goals:
-
-- Explore trade-offs between performance, DX, and design flexibility.
-- Test token pipelines, theming strategies, component contracts.
-- Prototype iconography and type workflows.
-- Bridge design tools and developer platforms.
-
-## ✨ What’s New (Core Features)
-
-- Relational color matrix (contracts.rel): single source of truth for colors across planes/roles/tones/states. See: `src/tokens/contracts.rel.md`.
-- Deterministic state generation: normal/hover/pressed/focus/disabled derived via perceptual OKLCH deltas per theme.
-- Base±N tone scale: numeric, theme-agnostic tone ladder (`base-down-3 … base-up-3`) replacing ambiguous “light/dark” names.
-- Contracts and lintable paths: component tokens must resolve to `contracts/interactive/<mode>/<tone>/<state>`; no raw hex in components.
-- Tokens worker pipeline (developed using AI): code-first tokens, resolvers, converters, build outputs (JSON, SCSS maps, CSS).
-- Storybook: custom theme + live visualization of varinat x size x mode × tone × state.
-
-## 🎯 Status
-
-Experimental & evolving — expect breaking changes. Adapters are deliberately thin.
-
-## 🛠 Stack & Tech
-
-- Vue 3 + TypeScript, Vite
-- Custom SCSS core (mixins, abstracts)
-- OKLCH color math for deltas
-- Design tokens & themes (code-first)
-- Storybook
-- GSAP for motion
-- tokens-worker (developed using AI)
-- [Alma Icons](https://almaicons.netlify.app/icons)
-- [Vue3ResizeBounding](https://resize-bounding.netlify.app/) for resizable UI
-- Structure docs: [MANIFEST.md](./packages/design-system/MANIFEST.md), [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml)
-
-**Modular Tokens System**
-
-- Sources → `packages/design-system/src/tokens/src`
-- Contracts (relational) → `packages/design-system/src/tokens/src/themes/<id>/contracts/rel/*`
-- Config/deltas → `packages/design-system/src/tokens/src/themes/<id>/config/rel/*`
-- Build output → generated during package build
-- Architecture → `packages/design-system/src/tokens/structure.md`
-
-**🔗 Figma Integration**
-
-- Forward (Code → Figma): supported and recommended.
-
-## 💻 Quick Start
+## Monorepo Layout
 
 ```bash
-git clone https://github.com/yamogoo/alma-proto-kit.git
+apps/
+  sparkpad/        # consumer playground
+    client/        # frontend demo experience
+    server/        # API sandbox
+    log-server/    # logging sink for experiments
 
-# Go to project folder
-cd alma-proto-kit
+packages/
+  design-system/   # @alma/design-system entry point (components, tokens, SCSS, stories)
+  tokens-worker/   # @alma/tokens-worker compiler that materializes token outputs
 
-# Install dependencies
-pnpm install:all
-
-# Prepare and build packages
-pnpm prepare
-
-pnpm ds:build            # build @alma/design-system
-pnpm ds:docs:dev         # run Storybook
-pnpm sparkpad:client:dev # run demo app (client)
-pnpm sparkpad:server:dev # run demo app (server)
+shared/
+  images/          # branding reused across docs
 ```
 
-> For details on project structure and module definitions, see [MANIFEST.md](./packages/design-system/MANIFEST.md) and [MANIFEST.yaml](./packages/design-system/MANIFEST.yaml).
+Detailed architecture lives in:
 
-> ℹ️ **Startup**: first dev launch may take ~10-20s due to asset pre-processing and pre-bundling.  
-> **HMR is instantaneous** afterwards, so iteration speed remains high.
+- `packages/design-system/MANIFEST.md`
+- `packages/design-system/MANIFEST.yaml`
 
-Open Storybook at http://localhost:6006 or the app at http://localhost:5041.
+## Packages
 
-## 🧭 Roadmap (abridged)
+### `@alma/design-system` (`packages/design-system`)
 
-- Token path linter + contrast CI for contracts/rel
-- Visual matrix stories mode (role) × \<base\>\<up/down\>-N × state
-- Migrate fully to base-(up | down)-N tone naming; deprecate legacy labels
+- Vue 3 + TypeScript component kit with atomic structure.
+- SCSS core split into abstracts/core/extends/mixins with consumer runtime entry `app.runtime.scss`.
+- Code-first token source (`src/tokens/src`) compiled into JSON bundles (`src/tokens/output`).
+- Pinia stores, composables, utilities, Storybook stories, and Vitest setup.
 
-## License
+### `@alma/tokens-worker` (`packages/tokens-worker`)
 
-MIT for code. Icons and creative assets are licensed under CC BY-NC (Creative Commons Attribution–NonCommercial).
+- Processes token sources, resolves relational contracts, and emits consumable artifacts.
+- Provides parsers/plugins for JSON, CSS variables, and SCSS maps.
 
-[MIT](https://github.com/yamogoo/alma-design-system/blob/main/LICENSE)
+## Apps
+
+`apps/sparkpad` demonstrates integration of the design system through:
+
+- `client`: Vite/Vue consumer UI.
+- `server`: lightweight API sandbox.
+- `log-server`: auxiliary service for telemetry experiments.
+
+These apps depend on the local packages via pnpm workspaces.
+
+## Getting Started
+
+Prerequisites: Node 20+, pnpm 8+.
+
+```bash
+git clone https://github.com/yamogoo/alma-design-system.git
+cd alma-design-system
+
+pnpm install:all     # install workspace dependencies
+pnpm prepare         # bootstrap generated assets (tokens, types)
+
+pnpm ds:build        # build @alma/design-system
+pnpm ds:docs:dev     # start Storybook (http://localhost:6006)
+pnpm sparkpad:client:dev  # run Sparkpad client demo (http://localhost:5041)
+pnpm sparkpad:server:dev  # run Sparkpad API sandbox
+```
+
+> Need more? See `package.json` scripts for additional commands (tests, lint, analytics).
+
+## Key Concepts
+
+- **Tokens-first workflow**: edit JSON contracts in `packages/design-system/src/tokens/src`, then run the worker to regenerate outputs.
+- **Adapters vs components**: adapters stay thin and map UI into host app contexts; heavy logic belongs to components/composables.
+- **Testing**: Vitest + Vue Test Utils with jsdom, configured via `packages/design-system/vitest.setup.ts`.
+- **Storybook**: used for regression demos and token inspection (`pnpm ds:docs:dev`).
+
+## Roadmap Snapshots
+
+- Token path linter and contrast validation for relational contracts.
+- Matrix stories covering role × tone × state permutations.
+- Continued refinement of tone naming (base ± N system).
+
+## Licensing
+
+- Code: [MIT](./LICENSE)
+- Icons and creative assets: CC BY-NC 4.0 (see repository license notes)[https://github.com/yamogoo/alma-icons]
+- AlmaIcons © 2025 Misha Grebennikov — https://github.com/yamogoo
 
 ## Author
 
-**Mikhail Grebennikov** - [yamogoo](https://github.com/yamogoo)
+**Mikhail Grebennikov** — [@yamogoo](https://github.com/yamogoo)

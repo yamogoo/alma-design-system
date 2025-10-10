@@ -1,215 +1,168 @@
-# AlmaIconsProtoKit — MANIFEST
+# AlmaDesignSystem — MANIFEST
 
-**AlmaIconsProtoKit** is a prototype UI Kit and design system infrastructure that unifies **components**, **tokens**, **fonts**, **icons**, and **utilities** into a single platform for product development.
+**AlmaDesignSystem** is an experimental Vue 3 design-system playground that unifies **components**, **tokens**, **state helpers**, **assets**, and **tooling** inside a single monorepo.
 
-This document provides a **project structure overview**, **module descriptions**, and **usage examples**.
+This document snapshots the current architecture: high-level layout, module responsibilities, and integration notes.
 
 ## 🗂 Monorepo Overview
 
 ```bash
 apps/
   sparkpad/
-    client/        # consumer (frontend)
-    server/        # consumer (backend API)
-    log-server/    # consumer (logging service)
+    client/        # consumer frontend
+    server/        # API playground
+    log-server/    # logging sink for experiments
 
 packages/
-  design-system/   # @alma/design-system — components, adapters, SCSS core, Storybook utils
-  tokens/          # @alma/tokens        — source and compiled design tokens
-  tokens-worker/   # @alma/tokens-worker — token build/link pipeline and converters
+  design-system/   # @alma/design-system — Vue kit, tokens, SCSS core, Storybook infra
+  tokens-worker/   # @alma/tokens-worker — token compiler, converters, build helpers
+
+shared/
+  images/          # brand visuals reused by docs and Storybook
 ```
 
-> The SCSS core is kept inside `packages/design-system` and is not extracted into a separate package.
-> Global styles entry point:
+> Global styles entry point for consumers:
+>
+> ```scss
+> @use "@alma/design-system/app.runtime.scss" as *;
+> ```
 
-```scss
-@use "@alma/design-system/core.scss" as *;
-```
-
-## 📂 Project Structure
+## 📂 Package Layout (`packages/design-system/src`)
 
 ```bash
-adapters/       — environment-specific wrappers for components
-assets/         — base resources (fonts, icons, animations, SCSS core)
-components/     — Vue components (atoms, molecules, organisms, templates)
-composables/    — Vue composables (global and local hooks)
-constants/      — UI constants
-declarations/   — TypeScript declarations
-directives/     — Vue directives
-scripts/        — build/dev helper scripts
-stories/        — Storybook stories (components and tokens)
-tokens/         — design tokens (JSON), theming (light/dark), build outputs
-typings/        — TypeScript types for UI, API, router, etc.
-utils/          — helper utilities (units, events, sanitization, etc.)
-MANIFEST.yaml   — machine-readable specification
-MANIFEST.md     — human-readable documentation (this file)
+__tests__/        — Vitest fixtures, DOM helpers, and mocks
+_index.scss       — SCSS bundle entry consumed by Storybook
+adapters/         — environment-specific wrappers around base components
+app.runtime.scss  — global runtime stylesheet (tokens → CSS vars)
+assets/           — fonts, icons, animations, and SCSS core
+components/       — Vue components (atomic design)
+composables/      — global/local composition utilities
+constants/        — app + UI constant registries
+index.ts          — public surface for consumers
+stores/           — Pinia stores (connection state, etc.)
+stories/          — Storybook stories, decorators, utilities
+tokens/           — code-first token source & compiled outputs
+typings/          — TypeScript contracts exported by the kit
+utils/            — shared helpers (events, units, sanitize, GSAP guards)
 ```
+
+`public/`, `dist/`, `tests-report/`, and `stats.html` live at the package root to support build artifacts, Storybook static output, and bundle-inspection reports.
 
 ## 📦 Modules Overview
 
 ### 🔹 Adapters
 
-Adapters provide `bridges` between raw Vue components and specific environments/contexts.
-They contain minimal wrappers and mapping logic, while components/ keep the full UI and typing contracts.
+Thin wrappers that map raw components into host app contexts (routing, i18n, analytics). Structure mirrors atomic design:
 
-- **atoms/** — wrappers for atomic components (`button`, `input`, `icon`, etc.)
-
-- **molecules/** — wrappers for combined elements (`forms`, `dropdowns`, `snackbar`)
-
-- **organisms/** — environment-specific complex blocks
-
-- t**emplates/** — high-level layout wrappers
+- `abstracts/` — shared contracts and adapter base utilities  
+- `atoms/`, `molecules/`, `organisms/`, `templates/` — wrapper layers; components stay logic-heavy, adapters stay declarative
 
 ### 🔹 Assets
 
-- **animations/** — JSON animations (e.g., `spinner`, `themeIcon`)
-
-- **fonts/** — bundled fonts for offline-first usage (Manrope Cyrillic + Latin, weights 200–800)
-
-- **icons/** — AlmaIcons entry point (`index.ts`)
-
-- **images/** — static images
-
-- **scss/** — style core:
-  - abstracts/ — tokens, base colors, breakpoints, themes
-
-  - core/ — functions & mixins (px2rem, themify, map-get)
-
-  - extends/ — extensions (animations, containers, components)
-
-  - mixins/ — reusable SCSS mixins
-
-  - app.\*.scss — global entry points
-
-### @alma/tokens (packages/tokens)
-
-The single source of truth for design tokens.
-
-**Structure**
-
-```bash
-
-src/
-  abstracts/     # backgrounds, borders, shadows, base colors
-  tokens/        # spacing, stroke, roundness, gaps, touch areas
-  typography/    # type styles and scale
-  themes/        # light/dark
-  components/
-    atoms/ molecules/ templates/
-build/           # compiled runtime tokens (JSON, CSS vars, …) — generated
-structure.md     # token architecture docs
-
-```
-
-#### Figma Integration:
-
-- Full Code → Figma export supported
-
-- Tokens remain the single source of truth in code
-
-### @alma/tokens-worker (packages/tokens-worker)
-
-Token build utilities: resolving nested references, generating artifacts (JSON, CSS vars), converters, Figma-format integration.
+- **animations/** — Lottie/JSON animation files (e.g., loader, theme switcher)
+- **fonts/** — Manrope family (Cyrillic + Latin, 200–800) for offline-first usage
+- **icons/** — Alma icon entry point and SVG registry
+- **images/** — static imagery for Storybook + docs
+- **scss/** — SCSS core split into:
+  - `abstracts/` — tokens, base color maps, breakpoints
+  - `core/` — mixins/functions (px2rem, themify, map-get)
+  - `extends/` — animations, containers, component skinning
+  - `mixins/` — reusable mixins for projects and stories
+  - `app.*.scss` — global entry files (runtime, fonts, config, etc.)
 
 ### 🔹 Components
 
-Atomic design structure with Vue 3 + TypeScript.
-Each component has:
+Vue 3 + TypeScript components following atomic design:
 
-- Implementation (`.vue + .ts`)
-
-- Typings (e.g., `Button.ts` contains `ButtonProps`)
-
-- Unit tests (`.spec.ts`)
-
-- Stories (`.stories.ts[x]`)
-
-- atoms/ — smallest units (`buttons`, `icons`, `inputs`, `typography`)
-
-- molecules/ — composed elements (`dropdown`, `forms`, `snackbar`)
-
-- organisms/ — complex blocks (`editor`, `navigation`, `forms`)
-
-- templates/ — ready-to-use layouts (`headers`, `footers`, `menus`)
+- Implementation: `.vue` single-file components with colocated logic in `.ts`
+- Contracts: props and events exported from dedicated `.ts` files
+- Tests: Vitest + Vue Test Utils (`.spec.ts`)
+- Stories: `.stories.ts[x]` for Storybook coverage
+- Structure: `atoms/`, `molecules/`, `organisms/`, `templates/`, all re-exported via `components/index.ts`
 
 ### 🔹 Composables
 
-- **global/** — app-wide hooks (`theme`, `meta`, `connection` state)
+Reusable composition functions grouped by scope:
 
-- **local/** — feature/local hooks (`hover`, `clickOutside`, `drag-and-drop`, `SEO`, `navigation`, etc.)
+- `global/` — theme management, metadata, connection state
+- `local/` — interaction helpers such as hover, clickOutside, drag-and-drop, timers, storage, router access
 
-### 🔹 Tokens
+### 🔹 Constants
 
-- **src/** — source JSON tokens:
+Centralized config for UI defaults, theming, and feature flags. Consumers import selectively (`constants/app`, `constants/ui`, etc.).
 
-- **abstracts**/ — backgrounds, borders, shadows, base colors
+### 🔹 Stores
 
-- **atoms/**, **molecules/**, **templates/** — per-component tokens
-
-- **themes/** — light and dark variants
-
-- **typography/** — text styles and type scale
-
-- **tokens/** — spacing, stroke, roundness, gaps, touch areas
-
-- **build/** — compiled runtime tokens (CSS vars, JSON) — not committed, generated during build
-
-- **structure.md** — token architecture docs
+Pinia-based state helpers (`useConnectionStore`, …) intended for cross-component experiments. Exposed via `Stores` namespace from `index.ts`.
 
 ### 🔹 Stories
 
-- **components/** — story examples for atomic/molecular UI
+Storybook source:
 
-- **decorators/** — Storybook global wrappers
+- `components/` — canonical component stories
+- `decorators/` — global Storybook wrappers
+- `pages/` — narrative documentation & playgrounds
+- `utils/` — helpers for story organization (controls, knobs, theme toggles)
 
-- **tokens/** — theme and token showcase
+### 🔹 Tokens
 
-- **utils/** — helpers for story organization
+Single source of truth for theming and design decisions. Lives inside `packages/design-system/src/tokens`:
 
-### 🔹 Utils
+```bash
+src/            # editable JSON contracts
+  _colors.json
+  baseColors.json
+  breakpoints.json
+  colors.json
+  components/
+  config.json
+  themes/
+  tokens/
+  typography/
+output/         # generated by tokens-worker (JSON bundles)
+structure.md    # documentation of token architecture & contracts
+index.ts        # default export bundling compiled outputs
+```
 
-- Unit conversion (`px2rem`)
-
-- Path parsing (`getPathSegment`)
-
-- Event helpers
-
-- Unit testing helpers (Vitest setup)
+Tokens remain code-first. The worker pipeline resolves references, generates relational color matrices, and emits consumable JSON/SCSS artifacts.
 
 ### 🔹 Typings
 
-- API, routing, themes, localization, UI controls, elements
+TypeScript declaration helpers for UI contracts, API surfaces, router models, themes, and ambient declarations (`env.d.ts`, `vite-env.d.ts`).
 
-- Declaration helpers (`.d.ts`)
+### 🔹 Utils
 
-### ✅ Rules & Conventions
+Small reusable helpers (`px2rem`, `sanitize`, `getPathSegment`, `gsapSafe`, event helpers) with unit tests colocated when applicable.
 
-- `**/*.temp/` — draft components/composables (ignored via `.gitignore`, not part of repo)
+### 🔹 Testing Support
 
-- `tokens/build/` — generated only, excluded from git
+`__tests__/` supplies DOM mocks and shared Vitest utilities. `vitest.setup.ts` configures test environment (jsdom, global stubs). Tests live next to the implementation they verify.
 
-- Fonts included for **offline-first**; can be later replaced with CDN-hosted package
+## 🧰 Tokens Worker (`packages/tokens-worker`)
 
-- Each component must include at least: `.vue + .ts + .spec.ts`; stories optional but recommended
+The worker is a standalone package responsible for compiling token sources into runtime assets. Key folders:
 
-- Adapters must remain **thin wrappers**; heavy UI logic belongs in components
+- `lib/index.ts` — orchestrates builds and exports CLI hooks
+- `lib/parsers/` — parse relational contracts, resolve references
+- `lib/plugins/` — output generators (JSON, CSS vars, SCSS maps)
 
-### 🧪 Testing
+It consumes `design-system/src/tokens/src` as input and writes to `design-system/src/tokens/output`.
 
-- Vitest + Vue Test Utils.
+## ✅ Rules & Conventions
 
-- DOM types (jsdom) enabled for `design-system` tests.
+- `tokens/output/` is generated; never edited manually and excluded from source-of-truth commits
+- Adapters must stay thin; business logic belongs inside components/composables
+- Every shipped component includes `.vue + .ts + .spec.ts`; stories are strongly encouraged
+- Fonts remain vendored for offline-first demos; swapping to CDN is optional
+- Temporary experiments live under `**/*.temp/` and are ignored via `.gitignore`
 
-### 📖 Summary
+## 🧪 Testing & Tooling
 
-AlmaIconsProtoKit is now organized as a **monorepo** with clear separation between **packages** and **consumer apps**:
+- Vitest + Vue Test Utils, configured for jsdom
+- Pinia for lightweight state experiments
+- Storybook for visual regression + design reviews
+- Bundle stats via `stats.html`, execution reports under `tests-report/`
 
-- 🎨 @alma/tokens — tokens (code-first source of truth)
+## 📖 Summary
 
-- 🧩 @alma/design-system — Vue components + SCSS core
-
-- ⚙️ @alma/tokens-worker — token build pipeline
-
-- 🧪 Consumer apps (client, server, log-server) — use the packages
-
-This structure enables modular delivery, faster builds, easier versioning, and better reuse across projects.
+AlmaDesignSystem centralizes tokens, components, adapters, and tooling in a single package, keeping `tokens-worker` as the build engine. Consumers import runtime styles via `app.runtime.scss`, grab namespaces from `index.ts`, and rely on the generated token bundles for theme-aware UX experiments.
