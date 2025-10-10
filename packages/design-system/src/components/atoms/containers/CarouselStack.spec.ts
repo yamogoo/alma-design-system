@@ -1,5 +1,7 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
 import {
   CAROUSEL_STACK_PREFIX,
   type CarousleStackProps,
@@ -8,13 +10,13 @@ import CarouselStack from "./CarouselStack.vue";
 
 const Classes = {
   ROOT_CLASS: CAROUSEL_STACK_PREFIX,
-  VARIANT: `${CAROUSEL_STACK_PREFIX}_variant`,
-  SIZE: `${CAROUSEL_STACK_PREFIX}_size`,
-  ORIENTATION: `${CAROUSEL_STACK_PREFIX}_orientation`,
-  STRETCH: `${CAROUSEL_STACK_PREFIX}_stretch`,
-  GRABBING: `${CAROUSEL_STACK_PREFIX}_grabbing`,
-  CLICKABLE: `${CAROUSEL_STACK_PREFIX}_clickable`,
-  STATIC: `${CAROUSEL_STACK_PREFIX}_static`,
+  VARIANT: `${CAROUSEL_STACK_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${CAROUSEL_STACK_PREFIX}_${UIFACETS.SIZE}`,
+  ORIENTATION: `${CAROUSEL_STACK_PREFIX}_${UIMODIFIERS.ORIENTATION}`,
+  STRETCH: `${CAROUSEL_STACK_PREFIX}_${UIMODIFIERS.STRETCH}`,
+  GRABBING: `${CAROUSEL_STACK_PREFIX}_${UIMODIFIERS.GRABBING}`,
+  CLICKABLE: `${CAROUSEL_STACK_PREFIX}_${UIMODIFIERS.CLICKABLE}`,
+  STATIC: `${CAROUSEL_STACK_PREFIX}_${UIMODIFIERS.STATIC}`,
 } as const;
 
 const getHeader = <T>(wrapper: VueWrapper<T>) => {
@@ -50,12 +52,9 @@ describe("CarouselStack", () => {
       await wrapper.trigger("pointerdown");
       await wrapper.trigger("pointermove");
 
-      //   expect(wrapper.classes()).toContain(`${Classes.GRABBING}`);
-
       expect(wrapper.classes()).toContain(`${Classes.STATIC}`);
 
       await wrapper.setProps({ isItemsClickable: true });
-
       expect(wrapper.classes()).toContain(`${Classes.CLICKABLE}`);
     });
   });

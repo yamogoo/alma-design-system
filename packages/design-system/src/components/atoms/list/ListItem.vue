@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { computed, inject, useSlots, useTemplateRef } from "vue";
-import { LIST_ITEM_PREFIX, type ListItemProps } from "./ListItem";
+
+import { UIFACETS, UIMODIFIERS, UISTATES } from "@/constants/ui";
 
 import { useHover } from "@/composables/local/actions/useHover";
 
+import { LIST_ITEM_PREFIX, type ListItemProps } from "./ListItem";
 import {
   ListInjectionKey,
   type ListInjection,
 } from "@/components/molecules/list/List";
-
 import Text from "@/components/atoms/typography/Text.vue";
 import Icon from "@/components/atoms/icons/Icon.vue";
 
@@ -54,10 +55,11 @@ const isSelected = computed(() => {
   return Array.isArray(sid) ? sid.includes(props.id) : sid === props.id;
 });
 
-const effectiveState = computed<"normal" | "hovered" | "selected">(() => {
-  if (ctx?.isSelectable && ctx.isSelectable.value === false) return "normal";
-  if (isSelected.value) return "selected";
-  return isHovered.value ? "hovered" : "normal";
+const effectiveState = computed(() => {
+  if (ctx?.isSelectable && ctx.isSelectable.value === false)
+    return UISTATES.NORMAL;
+  if (isSelected.value) return UISTATES.SELECTED;
+  return isHovered.value ? UISTATES.HOVERED : UISTATES.NORMAL;
 });
 
 const cursor = computed(() => (isSelectable.value ? "pointer" : "auto"));
@@ -112,13 +114,13 @@ const onFocusPrev = (): void => {
     :class="[
       LIST_ITEM_PREFIX,
       {
-        [`${LIST_ITEM_PREFIX}_variant-${variant}`]: !!variant,
-        [`${LIST_ITEM_PREFIX}_size-${size}`]: !!size,
-        [`${LIST_ITEM_PREFIX}_mode-${mode}`]: !!mode,
-        [`${LIST_ITEM_PREFIX}_tone-${tone}`]: !!tone,
+        [`${LIST_ITEM_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${LIST_ITEM_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
+        [`${LIST_ITEM_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
+        [`${LIST_ITEM_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
       },
-      `${LIST_ITEM_PREFIX}_state-${effectiveState}`,
-      { [`${LIST_ITEM_PREFIX}_joined`]: localIsJoined },
+      `${LIST_ITEM_PREFIX}_${UIFACETS.STATE}-${effectiveState}`,
+      { [`${LIST_ITEM_PREFIX}_${UIMODIFIERS.JOINED}`]: localIsJoined },
     ]"
     :style="{ cursor }"
     :role="role"
@@ -131,7 +133,7 @@ const onFocusPrev = (): void => {
     @keydown.arrow-down.prevent="onFocusNext"
     @keydown.arrow-up.prevent="onFocusPrev"
   >
-    <div class="list-item__container">
+    <div :class="`${LIST_ITEM_PREFIX}__container`">
       <slot name="prepend">
         <Icon
           v-if="iconName"
@@ -143,7 +145,7 @@ const onFocusPrev = (): void => {
       </slot>
       <slot v-if="hasUserContent"></slot>
       <template v-else>
-        <div class="list-item__content">
+        <div :class="`${LIST_ITEM_PREFIX}__content`">
           <Text
             v-if="title"
             :class="`${LIST_ITEM_PREFIX}__title`"

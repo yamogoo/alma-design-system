@@ -1,15 +1,17 @@
 import { mount, shallowMount, VueWrapper } from "@vue/test-utils";
 
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
 import { TEXT_PREFIX } from "./Text";
 import Text from "./Text.vue";
 
 const Classes = {
   ROOT_CLASS: TEXT_PREFIX,
-  VARIANT: `${TEXT_PREFIX}_variant`,
-  SIZE: `${TEXT_PREFIX}_size`,
-  MODE: `${TEXT_PREFIX}_mode`,
-  TONE: `${TEXT_PREFIX}_tone`,
-  ALIGN: `${TEXT_PREFIX}_align`,
+  VARIANT: `${TEXT_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${TEXT_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${TEXT_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${TEXT_PREFIX}_${UIFACETS.TONE}`,
+  ALIGN: `${TEXT_PREFIX}_${UIMODIFIERS.ALIGN}`,
 } as const;
 
 const getText = <T>(wrapper: VueWrapper<T>) => {

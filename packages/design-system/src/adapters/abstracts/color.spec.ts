@@ -1,9 +1,9 @@
-import colors from "@/tokens";
+import tokens from "@/tokens";
 
 import { abstractColors } from "./color";
 
 describe("abstracSurface adapter", () => {
   test("exports colors from the light theme", () => {
-    expect(abstractColors).toEqual(colors);
+    expect(abstractColors).toEqual(tokens.colors);
   });
 });

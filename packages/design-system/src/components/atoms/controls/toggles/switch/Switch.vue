@@ -10,6 +10,8 @@ import {
 } from "vue";
 import gsap from "gsap";
 
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
 import { usePressed } from "@/composables/local/actions/usePressed";
 
 import { SWITCH_PREFIX, type SwitchProps } from "./Switch";
@@ -137,12 +139,15 @@ onMounted(() => {
       ref="root"
       :class="[
         SWITCH_PREFIX,
-        `${SWITCH_PREFIX}_variant-${variant}`,
-        `${SWITCH_PREFIX}_mode-${mode}`,
-        `${SWITCH_PREFIX}_size-${size}`,
-        `${SWITCH_PREFIX}_tone-${tone}`,
-        `${SWITCH_PREFIX}_state-${localIsActive ? 'active' : 'normal'}`,
-        { [`${SWITCH_PREFIX}_state-disabled`]: isDisabled },
+        `${SWITCH_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+        `${SWITCH_PREFIX}_${UIFACETS.MODE}-${mode}`,
+        `${SWITCH_PREFIX}_${UIFACETS.SIZE}-${size}`,
+        `${SWITCH_PREFIX}_${UIFACETS.TONE}-${tone}`,
+        `${SWITCH_PREFIX}_${UIFACETS.STATE}-${localIsActive ? UISTATES.ACTIVE : UISTATES.NORMAL}`,
+        {
+          [`${SWITCH_PREFIX}_${UIFACETS.STATE}-${UISTATES.DISABLED}`]:
+            isDisabled,
+        },
       ]"
       role="switch"
       :aria-labelledby="ariaLabelledBy"
@@ -150,6 +155,7 @@ onMounted(() => {
       :aria-checked="localIsActive"
       :aria-disabled="isDisabled"
       tabindex="0"
+      :data-testid="SWITCH_PREFIX"
       @keydown="onKeyDown"
     >
       <div :class="`${SWITCH_PREFIX}__track`">

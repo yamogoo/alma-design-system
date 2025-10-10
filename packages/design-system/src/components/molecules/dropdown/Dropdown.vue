@@ -9,14 +9,17 @@ import {
   useId,
 } from "vue";
 
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
 import { useClickOutside } from "@/composables/local/actions/useClickOutside";
 
 import Icon from "@/components/atoms/icons/Icon.vue";
-import { type DropdownProps } from "@/components/molecules/dropdown/Dropdown";
+import {
+  DROPDOWN_PREFIX,
+  type DropdownProps,
+} from "@/components/molecules/dropdown/Dropdown";
 
 import gsap from "gsap";
-
-const PREFIX = "dropdown";
 
 const ARROW_ICON_ROTATION_EXPANDED = 0,
   ARROW_ICON_ROTATION_SHRINKED = 90;
@@ -69,8 +72,8 @@ const toggleOptions = async () => {
 /* * * a11y * * */
 
 const idSuffix = useId();
-const triggerId = `${PREFIX}_trigger-${idSuffix}`;
-const optionsId = `${PREFIX}_options-${idSuffix}`;
+const triggerId = `${DROPDOWN_PREFIX}_trigger-${idSuffix}`;
+const optionsId = `${DROPDOWN_PREFIX}_options-${idSuffix}`;
 
 /* * * Animations * * */
 
@@ -170,20 +173,20 @@ const onOptionsKeydown = async (event: KeyboardEvent) => {
     ref="root"
     data-testid="dropdown"
     :class="[
-      PREFIX,
+      DROPDOWN_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${DROPDOWN_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${DROPDOWN_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
+        [`${DROPDOWN_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
+        [`${DROPDOWN_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
       },
-      `${PREFIX}_state-${isExpanded ? 'expanded' : 'normal'}`,
+      `${DROPDOWN_PREFIX}_${UIFACETS.STATE}-${isExpanded ? UISTATES.EXPANDED : UISTATES.NORMAL}`,
     ]"
   >
     <button
       ref="trigger"
-      :class="`${PREFIX}__current-value`"
-      data-testid="dropdown-value"
+      :class="`${DROPDOWN_PREFIX}__current-value`"
+      :data-testid="`${DROPDOWN_PREFIX}__value`"
       aria-haspopup="listbox"
       :aria-controls="optionsId"
       :aria-expanded="isExpanded"
@@ -192,17 +195,20 @@ const onOptionsKeydown = async (event: KeyboardEvent) => {
       @click="toggleOptions"
       @keydown="onTriggerKeydown"
     >
-      <div :class="`${PREFIX}__current-value-container`">
-        <div :class="`${PREFIX}__current-value-content`">
-          <span :class="`${PREFIX}__current-value-label`">
+      <div :class="`${DROPDOWN_PREFIX}__current-value-container`">
+        <div :class="`${DROPDOWN_PREFIX}__current-value-content`">
+          <span :class="`${DROPDOWN_PREFIX}__current-value-label`">
             {{ value }}
           </span>
-          <span v-if="valuePostfix" :class="`${PREFIX}__current-value-postfix`">
+          <span
+            v-if="valuePostfix"
+            :class="`${DROPDOWN_PREFIX}__current-value-postfix`"
+          >
             {{ valuePostfix }}
           </span>
         </div>
         <Icon
-          :class="`${PREFIX}__current-value-icon`"
+          :class="`${DROPDOWN_PREFIX}__current-value-icon`"
           :name="'down'"
           :appearance="'outline'"
           :weight="'500'"
@@ -214,14 +220,14 @@ const onOptionsKeydown = async (event: KeyboardEvent) => {
         v-if="isExpanded"
         ref="options"
         :id="optionsId"
-        :class="`${PREFIX}__options`"
+        :class="`${DROPDOWN_PREFIX}__options`"
         role="listbox"
         :aria-labelledby="triggerId"
         tabindex="0"
         @click="onOptionClick"
         @keydown="onOptionsKeydown"
       >
-        <div v-if="$slots.controlbar" :class="`${PREFIX}__controlbar`">
+        <div v-if="$slots.controlbar" :class="`${DROPDOWN_PREFIX}__controlbar`">
           <slot name="controlbar"></slot>
         </div>
         <slot></slot>
@@ -231,9 +237,10 @@ const onOptionsKeydown = async (event: KeyboardEvent) => {
 </template>
 
 <style lang="scss">
-$prefix: "dropdown";
+$tokenName: "dropdown";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $min-width: px2rem(get($val, "root.min-width"));
@@ -300,7 +307,7 @@ $prefix: "dropdown";
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.components.molecules.#{$prefix}")
+  $map: get($themes, "light.components.molecules.#{$tokenName}")
 ) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
@@ -315,7 +322,7 @@ $prefix: "dropdown";
               @include themify($themes) {
                 outline: get($tokens, "outline") solid
                   themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.highlight"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.root.highlight"
                   );
               }
             }
@@ -325,11 +332,11 @@ $prefix: "dropdown";
             .#{$prefix}__current-value {
               @include themify($themes) {
                 $border-color: themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.border.normal"
+                  "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.border.normal"
                 );
 
                 background-color: themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.normal"
+                  "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.background.normal"
                 );
                 border-color: $border-color;
               }
@@ -337,7 +344,7 @@ $prefix: "dropdown";
               &-label {
                 @include themify($themes) {
                   color: themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.normal"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.label.normal"
                   );
                 }
               }
@@ -345,7 +352,7 @@ $prefix: "dropdown";
               &-icon {
                 @include themify($themes) {
                   fill: themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.normal"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.icon.normal"
                   );
                 }
               }
@@ -353,14 +360,14 @@ $prefix: "dropdown";
               &:hover {
                 @include themify($themes) {
                   background-color: themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.hovered"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.background.hovered"
                   );
                 }
 
                 &-label {
                   @include themify($themes) {
                     color: themed(
-                      "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.hovered"
+                      "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.label.hovered"
                     );
                   }
                 }
@@ -368,7 +375,7 @@ $prefix: "dropdown";
                 &-icon {
                   @include themify($themes) {
                     fill: themed(
-                      "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.hovered"
+                      "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.icon.hovered"
                     );
                   }
                 }
@@ -380,11 +387,11 @@ $prefix: "dropdown";
             .dropdown__current-value {
               @include themify($themes) {
                 $border-color: themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.border.expanded"
+                  "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.border.expanded"
                 );
 
                 background-color: themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.expanded"
+                  "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.background.expanded"
                 );
                 border-left-color: $border-color;
                 border-top-color: $border-color;
@@ -395,7 +402,7 @@ $prefix: "dropdown";
               &-label {
                 @include themify($themes) {
                   color: themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.expanded"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.label.expanded"
                   );
                 }
               }
@@ -403,7 +410,7 @@ $prefix: "dropdown";
               &-icon {
                 @include themify($themes) {
                   fill: themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.expanded"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.icon.expanded"
                   );
                 }
               }
@@ -411,14 +418,14 @@ $prefix: "dropdown";
               &:hover {
                 @include themify($themes) {
                   background-color: themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.background.expanded-hovered"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.background.expanded-hovered"
                   );
                 }
 
                 &-label {
                   @include themify($themes) {
                     color: themed(
-                      "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.label.expanded-hovered"
+                      "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.label.expanded-hovered"
                     );
                   }
                 }
@@ -426,7 +433,7 @@ $prefix: "dropdown";
                 &-icon {
                   @include themify($themes) {
                     fill: themed(
-                      "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.icon.expanded-hovered"
+                      "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.icon.expanded-hovered"
                     );
                   }
                 }
@@ -436,10 +443,10 @@ $prefix: "dropdown";
             .dropdown__options {
               @include themify($themes) {
                 background-color: themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.options.background.normal"
+                  "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.options.background.normal"
                 );
                 $border-color: themed(
-                  "components.molecules.#{$prefix}.#{$mode}.#{$tone}.current-value.border.expanded"
+                  "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.border.expanded"
                 );
                 border-color: $border-color;
               }
@@ -447,7 +454,7 @@ $prefix: "dropdown";
               &:hover {
                 @include themify($themes) {
                   background-color: themed(
-                    "components.molecules.#{$prefix}.#{$mode}.#{$tone}.options.background.hovered"
+                    "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.options.background.hovered"
                   );
                 }
               }

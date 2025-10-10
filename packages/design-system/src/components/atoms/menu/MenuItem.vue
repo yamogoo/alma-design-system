@@ -3,10 +3,7 @@ import { useTemplateRef, watch } from "vue";
 
 import { usePressed } from "@/composables/local/actions/usePressed";
 
-import {
-  MENU_ITEM_PREFIX,
-  type MenuItemProps,
-} from "@/components/atoms/menu/MenuItem";
+import { MENU_ITEM_PREFIX, type MenuItemProps } from "./MenuItem";
 
 withDefaults(defineProps<MenuItemProps>(), {
   isActive: false,

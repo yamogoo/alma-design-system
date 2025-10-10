@@ -10,6 +10,7 @@ import {
 import gsap from "gsap";
 
 import tokens from "@/tokens";
+import { UIFACETS, UISTATES, UIMODIFIERS } from "@/constants/ui";
 
 import { useHover } from "@/composables/local/actions/useHover";
 
@@ -107,18 +108,23 @@ const onKeyup = (e: KeyboardEvent) => {
     :type="as === 'button' ? 'button' : undefined"
     :class="[
       BUTTON_PREFIX,
-      `${BUTTON_PREFIX}_variant-${variant}`,
-      `${BUTTON_PREFIX}_size-${size}`,
-      `${BUTTON_PREFIX}_mode-${mode}`,
-      `${BUTTON_PREFIX}_tone-${tone}`,
-      `${BUTTON_PREFIX}_state-${
-        localIsPressed ? 'pressed' : isHovered ? 'hovered' : 'normal'
+      `${BUTTON_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${BUTTON_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${BUTTON_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${BUTTON_PREFIX}_${UIFACETS.TONE}-${tone}`,
+      `${BUTTON_PREFIX}_${UIFACETS.STATE}-${
+        localIsPressed
+          ? UISTATES.PRESSED
+          : isHovered
+            ? UISTATES.HOVERED
+            : UISTATES.NORMAL
       }`,
       {
-        [`${BUTTON_PREFIX}_direction-${contentDirection}`]: !!contentDirection,
-        [`${BUTTON_PREFIX}_stretch-${stretch}`]: !!stretch,
-        [`${BUTTON_PREFIX}_state-disabled`]: isDisabled,
-        [`${BUTTON_PREFIX}_state-bordered`]: bordered,
+        [`${BUTTON_PREFIX}_${UIMODIFIERS.DIRECTION}-${contentDirection}`]:
+          !!contentDirection,
+        [`${BUTTON_PREFIX}_${UIMODIFIERS.STRETCH}-${stretch}`]: !!stretch,
+        [`${BUTTON_PREFIX}_${UIFACETS.STATE}-${UISTATES.DISABLED}`]: isDisabled,
+        [`${BUTTON_PREFIX}_${UIMODIFIERS.BORDERED}`]: bordered,
       },
     ]"
     :data-testid="BUTTON_PREFIX"

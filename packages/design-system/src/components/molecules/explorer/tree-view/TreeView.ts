@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   TreeViewMode,
   TreeViewSize,
@@ -47,3 +49,5 @@ export interface TreeViewProps
     Partial<Pick<TreeViewItemProps, "isIconShown">> {
   ariaLabel?: string;
 }
+
+export const TREE_VIEW_PREFIX = `${NAME_SPACE}tree-view`;

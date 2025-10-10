@@ -1,6 +1,22 @@
-import { mount } from "@vue/test-utils";
+import { mount, VueWrapper } from "@vue/test-utils";
 
+import { UIFACETS } from "@/constants/ui";
+
+import { FORM_PREFIX, type FormProps } from "./Form";
 import Form from "@/components/molecules/forms/Form.vue";
+
+const Classes = {
+  ROOT_CLASS: FORM_PREFIX,
+  SIZE: `${FORM_PREFIX}_${UIFACETS.SIZE}`,
+};
+
+const getBody = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`.${Classes.ROOT_CLASS}__body`);
+};
+
+const getFooter = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`.${Classes.ROOT_CLASS}__footer`);
+};
 
 vi.mock("vue", async (orig) => {
   const actual = await orig();
@@ -20,7 +36,7 @@ describe("Form", () => {
       const wrapper = mount(Form, {
         slots: { footer: "<div class='custom-footer'>Footer Content</div>" },
       });
-      const footer = wrapper.find(".form__footer");
+      const footer = getFooter(wrapper);
 
       expect(footer.exists()).toBe(true);
       expect(footer.text()).toContain("Footer Content");
@@ -29,17 +45,21 @@ describe("Form", () => {
     test("does not render footer if slot footer is empty", () => {
       const wrapper = mount(Form);
 
-      expect(wrapper.find(".form__footer").exists()).toBe(false);
+      expect(getFooter(wrapper).exists()).toBe(false);
     });
   });
 
   describe("classes", () => {
     test("adds class for size", () => {
+      const props: FormProps = {
+        size: "md",
+      };
+
       const wrapper = mount(Form, {
-        props: { size: "md" },
+        props,
       });
 
-      expect(wrapper.classes("form_size-md")).toBeTruthy();
+      expect(wrapper.classes(`${Classes.SIZE}-${props.size}`)).toBeTruthy();
     });
   });
 
@@ -65,7 +85,7 @@ describe("Form", () => {
         slots: { default: "<p>Body content</p>" },
       });
 
-      const body = wrapper.find(".form__body");
+      const body = getBody(wrapper);
 
       expect(body.exists()).toBe(true);
       expect(body.text()).toContain("Body content");

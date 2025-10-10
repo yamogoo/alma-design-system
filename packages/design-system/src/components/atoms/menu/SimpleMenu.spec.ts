@@ -2,16 +2,18 @@ import { mount, VueWrapper } from "@vue/test-utils";
 
 import { getTypedEmittedEvent } from "@/__tests__/utils";
 
+import { UIFACETS } from "@/constants/ui";
+
 import { type MenuItems } from "@/components/atoms/menu/menu";
 import { SIMPLE_MENU_PREFIX } from "./SimpleMenu";
 import SimpleMenu from "@/components/atoms/menu/SimpleMenu.vue";
 
 const Classes = {
   ROOT: SIMPLE_MENU_PREFIX,
-  VARIANT: `${SIMPLE_MENU_PREFIX}_variant`,
-  SIZE: `${SIMPLE_MENU_PREFIX}_size`,
-  MODE: `${SIMPLE_MENU_PREFIX}_mode`,
-  TONE: `${SIMPLE_MENU_PREFIX}_tone`,
+  VARIANT: `${SIMPLE_MENU_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${SIMPLE_MENU_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${SIMPLE_MENU_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${SIMPLE_MENU_PREFIX}_${UIFACETS.TONE}`,
 } as const;
 
 const getItems = <T>(wrapper: VueWrapper<T>) => {

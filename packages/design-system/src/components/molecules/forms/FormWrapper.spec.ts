@@ -1,15 +1,17 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
+import { UIFACETS } from "@/constants/ui";
+
 import { SURFACE_PREFIX } from "@/components/atoms/containers/Surface";
 
-import { type FormWrapperProps } from "@/components/molecules/forms/FormWrapper";
-import FormWrapper from "@/components/molecules/forms/FormWrapper.vue";
+import { FORM_WRAPPER_PREFIX, type FormWrapperProps } from "./FormWrapper";
+import FormWrapper from "./FormWrapper.vue";
 
 const Classes = {
-  ROOT_CLASS: "form-wrapper",
+  ROOT_CLASS: FORM_WRAPPER_PREFIX,
   BASE_CLASS_NAME: SURFACE_PREFIX,
-  VARIANT: `${SURFACE_PREFIX}_variant`,
-  SIZE: `${SURFACE_PREFIX}_size`,
+  VARIANT: `${SURFACE_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${SURFACE_PREFIX}_${UIFACETS.SIZE}`,
 };
 
 const getSurface = <T>(wrapper: VueWrapper<T>) => {

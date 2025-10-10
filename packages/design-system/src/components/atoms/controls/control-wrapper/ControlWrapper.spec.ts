@@ -1,5 +1,7 @@
 import { mount } from "@vue/test-utils";
 
+import { UIFACETS } from "@/constants/ui";
+
 import {
   CONTROL_WRAPPER_PREFIX,
   type ControlWrapperProps,
@@ -8,8 +10,8 @@ import ControlWrapper from "@/components/atoms/controls/control-wrapper/ControlW
 
 const Classes = {
   ROOT_CLASS: CONTROL_WRAPPER_PREFIX,
-  VARIANT: `${CONTROL_WRAPPER_PREFIX}_variant`,
-  SIZE: `${CONTROL_WRAPPER_PREFIX}_size`,
+  VARIANT: `${CONTROL_WRAPPER_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${CONTROL_WRAPPER_PREFIX}_${UIFACETS.SIZE}`,
 };
 
 describe("ControlWrapper", () => {

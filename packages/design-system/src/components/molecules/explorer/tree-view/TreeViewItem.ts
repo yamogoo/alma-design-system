@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type { TreeViewControlProps } from "./TreeView";
 
 export type TreeViewNodeType = "group" | "file";
@@ -21,3 +23,5 @@ export interface TreeViewItemProps extends TreeViewControlProps {
   isSelectOnRelease?: boolean;
   isIconShown?: boolean;
 }
+
+export const TREE_VIEW_ITEM_PREFIX = `${NAME_SPACE}tree-view-item`;

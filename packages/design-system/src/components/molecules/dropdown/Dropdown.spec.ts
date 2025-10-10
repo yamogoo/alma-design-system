@@ -1,26 +1,36 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { type DropdownProps } from "@/components/molecules/dropdown/Dropdown";
-import Dropdown from "@/components/molecules/dropdown/Dropdown.vue";
+import { UIFACETS } from "@/constants/ui";
+
+import { DROPDOWN_PREFIX, type DropdownProps } from "./Dropdown";
+import Dropdown from "./Dropdown.vue";
+
+const Classes = {
+  ROOT_CLASS: DROPDOWN_PREFIX,
+  VARIANT: `${DROPDOWN_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${DROPDOWN_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${DROPDOWN_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${DROPDOWN_PREFIX}_${UIFACETS.TONE}`,
+} as const;
 
 const REQUIRED_PROPS: DropdownProps = {
   value: "some value",
 };
 
 const getValue = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`[data-testid="dropdown-value"]`);
+  return wrapper.find(`[data-testid="${Classes.ROOT_CLASS}__value"]`);
 };
 
 const getOptions = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`.dropdown__options`);
+  return wrapper.find(`.${Classes.ROOT_CLASS}__options`);
 };
 
 const getValueLabel = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(".dropdown__current-value-label");
+  return wrapper.find(`.${DROPDOWN_PREFIX}__current-value-label`);
 };
 
 const getValuePostfix = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(".dropdown__current-value-postfix");
+  return wrapper.find(`.${DROPDOWN_PREFIX}__current-value-postfix`);
 };
 
 describe("Dropdown", () => {

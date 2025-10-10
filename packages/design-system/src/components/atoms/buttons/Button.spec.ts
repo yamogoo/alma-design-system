@@ -1,8 +1,18 @@
 import { mount, shallowMount, VueWrapper } from "@vue/test-utils";
 import gsap from "gsap";
 
+import { UIFACETS } from "@/constants/ui";
+
 import { type ButtonProps, BUTTON_PREFIX } from "./Button";
 import Button from "./Button.vue";
+
+const Classes = {
+  ROOT_CLASS: BUTTON_PREFIX,
+  VARIANT: `${BUTTON_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${BUTTON_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${BUTTON_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${BUTTON_PREFIX}_${UIFACETS.TONE}`,
+} as const;
 
 const REQUIRED_PROPS: Pick<ButtonProps, "tone" | "mode"> = {
   mode: "neutral",
@@ -10,7 +20,7 @@ const REQUIRED_PROPS: Pick<ButtonProps, "tone" | "mode"> = {
 };
 
 const getIcon = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`[data-testid="${BUTTON_PREFIX}__icon"]`);
+  return wrapper.find(`[data-testid="${Classes.ROOT_CLASS}__icon"]`);
 };
 
 vi.mock("gsap", () => ({
@@ -26,16 +36,20 @@ describe("Button.vue", () => {
 
   describe("classes", () => {
     test("renders with base classes and attributes", () => {
+      const props: ButtonProps = {
+        size: "md",
+      };
+
       const wrapper = mount(Button, {
-        props: { size: "md", ...REQUIRED_PROPS },
+        props: { ...REQUIRED_PROPS, ...props },
       });
 
-      const btn = wrapper.get(`[data-testid='${BUTTON_PREFIX}']`);
+      const btn = wrapper.get(`[data-testid='${Classes.ROOT_CLASS}']`);
 
-      expect(btn.classes()).toContain(BUTTON_PREFIX);
-      expect(btn.classes()).toContain(`${BUTTON_PREFIX}_size-md`);
-      expect(btn.classes()).toContain(`${BUTTON_PREFIX}_mode-neutral`);
-      expect(btn.classes()).toContain(`${BUTTON_PREFIX}_tone-primary`);
+      expect(btn.classes()).toContain(Classes.ROOT_CLASS);
+      expect(btn.classes()).toContain(`${Classes.SIZE}-${props.size}`);
+      expect(btn.classes()).toContain(`${Classes.MODE}-${REQUIRED_PROPS.mode}`);
+      expect(btn.classes()).toContain(`${Classes.TONE}-${REQUIRED_PROPS.tone}`);
     });
   });
 
@@ -45,9 +59,9 @@ describe("Button.vue", () => {
         props: { size: "md", ...REQUIRED_PROPS, label: "Click me" },
       });
 
-      const btn = wrapper.get(`[data-testid='${BUTTON_PREFIX}']`);
+      const buttonEl = wrapper.get(`[data-testid='${Classes.ROOT_CLASS}']`);
 
-      expect(btn.attributes("aria-label")).toBe("Click me");
+      expect(buttonEl.attributes("aria-label")).toBe("Click me");
     });
   });
 

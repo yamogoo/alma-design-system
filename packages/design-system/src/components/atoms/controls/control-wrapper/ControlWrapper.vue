@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { UIFACETS } from "@/constants/ui";
+
 import {
   CONTROL_WRAPPER_PREFIX,
   type ControlWrapperProps,
@@ -15,8 +17,8 @@ withDefaults(defineProps<ControlWrapperProps>(), {
     :class="[
       CONTROL_WRAPPER_PREFIX,
       {
-        [`${CONTROL_WRAPPER_PREFIX}_variant-${variant}`]: !!variant,
-        [`${CONTROL_WRAPPER_PREFIX}_size-${size}`]: !!size,
+        [`${CONTROL_WRAPPER_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${CONTROL_WRAPPER_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
       },
     ]"
   >

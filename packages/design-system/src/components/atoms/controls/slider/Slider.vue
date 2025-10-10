@@ -2,6 +2,8 @@
 import { ref, computed, watch, onBeforeUnmount, useTemplateRef } from "vue";
 import gsap from "gsap";
 
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
 import { useHover } from "@/composables/local/actions/useHover";
 
 import { SLIDER_PREFIX, type SliderProps } from "./Slider";
@@ -99,7 +101,7 @@ const computedValueFromClientX = (clientX: number): number => {
 };
 
 const onTrackPress = (e: PointerEvent) => {
-  if (!refTrack.value) return;
+  if (!refTrack.value || props.isDisabled) return;
 
   e.preventDefault();
 
@@ -112,7 +114,7 @@ const onTrackPress = (e: PointerEvent) => {
 };
 
 const onKnobPress = (e: PointerEvent): void => {
-  if (!refTrack.value) return;
+  if (!refTrack.value || props.isDisabled) return;
 
   e.preventDefault();
 
@@ -124,7 +126,7 @@ const onKnobPress = (e: PointerEvent): void => {
 };
 
 const onDragMove = (e: PointerEvent) => {
-  if (!isDragging.value) return;
+  if (!isDragging.value || props.isDisabled) return;
   localValue.value = computedValueFromClientX(e.clientX);
 };
 
@@ -145,6 +147,8 @@ const ariaLabel = `${SLIDER_PREFIX}`;
 /* * * Keyboard * * */
 
 const onKnobKeydown = (e: KeyboardEvent) => {
+  if (props.isDisabled) return;
+
   let delta = 0;
 
   if (e.key === "ArrowRight" || e.key === "ArrowUp") delta = props.step;
@@ -199,13 +203,13 @@ onBeforeUnmount(removeEventListeners);
     ref="root"
     :class="[
       SLIDER_PREFIX,
-      `${SLIDER_PREFIX}_variant-${variant}`,
-      `${SLIDER_PREFIX}_size-${size}`,
-      `${SLIDER_PREFIX}_mode-${mode}`,
-      `${SLIDER_PREFIX}_tone-${tone}`,
+      `${SLIDER_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${SLIDER_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${SLIDER_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${SLIDER_PREFIX}_${UIFACETS.TONE}-${tone}`,
       isDisabled
-        ? `${SLIDER_PREFIX}_state-disabled`
-        : `${SLIDER_PREFIX}_state-${isHovered ? 'hovered' : 'normal'}`,
+        ? `${SLIDER_PREFIX}_${UIFACETS.STATE}-${UISTATES.DISABLED}`
+        : `${SLIDER_PREFIX}_${UIFACETS.STATE}-${isHovered ? UISTATES.HOVERED : UISTATES.NORMAL}`,
     ]"
     @pointerdown="onTrackPress"
   >

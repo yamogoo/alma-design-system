@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { onUnmounted, ref, useId, watch } from "vue";
+import { onUnmounted, ref, useId, useTemplateRef, watch } from "vue";
 import { useFocus } from "@vueuse/core";
 import gsap from "gsap";
 
+import { UIMODIFIERS } from "@/constants/ui";
+
 import { useHover, useTimeout } from "@/composables/local";
 
-import {
-  TOOLTIP_PREFIX,
-  type TooltipProps,
-} from "@/components/atoms/tooltips/Tooltip";
+import { TOOLTIP_PREFIX, type TooltipProps } from "./Tooltip";
 import CharTooltipLabel from "@/components/atoms/tooltips/CharTooltipLabel.vue";
 
 const FOCUS_SHOW_TOOLTIP_TIME_MS = 250,
@@ -31,7 +30,7 @@ const props = withDefaults(defineProps<TooltipProps>(), {
 
 const localTooltipId = props.tooltipId ?? useId();
 
-const refContent = ref<HTMLDivElement | null>(null);
+const refContent = useTemplateRef<HTMLDivElement | null>("content");
 
 const isTooltipShown = ref(false);
 
@@ -98,12 +97,12 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
     :class="[
       TOOLTIP_PREFIX,
       isFollowingCursor
-        ? `${TOOLTIP_PREFIX}_follow-cursor`
-        : `${TOOLTIP_PREFIX}_align-${align}`,
+        ? `${TOOLTIP_PREFIX}_${UIMODIFIERS.FLOATING}`
+        : `${TOOLTIP_PREFIX}_${UIMODIFIERS.ALIGN}-${align}`,
     ]"
   >
     <div
-      ref="refContent"
+      ref="content"
       :class="`${TOOLTIP_PREFIX}__content`"
       :aria-describedby="localTooltipId"
     >

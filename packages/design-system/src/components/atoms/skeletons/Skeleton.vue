@@ -2,10 +2,9 @@
 import { onMounted, useTemplateRef } from "vue";
 import gsap from "gsap";
 
-import {
-  SKELETON_PREFIX,
-  type SkeletonProps,
-} from "@/components/atoms/skeletons/Skeleton";
+import { UIFACETS } from "@/constants/ui";
+
+import { SKELETON_PREFIX, type SkeletonProps } from "./Skeleton";
 
 const props = withDefaults(defineProps<SkeletonProps>(), {
   mode: "neutral",
@@ -43,11 +42,11 @@ const onAnimate = (el: Element): void => {
     :class="[
       SKELETON_PREFIX,
       {
-        [`${SKELETON_PREFIX}_variant-${variant}`]: !!variant,
-        [`${SKELETON_PREFIX}_size-${size}`]: !!size,
+        [`${SKELETON_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${SKELETON_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
       },
-      `${SKELETON_PREFIX}_mode-${mode}`,
-      `${SKELETON_PREFIX}_tone-${tone}`,
+      `${SKELETON_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${SKELETON_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
     :data-testid="`${SKELETON_PREFIX}`"
     :aria-label="ariaLabel"

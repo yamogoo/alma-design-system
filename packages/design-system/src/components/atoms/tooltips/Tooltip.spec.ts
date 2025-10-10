@@ -1,15 +1,17 @@
 import { mount } from "@vue/test-utils";
 
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
 import { TOOLTIP_PREFIX } from "./Tooltip";
 import Tooltip from "./Tooltip.vue";
 
 const Classes = {
   ROOT_CLASS: TOOLTIP_PREFIX,
-  VARIANT: `${TOOLTIP_PREFIX}_variant`,
-  SIZE: `${TOOLTIP_PREFIX}_size`,
-  MODE: `${TOOLTIP_PREFIX}_mode`,
-  TONE: `${TOOLTIP_PREFIX}_tone`,
-  ALIGN: `${TOOLTIP_PREFIX}_align`,
+  VARIANT: `${TOOLTIP_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${TOOLTIP_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${TOOLTIP_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${TOOLTIP_PREFIX}_${UIFACETS.TONE}`,
+  ALIGN: `${TOOLTIP_PREFIX}_${UIMODIFIERS.ALIGN}`,
 } as const;
 
 vi.mock("gsap", () => ({

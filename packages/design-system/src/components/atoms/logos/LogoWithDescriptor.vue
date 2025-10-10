@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useTemplateRef } from "vue";
 
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
 import { useHover, usePressed } from "@/composables/local/actions";
 
 import {
@@ -23,9 +25,9 @@ const { isHovered } = useHover(root);
 const { isPressed } = usePressed(root);
 
 const computedClass = () => {
-  if (isPressed.value) return "pressed";
-  if (isHovered.value) return "hovered";
-  return "normal";
+  if (isPressed.value) return UISTATES.PRESSED;
+  if (isHovered.value) return UISTATES.HOVERED;
+  return UISTATES.NORMAL;
 };
 </script>
 
@@ -34,11 +36,11 @@ const computedClass = () => {
     ref="root"
     :class="[
       LOGO_WITH_DESCRIPTOR_PREFIX,
-      `${LOGO_WITH_DESCRIPTOR_PREFIX}_variant-${variant}`,
-      `${LOGO_WITH_DESCRIPTOR_PREFIX}_size-${size}`,
-      `${LOGO_WITH_DESCRIPTOR_PREFIX}_mode-${mode}`,
-      `${LOGO_WITH_DESCRIPTOR_PREFIX}_tone-${tone}`,
-      `${LOGO_WITH_DESCRIPTOR_PREFIX}_state-${computedClass()}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_${UIFACETS.TONE}-${tone}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_${UIFACETS.STATE}-${computedClass()}`,
     ]"
   >
     <Logo data-testid="logo" />

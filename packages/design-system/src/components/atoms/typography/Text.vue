@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import { computed, type ComputedRef, type CSSProperties } from "vue";
 
-import {
-  TEXT_PREFIX,
-  type TextProps,
-} from "@/components/atoms/typography/Text";
+import { UIFACETS } from "@/constants/ui";
+
+import { TEXT_PREFIX, type TextProps } from "./Text";
 
 const props = withDefaults(defineProps<TextProps>(), {
   as: "span",
@@ -41,10 +40,10 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
     :class="[
       TEXT_PREFIX,
       {
-        [`${TEXT_PREFIX}_variant-${variant}`]: !!variant,
-        [`${TEXT_PREFIX}_mode-${mode}`]: !!mode,
-        [`${TEXT_PREFIX}_tone-${tone}`]: !!tone,
-        [`${TEXT_PREFIX}_state-${state}`]: !!state,
+        [`${TEXT_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${TEXT_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
+        [`${TEXT_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
+        [`${TEXT_PREFIX}_${UIFACETS.STATE}-${state}`]: !!state,
       },
     ]"
     :style="computedStyle"

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
 import { DIVIDER_PREFIX, type DividerProps } from "./Divider";
 
 withDefaults(defineProps<DividerProps>(), {
@@ -17,12 +19,12 @@ withDefaults(defineProps<DividerProps>(), {
     :is="as"
     :class="[
       DIVIDER_PREFIX,
-      `${DIVIDER_PREFIX}_variant-${variant}`,
-      `${DIVIDER_PREFIX}_size-${size}`,
-      `${DIVIDER_PREFIX}_mode-${mode}`,
-      `${DIVIDER_PREFIX}_tone-${tone}`,
-      `${DIVIDER_PREFIX}_orientation-${orientation}`,
-      `${DIVIDER_PREFIX}_align-${align}`,
+      `${DIVIDER_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${DIVIDER_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${DIVIDER_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${DIVIDER_PREFIX}_${UIFACETS.TONE}-${tone}`,
+      `${DIVIDER_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`,
+      `${DIVIDER_PREFIX}_${UIMODIFIERS.ALIGN}-${align}`,
     ]"
     role="separator"
     :aria-orientation="orientation === 'vertical' ? 'vertical' : undefined"

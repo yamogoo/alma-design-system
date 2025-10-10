@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { watch } from "vue";
-import type { OverlayProps } from "./Overlay";
+import { OVERLAY_PREFIX, type OverlayProps } from "./Overlay";
 
 import Surface from "@/components/atoms/containers/Surface.vue";
-
-const PREFIX = "overlay";
 
 const props = withDefaults(defineProps<OverlayProps>(), {
   containerId: "body",
@@ -31,7 +29,7 @@ const onClose = (): void => {
   <Teleport :to="containerId">
     <Surface
       v-if="props.isOpen"
-      :class="[PREFIX]"
+      :class="[OVERLAY_PREFIX]"
       v-bind="props"
       @click.self="onClose"
     >
@@ -40,12 +38,12 @@ const onClose = (): void => {
 </template>
 
 <style lang="scss">
-$prefix: overlay;
+$tokenName: "overlay";
+$prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   position: fixed;
   inset: 0;
-  /* pointer-events: none; */
 
   :where(&) {
     z-index: 1000;

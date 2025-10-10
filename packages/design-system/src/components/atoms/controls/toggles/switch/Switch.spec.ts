@@ -1,9 +1,49 @@
 import { describe, expect, test } from "vitest";
-import { mount } from "@vue/test-utils";
+import { mount, VueWrapper } from "@vue/test-utils";
 
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
+import { SWITCH_PREFIX, type SwitchProps } from "./Switch";
 import Switch from "./Switch.vue";
 
+const Classes = {
+  ROOT_CLASS: SWITCH_PREFIX,
+  VARIANT: `${SWITCH_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${SWITCH_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${SWITCH_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${SWITCH_PREFIX}_${UIFACETS.TONE}`,
+  STATE: `${SWITCH_PREFIX}_${UIFACETS.STATE}`,
+};
+
+const getRoot = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`[data-testid="${SWITCH_PREFIX}"]`);
+};
+
 describe("Switch", () => {
+  test("renders with default props and classes", async () => {
+    const props: SwitchProps = {
+      variant: "default",
+      size: "md",
+      mode: "accent",
+      tone: "primary",
+      isActive: false,
+    };
+
+    const wrapper = mount(Switch, { props });
+
+    const rootEl = getRoot(wrapper);
+
+    expect(rootEl.classes()).toContain(`${Classes.VARIANT}-${props.variant}`);
+    expect(rootEl.classes()).toContain(`${Classes.SIZE}-${props.size}`);
+    expect(rootEl.classes()).toContain(`${Classes.MODE}-${props.mode}`);
+    expect(rootEl.classes()).toContain(`${Classes.TONE}-${props.tone}`);
+    expect(rootEl.classes()).toContain(`${Classes.STATE}-${UISTATES.NORMAL}`);
+
+    await wrapper.setProps({ isActive: true });
+
+    expect(rootEl.classes()).toContain(`${Classes.STATE}-${UISTATES.ACTIVE}`);
+  });
+
   describe("props", () => {
     test.each([true, false])(
       "should render correctly with useNative=%s",

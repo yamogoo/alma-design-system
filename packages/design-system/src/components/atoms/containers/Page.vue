@@ -1,7 +1,8 @@
-gsap
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, useTemplateRef } from "vue";
 import gsap from "gsap";
+
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
 
 import { createCustomEvent } from "@/utils/events";
 
@@ -458,8 +459,9 @@ onUnmounted(() => {
       :class="[
         PAGE_PREFIX,
         {
-          [`${PAGE_PREFIX}_orientation-${orientation}`]: !!orientation,
-          [`${PAGE_PREFIX}_mode-${tone}`]: !!tone,
+          [`${PAGE_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`]:
+            !!orientation,
+          [`${PAGE_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
         },
       ]"
       @pointerdown="onPointerDown"

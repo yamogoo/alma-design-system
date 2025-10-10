@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { defineAsyncComponent, computed } from "vue";
 
+import { UIFACETS } from "@/constants/ui";
+
 import { SVG_IMAGE_PREFIX, type SVGImageProps } from "./SVGImage";
 
 import Skeleton from "@/components/atoms/skeletons/Skeleton.vue";
@@ -34,10 +36,10 @@ const symbol = computed(() => {
     :class="[
       SVG_IMAGE_PREFIX,
       {
-        [`${SVG_IMAGE_PREFIX}_variant-${variant}`]: !!variant,
-        [`${SVG_IMAGE_PREFIX}_size-${size}`]: !!size,
-        [`${SVG_IMAGE_PREFIX}_mode-${mode}`]: !!mode,
-        [`${SVG_IMAGE_PREFIX}_tone-${tone}`]: !!tone,
+        [`${SVG_IMAGE_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${SVG_IMAGE_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
+        [`${SVG_IMAGE_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
+        [`${SVG_IMAGE_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
       },
     ]"
     role="img"

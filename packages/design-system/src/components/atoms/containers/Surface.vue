@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed, useTemplateRef } from "vue";
 
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
 import {
   SURFACE_PREFIX,
   SurfaceBorderPositionAliases,
@@ -39,7 +41,7 @@ const computedBorderClass = computed(() => {
       RegExp(getDirectionAlias(position)).test(sides);
 
     if (isPosition) {
-      const className = `${SURFACE_PREFIX}_border-${position}`;
+      const className = `${SURFACE_PREFIX}_${UIMODIFIERS.BORDER}-${position}`;
       return className;
     }
   });
@@ -57,13 +59,13 @@ defineExpose({
     :class="[
       SURFACE_PREFIX,
       {
-        [`${SURFACE_PREFIX}_variant-${variant}`]: !!variant,
-        [`${SURFACE_PREFIX}_size-${size}`]: !!size,
-        [`${SURFACE_PREFIX}_mode-${mode}`]: !!mode,
-        [`${SURFACE_PREFIX}_tone-${tone}`]: !!tone,
-        [`${SURFACE_PREFIX}_stretch-${stretch}`]: !!stretch,
-        [`${SURFACE_PREFIX}_rounded`]: !!rounded,
-        [`${SURFACE_PREFIX}_elevated`]: !!elevated,
+        [`${SURFACE_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${SURFACE_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
+        [`${SURFACE_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
+        [`${SURFACE_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
+        [`${SURFACE_PREFIX}_${UIMODIFIERS.STRETCH}-${stretch}`]: !!stretch,
+        [`${SURFACE_PREFIX}_${UIMODIFIERS.ROUNDED}`]: !!rounded,
+        [`${SURFACE_PREFIX}_${UIMODIFIERS.ELEVATED}`]: !!elevated,
       },
       computedBorderClass,
     ]"

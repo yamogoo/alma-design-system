@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type { GroupProps } from "./Group";
+import { GROUP_PREFIX, type GroupProps } from "./Group";
 import Surface from "@/components/atoms/containers/Surface.vue";
-
-const PREFIX = "group";
 
 const props = withDefaults(defineProps<GroupProps>(), {
   variant: "default",
@@ -21,18 +19,19 @@ const componentTag = props.as;
   <Surface
     :as="componentTag"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
+      GROUP_PREFIX,
+      `${GROUP_PREFIX}_variant-${variant}`,
+      `${GROUP_PREFIX}_size-${size}`,
       {
-        [`${PREFIX}_direction-${direction}`]: !!direction,
-        [`${PREFIX}_orientation-${orientation}`]: !!orientation,
-        [`${PREFIX}_align-vertical-${verticalAlignment}`]: !!verticalAlignment,
-        [`${PREFIX}_align-horizontal-${horizontalAlignment}`]:
+        [`${GROUP_PREFIX}_direction-${direction}`]: !!direction,
+        [`${GROUP_PREFIX}_orientation-${orientation}`]: !!orientation,
+        [`${GROUP_PREFIX}_align-vertical-${verticalAlignment}`]:
+          !!verticalAlignment,
+        [`${GROUP_PREFIX}_align-horizontal-${horizontalAlignment}`]:
           !!horizontalAlignment,
-        [`${PREFIX}_stretch-${stretch}`]: !!stretch,
-        [`${PREFIX}_wrap`]: wrap,
-        [`${PREFIX}_divider`]: divider,
+        [`${GROUP_PREFIX}_stretch-${stretch}`]: !!stretch,
+        [`${GROUP_PREFIX}_wrap`]: wrap,
+        [`${GROUP_PREFIX}_divider`]: divider,
       },
     ]"
     :mode="mode"
@@ -51,9 +50,10 @@ const componentTag = props.as;
 <style lang="scss">
 @use "sass:map";
 
-$prefix: "group";
+$tokenName: "group";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));
@@ -126,10 +126,10 @@ $prefix: "group";
     }
   }
 
-  @each $variant, $sizes in get($components, "molecules.group") {
+  @each $variant, $sizes in get($components, "molecules.#{$tokenName}") {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.#{$prefix}size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           gap: px2rem(get($val, "root.gap"));
         }
       }

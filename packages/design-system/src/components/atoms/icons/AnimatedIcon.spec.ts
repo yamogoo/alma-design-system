@@ -1,10 +1,17 @@
-import { mount } from "@vue/test-utils";
+import { mount, VueWrapper } from "@vue/test-utils";
 import { describe, test, expect } from "vitest";
 
-import { type AnimatedIconProps } from "@/components/atoms/icons/AnimatedIcon";
+import {
+  ANIMATED_ICON_PREFIX,
+  type AnimatedIconProps,
+} from "@/components/atoms/icons/AnimatedIcon";
 import AnimatedIcon from "@/components/atoms/icons/AnimatedIcon.vue";
 
 import animationData from "@/assets/animations/spinner.json";
+
+const getRoot = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`.${ANIMATED_ICON_PREFIX}`);
+};
 
 const REQUIRED_PROPS: AnimatedIconProps = {
   animationData,
@@ -16,7 +23,7 @@ describe("AnimatedIcon", () => {
     const wrapper = mount(AnimatedIcon, { props: REQUIRED_PROPS });
 
     test("should render lottie (svg) dom element", () => {
-      const container = wrapper.find(`.animated-icon`);
+      const container = getRoot(wrapper);
       const isContainerExists = container.exists();
 
       expect(isContainerExists).toBeTruthy();

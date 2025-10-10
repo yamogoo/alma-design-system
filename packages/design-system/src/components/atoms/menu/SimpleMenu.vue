@@ -1,14 +1,13 @@
 <script setup lang="ts" generic="T">
 import { useTemplateRef } from "vue";
 
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
 import { useMenuNavigation } from "@/composables/local";
 
-import {
-  SIMPLE_MENU_PREFIX,
-  type SimpleMenuProps,
-} from "@/components/atoms/menu/SimpleMenu";
-import type { IMenuItem } from "@/components/atoms/menu/menu";
-import MenuItem from "@/components/atoms/menu/MenuItem.vue";
+import { SIMPLE_MENU_PREFIX, type SimpleMenuProps } from "./SimpleMenu";
+import type { IMenuItem } from "./menu";
+import MenuItem from "./MenuItem.vue";
 import Text from "@/components/atoms/typography/Text.vue";
 
 const props = withDefaults(defineProps<SimpleMenuProps<T>>(), {
@@ -44,9 +43,9 @@ const onPress = (item: IMenuItem<T>): void => {
     ref="root"
     :class="[
       SIMPLE_MENU_PREFIX,
-      `${SIMPLE_MENU_PREFIX}_variant-${variant}`,
-      `${SIMPLE_MENU_PREFIX}_size-${size}`,
-      `${SIMPLE_MENU_PREFIX}_orientation-${orientation}`,
+      `${SIMPLE_MENU_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${SIMPLE_MENU_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${SIMPLE_MENU_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`,
     ]"
     :role="orientation === 'vertical' ? 'menu' : 'menubar'"
   >

@@ -85,8 +85,6 @@ Open Storybook at http://localhost:6006 or the app at http://localhost:5041.
 ## 🧭 Roadmap (abridged)
 
 - Token path linter + contrast CI for contracts/rel
-- Visual matrix stories (role × base±N × state)
-- Migrate fully to base-(up | down)-N tone naming; deprecate legacy labels
 
 ## License
 

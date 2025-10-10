@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useTemplateRef } from "vue";
 
+import { UIFACETS } from "@/constants/ui";
+
 import {
   CHAR_TOOLTIP_PREFIX,
   type CharTooltipLabelProps,
@@ -29,10 +31,10 @@ defineExpose({
     ref="root"
     :class="[
       CHAR_TOOLTIP_PREFIX,
-      `${CHAR_TOOLTIP_PREFIX}_variant-${variant}`,
-      `${CHAR_TOOLTIP_PREFIX}_size-${size}`,
-      `${CHAR_TOOLTIP_PREFIX}_mode-${mode}`,
-      `${CHAR_TOOLTIP_PREFIX}_tone-${tone}`,
+      `${CHAR_TOOLTIP_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${CHAR_TOOLTIP_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${CHAR_TOOLTIP_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${CHAR_TOOLTIP_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
   >
     <Icon

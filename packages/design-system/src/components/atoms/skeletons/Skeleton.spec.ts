@@ -1,14 +1,16 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
+import { UIFACETS } from "@/constants/ui";
+
 import { SKELETON_PREFIX, type SkeletonProps } from "./Skeleton";
 import Skeleton from "./Skeleton.vue";
 
 const Classes = {
   ROOT_CLASS: SKELETON_PREFIX,
-  VARIANT: `${SKELETON_PREFIX}_variant`,
-  SIZE: `${SKELETON_PREFIX}_size`,
-  MODE: `${SKELETON_PREFIX}_mode`,
-  TONE: `${SKELETON_PREFIX}_tone`,
+  VARIANT: `${SKELETON_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${SKELETON_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${SKELETON_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${SKELETON_PREFIX}_${UIFACETS.TONE}`,
 } as const;
 
 const getRoot = <T>(wrapper: VueWrapper<T>) => {

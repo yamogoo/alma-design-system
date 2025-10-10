@@ -105,8 +105,6 @@ structure.md     # token architecture docs
 
 - Full Code → Figma export supported
 
-- Backward Figma → Code compatibility exists, but discouraged (system is code-first)
-
 - Tokens remain the single source of truth in code
 
 ### @alma/tokens-worker (packages/tokens-worker)

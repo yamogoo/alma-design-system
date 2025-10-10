@@ -1,17 +1,14 @@
 import { describe, expect, test, vi } from "vitest";
 import { mount } from "@vue/test-utils";
 
-import type {
-  IconName,
-  IconStyle,
-  IconWeight,
-} from "@/components/atoms/icons/Icon";
+import type { IconName, IconStyle, IconWeight } from "./Icon";
+import { iconWeights } from "@/assets/icons";
 
 import Icon from "./Icon.vue";
 
 const icons: Array<IconName> = ["back", "check"];
 
-const weightList: Array<IconWeight> = ["100", "200", "300", "400", "500"];
+const weightList: Array<IconWeight> = iconWeights;
 
 describe("Icon", () => {
   test.each(icons)("should render %s icon from the Icons Set", async (name) => {

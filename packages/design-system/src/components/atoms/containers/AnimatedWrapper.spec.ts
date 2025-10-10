@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 
-import type { AnimatedWrapperProps } from "@/components/atoms/containers/AnimatedWrapper";
+import type { AnimatedWrapperProps } from "./AnimatedWrapper";
 import AnimatedWrapper from "./AnimatedWrapper.vue";
 
 const REQUIRED_PROPS: AnimatedWrapperProps = {

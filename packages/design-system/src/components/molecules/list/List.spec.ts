@@ -1,24 +1,27 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import type { ListItems, ListProps } from "./List";
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
+import { GROUP_PREFIX } from "@/components/molecules/containers/Group";
+import { LIST_PREFIX, type ListItems, type ListProps } from "./List";
 import List from "./List.vue";
 
-enum Classes {
-  ROOT_CLASS = "group",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  DIRECTION = `${Classes.ROOT_CLASS}_direction`,
-  ORIENTATION = `${Classes.ROOT_CLASS}_orientation`,
-  VERTICAL_ALIGNMENT = `${Classes.ROOT_CLASS}_align-vertical`,
-  HORIZONTAL_ALIGNMENT = `${Classes.ROOT_CLASS}_align-horizontal`,
-  STRETCH = `${Classes.ROOT_CLASS}_stretch`,
-  WRAP = `${Classes.ROOT_CLASS}_wrap`,
-  DIVIDER = `${Classes.ROOT_CLASS}_divider`,
-}
+const Classes = {
+  ROOT_CLASS: GROUP_PREFIX,
+  VARIANT: `${GROUP_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${GROUP_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${GROUP_PREFIX}_${UIFACETS.MODE}`,
+  DIRECTION: `${GROUP_PREFIX}_${UIMODIFIERS.DIRECTION}`,
+  ORIENTATION: `${GROUP_PREFIX}_${UIMODIFIERS.ORIENTATION}`,
+  VERTICAL_ALIGNMENT: `${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-vertical`,
+  HORIZONTAL_ALIGNMENT: `${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal`,
+  STRETCH: `${GROUP_PREFIX}_${UIMODIFIERS.STRETCH}`,
+  WRAP: `${GROUP_PREFIX}_${UIMODIFIERS.WRAP}`,
+  DIVIDER: `${GROUP_PREFIX}_${UIMODIFIERS.DIVIDER}`,
+} as const;
 
 const getGroup = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find('[data-testid="group"]');
+  return wrapper.find(`[data-testid="${LIST_PREFIX}"]`);
 };
 
 const getGroupComponent = <T>(wrapper: VueWrapper<T>) => {
@@ -160,7 +163,7 @@ describe("List", () => {
       const items = getItems(wrapper);
 
       await items[0].trigger("click");
-      expect(wrapper.emitted("update:selectedItemIndexes")).toBeUndefined();
+      expect(wrapper.emitted("update:selected-item-indexes")).toBeUndefined();
     });
   });
 
@@ -197,7 +200,7 @@ describe("List", () => {
       expect(items[2].props("isFocused")).toBe(true);
 
       await group.trigger("keydown", { key: "Enter" });
-      const upd0 = wrapper.emitted("update:selectedItemIndexes")?.[0]?.[0];
+      const upd0 = wrapper.emitted("update:selected-item-indexes")?.[0]?.[0];
       expect(upd0).toBe("c");
 
       await group.trigger("keydown", { key: "Home" });
@@ -205,7 +208,7 @@ describe("List", () => {
       expect(items[0].props("isFocused")).toBe(true);
 
       await group.trigger("keydown", { key: " " });
-      const upd1 = wrapper.emitted("update:selectedItemIndexes")?.[1]?.[0];
+      const upd1 = wrapper.emitted("update:selected-item-indexes")?.[1]?.[0];
       expect(upd1).toBe("a");
     });
   });

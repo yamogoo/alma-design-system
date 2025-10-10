@@ -1,10 +1,12 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
+import { UIFACETS } from "@/constants/ui";
+
 import {
   CHAR_TOOLTIP_PREFIX,
   type CharTooltipLabelProps,
-} from "@/components/atoms/tooltips/CharTooltipLabel";
-import CharTooltipLabel from "@/components/atoms/tooltips/CharTooltipLabel.vue";
+} from "./CharTooltipLabel";
+import CharTooltipLabel from "./CharTooltipLabel.vue";
 
 const getIcon = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="icon"]');
@@ -12,10 +14,10 @@ const getIcon = <T>(wrapper: VueWrapper<T>) => {
 
 const Classes = {
   ROOT_CLASS: CHAR_TOOLTIP_PREFIX,
-  VARIANT: `${CHAR_TOOLTIP_PREFIX}_variant`,
-  SIZE: `${CHAR_TOOLTIP_PREFIX}_size`,
-  MODE: `${CHAR_TOOLTIP_PREFIX}_mode`,
-  TONE: `${CHAR_TOOLTIP_PREFIX}_tone`,
+  VARIANT: `${CHAR_TOOLTIP_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${CHAR_TOOLTIP_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${CHAR_TOOLTIP_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${CHAR_TOOLTIP_PREFIX}_${UIFACETS.TONE}`,
 } as const;
 
 describe("CharTooltipLabel", () => {

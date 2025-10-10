@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { defineAsyncComponent, computed, markRaw, useTemplateRef } from "vue";
 
+import { UIFACETS } from "@/constants/ui";
+
 import {
   ICON_PREFIX,
   iconManifest,
@@ -37,10 +39,10 @@ defineExpose({
     :class="[
       ICON_PREFIX,
       {
-        [`${ICON_PREFIX}_variant-${variant}`]: !!variant,
-        [`${ICON_PREFIX}_size-${size}`]: !!size,
-        [`${ICON_PREFIX}_mode-${mode}`]: !!mode,
-        [`${ICON_PREFIX}_tone-${tone}`]: !!tone,
+        [`${ICON_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${ICON_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
+        [`${ICON_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
+        [`${ICON_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
       },
     ]"
     data-testid="icon"

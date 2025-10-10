@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import { nextTick, ref, useTemplateRef, watch } from "vue";
 
-import { type TreeViewProps } from "@/components/molecules/explorer/tree-view/TreeView";
-import type {
-  TreeViewNode,
-  TreeViewNodeID,
-} from "@/components/molecules/explorer/tree-view/TreeViewItem";
-import TreeViewItem from "@/components/molecules/explorer/tree-view/TreeViewItem.vue";
+import { UIFACETS } from "@/constants/ui";
 
-const PREFIX = "tree-view";
+import { TREE_VIEW_PREFIX, type TreeViewProps } from "./TreeView";
+import { type TreeViewNode, type TreeViewNodeID } from "./TreeViewItem";
+import TreeViewItem from "./TreeViewItem.vue";
 
 const props = withDefaults(defineProps<TreeViewProps>(), {
   variant: "default",
@@ -200,10 +197,10 @@ watch(
     ref="root"
     class="tree-view"
     :class="[
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
+      `${TREE_VIEW_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${TREE_VIEW_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${TREE_VIEW_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${TREE_VIEW_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
     role="tree"
     :aria-label="ariaLabel"
@@ -230,9 +227,10 @@ watch(
 </template>
 
 <style lang="scss">
-$prefix: "tree-view";
+$tokenName: "tree-view";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $gap: px2rem(get($val, "root.gap"));
@@ -249,7 +247,7 @@ $prefix: "tree-view";
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.components.molecules.#{$prefix}")
+  $map: get($themes, "light.components.molecules.#{$tokenName}")
 ) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
@@ -257,7 +255,7 @@ $prefix: "tree-view";
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "components.molecules.#{$prefix}.#{$mode}.#{$tone}.root.background"
+              "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.root.background"
             );
           }
         }

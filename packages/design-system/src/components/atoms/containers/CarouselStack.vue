@@ -12,6 +12,8 @@ import gsap from "gsap";
 
 import { px2rem } from "@/utils/px2rem";
 
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
 import {
   CAROUSEL_STACK_PREFIX,
   type CarousleStackProps,
@@ -270,14 +272,15 @@ const onLeave = (el: Element, done: () => void): void => {
     ref="root"
     :class="[
       CAROUSEL_STACK_PREFIX,
-      `${CAROUSEL_STACK_PREFIX}_variant-${variant}`,
+      `${CAROUSEL_STACK_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
       {
-        [`${CAROUSEL_STACK_PREFIX}_size-${String(size)}`]: size!!,
-        [`${CAROUSEL_STACK_PREFIX}_orientation-${orientation}`]: orientation,
-        [`${CAROUSEL_STACK_PREFIX}_stretch-${stretch}`]: stretch,
-        [`${CAROUSEL_STACK_PREFIX}_grabbing`]: isCursorGrabbing,
+        [`${CAROUSEL_STACK_PREFIX}_${UIFACETS.SIZE}-${size}`]: size!!,
+        [`${CAROUSEL_STACK_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`]:
+          orientation,
+        [`${CAROUSEL_STACK_PREFIX}_${UIMODIFIERS.STRETCH}-${stretch}`]: stretch,
+        [`${CAROUSEL_STACK_PREFIX}_${UIMODIFIERS.GRABBING}`]: isCursorGrabbing,
       },
-      `${CAROUSEL_STACK_PREFIX}_${isItemsClickable ? 'clickable' : 'static'}`,
+      `${CAROUSEL_STACK_PREFIX}_${isItemsClickable ? UIMODIFIERS.CLICKABLE : UIMODIFIERS.STATIC}`,
     ]"
   >
     <div

@@ -2,6 +2,8 @@
 import { watch, computed, useTemplateRef, ref, onMounted } from "vue";
 import gsap from "gsap";
 
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
 import tokens from "@/tokens";
 
 import { type TextVariant } from "@/adapters/atoms/text";
@@ -47,11 +49,11 @@ const onItemClick = (item: StepPaginationTabItem): void => {
 };
 
 const getItemState = (idx: number) => {
-  if (idx === props.selectedItemIndex) return "current";
+  if (idx === props.selectedItemIndex) return UISTATES.CURRENT;
   if (idx === props.selectedItemIndex + 1 && idx < props.items.length)
-    return "next";
-  if (idx === props.selectedItemIndex - 1 && idx >= 0) return "previous";
-  return "normal";
+    return UISTATES.NEXT;
+  if (idx === props.selectedItemIndex - 1 && idx >= 0) return UISTATES.PREVIOUS;
+  return UISTATES.NORMAL;
 };
 
 /* * * Animations * * */
@@ -89,10 +91,10 @@ onMounted(() => {
   <div
     :class="[
       STEP_PAGINATIO_TABS_PREFIX,
-      `${STEP_PAGINATIO_TABS_PREFIX}_variant-${variant}`,
-      `${STEP_PAGINATIO_TABS_PREFIX}_size-${size}`,
-      `${STEP_PAGINATIO_TABS_PREFIX}_mode-${mode}`,
-      `${STEP_PAGINATIO_TABS_PREFIX}_tone-${tone}`,
+      `${STEP_PAGINATIO_TABS_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${STEP_PAGINATIO_TABS_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${STEP_PAGINATIO_TABS_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${STEP_PAGINATIO_TABS_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
   >
     <div ref="track" :class="`${STEP_PAGINATIO_TABS_PREFIX}__track`">
@@ -102,13 +104,15 @@ onMounted(() => {
         ref="refsItems"
         :class="[
           `${STEP_PAGINATIO_TABS_PREFIX}__item`,
-          `${STEP_PAGINATIO_TABS_PREFIX}__item_state-${getItemState(idx)}`,
+          `${STEP_PAGINATIO_TABS_PREFIX}__item_${UIFACETS.STATE}-${getItemState(idx)}`,
         ]"
         :style="itemStyle"
       >
         <Text
           :class="[`${STEP_PAGINATIO_TABS_PREFIX}__item-lable`]"
           :variant="textVariant"
+          role="tab"
+          :aria-selected="getItemState(idx) === 'current'"
           @click="onItemClick(item)"
         >
           {{ item.label }}

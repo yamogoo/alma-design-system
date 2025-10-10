@@ -12,6 +12,8 @@ import {
 import { useFocus } from "@vueuse/core";
 import gsap from "gsap";
 
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
 import { sanitizeInput } from "@/utils/sanitize";
 
 import { INPUT_PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
@@ -92,6 +94,8 @@ watch(localModelValue, (newValue) => {
 });
 
 const onFocus = (): void => {
+  if (props.isDisabled) return;
+
   isLocalFocused.value = true;
 };
 
@@ -237,15 +241,16 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
     :duration="0.3"
     :class="[
       INPUT_PREFIX,
-      `${INPUT_PREFIX}_variant-${variant}`,
-      `${INPUT_PREFIX}_mode-${mode}`,
-      `${INPUT_PREFIX}_tone-${tone}`,
-      `${INPUT_PREFIX}_state-${isIdle ? 'idle' : 'normal'}`,
+      `${INPUT_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${INPUT_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${INPUT_PREFIX}_${UIFACETS.TONE}-${tone}`,
+      `${INPUT_PREFIX}_${UIFACETS.STATE}-${isIdle ? UISTATES.IDLE : UISTATES.NORMAL}`,
       {
-        [`${INPUT_PREFIX}_size-${size}`]: size,
-        [`${INPUT_PREFIX}_state-error`]: isError,
-        [`${INPUT_PREFIX}_state-disabled`]: isDisabled,
-        [`${INPUT_PREFIX}_state-focused`]: isLocalFocused,
+        [`${INPUT_PREFIX}_${UIFACETS.SIZE}-${size}`]: size,
+        [`${INPUT_PREFIX}_${UIFACETS.STATE}-${UISTATES.ERROR}`]: isError,
+        [`${INPUT_PREFIX}_${UIFACETS.STATE}-${UISTATES.DISABLED}`]: isDisabled,
+        [`${INPUT_PREFIX}_${UIFACETS.STATE}-${UISTATES.FOCUSED}`]:
+          isLocalFocused,
       },
     ]"
     :data-testid="INPUT_PREFIX"
@@ -271,7 +276,7 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
             :type
             :class="`${INPUT_PREFIX}__field-value`"
             :data-testid="`${INPUT_PREFIX}__value`"
-            :area-placeholder="areaPlaceholder ?? placeholder"
+            :aria-placeholder="areaPlaceholder ?? placeholder"
             :disabled="isDisabled"
             :autocomplete
             :spellcheck="'false'"
@@ -307,7 +312,7 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
         </Transition>
       </div>
     </div>
-    <div ref="message" :class="`${INPUT_PREFIX}__validatoin`">
+    <div ref="message" :class="`${INPUT_PREFIX}__validation`">
       <Text
         v-if="!!errorMessage"
         :class="`${INPUT_PREFIX}__validation-message`"
@@ -322,6 +327,7 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
 <style lang="scss">
 $tokenName: "input";
 $prefix: getPrefix($tokenName);
+$iconSlotPrefix: getPrefix("#{$prefix}__icon");
 
 @mixin defineInputSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
@@ -411,7 +417,7 @@ $prefix: getPrefix($tokenName);
                 }
 
                 .#{$prefix}__field-content-icon {
-                  .icon {
+                  .#{$iconSlotPrefix} {
                     @include themify($themes) {
                       fill: themed(
                         "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
@@ -438,7 +444,7 @@ $prefix: getPrefix($tokenName);
                 }
 
                 .#{$prefix}__field-content-icon {
-                  .icon {
+                  .#{$iconSlotPrefix} {
                     @include themify($themes) {
                       fill: themed(
                         "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
@@ -466,7 +472,7 @@ $prefix: getPrefix($tokenName);
               }
 
               .#{$prefix}__field-content-icon {
-                .icon {
+                .#{$iconSlotPrefix} {
                   @include themify($themes) {
                     fill: themed(
                       "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.focused"
@@ -493,7 +499,7 @@ $prefix: getPrefix($tokenName);
               }
 
               .#{$prefix}__field-content-icon {
-                .icon {
+                .#{$iconSlotPrefix} {
                   @include themify($themes) {
                     fill: themed(
                       "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
@@ -521,7 +527,7 @@ $prefix: getPrefix($tokenName);
             }
 
             .#{$prefix}__field-content-icon {
-              .icon {
+              .#{$iconSlotPrefix} {
                 @include themify($themes) {
                   fill: themed(
                     "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.error"

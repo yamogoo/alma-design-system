@@ -1,18 +1,17 @@
 import { mount } from "@vue/test-utils";
 
-import {
-  DIVIDER_PREFIX,
-  type DividerProps,
-} from "@/components/atoms/dividers/Divider";
-import Divider from "@/components/atoms/dividers/Divider.vue";
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
+import { DIVIDER_PREFIX, type DividerProps } from "./Divider";
+import Divider from "./Divider.vue";
 
 const Classes = {
   ROOT_CLASS: DIVIDER_PREFIX,
-  VARIANT: `${DIVIDER_PREFIX}_variant`,
-  SIZE: `${DIVIDER_PREFIX}_size`,
-  MODE: `${DIVIDER_PREFIX}_mode`,
-  ORIENTATION: `${DIVIDER_PREFIX}_orientation`,
-  ALIGNMENT: `${DIVIDER_PREFIX}_align`,
+  VARIANT: `${DIVIDER_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${DIVIDER_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${DIVIDER_PREFIX}_${UIFACETS.MODE}`,
+  ORIENTATION: `${DIVIDER_PREFIX}_${UIMODIFIERS.ORIENTATION}`,
+  ALIGNMENT: `${DIVIDER_PREFIX}_${UIMODIFIERS.ALIGN}`,
   ARIA_ORIENTATION: "aria-orientation",
 } as const;
 

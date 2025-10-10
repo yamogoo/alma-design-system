@@ -1,9 +1,11 @@
 import { ref, computed, nextTick } from "vue";
 import { mount, VueWrapper } from "@vue/test-utils";
 
+import { UIFACETS, UIMODIFIERS, UISTATES } from "@/constants/ui";
+
 import { ListInjectionKey } from "@/components/molecules/list/List";
-import ListItem from "./ListItem.vue";
 import { LIST_ITEM_PREFIX, type ListItemProps } from "./ListItem";
+import ListItem from "./ListItem.vue";
 
 const __isHovered = ref(false);
 vi.mock("@/composables/local/actions/useHover", () => ({
@@ -12,12 +14,12 @@ vi.mock("@/composables/local/actions/useHover", () => ({
 
 const Classes = {
   ROOT: LIST_ITEM_PREFIX,
-  VARIANT: `${LIST_ITEM_PREFIX}_variant`,
-  SIZE: `${LIST_ITEM_PREFIX}_size`,
-  MODE: `${LIST_ITEM_PREFIX}_mode`,
-  TONE: `${LIST_ITEM_PREFIX}_tone`,
-  STATE: `${LIST_ITEM_PREFIX}_state`,
-  JOINED: `${LIST_ITEM_PREFIX}_joined`,
+  VARIANT: `${LIST_ITEM_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${LIST_ITEM_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${LIST_ITEM_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${LIST_ITEM_PREFIX}_${UIFACETS.TONE}`,
+  STATE: `${LIST_ITEM_PREFIX}_${UIFACETS.STATE}`,
+  JOINED: `${LIST_ITEM_PREFIX}_${UIMODIFIERS.JOINED}`,
 } as const;
 
 const getRoot = <T>(wrapper: VueWrapper<T>) =>
@@ -55,24 +57,29 @@ describe("ListItem", () => {
 
   describe("elements/classes", () => {
     test("should have props-based classes and joined modifier", () => {
+      const props: ListItemProps = {
+        id: "x",
+        variant: "default",
+        size: "md",
+        mode: "neutral",
+        tone: "primary",
+        isJoined: true,
+        title: "",
+      };
+
       const wrapper = mount(ListItem, {
         props: {
           ...REQUIRED_PROPS,
-          id: "x",
-          variant: "default",
-          size: "md",
-          mode: "neutral",
-          tone: "primary",
-          isJoined: true,
+          ...props,
         },
       });
 
       const root = getRoot(wrapper);
 
-      expect(root.classes()).toContain(`${Classes.VARIANT}-default`);
-      expect(root.classes()).toContain(`${Classes.SIZE}-md`);
-      expect(root.classes()).toContain(`${Classes.MODE}-neutral`);
-      expect(root.classes()).toContain(`${Classes.TONE}-primary`);
+      expect(root.classes()).toContain(`${Classes.VARIANT}-${props.variant}`);
+      expect(root.classes()).toContain(`${Classes.SIZE}-${props.size}`);
+      expect(root.classes()).toContain(`${Classes.MODE}-${props.mode}`);
+      expect(root.classes()).toContain(`${Classes.TONE}-${props.tone}`);
       expect(root.classes()).toContain(Classes.JOINED);
     });
 
@@ -159,12 +166,16 @@ describe("ListItem", () => {
         global: { provide: { [ListInjectionKey]: ctx } },
       });
 
-      expect(getRoot(wrapper).classes()).toContain(`${Classes.STATE}-normal`);
+      expect(getRoot(wrapper).classes()).toContain(
+        `${Classes.STATE}-${UISTATES.NORMAL}`
+      );
 
       __isHovered.value = true;
       await nextTick();
 
-      expect(getRoot(wrapper).classes()).toContain(`${Classes.STATE}-hovered`);
+      expect(getRoot(wrapper).classes()).toContain(
+        `${Classes.STATE}-${UISTATES.HOVERED}`
+      );
     });
 
     test("if ctx.isSelectable=false → state stays normal even on hover", async () => {
@@ -176,9 +187,12 @@ describe("ListItem", () => {
       });
 
       __isHovered.value = true;
-      await wrapper.vm.$nextTick();
 
-      expect(getRoot(wrapper).classes()).toContain(`${Classes.STATE}-normal`);
+      await nextTick();
+
+      expect(getRoot(wrapper).classes()).toContain(
+        `${Classes.STATE}-${UISTATES.NORMAL}`
+      );
     });
   });
 

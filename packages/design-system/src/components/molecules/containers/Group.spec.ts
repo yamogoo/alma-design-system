@@ -1,25 +1,27 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import type { GroupProps } from "./Group";
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
+import { GROUP_PREFIX, type GroupProps } from "./Group";
 import Group from "./Group.vue";
 
 const getSurface = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.findComponent({ name: "Surface" });
 };
 
-enum Classes {
-  ROOT_CLASS = "group",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  DIRECTION = `${Classes.ROOT_CLASS}_direction`,
-  ORIENTATION = `${Classes.ROOT_CLASS}_orientation`,
-  VERTICAL_ALIGNMENT = `${Classes.ROOT_CLASS}_align-vertical`,
-  HORIZONTAL_ALIGNMENT = `${Classes.ROOT_CLASS}_align-horizontal`,
-  STRETCH = `${Classes.ROOT_CLASS}_stretch`,
-  WRAP = `${Classes.ROOT_CLASS}_wrap`,
-  DIVIDER = `${Classes.ROOT_CLASS}_divider`,
-}
+const Classes = {
+  ROOT_CLASS: GROUP_PREFIX,
+  VARIANT: `${GROUP_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${GROUP_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${GROUP_PREFIX}_${UIFACETS.MODE}`,
+  DIRECTION: `${GROUP_PREFIX}_${UIMODIFIERS.DIRECTION}`,
+  ORIENTATION: `${GROUP_PREFIX}_${UIMODIFIERS.ORIENTATION}`,
+  VERTICAL_ALIGNMENT: `${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-vertical`,
+  HORIZONTAL_ALIGNMENT: `${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal`,
+  STRETCH: `${GROUP_PREFIX}_${UIMODIFIERS.STRETCH}`,
+  WRAP: `${GROUP_PREFIX}_${UIMODIFIERS.WRAP}`,
+  DIVIDER: `${GROUP_PREFIX}_${UIMODIFIERS.DIVIDER}`,
+} as const;
 
 describe("Group", () => {
   describe("elements", () => {

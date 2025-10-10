@@ -1,6 +1,9 @@
-import colors from "@/tokens";
+import tokens from "@/tokens";
 
-export type AbstractColorName = keyof typeof colors;
-export const abstractColorNames = Object.keys(colors) as AbstractColorName[];
+const colors = tokens.colors;
+export type AbstractColorName = keyof typeof tokens.colors;
+export const abstractColorNames = Object.keys(
+  tokens.colors
+) as AbstractColorName[];
 
 export { colors as abstractColors };

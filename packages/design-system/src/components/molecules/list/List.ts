@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type { UIElementMaybeListOrBlockTag } from "@/typings";
 import type { IListItem } from "@/components/atoms/list/ListItem";
 import type { GroupProps } from "@/components/molecules/containers/Group";
@@ -30,3 +32,5 @@ export interface ListInjection {
 }
 
 export const ListInjectionKey: unique symbol = Symbol("ListContext");
+
+export const LIST_PREFIX = `${NAME_SPACE}form`;

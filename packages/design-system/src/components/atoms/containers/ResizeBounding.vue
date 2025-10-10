@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { UIFACETS } from "@/constants/ui";
+
 import Resizer from "vue3-resize-bounding";
 
 import resizeBounding from "@/tokens/src/components/atoms/resizeBounding.json";
@@ -35,10 +37,10 @@ const splitterWidth = componentToken.splitter.width.$value;
     v-bind="props"
     :data-testid="RESIZE_BOUNDING_PREFIX"
     :class="[
-      `${RESIZE_BOUNDING_PREFIX}_variant-${variant}`,
-      `${RESIZE_BOUNDING_PREFIX}_size-${size}`,
-      `${RESIZE_BOUNDING_PREFIX}_mdoe-${tone}`,
-      `${RESIZE_BOUNDING_PREFIX}_tone-${mode}`,
+      `${RESIZE_BOUNDING_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${RESIZE_BOUNDING_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${RESIZE_BOUNDING_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${RESIZE_BOUNDING_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
     :options="{
       prefix: PREFIX_WITH_DIVIDER,
@@ -68,7 +70,7 @@ $prefix: getPrefix($tokenName);
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.#{prefix}_size-#{$size} {
+        &.#{$prefix}_size-#{$size} {
           $knob-width: px2rem(get($val, "knob.width"));
           $knob-height: px2rem(get($val, "knob.height"));
 

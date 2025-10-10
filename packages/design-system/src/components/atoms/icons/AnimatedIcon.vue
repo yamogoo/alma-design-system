@@ -2,6 +2,8 @@
 import { ref, toValue, watch } from "vue";
 import { Vue3Lottie as LottieAnimation } from "vue3-lottie";
 
+import { UIFACETS } from "@/constants/ui";
+
 import { ANIMATED_ICON_PREFIX, type AnimatedIconProps } from "./AnimatedIcon";
 
 const props = withDefaults(defineProps<AnimatedIconProps>(), {
@@ -52,13 +54,13 @@ const onCompleted = (): void => {
 <template>
   <LottieAnimation
     ref="refAnim"
-    class="animated-icon"
     :class="[
+      ANIMATED_ICON_PREFIX,
       {
-        [`${ANIMATED_ICON_PREFIX}_variant-${variant}`]: !!variant,
-        [`${ANIMATED_ICON_PREFIX}_size-${size}`]: !!size,
-        [`${ANIMATED_ICON_PREFIX}_mode-${mode}`]: !!mode,
-        [`${ANIMATED_ICON_PREFIX}_tone-${tone}`]: !!tone,
+        [`${ANIMATED_ICON_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${ANIMATED_ICON_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
+        [`${ANIMATED_ICON_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
+        [`${ANIMATED_ICON_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
       },
     ]"
     :animation-data

@@ -2,6 +2,7 @@
 import { computed, provide, ref, watch } from "vue";
 
 import {
+  LIST_PREFIX,
   ListInjectionKey,
   type ListInjection,
   type ListProps,
@@ -9,11 +10,9 @@ import {
   type ListSelectedItemIndexes,
 } from "./List";
 
-import type { IListItem } from "@/components/atoms/list/ListItem";
+import { type IListItem } from "@/components/atoms/list/ListItem";
 import ListItem from "@/components/atoms/list/ListItem.vue";
 import Group from "@/components/molecules/containers/Group.vue";
-
-const PREFIX = "list";
 
 const props = withDefaults(defineProps<ListProps>(), {
   as: "div",
@@ -26,7 +25,7 @@ const props = withDefaults(defineProps<ListProps>(), {
 });
 
 const emit = defineEmits<{
-  "update:selectedItemIndexes": ListSelectedItemIndexes;
+  "update:selected-item-indexes": ListSelectedItemIndexes;
   change: ListSelectedItemIndexes;
 }>();
 
@@ -56,7 +55,7 @@ const commit = (
   val: ListSelectedItemIndex | ListSelectedItemIndex[] | null
 ) => {
   if (props.selectedItemIndexes === undefined) selectedItemIndexes.value = val;
-  emit("update:selectedItemIndexes", val);
+  emit("update:selected-item-indexes", val);
   emit("change", val);
 };
 
@@ -166,8 +165,8 @@ const onKeydown = (e: KeyboardEvent) => {
 <template>
   <Group
     :is="rootTag"
-    :class="PREFIX"
-    data-testid="group"
+    :class="LIST_PREFIX"
+    :data-testid="LIST_PREFIX"
     :variant="effectiveVariant"
     :size="size"
     :mode="mode"

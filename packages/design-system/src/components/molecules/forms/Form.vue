@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useId } from "vue";
 
-import type { FormProps } from "@/components/molecules/forms/Form";
-import Text from "@/components/atoms/typography/Text.vue";
+import { UIFACETS } from "@/constants/ui";
 
-const PREFIX = "form";
+import { FORM_PREFIX, type FormProps } from "@/components/molecules/forms/Form";
+import Text from "@/components/atoms/typography/Text.vue";
 
 withDefaults(defineProps<FormProps>(), {
   variant: "default",
@@ -20,16 +20,16 @@ const id = useId();
   <form
     :id
     :class="[
-      PREFIX,
-      { [`${PREFIX}_variant-${variant}`]: !!variant },
-      { [`${PREFIX}_size-${size}`]: !!size },
+      FORM_PREFIX,
+      { [`${FORM_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant },
+      { [`${FORM_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size },
     ]"
     @submit.prevent
   >
-    <div :class="`${PREFIX}__container`">
+    <div :class="`${FORM_PREFIX}__container`">
       <div
         v-if="$slots.header || title"
-        :class="`${PREFIX}__header`"
+        :class="`${FORM_PREFIX}__header`"
         data-testid="form-header"
       >
         <Text :variant="'title-1'" :mode="'neutral'" :tone="'primary'">
@@ -37,10 +37,10 @@ const id = useId();
         </Text>
         <slot name="header"></slot>
       </div>
-      <div :class="`${PREFIX}__body`">
+      <div :class="`${FORM_PREFIX}__body`">
         <slot></slot>
       </div>
-      <div v-if="$slots.footer" class="form__footer">
+      <div v-if="$slots.footer" :class="`${FORM_PREFIX}__footer`">
         <slot name="footer"></slot>
       </div>
     </div>
@@ -48,9 +48,10 @@ const id = useId();
 </template>
 
 <style lang="scss">
-$prefix: form;
+$tokenName: "form";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $border-radius: get($val, "root.border-radius");

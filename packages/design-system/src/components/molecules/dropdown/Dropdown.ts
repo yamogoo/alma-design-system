@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   DropdownMode,
   DropdownSize,
@@ -21,3 +23,5 @@ export interface DropdownProps
   isResetButtonShown?: boolean;
   closeOnOptionClick?: boolean;
 }
+
+export const DROPDOWN_PREFIX = `${NAME_SPACE}dropdown`;

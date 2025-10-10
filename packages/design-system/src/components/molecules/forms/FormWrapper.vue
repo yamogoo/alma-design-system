@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import type { FormWrapperProps } from "@/components/molecules/forms/FormWrapper";
+import { UIFACETS } from "@/constants/ui";
+
+import {
+  FORM_WRAPPER_PREFIX,
+  type FormWrapperProps,
+} from "@/components/molecules/forms/FormWrapper";
 import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
 import Surface from "@/components/atoms/containers/Surface.vue";
-
-const PREFIX = "form-wrapper";
 
 withDefaults(defineProps<FormWrapperProps>(), {
   variant: "default",
@@ -17,10 +20,10 @@ withDefaults(defineProps<FormWrapperProps>(), {
 <template>
   <Surface
     :class="[
-      PREFIX,
+      FORM_WRAPPER_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
+        [`${FORM_WRAPPER_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
+        [`${FORM_WRAPPER_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
       },
     ]"
     :variant="variant"
@@ -34,7 +37,7 @@ withDefaults(defineProps<FormWrapperProps>(), {
     data-testid="form-wrapper"
   >
     <AnimatedWrapper :duration="duration" :content-key="contentKey ?? ''">
-      <div v-if="$slots.header" :class="`${PREFIX}__header`">
+      <div v-if="$slots.header" :class="`${FORM_WRAPPER_PREFIX}__header`">
         <slot name="header"></slot>
       </div>
       <slot></slot>
@@ -43,9 +46,10 @@ withDefaults(defineProps<FormWrapperProps>(), {
 </template>
 
 <style lang="scss">
-$prefix: form-wrapper;
+$tokenName: "form-wrapper";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $padding: get($val, "root.padding");

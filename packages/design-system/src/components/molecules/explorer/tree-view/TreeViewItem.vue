@@ -2,18 +2,19 @@
 import { computed, onMounted, useTemplateRef, watch } from "vue";
 import gsap from "gsap";
 
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
 import { useHover } from "@/composables/local/actions/useHover";
 
 import Icon from "@/components/atoms/icons/Icon.vue";
 import Text from "@/components/atoms/typography/Text.vue";
-import type {
-  TreeViewItemProps,
-  TreeViewNode,
-} from "@/components/molecules/explorer/tree-view/TreeViewItem";
+import {
+  TREE_VIEW_ITEM_PREFIX,
+  type TreeViewItemProps,
+  type TreeViewNode,
+} from "./TreeViewItem";
 
 defineOptions({ name: "TreeViewItem" });
-
-const PREFIX = "tree-view-item";
 
 const props = defineProps<TreeViewItemProps>();
 
@@ -116,9 +117,11 @@ onMounted(() => {
   <div
     ref="root"
     :class="[
-      PREFIX,
-      node.isLeaf ? `${PREFIX}_type-file` : `${PREFIX}_type-group`,
-      `${PREFIX}_state-${isSelected ? 'selected' : isHovered ? 'hovered' : 'normal'}`,
+      TREE_VIEW_ITEM_PREFIX,
+      node.isLeaf
+        ? `${TREE_VIEW_ITEM_PREFIX}_type-file`
+        : `${TREE_VIEW_ITEM_PREFIX}_type-group`,
+      `${TREE_VIEW_ITEM_PREFIX}_${UIFACETS.STATE}-${isSelected ? UISTATES.SELECTED : isHovered ? UISTATES.HOVERED : UISTATES.NORMAL}`,
     ]"
     role="treeitem"
     :aria-level="depth"
@@ -131,11 +134,11 @@ onMounted(() => {
     @keydown="onItemKeyDown"
   >
     <slot>
-      <div :class="`${PREFIX}__content`">
+      <div :class="`${TREE_VIEW_ITEM_PREFIX}__content`">
         <Icon
           v-if="!node.isLeaf"
           ref="icon"
-          :class="`${PREFIX}__caret`"
+          :class="`${TREE_VIEW_ITEM_PREFIX}__caret`"
           :variant="'default'"
           :size="'xs'"
           name="down"
@@ -147,8 +150,8 @@ onMounted(() => {
         <Icon
           v-if="isIconShown"
           :class="[
-            `${PREFIX}__icon`,
-            `${PREFIX}__icon-${node.isLeaf ? 'file' : 'group'}`,
+            `${TREE_VIEW_ITEM_PREFIX}__icon`,
+            `${TREE_VIEW_ITEM_PREFIX}__icon-${node.isLeaf ? 'file' : 'group'}`,
           ]"
           :variant="'default'"
           :size="'sm'"
@@ -158,7 +161,7 @@ onMounted(() => {
           aria-label="Expand/Collapse"
           :aria-expanded="isExpanded"
         />
-        <Text :class="`${PREFIX}__label`">
+        <Text :class="`${TREE_VIEW_ITEM_PREFIX}__label`">
           {{ node.name }}
         </Text>
       </div>
@@ -167,8 +170,8 @@ onMounted(() => {
   <div
     v-if="!node.isLeaf && isExpanded"
     role="group"
-    :class="[PREFIX, `${PREFIX}_type-group`]"
-    data-testid="tree-view-item_type-group"
+    :class="[TREE_VIEW_ITEM_PREFIX, `${TREE_VIEW_ITEM_PREFIX}_type-group`]"
+    :data-testid="`${TREE_VIEW_ITEM_PREFIX}_type-group`"
   >
     <TreeViewItem
       v-for="child in node.children || []"
@@ -190,14 +193,15 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-$root-prefix: "tree-view";
-$prefix: "tree-view-item";
+$tokenName: "tree-view";
+$rootPrefix: getPrefix("tree-view");
+$prefix: getPrefix("tree-view-item");
 
-@mixin defineSizes($map: get($components, "molecules.#{$root-prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
-        &.#{$root-prefix}_size-#{$size} {
+        &.#{$rootPrefix}_size-#{$size} {
           $root-gap: px2rem(get($val, "root.gap"));
 
           $gap: px2rem(get($val, "item.root.gap"));
@@ -238,7 +242,7 @@ $prefix: "tree-view-item";
     &.#{$prefix} {
       @include themify($themes) {
         background-color: themed(
-          "components.molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.root.background.#{$state}"
+          "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.item.root.background.#{$state}"
         );
       }
     }
@@ -246,7 +250,7 @@ $prefix: "tree-view-item";
     .#{$prefix}__label {
       @include themify($themes) {
         color: themed(
-          "components.molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.label.color.#{$state}"
+          "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.item.label.color.#{$state}"
         );
       }
     }
@@ -254,7 +258,7 @@ $prefix: "tree-view-item";
     .#{$prefix}__caret {
       @include themify($themes) {
         fill: themed(
-          "components.molecules.#{$root-prefix}.#{$mode}.#{$tone}.item.caret.color.#{$state}"
+          "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.item.caret.color.#{$state}"
         );
       }
     }
@@ -262,12 +266,12 @@ $prefix: "tree-view-item";
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.components.molecules.#{$root-prefix}")
+  $map: get($themes, "light.components.molecules.#{$tokenName}")
 ) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.#{$root-prefix}_tone-#{$tone} {
+        &.#{$rootPrefix}_tone-#{$tone} {
           .#{$prefix}_state {
             @each $state in ("normal", "hovered", "selected") {
               @include stateStyles($mode, $tone, $state);
@@ -279,27 +283,27 @@ $prefix: "tree-view-item";
   }
 }
 
-.#{$root-prefix} {
+.#{$rootPrefix} {
   @include defineSizes();
   @include defineThemes();
 
-  .#{$prefix} {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    outline: none;
-
-    &__content {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-
   &-children {
     display: block;
+  }
+}
+
+.#{$prefix} {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  outline: none;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }
 </style>

@@ -1,17 +1,17 @@
 import { mount } from "@vue/test-utils";
 
-import {
-  SLIDER_PREFIX,
-  type SliderProps,
-} from "@/components/atoms/controls/slider/Slider";
-import Slider from "@/components/atoms/controls/slider/Slider.vue";
+import { UIFACETS, UISTATES } from "@/constants/ui";
+
+import { SLIDER_PREFIX, type SliderProps } from "./Slider";
+import Slider from "./Slider.vue";
 
 const Classes = {
   ROOT_CLASS: SLIDER_PREFIX,
-  VARIANT: `${SLIDER_PREFIX}_variant`,
-  SIZE: `${SLIDER_PREFIX}_size`,
-  MODE: `${SLIDER_PREFIX}_mode`,
-  TONE: `${SLIDER_PREFIX}_tone`,
+  VARIANT: `${SLIDER_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${SLIDER_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${SLIDER_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${SLIDER_PREFIX}_${UIFACETS.TONE}`,
+  STATE: `${SLIDER_PREFIX}_${UIFACETS.STATE}`,
 };
 
 const REQIERED_PROPS: SliderProps = {
@@ -36,14 +36,16 @@ describe("Slider", () => {
     expect(wrapper.classes()).toContain(`${Classes.SIZE}-${props.size}`);
     expect(wrapper.classes()).toContain(`${Classes.MODE}-${props.mode}`);
     expect(wrapper.classes()).toContain(`${Classes.TONE}-${props.tone}`);
-    expect(wrapper.classes()).toContain(`${SLIDER_PREFIX}_state-normal`);
+    expect(wrapper.classes()).toContain(`${Classes.STATE}-${UISTATES.NORMAL}`);
   });
 
   test("applies disabled state class when isDisabled=true", () => {
     const wrapper = mount(Slider, {
       props: { ...REQIERED_PROPS, isDisabled: true },
     });
-    expect(wrapper.classes()).toContain(`${SLIDER_PREFIX}_state-disabled`);
+    expect(wrapper.classes()).toContain(
+      `${Classes.STATE}-${UISTATES.DISABLED}`
+    );
   });
 
   test("knob exposes ARIA attributes bound to value/min/max", () => {

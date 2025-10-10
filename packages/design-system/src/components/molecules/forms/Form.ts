@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   FormMode,
   FormSize,
@@ -13,3 +15,5 @@ export interface FormProps
   > {
   title?: string;
 }
+
+export const FORM_PREFIX = `${NAME_SPACE}form`;
