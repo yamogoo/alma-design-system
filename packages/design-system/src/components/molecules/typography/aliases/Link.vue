@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 
-import {
-  LINK_PREFIX,
-  type LinkProps,
-} from "@/components/atoms/typography/Link";
+import { LINK_PREFIX, type LinkProps } from "./Link";
 import Text from "@/components/atoms/typography/Text.vue";
 
 const props = withDefaults(defineProps<LinkProps>(), {
