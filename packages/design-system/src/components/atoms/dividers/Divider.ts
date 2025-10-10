@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   DividerMode,
@@ -30,4 +30,4 @@ export interface DividerProps
   align?: DividerAlign;
 }
 
-export const DIVIDER_PREFIX = `${NAME_SPACE}divider`;
+export const DIVIDER_PREFIX = `${NAMESPACE}divider`;

@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { TreeViewControlProps } from "./TreeView";
 
@@ -24,4 +24,4 @@ export interface TreeViewItemProps extends TreeViewControlProps {
   isIconShown?: boolean;
 }
 
-export const TREE_VIEW_ITEM_PREFIX = `${NAME_SPACE}tree-view-item`;
+export const TREE_VIEW_ITEM_PREFIX = `${NAMESPACE}tree-view-item`;

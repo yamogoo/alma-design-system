@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { SurfaceProps } from "@/components/atoms/containers/Surface";
 
@@ -8,4 +8,4 @@ export interface OverlayProps extends SurfaceProps {
   isOpen?: boolean;
 }
 
-export const OVERLAY_PREFIX = `${NAME_SPACE}overlay`;
+export const OVERLAY_PREFIX = `${NAMESPACE}overlay`;

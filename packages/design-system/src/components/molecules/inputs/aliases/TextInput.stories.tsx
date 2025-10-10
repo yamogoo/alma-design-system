@@ -17,7 +17,7 @@ import { type TextInputProps } from "./TextInput";
 import TextInput from "./TextInput.vue";
 
 const meta = {
-  title: "Molecules/Inputs/TextInput",
+  title: "Atoms/Inputs/Aliases/TextInput",
   component: TextInput,
   tags: ["autodocs"],
   parameters: {

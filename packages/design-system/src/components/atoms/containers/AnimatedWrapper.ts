@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { UIElementContentKey } from "@/typings";
 
@@ -7,4 +7,4 @@ export interface AnimatedWrapperProps {
   duration?: number;
 }
 
-export const ANIMATED_WRAPPER_PREFIX = `${NAME_SPACE}animated-wrapper`;
+export const ANIMATED_WRAPPER_PREFIX = `${NAMESPACE}animated-wrapper`;

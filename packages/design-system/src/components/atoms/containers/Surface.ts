@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   SurfaceMode,
@@ -40,4 +40,4 @@ export interface SurfaceProps
   divider?: string;
 }
 
-export const SURFACE_PREFIX = `${NAME_SPACE}surface`;
+export const SURFACE_PREFIX = `${NAMESPACE}surface`;

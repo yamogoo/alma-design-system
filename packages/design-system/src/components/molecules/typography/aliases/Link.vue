@@ -32,7 +32,8 @@ const onClick = (e: PointerEvent): void => {
 </template>
 
 <style lang="scss">
-$prefix: link;
+$tokenName: "link";
+$prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   cursor: pointer;

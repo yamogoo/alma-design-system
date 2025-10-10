@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   InputSize,
@@ -29,4 +29,4 @@ export interface InputProps
   errorMessage?: string | null;
 }
 
-export const INPUT_PREFIX = `${NAME_SPACE}input`;
+export const INPUT_PREFIX = `${NAMESPACE}input`;

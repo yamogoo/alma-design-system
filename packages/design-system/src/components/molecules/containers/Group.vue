@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
 import { GROUP_PREFIX, type GroupProps } from "./Group";
 import Surface from "@/components/atoms/containers/Surface.vue";
 
@@ -20,18 +22,18 @@ const componentTag = props.as;
     :as="componentTag"
     :class="[
       GROUP_PREFIX,
-      `${GROUP_PREFIX}_variant-${variant}`,
-      `${GROUP_PREFIX}_size-${size}`,
+      `${GROUP_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${GROUP_PREFIX}_${UIFACETS.SIZE}-${size}`,
       {
-        [`${GROUP_PREFIX}_direction-${direction}`]: !!direction,
-        [`${GROUP_PREFIX}_orientation-${orientation}`]: !!orientation,
-        [`${GROUP_PREFIX}_align-vertical-${verticalAlignment}`]:
+        [`${GROUP_PREFIX}_${UIMODIFIERS.DIRECTION}-${direction}`]: !!direction,
+        [`${GROUP_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`]: !!orientation,
+        [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-vertical-${verticalAlignment}`]:
           !!verticalAlignment,
-        [`${GROUP_PREFIX}_align-horizontal-${horizontalAlignment}`]:
+        [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal-${horizontalAlignment}`]:
           !!horizontalAlignment,
-        [`${GROUP_PREFIX}_stretch-${stretch}`]: !!stretch,
-        [`${GROUP_PREFIX}_wrap`]: wrap,
-        [`${GROUP_PREFIX}_divider`]: divider,
+        [`${GROUP_PREFIX}_${UIMODIFIERS.STRETCH}-${stretch}`]: !!stretch,
+        [`${GROUP_PREFIX}_${UIMODIFIERS.WRAP}`]: wrap,
+        [`${GROUP_PREFIX}_${UIMODIFIERS.DIVIDER}`]: divider,
       },
     ]"
     :mode="mode"

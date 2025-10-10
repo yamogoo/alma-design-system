@@ -8,9 +8,6 @@ export const useElementFollowCursor = (
     const parentEl = toValue(parent);
     const childEl = toValue(child);
 
-    console.log(parentEl);
-    console.log(childEl);
-
     if (!parentEl || !childEl) return;
 
     const parentRect = parentEl.getBoundingClientRect();

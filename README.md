@@ -19,10 +19,10 @@ Key goals:
 
 ## ✨ What’s New (Core Features)
 
-- Relational color matrix (contracts.rel): single source of truth for colors across planes/roles/tones/states. See: `packages/design-system/src/tokens/contracts.rel.md`.
+- Relational color matrix (contracts.rel): single source of truth for colors across planes/roles/tones/states. See: `src/tokens/contracts.rel.md`.
 - Deterministic state generation: normal/hover/pressed/focus/disabled derived via perceptual OKLCH deltas per theme.
-- Base±N tone scale: numeric, theme-agnostic tone ladder (`base-3 … base+3`) replacing ambiguous “light/dark” names.
-- Contracts and lintable paths: component tokens must resolve to `contracts/rel/<mode>/<tone>/<state>`; no raw hex in components.
+- Base±N tone scale: numeric, theme-agnostic tone ladder (`base-down-3 … base-up-3`) replacing ambiguous “light/dark” names.
+- Contracts and lintable paths: component tokens must resolve to `contracts/interactive/<mode>/<tone>/<state>`; no raw hex in components.
 - Tokens worker pipeline (developed using AI): code-first tokens, resolvers, converters, build outputs (JSON, SCSS maps, CSS).
 - Storybook: custom theme + live visualization of varinat x size x mode × tone × state.
 

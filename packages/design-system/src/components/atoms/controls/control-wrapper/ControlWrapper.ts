@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   ControlWrapperSize,
@@ -14,4 +14,4 @@ export type ControlWrapperProps = Partial<
   >
 >;
 
-export const CONTROL_WRAPPER_PREFIX = `${NAME_SPACE}control-wrapper`;
+export const CONTROL_WRAPPER_PREFIX = `${NAMESPACE}control-wrapper`;

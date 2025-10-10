@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { TextProps } from "@/components/atoms/typography/Text";
 
@@ -9,4 +9,4 @@ export interface LinkProps extends TextProps {
   href?: string;
 }
 
-export const LINK_PREFIX = `${NAME_SPACE}link`;
+export const LINK_PREFIX = `${NAMESPACE}link`;

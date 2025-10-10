@@ -25,7 +25,7 @@ import type { ActionButtonProps } from "./ActionButton";
 import ActionButton from "./ActionButton.vue";
 
 const meta = {
-  title: "Atoms/Buttons/ActionButton",
+  title: "Atoms/Buttons/Aliases/ActionButton",
   component: ActionButton,
   tags: ["autodocs"],
   parameters: {

@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   SwitchVariant,
@@ -19,4 +19,4 @@ export interface SwitchProps
   useNative?: boolean;
 }
 
-export const SWITCH_PREFIX = `${NAME_SPACE}switch`;
+export const SWITCH_PREFIX = `${NAMESPACE}switch`;

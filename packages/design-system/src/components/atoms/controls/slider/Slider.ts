@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   SliderMode,
@@ -35,4 +35,4 @@ export interface SliderProps
   knobAnimDuration?: number;
 }
 
-export const SLIDER_PREFIX = `${NAME_SPACE}slider`;
+export const SLIDER_PREFIX = `${NAMESPACE}slider`;

@@ -25,7 +25,7 @@ import type { ControlButtonProps } from "./ControlButton";
 import ControlButton from "./ControlButton.vue";
 
 const meta = {
-  title: "Atoms/Buttons/ControlButton",
+  title: "Atoms/Buttons/Aliases/ControlButton",
   component: ControlButton,
   tags: ["autodocs"],
   parameters: {

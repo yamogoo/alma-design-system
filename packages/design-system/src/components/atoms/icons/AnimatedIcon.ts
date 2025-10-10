@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import { Vue3Lottie as LottieAnimation } from "vue3-lottie";
 
@@ -21,4 +21,4 @@ export interface AnimatedIconProps
   loop?: boolean;
 }
 
-export const ANIMATED_ICON_PREFIX = `${NAME_SPACE}animated-icon`;
+export const ANIMATED_ICON_PREFIX = `${NAMESPACE}animated-icon`;

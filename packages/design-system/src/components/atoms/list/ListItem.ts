@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   ListItemMode,
@@ -40,4 +40,4 @@ export interface ListItemProps
   isSelectOnRelease?: boolean;
 }
 
-export const LIST_ITEM_PREFIX = `${NAME_SPACE}list-item`;
+export const LIST_ITEM_PREFIX = `${NAMESPACE}list-item`;

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { type SheetProps } from "./Sheet";
+import { SHEET_PREFIX, type SheetProps } from "./Sheet";
 
 import Surface from "@/components/atoms/containers/Surface.vue";
-
-const PREFIX = "sheet";
 
 withDefaults(defineProps<SheetProps>(), {
   variant: "container",
@@ -16,13 +14,13 @@ withDefaults(defineProps<SheetProps>(), {
 <template>
   <Surface
     v-if="isOpen"
-    :class="[PREFIX, { sheet_dialog: isDialog }]"
+    :class="[SHEET_PREFIX, { sheet_dialog: isDialog }]"
     :variant="variant"
     :size="size"
     :mode="mode"
     :tone="tone"
   >
-    <div :class="`${PREFIX}__content`">
+    <div :class="`${SHEET_PREFIX}__content`">
       <slot></slot>
     </div>
   </Surface>
@@ -31,9 +29,10 @@ withDefaults(defineProps<SheetProps>(), {
 <style lang="scss">
 @use "sass:map";
 
-$prefix: sheet;
+$tokenName: "sheet";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $min-height: px2rem(get($val, "root.min-height"));
@@ -49,7 +48,7 @@ $prefix: sheet;
   }
 }
 
-.sheet {
+.#{$prefix} {
   position: fixed;
   bottom: 0;
   left: 0;

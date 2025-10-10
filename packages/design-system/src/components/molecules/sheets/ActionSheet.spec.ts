@@ -1,7 +1,22 @@
-import { mount } from "@vue/test-utils";
-import { mountWithTeleport } from "@/__tests__/utils";
 import { nextTick } from "vue";
+import { mount, VueWrapper } from "@vue/test-utils";
+
+import { mountWithTeleport } from "@/__tests__/utils";
+
+import { UIFACETS } from "@/constants/ui";
+
+import { ACTION_SHEET_PREFIX, type ActionSheetProps } from "./ActionSheet";
 import ActionSheet from "./ActionSheet.vue";
+
+const Classes = {
+  ROOT_CLASS: ACTION_SHEET_PREFIX,
+  VARIANT: `${ACTION_SHEET_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${ACTION_SHEET_PREFIX}_${UIFACETS.SIZE}`,
+} as const;
+
+const getActionSheet = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`${Classes.ROOT_CLASS}`);
+};
 
 vi.mock("gsap", () => ({
   default: {
@@ -22,19 +37,21 @@ describe("ActionSheet.vue", () => {
       props: { containerId: "#app", isActive: false },
     });
 
-    expect(wrapper.find(".action-sheet").exists()).toBe(false);
+    expect(getActionSheet(wrapper).exists()).toBe(false);
   });
 
   test("applies size and color classes", async () => {
+    const props: ActionSheetProps = {
+      containerId: "#app",
+      isActive: false,
+      variant: "default",
+      size: "md",
+      mode: "neutral",
+      tone: "primary",
+    };
+
     const wrapper = mount(ActionSheet, {
-      props: {
-        containerId: "#app",
-        isActive: false,
-        variant: "default",
-        size: "md",
-        mode: "neutral",
-        tone: "primary",
-      },
+      props,
       attachTo: document.body,
     });
 
@@ -42,10 +59,12 @@ describe("ActionSheet.vue", () => {
     await nextTick();
     await nextTick();
 
-    const el = document.querySelector("#app .action-sheet");
+    const el = document.querySelector(`#app .${Classes.ROOT_CLASS}`);
 
     expect(el).not.toBeNull();
-    expect(el!.classList.contains("action-sheet_variant-default")).toBe(true);
-    expect(el!.classList.contains("action-sheet_size-md")).toBe(true);
+    expect(el!.classList.contains(`${Classes.VARIANT}-${props.variant}`)).toBe(
+      true
+    );
+    expect(el!.classList.contains(`${Classes.SIZE}-${props.size}`)).toBe(true);
   });
 });

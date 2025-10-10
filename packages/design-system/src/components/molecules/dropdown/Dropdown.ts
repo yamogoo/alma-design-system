@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   DropdownMode,
@@ -24,4 +24,4 @@ export interface DropdownProps
   closeOnOptionClick?: boolean;
 }
 
-export const DROPDOWN_PREFIX = `${NAME_SPACE}dropdown`;
+export const DROPDOWN_PREFIX = `${NAMESPACE}dropdown`;

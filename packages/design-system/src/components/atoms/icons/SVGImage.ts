@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   IconMode,
@@ -18,4 +18,4 @@ export interface SVGImageProps
   ariaHidden?: UIElementBooleanish | undefined;
 }
 
-export const SVG_IMAGE_PREFIX = `${NAME_SPACE}svg-image`;
+export const SVG_IMAGE_PREFIX = `${NAMESPACE}svg-image`;

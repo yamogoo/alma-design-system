@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { UIElementAlignment } from "@/typings";
 
@@ -12,4 +12,4 @@ export interface TooltipProps extends Pick<CharTooltipLabelProps, "label"> {
   isFollowingCursor?: boolean;
 }
 
-export const TOOLTIP_PREFIX = `${NAME_SPACE}tooltip`;
+export const TOOLTIP_PREFIX = `${NAMESPACE}tooltip`;

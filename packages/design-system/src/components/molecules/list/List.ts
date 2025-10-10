@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { UIElementMaybeListOrBlockTag } from "@/typings";
 import type { IListItem } from "@/components/atoms/list/ListItem";
@@ -33,4 +33,4 @@ export interface ListInjection {
 
 export const ListInjectionKey: unique symbol = Symbol("ListContext");
 
-export const LIST_PREFIX = `${NAME_SPACE}list`;
+export const LIST_PREFIX = `${NAMESPACE}list`;

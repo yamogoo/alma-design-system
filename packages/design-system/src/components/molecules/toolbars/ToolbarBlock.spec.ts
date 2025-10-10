@@ -1,13 +1,15 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import type { ToolbarGroupProps } from "./ToolbarGroup";
+import { UIFACETS } from "@/constants/ui";
+
+import { TOOLBAR_GROUP_PREFIX, type ToolbarGroupProps } from "./ToolbarGroup";
 import ToolbarGroup from "./ToolbarGroup.vue";
 
-enum Classes {
-  ROOT_CLASS = "toolbar-group",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-}
+const Classes = {
+  ROOT_CLASS: TOOLBAR_GROUP_PREFIX,
+  VARIANT: `${TOOLBAR_GROUP_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${TOOLBAR_GROUP_PREFIX}_${UIFACETS.SIZE}`,
+} as const;
 
 const getGroup = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.findComponent({ name: "Group" });

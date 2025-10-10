@@ -17,7 +17,7 @@ import { type PasswordInputProps } from "./PasswordInput";
 import PasswordInput from "./PasswordInput.vue";
 
 const meta = {
-  title: "Molecules/Inputs/PasswordInput",
+  title: "Atoms/Inputs/Aliases/PasswordInput",
   component: PasswordInput,
   tags: ["autodocs"],
   parameters: {

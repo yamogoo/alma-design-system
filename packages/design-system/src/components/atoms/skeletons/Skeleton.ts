@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   SkeletonMode,
@@ -21,4 +21,4 @@ export interface SkeletonProps
   speed?: number;
 }
 
-export const SKELETON_PREFIX = `${NAME_SPACE}skeleton`;
+export const SKELETON_PREFIX = `${NAMESPACE}skeleton`;

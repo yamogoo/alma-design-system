@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   IconSize,
@@ -36,4 +36,4 @@ export interface IconProps
 
 export * from "alma-icons";
 
-export const ICON_PREFIX = `${NAME_SPACE}icon`;
+export const ICON_PREFIX = `${NAMESPACE}icon`;

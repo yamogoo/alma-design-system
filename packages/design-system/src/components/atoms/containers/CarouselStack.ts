@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { CarousleStackSize } from "@/adapters/atoms/carouselStack";
 
@@ -26,4 +26,4 @@ export interface CarousleStackProps extends Partial<UIElementUnionProps> {
   isItemsClickable?: boolean;
 }
 
-export const CAROUSEL_STACK_PREFIX = `${NAME_SPACE}carousel-stack`;
+export const CAROUSEL_STACK_PREFIX = `${NAMESPACE}carousel-stack`;

@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   TransitionType,
@@ -19,4 +19,4 @@ export interface PageProps {
   orientation?: PageOrientations;
 }
 
-export const PAGE_PREFIX = `${NAME_SPACE}page`;
+export const PAGE_PREFIX = `${NAMESPACE}page`;

@@ -2,12 +2,12 @@
 import { nextTick, ref, useTemplateRef, watch } from "vue";
 import gsap from "gsap";
 
+import { UIFACETS } from "@/constants/ui";
+
 import { Constants } from "@/constants";
 
-import type { ActionSheetProps } from "./ActionSheet";
+import { ACTION_SHEET_PREFIX, type ActionSheetProps } from "./ActionSheet";
 import { Surface } from "@/components/atoms/containers";
-
-const PREFIX = "action-sheet";
 
 const props = withDefaults(defineProps<ActionSheetProps>(), {
   variant: "default",
@@ -61,9 +61,9 @@ watch(
       v-if="isRendered"
       ref="root"
       :class="[
-        PREFIX,
-        `${PREFIX}_variant-${variant}`,
-        `${PREFIX}_size-${size}`,
+        ACTION_SHEET_PREFIX,
+        `${ACTION_SHEET_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+        `${ACTION_SHEET_PREFIX}_${UIFACETS.SIZE}-${size}`,
       ]"
       :variant="variant"
       :size="size"
@@ -78,9 +78,10 @@ watch(
 <style lang="scss">
 @use "sass:map";
 
-$prefix: action-sheet;
+$tokenName: "action-sheet";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $min-height: px2rem(get($val, "root.min-height"));

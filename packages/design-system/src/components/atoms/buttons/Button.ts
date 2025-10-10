@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   ButtonMode,
@@ -47,4 +47,4 @@ export interface ButtonProps extends Partial<ButtonRequiredProps> {
   bordered?: boolean;
 }
 
-export const BUTTON_PREFIX = `${NAME_SPACE}button`;
+export const BUTTON_PREFIX = `${NAMESPACE}button`;

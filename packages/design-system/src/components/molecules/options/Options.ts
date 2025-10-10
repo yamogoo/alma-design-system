@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   OptionsMode,
@@ -25,4 +25,4 @@ export interface OptionsProps<T>
   isCurrentOptionShown?: boolean;
 }
 
-export const OPTIONS_PREFIX = `${NAME_SPACE}options`;
+export const OPTIONS_PREFIX = `${NAMESPACE}options`;

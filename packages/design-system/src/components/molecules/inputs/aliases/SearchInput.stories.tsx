@@ -17,7 +17,7 @@ import { type SearchFieldProps } from "./SearchInput";
 import SearchInput from "./SearchInput.vue";
 
 const meta = {
-  title: "Molecules/Inputs/SearchInput",
+  title: "Atoms/Inputs/AliasesSearchInput",
   component: SearchInput,
   tags: ["autodocs"],
   parameters: {

@@ -21,8 +21,8 @@ Key goals:
 
 - Relational color matrix (contracts.rel): single source of truth for colors across planes/roles/tones/states. See: `src/tokens/contracts.rel.md`.
 - Deterministic state generation: normal/hover/pressed/focus/disabled derived via perceptual OKLCH deltas per theme.
-- Base±N tone scale: numeric, theme-agnostic tone ladder (`base-3 … base+3`) replacing ambiguous “light/dark” names.
-- Contracts and lintable paths: component tokens must resolve to `contracts/rel/<mode>/<tone>/<state>`; no raw hex in components.
+- Base±N tone scale: numeric, theme-agnostic tone ladder (`base-down-3 … base-up-3`) replacing ambiguous “light/dark” names.
+- Contracts and lintable paths: component tokens must resolve to `contracts/interactive/<mode>/<tone>/<state>`; no raw hex in components.
 - Tokens worker pipeline (developed using AI): code-first tokens, resolvers, converters, build outputs (JSON, SCSS maps, CSS).
 - Storybook: custom theme + live visualization of varinat x size x mode × tone × state.
 
@@ -77,7 +77,7 @@ pnpm sparkpad:server:dev # run demo app (server)
 
 > For details on project structure and module definitions, see [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml).
 
-> ℹ️ **Startup**: first dev launch may take ~10-20s due to asset pre-processing and pre-bundling.  
+> **Startup**: first dev launch may take ~10-20s due to asset pre-processing and pre-bundling.  
 > **HMR is instantaneous** afterwards, so iteration speed remains high.
 
 Open Storybook at http://localhost:6006 or the app at http://localhost:5041.

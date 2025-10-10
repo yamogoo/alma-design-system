@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { Props } from "vue3-resize-bounding";
 
@@ -23,5 +23,5 @@ export interface ResizeBoundingProps
     Omit<Props, "styles" | "options"> {}
 
 export const SUFIX = "resize-bounding";
-export const PREFIX_WITH_DIVIDER = `${NAME_SPACE}${SUFIX}__`;
-export const RESIZE_BOUNDING_PREFIX = `${NAME_SPACE}${SUFIX}`;
+export const PREFIX_WITH_DIVIDER = `${NAMESPACE}${SUFIX}__`;
+export const RESIZE_BOUNDING_PREFIX = `${NAMESPACE}${SUFIX}`;

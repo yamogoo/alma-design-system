@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   TreeViewMode,
@@ -50,4 +50,4 @@ export interface TreeViewProps
   ariaLabel?: string;
 }
 
-export const TREE_VIEW_PREFIX = `${NAME_SPACE}tree-view`;
+export const TREE_VIEW_PREFIX = `${NAMESPACE}tree-view`;

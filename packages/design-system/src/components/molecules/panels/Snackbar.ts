@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   SnackbarMode,
@@ -26,4 +26,4 @@ export interface SnackbarProps
   description?: string;
 }
 
-export const SNACKBAR_PREFIX = `${NAME_SPACE}snackbar`;
+export const SNACKBAR_PREFIX = `${NAMESPACE}snackbar`;

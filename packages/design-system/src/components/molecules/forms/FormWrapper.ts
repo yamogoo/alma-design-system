@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { UIElementContentKey } from "@/typings";
 import type { SurfaceProps } from "@/components/atoms/containers/Surface";
@@ -9,4 +9,4 @@ export interface FormWrapperProps extends Partial<SurfaceProps> {
   contentKey?: UIElementContentKey;
 }
 
-export const FORM_WRAPPER_PREFIX = `${NAME_SPACE}form-wrapper`;
+export const FORM_WRAPPER_PREFIX = `${NAMESPACE}form-wrapper`;

@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type { GroupVariant, GroupSize } from "@/adapters/molecules/group";
 
@@ -37,4 +37,4 @@ export interface GroupProps
   ariaLabel?: string;
 }
 
-export const GROUP_PREFIX = `${NAME_SPACE}group`;
+export const GROUP_PREFIX = `${NAMESPACE}group`;

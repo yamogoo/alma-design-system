@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   TextVariant,
@@ -48,4 +48,4 @@ export interface TextProps {
   textOverflow?: "clip" | "ellipsis";
 }
 
-export const TEXT_PREFIX = `${NAME_SPACE}text`;
+export const TEXT_PREFIX = `${NAMESPACE}text`;

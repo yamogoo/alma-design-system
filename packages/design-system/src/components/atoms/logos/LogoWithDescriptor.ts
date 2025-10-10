@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   LogoWithDescriptorMode,
@@ -21,4 +21,4 @@ export interface LogoWithDescriptorProps
   name?: string;
 }
 
-export const LOGO_WITH_DESCRIPTOR_PREFIX = `${NAME_SPACE}logo-with-descriptor`;
+export const LOGO_WITH_DESCRIPTOR_PREFIX = `${NAMESPACE}logo-with-descriptor`;

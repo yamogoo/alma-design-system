@@ -1,4 +1,4 @@
-import { NAME_SPACE } from "@/constants";
+import { NAMESPACE } from "@/constants";
 
 import type {
   StepPaginationTabMode,
@@ -29,4 +29,4 @@ export interface StepPaginationTabsProps
   mode?: StepPaginationTabMode;
 }
 
-export const STEP_PAGINATIO_TABS_PREFIX = `${NAME_SPACE}step-pagination-tabs`;
+export const STEP_PAGINATIO_TABS_PREFIX = `${NAMESPACE}step-pagination-tabs`;

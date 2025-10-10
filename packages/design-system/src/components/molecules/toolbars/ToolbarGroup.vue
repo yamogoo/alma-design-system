@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { ToolbarGroupProps } from "./ToolbarGroup";
+import { UIFACETS } from "@/constants/ui";
+
+import { TOOLBAR_GROUP_PREFIX, type ToolbarGroupProps } from "./ToolbarGroup";
 
 import Group from "@/components/molecules/containers/Group.vue";
-
-const PREFIX = "toolbar-group";
 
 withDefaults(defineProps<ToolbarGroupProps>(), {
   as: "div",
@@ -19,7 +19,11 @@ withDefaults(defineProps<ToolbarGroupProps>(), {
 
 <template>
   <Group
-    :class="[PREFIX, `${PREFIX}_variant-${variant}`, `${PREFIX}_size-${size}`]"
+    :class="[
+      TOOLBAR_GROUP_PREFIX,
+      `${TOOLBAR_GROUP_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${TOOLBAR_GROUP_PREFIX}_${UIFACETS.SIZE}-${size}`,
+    ]"
     :variant="'block'"
     :size="size"
     :mode="mode"
@@ -34,9 +38,10 @@ withDefaults(defineProps<ToolbarGroupProps>(), {
 </template>
 
 <style lang="scss">
-$prefix: toolbar-group;
+$tokenName: "toolbar-group";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "molecules.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $min-height: px2rem(get($val, "root.min-height"));
