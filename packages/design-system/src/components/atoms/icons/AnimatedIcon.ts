@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import { Vue3Lottie as LottieAnimation } from "vue3-lottie";
 
 import type { UIElementStylingModifiers } from "@/typings";
@@ -18,3 +20,5 @@ export interface AnimatedIconProps
   isActive: boolean;
   loop?: boolean;
 }
+
+export const ANIMATED_ICON_PREFIX = `${NAME_SPACE}animated-icon`;

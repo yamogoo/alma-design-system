@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { defineAsyncComponent, computed } from "vue";
 
-import { type SVGImageProps } from "./SVGImage";
+import { SVG_IMAGE_PREFIX, type SVGImageProps } from "./SVGImage";
 
 import Skeleton from "@/components/atoms/skeletons/Skeleton.vue";
-
-const PREFIX = "svg-image";
 
 const props = withDefaults(defineProps<SVGImageProps>(), {
   variant: "default",
@@ -34,12 +32,12 @@ const symbol = computed(() => {
   <div
     data-testid="svg-image"
     :class="[
-      PREFIX,
+      SVG_IMAGE_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${SVG_IMAGE_PREFIX}_variant-${variant}`]: !!variant,
+        [`${SVG_IMAGE_PREFIX}_size-${size}`]: !!size,
+        [`${SVG_IMAGE_PREFIX}_mode-${mode}`]: !!mode,
+        [`${SVG_IMAGE_PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
     role="img"
@@ -56,10 +54,11 @@ const symbol = computed(() => {
 </template>
 
 <style lang="scss">
-$token-prefix: icon;
-$prefix: svg-image;
+$tokenName: "icon";
+$themeTokenName: "label";
+$prefix: getPrefix("svg-image");
 
-@mixin defineSizes($map: get($components, "atoms.#{$token-prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $box-size: px2rem(get($val, "root.size"));
@@ -73,7 +72,9 @@ $prefix: svg-image;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.contracts.interactive.label")) {
+@mixin defineThemes(
+  $map: get($themes, "light.contracts.interactive.#{$themeTokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $states in $modes {
       &_mode-#{$mode} {
@@ -82,7 +83,7 @@ $prefix: svg-image;
             path {
               @include themify($themes) {
                 fill: themed(
-                  "contracts.interactive.label.#{$mode}.#{$tone}.normal"
+                  "contracts.interactive.#{$themeTokenName}.#{$mode}.#{$tone}.normal"
                 );
               }
             }

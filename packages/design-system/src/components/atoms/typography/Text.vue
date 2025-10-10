@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { computed, type ComputedRef, type CSSProperties } from "vue";
 
-import type { TextProps } from "@/components/atoms/typography/Text";
-
-const PREFIX = "text";
+import {
+  TEXT_PREFIX,
+  type TextProps,
+} from "@/components/atoms/typography/Text";
 
 const props = withDefaults(defineProps<TextProps>(), {
   as: "span",
@@ -38,12 +39,12 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
   <component
     :is="componentTag"
     :class="[
-      PREFIX,
+      TEXT_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
-        [`${PREFIX}_state-${state}`]: !!state,
+        [`${TEXT_PREFIX}_variant-${variant}`]: !!variant,
+        [`${TEXT_PREFIX}_mode-${mode}`]: !!mode,
+        [`${TEXT_PREFIX}_tone-${tone}`]: !!tone,
+        [`${TEXT_PREFIX}_state-${state}`]: !!state,
       },
     ]"
     :style="computedStyle"
@@ -54,8 +55,9 @@ const computedStyle: ComputedRef<CSSProperties> = computed(() => {
 </template>
 
 <style lang="scss">
-$token-prefix: "label";
-$prefix: text;
+$tokenName: "text";
+$themeToken: "label";
+$prefix: getPrefix($tokenName);
 
 @mixin defineVariants($map: get($typography, "styles")) {
   @each $variant, $val in $map {
@@ -74,7 +76,7 @@ $prefix: text;
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.contracts.interactive.#{$token-prefix}")
+  $map: get($themes, "light.contracts.interactive.#{$themeToken}")
 ) {
   @each $mode, $modes in $map {
     @each $tone, $states in $modes {
@@ -82,7 +84,7 @@ $prefix: text;
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             color: themed(
-              "contracts.interactive.#{$token-prefix}.#{$mode}.#{$tone}.normal"
+              "contracts.interactive.#{$themeToken}.#{$mode}.#{$tone}.normal"
             );
           }
         }

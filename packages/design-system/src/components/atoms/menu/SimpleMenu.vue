@@ -3,12 +3,13 @@ import { useTemplateRef } from "vue";
 
 import { useMenuNavigation } from "@/composables/local";
 
-import { type SimpleMenuProps } from "@/components/atoms/menu/SimpleMenu";
+import {
+  SIMPLE_MENU_PREFIX,
+  type SimpleMenuProps,
+} from "@/components/atoms/menu/SimpleMenu";
 import type { IMenuItem } from "@/components/atoms/menu/menu";
 import MenuItem from "@/components/atoms/menu/MenuItem.vue";
 import Text from "@/components/atoms/typography/Text.vue";
-
-const PREFIX = "simple-menu";
 
 const props = withDefaults(defineProps<SimpleMenuProps<T>>(), {
   variant: "default",
@@ -42,10 +43,10 @@ const onPress = (item: IMenuItem<T>): void => {
   <div
     ref="root"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_orientation-${orientation}`,
+      SIMPLE_MENU_PREFIX,
+      `${SIMPLE_MENU_PREFIX}_variant-${variant}`,
+      `${SIMPLE_MENU_PREFIX}_size-${size}`,
+      `${SIMPLE_MENU_PREFIX}_orientation-${orientation}`,
     ]"
     :role="orientation === 'vertical' ? 'menu' : 'menubar'"
   >
@@ -55,14 +56,14 @@ const onPress = (item: IMenuItem<T>): void => {
       v-memo="[item.id === selectedItemIndex]"
       :is-active="item.id === selectedItemIndex"
       role="menuitem"
-      data-testid="simple-menu-item"
+      :data-testid="`${SIMPLE_MENU_PREFIX}__item`"
       :tabindex="item.id === selectedItemIndex ? 0 : -1"
       @is-pressed="onPress(item)"
     >
       <Text
         :as="'span'"
-        :class="`${PREFIX}__item-label`"
-        data-testid="simple-menu-item-label"
+        :class="`${SIMPLE_MENU_PREFIX}__item-label`"
+        :data-testid="`${SIMPLE_MENU_PREFIX}__item-label`"
       >
         {{ item.label }}
       </Text>
@@ -71,9 +72,10 @@ const onPress = (item: IMenuItem<T>): void => {
 </template>
 
 <style lang="scss">
-$prefix: simple-menu;
+$tokenName: "simple-menu";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {

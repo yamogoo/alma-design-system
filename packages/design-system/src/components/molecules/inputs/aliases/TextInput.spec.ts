@@ -1,12 +1,12 @@
 import { mount, type VueWrapper } from "@vue/test-utils";
 
-import { PREFIX } from "@/components/atoms/inputs/Input";
+import { INPUT_PREFIX } from "@/components/atoms/inputs/Input";
 
 import { type TextInputProps } from "./TextInput";
 import TextInput from "./TextInput.vue";
 
 const getInput = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`[data-testid="${PREFIX}"]`);
+  return wrapper.find(`[data-testid="${INPUT_PREFIX}"]`);
 };
 
 const REQUIRED_PROPS: TextInputProps = {

@@ -1,13 +1,13 @@
 import { type DOMWrapper, mount, VueWrapper } from "@vue/test-utils";
 import { describe, test, expect } from "vitest";
 
-import { PREFIX } from "@/components/atoms/inputs/Input";
+import { INPUT_PREFIX } from "@/components/atoms/inputs/Input";
 
 import { type SearchFieldProps } from "./SearchInput";
 import SearchInput from "./SearchInput.vue";
 
 const getInput = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`[data-testid="${PREFIX}"]`);
+  return wrapper.find(`[data-testid="${INPUT_PREFIX}"]`);
 };
 
 const REQUIRED_PROPS: SearchFieldProps = {

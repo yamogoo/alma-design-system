@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   StepPaginationTabMode,
   StepPaginationTabSize,
@@ -26,3 +28,5 @@ export interface StepPaginationTabsProps
   size?: StepPaginationTabSize;
   mode?: StepPaginationTabMode;
 }
+
+export const STEP_PAGINATIO_TABS_PREFIX = `${NAME_SPACE}step-pagination-tabs`;

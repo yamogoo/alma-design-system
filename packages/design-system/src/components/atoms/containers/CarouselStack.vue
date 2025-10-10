@@ -12,7 +12,10 @@ import gsap from "gsap";
 
 import { px2rem } from "@/utils/px2rem";
 
-import { PREFIX, type CarousleStackProps } from "./CarouselStack";
+import {
+  CAROUSEL_STACK_PREFIX,
+  type CarousleStackProps,
+} from "./CarouselStack";
 
 const props = withDefaults(defineProps<CarousleStackProps>(), {
   variant: "default",
@@ -266,21 +269,21 @@ const onLeave = (el: Element, done: () => void): void => {
   <div
     ref="root"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
+      CAROUSEL_STACK_PREFIX,
+      `${CAROUSEL_STACK_PREFIX}_variant-${variant}`,
       {
-        [`${PREFIX}_size-${String(size)}`]: size!!,
-        [`${PREFIX}_orientation-${orientation}`]: orientation,
-        [`${PREFIX}_stretch-${stretch}`]: stretch,
-        [`${PREFIX}_grabbing`]: isCursorGrabbing,
+        [`${CAROUSEL_STACK_PREFIX}_size-${String(size)}`]: size!!,
+        [`${CAROUSEL_STACK_PREFIX}_orientation-${orientation}`]: orientation,
+        [`${CAROUSEL_STACK_PREFIX}_stretch-${stretch}`]: stretch,
+        [`${CAROUSEL_STACK_PREFIX}_grabbing`]: isCursorGrabbing,
       },
-      `${PREFIX}_${isItemsClickable ? 'clickable' : 'static'}`,
+      `${CAROUSEL_STACK_PREFIX}_${isItemsClickable ? 'clickable' : 'static'}`,
     ]"
   >
     <div
       v-if="$slots.pagination"
-      :class="`${PREFIX}__header`"
-      :data-testid="`${PREFIX}__header`"
+      :class="`${CAROUSEL_STACK_PREFIX}__header`"
+      :data-testid="`${CAROUSEL_STACK_PREFIX}__header`"
     >
       <slot
         name="pagination"
@@ -290,14 +293,14 @@ const onLeave = (el: Element, done: () => void): void => {
     </div>
     <div
       ref="track"
-      :class="`${PREFIX}__container`"
+      :class="`${CAROUSEL_STACK_PREFIX}__container`"
       :style="{ gap: containerGap }"
     >
       <template v-for="idx in screenCount" :key="idx">
         <Transition :css="false" @enter="onEnter" @leave="onLeave">
           <div
             v-if="isInactiveItemUnmounted ? idx - 1 === selectedScreenId : true"
-            :class="`${PREFIX}__screen`"
+            :class="`${CAROUSEL_STACK_PREFIX}__screen`"
             :style="{ flex: `0 0 ${screenSize}px` }"
           >
             <slot

@@ -1,15 +1,15 @@
 import { mount } from "@vue/test-utils";
 
 import {
-  PREFIX,
+  CONTROL_WRAPPER_PREFIX,
   type ControlWrapperProps,
 } from "@/components/atoms/controls/control-wrapper/ControlWrapper";
 import ControlWrapper from "@/components/atoms/controls/control-wrapper/ControlWrapper.vue";
 
 const Classes = {
-  ROOT_CLASS: PREFIX,
-  VARIANT: `${PREFIX}_variant`,
-  SIZE: `${PREFIX}_size`,
+  ROOT_CLASS: CONTROL_WRAPPER_PREFIX,
+  VARIANT: `${CONTROL_WRAPPER_PREFIX}_variant`,
+  SIZE: `${CONTROL_WRAPPER_PREFIX}_size`,
 };
 
 describe("ControlWrapper", () => {

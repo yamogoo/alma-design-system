@@ -24,4 +24,4 @@ export interface ResizeBoundingProps
 
 export const SUFIX = "resize-bounding";
 export const PREFIX_WITH_DIVIDER = `${NAME_SPACE}${SUFIX}__`;
-export const PREFIX = `${NAME_SPACE}${SUFIX}`;
+export const RESIZE_BOUNDING_PREFIX = `${NAME_SPACE}${SUFIX}`;

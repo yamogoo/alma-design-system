@@ -12,7 +12,7 @@ import gsap from "gsap";
 
 import { usePressed } from "@/composables/local/actions/usePressed";
 
-import { PREFIX, type SwitchProps } from "./Switch";
+import { SWITCH_PREFIX, type SwitchProps } from "./Switch";
 
 defineOptions({
   inheritAttrs: false,
@@ -77,7 +77,7 @@ const onKeyDown = (e: KeyboardEvent): void => {
 
 /* * * a11y * * */
 
-const ariaLabelId = `${PREFIX}__label-${id}`;
+const ariaLabelId = `${SWITCH_PREFIX}__label-${id}`;
 
 const ariaLabelledBy = computed(() => {
   return props.label && props.label.trim() ? ariaLabelId : undefined;
@@ -136,13 +136,13 @@ onMounted(() => {
     <div
       ref="root"
       :class="[
-        PREFIX,
-        `${PREFIX}_variant-${variant}`,
-        `${PREFIX}_mode-${mode}`,
-        `${PREFIX}_size-${size}`,
-        `${PREFIX}_tone-${tone}`,
-        `${PREFIX}_state-${localIsActive ? 'active' : 'normal'}`,
-        { [`${PREFIX}_state-disabled`]: isDisabled },
+        SWITCH_PREFIX,
+        `${SWITCH_PREFIX}_variant-${variant}`,
+        `${SWITCH_PREFIX}_mode-${mode}`,
+        `${SWITCH_PREFIX}_size-${size}`,
+        `${SWITCH_PREFIX}_tone-${tone}`,
+        `${SWITCH_PREFIX}_state-${localIsActive ? 'active' : 'normal'}`,
+        { [`${SWITCH_PREFIX}_state-disabled`]: isDisabled },
       ]"
       role="switch"
       :aria-labelledby="ariaLabelledBy"
@@ -152,12 +152,12 @@ onMounted(() => {
       tabindex="0"
       @keydown="onKeyDown"
     >
-      <div :class="`${PREFIX}__track`">
-        <div ref="track" :class="`${PREFIX}__track-container`">
-          <span ref="knob" :class="`${PREFIX}__knob`"></span>
+      <div :class="`${SWITCH_PREFIX}__track`">
+        <div ref="track" :class="`${SWITCH_PREFIX}__track-container`">
+          <span ref="knob" :class="`${SWITCH_PREFIX}__knob`"></span>
         </div>
       </div>
-      <span v-if="label" :id="ariaLabelId" :class="`${PREFIX}__label`">{{
+      <span v-if="label" :id="ariaLabelId" :class="`${SWITCH_PREFIX}__label`">{{
         label
       }}</span>
     </div>
@@ -165,21 +165,21 @@ onMounted(() => {
   <template v-if="useNative">
     <label
       ref="root"
-      :for="`${PREFIX}_id-${id}`"
+      :for="`${SWITCH_PREFIX}_id-${id}`"
       :class="[
-        PREFIX,
-        `${PREFIX}_variant-${variant}`,
-        `${PREFIX}_size-${size}`,
-        `${PREFIX}_mode-${mode}`,
-        `${PREFIX}_tone-${tone}`,
-        `${PREFIX}_state-${isActive ? 'active' : 'normal'}`,
-        { [`${PREFIX}_state-disabled`]: isDisabled },
+        SWITCH_PREFIX,
+        `${SWITCH_PREFIX}_variant-${variant}`,
+        `${SWITCH_PREFIX}_size-${size}`,
+        `${SWITCH_PREFIX}_mode-${mode}`,
+        `${SWITCH_PREFIX}_tone-${tone}`,
+        `${SWITCH_PREFIX}_state-${isActive ? 'active' : 'normal'}`,
+        { [`${SWITCH_PREFIX}_state-disabled`]: isDisabled },
       ]"
       tabindex="0"
     >
       <input
         v-bind="$attrs"
-        :id="`${PREFIX}_id-${id}`"
+        :id="`${SWITCH_PREFIX}_id-${id}`"
         type="checkbox"
         :checked="isActive"
         :disabled="isDisabled"
@@ -187,12 +187,12 @@ onMounted(() => {
         :aria-label="ariaLabel"
         @change="onChange"
       />
-      <div :class="`${PREFIX}__track`">
-        <div :class="`${PREFIX}__track-container`">
-          <span ref="knob" :class="`${PREFIX}__knob`"></span>
+      <div :class="`${SWITCH_PREFIX}__track`">
+        <div :class="`${SWITCH_PREFIX}__track-container`">
+          <span ref="knob" :class="`${SWITCH_PREFIX}__knob`"></span>
         </div>
       </div>
-      <span v-if="label" :id="ariaLabelId" :class="`${PREFIX}__label`">{{
+      <span v-if="label" :id="ariaLabelId" :class="`${SWITCH_PREFIX}__label`">{{
         label
       }}</span>
     </label>

@@ -1,26 +1,35 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
+import { INPUT_PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
 import Input from "@/components/atoms/inputs/Input.vue";
+
+const Classes = {
+  ROOT: INPUT_PREFIX,
+  VARIANT: `${INPUT_PREFIX}_variant`,
+  SIZE: `${INPUT_PREFIX}_size`,
+  MODE: `${INPUT_PREFIX}_mode`,
+  TONE: `${INPUT_PREFIX}_tone`,
+  STATE: `${INPUT_PREFIX}_state`,
+} as const;
 
 const REQUIRED_PROPS: InputProps = {
   value: "some-value",
 };
 
 const getResetButton = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`[data-testid="${PREFIX}__field-reset-button"]`);
+  return wrapper.find(`[data-testid="${INPUT_PREFIX}__field-reset-button"]`);
 };
 
 const getPlaceholder = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`.${PREFIX}__field-placeholder`);
+  return wrapper.find(`.${INPUT_PREFIX}__field-placeholder`);
 };
 
 const getValue = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`[data-testid="${PREFIX}__value"]`);
+  return wrapper.find(`[data-testid="${INPUT_PREFIX}__value"]`);
 };
 
 // const getErrorMessage = <T>(wrapper: VueWrapper<T>) => {
-//   return wrapper.find(`.${PREFIX}__error-message`);
+//   return wrapper.find(`.${INPUT_PREFIX}__error-message`);
 // };
 
 vi.mock("gsap", () => ({
@@ -90,6 +99,6 @@ describe("input", () => {
     });
 
     await wrapper.trigger("pointerdown");
-    expect(wrapper.classes()).toContain(`${PREFIX}_state-focused`);
+    expect(wrapper.classes()).toContain(`${Classes.STATE}-focused`);
   });
 });

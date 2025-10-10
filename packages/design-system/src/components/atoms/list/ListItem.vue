@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, inject, useSlots, useTemplateRef } from "vue";
-import type { ListItemProps } from "./ListItem";
+import { LIST_ITEM_PREFIX, type ListItemProps } from "./ListItem";
 
 import { useHover } from "@/composables/local/actions/useHover";
 
@@ -11,8 +11,6 @@ import {
 
 import Text from "@/components/atoms/typography/Text.vue";
 import Icon from "@/components/atoms/icons/Icon.vue";
-
-const PREFIX = "list-item";
 
 const props = withDefaults(defineProps<ListItemProps>(), {
   as: "div",
@@ -112,15 +110,15 @@ const onFocusPrev = (): void => {
     :is="as"
     ref="root"
     :class="[
-      PREFIX,
+      LIST_ITEM_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${LIST_ITEM_PREFIX}_variant-${variant}`]: !!variant,
+        [`${LIST_ITEM_PREFIX}_size-${size}`]: !!size,
+        [`${LIST_ITEM_PREFIX}_mode-${mode}`]: !!mode,
+        [`${LIST_ITEM_PREFIX}_tone-${tone}`]: !!tone,
       },
-      `${PREFIX}_state-${effectiveState}`,
-      { [`${PREFIX}_joined`]: localIsJoined },
+      `${LIST_ITEM_PREFIX}_state-${effectiveState}`,
+      { [`${LIST_ITEM_PREFIX}_joined`]: localIsJoined },
     ]"
     :style="{ cursor }"
     :role="role"
@@ -148,24 +146,24 @@ const onFocusPrev = (): void => {
         <div class="list-item__content">
           <Text
             v-if="title"
-            :class="`${PREFIX}__title`"
-            :data-testid="`${PREFIX}-title`"
+            :class="`${LIST_ITEM_PREFIX}__title`"
+            :data-testid="`${LIST_ITEM_PREFIX}-title`"
           >
             {{ title }}
           </Text>
           <Text
             v-if="description"
-            :class="`${PREFIX}__description`"
-            :data-testid="`${PREFIX}-description`"
+            :class="`${LIST_ITEM_PREFIX}__description`"
+            :data-testid="`${LIST_ITEM_PREFIX}-description`"
           >
             {{ description }}
           </Text>
         </div>
       </template>
-      <div :class="`${PREFIX}__append`">
+      <div :class="`${LIST_ITEM_PREFIX}__append`">
         <slot name="append">
           <Icon
-            :class="`${PREFIX}__chevron`"
+            :class="`${LIST_ITEM_PREFIX}__chevron`"
             :name="'right'"
             :appearance="'outline'"
             :weight="'300'"
@@ -178,9 +176,10 @@ const onFocusPrev = (): void => {
 </template>
 
 <style lang="scss">
-$prefix: list-item;
+$tokenName: "list-item";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -278,17 +277,17 @@ $prefix: list-item;
   &.#{$prefix}_state-#{$state} {
     @include themify($themes) {
       background-color: themed(
-        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.#{$state}"
+        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.#{$state}"
       );
       border-color: themed(
-        "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.#{$state}"
+        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.#{$state}"
       );
     }
 
     .#{$prefix}__title {
       @include themify($themes) {
         color: themed(
-          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.title.#{$state}"
+          "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.title.#{$state}"
         );
       }
     }
@@ -296,7 +295,7 @@ $prefix: list-item;
     .#{$prefix}__description {
       @include themify($themes) {
         color: themed(
-          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.description.#{$state}"
+          "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.description.#{$state}"
         );
       }
     }
@@ -304,14 +303,16 @@ $prefix: list-item;
     .#{$prefix}__chevron {
       @include themify($themes) {
         fill: themed(
-          "components.atoms.#{$prefix}.#{$mode}.#{$tone}.chevron.#{$state}"
+          "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.chevron.#{$state}"
         );
       }
     }
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -324,7 +325,7 @@ $prefix: list-item;
             @include themify($themes) {
               outline: get($tokens, "outline") solid
                 themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.highlight"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.highlight"
                 );
             }
           }
@@ -336,7 +337,7 @@ $prefix: list-item;
               @include themify($themes) {
                 border-color: rgba(
                   themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.divider.border.normal"
                   ),
                   0
                 );
@@ -349,7 +350,7 @@ $prefix: list-item;
             .#{$prefix}__container {
               @include themify($themes) {
                 border-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.divider.border.normal"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.divider.border.normal"
                 );
               }
             }

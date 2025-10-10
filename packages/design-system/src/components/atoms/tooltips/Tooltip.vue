@@ -5,10 +5,11 @@ import gsap from "gsap";
 
 import { useHover, useTimeout } from "@/composables/local";
 
-import { type TooltipProps } from "@/components/atoms/tooltips/Tooltip";
+import {
+  TOOLTIP_PREFIX,
+  type TooltipProps,
+} from "@/components/atoms/tooltips/Tooltip";
 import CharTooltipLabel from "@/components/atoms/tooltips/CharTooltipLabel.vue";
-
-const PREFIX = "tooltip";
 
 const FOCUS_SHOW_TOOLTIP_TIME_MS = 250,
   UNFOCUS_HIDE_TOOLTIP_TIME_MS = 750;
@@ -95,15 +96,15 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
 <template>
   <div
     :class="[
-      PREFIX,
+      TOOLTIP_PREFIX,
       isFollowingCursor
-        ? `${PREFIX}_follow-cursor`
-        : `${PREFIX}_align-${align}`,
+        ? `${TOOLTIP_PREFIX}_follow-cursor`
+        : `${TOOLTIP_PREFIX}_align-${align}`,
     ]"
   >
     <div
       ref="refContent"
-      :class="`${PREFIX}__content`"
+      :class="`${TOOLTIP_PREFIX}__content`"
       :aria-describedby="localTooltipId"
     >
       <slot></slot>
@@ -111,7 +112,7 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
     <Transition :css="false" @enter="onTooltipEnter" @leave="onTooltipLeave">
       <CharTooltipLabel
         v-if="isTooltipShown"
-        :class="`${PREFIX}__label`"
+        :class="`${TOOLTIP_PREFIX}__label`"
         :label="label"
         role="tooltip"
       ></CharTooltipLabel>
@@ -120,7 +121,8 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
 </template>
 
 <style lang="scss">
-$prefix: tooltip;
+$tokenName: "tooltip";
+$prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   box-sizing: border-box;

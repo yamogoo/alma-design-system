@@ -1,9 +1,22 @@
-import { mount } from "@vue/test-utils";
+import { mount, VueWrapper } from "@vue/test-utils";
 
 import { getTypedEmittedEvent } from "@/__tests__/utils";
 
 import { type MenuItems } from "@/components/atoms/menu/menu";
+import { SIMPLE_MENU_PREFIX } from "./SimpleMenu";
 import SimpleMenu from "@/components/atoms/menu/SimpleMenu.vue";
+
+const Classes = {
+  ROOT: SIMPLE_MENU_PREFIX,
+  VARIANT: `${SIMPLE_MENU_PREFIX}_variant`,
+  SIZE: `${SIMPLE_MENU_PREFIX}_size`,
+  MODE: `${SIMPLE_MENU_PREFIX}_mode`,
+  TONE: `${SIMPLE_MENU_PREFIX}_tone`,
+} as const;
+
+const getItems = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.findAll(`[data-testid="${Classes.ROOT}__item"]`);
+};
 
 const items: MenuItems = [
   {
@@ -28,7 +41,7 @@ describe("SimpleMenu", () => {
         },
       });
 
-      const itemEls = wrapper.findAll('[data-testid="simple-menu-item"]');
+      const itemEls = getItems(wrapper);
       const itemsLength = itemEls.length;
 
       expect(itemsLength).toBe(items.length);

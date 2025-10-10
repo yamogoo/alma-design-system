@@ -47,4 +47,4 @@ export interface ButtonProps extends Partial<ButtonRequiredProps> {
   bordered?: boolean;
 }
 
-export const PREFIX = `${NAME_SPACE}button`;
+export const BUTTON_PREFIX = `${NAME_SPACE}button`;

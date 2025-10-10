@@ -7,7 +7,7 @@ import { createCustomEvent } from "@/utils/events";
 
 import { usePageTransition } from "@/composables/local/pages/usePageTransition";
 
-import { PREFIX, type PageProps } from "./Page";
+import { PAGE_PREFIX, type PageProps } from "./Page";
 
 const props = withDefaults(defineProps<PageProps>(), {
   isFooterShown: true,
@@ -456,22 +456,25 @@ onUnmounted(() => {
       v-if="isMounted"
       ref="root"
       :class="[
-        PREFIX,
+        PAGE_PREFIX,
         {
-          [`${PREFIX}_orientation-${orientation}`]: !!orientation,
-          [`${PREFIX}_mode-${tone}`]: !!tone,
+          [`${PAGE_PREFIX}_orientation-${orientation}`]: !!orientation,
+          [`${PAGE_PREFIX}_mode-${tone}`]: !!tone,
         },
       ]"
       @pointerdown="onPointerDown"
     >
-      <div v-if="$slots.header" :class="`${PREFIX}__header`">
+      <div v-if="$slots.header" :class="`${PAGE_PREFIX}__header`">
         <slot name="header"></slot>
       </div>
-      <div :class="`${PREFIX}__body`">
+      <div :class="`${PAGE_PREFIX}__body`">
         <slot></slot>
       </div>
       <Transition :css="false" @enter="onFooterEnter" @leave="onFooterLeave">
-        <div v-if="$slots.footer && isFooterShown" :class="`${PREFIX}__footer`">
+        <div
+          v-if="$slots.footer && isFooterShown"
+          :class="`${PAGE_PREFIX}__footer`"
+        >
           <slot name="footer"></slot>
         </div>
       </Transition>

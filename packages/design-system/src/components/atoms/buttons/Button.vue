@@ -15,7 +15,7 @@ import { useHover } from "@/composables/local/actions/useHover";
 
 import type { IconSize } from "@/adapters/atoms/icon";
 
-import { PREFIX, type ButtonProps } from "./Button";
+import { BUTTON_PREFIX, type ButtonProps } from "./Button";
 import Icon from "@/components/atoms/icons/Icon.vue";
 
 const props = withDefaults(defineProps<ButtonProps>(), {
@@ -106,22 +106,22 @@ const onKeyup = (e: KeyboardEvent) => {
     :role="as !== 'button' ? 'button' : undefined"
     :type="as === 'button' ? 'button' : undefined"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
-      `${PREFIX}_state-${
+      BUTTON_PREFIX,
+      `${BUTTON_PREFIX}_variant-${variant}`,
+      `${BUTTON_PREFIX}_size-${size}`,
+      `${BUTTON_PREFIX}_mode-${mode}`,
+      `${BUTTON_PREFIX}_tone-${tone}`,
+      `${BUTTON_PREFIX}_state-${
         localIsPressed ? 'pressed' : isHovered ? 'hovered' : 'normal'
       }`,
       {
-        [`${PREFIX}_direction-${contentDirection}`]: !!contentDirection,
-        [`${PREFIX}_stretch-${stretch}`]: !!stretch,
-        [`${PREFIX}_state-disabled`]: isDisabled,
-        [`${PREFIX}_state-bordered`]: bordered,
+        [`${BUTTON_PREFIX}_direction-${contentDirection}`]: !!contentDirection,
+        [`${BUTTON_PREFIX}_stretch-${stretch}`]: !!stretch,
+        [`${BUTTON_PREFIX}_state-disabled`]: isDisabled,
+        [`${BUTTON_PREFIX}_state-bordered`]: bordered,
       },
     ]"
-    :data-testid="PREFIX"
+    :data-testid="BUTTON_PREFIX"
     :aria-label="label || ariaLabel || 'button'"
     :aria-disabled="isDisabled"
     :disabled="as === 'button' ? isDisabled : undefined"
@@ -138,8 +138,8 @@ const onKeyup = (e: KeyboardEvent) => {
     <slot name="prepend-icon">
       <Icon
         v-if="prependIconName"
-        :class="`${PREFIX}__icon`"
-        :data-testid="`${PREFIX}__icon`"
+        :class="`${BUTTON_PREFIX}__icon`"
+        :data-testid="`${BUTTON_PREFIX}__icon`"
         :name="prependIconName"
         :appearance="prependIconStyle"
         :weight="prependIconWeight"
@@ -147,19 +147,19 @@ const onKeyup = (e: KeyboardEvent) => {
         aria-hidden="true"
       ></Icon>
     </slot>
-    <div v-if="$slots.content" :class="`${PREFIX}__content`">
+    <div v-if="$slots.content" :class="`${BUTTON_PREFIX}__content`">
       <slot name="content"></slot>
     </div>
     <span
       v-if="label"
-      :class="`${PREFIX}__label`"
-      :data-testid="`${PREFIX}__label`"
+      :class="`${BUTTON_PREFIX}__label`"
+      :data-testid="`${BUTTON_PREFIX}__label`"
       >{{ label }}</span
     >
     <slot name="append-icon">
       <Icon
         v-if="appendIconName"
-        :class="`${PREFIX}__icon`"
+        :class="`${BUTTON_PREFIX}__icon`"
         :name="appendIconName"
         :appearance="appendIconStyle"
         :weight="appendIconWeight"

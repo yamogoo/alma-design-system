@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   DividerMode,
   DividerSize,
@@ -27,3 +29,5 @@ export interface DividerProps
   orientation?: UIElementOrientation;
   align?: DividerAlign;
 }
+
+export const DIVIDER_PREFIX = `${NAME_SPACE}divider`;

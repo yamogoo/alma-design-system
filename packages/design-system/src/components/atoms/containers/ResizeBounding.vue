@@ -4,7 +4,7 @@ import Resizer from "vue3-resize-bounding";
 import resizeBounding from "@/tokens/src/components/atoms/resizeBounding.json";
 
 import {
-  PREFIX,
+  RESIZE_BOUNDING_PREFIX,
   PREFIX_WITH_DIVIDER,
   type ResizeBoundingProps,
 } from "./ResizeBounding";
@@ -33,12 +33,12 @@ const splitterWidth = componentToken.splitter.width.$value;
 <template>
   <Resizer
     v-bind="props"
-    :data-testid="PREFIX"
+    :data-testid="RESIZE_BOUNDING_PREFIX"
     :class="[
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mdoe-${tone}`,
-      `${PREFIX}_tone-${mode}`,
+      `${RESIZE_BOUNDING_PREFIX}_variant-${variant}`,
+      `${RESIZE_BOUNDING_PREFIX}_size-${size}`,
+      `${RESIZE_BOUNDING_PREFIX}_mdoe-${tone}`,
+      `${RESIZE_BOUNDING_PREFIX}_tone-${mode}`,
     ]"
     :options="{
       prefix: PREFIX_WITH_DIVIDER,

@@ -1,19 +1,22 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { type CharTooltipLabelProps } from "@/components/atoms/tooltips/CharTooltipLabel";
+import {
+  CHAR_TOOLTIP_PREFIX,
+  type CharTooltipLabelProps,
+} from "@/components/atoms/tooltips/CharTooltipLabel";
 import CharTooltipLabel from "@/components/atoms/tooltips/CharTooltipLabel.vue";
 
 const getIcon = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find('[data-testid="icon"]');
 };
 
-enum Classes {
-  ROOT_CLASS = "char-tooltip-label",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  TONE = `${Classes.ROOT_CLASS}_tone`,
-}
+const Classes = {
+  ROOT_CLASS: CHAR_TOOLTIP_PREFIX,
+  VARIANT: `${CHAR_TOOLTIP_PREFIX}_variant`,
+  SIZE: `${CHAR_TOOLTIP_PREFIX}_size`,
+  MODE: `${CHAR_TOOLTIP_PREFIX}_mode`,
+  TONE: `${CHAR_TOOLTIP_PREFIX}_tone`,
+} as const;
 
 describe("CharTooltipLabel", () => {
   test("renders with default props", () => {
@@ -64,7 +67,7 @@ describe("CharTooltipLabel", () => {
       props: { label: "Tooltip Text" },
     });
 
-    const label = wrapper.find("div.char-tooltip-label").text();
+    const label = wrapper.find(`div.${Classes.ROOT_CLASS}`).text();
 
     expect(label).toContain("Tooltip Text");
   });

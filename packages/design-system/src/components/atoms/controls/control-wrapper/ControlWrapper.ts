@@ -14,4 +14,4 @@ export type ControlWrapperProps = Partial<
   >
 >;
 
-export const PREFIX = `${NAME_SPACE}control-wrapper`;
+export const CONTROL_WRAPPER_PREFIX = `${NAME_SPACE}control-wrapper`;

@@ -1,7 +1,7 @@
 import { mount, shallowMount, VueWrapper } from "@vue/test-utils";
 import gsap from "gsap";
 
-import { type ButtonProps, PREFIX } from "./Button";
+import { type ButtonProps, BUTTON_PREFIX } from "./Button";
 import Button from "./Button.vue";
 
 const REQUIRED_PROPS: Pick<ButtonProps, "tone" | "mode"> = {
@@ -10,7 +10,7 @@ const REQUIRED_PROPS: Pick<ButtonProps, "tone" | "mode"> = {
 };
 
 const getIcon = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`[data-testid="${PREFIX}__icon"]`);
+  return wrapper.find(`[data-testid="${BUTTON_PREFIX}__icon"]`);
 };
 
 vi.mock("gsap", () => ({
@@ -30,12 +30,12 @@ describe("Button.vue", () => {
         props: { size: "md", ...REQUIRED_PROPS },
       });
 
-      const btn = wrapper.get(`[data-testid='${PREFIX}']`);
+      const btn = wrapper.get(`[data-testid='${BUTTON_PREFIX}']`);
 
-      expect(btn.classes()).toContain(PREFIX);
-      expect(btn.classes()).toContain(`${PREFIX}_size-md`);
-      expect(btn.classes()).toContain(`${PREFIX}_mode-neutral`);
-      expect(btn.classes()).toContain(`${PREFIX}_tone-primary`);
+      expect(btn.classes()).toContain(BUTTON_PREFIX);
+      expect(btn.classes()).toContain(`${BUTTON_PREFIX}_size-md`);
+      expect(btn.classes()).toContain(`${BUTTON_PREFIX}_mode-neutral`);
+      expect(btn.classes()).toContain(`${BUTTON_PREFIX}_tone-primary`);
     });
   });
 
@@ -45,7 +45,7 @@ describe("Button.vue", () => {
         props: { size: "md", ...REQUIRED_PROPS, label: "Click me" },
       });
 
-      const btn = wrapper.get(`[data-testid='${PREFIX}']`);
+      const btn = wrapper.get(`[data-testid='${BUTTON_PREFIX}']`);
 
       expect(btn.attributes("aria-label")).toBe("Click me");
     });
@@ -77,10 +77,12 @@ describe("Button.vue", () => {
         attachTo: document.body,
       });
 
-      const btnEl = wrapper.get(`[data-testid='${PREFIX}']`)
+      const btnEl = wrapper.get(`[data-testid='${BUTTON_PREFIX}']`)
         .element as HTMLButtonElement;
 
-      await wrapper.get(`[data-testid='${PREFIX}']`).trigger("pointerdown");
+      await wrapper
+        .get(`[data-testid='${BUTTON_PREFIX}']`)
+        .trigger("pointerdown");
       expect(gsap.to).toHaveBeenLastCalledWith(
         btnEl,
         expect.objectContaining({
@@ -90,7 +92,9 @@ describe("Button.vue", () => {
         })
       );
 
-      await wrapper.get(`[data-testid='${PREFIX}']`).trigger("pointerup");
+      await wrapper
+        .get(`[data-testid='${BUTTON_PREFIX}']`)
+        .trigger("pointerup");
       expect(gsap.to).toHaveBeenLastCalledWith(
         btnEl,
         expect.objectContaining({
@@ -110,10 +114,12 @@ describe("Button.vue", () => {
         },
       });
 
-      const btnEl = wrapper.get(`[data-testid='${PREFIX}']`)
+      const btnEl = wrapper.get(`[data-testid='${BUTTON_PREFIX}']`)
         .element as HTMLButtonElement;
 
-      await wrapper.get(`[data-testid='${PREFIX}']`).trigger("pointerdown");
+      await wrapper
+        .get(`[data-testid='${BUTTON_PREFIX}']`)
+        .trigger("pointerdown");
 
       expect(gsap.to).toHaveBeenCalledWith(
         btnEl,
@@ -127,7 +133,7 @@ describe("Button.vue", () => {
   describe("slots", () => {
     test("renders custom prepend icon in slots", () => {
       const expectedSlotContent = "Icon";
-      const expectedSlot = `<span data-testid="${PREFIX}__icon">${expectedSlotContent}</span>`;
+      const expectedSlot = `<span data-testid="${BUTTON_PREFIX}__icon">${expectedSlotContent}</span>`;
 
       const wrapper = shallowMount(Button, {
         props: {
@@ -148,7 +154,7 @@ describe("Button.vue", () => {
 
     test("renders custom append icon in slots", () => {
       const expectedSlotContent = "Icon";
-      const expectedSlot = `<span data-testid="${PREFIX}__icon">${expectedSlotContent}</span>`;
+      const expectedSlot = `<span data-testid="${BUTTON_PREFIX}__icon">${expectedSlotContent}</span>`;
 
       const wrapper = shallowMount(Button, {
         props: {

@@ -2,7 +2,10 @@
 import { nextTick, useTemplateRef, watch } from "vue";
 import gsap from "gsap";
 
-import { PREFIX, type AnimatedWrapperProps } from "./AnimatedWrapper";
+import {
+  ANIMATED_WRAPPER_PREFIX,
+  type AnimatedWrapperProps,
+} from "./AnimatedWrapper";
 
 const props = withDefaults(defineProps<AnimatedWrapperProps>(), {
   duration: 0.4,
@@ -42,7 +45,7 @@ watch(
 </script>
 
 <template>
-  <div ref="root" :class="PREFIX">
+  <div ref="root" :class="ANIMATED_WRAPPER_PREFIX">
     <slot></slot>
   </div>
 </template>

@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 
-import { PREFIX } from "@/components/atoms/buttons/Button";
+import { BUTTON_PREFIX } from "@/components/atoms/buttons/Button";
 
 import type { ControlButtonProps } from "./ControlButton";
 import ControlButton from "./ControlButton.vue";
@@ -21,7 +21,7 @@ describe("ActionButton", () => {
         props: { ...REQUIRED_PROPS },
       });
 
-      const buttonEl = wrapper.find(`[data-testid="${PREFIX}"]`);
+      const buttonEl = wrapper.find(`[data-testid="${BUTTON_PREFIX}"]`);
       const isButtonExists = buttonEl.exists();
 
       expect(isButtonExists).toBeTruthy();

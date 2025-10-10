@@ -1,12 +1,12 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import { PREFIX } from "@/components/atoms/buttons/Button";
+import { BUTTON_PREFIX } from "@/components/atoms/buttons/Button";
 
 import type { ActionButtonProps } from "./ActionButton";
 import ActionButton from "./ActionButton.vue";
 
 export const getButtonIconByClassName = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find(`[data-testid="${PREFIX}__icon"]`);
+  return wrapper.find(`[data-testid="${BUTTON_PREFIX}__icon"]`);
 };
 
 const REQUIRED_PROPS: ActionButtonProps = {
@@ -22,7 +22,7 @@ describe("ActionButton", () => {
         props: { ...REQUIRED_PROPS },
       });
 
-      const buttonEl = wrapper.find(`[data-testid="${PREFIX}"]`);
+      const buttonEl = wrapper.find(`[data-testid="${BUTTON_PREFIX}"]`);
       const isButtonExists = buttonEl.exists();
 
       expect(isButtonExists).toBeTruthy();

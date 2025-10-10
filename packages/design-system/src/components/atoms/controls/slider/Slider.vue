@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 import { useHover } from "@/composables/local/actions/useHover";
 
-import { PREFIX, type SliderProps } from "./Slider";
+import { SLIDER_PREFIX, type SliderProps } from "./Slider";
 
 const props = withDefaults(defineProps<SliderProps>(), {
   variant: "default",
@@ -140,7 +140,7 @@ const onDragEnd = () => {
 
 /* * * a11y * * */
 
-const ariaLabel = `${PREFIX}`;
+const ariaLabel = `${SLIDER_PREFIX}`;
 
 /* * * Keyboard * * */
 
@@ -198,28 +198,28 @@ onBeforeUnmount(removeEventListeners);
   <div
     ref="root"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
+      SLIDER_PREFIX,
+      `${SLIDER_PREFIX}_variant-${variant}`,
+      `${SLIDER_PREFIX}_size-${size}`,
+      `${SLIDER_PREFIX}_mode-${mode}`,
+      `${SLIDER_PREFIX}_tone-${tone}`,
       isDisabled
-        ? `${PREFIX}_state-disabled`
-        : `${PREFIX}_state-${isHovered ? 'hovered' : 'normal'}`,
+        ? `${SLIDER_PREFIX}_state-disabled`
+        : `${SLIDER_PREFIX}_state-${isHovered ? 'hovered' : 'normal'}`,
     ]"
     @pointerdown="onTrackPress"
   >
-    <div :class="`${PREFIX}__track`">
+    <div :class="`${SLIDER_PREFIX}__track`">
       <div
         ref="track"
-        :class="`${PREFIX}__track-container`"
+        :class="`${SLIDER_PREFIX}__track-container`"
         :style="{ '--p': percent / 100 }"
       >
-        <div :class="`${PREFIX}__range-track`" aria-hidden="true"></div>
+        <div :class="`${SLIDER_PREFIX}__range-track`" aria-hidden="true"></div>
 
         <div
           ref="knob"
-          :class="`${PREFIX}__knob`"
+          :class="`${SLIDER_PREFIX}__knob`"
           :style="{
             position: 'absolute',
             left: 'calc(var(--p) * 100%)',

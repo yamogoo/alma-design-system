@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   ListItemMode,
   ListItemSize,
@@ -37,3 +39,5 @@ export interface ListItemProps
   isFocused?: boolean;
   isSelectOnRelease?: boolean;
 }
+
+export const LIST_ITEM_PREFIX = `${NAME_SPACE}list-item`;

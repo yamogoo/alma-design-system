@@ -2,7 +2,7 @@
 import { computed, useTemplateRef } from "vue";
 
 import {
-  PREFIX,
+  SURFACE_PREFIX,
   SurfaceBorderPositionAliases,
   SurfaceBorderPositions,
   type SurfaceProps,
@@ -39,7 +39,7 @@ const computedBorderClass = computed(() => {
       RegExp(getDirectionAlias(position)).test(sides);
 
     if (isPosition) {
-      const className = `${PREFIX}_border-${position}`;
+      const className = `${SURFACE_PREFIX}_border-${position}`;
       return className;
     }
   });
@@ -55,15 +55,15 @@ defineExpose({
     :is="as"
     ref="root"
     :class="[
-      PREFIX,
+      SURFACE_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
-        [`${PREFIX}_stretch-${stretch}`]: !!stretch,
-        [`${PREFIX}_rounded`]: !!rounded,
-        [`${PREFIX}_elevated`]: !!elevated,
+        [`${SURFACE_PREFIX}_variant-${variant}`]: !!variant,
+        [`${SURFACE_PREFIX}_size-${size}`]: !!size,
+        [`${SURFACE_PREFIX}_mode-${mode}`]: !!mode,
+        [`${SURFACE_PREFIX}_tone-${tone}`]: !!tone,
+        [`${SURFACE_PREFIX}_stretch-${stretch}`]: !!stretch,
+        [`${SURFACE_PREFIX}_rounded`]: !!rounded,
+        [`${SURFACE_PREFIX}_elevated`]: !!elevated,
       },
       computedBorderClass,
     ]"

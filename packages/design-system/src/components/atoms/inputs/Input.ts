@@ -29,4 +29,4 @@ export interface InputProps
   errorMessage?: string | null;
 }
 
-export const PREFIX = `${NAME_SPACE}input`;
+export const INPUT_PREFIX = `${NAME_SPACE}input`;

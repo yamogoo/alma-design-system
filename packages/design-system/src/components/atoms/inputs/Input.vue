@@ -14,7 +14,7 @@ import gsap from "gsap";
 
 import { sanitizeInput } from "@/utils/sanitize";
 
-import { PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
+import { INPUT_PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
 
 import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
 import ControlButton from "@/components/molecules/buttons/aliases/ControlButton.vue";
@@ -236,31 +236,31 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
     :content-key="String(errorMessage)"
     :duration="0.3"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
-      `${PREFIX}_state-${isIdle ? 'idle' : 'normal'}`,
+      INPUT_PREFIX,
+      `${INPUT_PREFIX}_variant-${variant}`,
+      `${INPUT_PREFIX}_mode-${mode}`,
+      `${INPUT_PREFIX}_tone-${tone}`,
+      `${INPUT_PREFIX}_state-${isIdle ? 'idle' : 'normal'}`,
       {
-        [`${PREFIX}_size-${size}`]: size,
-        [`${PREFIX}_state-error`]: isError,
-        [`${PREFIX}_state-disabled`]: isDisabled,
-        [`${PREFIX}_state-focused`]: isLocalFocused,
+        [`${INPUT_PREFIX}_size-${size}`]: size,
+        [`${INPUT_PREFIX}_state-error`]: isError,
+        [`${INPUT_PREFIX}_state-disabled`]: isDisabled,
+        [`${INPUT_PREFIX}_state-focused`]: isLocalFocused,
       },
     ]"
-    :data-testid="PREFIX"
+    :data-testid="INPUT_PREFIX"
   >
-    <div :class="`${PREFIX}__field`" @pointerdown="onFocus">
-      <div :class="`${PREFIX}__field-content`">
-        <div v-if="$slots.icon" :class="`${PREFIX}__field-content-icon`">
+    <div :class="`${INPUT_PREFIX}__field`" @pointerdown="onFocus">
+      <div :class="`${INPUT_PREFIX}__field-content`">
+        <div v-if="$slots.icon" :class="`${INPUT_PREFIX}__field-content-icon`">
           <slot name="icon"></slot>
         </div>
-        <div :class="`${PREFIX}__field-inner-content`">
+        <div :class="`${INPUT_PREFIX}__field-inner-content`">
           <label
             v-if="placeholder || placeholder === ''"
             ref="placeholder"
             :for="id"
-            :class="`${PREFIX}__field-placeholder`"
+            :class="`${INPUT_PREFIX}__field-placeholder`"
           >
             {{ placeholder }}
           </label>
@@ -269,8 +269,8 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
             ref="input"
             v-model="localModelValue"
             :type
-            :class="`${PREFIX}__field-value`"
-            :data-testid="`${PREFIX}__value`"
+            :class="`${INPUT_PREFIX}__field-value`"
+            :data-testid="`${INPUT_PREFIX}__value`"
             :area-placeholder="areaPlaceholder ?? placeholder"
             :disabled="isDisabled"
             :autocomplete
@@ -287,8 +287,8 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
           <ControlButton
             v-if="isResetButtonShown"
             type="reset"
-            :class="`${PREFIX}__field-reset-button`"
-            :data-testid="`${PREFIX}__field-reset-button`"
+            :class="`${INPUT_PREFIX}__field-reset-button`"
+            :data-testid="`${INPUT_PREFIX}__field-reset-button`"
             :size="'xs'"
             :mode="
               !isError
@@ -307,10 +307,10 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
         </Transition>
       </div>
     </div>
-    <div ref="message" :class="`${PREFIX}__validatoin`">
+    <div ref="message" :class="`${INPUT_PREFIX}__validatoin`">
       <Text
         v-if="!!errorMessage"
-        :class="`${PREFIX}__validation-message`"
+        :class="`${INPUT_PREFIX}__validation-message`"
         :variant="'caption-1'"
       >
         {{ errorMessage.toLowerCase() }}

@@ -2,9 +2,7 @@
 import { ref, toValue, watch } from "vue";
 import { Vue3Lottie as LottieAnimation } from "vue3-lottie";
 
-import type { AnimatedIconProps } from "./AnimatedIcon";
-
-const PREFIX = "animated-icon";
+import { ANIMATED_ICON_PREFIX, type AnimatedIconProps } from "./AnimatedIcon";
 
 const props = withDefaults(defineProps<AnimatedIconProps>(), {
   variant: "default",
@@ -57,10 +55,10 @@ const onCompleted = (): void => {
     class="animated-icon"
     :class="[
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${ANIMATED_ICON_PREFIX}_variant-${variant}`]: !!variant,
+        [`${ANIMATED_ICON_PREFIX}_size-${size}`]: !!size,
+        [`${ANIMATED_ICON_PREFIX}_mode-${mode}`]: !!mode,
+        [`${ANIMATED_ICON_PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
     :animation-data
@@ -74,10 +72,11 @@ const onCompleted = (): void => {
 </template>
 
 <style lang="scss">
-$token-prefix: icon;
-$prefix: "animated-icon";
+$tokenName: "icon";
+$themeTokenName: "label";
+$prefix: getPrefix("animated-icon");
 
-@mixin defineSizes($map: get($components, "atoms.#{$token-prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -92,7 +91,9 @@ $prefix: "animated-icon";
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.contracts.interactive.label")) {
+@mixin defineThemes(
+  $map: get($themes, "light.contracts.interactive.#{$themeTokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $states in $modes {
       &_mode-#{$mode} {
@@ -101,7 +102,7 @@ $prefix: "animated-icon";
             path {
               @include themify($themes) {
                 fill: themed(
-                  "contracts.interactive.label.#{$mode}.#{$tone}.normal"
+                  "contracts.interactive.#{$themeTokenName}.#{$mode}.#{$tone}.normal"
                 );
               }
             }

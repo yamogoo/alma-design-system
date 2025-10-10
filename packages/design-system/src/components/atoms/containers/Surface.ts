@@ -40,4 +40,4 @@ export interface SurfaceProps
   divider?: string;
 }
 
-export const PREFIX = `${NAME_SPACE}surface`;
+export const SURFACE_PREFIX = `${NAME_SPACE}surface`;

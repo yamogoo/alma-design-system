@@ -3,9 +3,10 @@ import { useTemplateRef, watch } from "vue";
 
 import { usePressed } from "@/composables/local/actions/usePressed";
 
-import type { MenuItemProps } from "@/components/atoms/menu/MenuItem";
-
-const PREFIX = "menu-item";
+import {
+  MENU_ITEM_PREFIX,
+  type MenuItemProps,
+} from "@/components/atoms/menu/MenuItem";
 
 withDefaults(defineProps<MenuItemProps>(), {
   isActive: false,
@@ -28,7 +29,12 @@ watch(isPressed, (isState) => {
 </script>
 
 <template>
-  <div ref="root" :class="PREFIX" :aria-selected="isActive">
+  <div ref="root" :class="MENU_ITEM_PREFIX" :aria-selected="isActive">
     <slot></slot>
   </div>
 </template>
+
+<style lang="scss">
+$tokenName: "menu-item";
+$prefix: getPrefix($tokenName);
+</style>

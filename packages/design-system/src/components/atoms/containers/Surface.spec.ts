@@ -1,16 +1,16 @@
 import { mount } from "@vue/test-utils";
 
-import { PREFIX, type SurfaceProps } from "./Surface";
+import { SURFACE_PREFIX, type SurfaceProps } from "./Surface";
 import Surface from "./Surface.vue";
 
 const Classes = {
-  ROOT_CLASS: PREFIX,
-  VARIANT: `${PREFIX}_variant`,
-  SIZE: `${PREFIX}_size`,
-  MODE: `${PREFIX}_mode`,
-  TONE: `${PREFIX}_tone`,
-  ELEVATED: `${PREFIX}_elevated`,
-  BORDER_SIDES: `${PREFIX}_border`,
+  ROOT_CLASS: SURFACE_PREFIX,
+  VARIANT: `${SURFACE_PREFIX}_variant`,
+  SIZE: `${SURFACE_PREFIX}_size`,
+  MODE: `${SURFACE_PREFIX}_mode`,
+  TONE: `${SURFACE_PREFIX}_tone`,
+  ELEVATED: `${SURFACE_PREFIX}_elevated`,
+  BORDER_SIDES: `${SURFACE_PREFIX}_border`,
 } as const;
 
 describe("Surface", () => {

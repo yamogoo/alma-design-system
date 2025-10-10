@@ -7,4 +7,4 @@ export interface AnimatedWrapperProps {
   duration?: number;
 }
 
-export const PREFIX = `${NAME_SPACE}animated-wrapper`;
+export const ANIMATED_WRAPPER_PREFIX = `${NAME_SPACE}animated-wrapper`;

@@ -26,4 +26,4 @@ export interface CarousleStackProps extends Partial<UIElementUnionProps> {
   isItemsClickable?: boolean;
 }
 
-export const PREFIX = `${NAME_SPACE}carousel-stack`;
+export const CAROUSEL_STACK_PREFIX = `${NAME_SPACE}carousel-stack`;

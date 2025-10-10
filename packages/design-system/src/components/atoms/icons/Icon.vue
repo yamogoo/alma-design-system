@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { defineAsyncComponent, computed, markRaw, useTemplateRef } from "vue";
 
-import { iconManifest, type IconFullName, type IconProps } from "./Icon";
+import {
+  ICON_PREFIX,
+  iconManifest,
+  type IconFullName,
+  type IconProps,
+} from "./Icon";
 
 import Skeleton from "@/components/atoms/skeletons/Skeleton.vue";
-
-const PREFIX = "icon";
 
 const props = withDefaults(defineProps<IconProps>(), {
   variant: "default",
@@ -32,12 +35,12 @@ defineExpose({
   <div
     ref="root"
     :class="[
-      PREFIX,
+      ICON_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
-        [`${PREFIX}_mode-${mode}`]: !!mode,
-        [`${PREFIX}_tone-${tone}`]: !!tone,
+        [`${ICON_PREFIX}_variant-${variant}`]: !!variant,
+        [`${ICON_PREFIX}_size-${size}`]: !!size,
+        [`${ICON_PREFIX}_mode-${mode}`]: !!mode,
+        [`${ICON_PREFIX}_tone-${tone}`]: !!tone,
       },
     ]"
     data-testid="icon"
@@ -52,9 +55,11 @@ defineExpose({
 </template>
 
 <style lang="scss">
-$prefix: icon;
+$tokenName: "icon";
+$themeTokenName: "label";
+$prefix: getPrefix("icon");
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $box-size: px2rem(get($val, "root.size"));
@@ -68,7 +73,9 @@ $prefix: icon;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.contracts.interactive.label")) {
+@mixin defineThemes(
+  $map: get($themes, "light.contracts.interactive.#{$themeTokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $states in $modes {
       &_mode-#{$mode} {
@@ -77,7 +84,7 @@ $prefix: icon;
             path {
               @include themify($themes) {
                 fill: themed(
-                  "contracts.interactive.label.#{$mode}.#{$tone}.normal"
+                  "contracts.interactive.#{$themeTokenName}.#{$mode}.#{$tone}.normal"
                 );
               }
             }

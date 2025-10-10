@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   CharTooltipLabelMode,
   CharTooltipLabelSize,
@@ -30,3 +32,5 @@ export interface CharTooltipLabelProps
   iconWeight?: IconWeight;
   iconSize?: IconSize;
 }
+
+export const CHAR_TOOLTIP_PREFIX = `${NAME_SPACE}char-tooltip-label`;

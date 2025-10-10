@@ -34,7 +34,7 @@ const onChangeTheme = () => toggleTheme();
       data-testid="theme-switch"
       :is-active="!isLightTheme"
       :is-disabled="false"
-      :size="'md'"
+      :size="'sm'"
       aria-label="change-theme"
       @update:is-active="onChangeTheme"
     ></Components.Atoms.Switch>

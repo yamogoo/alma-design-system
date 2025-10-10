@@ -1,6 +1,20 @@
-import { mount, shallowMount } from "@vue/test-utils";
+import { mount, shallowMount, VueWrapper } from "@vue/test-utils";
 
+import { TEXT_PREFIX } from "./Text";
 import Text from "./Text.vue";
+
+const Classes = {
+  ROOT_CLASS: TEXT_PREFIX,
+  VARIANT: `${TEXT_PREFIX}_variant`,
+  SIZE: `${TEXT_PREFIX}_size`,
+  MODE: `${TEXT_PREFIX}_mode`,
+  TONE: `${TEXT_PREFIX}_tone`,
+  ALIGN: `${TEXT_PREFIX}_align`,
+} as const;
+
+const getText = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`.${Classes.ROOT_CLASS}`);
+};
 
 describe("Text", () => {
   describe("classes", () => {
@@ -11,9 +25,9 @@ describe("Text", () => {
         },
       });
 
-      const el = wrapper.find(".text");
+      const el = getText(wrapper);
 
-      expect(el.classes("text_variant-body-2")).toBeTruthy();
+      expect(el.classes(`${Classes.VARIANT}-body-2`)).toBeTruthy();
     });
 
     test("should have color class", () => {
@@ -23,9 +37,9 @@ describe("Text", () => {
         },
       });
 
-      const el = wrapper.find(".text");
+      const el = getText(wrapper);
 
-      expect(el.classes("text_mode-neutral")).toBeTruthy();
+      expect(el.classes(`${Classes.MODE}-neutral`)).toBeTruthy();
     });
   });
 
@@ -100,7 +114,7 @@ describe("Text", () => {
         },
       });
 
-      const el = wrapper.find(".text");
+      const el = getText(wrapper);
       const expectedSlotContent = el.text();
 
       expect(expectedSlotContent).toBe(slotContent);

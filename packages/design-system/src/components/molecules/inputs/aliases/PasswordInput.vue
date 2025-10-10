@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import gsap from "gsap";
 
-import { PREFIX } from "@/components/atoms/inputs/Input";
+import { INPUT_PREFIX } from "@/components/atoms/inputs/Input";
 
 import { type PasswordInputProps } from "./PasswordInput";
 import Input from "@/components/atoms/inputs/Input.vue";
@@ -101,7 +101,7 @@ const onAnimMaskedButtonLeave = (el: Element, done: () => void): void => {
       >
         <ControlButton
           v-if="isMarkedButtonShown"
-          :data-testid="`${PREFIX}__mask-button`"
+          :data-testid="`${INPUT_PREFIX}__mask-button`"
           :size="'xs'"
           :icon-size="'xs'"
           :mode="!isError ? 'neutral' : 'negative'"

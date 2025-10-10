@@ -1,18 +1,22 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
-import type { SkeletonProps } from "./Skeleton";
+import { SKELETON_PREFIX, type SkeletonProps } from "./Skeleton";
 import Skeleton from "./Skeleton.vue";
 
-enum Classes {
-  ROOT_CLASS = "skeleton",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  TONE = `${Classes.ROOT_CLASS}_tone`,
-}
+const Classes = {
+  ROOT_CLASS: SKELETON_PREFIX,
+  VARIANT: `${SKELETON_PREFIX}_variant`,
+  SIZE: `${SKELETON_PREFIX}_size`,
+  MODE: `${SKELETON_PREFIX}_mode`,
+  TONE: `${SKELETON_PREFIX}_tone`,
+} as const;
 
 const getRoot = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find(`[data-testid="${Classes.ROOT_CLASS}"]`);
+};
+
+const getShape = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`.${Classes.ROOT_CLASS}__shape`);
 };
 
 describe("Skeleton", () => {
@@ -44,7 +48,7 @@ describe("Skeleton", () => {
 
       expect(root.attributes("aria-label")).toBe("skeleton");
       expect(root.attributes("aria-busy")).toBe("true");
-      expect(root.find(".skeleton__shape").exists()).toBe(true);
+      expect(getShape(wrapper).exists()).toBe(true);
     });
   });
 });

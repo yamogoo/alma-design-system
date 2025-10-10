@@ -1,17 +1,20 @@
 import { mount } from "@vue/test-utils";
 
-import { type DividerProps } from "@/components/atoms/dividers/Divider";
+import {
+  DIVIDER_PREFIX,
+  type DividerProps,
+} from "@/components/atoms/dividers/Divider";
 import Divider from "@/components/atoms/dividers/Divider.vue";
 
-enum Classes {
-  ROOT_CLASS = "divider",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  ORIENTATION = `${Classes.ROOT_CLASS}_orientation`,
-  ALIGNMENT = `${Classes.ROOT_CLASS}_align`,
-  ARIA_ORIENTATION = "aria-orientation",
-}
+const Classes = {
+  ROOT_CLASS: DIVIDER_PREFIX,
+  VARIANT: `${DIVIDER_PREFIX}_variant`,
+  SIZE: `${DIVIDER_PREFIX}_size`,
+  MODE: `${DIVIDER_PREFIX}_mode`,
+  ORIENTATION: `${DIVIDER_PREFIX}_orientation`,
+  ALIGNMENT: `${DIVIDER_PREFIX}_align`,
+  ARIA_ORIENTATION: "aria-orientation",
+} as const;
 
 describe("Divider", () => {
   describe("classes", () => {

@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   SkeletonMode,
   SkeletonSize,
@@ -18,3 +20,5 @@ export interface SkeletonProps
   > {
   speed?: number;
 }
+
+export const SKELETON_PREFIX = `${NAME_SPACE}skeleton`;

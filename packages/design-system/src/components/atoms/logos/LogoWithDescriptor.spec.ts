@@ -2,16 +2,19 @@ import { mount, VueWrapper } from "@vue/test-utils";
 
 import { getText } from "@/__tests__/utils";
 
-import { type LogoWithDescriptorProps } from "@/components/atoms/logos/LogoWithDescriptor";
+import {
+  LOGO_WITH_DESCRIPTOR_PREFIX,
+  type LogoWithDescriptorProps,
+} from "@/components/atoms/logos/LogoWithDescriptor";
 import LogoWithDescriptor from "@/components/atoms/logos/LogoWithDescriptor.vue";
 
-enum Classes {
-  ROOT_CLASS = "logo-with-descriptor",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  TONE = `${Classes.ROOT_CLASS}_tone`,
-}
+const Classes = {
+  ROOT_CLASS: LOGO_WITH_DESCRIPTOR_PREFIX,
+  VARIANT: `${LOGO_WITH_DESCRIPTOR_PREFIX}_variant`,
+  SIZE: `${LOGO_WITH_DESCRIPTOR_PREFIX}_size`,
+  MODE: `${LOGO_WITH_DESCRIPTOR_PREFIX}_mode`,
+  TONE: `${LOGO_WITH_DESCRIPTOR_PREFIX}_tone`,
+} as const;
 
 const getLogoByTestId = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.find("[data-testid='logo']");

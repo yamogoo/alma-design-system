@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useTemplateRef } from "vue";
 
-import { type CharTooltipLabelProps } from "@/components/atoms/tooltips/CharTooltipLabel";
+import {
+  CHAR_TOOLTIP_PREFIX,
+  type CharTooltipLabelProps,
+} from "@/components/atoms/tooltips/CharTooltipLabel";
 import Text from "@/components/atoms/typography/Text.vue";
 import Icon from "@/components/atoms/icons/Icon.vue";
-
-const PREFIX = "char-tooltip-label";
 
 withDefaults(defineProps<CharTooltipLabelProps>(), {
   variant: "default",
@@ -27,31 +28,33 @@ defineExpose({
   <div
     ref="root"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
+      CHAR_TOOLTIP_PREFIX,
+      `${CHAR_TOOLTIP_PREFIX}_variant-${variant}`,
+      `${CHAR_TOOLTIP_PREFIX}_size-${size}`,
+      `${CHAR_TOOLTIP_PREFIX}_mode-${mode}`,
+      `${CHAR_TOOLTIP_PREFIX}_tone-${tone}`,
     ]"
   >
     <Icon
       v-if="iconName"
+      :class="`${CHAR_TOOLTIP_PREFIX}__icon`"
       :name="iconName"
       :appearance="iconStyle"
       :weight="iconWeight"
       :size="iconSize"
       data-testid="icon"
     ></Icon>
-    <Text>
+    <Text :class="`${CHAR_TOOLTIP_PREFIX}__label`">
       {{ label }}
     </Text>
   </div>
 </template>
 
 <style lang="scss">
-$prefix: char-tooltip-label;
+$tokenName: "char-tooltip-label";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSized($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSized($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -75,11 +78,11 @@ $prefix: char-tooltip-label;
           border-width: $border-width;
           border-style: solid;
 
-          .text {
+          .#{$prefix}__label {
             @extend %t__#{$label-font-style};
           }
 
-          .icon {
+          .#{$prefix}__icon {
             @include box($icon-size);
           }
         }
@@ -88,28 +91,30 @@ $prefix: char-tooltip-label;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           @include themify($themes) {
             background-color: themed(
-              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.background.normal"
+              "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.normal"
             );
             border-color: themed(
-              "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border.normal"
+              "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.normal"
             );
 
-            .text {
+            .#{$prefix}__label {
               color: themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
               );
             }
 
-            .icon {
+            .#{$prefix}__icon {
               fill: themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
               );
             }
           }
@@ -129,8 +134,8 @@ $prefix: char-tooltip-label;
   @include defineSized();
   @include defineThemes();
 
-  .text,
-  .icon {
+  &__label,
+  &__icon {
     @extend %base-transition;
   }
 }

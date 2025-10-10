@@ -19,4 +19,4 @@ export interface PageProps {
   orientation?: PageOrientations;
 }
 
-export const PREFIX = `${NAME_SPACE}page`;
+export const PAGE_PREFIX = `${NAME_SPACE}page`;

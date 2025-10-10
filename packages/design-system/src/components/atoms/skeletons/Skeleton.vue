@@ -2,9 +2,10 @@
 import { onMounted, useTemplateRef } from "vue";
 import gsap from "gsap";
 
-import type { SkeletonProps } from "@/components/atoms/skeletons/Skeleton";
-
-const PREFIX = "skeleton";
+import {
+  SKELETON_PREFIX,
+  type SkeletonProps,
+} from "@/components/atoms/skeletons/Skeleton";
 
 const props = withDefaults(defineProps<SkeletonProps>(), {
   mode: "neutral",
@@ -40,26 +41,27 @@ const onAnimate = (el: Element): void => {
 <template>
   <div
     :class="[
-      PREFIX,
+      SKELETON_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
+        [`${SKELETON_PREFIX}_variant-${variant}`]: !!variant,
+        [`${SKELETON_PREFIX}_size-${size}`]: !!size,
       },
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
+      `${SKELETON_PREFIX}_mode-${mode}`,
+      `${SKELETON_PREFIX}_tone-${tone}`,
     ]"
-    :data-testid="`${PREFIX}`"
+    :data-testid="`${SKELETON_PREFIX}`"
     :aria-label="ariaLabel"
     :aria-busy="ariaBusy"
   >
-    <div ref="shape" :class="`${PREFIX}__shape`"></div>
+    <div ref="shape" :class="`${SKELETON_PREFIX}__shape`"></div>
   </div>
 </template>
 
 <style lang="scss">
-$prefix: skeleton;
+$tokenName: "skeleton";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $width: get($val, "root.width");
@@ -77,18 +79,20 @@ $prefix: skeleton;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
-        &.skeleton_tone-#{$tone} {
-          .skeleton__shape {
+        &.#{$prefix}_tone-#{$tone} {
+          .#{$prefix}__shape {
             @include themify($themes) {
               $background-in: themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.background-in"
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.background-in"
               );
               $background-out: themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.background-out"
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.background-out"
               );
               background: linear-gradient(
                 90deg,

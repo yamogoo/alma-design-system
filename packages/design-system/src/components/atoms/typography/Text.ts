@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   TextVariant,
   TextMode,
@@ -45,3 +47,5 @@ export interface TextProps {
   textIndent?: string;
   textOverflow?: "clip" | "ellipsis";
 }
+
+export const TEXT_PREFIX = `${NAME_SPACE}text`;

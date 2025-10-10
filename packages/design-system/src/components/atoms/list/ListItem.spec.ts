@@ -3,25 +3,25 @@ import { mount, VueWrapper } from "@vue/test-utils";
 
 import { ListInjectionKey } from "@/components/molecules/list/List";
 import ListItem from "./ListItem.vue";
-import type { ListItemProps } from "./ListItem";
+import { LIST_ITEM_PREFIX, type ListItemProps } from "./ListItem";
 
 const __isHovered = ref(false);
 vi.mock("@/composables/local/actions/useHover", () => ({
   useHover: () => ({ isHovered: __isHovered }),
 }));
 
-enum Classes {
-  ROOT = "list-item",
-  VARIANT = `${Classes.ROOT}_variant`,
-  SIZE = `${Classes.ROOT}_size`,
-  MODE = `${Classes.ROOT}_mode`,
-  TONE = `${Classes.ROOT}_tone`,
-  STATE = `${Classes.ROOT}_state`,
-  JOINED = `${Classes.ROOT}_joined`,
-}
+const Classes = {
+  ROOT: LIST_ITEM_PREFIX,
+  VARIANT: `${LIST_ITEM_PREFIX}_variant`,
+  SIZE: `${LIST_ITEM_PREFIX}_size`,
+  MODE: `${LIST_ITEM_PREFIX}_mode`,
+  TONE: `${LIST_ITEM_PREFIX}_tone`,
+  STATE: `${LIST_ITEM_PREFIX}_state`,
+  JOINED: `${LIST_ITEM_PREFIX}_joined`,
+} as const;
 
 const getRoot = <T>(wrapper: VueWrapper<T>) =>
-  wrapper.findComponent({ name: "ListItem" }).find(`.${Classes.ROOT}`);
+  wrapper.findComponent({ name: "ListItem" }).find(`.${LIST_ITEM_PREFIX}`);
 
 const REQUIRED_PROPS: ListItemProps = {
   id: "",

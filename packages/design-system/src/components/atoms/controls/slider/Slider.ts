@@ -35,4 +35,4 @@ export interface SliderProps
   knobAnimDuration?: number;
 }
 
-export const PREFIX = `${NAME_SPACE}slider`;
+export const SLIDER_PREFIX = `${NAME_SPACE}slider`;

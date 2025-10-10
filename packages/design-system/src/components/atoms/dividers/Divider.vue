@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import type { DividerProps } from "./Divider";
-
-const PREFIX = "divider";
+import { DIVIDER_PREFIX, type DividerProps } from "./Divider";
 
 withDefaults(defineProps<DividerProps>(), {
   as: "span",
@@ -18,13 +16,13 @@ withDefaults(defineProps<DividerProps>(), {
   <component
     :is="as"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
-      `${PREFIX}_orientation-${orientation}`,
-      `${PREFIX}_align-${align}`,
+      DIVIDER_PREFIX,
+      `${DIVIDER_PREFIX}_variant-${variant}`,
+      `${DIVIDER_PREFIX}_size-${size}`,
+      `${DIVIDER_PREFIX}_mode-${mode}`,
+      `${DIVIDER_PREFIX}_tone-${tone}`,
+      `${DIVIDER_PREFIX}_orientation-${orientation}`,
+      `${DIVIDER_PREFIX}_align-${align}`,
     ]"
     role="separator"
     :aria-orientation="orientation === 'vertical' ? 'vertical' : undefined"
@@ -32,9 +30,10 @@ withDefaults(defineProps<DividerProps>(), {
 </template>
 
 <style lang="scss">
-$prefix: divider;
+$tokenName: "divider";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       $border-width: px2rem(get($val, "root.border-width"));
@@ -87,7 +86,9 @@ $prefix: divider;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -96,7 +97,7 @@ $prefix: divider;
             &-horizontal {
               @include themify($themes) {
                 border-bottom-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border"
                 );
               }
             }
@@ -104,7 +105,7 @@ $prefix: divider;
             &-vertical {
               @include themify($themes) {
                 border-right-color: themed(
-                  "components.atoms.#{$prefix}.#{$mode}.#{$tone}.root.border"
+                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border"
                 );
               }
             }

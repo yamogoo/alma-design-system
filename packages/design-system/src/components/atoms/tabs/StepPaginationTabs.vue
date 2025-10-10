@@ -8,12 +8,11 @@ import { type TextVariant } from "@/adapters/atoms/text";
 
 import Text from "@/components/atoms/typography/Text.vue";
 
-import type {
-  StepPaginationTabItem,
-  StepPaginationTabsProps,
+import {
+  STEP_PAGINATIO_TABS_PREFIX,
+  type StepPaginationTabItem,
+  type StepPaginationTabsProps,
 } from "./StepPaginationTabs";
-
-const PREFIX = "step-pagination-tabs";
 
 const props = withDefaults(defineProps<StepPaginationTabsProps>(), {
   variant: "default",
@@ -89,26 +88,26 @@ onMounted(() => {
 <template>
   <div
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
+      STEP_PAGINATIO_TABS_PREFIX,
+      `${STEP_PAGINATIO_TABS_PREFIX}_variant-${variant}`,
+      `${STEP_PAGINATIO_TABS_PREFIX}_size-${size}`,
+      `${STEP_PAGINATIO_TABS_PREFIX}_mode-${mode}`,
+      `${STEP_PAGINATIO_TABS_PREFIX}_tone-${tone}`,
     ]"
   >
-    <div ref="track" :class="`${PREFIX}__track`">
+    <div ref="track" :class="`${STEP_PAGINATIO_TABS_PREFIX}__track`">
       <div
         v-for="(item, idx) in items"
         :key="item.id"
         ref="refsItems"
         :class="[
-          `${PREFIX}__item`,
-          `${PREFIX}__item_state-${getItemState(idx)}`,
+          `${STEP_PAGINATIO_TABS_PREFIX}__item`,
+          `${STEP_PAGINATIO_TABS_PREFIX}__item_state-${getItemState(idx)}`,
         ]"
         :style="itemStyle"
       >
         <Text
-          :class="[`${PREFIX}__item-lable`]"
+          :class="[`${STEP_PAGINATIO_TABS_PREFIX}__item-lable`]"
           :variant="textVariant"
           @click="onItemClick(item)"
         >
@@ -120,9 +119,10 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-$prefix: step-pagination-tabs;
+$tokenName: "step-pagination-tabs";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -138,7 +138,9 @@ $prefix: step-pagination-tabs;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $modes in $map {
     @each $tone, $val in $modes {
       &_mode-#{$mode} {
@@ -148,7 +150,7 @@ $prefix: step-pagination-tabs;
               &-current {
                 @include themify($themes) {
                   color: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.item.label.active"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.item.label.active"
                   );
                 }
               }
@@ -157,7 +159,7 @@ $prefix: step-pagination-tabs;
               &-previous {
                 @include themify($themes) {
                   color: themed(
-                    "components.atoms.#{$prefix}.#{$mode}.#{$tone}.item.label.normal"
+                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.item.label.normal"
                   );
                 }
               }

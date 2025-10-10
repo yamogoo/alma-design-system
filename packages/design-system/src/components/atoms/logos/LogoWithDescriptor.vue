@@ -3,11 +3,12 @@ import { useTemplateRef } from "vue";
 
 import { useHover, usePressed } from "@/composables/local/actions";
 
-import { type LogoWithDescriptorProps } from "@/components/atoms/logos/LogoWithDescriptor";
+import {
+  LOGO_WITH_DESCRIPTOR_PREFIX,
+  type LogoWithDescriptorProps,
+} from "@/components/atoms/logos/LogoWithDescriptor";
 import Logo from "@/components/atoms/logos/Logo.vue";
 import Text from "@/components/atoms/typography/Text.vue";
-
-const PREFIX = "logo-with-descriptor";
 
 withDefaults(defineProps<LogoWithDescriptorProps>(), {
   variant: "default",
@@ -32,25 +33,30 @@ const computedClass = () => {
   <div
     ref="root"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
-      `${PREFIX}_state-${computedClass()}`,
+      LOGO_WITH_DESCRIPTOR_PREFIX,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_variant-${variant}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_size-${size}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_mode-${mode}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_tone-${tone}`,
+      `${LOGO_WITH_DESCRIPTOR_PREFIX}_state-${computedClass()}`,
     ]"
   >
     <Logo data-testid="logo" />
-    <Text :class="`${PREFIX}__label`" :mode="'neutral'" :tone="'primary'">
+    <Text
+      :class="`${LOGO_WITH_DESCRIPTOR_PREFIX}__label`"
+      :mode="'neutral'"
+      :tone="'primary'"
+    >
       {{ name }}
     </Text>
   </div>
 </template>
 
 <style lang="scss">
-$prefix: logo-with-descriptor;
+$tokenName: "logo-with-descriptor";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "atoms.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -71,17 +77,19 @@ $prefix: logo-with-descriptor;
   }
 }
 
-@mixin defineThemes($map: get($themes, "light.components.atoms.#{$prefix}")) {
+@mixin defineThemes(
+  $map: get($themes, "light.components.atoms.#{$tokenName}")
+) {
   @each $mode, $val in $map {
     @each $tone, $modes in $modes {
       &_tone-#{$tone} {
         &.#{$prefix}_mode-#{$mode} {
-          $states: get($themes, "light.#{$prefix}.neutral.primary.label");
+          $states: get($themes, "light.#{$tokenName}.neutral.primary.label");
 
           .#{$prefix}__label {
             @include themify($themes) {
               color: themed(
-                "components.atoms.#{$prefix}.#{$mode}.#{$tone}.label.normal"
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
               );
             }
           }

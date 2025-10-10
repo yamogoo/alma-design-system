@@ -19,4 +19,4 @@ export interface SwitchProps
   useNative?: boolean;
 }
 
-export const PREFIX = `${NAME_SPACE}switch`;
+export const SWITCH_PREFIX = `${NAME_SPACE}switch`;

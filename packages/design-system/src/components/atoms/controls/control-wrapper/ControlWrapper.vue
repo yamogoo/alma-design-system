@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { PREFIX, type ControlWrapperProps } from "./ControlWrapper";
+import {
+  CONTROL_WRAPPER_PREFIX,
+  type ControlWrapperProps,
+} from "./ControlWrapper";
 
 withDefaults(defineProps<ControlWrapperProps>(), {
   variant: "default",
@@ -10,10 +13,10 @@ withDefaults(defineProps<ControlWrapperProps>(), {
 <template>
   <div
     :class="[
-      PREFIX,
+      CONTROL_WRAPPER_PREFIX,
       {
-        [`${PREFIX}_variant-${variant}`]: !!variant,
-        [`${PREFIX}_size-${size}`]: !!size,
+        [`${CONTROL_WRAPPER_PREFIX}_variant-${variant}`]: !!variant,
+        [`${CONTROL_WRAPPER_PREFIX}_size-${size}`]: !!size,
       },
     ]"
   >

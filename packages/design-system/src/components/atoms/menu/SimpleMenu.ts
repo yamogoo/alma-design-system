@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   SimpleMenuSize,
   SimpleMenuVariant,
@@ -31,3 +33,5 @@ export interface SimpleMenuProps<T = string> {
   items: MenuItems<T>;
   orientation?: SimpleMenuOrientation;
 }
+
+export const SIMPLE_MENU_PREFIX = `${NAME_SPACE}simple-menu`;

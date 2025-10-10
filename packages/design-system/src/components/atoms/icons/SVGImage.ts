@@ -1,3 +1,5 @@
+import { NAME_SPACE } from "@/constants";
+
 import type {
   IconMode,
   IconSize,
@@ -15,3 +17,5 @@ export interface SVGImageProps
   ariaLabel?: string;
   ariaHidden?: UIElementBooleanish | undefined;
 }
+
+export const SVG_IMAGE_PREFIX = `${NAME_SPACE}svg-image`;

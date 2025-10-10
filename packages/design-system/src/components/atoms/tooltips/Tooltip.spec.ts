@@ -1,6 +1,16 @@
 import { mount } from "@vue/test-utils";
 
+import { TOOLTIP_PREFIX } from "./Tooltip";
 import Tooltip from "./Tooltip.vue";
+
+const Classes = {
+  ROOT_CLASS: TOOLTIP_PREFIX,
+  VARIANT: `${TOOLTIP_PREFIX}_variant`,
+  SIZE: `${TOOLTIP_PREFIX}_size`,
+  MODE: `${TOOLTIP_PREFIX}_mode`,
+  TONE: `${TOOLTIP_PREFIX}_tone`,
+  ALIGN: `${TOOLTIP_PREFIX}_align`,
+} as const;
 
 vi.mock("gsap", () => ({
   default: {
@@ -25,8 +35,8 @@ describe("Tooltip", () => {
       slots: { default: "<button>Trigger</button>" },
     });
 
-    expect(wrapper.classes()).toContain("tooltip");
-    expect(wrapper.classes()).toContain("tooltip_align-center");
+    expect(wrapper.classes()).toContain(Classes.ROOT_CLASS);
+    expect(wrapper.classes()).toContain(`${Classes.ALIGN}-center`);
     expect(wrapper.find("button").exists()).toBe(true);
   });
 
@@ -34,6 +44,6 @@ describe("Tooltip", () => {
     const wrapper = mount(Tooltip, {
       props: { label: "Align Test", align: "end" },
     });
-    expect(wrapper.classes()).toContain("tooltip_align-end");
+    expect(wrapper.classes()).toContain(`${Classes.ALIGN}-end`);
   });
 });
