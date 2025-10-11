@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import type { NavigationRailTemplateProps } from "@/components/templates/navigation/NavigationRailTemplate";
+import { UIFACETS } from "@/constants/ui";
 
-const PREFIX = "navigation-rail";
+import {
+  NAVIGATION_RAIL_PREFIX,
+  type NavigationRailTemplateProps,
+} from "@/components/templates/navigation/NavigationRailTemplate";
 
 withDefaults(defineProps<NavigationRailTemplateProps>(), {
   variant: "default",
@@ -14,31 +17,32 @@ withDefaults(defineProps<NavigationRailTemplateProps>(), {
 <template>
   <div
     :class="[
-      PREFIX,
-      `${PREFIX}-rail_variant-${variant}`,
-      `${PREFIX}-rail_size-${size}`,
-      `${PREFIX}-rail_mode-${mode}`,
-      `${PREFIX}-rail_tone-${tone}`,
+      NAVIGATION_RAIL_PREFIX,
+      `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
     role="navigation"
     aria-label="Navigation rail"
   >
-    <div v-if="$slots.header" :class="`${PREFIX}-rail__header`">
+    <div v-if="$slots.header" :class="`${NAVIGATION_RAIL_PREFIX}__header`">
       <slot name="header"></slot>
     </div>
-    <div v-if="$slots.default" :class="`${PREFIX}-rail__body`">
+    <div v-if="$slots.default" :class="`${NAVIGATION_RAIL_PREFIX}__body`">
       <slot></slot>
     </div>
-    <div v-if="$slots.footer" :class="`${PREFIX}-rail__footer`">
+    <div v-if="$slots.footer" :class="`${NAVIGATION_RAIL_PREFIX}__footer`">
       <slot name="footer"></slot>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-$prefix: navigation-rail;
+$tokenName: "navigation-rail";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "templates.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "templates.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -58,7 +62,7 @@ $prefix: navigation-rail;
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.components.templates.#{$prefix}")
+  $map: get($themes, "light.components.templates.#{$tokenName}")
 ) {
   @each $tone, $modes in $map {
     @each $mode, $val in $modes {
@@ -66,11 +70,11 @@ $prefix: navigation-rail;
         &.#{$prefix}_mode-#{$mode} {
           @include themify($themes) {
             background-color: themed(
-              "components.templates.#{$prefix}.#{$tone}.#{$mode}.root.background.normal"
+              "components.templates.#{$tokenName}.#{$tone}.#{$mode}.root.background.normal"
             );
             border: get($tokens, "outline") solid
               themed(
-                "components.templates.#{$prefix}.#{$tone}.#{$mode}.root.border.normal"
+                "components.templates.#{$tokenName}.#{$tone}.#{$mode}.root.border.normal"
               );
           }
           @extend %base-transition;

@@ -1,16 +1,32 @@
-import { mount } from "@vue/test-utils";
+import { mount, VueWrapper } from "@vue/test-utils";
 
-import { type NavigationRailTemplateProps } from "@/components/templates/navigation/NavigationRailTemplate";
+import { UIFACETS } from "@/constants/ui";
+
+import {
+  NAVIGATION_RAIL_PREFIX,
+  type NavigationRailTemplateProps,
+} from "@/components/templates/navigation/NavigationRailTemplate";
 import NavigationRailTemplate from "@/components/templates/navigation/NavigationRailTemplate.vue";
 
-enum Classes {
-  ROOT_CLASS = "navigation-rail",
-  // Note: component renders with an extra "-rail" segment in class names
-  VARIANT = "navigation-rail-rail_variant",
-  SIZE = "navigation-rail-rail_size",
-  MODE = "navigation-rail-rail_mode",
-  TONE = "navigation-rail-rail_tone",
-}
+const Classes = {
+  ROOT_CLASS: NAVIGATION_RAIL_PREFIX,
+  VARIANT: `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.SIZE}`,
+  MODE: `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.MODE}`,
+  TONE: `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.TONE}`,
+};
+
+const getHeader = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`.${NAVIGATION_RAIL_PREFIX}__header`);
+};
+
+const getBody = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`.${NAVIGATION_RAIL_PREFIX}__body`);
+};
+
+const getFooter = <T>(wrapper: VueWrapper<T>) => {
+  return wrapper.find(`.${NAVIGATION_RAIL_PREFIX}__footer`);
+};
 
 describe("NavigationRailTemplate", () => {
   describe("props", () => {
@@ -18,11 +34,11 @@ describe("NavigationRailTemplate", () => {
       const wrapper = mount(NavigationRailTemplate);
       expect(wrapper.classes()).toEqual(
         expect.arrayContaining([
-          "navigation-rail",
-          "navigation-rail-rail_variant-default",
-          "navigation-rail-rail_size-lg",
-          "navigation-rail-rail_mode-neutral",
-          "navigation-rail-rail_tone-primary",
+          NAVIGATION_RAIL_PREFIX,
+          `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.VARIANT}-default`,
+          `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.SIZE}-lg`,
+          `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.MODE}-neutral`,
+          `${NAVIGATION_RAIL_PREFIX}_${UIFACETS.TONE}-primary`,
         ])
       );
     });
@@ -57,13 +73,9 @@ describe("NavigationRailTemplate", () => {
     test("does not render header/body/footer wrappers without corresponding slots", () => {
       const wrapper = mount(NavigationRailTemplate);
 
-      expect(wrapper.find(".navigation-rail-rail__header").exists()).toBe(
-        false
-      );
-      expect(wrapper.find(".navigation-rail-rail__body").exists()).toBe(false);
-      expect(wrapper.find(".navigation-rail-rail__footer").exists()).toBe(
-        false
-      );
+      expect(getHeader(wrapper).exists()).toBe(false);
+      expect(getBody(wrapper).exists()).toBe(false);
+      expect(getFooter(wrapper).exists()).toBe(false);
     });
   });
 
@@ -121,9 +133,9 @@ describe("NavigationRailTemplate", () => {
           footer: "<div>F</div>",
         },
       });
-      expect(wrapper.find(".navigation-rail-rail__header").exists()).toBe(true);
-      expect(wrapper.find(".navigation-rail-rail__body").exists()).toBe(true);
-      expect(wrapper.find(".navigation-rail-rail__footer").exists()).toBe(true);
+      expect(getHeader(wrapper).exists()).toBe(true);
+      expect(getBody(wrapper).exists()).toBe(true);
+      expect(getFooter(wrapper).exists()).toBe(true);
     });
   });
 });

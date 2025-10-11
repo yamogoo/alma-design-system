@@ -4,7 +4,10 @@ import Logo from "@/components/atoms/logos/Logo.vue";
 import SimpleMenu from "@/components/atoms/menu/SimpleMenu.vue";
 import Group from "@/components/molecules/containers/Group.vue";
 import ControlButton from "@/components/molecules/buttons/aliases/ControlButton.vue";
-import { type NavigationRailProps } from "@/components/organisms/navigation/NavigationRail";
+import {
+  NAVIGATION_RAIL_PREFIX,
+  type NavigationRailProps,
+} from "@/components/organisms/navigation/NavigationRail";
 import NavigationRailTemplate from "@/components/templates/navigation/NavigationRailTemplate.vue";
 
 withDefaults(defineProps<NavigationRailProps>(), {});
@@ -17,7 +20,7 @@ withDefaults(defineProps<NavigationRailProps>(), {});
         <Group
           :size="'md'"
           :orientation="'vertical'"
-          data-testid="navigation-rail-header"
+          :data-testid="`${NAVIGATION_RAIL_PREFIX}__header`"
         >
           <Logo></Logo>
         </Group>
@@ -35,7 +38,7 @@ withDefaults(defineProps<NavigationRailProps>(), {});
         <Group
           :size="'md'"
           :orientation="'vertical'"
-          data-testid="navigation-rail-footer"
+          :data-testid="`${NAVIGATION_RAIL_PREFIX}__footer`"
         >
           <ControlButton
             :variant="'rounded'"

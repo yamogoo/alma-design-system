@@ -1,3 +1,5 @@
+import { NAMESPACE } from "@/constants";
+
 import type {
   MainHeaderMode,
   MainHeaderSize,
@@ -19,3 +21,5 @@ export interface MainHeaderProps
   as?: UIElementHeaderTag;
   isMainElement?: boolean;
 }
+
+export const MAIN_HEADER_PREFIX = `${NAMESPACE}main-header`;

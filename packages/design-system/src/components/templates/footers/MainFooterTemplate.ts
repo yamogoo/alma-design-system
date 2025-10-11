@@ -1,3 +1,5 @@
+import { NAMESPACE } from "@/constants";
+
 import type {
   MainFooterMode,
   MainFooterSize,
@@ -18,3 +20,5 @@ export interface MainFooterProps
   > {
   as?: UIElementFooterTag;
 }
+
+export const MAIN_FOOTER_PREFIX = `${NAMESPACE}main-footer`;

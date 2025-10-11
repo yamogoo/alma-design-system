@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import type { MainHeaderProps } from "@/components/templates/headers/MainHeaderTemplate";
+import { UIFACETS } from "@/constants/ui";
+
+import {
+  MAIN_HEADER_PREFIX,
+  type MainHeaderProps,
+} from "@/components/templates/headers/MainHeaderTemplate";
 
 withDefaults(defineProps<MainHeaderProps>(), {
   as: "header",
@@ -12,31 +17,32 @@ withDefaults(defineProps<MainHeaderProps>(), {
 <template>
   <component
     :is="as"
-    class="main-header"
     :class="[
-      `main-header_variant-${variant}`,
-      `main-header_size-${size}`,
-      `main-header_mode-${mode}`,
-      `main-header_tone-${tone}`,
+      MAIN_HEADER_PREFIX,
+      `${MAIN_HEADER_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${MAIN_HEADER_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${MAIN_HEADER_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${MAIN_HEADER_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
     :role="isMainElement ? undefined : 'banner'"
   >
-    <div class="main-header__section-left">
+    <div :class="`${MAIN_HEADER_PREFIX}__section-left`">
       <slot name="left"></slot>
     </div>
-    <div class="main-header__section-content">
+    <div :class="`${MAIN_HEADER_PREFIX}__section-content`">
       <slot></slot>
     </div>
-    <div class="main-header__section-right">
+    <div :class="`${MAIN_HEADER_PREFIX}__section-right`">
       <slot name="right"></slot>
     </div>
   </component>
 </template>
 
 <style lang="scss">
-$prefix: main-header;
+$tokenName: "main-header";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "templates.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "templates.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -52,7 +58,7 @@ $prefix: main-header;
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.components.templates.#{$prefix}")
+  $map: get($themes, "light.components.templates.#{$tokenName}")
 ) {
   @each $tone, $modes in $map {
     @each $mode, $val in $modes {
@@ -60,11 +66,11 @@ $prefix: main-header;
         &.#{$prefix}_mode-#{$mode} {
           @include themify($themes) {
             background-color: themed(
-              "components.templates.#{$prefix}.#{$tone}.#{$mode}.root.background.normal"
+              "components.templates.#{$tokenName}.#{$tone}.#{$mode}.root.background.normal"
             );
             border: get($tokens, "outline") solid
               themed(
-                "components.templates.#{$prefix}.#{$tone}.#{$mode}.root.border.normal"
+                "components.templates.#{$tokenName}.#{$tone}.#{$mode}.root.border.normal"
               );
           }
           @extend %base-transition;

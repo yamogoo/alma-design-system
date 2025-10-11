@@ -1,14 +1,17 @@
 import { mount, VueWrapper } from "@vue/test-utils";
 
 import NavigationRail from "@/components/organisms/navigation/NavigationRail.vue";
-import { type NavigationRailProps } from "@/components/organisms/navigation/NavigationRail";
+import {
+  NAVIGATION_RAIL_PREFIX,
+  type NavigationRailProps,
+} from "@/components/organisms/navigation/NavigationRail";
 
 const getHeaderGroup = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find('[data-testid="navigation-rail-header"]');
+  return wrapper.find(`[data-testid="${NAVIGATION_RAIL_PREFIX}__header"]`);
 };
 
 const getFooterGroup = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.find('[data-testid="navigation-rail-footer"]');
+  return wrapper.find(`[data-testid="${NAVIGATION_RAIL_PREFIX}__footer"]`);
 };
 
 const REQUIRED_PROPS: NavigationRailProps = {

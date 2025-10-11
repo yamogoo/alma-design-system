@@ -1,3 +1,5 @@
+import { NAMESPACE } from "@/constants";
+
 import type {
   TreeViewNode,
   TreeViewNodeID,
@@ -27,3 +29,5 @@ export interface FilesTreeProps
   headers?: Record<string, string>;
   mapResponse?: (raw: unknown) => TreeViewNode[];
 }
+
+export const SHEET_PREFIX = `${NAMESPACE}filsed-tree`;

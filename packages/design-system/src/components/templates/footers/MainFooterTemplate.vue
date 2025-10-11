@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import type { MainFooterProps } from "@/components/templates/footers/MainFooterTemplate";
+import { UIFACETS } from "@/constants/ui";
 
-const PREFIX = "main-footer";
+import {
+  MAIN_FOOTER_PREFIX,
+  type MainFooterProps,
+} from "@/components/templates/footers/MainFooterTemplate";
 
 withDefaults(defineProps<MainFooterProps>(), {
   as: "footer",
@@ -12,29 +15,33 @@ withDefaults(defineProps<MainFooterProps>(), {
   <component
     :is="as"
     :class="[
-      PREFIX,
-      `${PREFIX}_variant-${variant}`,
-      `${PREFIX}_size-${size}`,
-      `${PREFIX}_mode-${mode}`,
-      `${PREFIX}_tone-${tone}`,
+      MAIN_FOOTER_PREFIX,
+      `${MAIN_FOOTER_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
+      `${MAIN_FOOTER_PREFIX}_${UIFACETS.SIZE}-${size}`,
+      `${MAIN_FOOTER_PREFIX}_${UIFACETS.MODE}-${mode}`,
+      `${MAIN_FOOTER_PREFIX}_${UIFACETS.TONE}-${tone}`,
     ]"
   >
-    <div v-if="$slots.left" :class="`${PREFIX}__section-left`">
+    <div v-if="$slots.left" :class="`${MAIN_FOOTER_PREFIX}__section-left`">
       <slot name="left"></slot>
     </div>
-    <div v-if="$slots.default" :class="`${PREFIX}__section-content`">
+    <div
+      v-if="$slots.default"
+      :class="`${MAIN_FOOTER_PREFIX}__section-content`"
+    >
       <slot></slot>
     </div>
-    <div v-if="$slots.right" :class="`${PREFIX}__section-right`">
+    <div v-if="$slots.right" :class="`${MAIN_FOOTER_PREFIX}__section-right`">
       <slot name="right"></slot>
     </div>
   </component>
 </template>
 
 <style lang="scss">
-$prefix: main-footer;
+$tokenName: "main-footer";
+$prefix: getPrefix($tokenName);
 
-@mixin defineSizes($map: get($components, "templates.#{$prefix}")) {
+@mixin defineSizes($map: get($components, "templates.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
@@ -50,7 +57,7 @@ $prefix: main-footer;
 }
 
 @mixin defineThemes(
-  $map: get($themes, "light.components.templates.#{$prefix}")
+  $map: get($themes, "light.components.templates.#{$tokenName}")
 ) {
   @each $tone, $modes in $map {
     @each $mode, $val in $modes {
@@ -58,11 +65,11 @@ $prefix: main-footer;
         &.#{$prefix}_mode-#{$mode} {
           @include themify($themes) {
             background-color: themed(
-              "components.templates.#{$prefix}.#{$tone}.#{$mode}.root.background.normal"
+              "components.templates.#{$tokenName}.#{$tone}.#{$mode}.root.background.normal"
             );
             border: get($tokens, "outline") solid
               themed(
-                "components.templates.#{$prefix}.#{$tone}.#{$mode}.root.border.normal"
+                "components.templates.#{$tokenName}.#{$tone}.#{$mode}.root.border.normal"
               );
           }
           @extend %base-transition;

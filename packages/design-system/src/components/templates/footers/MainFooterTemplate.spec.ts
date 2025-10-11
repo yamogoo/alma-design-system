@@ -1,15 +1,18 @@
 import { mount } from "@vue/test-utils";
 
-import { type MainFooterProps } from "@/components/templates/footers/MainFooterTemplate";
+import {
+  MAIN_FOOTER_PREFIX,
+  type MainFooterProps,
+} from "@/components/templates/footers/MainFooterTemplate";
 import MainFooterTemplate from "@/components/templates/footers/MainFooterTemplate.vue";
 
-enum Classes {
-  ROOT_CLASS = "main-footer",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  TONE = `${Classes.ROOT_CLASS}_tone`,
-}
+const Classes = {
+  ROOT_CLASS: "main-footer",
+  VARIANT: `${MAIN_FOOTER_PREFIX}_variant`,
+  SIZE: `${MAIN_FOOTER_PREFIX}_size`,
+  MODE: `${MAIN_FOOTER_PREFIX}_mode`,
+  TONE: `${MAIN_FOOTER_PREFIX}_tone`,
+};
 
 describe("MainFooter", () => {
   describe("classes", () => {
@@ -17,8 +20,8 @@ describe("MainFooter", () => {
       const props: MainFooterProps = {
         variant: "default",
         size: "lg",
-        tone: "neutral",
-        mode: "primary",
+        mode: "neutral",
+        tone: "primary",
       };
 
       const wrapper = mount(MainFooterTemplate, { props });

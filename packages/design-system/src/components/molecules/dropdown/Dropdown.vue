@@ -383,8 +383,8 @@ $prefix: getPrefix($tokenName);
             }
           }
 
-          &.dropdown_state-expanded {
-            .dropdown__current-value {
+          &.#{$prefix}_state-expanded {
+            .#{$prefix}__current-value {
               @include themify($themes) {
                 $border-color: themed(
                   "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.current-value.border.expanded"
@@ -440,7 +440,7 @@ $prefix: getPrefix($tokenName);
               }
             }
 
-            .dropdown__options {
+            .#{$prefix}__options {
               @include themify($themes) {
                 background-color: themed(
                   "components.molecules.#{$tokenName}.#{$mode}.#{$tone}.options.background.normal"

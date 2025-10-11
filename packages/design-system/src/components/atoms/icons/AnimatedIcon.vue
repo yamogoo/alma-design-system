@@ -16,7 +16,7 @@ const emit = defineEmits<{
   (e: "completed"): void;
 }>();
 
-const refAnim = ref<typeof LottieAnimation | null>(null);
+const refAnim = ref<InstanceType<typeof LottieAnimation> | null>(null);
 
 const onAnimReady = (): void => {
   onToggle(props.isActive);

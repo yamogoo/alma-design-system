@@ -15,3 +15,5 @@ export type NavigationRailTemplateProps = Partial<
     NavigationRailTone
   >
 >;
+
+export { NAVIGATION_RAIL_PREFIX } from "@/components/organisms/navigation/NavigationRail";

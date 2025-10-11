@@ -1,15 +1,18 @@
 import { mount } from "@vue/test-utils";
 
-import { type MainHeaderProps } from "@/components/templates/headers/MainHeaderTemplate";
+import {
+  MAIN_HEADER_PREFIX,
+  type MainHeaderProps,
+} from "@/components/templates/headers/MainHeaderTemplate";
 import MainHeaderTemplate from "@/components/templates/headers/MainHeaderTemplate.vue";
 
-enum Classes {
-  ROOT_CLASS = "main-header",
-  VARIANT = `${Classes.ROOT_CLASS}_variant`,
-  SIZE = `${Classes.ROOT_CLASS}_size`,
-  MODE = `${Classes.ROOT_CLASS}_mode`,
-  TONE = `${Classes.ROOT_CLASS}_tone`,
-}
+const Classes = {
+  ROOT_CLASS: MAIN_HEADER_PREFIX,
+  VARIANT: `${MAIN_HEADER_PREFIX}_variant`,
+  SIZE: `${MAIN_HEADER_PREFIX}_size`,
+  MODE: `${MAIN_HEADER_PREFIX}_mode`,
+  TONE: `${MAIN_HEADER_PREFIX}_tone`,
+};
 
 describe("MainHeader", () => {
   describe("classes", () => {
@@ -17,8 +20,8 @@ describe("MainHeader", () => {
       const props: MainHeaderProps = {
         variant: "default",
         size: "md",
-        tone: "neutral",
-        mode: "primary",
+        mode: "neutral",
+        tone: "primary",
       };
 
       const wrapper = mount(MainHeaderTemplate, { props });

@@ -25,6 +25,8 @@
     "sparkpad:client:test:unit": "pnpm --filter sparkpad-client test:unit",
     "sparkpad:server:dev": "pnpm --filter sparkpad-server dev",
     "sparkpad:server:build": "pnpm --filter sparkpad-server build",
+    "ds:lint": "pnpm --filter design-system lint",
+    "ds:test:unit": "pnpm --filter design-system test:unit",
     "ds:build": "pnpm --filter design-system build",
     "ds:docs:dev": "pnpm --filter design-system docs:dev",
     "ds:docs:build": "pnpm --filter design-system docs:build",
@@ -32,7 +34,7 @@
   },
   "packageManager": "pnpm@9.12.3",
   "dependencies": {
-    "design-system": "link:../../../../Library/pnpm/global/5/node_modules/design-system"
+    "@alma/design-system": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
