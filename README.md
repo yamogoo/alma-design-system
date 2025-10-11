@@ -16,7 +16,7 @@ Code-first R&D space for UI systems: Vue components, design tokens, adapters, St
 
 ## Why This Exists
 
-Alma Design System is a laboratory for testing component architecture, token pipelines, theming strategies, and design-to-code workflows. It is intentionally experimental and subject to breaking changes while ideas are validated.
+Alma Design System is a laboratory for testing component architecture, token pipelines, theming strategies, and design-to-code workflows. It is intentionally experimental and subject to breaking changes while ideas are validated. The ultimate goal — to evolve into a **production-ready DS toolkit** demonstrating enterprise-grade runtime theming and motion-token architecture.
 
 ## Monorepo Layout
 
@@ -89,6 +89,7 @@ pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 - **Adapters vs components**: adapters stay thin and map UI into host app contexts; heavy logic belongs to components/composables.
 - **Testing**: Vitest + Vue Test Utils with jsdom, configured via `packages/design-system/vitest.setup.ts`.
 - **Storybook**: used for regression demos and token inspection (`pnpm ds:docs:dev`).
+- **Enterprise consumption pattern**: consumer apps (e.g., Sparkpad) configure existing design-system components via public props, slots, and presets—mirroring how large companies keep product teams from forking the DS.
 
 ## Roadmap Snapshots
 
@@ -96,10 +97,18 @@ pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 - Matrix stories covering role × tone × state permutations.
 - Continued refinement of tone naming (base ± N system).
 
+## Optimization Highlights
+
+- Reduced JS bundle: 1 MB → 238 KB (−76 %)
+- Reduced CSS bundle: 400 KB → 240 KB (23 KB gzip)
+- Improved dev-server startup: 50 s → 7 s (−86 %)
+- Built runtime token pipeline with a code-first single source of truth
+- Established deterministic theming across light/dark and five facets (variant/size/mode/tone/state)
+
 ## Licensing
 
 - Code: [MIT](./LICENSE)
-- Icons and creative assets: CC BY-NC 4.0 (see repository license notes)[https://github.com/yamogoo/alma-icons]
+- Icons and creative assets: [CC BY-NC 4.0](https://github.com/yamogoo/alma-icons)
 - AlmaIcons © 2025 Misha Grebennikov — https://github.com/yamogoo
 
 ## Author
