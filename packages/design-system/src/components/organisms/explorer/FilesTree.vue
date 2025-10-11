@@ -6,15 +6,13 @@ import type {
   TreeViewNodeID,
 } from "@/components/molecules/explorer/tree-view/TreeViewItem";
 import type { TreeViewSelectedItemIndexes } from "@/components/molecules/explorer/tree-view/TreeView";
-import type { FilesTreeProps } from "@/components/organisms/explorer/FilesTree";
+import {
+  FILES_TREE_PREFIX,
+  type FilesTreeProps,
+  type ResponseError,
+} from "@/components/organisms/explorer/FilesTree";
 import TreeView from "@/components/molecules/explorer/tree-view/TreeView.vue";
 import Text from "@/components/atoms/typography/Text.vue";
-
-const PREFIX = "files-tree";
-
-interface ResponseError {
-  message: string;
-}
 
 const props = withDefaults(defineProps<FilesTreeProps>(), {
   variant: "default",
@@ -108,7 +106,7 @@ const ensureRoot = async (): Promise<void> => {
   rootLoading.value = false;
 };
 
-async function onToggle(node: TreeViewNode, next: boolean) {
+const onToggle = async (node: TreeViewNode, next: boolean) => {
   const id = node.id;
   if (next) {
     if (!node.isLeaf && !Array.isArray(node.children)) {
@@ -122,9 +120,12 @@ async function onToggle(node: TreeViewNode, next: boolean) {
   } else {
     expandedItemIndexes.value.delete(id);
   }
-}
+};
 
-async function expandToDepth(nodes: TreeViewNode[] | undefined, depth: number) {
+const expandToDepth = async (
+  nodes: TreeViewNode[] | undefined,
+  depth: number
+) => {
   if (!nodes || depth <= 0) return;
   for (const node of nodes) {
     const { id, isLeaf, children } = node;
@@ -140,7 +141,7 @@ async function expandToDepth(nodes: TreeViewNode[] | undefined, depth: number) {
       await expandToDepth(node.children ?? undefined, depth - 1);
     }
   }
-}
+};
 
 watch(
   () => props.selectedItemIndexes,
@@ -163,15 +164,25 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div :class="PREFIX">
-    <div v-if="rootLoading && apiLoadingMessage" :class="`${PREFIX}__loading`">
-      <slot>
-        <Text>{{ apiLoadingMessage }}</Text>
+  <div :class="FILES_TREE_PREFIX" :data-testid="`${FILES_TREE_PREFIX}`">
+    <div
+      v-if="rootLoading && apiLoadingMessage"
+      :class="`${FILES_TREE_PREFIX}__loading`"
+    >
+      <slot name="loading">
+        <Text :data-testid="`${FILES_TREE_PREFIX}__loading-message`">{{
+          apiLoadingMessage
+        }}</Text>
       </slot>
     </div>
-    <div v-else-if="loadError && apiErrorMessage" :class="`${PREFIX}__error`">
-      <slot>
-        <Text> {{ apiErrorMessage }}] </Text>
+    <div
+      v-else-if="loadError && apiErrorMessage"
+      :class="`${FILES_TREE_PREFIX}__error`"
+    >
+      <slot name="error">
+        <Text :data-testid="`${FILES_TREE_PREFIX}__error-message`">
+          {{ apiErrorMessage }}
+        </Text>
       </slot>
     </div>
     <TreeView

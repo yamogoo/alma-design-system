@@ -16,6 +16,10 @@ export interface FilesTreeMessages {
   apiErrorMessage: string;
 }
 
+export interface ResponseError {
+  message: string;
+}
+
 export interface FilesTreeProps
   extends TreeViewConfigProps,
     Partial<
@@ -30,4 +34,4 @@ export interface FilesTreeProps
   mapResponse?: (raw: unknown) => TreeViewNode[];
 }
 
-export const SHEET_PREFIX = `${NAMESPACE}filsed-tree`;
+export const FILES_TREE_PREFIX = `${NAMESPACE}filsed-tree`;
