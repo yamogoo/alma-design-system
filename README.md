@@ -6,6 +6,14 @@ Code-first R&D space for UI systems: Vue components, design tokens, adapters, St
 
 – Live docs: https://alma-design-system.netlify.app
 
+## Results & Impact
+
+- Unified components, tokens, adapters, and tooling into a single monorepo with reproducible installs (`pnpm workspace`).
+- Designed and shipped `@alma/tokens-worker`, a custom compiler that turns relational token contracts into consumable JSON/CSS artifacts.
+- Introduced the UI Facets map and global namespace exports, simplifying consumption of organisms/templates across apps.
+- Delivered a live Storybook deployment (Netlify) with matrices for testing tone × state permutations, enabling async design/dev reviews.
+- Established portable lint/test scripts (`pnpm ds:lint`, `pnpm ds:test:unit`) and token build automation (`pnpm prepare`).
+
 ## Why This Exists
 
 Alma Design System is a laboratory for testing component architecture, token pipelines, theming strategies, and design-to-code workflows. It is intentionally experimental and subject to breaking changes while ideas are validated.
