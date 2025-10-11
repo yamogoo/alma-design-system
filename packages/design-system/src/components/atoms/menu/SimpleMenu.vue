@@ -3,7 +3,7 @@ import { useTemplateRef } from "vue";
 
 import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
 
-import { useMenuNavigation } from "@/composables/local";
+import { useMenuNavigation } from "@/composables/local/keyboard/useMenuNavigation";
 
 import { SIMPLE_MENU_PREFIX, type SimpleMenuProps } from "./SimpleMenu";
 import type { IMenuItem } from "./menu";

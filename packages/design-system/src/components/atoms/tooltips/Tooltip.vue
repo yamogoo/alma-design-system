@@ -5,7 +5,8 @@ import gsap from "gsap";
 
 import { UIMODIFIERS } from "@/constants/ui";
 
-import { useHover, useTimeout } from "@/composables/local";
+import { useHover } from "@/composables/local/actions/useHover";
+import { useTimeout } from "@/composables/local/timers/useTimeout";
 
 import { TOOLTIP_PREFIX, type TooltipProps } from "./Tooltip";
 import CharTooltipLabel from "@/components/atoms/tooltips/CharTooltipLabel.vue";

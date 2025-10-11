@@ -758,6 +758,7 @@ $themes:(
   normal: #2f3235,
   disabled: #3b3f42,
   hovered: #323538,
+  focused: #013cfe,
   highlight: #013cfe,
   error: #681816
 )
@@ -795,8 +796,9 @@ $themes:(
   normal: #031a52,
   disabled: #042167,
   hovered: #031c57,
-  error: #5f0e0e59,
-  highlight: #013cfe
+  focused: #013cfe,
+  highlight: #013cfe,
+  error: #5f0e0e59
 )
 ),
   label: (
@@ -4058,6 +4060,7 @@ $themes:(
   normal: #d5d7d9,
   disabled: #ffffff,
   hovered: #e3e4e5,
+  focused: #013cfe,
   highlight: #013cfe,
   error: #edc0c0
 )
@@ -4095,8 +4098,9 @@ $themes:(
   normal: #c5d0f5,
   disabled: #ffffff,
   hovered: #dce2f9,
-  error: #f7caca,
-  highlight: #013cfe
+  focused: #013cfe,
+  highlight: #013cfe,
+  error: #f7caca
 )
 ),
   label: (

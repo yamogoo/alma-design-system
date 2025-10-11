@@ -55,6 +55,11 @@
             "$type": "color",
             "$unit": "hex"
           },
+          "focused": {
+            "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
           "highlight": {
             "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
             "$type": "color",
@@ -176,13 +181,18 @@
             "$type": "color",
             "$unit": "hex"
           },
-          "error": {
-            "$value": "{themes.light.contracts.interactive.surface.negative.primary.normal.$value}",
+          "focused": {
+            "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "highlight": {
             "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "error": {
+            "$value": "{themes.light.contracts.interactive.surface.negative.primary.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           }

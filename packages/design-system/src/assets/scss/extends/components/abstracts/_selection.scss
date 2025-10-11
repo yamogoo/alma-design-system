@@ -1,0 +1,15 @@
+@use "../../../abstracts/themes" as *;
+@use "../../../app.core.scss" as *;
+
+@mixin useSelection() {
+  &::selection {
+    @include themify($themes) {
+      color: themed(
+        "contracts.rel.selection.neutral.primary.label.base"
+      ) !important;
+      background: themed(
+        "contracts.rel.selection.neutral.primary.surface.base"
+      ) !important;
+    }
+  }
+}

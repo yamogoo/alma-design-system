@@ -55,6 +55,11 @@
             "$type": "color",
             "$unit": "hex"
           },
+          "focused": {
+            "$value": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
           "highlight": {
             "$value": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
             "$type": "color",
@@ -176,13 +181,18 @@
             "$type": "color",
             "$unit": "hex"
           },
-          "error": {
-            "$value": "rgba({themes.dark.contracts.interactive.surface.negative.primary.normal.$value}, 0.35)",
+          "focused": {
+            "$value": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
             "$type": "color",
             "$unit": "hex"
           },
           "highlight": {
             "$value": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "error": {
+            "$value": "rgba({themes.dark.contracts.interactive.surface.negative.primary.normal.$value}, 0.35)",
             "$type": "color",
             "$unit": "hex"
           }

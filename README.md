@@ -99,8 +99,8 @@ pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 
 ## Optimization Highlights
 
-- Reduced JS bundle: 1 MB → 238 KB (−76 %)
-- Reduced CSS bundle: 400 KB → 240 KB (23 KB gzip)
+- Reduced JS bundle: 1 MB → 211.77 KB (−76 %)
+- Reduced CSS bundle: 400 KB → 258.95 KB (22.25 KB gzip)
 - Improved dev-server startup: 50 s → 7 s (−86 %)
 - Built runtime token pipeline with a code-first single source of truth
 - Established deterministic theming across light/dark and five facets (variant/size/mode/tone/state)

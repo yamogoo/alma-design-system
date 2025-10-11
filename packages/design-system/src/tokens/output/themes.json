@@ -2331,6 +2331,11 @@
                     "$type": "color",
                     "$unit": "hex"
                   },
+                  "focused": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
                   "highlight": {
                     "$value": "#013cfe",
                     "$type": "color",
@@ -2452,13 +2457,18 @@
                     "$type": "color",
                     "$unit": "hex"
                   },
-                  "error": {
-                    "$value": "#5f0e0e59",
+                  "focused": {
+                    "$value": "#013cfe",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "highlight": {
                     "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "error": {
+                    "$value": "#5f0e0e59",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -13351,6 +13361,11 @@
                     "$type": "color",
                     "$unit": "hex"
                   },
+                  "focused": {
+                    "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
                   "highlight": {
                     "$value": "#013cfe",
                     "$type": "color",
@@ -13472,13 +13487,18 @@
                     "$type": "color",
                     "$unit": "hex"
                   },
-                  "error": {
-                    "$value": "#f7caca",
+                  "focused": {
+                    "$value": "#013cfe",
                     "$type": "color",
                     "$unit": "hex"
                   },
                   "highlight": {
                     "$value": "#013cfe",
+                    "$type": "color",
+                    "$unit": "hex"
+                  },
+                  "error": {
+                    "$value": "#f7caca",
                     "$type": "color",
                     "$unit": "hex"
                   }

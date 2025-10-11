@@ -43,6 +43,7 @@ const props = withDefaults(defineProps<InputProps>(), {
 const emit = defineEmits<{
   (e: "focused", isFocused: boolean): void;
   (e: "update:value", value: string): void;
+  (e: "change:value", value: string): void;
   (e: "reset:value"): void;
 }>();
 
@@ -101,7 +102,7 @@ const onFocus = (): void => {
 
 const onChange = (e: Event): void => {
   const value = (e.target as HTMLInputElement).value;
-  emit("update:value", value);
+  emit("change:value", value);
 };
 
 const onReset = (): void => {
@@ -109,7 +110,12 @@ const onReset = (): void => {
 
   emit("reset:value");
   emit("update:value", localModelValue.value);
+  emit("change:value", localModelValue.value);
 };
+
+/* * * a11y * * */
+
+const validationId = `validation-${id}`;
 
 /* * * Animations * * */
 
@@ -277,6 +283,8 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
             :class="`${INPUT_PREFIX}__field-value`"
             :data-testid="`${INPUT_PREFIX}__value`"
             :aria-placeholder="areaPlaceholder ?? placeholder"
+            :aria-invalid="isError"
+            :aria-describedby="errorMessage ? validationId : undefined"
             :disabled="isDisabled"
             :autocomplete
             :spellcheck="'false'"
@@ -312,7 +320,11 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
         </Transition>
       </div>
     </div>
-    <div ref="message" :class="`${INPUT_PREFIX}__validation`">
+    <div
+      ref="message"
+      :id="validationId"
+      :class="`${INPUT_PREFIX}__validation`"
+    >
       <Text
         v-if="!!errorMessage"
         :class="`${INPUT_PREFIX}__validation-message`"
@@ -327,7 +339,7 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
 <style lang="scss">
 $tokenName: "input";
 $prefix: getPrefix($tokenName);
-$iconSlotPrefix: getPrefix("#{$prefix}__icon");
+$iconSlotPrefix: getPrefix("#{$tokenName}__icon");
 
 @mixin defineInputSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
@@ -377,6 +389,37 @@ $iconSlotPrefix: getPrefix("#{$prefix}__icon");
   }
 }
 
+@mixin defineStates($tokenName, $mode, $tone, $states) {
+  @each $state in $states {
+    &.#{$prefix}_state-#{$state} {
+      .#{$prefix}__field {
+        @include themify($themes) {
+          color: themed(
+            "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.#{$state}"
+          );
+          background-color: themed(
+            "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.#{$state}"
+          );
+          border: get($tokens, "outline") solid
+            themed(
+              "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.#{$state}"
+            );
+        }
+
+        .#{$prefix}__field-content-icon {
+          .#{$iconSlotPrefix} {
+            @include themify($themes) {
+              fill: themed(
+                "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.#{$state}"
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @mixin defineThemes(
   $map: get($themes, "light.components.atoms.#{$tokenName}")
 ) {
@@ -385,171 +428,32 @@ $iconSlotPrefix: getPrefix("#{$prefix}__icon");
       &_mode-#{$mode} {
         &.#{$prefix}_tone-#{$tone} {
           &:not(.#{$prefix}_state-disabled) {
-            .#{$prefix}__field {
-              @include themify($themes) {
-                color: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.idle"
-                );
-                background-color: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.normal"
-                );
-                @extend %base-transition;
-              }
-            }
+            @include defineStates($tokenName, $mode, $tone, "idle");
           }
 
           &:not(.#{$prefix}_state-error) {
             &:not(.#{$prefix}_state-focused) {
-              &.#{$prefix}_state-idle {
-                .#{$prefix}__field {
-                  @include themify($themes) {
-                    color: themed(
-                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.idle"
-                    );
-                    background-color: themed(
-                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.idle"
-                    );
-                    border: get($tokens, "outline") solid
-                      themed(
-                        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.idle"
-                      );
-                  }
-                }
-
-                .#{$prefix}__field-content-icon {
-                  .#{$iconSlotPrefix} {
-                    @include themify($themes) {
-                      fill: themed(
-                        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
-                      );
-                    }
-                  }
-                }
-              }
-
-              &.#{$prefix}_state-normal {
-                .#{$prefix}__field {
-                  @include themify($themes) {
-                    color: themed(
-                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.normal"
-                    );
-                    background-color: themed(
-                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.normal"
-                    );
-                    border: get($tokens, "outline") solid
-                      themed(
-                        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.normal"
-                      );
-                  }
-                }
-
-                .#{$prefix}__field-content-icon {
-                  .#{$iconSlotPrefix} {
-                    @include themify($themes) {
-                      fill: themed(
-                        "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
-                      );
-                    }
-                  }
-                }
-              }
+              @include defineStates($tokenName, $mode, $tone, "idle" "normal");
             }
 
-            &.#{$prefix}_state-focused {
-              .#{$prefix}__field {
-                @include themify($themes) {
-                  color: themed(
-                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.focused"
-                  );
-                  background-color: themed(
-                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.focused"
-                  );
-                  border: get($tokens, "outline") solid
-                    themed(
-                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.highlight"
-                    );
-                }
-              }
-
-              .#{$prefix}__field-content-icon {
-                .#{$iconSlotPrefix} {
-                  @include themify($themes) {
-                    fill: themed(
-                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.focused"
-                    );
-                  }
-                }
-              }
-            }
-
-            &.#{$prefix}_state-disabled {
-              .#{$prefix}__field {
-                @include themify($themes) {
-                  color: themed(
-                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
-                  );
-                  background-color: themed(
-                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.disabled"
-                  );
-                  border: get($tokens, "outline") solid
-                    themed(
-                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.disabled"
-                    );
-                }
-              }
-
-              .#{$prefix}__field-content-icon {
-                .#{$iconSlotPrefix} {
-                  @include themify($themes) {
-                    fill: themed(
-                      "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.disabled"
-                    );
-                  }
-                }
-              }
-            }
+            @include defineStates(
+              $tokenName,
+              $mode,
+              $tone,
+              "focused" "disabled"
+            );
           }
 
           &.#{$prefix}_state-error {
-            .#{$prefix}__field {
-              @include themify($themes) {
-                color: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.error"
-                );
-                background-color: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.background.error"
-                );
-                border: get($tokens, "outline") solid
-                  themed(
-                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.error"
-                  );
-              }
-            }
-
-            .#{$prefix}__field-content-icon {
-              .#{$iconSlotPrefix} {
-                @include themify($themes) {
-                  fill: themed(
-                    "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.label.error"
-                  );
-                }
-              }
-            }
+            @include defineStates($tokenName, $mode, $tone, "error");
           }
 
-          .#{$prefix}__field-value,
-          .#{$prefix}__field-placeholder {
-            color: inherit;
-            @extend %base-transition;
-          }
-
-          .#{$prefix}__validation-message {
+          .#{$prefix}__validation {
             &-message {
               @include themify($themes) {
                 color: themed(
                   "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.validation.message"
                 );
-                @extend %base-transition;
               }
             }
           }
@@ -607,24 +511,27 @@ $iconSlotPrefix: getPrefix("#{$prefix}__icon");
       outline: none;
       border: none;
       background: none;
-      @extend %base-transition;
       overflow: hidden;
       text-overflow: ellipsis;
       user-select: auto;
       pointer-events: all;
       z-index: 1;
+      @extend %base-transition;
 
-      &::selection {
-        @include themify($themes) {
-          color: themed(
-            "contracts.rel.selection.neutral.primary.label.base"
-          ) !important;
-          background: themed(
-            "contracts.rel.selection.neutral.primary.surface.base"
-          ) !important;
-        }
-      }
+      @include useSelection();
     }
+  }
+
+  &__field-value,
+  &__field-placeholder {
+    color: inherit;
+  }
+
+  &__field,
+  &__field-value,
+  &__field-placeholder,
+  &__validation-message {
+    @extend %base-transition;
   }
 }
 </style>
