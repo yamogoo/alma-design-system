@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, type PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { visualizer } from "rollup-plugin-visualizer";
 import vueJsx from "@vitejs/plugin-vue-jsx";
@@ -17,12 +17,33 @@ import {
   VitePluginFigmaTokensParser,
 } from "@alma/tokens-worker";
 
+const ANALYZE = process.env.ANALYZE === "1";
+
 export default () => {
   return defineConfig({
     cacheDir: "../../.vite",
     plugins: [
       vue(),
-      visualizer({ filename: "stats.html", gzipSize: true }),
+      ANALYZE &&
+        (visualizer({
+          emitFile: true,
+          filename: "stats.html",
+          template: "raw-data",
+          gzipSize: true,
+        }) as PluginOption),
+      ANALYZE &&
+        (visualizer({
+          emitFile: true,
+          filename: "stats-list.yml",
+          template: "list",
+        }) as PluginOption),
+      ANALYZE &&
+        (visualizer({
+          emitFile: true,
+          filename: "stats-flamegraph.html",
+          template: "flamegraph",
+        }) as PluginOption),
+      // visualizer({ filename: "stats.html", gzipSize: true }),
       vueJsx({
         transformOn: true,
         mergeProps: true,
@@ -43,6 +64,7 @@ export default () => {
         mapOptions: {
           convertCase: true,
           includeFileName: true,
+          includeServiceFields: true,
         },
         cssVarOptions: {
           convertToCSSVariables: false,
@@ -60,7 +82,6 @@ export default () => {
           includeRootDirName: false,
         },
         useFileStructureLookup: false,
-        useReflectOriginalStructure: false,
         isModulesMergedIntoEntry: true,
       }),
       VitePluginTokenLinter({

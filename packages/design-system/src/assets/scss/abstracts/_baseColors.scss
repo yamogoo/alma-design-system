@@ -2,15 +2,59 @@
 
 
 $base-colors:(
-  gray: #43484c,
-  white: #ffffff,
-  black: #000000,
-  red: #e23939,
-  carrot: #fa471f,
-  orange: #ffc968,
-  yellow: #f2ea00,
-  green: #03d31d,
-  blue: #1a4ffe,
-  dark-blue: #1a4ffe,
-  accent: #0fc558
+  gray: (
+  value: #43484c,
+  type: "color",
+  unit: "hex"
+),
+  white: (
+  value: #ffffff,
+  type: "color",
+  unit: "hex"
+),
+  black: (
+  value: #000000,
+  type: "color",
+  unit: "hex"
+),
+  red: (
+  value: #e23939,
+  type: "color",
+  unit: "hex"
+),
+  carrot: (
+  value: #fa471f,
+  type: "color",
+  unit: "hex"
+),
+  orange: (
+  value: #ffc968,
+  type: "color",
+  unit: "hex"
+),
+  yellow: (
+  value: #f2ea00,
+  type: "color",
+  unit: "hex"
+),
+  green: (
+  value: #03d31d,
+  type: "color",
+  unit: "hex"
+),
+  blue: (
+  value: #1a4ffe,
+  type: "color",
+  unit: "hex"
+),
+  dark-blue: (
+  value: #1a4ffe,
+  type: "color",
+  unit: "hex"
+),
+  accent: (
+  value: #0fc558,
+  type: "color",
+  unit: "hex"
+)
 );

@@ -1,8 +1,8 @@
 @use "sass:meta";
-@use "sass:map";
+@use "../../core/mixins/map-get" as *;
 
 @mixin safe-extend($ph, $fallback) {
-  @if map.get($available-placeholders, $ph) {
+  @if get($available-placeholders, $ph) {
     @extend %#{$ph};
   } @else {
     @extend %#{$fallback};

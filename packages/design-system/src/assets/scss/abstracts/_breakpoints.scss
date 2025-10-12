@@ -2,8 +2,24 @@
 
 
 $breakpoints:(
-  sm: 480px,
-  md: 820px,
-  lg: 1280px,
-  xl: 1440px
+  sm: (
+  value: 480px,
+  type: "number",
+  unit: "px"
+),
+  md: (
+  value: 820px,
+  type: "number",
+  unit: "px"
+),
+  lg: (
+  value: 1280px,
+  type: "number",
+  unit: "px"
+),
+  xl: (
+  value: 1440px,
+  type: "number",
+  unit: "px"
+)
 );

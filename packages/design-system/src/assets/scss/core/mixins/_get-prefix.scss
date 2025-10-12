@@ -1,7 +1,7 @@
-@use "sass:map";
 @use "../../abstracts/config" as *;
+@use "../../core/mixins/map-get" as *;
 
-$namespace: map.get($config, "namespace");
+$namespace: get($config, "namespace");
 
 @function getPrefix($prefix: "") {
   @return "#{$namespace}#{$prefix}";

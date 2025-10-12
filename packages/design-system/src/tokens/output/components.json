@@ -1287,19 +1287,21 @@
           "$respond": {
             "above": {
               "lg": {
-                "$value": 24
+                "$value": 24,
+                "$type": "number",
+                "$unit": "px"
               }
             },
             "at": {
               "lg": {
-                "borderRadius": {
+                "padding": {
                   "$value": 16,
                   "$type": "number",
                   "$unit": "px"
                 }
               },
               "md": {
-                "borderRadius": {
+                "padding": {
                   "$value": 12,
                   "$type": "number",
                   "$unit": "px"
@@ -1903,31 +1905,31 @@
           "root": {
             "borderRadius": {
               "$value": 20,
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             }
           },
           "body": {
             "gap": {
               "$value": 24,
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             },
             "padding": {
               "$value": 12,
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             }
           },
           "footer": {
             "paddingTop": {
               "$value": 16,
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             },
             "paddingBottom": {
               "$value": 12,
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             }
           }
@@ -1943,17 +1945,17 @@
                 24,
                 24
               ],
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             },
             "borderRadius": {
               "$value": 32,
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             },
             "borderWidth": {
               "$value": 1,
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             }
           },
@@ -1963,7 +1965,7 @@
                 12,
                 0
               ],
-              "$$type": "number",
+              "$type": "number",
               "$unit": "px"
             }
           }

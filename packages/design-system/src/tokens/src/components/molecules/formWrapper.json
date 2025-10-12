@@ -7,24 +7,24 @@
             "{tokens.spacing.lg.$value}",
             "{tokens.spacing.lg.$value}"
           ],
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
           "$value": "{tokens.roundness.xxl.$value}",
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         },
         "borderWidth": {
           "$value": "{tokens.outline.$value}",
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         }
       },
       "header": {
         "padding": {
           "$value": ["{tokens.spacing.sm.$value}", 0],
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         }
       }

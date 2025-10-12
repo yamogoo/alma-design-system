@@ -6,18 +6,22 @@
       "$unit": "px",
       "$respond": {
         "above": {
-          "lg": { "$value": "{tokens.spacing.lg.$value}" }
+          "lg": {
+            "$value": "{tokens.spacing.lg.$value}",
+            "$type": "number",
+            "$unit": "px"
+          }
         },
         "at": {
           "lg": {
-            "borderRadius": {
+            "padding": {
               "$value": "{tokens.spacing.md.$value}",
               "$type": "number",
               "$unit": "px"
             }
           },
           "md": {
-            "borderRadius": {
+            "padding": {
               "$value": "{tokens.spacing.sm.$value}",
               "$type": "number",
               "$unit": "px"

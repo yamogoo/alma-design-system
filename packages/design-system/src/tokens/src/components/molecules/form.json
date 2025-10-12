@@ -4,31 +4,31 @@
       "root": {
         "borderRadius": {
           "$value": "{tokens.roundness.lg.$value}",
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         }
       },
       "body": {
         "gap": {
           "$value": "{tokens.spacing.lg.$value}",
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         },
         "padding": {
           "$value": "{tokens.spacing.sm.$value}",
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         }
       },
       "footer": {
         "paddingTop": {
           "$value": "{tokens.spacing.md.$value}",
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         },
         "paddingBottom": {
           "$value": "{tokens.spacing.sm.$value}",
-          "$$type": "number",
+          "$type": "number",
           "$unit": "px"
         }
       }

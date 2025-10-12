@@ -1,4 +1,4 @@
-// Portions of this file were developed with the assistance of AI tools (ChatGPT).
+// Portions of this file were developed with the assistance of AI tools.
 
 import fs from 'node:fs/promises';
 import nodePath from 'node:path';
@@ -54,6 +54,8 @@ export interface ParseValueOptions {
   fileName?: string;
   key?: string;
   unit?: string;
+  includeServiceFields?: boolean;
+  includeSymbolsInServiceFields?: boolean;
 }
 
 export interface JSONToSCSSOptions {
@@ -62,7 +64,6 @@ export interface JSONToSCSSOptions {
   comment: string;
   options: Partial<ParseValueOptions>;
   mapOptions?: Partial<ParseValueOptions>;
-  varsOptions?: Partial<ParseValueOptions>;
 }
 
 export interface CssVarOptions {
@@ -83,13 +84,11 @@ export interface TokensParserOptions {
   entryFilePath?: string;
   mapOptions?: Partial<ParseValueOptions>;
   cssVarOptions?: CssVarOptions;
-  varsOptions?: Partial<ParseValueOptions>;
   parseOptions?: Partial<ParseValueOptions>;
-  useFileStructureLookup?: boolean; // enable folder-structure lookup for token refs
-  useReflectOriginalStructure?: boolean;
+  useFileStructureLookup?: boolean; // Enables folder-structure lookup for token references.
   isModulesMergedIntoEntry?: boolean;
   themesDir?: string;
-  themesOutFile?: string; // scss
+  themesOutFile?: string; // SCSS output file path.
   themesIncludeRequired?: boolean;
   /** Enable verbose logs (warnings/info) */
   verbose?: boolean;
@@ -113,7 +112,7 @@ abstract class Parser {
 
 export class SCSSParser extends Parser {
   private tokensParser: TokensParser;
-  // Map: varName -> value for deduplication and predictable overrides
+  // Tracks CSS variable values for deduplication and predictable overrides.
   private collectedCssVars: Map<string, string> = new Map();
 
   constructor(tokensParser: TokensParser) {
@@ -121,16 +120,16 @@ export class SCSSParser extends Parser {
     this.tokensParser = tokensParser;
   }
 
-  // PUBLIC: clear accumulated CSS variables (to avoid duplication between files)
+  // Clears accumulated CSS variables to avoid duplication between files.
   public clearCssVars() {
     this.collectedCssVars.clear();
   }
 
   private normalizeValue(value: any, opts: ParseValueOptions): string {
-    // nested token reference like "{file.key}"
+    // Handles nested token references such as "{file.key}".
     if (_.isString(value) && value.startsWith('{')) {
       const nested = this.tokensParser.parseNestedValue(value, opts);
-      // If nothing changed (unresolved or depth limit), avoid infinite recursion
+      // Avoids infinite recursion if the reference cannot be resolved.
       if (nested === value) {
         return value;
       }
@@ -142,15 +141,15 @@ export class SCSSParser extends Parser {
     }
 
     if (typeof value === 'string') {
-      // try to recognize a color/color expression and format to requested unit
+      // Attempts to recognize color expressions and format them to the requested unit.
       const colorMaybe = this.tokensParser.tryParseColor(value, opts.unit);
       if (colorMaybe) return colorMaybe;
 
-      // numeric string -> convert like number
+      // Treats numeric strings like numbers.
       if (/^\d+(\.\d+)?$/.test(value)) {
         return this.tokensParser.convertNumberByKey(Number(value), opts.key, opts);
       }
-      // keep already unit'ed values
+      // Preserves values that already include units.
       if (/^\d+(\.\d+)?(px|rem|em|%)$/.test(value)) {
         return value;
       }
@@ -162,7 +161,7 @@ export class SCSSParser extends Parser {
     }
 
     if (_.isPlainObject(value)) {
-      // token object with { value/$value, type/$type, unit/$unit, meta/$meta ... }
+      // Handles token objects with standard value/type/unit/meta fields.
       if (this.tokensParser.hasTokenField(value, 'value')) {
         const localOpts: ParseValueOptions = {
           ...opts,
@@ -178,7 +177,7 @@ export class SCSSParser extends Parser {
         };
         return this.normalizeValue(this.tokensParser.getTokenField(value, 'value'), localOpts);
       }
-      // plain object -> parse as map (SCSSParser method)
+      // Delegates plain objects to map parsing.
       return this.parseMap(value as IMap, opts);
     }
 
@@ -213,16 +212,15 @@ export class SCSSParser extends Parser {
   }
 
   parseMap<T extends object>(map: Value<T>, opts: ParseValueOptions, path: string[] = []): string {
-    // whether to preserve original token structure when generating SCSS map
-    const useReflect = this.tokensParser.opts.useReflectOriginalStructure ?? true;
-
-    // primitives
+    // Handles primitive passthrough values.
     if (typeof map === 'string') return this.normalizeValue(map, opts);
     if (_.isArray(map)) return this.parseList(map, opts);
     if (!_.isPlainObject(map)) return this.normalizeValue(map, opts);
 
     const obj = map as IMap;
     const keys = Object.keys(obj);
+
+    // Detects token-like objects by checking for token metadata fields.
     const hasTokenFields = [
       'value',
       '$value',
@@ -233,16 +231,15 @@ export class SCSSParser extends Parser {
       'description',
       'meta',
       '$meta',
+      'respond',
+      '$respond',
     ].some((k) => keys.includes(k));
 
-    // helper: build list of candidate paths/names to compare against exclude list
+    // Computes candidate file paths for CSS variable exclusion checks.
     const buildExcludeCandidates = (): string[] => {
       const candidates: string[] = [];
       const fileName = opts?.fileName ?? '';
-
-      if (fileName) {
-        candidates.push(fileName, `${fileName}.json`);
-      }
+      if (fileName) candidates.push(fileName, `${fileName}.json`);
 
       const buildRoot = this.tokensParser.opts.build;
       if (buildRoot && fileName) {
@@ -268,30 +265,44 @@ export class SCSSParser extends Parser {
 
       return [...new Set(candidates)].map((c) => (c || '').replace(/\\/g, '/').toLowerCase());
     };
-
     const matchesExcluded = (excludedRaw: string, candidates: string[]) => {
       if (!excludedRaw) return false;
       const excluded = excludedRaw.replace(/\\/g, '/').toLowerCase();
-
-      if (excluded.endsWith('/')) {
-        return candidates.some((c) => c.startsWith(excluded));
-      }
-
+      if (excluded.endsWith('/')) return candidates.some((c) => c.startsWith(excluded));
       return candidates.some(
         (c) => c === excluded || c.endsWith(`/${excluded}`) || excluded.endsWith(`/${c}`),
       );
     };
 
+    // Handles token objects.
     if (hasTokenFields) {
       const tokenObj = obj as IMap;
 
-      // --- check exclude list for CSS variables ---
+      // Determines whether to emit $-prefixed service fields in the SCSS map.
+      const serviceMode =
+        Boolean(this.tokensParser.opts?.mapOptions?.includeServiceFields ?? false) ||
+        Boolean(opts.includeServiceFields);
+
+      const serviceSymbols =
+        (opts.includeSymbolsInServiceFields ??
+          this.tokensParser.opts?.mapOptions?.includeSymbolsInServiceFields ??
+          false) === true;
+
+      const svc = (name: string) => (serviceSymbols ? `$${name}` : name);
+
+      // Reads canonical token fields, supporting plain and $-prefixed keys.
+      const metaVal = this.tokensParser.getTokenField(tokenObj, 'meta');
+      const typeVal = this.tokensParser.getTokenField(tokenObj, 'type');
+      const unitVal = this.tokensParser.getTokenField(tokenObj, 'unit');
+      const valueVal = this.tokensParser.getTokenField(tokenObj, 'value');
+      const respondVal = this.tokensParser.getField<any>(tokenObj, 'respond'); // Accepts both $respond and respond.
+
+      // Collects CSS variables when export conditions are met.
       const excludeList =
         this.tokensParser.opts?.cssVarOptions?.excludeCSSVariables ??
         this.tokensParser.opts?.mapOptions?.excludeCSSVariables ??
         [];
       const candidates = buildExcludeCandidates();
-
       let isExcluded = false;
       for (const excludedRaw of excludeList) {
         if (matchesExcluded(excludedRaw, candidates)) {
@@ -300,13 +311,6 @@ export class SCSSParser extends Parser {
         }
       }
 
-      // resolved fields via helpers
-      const metaVal = this.tokensParser.getTokenField(tokenObj, 'meta');
-      const typeVal = this.tokensParser.getTokenField(tokenObj, 'type');
-      const unitVal = this.tokensParser.getTokenField(tokenObj, 'unit');
-      const valueVal = this.tokensParser.getTokenField(tokenObj, 'value');
-
-      // --- determine whether we must export this token as CSS var ---
       const globalMapFlag =
         this.tokensParser.opts?.cssVarOptions?.convertToCSSVariables ??
         this.tokensParser.opts?.mapOptions?.convertToCSSVariables ??
@@ -326,12 +330,9 @@ export class SCSSParser extends Parser {
             ? this.tokensParser.toKebabCase(opts.fileName)
             : opts.fileName
           : '';
-
         let computedNameSource = explicitVarName
           ? explicitVarName
           : pathPart || (filePart ? `${filePart}` : '');
-
-        // include file name into var if requested
         const includeFileNameToCSS =
           this.tokensParser.opts?.cssVarOptions?.includeFileNameToCSSVariables ??
           this.tokensParser.opts?.mapOptions?.includeFileNameToCSSVariables ??
@@ -350,7 +351,7 @@ export class SCSSParser extends Parser {
             ? computedNameSource
             : `--${computedNameSource || opts.fileName || 'token'}`;
 
-        const localOpts: ParseValueOptions = {
+        const localOptsForVar: ParseValueOptions = {
           ...opts,
           key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
           unit:
@@ -361,95 +362,133 @@ export class SCSSParser extends Parser {
 
         let cssValue: string | undefined;
         if (_.isPlainObject(valueVal) || Array.isArray(valueVal)) {
-          cssValue = this.parseMap(valueVal as any, localOpts, [...path, 'value']);
+          cssValue = this.parseMap(valueVal as any, localOptsForVar, [...path, 'value']);
         } else {
-          cssValue = this.normalizeValue(valueVal, localOpts);
+          cssValue = this.normalizeValue(valueVal, localOptsForVar);
         }
 
         if (cssValue !== undefined && cssValue !== 'undefined') {
           const prev = this.collectedCssVars.get(varName);
           if (prev !== undefined && prev !== cssValue && this.tokensParser.opts.verbose) {
             console.warn(
-              `⚠️ CSS var conflict for "${varName}": "${prev}" -> "${cssValue}" (using ${
-                (this.tokensParser.opts.cssVarsPrefer ?? 'last') === 'last' ? 'last' : 'first'
-              })`,
+              `⚠️ CSS var conflict for "${varName}": "${prev}" -> "${cssValue}" (using ${(this.tokensParser.opts.cssVarsPrefer ?? 'last') === 'last' ? 'last' : 'first'})`,
             );
           }
-
           const prefer = this.tokensParser.opts.cssVarsPrefer ?? 'last';
-          if (prev === undefined || prefer === 'last') {
-            this.collectedCssVars.set(varName, cssValue);
-          }
+          if (prev === undefined || prefer === 'last') this.collectedCssVars.set(varName, cssValue);
         }
       }
 
-      // --- reflect original structure back to SCSS map ---
-      if (useReflect) {
-        const parts: string[] = [];
+      // Serializes arbitrary meta objects into nested SCSS maps.
+      const serializeMeta = (meta: any) =>
+        this.serializeMeta(meta, opts, [...path, serviceMode ? svc('meta') : 'meta']);
 
-        // value
-        if (valueVal !== undefined) {
-          if (_.isPlainObject(valueVal)) {
-            parts.push(`value: ${this.parseMap(valueVal as any, opts, [...path, 'value'])}`);
-          } else if (Array.isArray(valueVal)) {
-            parts.push(`value: ${this.parseList(valueVal as any[], opts)}`);
+      // Derives parse options for the token value while propagating type and unit.
+      const localOpts: ParseValueOptions = {
+        ...opts,
+        key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
+        unit:
+          this.tokensParser.hasTokenField(tokenObj, 'unit') && typeof unitVal === 'string'
+            ? (unitVal as string)
+            : opts.unit,
+        includeServiceFields: serviceMode,
+      };
+
+      // Serializes a token value into the service-field map structure ($value, $type, $unit).
+      const serializeServiceToken = (val: any, tVal: any, uVal: any, pth: string[]) => {
+        const normalized = this.normalizeValue(val, {
+          ...localOpts,
+          key: typeof tVal === 'string' ? tVal : localOpts.key,
+        });
+
+        let rendered = normalized;
+        if (String(tVal) === 'string') {
+          rendered = /^".*"$/.test(String(normalized))
+            ? String(normalized)
+            : `"${String(normalized)}"`;
+        }
+
+        const items: string[] = [`${svc('value')}: ${rendered}`];
+        if (tVal !== undefined) items.push(`${svc('type')}: "${this.normalizeValue(tVal, opts)}"`);
+        if (uVal !== undefined) items.push(`${svc('unit')}: "${this.normalizeValue(uVal, opts)}"`);
+        return `(\n  ${items.join(',\n  ')}\n)`;
+      };
+
+      // Recursively serializes respond trees with nested token support.
+      const serializeRespond = (resp: any, pth: string[]): string => {
+        if (!_.isPlainObject(resp)) return '()';
+        const entries: string[] = [];
+        for (const [rk, rv] of Object.entries(resp)) {
+          const key = opts.convertCase ? this.tokensParser.toKebabCase(rk) : rk;
+
+          if (_.isPlainObject(rv) && this.tokensParser.hasTokenField(rv, 'value')) {
+            const t = this.tokensParser.getTokenField(rv, 'type');
+            const u = this.tokensParser.getTokenField(rv, 'unit');
+            const v = this.tokensParser.getTokenField(rv, 'value');
+            entries.push(`${key}: ${serializeServiceToken(v, t, u, [...pth, key])}`);
+          } else if (_.isPlainObject(rv)) {
+            const innerParts: string[] = [];
+            for (const [ik, iv] of Object.entries(rv as Record<string, unknown>)) {
+              const ikb = opts.convertCase ? this.tokensParser.toKebabCase(ik) : ik;
+              if (_.isPlainObject(iv) && this.tokensParser.hasTokenField(iv, 'value')) {
+                const t = this.tokensParser.getTokenField(iv, 'type');
+                const u = this.tokensParser.getTokenField(iv, 'unit');
+                const v = this.tokensParser.getTokenField(iv, 'value');
+                innerParts.push(`${ikb}: ${serializeServiceToken(v, t, u, [...pth, key, ikb])}`);
+              } else {
+                const sub = serializeRespond(iv, [...pth, key, ikb]);
+                innerParts.push(`${ikb}: ${sub}`);
+              }
+            }
+            entries.push(`${key}: (\n  ${innerParts.join(',\n  ')}\n)`);
           } else {
-            const localOpts: ParseValueOptions = {
-              ...opts,
-              key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
-              unit:
-                this.tokensParser.hasTokenField(tokenObj, 'unit') && typeof unitVal === 'string'
-                  ? (unitVal as string)
-                  : opts.unit,
-            };
-            parts.push(`value: ${this.normalizeValue(valueVal, localOpts)}`);
+            const prim = this.normalizeValue(rv, localOpts);
+            const val = String(prim);
+            entries.push(`${key}: ${/^".*"$/.test(val) ? val : `"${val}"`}`);
           }
         }
+        return `(\n  ${entries.join(',\n  ')}\n)`;
+      };
 
-        // type / unit are scalar fields (if present)
-        if (typeVal !== undefined) {
-          let parsed = this.normalizeValue(typeVal, opts);
-          parts.push(`type: "${parsed}"`);
-        }
-        if (unitVal !== undefined) {
-          let parsed = this.normalizeValue(unitVal, opts);
-          parts.push(`unit: "${parsed}"`);
-        }
+      // Service mode emits $-prefixed fields.
+      if (serviceMode) {
+        const parts: string[] = [];
 
-        // description: include only if it is NOT an object
-        if (
-          (tokenObj as any).description !== undefined &&
-          !_.isPlainObject((tokenObj as any).description)
-        ) {
-          let parsed = this.normalizeValue((tokenObj as any).description, opts);
-          parts.push(`description: "${parsed}"`);
+        if (valueVal !== undefined) {
+          let out = this.normalizeValue(valueVal, localOpts);
+          if (String(typeVal) === 'string') {
+            out = /^".*"$/.test(String(out)) ? String(out) : `"${String(out)}"`;
+          }
+          parts.push(`${svc('value')}: ${out}`);
         }
+        if (typeVal !== undefined)
+          parts.push(`${svc('type')}: "${this.normalizeValue(typeVal, opts)}"`);
+        if (unitVal !== undefined)
+          parts.push(`${svc('unit')}: "${this.normalizeValue(unitVal, opts)}"`);
+        if (metaVal !== undefined) parts.push(`${svc('meta')}: ${serializeMeta(metaVal)}`);
+        if (respondVal !== undefined)
+          parts.push(
+            `${svc('respond')}: ${serializeRespond(respondVal, [...path, svc('respond')])}`,
+          );
 
-        // meta: serialize explicitly
-        if (metaVal !== undefined) {
-          const serializedMeta = this.serializeMeta(metaVal, opts, [...path, 'meta']);
-          parts.push(`meta: ${serializedMeta}`);
-        }
-
-        // extra keys: exclude token fields (both regular and $-aliases)
+        // Includes additional non-service keys for completeness.
         const excluded = new Set([
           'value',
           'type',
           'unit',
           'meta',
+          'respond',
           '$value',
           '$type',
           '$unit',
           '$meta',
+          '$respond',
         ]);
         const extraKeys = keys.filter((k) => {
           if (excluded.has(k)) return false;
-          if (k === 'description') {
-            return _.isPlainObject((map as IMap)[k]);
-          }
+          if (k === 'description') return _.isPlainObject((map as IMap)[k]);
           return true;
         });
-
         for (const extraKey of extraKeys) {
           const kebabKey = opts.convertCase ? this.tokensParser.toKebabCase(extraKey) : extraKey;
           const value = this.parseMap((map as IMap)[extraKey] as Value<object>, opts, [
@@ -460,66 +499,83 @@ export class SCSSParser extends Parser {
         }
 
         return `(\n  ${parts.join(',\n  ')}\n)`;
-      } else {
-        // not reflecting original structure
-        if (valueVal === undefined) {
-          // container of nested tokens
-          const nestedParts: string[] = [];
-          const excluded = new Set(['type', 'unit', 'meta', '$type', '$unit', '$meta']);
-          const subKeys = keys.filter((k) => {
-            if (excluded.has(k)) return false;
-            if (k === 'description') {
-              return _.isPlainObject((map as IMap)[k]);
-            }
-            return true;
-          });
+      }
 
-          for (const subKey of subKeys) {
-            const kebabKey = opts.convertCase ? this.tokensParser.toKebabCase(subKey) : subKey;
-            const value = this.parseMap((map as IMap)[subKey] as any, opts, [...path, kebabKey]);
-            nestedParts.push(`${kebabKey}: ${value}`);
-          }
+      // Reflect mode emits standard token fields.
+      const parts: string[] = [];
 
-          // include meta (without meta.description) if present (either meta or $meta)
-          const rawMeta = this.tokensParser.getTokenField(map, 'meta');
-          if (rawMeta !== undefined && !subKeys.includes('meta')) {
-            const serializedMeta = this.serializeMeta(rawMeta, opts, [...path, 'meta']);
-            nestedParts.push(`meta: ${serializedMeta}`);
-          }
-
-          return `(\n  ${nestedParts.join(',\n  ')}\n)`;
-        }
-
-        // token has a value -> return final normalized value
-        const localOpts: ParseValueOptions = {
-          ...opts,
-          key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
-          unit:
-            this.tokensParser.hasTokenField(tokenObj, 'unit') && typeof unitVal === 'string'
-              ? (unitVal as string)
-              : opts.unit,
-        };
-
+      // Writes the token value.
+      if (valueVal !== undefined) {
         if (_.isPlainObject(valueVal)) {
-          return this.parseMap(valueVal as any, localOpts, [...path, 'value']);
+          parts.push(`value: ${this.parseMap(valueVal as any, opts, [...path, 'value'])}`);
         } else if (Array.isArray(valueVal)) {
-          return this.parseList(valueVal as any[], localOpts);
+          parts.push(`value: ${this.parseList(valueVal as any[], opts)}`);
         } else {
-          return this.normalizeValue(valueVal, localOpts);
+          parts.push(
+            `value: ${this.normalizeValue(valueVal, {
+              ...opts,
+              key: typeof typeVal === 'string' ? (typeVal as string) : opts.key,
+              unit:
+                this.tokensParser.hasTokenField(tokenObj, 'unit') && typeof unitVal === 'string'
+                  ? (unitVal as string)
+                  : opts.unit,
+            })}`,
+          );
         }
       }
+
+      // Writes scalar metadata fields such as type, unit, and description.
+      if (typeVal !== undefined) parts.push(`type: "${this.normalizeValue(typeVal, opts)}"`);
+      if (unitVal !== undefined) parts.push(`unit: "${this.normalizeValue(unitVal, opts)}"`);
+      if (
+        (tokenObj as any).description !== undefined &&
+        !_.isPlainObject((tokenObj as any).description)
+      ) {
+        const parsed = this.normalizeValue((tokenObj as any).description, opts);
+        parts.push(`description: "${parsed}"`);
+      }
+
+      // Serializes meta information.
+      if (metaVal !== undefined) parts.push(`meta: ${serializeMeta(metaVal)}`);
+
+      // Copies additional keys while skipping service fields; respond remains excluded in this mode.
+      const excluded = new Set([
+        'value',
+        'type',
+        'unit',
+        'meta',
+        'respond',
+        '$value',
+        '$type',
+        '$unit',
+        '$meta',
+        '$respond',
+      ]);
+      const extraKeys = keys.filter((k) => {
+        if (excluded.has(k)) return false;
+        if (k === 'description') return _.isPlainObject((map as IMap)[k]);
+        return true;
+      });
+      for (const extraKey of extraKeys) {
+        const kebabKey = opts.convertCase ? this.tokensParser.toKebabCase(extraKey) : extraKey;
+        const value = this.parseMap((map as IMap)[extraKey] as Value<object>, opts, [
+          ...path,
+          kebabKey,
+        ]);
+        parts.push(`${kebabKey}: ${value}`);
+      }
+
+      return `(\n  ${parts.join(',\n  ')}\n)`;
     }
 
-    // plain object (not a token)
+    // Recurses into plain objects and returns an SCSS map representation.
     const nestedParts: string[] = [];
     for (const [k, v] of Object.entries(map as Record<string, any>)) {
       if (!this.tokensParser.isKeyValidated(k)) continue;
       const kebabKey = opts.convertCase ? this.tokensParser.toKebabCase(k) : k;
 
-      // remove description ONLY inside meta
-      if (k === 'description' && path[path.length - 1] === 'meta') {
-        continue;
-      }
+      // Strips description only inside meta blocks.
+      if (k === 'description' && path[path.length - 1] === 'meta') continue;
 
       const value = this.parseMap(v as any, opts, [...path, kebabKey]);
       nestedParts.push(`${kebabKey}: ${value}`);
@@ -543,7 +599,6 @@ export class TokensParser {
   opts: TokensParserOptions;
   defaultParseOptions: ParseValueOptions;
   defaultMapOptions: ParseValueOptions;
-  defaultVarsOptions: ParseValueOptions;
   fileCache: Record<string, any> = {};
 
   constructor(opts: TokensParserOptions) {
@@ -556,9 +611,11 @@ export class TokensParser {
       mapOptions: {
         convertCase: opts.mapOptions?.convertCase ?? false,
         includeFileName: opts.mapOptions?.includeFileName ?? true,
-        convertToCSSVariables: opts.mapOptions?.convertToCSSVariables ?? false, // Legacy
-        includeFileNameToCSSVariables: opts.mapOptions?.includeFileNameToCSSVariables ?? false, // Legacy
-        excludeCSSVariables: opts.mapOptions?.excludeCSSVariables ?? [], // Legacy
+        convertToCSSVariables: opts.mapOptions?.convertToCSSVariables ?? false, // Legacy fallback for older builds.
+        includeFileNameToCSSVariables: opts.mapOptions?.includeFileNameToCSSVariables ?? false, // Legacy fallback for older builds.
+        excludeCSSVariables: opts.mapOptions?.excludeCSSVariables ?? [], // Legacy fallback for older builds.
+        includeServiceFields: opts.mapOptions?.includeServiceFields ?? false,
+        includeSymbolsInServiceFields: opts.mapOptions?.includeSymbolsInServiceFields ?? false,
       },
 
       cssVarOptions: {
@@ -599,11 +656,22 @@ export class TokensParser {
       ...this.defaultParseOptions,
       ...opts.mapOptions,
     };
+  }
 
-    this.defaultVarsOptions = {
-      ...this.defaultParseOptions,
-      ...opts.varsOptions,
-    };
+  /* * * Universal getters for variable fields with $-aliasa support * * */
+
+  public hasField(obj: any, name: string): boolean {
+    if (obj == null) return false;
+    return (
+      Object.prototype.hasOwnProperty.call(obj, name) ||
+      Object.prototype.hasOwnProperty.call(obj, `$${name}`)
+    );
+  }
+  public getField<T = any>(obj: any, name: string): T | undefined {
+    if (obj == null) return undefined;
+    if (Object.prototype.hasOwnProperty.call(obj, name)) return obj[name] as T;
+    if (Object.prototype.hasOwnProperty.call(obj, `$${name}`)) return obj[`$${name}`] as T;
+    return undefined;
   }
 
   /* * * Unified accessors for alt keys * * */
@@ -708,12 +776,12 @@ export class TokensParser {
 
     const clamp = (n: number, min = 0, max = 1) => Math.min(max, Math.max(min, n));
 
-    // helpers to convert Color -> OK* numbers
+    // Prepares helpers to convert a Color instance into OK* values.
     const rgbObj = () => c.rgb().object();
     const _okFromColor = () => {
       const { r, g, b } = rgbObj();
-      const oklab = this.rgbToOKLab([r, g, b]); // [0..255] -> OKLab
-      const oklch = this.oklabToOklch(oklab); // -> OKLCH
+      const oklab = this.rgbToOKLab([r, g, b]); // Converts [0..255] RGB values into OKLab.
+      const oklch = this.oklabToOklch(oklab); // Converts OKLab values into OKLCH.
       return { oklab, oklch };
     };
 
@@ -802,7 +870,7 @@ export class TokensParser {
 
   /* * * Perceptual color math (OKLab/OKLCH) * * */
 
-  // ---- low-level numeric helpers
+  // Low-level numeric helpers.
   private _clamp01(x: number) {
     return Math.max(0, Math.min(1, x));
   }
@@ -819,7 +887,7 @@ export class TokensParser {
     return ((a % n) + n) % n;
   }
 
-  // ---- sRGB <-> linear
+  // sRGB and linear color space conversions.
   private _srgbToLinear(u: number) {
     const x = u / 255;
     return x <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
@@ -829,7 +897,7 @@ export class TokensParser {
     return x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055;
   }
 
-  // ---- sRGB<->OKLab based on Björn Ottosson's reference implementation
+  // sRGB and OKLab conversions based on Björn Ottosson's reference implementation.
   private rgbToOKLab(rgb255: [number, number, number]): [number, number, number] {
     const [R8, G8, B8] = rgb255;
     const r = this._srgbToLinear(R8);
@@ -873,7 +941,7 @@ export class TokensParser {
     return Math.max(0, Math.min(255, v | 0));
   }
 
-  // ---- OKLab <-> OKLCH
+  // OKLab and OKLCH conversion helpers.
   private oklabToOklch([L, A, B]: [number, number, number]): [number, number, number] {
     const C = Math.hypot(A, B);
     const H = this._mod(this._deg(Math.atan2(B, A)), 360);
@@ -885,14 +953,14 @@ export class TokensParser {
     return [L, a, b];
   }
 
-  // ---- OKLCH mix (shortest hue path)
+  // Blends OKLCH colors along the shortest hue path.
   private mixOKLCH(aHex: string, bHex: string, t: number): string {
     const A = this.colorToOklch(aHex);
     const B = this.colorToOklch(bHex);
     const [La, Ca, Ha] = A;
     const [Lb, Cb, Hb] = B;
 
-    // shortest-arc hue interpolation
+    // Ensures shortest-arc hue interpolation.
     let dH = Hb - Ha;
     if (dH > 180) dH -= 360;
     if (dH < -180) dH += 360;
@@ -912,17 +980,17 @@ export class TokensParser {
     return this.oklabToOklch(this.rgbToOKLab([r, g, b]));
   }
 
-  // ---- relative L-shift in OKLCH (darken/lighten)
+  // Adjusts OKLCH lightness by a relative delta.
   private relShiftLOKLCH(colorStr: string, deltaL: number): string {
     const [L, C, H] = this.colorToOklch(colorStr);
-    const L2 = this._clamp01(L - deltaL); // note: darken -> minus; lighten -> pass negative delta
+    const L2 = this._clamp01(L - deltaL); // Darkening subtracts the delta; pass a negative delta to lighten.
     const rgb = this.oklabToRgb(this.oklchToOklab([L2, C, H]));
     return Color.rgb(rgb[0], rgb[1], rgb[2]).hex().toLowerCase();
   }
 
-  // ---- parsing oklch()/oklab() syntax to sRGB
+  // Parses oklch()/oklab() literals and returns sRGB hex values.
   private parseOKStringToHex(raw: string): string | null {
-    // oklch(L C H [/ A])  OR  oklab(L A B [/ A])
+    // Accepts oklch(L C H [/ A]) or oklab(L A B [/ A]) syntaxes.
     const s = raw.trim().toLowerCase();
     const okLCH = /^oklch\(\s*([0-9.]+)\s+([0-9.]+)\s+([\-0-9.]+)(?:\s*\/\s*([0-9.]+))?\s*\)$/;
     const okLAB = /^oklab\(\s*([0-9.]+)\s+([\-0-9.]+)\s+([\-0-9.]+)(?:\s*\/\s*([0-9.]+))?\s*\)$/;
@@ -950,7 +1018,7 @@ export class TokensParser {
     return null;
   }
 
-  // ---- WCAG contrast (relative luminance in sRGB)
+  // Computes relative luminance in sRGB for WCAG contrast.
   private _relLuminance(rgb255: [number, number, number]) {
     const [r8, g8, b8] = rgb255;
     const rl = this._srgbToLinear(r8);
@@ -970,13 +1038,13 @@ export class TokensParser {
     return (hi + 0.05) / (lo + 0.05);
   }
 
-  // Pick readable: choose fg1 or fg2 by target contrast; fallback auto-adjust L in OKLCH
+  // Picks the most readable foreground color and optionally adjusts lightness in OKLCH.
   public pickReadable(fg1: string, fg2: string, bg: string, target = 4.5): string {
     if (this.contrastRatio(fg1, bg) >= target) return fg1;
     if (this.contrastRatio(fg2, bg) >= target) return fg2;
-    // try auto-adjust fg1 lightness slightly (±0.12)
+    // Attempts to adjust the first foreground lightness slightly (±0.12).
     const [L, C, H] = this.colorToOklch(fg1);
-    // choose direction (towards more contrast)
+    // Chooses the direction that yields higher contrast.
     const up = this.contrastRatio(this.oklchToHex([this._clamp01(L + 0.12), C, H]), bg);
     const dn = this.contrastRatio(this.oklchToHex([this._clamp01(L - 0.12), C, H]), bg);
     const dir = up >= dn ? +1 : -1;
@@ -1009,14 +1077,14 @@ export class TokensParser {
   private evaluateColorExpression(expr: string): ReturnType<typeof Color> | null {
     let s = expr.trim();
 
-    // Plain color?
+    // Tries to interpret the expression as a plain color.
     const plain = this.tryToColor(s);
     if (plain) return plain;
 
-    // Function call?
+    // Attempts to interpret the expression as a function call.
     const fnMatch = /^([a-zA-Z_][a-zA-Z0-9_]*)\((.*)\)$/.exec(s);
     if (!fnMatch) {
-      // allow raw oklch()/oklab() literals
+      // Allows raw oklch()/oklab() literals.
       const okHex = this.parseOKStringToHex(s);
       if (okHex) return this.tryToColor(okHex);
       return null;
@@ -1025,7 +1093,7 @@ export class TokensParser {
     const fn = fnMatch[1].toLowerCase();
     const argsStr = fnMatch[2];
 
-    // Split args by commas while respecting nested parentheses
+    // Splits arguments by commas while respecting nested parentheses.
     const args: string[] = [];
     let buf = '';
     let depth = 0;
@@ -1047,7 +1115,7 @@ export class TokensParser {
         ? this.parseNestedValue(arg, this.defaultParseOptions)
         : arg;
 
-      // allow oklch()/oklab() literal
+      // Allows raw oklch()/oklab() literals.
       const okHex = this.parseOKStringToHex(String(resolved));
       if (okHex) return this.tryToColor(okHex);
       return this.tryToColor(String(resolved).trim());
@@ -1089,18 +1157,18 @@ export class TokensParser {
         break;
       }
       case 'lightness': {
-        // lightness(color, amount)
-        // amount > 0 -> lighten(amount), amount < 0 -> darken(|amount|)
+        // Handles lightness(color, amount).
+        // Positive amounts lighten and negative amounts darken.
         if (args.length !== 2) return null;
 
         const base = resolveMaybeFunction(args[0]);
         if (!base) return null;
 
-        // supports "0.1" or "10%" etc.
+        // Supports numeric or percentage strings such as "0.1" or "10%".
         const amt = this.parseAmount(args[1]);
         if (amt === 0) return base;
 
-        // use Color.js lighten/darken (HSL-based), to keep parity with existing funcs
+        // Uses Color.js lighten/darken (HSL-based) to maintain parity with existing functions.
         return amt > 0 ? base.lighten(amt) : base.darken(-amt);
       }
       case 'saturate': {
@@ -1122,30 +1190,30 @@ export class TokensParser {
 
       /* * * [ADDED OK*] new perceptual functions * * */
       case 'oklch': {
-        // oklch(L C H [/ A])
+        // Handles oklch(L C H [/ A]).
         if (args.length < 3 || args.length > 4) return null;
         const raw = `oklch(${args.join(',')})`.replace(/,/g, ' ');
         const hex = this.parseOKStringToHex(raw);
         return hex ? this.tryToColor(hex) : null;
       }
       case 'oklab': {
-        // oklab(L A B [/ A])
+        // Handles oklab(L A B [/ A]).
         if (args.length < 3 || args.length > 4) return null;
         const raw = `oklab(${args.join(',')})`.replace(/,/g, ' ');
         const hex = this.parseOKStringToHex(raw);
         return hex ? this.tryToColor(hex) : null;
       }
       case 'rel_darken_oklch': {
-        // rel_darken_oklch(color, amount)
+        // Handles rel_darken_oklch(color, amount).
         if (args.length !== 2) return null;
         const base = resolveMaybeFunction(args[0]);
         if (!base) return null;
-        const amt = this.parseAmount(args[1]); // 0..1
-        const hex = this.relShiftLOKLCH(base.hex().toString(), +amt); // minus inside
+        const amt = this.parseAmount(args[1]); // Normalizes values to the 0..1 range.
+        const hex = this.relShiftLOKLCH(base.hex().toString(), +amt); // Applies subtraction internally.
         return this.tryToColor(hex);
       }
       case 'rel_lighten_oklch': {
-        // rel_lighten_oklch(color, amount) -> negative delta
+        // Handles rel_lighten_oklch(color, amount) by negating the delta.
         if (args.length !== 2) return null;
         const base = resolveMaybeFunction(args[0]);
         if (!base) return null;
@@ -1154,14 +1222,14 @@ export class TokensParser {
         return this.tryToColor(hex);
       }
       case 'shift_oklch': {
-        // shift_oklch(color, dL)
-        // dL < 0 → darker (lower L), dL > 0 → lighter (higher L)
+        // Handles shift_oklch(color, dL).
+        // Negative dL values darken and positive values lighten.
         if (args.length !== 2) return null;
 
         const base = resolveMaybeFunction(args[0]);
         if (!base) return null;
 
-        // accepts numbers or percents, e.g. -0.05 or -5%
+        // Accepts numeric or percentage offsets such as -0.05 or -5%.
         const dL = this.parseAmount(args[1]);
 
         const [L, C, H] = this.colorToOklch(base.hex().toString());
@@ -1171,12 +1239,12 @@ export class TokensParser {
         return this.tryToColor(hex);
       }
       case 'mix_oklch': {
-        // mix_oklch(colorA, colorB, t)
+        // Handles mix_oklch(colorA, colorB, t).
         if (args.length !== 3) return null;
         const A = resolveMaybeFunction(args[0]);
         const B = resolveMaybeFunction(args[1]);
         if (!A || !B) return null;
-        const t = this.parseAmount(args[2]); // 0..1 or % supported
+        const t = this.parseAmount(args[2]); // Supports values between 0 and 1 or percentage strings.
         const hex = this.mixOKLCH(
           A.hex().toString(),
           B.hex().toString(),
@@ -1185,7 +1253,7 @@ export class TokensParser {
         return this.tryToColor(hex);
       }
       case 'on_contrast': {
-        // on_contrast(fg1, fg2, bg[, target])
+        // Handles on_contrast(fg1, fg2, bg[, target]).
         if (args.length < 3 || args.length > 4) return null;
         const FG1 = resolveMaybeFunction(args[0]);
         if (!FG1) return null;
@@ -1216,24 +1284,24 @@ export class TokensParser {
   public tryParseColor(value: string, unitForFormat?: string): string | null {
     const raw = value.trim();
 
-    // allow raw oklch()/oklab() literals directly
+    // Allows raw oklch()/oklab() literals directly.
     const okHex = this.parseOKStringToHex(raw);
     if (okHex) return this.formatColor(Color(okHex), unitForFormat);
 
-    // 1) Resolve a leading single {ref}, if any
+    // 1. Resolve a leading single {ref}, if any.
     const resolved = raw.startsWith('{')
       ? String(this.parseNestedValue(raw, this.defaultParseOptions))
       : raw;
 
-    // 2) Try parsing as a direct color
+    // 2. Try parsing as a direct color.
     const direct = this.tryToColor(resolved);
     if (direct) return this.formatColor(direct, unitForFormat);
 
-    // 3) Try parsing as a color expression (returns Color), then format
+    // 3. Try parsing as a color expression (returns Color), then format.
     const exprColor = this.evaluateColorExpression(resolved);
     if (exprColor) return this.formatColor(exprColor, unitForFormat);
 
-    // 4) If there are embedded refs anywhere in the string, resolve them and try again
+    // 4. If there are embedded references, resolve them and try again.
     if (/\{[^}]+\}/.test(resolved)) {
       const withRefsResolved = resolved.replace(/\{[^}]+\}/g, (m) =>
         String(this.parseNestedValue(m, this.defaultParseOptions)),
@@ -1267,7 +1335,7 @@ export class TokensParser {
       return String(value);
     }
 
-    // nested token reference like "{file.key}"
+    // Handles nested token references such as "{file.key}".
     if (_.isString(value) && value.startsWith('{')) {
       const before = value;
       const nested = this.parseNestedValue(value, opts);
@@ -1287,7 +1355,7 @@ export class TokensParser {
     }
 
     if (typeof value === 'string') {
-      // try color first
+      // Attempts to parse a color first.
       const colorMaybe = this.tryParseColor(value, opts.unit);
       if (colorMaybe) return colorMaybe;
 
@@ -1326,7 +1394,7 @@ export class TokensParser {
         );
       }
 
-      // Delegate plain-object parsing to active parser implementation
+      // Delegates plain-object parsing to the active parser implementation.
       return (this.parser as Parser).parseMap(value as IMap, opts);
     }
 
@@ -1415,7 +1483,7 @@ export class TokensParser {
             fileFound = true;
             break;
           } catch {
-            // try next path
+            // Try the next path.
           }
         }
       }
@@ -1469,40 +1537,6 @@ export class TokensParser {
     return result;
   }
 
-  flattenToCSSVariables(
-    obj: any,
-    path: string[] = [],
-    result: string[] = [],
-    opts?: ParseValueOptions,
-  ): string[] {
-    const useOpts = opts ?? this.defaultVarsOptions;
-
-    if (_.isPlainObject(obj) && this.hasTokenField(obj, 'value')) {
-      const flatPath =
-        useOpts.includeFileName && useOpts.fileName
-          ? [useOpts.convertCase ? this.toKebabCase(useOpts.fileName!) : useOpts.fileName!, ...path]
-          : path;
-
-      const cssVarName = `--${flatPath.join('-')}`;
-      const rawVal = this.getTokenField(obj, 'value');
-      const finalValue =
-        rawVal !== undefined ? (this.parser.parseValue as any)(rawVal, useOpts) : 'initial';
-
-      result.push(`${cssVarName}: ${finalValue};`);
-      return result;
-    }
-
-    for (const [key, value] of Object.entries(obj)) {
-      const newKey = useOpts.convertCase ? this.toKebabCase(key) : key;
-      const newPath = [...path, newKey];
-      if (_.isPlainObject(value)) {
-        this.flattenToCSSVariables(value, newPath, result, useOpts);
-      }
-    }
-
-    return result;
-  }
-
   /* * * Theming * * */
 
   async writeCSSFile(filePath: string, cssContent: string) {
@@ -1544,7 +1578,7 @@ export class TokensParser {
   }
 
   generateThemesBlockFromObject(themes: Record<string, any>, includeRequired: boolean): string {
-    // helper: serialize a single theme object into array of css var lines
+    // Serializes a single theme object into an array of CSS variable declarations.
     const collectVarsFromTheme = (themeObj: any, prefixPath: string[] = []) => {
       const vars: string[] = [];
 
@@ -1557,7 +1591,7 @@ export class TokensParser {
             const cssVarName = `--${[...prefixPath, ...path].join('-')}`;
             const rawVal = this.getTokenField(obj, 'value');
             vars.push(
-              `${cssVarName}: ${(this.parser.parseValue as any)(rawVal, this.defaultVarsOptions)}`,
+              `${cssVarName}: ${(this.parser.parseValue as any)(rawVal, this.defaultParseOptions)}`,
             );
           }
           return;
@@ -1576,30 +1610,27 @@ export class TokensParser {
 
     let css = '';
 
-    // unwrap wrapper if needed
-    const rootKeys = Object.keys(themes);
+    // Unwraps a single-level wrapper when needed while preserving the original parameter.
+    let localThemes: Record<string, any> = themes;
+    const rootKeys = Object.keys(localThemes);
     if (rootKeys.length === 1) {
       const onlyKey = rootKeys[0];
-      const onlyVal = themes[onlyKey];
+      const onlyVal = localThemes[onlyKey];
       if (
         _.isPlainObject(onlyVal) &&
         Object.keys(onlyVal).length > 0 &&
         Object.values(onlyVal).every((v) => _.isPlainObject(v))
       ) {
-        themes = onlyVal as Record<string, any>;
+        localThemes = onlyVal as Record<string, any>;
       }
     }
 
-    for (const [rawThemeName, themeObj] of Object.entries(themes)) {
+    for (const [rawThemeName, themeObj] of Object.entries(localThemes)) {
       if (!_.isPlainObject(themeObj)) continue;
 
       const themeName = this.toKebabCase(rawThemeName);
-
       const vars = collectVarsFromTheme(themeObj);
-
-      if (vars.length === 0) {
-        continue;
-      }
+      if (vars.length === 0) continue;
 
       css += `\n[data-theme="${themeName}"] {\n  ${vars.join('\n  ')}\n}\n`;
     }
@@ -1620,7 +1651,6 @@ export class TokensParser {
       comment = '',
       options,
       mapOptions,
-      varsOptions,
     } = { ...(opts || {}) } as JSONToSCSSOptions;
 
     const baseOptions: ParseValueOptions = {
@@ -1632,11 +1662,6 @@ export class TokensParser {
     const parseMapOptions: ParseValueOptions = {
       ...baseOptions,
       ...(mapOptions || {}),
-    };
-
-    const parseVarsOptions: ParseValueOptions = {
-      ...baseOptions,
-      ...(varsOptions || {}),
     };
 
     const outputPath = `${outputDir}/${outputFileName}`;
@@ -1665,18 +1690,18 @@ export class TokensParser {
           ? { [topLevelKey]: json }
           : json;
 
-      // Clear previously collected CSS variables (avoid duplicates across files)
-      if (this.parser instanceof SCSSParser) {
-        this.parser.clearCssVars();
-      }
+      const scssParser = this.parser instanceof SCSSParser ? this.parser : null;
 
-      // Generate SCSS maps
+      // Clears collected CSS variables to avoid duplicates across files.
+      scssParser?.clearCssVars();
+
+      // Generates SCSS maps.
       for (const [k, v] of Object.entries(rootMap)) {
         const kebabKey = parseMapOptions.convertCase ? this.toKebabCase(k) : k;
         const keyLine = `$${kebabKey}:`;
         const map = v as IMap;
 
-        // IMPORTANT: pass initial path = [kebabKey] to preserve the prefix
+        // Preserves prefixes by seeding the initial path with the current key.
         const initialPath =
           kebabKey && kebabKey.length > 0
             ? [kebabKey]
@@ -1688,13 +1713,14 @@ export class TokensParser {
                 ]
               : [];
 
-        const str = `${keyLine}${(this.parser as SCSSParser).parseMap(map, parseMapOptions, initialPath)};`;
+        const mapStr = this.parser.parseMap(map, parseMapOptions, initialPath);
+        const str = `${keyLine}${mapStr};`;
         content += `${str}\n`;
       }
 
-      // CSS vars collected during map parsing
-      if (this.parser instanceof SCSSParser) {
-        const cssVarsBlock = this.parser.getCssVarsBlock();
+      // Appends CSS variables collected during map parsing.
+      if (scssParser) {
+        const cssVarsBlock = scssParser.getCssVarsBlock();
         if (cssVarsBlock) {
           const cssOpts = this.opts.cssVarOptions ?? {};
           const useSeparate = cssOpts.useSeparateFile ?? false;
@@ -1717,20 +1743,7 @@ export class TokensParser {
         }
       }
 
-      // Legacy: flatten all tokens to CSS vars (if requested)
-      if (parseVarsOptions.convertToCSSVariables) {
-        const flatVars = this.flattenToCSSVariables(json, [], [], parseVarsOptions);
-        const cssContent = `:root {\n  ${flatVars.join('\n  ')}\n}`;
-        if (this.opts.cssVarsOutDir) {
-          const cssOutPath = `${this.opts.cssVarsOutDir}/${parseVarsOptions.fileName}.css`;
-          await fs.writeFile(cssOutPath, cssContent);
-          console.log(`CSS variables written to ${cssOutPath}`);
-        } else {
-          content += `\n${cssContent}\n`;
-        }
-      }
-
-      // write file
+      // Writes the SCSS output file.
       await fs.writeFile(outputPath, content);
       console.log(`${name} parsed to ${outputPath}`);
     } catch (err) {
@@ -1744,10 +1757,10 @@ export class TokensParser {
       const fileNames = await fs.readdir(source);
       for (const fileName of fileNames) {
         if (/^(?=.).*.json$/.test(fileName)) {
-          // resolve references and write resolved json into build dir
+          // Resolves references and writes the resolved JSON into the build directory.
           await this.resolveAndSaveJson(`${source}/${fileName}`, fileName);
 
-          // generate SCSS from resolved json in build dir
+          // Generates SCSS from the resolved JSON within the build directory.
           if (!this.opts.build) continue;
           await this.JSONToSCSS(
             `${this.opts.build}/${fileName}`,
@@ -1759,7 +1772,6 @@ export class TokensParser {
                 fileName: fileName.replace(/\.json$/, ''),
               },
               mapOptions: this.defaultMapOptions,
-              varsOptions: this.defaultVarsOptions,
               name: fileName.replace('.json', ''),
             },
           );
@@ -1847,7 +1859,7 @@ export class TokensParser {
             }
           }
 
-          // If resolved to a color expression or color string, normalize it using parent opts
+          // Normalizes resolved color expressions using the parent options.
           const colorMaybe = this.tryParseColor(String(result), opts.unit);
           return colorMaybe ?? result;
         }
@@ -1907,8 +1919,8 @@ export class TokensParser {
         .join('\n');
 
       const moduleBody = this.opts.isModulesMergedIntoEntry
-        ? moduleKeys.join(',\n  ') // 1) { baseColors, breakpoints, ... }
-        : moduleKeys.map((name) => `...${name}`).join(',\n  '); // 2) { ...baseColors, ...breakpoints, ... }
+        ? moduleKeys.join(',\n  ') // 1. { baseColors, breakpoints, ... }
+        : moduleKeys.map((name) => `...${name}`).join(',\n  '); // 2. { ...baseColors, ...breakpoints, ... }
 
       const content = `${imports}
 
@@ -1965,7 +1977,7 @@ export default module;
     const tryResolve = (currentParts: string[], currentDir: string): any => {
       if (currentParts.length === 0) return undefined;
 
-      // 1) Try "<currentDir>/<head>.json"
+      // 1. Try "<currentDir>/<head>.json".
       const head = currentParts[0];
       const filePath = nodePath.join(currentDir, `${head}.json`);
       if (this.isFileSync(filePath)) {
@@ -1974,18 +1986,18 @@ export default module;
           if (currentParts.length === 1) return content;
           return this.getNestedValue(content, currentParts.slice(1));
         } catch {
-          // ignore and continue
+          // Ignores parsing errors and continues.
         }
       }
 
-      // 2) Try as directory "<currentDir>/<head>/..."
+      // 2. Try "<currentDir>/<head>/..." as a directory.
       const dirPath = nodePath.join(currentDir, head);
       if (this.isDirSync(dirPath)) {
         const res = tryResolve(currentParts.slice(1), dirPath);
         if (res !== undefined) return res;
       }
 
-      // 3) Gradient search: join several segments into one file
+      // 3. Join several segments into one file during a gradient search.
       for (let i = currentParts.length; i > 0; i--) {
         const joined = currentParts.slice(0, i).join('/');
         const joinedFile = nodePath.join(currentDir, `${joined}.json`);
@@ -1994,7 +2006,7 @@ export default module;
             const content = JSON.parse(readFileSync(joinedFile, 'utf-8'));
             return this.getNestedValue(content, currentParts.slice(i));
           } catch {
-            // ignore and continue
+            // Ignores parsing errors and continues.
           }
         }
       }

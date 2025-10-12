@@ -59,6 +59,7 @@
   "scripts": {
     "lint": "eslint 'src/**/*.{ts,tsx,vue}'",
     "build": "vite build",
+    "build:analyze": "ANALYZE=1 vite build",
     "typecheck": "vue-tsc -p tsconfig.types.json --noEmit",
     "dev": "pnpm lint && vite",
     "dts:verify": "tsc --noEmit",

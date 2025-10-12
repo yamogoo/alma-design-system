@@ -58,8 +58,9 @@ Detailed architecture lives in:
 - Provides parsers/plugins for JSON, CSS variables, and SCSS maps.
 
 > Note on development:
-> The TokensParser module started as a hand-written prototype by Misha Grebennikov.
+> The TokensWorker module started as a hand-written prototype by Misha Grebennikov.
 > As the project matured, the workflow shifted toward architectural oversight and automated code generation, keeping the compiler aligned with the broader system design.
+> AI-assisted generation was limited to this compiler; every other package, component, and infrastructure layer in the monorepo is authored directly by Misha.
 
 ### `@alma/icons` (dedicated repository)
 
@@ -76,6 +77,9 @@ Detailed architecture lives in:
 - `log-server`: auxiliary service for telemetry experiments.
 
 These apps depend on the local packages via pnpm workspaces.
+
+> Files that include contributions generated or assisted by AI are explicitly annotated at the top with:
+> // Portions of this file were developed with the assistance of AI tools.
 
 ## Getting Started
 
@@ -114,8 +118,8 @@ pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 
 ## Optimization Highlights
 
-- Reduced JS bundle: 1+ MB → 259.59 KB (−76 %)
-- Reduced CSS bundle: 400 KB → 256.93 KB (20 KB gzip)
+- Reduced JS bundle: 1+ MB → 259.59 kB (gzip: 51.87 kB −76 %)
+- Reduced CSS bundle: 400 KB → 263.49 kB (gzip: 19.84 kB)
 - Improved dev-server startup: 50 s → 7 s (−86 %)
 - Built runtime token pipeline with a code-first single source of truth
 - Established deterministic theming across light/dark and five facets (variant/size/mode/tone/state)
@@ -135,9 +139,14 @@ This section documents experimental utilities and architectural ideas that were 
 
 ## Licensing
 
+Alma Design System is designed, architected, and developed by **Mikhail Grebennikov**.  
+Select compiler modules were implemented with AI assistance under direct human supervision to accelerate prototyping.  
+All conceptual, structural, and visual decisions are authored by Mikhail Grebennikov.  
+The resulting codebase is original work authored and owned by Mikhail Grebennikov under the MIT license.
+
 - Code: [MIT](./LICENSE)
 - Icons and creative assets: [CC BY-NC 4.0](https://github.com/yamogoo/alma-icons)
-- AlmaIcons © 2025 Misha Grebennikov — https://github.com/yamogoo
+- AlmaIcons © 2025 Misha Grebennikov — [https://github.com/yamogoo](https://github.com/yamogoo)
 
 ## Author
 

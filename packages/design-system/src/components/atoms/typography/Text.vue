@@ -62,7 +62,7 @@ $prefix: getPrefix($tokenName);
   @each $variant, $val in $map {
     &_variant-#{$variant} {
       @each $key, $value in $val {
-        $result: $value;
+        $result: get($value);
 
         @if $key == "font-size" {
           #{$key}: px2em($result);

@@ -1,9 +1,8 @@
-@use "sass:map";
-
 @use "../abstracts/config" as *;
 @use "../core/mixins/transition" as *;
+@use "../core/mixins/map-get" as *;
 
-$is-theme-transitions-enabled: map.get($config, is_theme_transitions_enabled);
+$is-theme-transitions-enabled: get($config, is-theme-transitions-enabled);
 
 %base-transition {
   @if ($is-theme-transitions-enabled) {

@@ -1,13 +1,10 @@
-// FigmaTokensParser.ts
-// Walks a source directory, transforms all .json files by expanding
-// padding shorthands (padding / $padding) into paddingTop/Right/Bottom/Left,
-// and writes results to outDir, preserving folder structure.
+// Portions of this file were developed with the assistance of AI tools.
 
 import fs from 'node:fs/promises';
 import fssync from 'node:fs';
 import path from 'node:path';
 
-/* -------------------- padding expansion core -------------------- */
+/* * * padding expansion core * * */
 
 type AnyObject = Record<string, any>;
 
@@ -32,13 +29,13 @@ export function expandBox(values: any[]): [any, any, any, any] {
   }
   if (len === 2) {
     const [v, h] = values;
-    return [v, h, v, h]; // vertical | horizontal
+    return [v, h, v, h];
   }
   if (len === 3) {
     const [t, h, b] = values;
-    return [t, h, b, h]; // top | horizontal | bottom
+    return [t, h, b, h];
   }
-  const [t, r, b, l] = values; // 4+
+  const [t, r, b, l] = values;
   return [t, r, b, l];
 }
 
@@ -113,7 +110,7 @@ export function expandPaddingInObject<T extends AnyObject>(input: T): T {
   return walk(root) as T;
 }
 
-/* -------------------- directory walker + IO -------------------- */
+/* * * directory walker + IO * * */
 
 export interface FigmaTokensParserOptions {
   source: string; // directory to read .json files from (recursive)

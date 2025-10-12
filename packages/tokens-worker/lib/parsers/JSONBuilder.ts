@@ -1,4 +1,4 @@
-// Portions of this file were developed with the assistance of AI tools (ChatGPT).
+// Portions of this file were developed with the assistance of AI tools.
 
 import fs from 'node:fs/promises';
 import path from 'node:path';

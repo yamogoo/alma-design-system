@@ -1,17 +1,15 @@
-@use "sass:map";
-
 @use "../../../abstracts/typography" as *;
-@use "../../../core/" as *;
+@use "../../../core/mixins/map-get" as *;
 
 // Generate typography extends:
 
-@mixin generateStyles($map: map.get($typography, "styles")) {
+@mixin generateStyles($map: get($typography, "styles")) {
   @each $k, $v in $map {
     $nestedMap: $v;
 
     &__#{$k} {
       @each $key, $value in $v {
-        $result: $value;
+        $result: get($value);
 
         @if $key ==
           "font-size" or
@@ -34,7 +32,7 @@
 }
 
 @mixin defineTypography($map: $display, $weight) {
-  $typo-verion: map.get($map, -#{$weight});
+  $typo-verion: get($map, -#{$weight});
 
   @each $key, $value in $typo-verion {
     #{$key}: $value;
