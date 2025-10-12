@@ -209,7 +209,7 @@ onBeforeUnmount(removeEventListeners);
       `${SLIDER_PREFIX}_${UIFACETS.TONE}-${tone}`,
       isDisabled
         ? `${SLIDER_PREFIX}_${UIFACETS.STATE}-${UISTATES.DISABLED}`
-        : `${SLIDER_PREFIX}_${UIFACETS.STATE}-${isHovered ? UISTATES.HOVERED : UISTATES.NORMAL}`,
+        : `${SLIDER_PREFIX}_${UIFACETS.STATE}-${isDragging ? UISTATES.PRESSED : isHovered ? UISTATES.HOVERED : UISTATES.NORMAL}`,
     ]"
     @pointerdown="onTrackPress"
   >
@@ -225,12 +225,7 @@ onBeforeUnmount(removeEventListeners);
           ref="knob"
           :class="`${SLIDER_PREFIX}__knob`"
           :style="{
-            position: 'absolute',
             left: 'calc(var(--p) * 100%)',
-            transform: 'translateX(-50%)',
-            touchAction: 'none',
-            cursor: 'grab',
-            zIndex: 1,
           }"
           role="slider"
           aria-orientation="horizontal"
@@ -311,6 +306,40 @@ $prefix: getPrefix($tokenName);
   }
 }
 
+@mixin defineStates($tokenName, $mode, $tone, $states) {
+  @each $state in $states {
+    &.#{$prefix}_state-#{$state} {
+      .#{$prefix}__track {
+        @include themify($themes) {
+          background: themed(
+            "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.track.background.#{$state}"
+          );
+        }
+      }
+
+      .#{$prefix}__range-track,
+      .#{$prefix}__track::before {
+        @include themify($themes) {
+          background: themed(
+            "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.range-track.background.#{$state}"
+          );
+        }
+      }
+
+      .#{$prefix}__knob {
+        @include themify($themes) {
+          background: themed(
+            "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.background.#{$state}"
+          );
+          border-color: themed(
+            "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.border-color.#{$state}"
+          );
+        }
+      }
+    }
+  }
+}
+
 @mixin defineThemes(
   $map: get($themes, "light.components.atoms.#{$tokenName}")
 ) {
@@ -331,95 +360,12 @@ $prefix: getPrefix($tokenName);
             }
           }
 
-          &.#{$prefix}_state-normal {
-            .#{$prefix}__track {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.track.background.normal"
-                );
-              }
-            }
-
-            .#{$prefix}__range-track,
-            .#{$prefix}__track::before {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.range-track.background.normal"
-                );
-              }
-            }
-
-            .#{$prefix}__knob {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.background.normal"
-                );
-                border-color: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.border-color.normal"
-                );
-              }
-            }
-          }
-
-          &.#{$prefix}_state-hovered {
-            .slider__track {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.track.background.hovered"
-                );
-              }
-            }
-
-            .#{$prefix}__range-track,
-            .#{$prefix}__track::before {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.range-track.background.hovered"
-                );
-              }
-            }
-
-            .#{$prefix}__knob {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.background.hovered"
-                );
-                border-color: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.border-color.hovered"
-                );
-              }
-            }
-          }
-
-          &.#{$prefix}_state-disabled {
-            .#{$prefix}__track {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.track.background.disabled"
-                );
-              }
-            }
-
-            .#{$prefix}__range-track,
-            .#{$prefix}__track::before {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.range-track.background.disabled"
-                );
-              }
-            }
-
-            .#{$prefix}__knob {
-              @include themify($themes) {
-                background: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.background.disabled"
-                );
-                border-color: themed(
-                  "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.knob.border-color.disabled"
-                );
-              }
-            }
-          }
+          @include defineStates(
+            $tokenName,
+            $mode,
+            $tone,
+            "normal" "hovered" "disabled" "pressed"
+          );
 
           &__label {
             @include themify($themes) {
@@ -457,6 +403,7 @@ $prefix: getPrefix($tokenName);
   }
 
   &__range-track {
+    box-sizing: border-box;
     position: absolute;
     left: 0;
     top: 0;
@@ -465,7 +412,6 @@ $prefix: getPrefix($tokenName);
     transform-origin: left center;
     transform: scaleX(var(--p));
     will-change: transform;
-    box-sizing: border-box;
     z-index: 0;
 
     &::before {
@@ -477,7 +423,25 @@ $prefix: getPrefix($tokenName);
     box-sizing: border-box;
     position: absolute;
     left: 0;
+    transform: translateX(-50%);
+    touch-action: none;
     will-change: transform;
+    z-index: 1;
+  }
+
+  &_state-normal,
+  &_state-hovered {
+    .#{$prefix}__track,
+    .#{$prefix}__knob {
+      cursor: grab;
+    }
+  }
+
+  &_state-pressed {
+    .#{$prefix}__track,
+    .#{$prefix}__knob {
+      cursor: grabbing;
+    }
   }
 }
 </style>
