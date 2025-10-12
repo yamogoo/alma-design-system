@@ -57,6 +57,12 @@ Detailed architecture lives in:
 - Processes token sources, resolves relational contracts, and emits consumable artifacts.
 - Provides parsers/plugins for JSON, CSS variables, and SCSS maps.
 
+### `@alma/icons` (external module)
+
+- Moved to a dedicated repository: [yamogoo/alma-icons](https://github.com/yamogoo/alma-icons)
+- Exposes animated, multi-weight SVG icons as a standalone package.
+- Integrated into the design system as a dependency for icon components and Storybook previews.
+
 ## Apps
 
 `apps/sparkpad` demonstrates integration of the design system through:
