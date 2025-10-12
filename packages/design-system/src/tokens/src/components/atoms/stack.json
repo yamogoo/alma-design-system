@@ -1,0 +1,30 @@
+{
+  "root": {
+    "padding": {
+      "$value": "{tokens.spacing.md.$value}",
+      "$type": "number",
+      "$unit": "px",
+      "$respond": {
+        "above": {
+          "lg": { "$value": "{tokens.spacing.lg.$value}" }
+        },
+        "at": {
+          "lg": {
+            "borderRadius": {
+              "$value": "{tokens.spacing.md.$value}",
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "md": {
+            "borderRadius": {
+              "$value": "{tokens.spacing.sm.$value}",
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,9 @@
 
 # Alma Design System Monorepo
 
+**Token-centric architecture.**  
+All design decisions, from colors and motion to component spacing and interaction states, originate from relational design tokens compiled into consumable JSON, CSS, and SCSS artifacts. Components are secondary consumers — they simply express token logic through UI.
+
 Code-first R&D space for UI systems: Vue components, design tokens, adapters, Storybook tooling, and consumer playground apps.
 
 – Live docs: https://alma-design-system.netlify.app
@@ -72,11 +75,13 @@ Prerequisites: Node 20+, pnpm 8+.
 git clone https://github.com/yamogoo/alma-design-system.git
 cd alma-design-system
 
-pnpm install:all     # install workspace dependencies
-pnpm prepare         # bootstrap generated assets (tokens, types)
+pnpm install:all          # install workspace dependencies
+pnpm prepare              # bootstrap generated assets (tokens, types)
 
-pnpm ds:build        # build @alma/design-system
-pnpm ds:docs:dev     # start Storybook (http://localhost:6006)
+pnpm ds:lint              # lint @alma/design-system
+pnpm ds:test:unit         # unit testing @alma/design-system
+pnpm ds:build             # build @alma/design-system
+pnpm ds:docs:dev          # start Storybook (http://localhost:6006)
 pnpm sparkpad:client:dev  # run Sparkpad client demo (http://localhost:5041)
 pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 ```
@@ -99,11 +104,24 @@ pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 
 ## Optimization Highlights
 
-- Reduced JS bundle: 1 MB → 211.77 KB (−76 %)
-- Reduced CSS bundle: 400 KB → 258.95 KB (22.25 KB gzip)
+- Reduced JS bundle: 1+ MB → 259.59 KB (−76 %)
+- Reduced CSS bundle: 400 KB → 256.93 KB (20 KB gzip)
 - Improved dev-server startup: 50 s → 7 s (−86 %)
 - Built runtime token pipeline with a code-first single source of truth
 - Established deterministic theming across light/dark and five facets (variant/size/mode/tone/state)
+
+### R&D Notes — Abandoned Experiments
+
+This section documents experimental utilities and architectural ideas that were tested but not adopted for production — along with decisions on reverted or refined implementations.
+
+- **(deprecated)** `stack.spacing-hybrid.core` — universal responsive spacing utility _(Oct 12 2025)_.  
+  Increased CSS size by +400 % (≈240 KB → 1 MB+) with negligible runtime benefit.  
+  Replaced by a token-driven preset model for better performance and maintainability.
+
+- **(reverted)** SCSS token map service fields (`$value`, `$type`, `$unit`, `$respond`) _(Oct 12 2025)_ —  
+  the explicit storage of these metadata fields in compiled maps was **restored** to enable a proper `$respond` getter (defaulting to `$value`).  
+  Backward compatibility was preserved: maps without service fields can still be read directly.  
+  The core `get` mixin was rewritten to handle both cases transparently.
 
 ## Licensing
 

@@ -130,10 +130,15 @@ export default () => {
       target: "es2019",
       emptyOutDir: true,
       outDir: "dist",
-      cssMinify: "lightningcss",
+      // cssMinify: "lightningcss",
     },
     css: {
-      transformer: "lightningcss",
+      // transformer: "lightningcss",
+      // lightningcss: {
+      //   drafts: {
+      //     customMedia: true,
+      //   },
+      // },
       modules: {
         generateScopedName: "[hash:base64:5]",
         scopeBehaviour: "local",

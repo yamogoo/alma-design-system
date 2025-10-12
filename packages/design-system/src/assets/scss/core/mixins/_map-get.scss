@@ -3,6 +3,8 @@
 @use "sass:string";
 @use "sass:meta";
 
+/* * * String Utils * * */
+
 @function str-split($string, $delimiter: ".") {
   $result: ();
   $current: "";
@@ -22,31 +24,129 @@
   @return list.append($result, $current);
 }
 
-@function get($map, $path) {
+/* * * MAP GETTER UTILITIES * * */
+
+//    -> renamed from old `get()`
+//    -> only retrieves the exact value by full path
+
+@function get-value($map, $path) {
   $keys: str-split($path, ".");
   $value: $map;
-  $traversed: ""; // accumulated path up to current parent
+  $traversed: "";
 
   @each $key in $keys {
     $parent: $value;
     $traversed-parent: $traversed;
 
-    // Verify current value is a map before accessing a child key
+    // Make sure current value is a map before accessing next key
     @if meta.type-of($parent) != "map" {
-      @error "utils.get(): Cannot access key `#{$key}` at path `#{$traversed-parent}` because value is of type `#{meta.type-of($parent)}`. Full path attempted: `#{$path}`.";
+      @error "get-value(): Cannot access key `#{$key}` at path `#{$traversed-parent}` because the value is of type `#{meta.type-of($parent)}`. Full path: `#{$path}`.";
     }
 
     $next: map.get($parent, $key);
 
     @if $next == null {
       $available: map.keys($parent);
-      @error "utils.get(): Key `#{$key}` not found at `#{$traversed-parent}`. Full path: `#{$path}`. Available keys here: #{$available}.";
+      @error "get-value(): Key `#{$key}` not found at `#{$traversed-parent}`. Full path: `#{$path}`. Available keys: #{$available}.";
     }
 
-    // advance
     $value: $next;
     $traversed: if($traversed == "", "#{$key}", "#{$traversed}.#{$key}");
   }
 
   @return $value;
+}
+
+/* * * SMART GETTER & MIXIN * * */
+
+//    -> works with both formats:
+//       prop: 12px
+//       prop: ($value: 12px, $respond: (...))
+//    -> if map contains `$value`, it’s returned automatically
+//    -> if `$respond` is explicitly requested in path, returns as-is
+
+@function get($map, $path) {
+  $val: get-value($map, $path);
+
+  // Detect if user explicitly requested $respond
+  $keys: str-split($path, ".");
+  $explicit-respond: list.index($keys, "$respond") != null;
+
+  @if $explicit-respond {
+    @return $val; // do not override explicit requests
+  }
+
+  // If the final value is a map with `$value`, return it
+  @if meta.type-of($val) == "map" and map.has-key($val, "$value") {
+    @return map.get($val, "$value");
+  }
+
+  @return $val;
+}
+
+/* * * RESPONSIVE GETTER & MIXIN * * */
+// 🔹 GET-RESPOND HELPER
+//    -> retrieves values inside $respond
+//    -> supports modes: at / above / below / between
+
+@function get-respond($map, $path, $mode, $bp-or-range...) {
+  // Examples:
+  // get-respond($tokens, "components.card.root.padding", at, lg)
+  // get-respond($tokens, "components.card.root.padding", between, md, lg)
+
+  @if $mode == between {
+    @if list.length($bp-or-range) != 2 {
+      @error "get-respond(): 'between' mode requires two arguments (from, to).";
+    }
+
+    $from: list.nth($bp-or-range, 1);
+    $to: list.nth($bp-or-range, 2);
+
+    @return get-value($map, "#{$path}.$respond.between.#{$from}-#{$to}");
+  } @else {
+    @if list.length($bp-or-range) != 1 {
+      @error "get-respond(): mode '#{$mode}' requires one argument (bp).";
+    }
+
+    $bp: list.nth($bp-or-range, 1);
+    @return get-value($map, "#{$path}.$respond.#{$mode}.#{$bp}");
+  }
+}
+
+/* * * UNIVERSAL MIXIN * * */
+
+//    -> applies base value (auto extracts $value if exists)
+//    -> then applies $respond rules (at / above / below / between)
+
+@mixin apply-token($tokens, $css-prop, $path) {
+  // Base value
+  #{$css-prop}: get($tokens, $path);
+
+  // If token has $respond, apply responsive rules
+  @if meta.type-of(get-value($tokens, $path)) ==
+    "map" and
+    map.has-key(get-value($tokens, $path), "$respond")
+  {
+    $respond: get-value($tokens, "#{$path}.$respond");
+
+    // at
+    $at: map.get($respond, at);
+    @if $at != null and meta.type-of($at) == "map" {
+      @each $bp, $v in $at {
+        @include respond-at($bp) {
+          #{$css-prop}: $v;
+        }
+      }
+    }
+
+    // above
+    $above: map.get($respond, above);
+    @if $above != null and meta.type-of($above) == "map" {
+      @each $bp, $v in $above {
+        @include respond-above($bp) {
+          #{$css-prop}: $v;
+        }
+      }
+    }
+  }
 }

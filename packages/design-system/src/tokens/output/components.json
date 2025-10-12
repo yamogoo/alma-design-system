@@ -859,33 +859,6 @@
         }
       }
     },
-    "mainContainer": {
-      "default": {
-        "root": {
-          "borderRadius": {
-            "$value": 16,
-            "$type": "number",
-            "$unit": "px"
-          },
-          "media": {
-            "lg": {
-              "padding": {
-                "$value": 8,
-                "$type": "number",
-                "$unit": "px"
-              }
-            },
-            "md": {
-              "padding": {
-                "$value": 8,
-                "$type": "number",
-                "$unit": "px"
-              }
-            }
-          }
-        }
-      }
-    },
     "progressbar": {
       "default": {
         "lg": {
@@ -1300,6 +1273,38 @@
               "$value": "body-2",
               "$type": "string",
               "$unit": ""
+            }
+          }
+        }
+      }
+    },
+    "stack": {
+      "root": {
+        "padding": {
+          "$value": 16,
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": 24
+              }
+            },
+            "at": {
+              "lg": {
+                "borderRadius": {
+                  "$value": 16,
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "borderRadius": {
+                  "$value": 12,
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
             }
           }
         }
