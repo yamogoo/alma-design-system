@@ -57,10 +57,14 @@ Detailed architecture lives in:
 - Processes token sources, resolves relational contracts, and emits consumable artifacts.
 - Provides parsers/plugins for JSON, CSS variables, and SCSS maps.
 
-### `@alma/icons` (external module)
+> Note on development:
+> The TokensParser module started as a hand-written prototype by Misha Grebennikov.
+> As the project matured, the workflow shifted toward architectural oversight and automated code generation, keeping the compiler aligned with the broader system design.
 
-- Moved to a dedicated repository: [yamogoo/alma-icons](https://github.com/yamogoo/alma-icons)
-- Exposes animated, multi-weight SVG icons as a standalone package.
+### `@alma/icons` (dedicated repository)
+
+- Authored and maintained by Misha Grebennikov in a standalone repository: [yamogoo/alma-icons](https://github.com/yamogoo/alma-icons)
+- Exposes multi-weight SVG icons as a standalone package.
 - Integrated into the design system as a dependency for icon components and Storybook previews.
 
 ## Apps
