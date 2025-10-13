@@ -516,7 +516,7 @@ $iconSlotPrefix: getPrefix("#{$tokenName}__icon");
       user-select: auto;
       pointer-events: all;
       z-index: 1;
-      @extend %base-transition;
+      @include useThemeTransition();
 
       @include useSelection();
     }
@@ -531,7 +531,7 @@ $iconSlotPrefix: getPrefix("#{$tokenName}__icon");
   &__field-value,
   &__field-placeholder,
   &__validation-message {
-    @extend %base-transition;
+    @include useThemeTransition();
   }
 }
 </style>

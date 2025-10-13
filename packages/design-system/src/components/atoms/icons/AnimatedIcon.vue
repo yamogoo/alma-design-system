@@ -120,7 +120,7 @@ $prefix: getPrefix("animated-icon");
   line-height: 0;
   fill: currentColor;
   stroke: currentColor;
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include defineSizes();
   @include defineThemes();
@@ -129,12 +129,12 @@ $prefix: getPrefix("animated-icon");
     @include box(auto, inherit);
     fill: currentColor;
     stroke: currentColor;
-    @extend %base-transition;
+    @include useThemeTransition();
 
     path {
       fill: currentColor;
       stroke: currentColor;
-      @extend %base-transition;
+      @include useThemeTransition();
     }
   }
 

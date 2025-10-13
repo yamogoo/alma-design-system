@@ -1,0 +1,30 @@
+@use "../abstracts/config" as *;
+@use "../abstracts/motion" as *;
+@use "../core/mixins/transition" as *;
+@use "../core/mixins/map-get" as *;
+@use "../core/mixins/get-var" as *;
+
+@mixin useThemeTransition() {
+  $prefix: get($config, "namespace");
+
+  $motion-mode: get($config, "motion.mode");
+  $motion-enable-theme: get($config, "motion.enable-theme");
+  $motion-theme-duration: get($motion, "theme.duration");
+  $motion-theme-easing: get($motion, "theme.easing");
+
+  @if ($motion-enable-theme) {
+    @media (prefers-reduced-motion: no-preference) {
+      html[data-theme-switching] & {
+        @include transition(
+          color background-color border-color fill stroke opacity,
+          get-var(
+            "motion-theme-duration",
+            $motion-theme-duration,
+            $motion-mode
+          ),
+          get-var("motion-theme-easing", $motion-theme-easing, $motion-mode)
+        );
+      }
+    }
+  }
+}

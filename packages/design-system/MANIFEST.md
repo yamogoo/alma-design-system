@@ -114,6 +114,7 @@ src/            # editable JSON contracts
   baseColors.json
   breakpoints.json
   colors.json
+  motion/       # motion tokens (duration, easing, reserved hybrid runtime controls)
   components/
   config.json
   themes/

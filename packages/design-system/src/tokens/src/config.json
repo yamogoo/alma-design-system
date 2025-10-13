@@ -5,25 +5,40 @@
     "$unit": "alias",
     "$meta": {
       "description": "Global component prefix",
-      "category": "config"
+      "category": "config",
+      "status": "unused"
     }
   },
-  "isThemeTransitionsEnabled": {
-    "$value": true,
-    "$type": "boolean",
-    "$unit": "",
+  "mode": {
+    "$value": "runtime",
+    "$type": "string",
+    "$unit": "alias",
     "$meta": {
-      "description": "Enable transitions while theme changing",
-      "category": "config"
+      "description": "runtime | precompile | hybrid modes for components",
+      "category": "config",
+      "status": "deprecated"
     }
   },
-  "isFullRuntime": {
-    "$value": true,
-    "$type": "boolean",
-    "$unit": "",
-    "$meta": {
-      "description": "Switch between hybrid and full runtime modes",
-      "category": "config"
+  "motion": {
+    "mode": {
+      "$value": "{config.mode.$value}",
+      "$type": "string",
+      "$unit": "alias",
+      "$meta": {
+        "description": "runtime | precompile | hybrid",
+        "category": "config",
+        "status": "unused"
+      }
+    },
+    "enableTheme": {
+      "$value": true,
+      "$type": "boolean",
+      "$unit": "",
+      "$meta": {
+        "description": "Enable transitions while theme changing",
+        "category": "config",
+        "status": "unused"
+      }
     }
   },
   "scaleFactor": {
@@ -33,6 +48,7 @@
     "$meta": {
       "description": "Global font scale factor to unify font sizes across platforms. Implementation for mobile platforms is not active yet",
       "category": "config",
+      "status": "deprecated",
       "build": {
         "web": {
           "exportAsVar": true,
@@ -53,6 +69,7 @@
     "$value": 1,
     "$type": "number",
     "meta": {
+      "status": "deprecated",
       "build": { "web": { "exportAsVar": true, "varName": "--density-space" } }
     }
   },
@@ -60,6 +77,7 @@
     "$value": 1.35,
     "$type": "number",
     "meta": {
+      "status": "deprecated",
       "build": { "web": { "exportAsVar": true, "varName": "--density-line" } }
     }
   },
@@ -67,6 +85,7 @@
     "$value": 40,
     "$type": "number",
     "meta": {
+      "status": "deprecated",
       "build": { "web": { "exportAsVar": true, "varName": "--density-target" } }
     }
   }

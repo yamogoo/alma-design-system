@@ -1,34 +1,140 @@
 {
-  "root": {
-    "padding": {
-      "$value": "{tokens.spacing.md.$value}",
-      "$type": "number",
-      "$unit": "px",
-      "$respond": {
-        "above": {
-          "lg": {
-            "$value": "{tokens.spacing.lg.$value}",
-            "$type": "number",
-            "$unit": "px"
+  "main": {
+    "lg": {
+      "root": {
+        "gap": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg.$value}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "at": {
+              "lg": {
+                "padding": {
+                  "$value": "{tokens.spacing.md.$value}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "padding": {
+                  "$value": "{tokens.spacing.sm.$value}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
           }
         },
-        "at": {
-          "lg": {
-            "padding": {
-              "$value": "{tokens.spacing.md.$value}",
-              "$type": "number",
-              "$unit": "px"
-            }
-          },
-          "md": {
-            "padding": {
-              "$value": "{tokens.spacing.sm.$value}",
-              "$type": "number",
-              "$unit": "px"
+        "padding": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg.$value}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "at": {
+              "lg": {
+                "padding": {
+                  "$value": "{tokens.spacing.md.$value}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "padding": {
+                  "$value": "{tokens.spacing.sm.$value}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
             }
           }
         }
       }
+    },
+    "$meta": {
+      "description": "Stack used for main app containers or layouts"
+    }
+  },
+  "default": {
+    "lg": {
+      "root": {
+        "gap": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg.$value}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "at": {
+              "lg": {
+                "padding": {
+                  "$value": "{tokens.spacing.md.$value}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "padding": {
+                  "$value": "{tokens.spacing.sm.$value}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "padding": {
+          "$value": "{tokens.spacing.md.$value}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg.$value}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "at": {
+              "lg": {
+                "padding": {
+                  "$value": "{tokens.spacing.md.$value}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "padding": {
+                  "$value": "{tokens.spacing.sm.$value}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "$meta": {
+      "description": "Stack used for components/elements"
     }
   }
 }

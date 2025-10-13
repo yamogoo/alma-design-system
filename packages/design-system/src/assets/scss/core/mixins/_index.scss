@@ -4,12 +4,13 @@
 @forward "./flex";
 @forward "./map-get";
 @forward "./map-keys-to-string";
+@forward "./get-prefix";
+@forward "./get-var";
 @forward "./margin";
-// @forward "./media";
 @forward "./padding";
 @forward "./themify";
 @forward "./transform-map";
 @forward "./transition";
 @forward "./safe-extend";
 @forward "./where";
-@forward "./get-prefix";
+@forward "./strip-quotes";

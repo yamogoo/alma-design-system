@@ -98,7 +98,7 @@ $prefix: getPrefix($tokenName);
     font-style: inherit;
     font-weight: inherit;
   }
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include defineVariants();
   @include defineThemes();

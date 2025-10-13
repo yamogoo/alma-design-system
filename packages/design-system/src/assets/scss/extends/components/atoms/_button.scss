@@ -1,7 +1,7 @@
 @use "../../../abstracts/index" as *;
 @use "../../../core/index" as *;
 @use "../../components/atoms/typography" as *;
-@use "../../../extends/animations" as *;
+@use "../../../mixins/transitions" as *;
 
 $tokenName: "button";
 $prefix: getPrefix($tokenName);
@@ -73,7 +73,7 @@ $prefix: getPrefix($tokenName);
                 "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.root.border.normal"
               );
           }
-          @extend %base-transition;
+          @include useThemeTransition();
 
           &:focus {
             @include themify($themes) {

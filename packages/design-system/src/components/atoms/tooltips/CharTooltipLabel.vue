@@ -131,14 +131,14 @@ $prefix: getPrefix($tokenName);
   flex-direction: row;
   align-items: center;
   width: max-content;
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include defineSized();
   @include defineThemes();
 
   &__label,
   &__icon {
-    @extend %base-transition;
+    @include useThemeTransition();
   }
 }
 </style>

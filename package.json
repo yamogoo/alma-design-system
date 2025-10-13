@@ -7,7 +7,7 @@
     "url": "https://github.com/yamogoo"
   },
   "private": false,
-  "version": "0.1.0",
+  "version": "0.3.0",
   "license": "MIT",
   "type": "module",
   "keywords": [
@@ -28,7 +28,7 @@
     "ds:lint": "pnpm --filter design-system lint",
     "ds:test:unit": "pnpm --filter design-system test:unit",
     "ds:build": "pnpm --filter design-system build",
-    "ds:docs:dev": "pnpm --filter design-system docs:dev",
+    "ds:docs:dev": "pnpm --filter design-system prepare && pnpm --filter design-system docs:dev",
     "ds:docs:build": "pnpm --filter design-system docs:build",
     "ds:docs:preview": "pnpm --filter design-system docs:preview"
   },

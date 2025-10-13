@@ -116,7 +116,7 @@ $prefix: getPrefix($tokenName);
   &__option {
     list-style: none;
     cursor: pointer;
-    @extend %base-transition;
+    @include useThemeTransition();
   }
 }
 </style>

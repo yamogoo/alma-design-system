@@ -1279,36 +1279,142 @@
       }
     },
     "stack": {
-      "root": {
-        "padding": {
-          "$value": 16,
-          "$type": "number",
-          "$unit": "px",
-          "$respond": {
-            "above": {
-              "lg": {
-                "$value": 24,
-                "$type": "number",
-                "$unit": "px"
+      "main": {
+        "lg": {
+          "root": {
+            "gap": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "at": {
+                  "lg": {
+                    "padding": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "padding": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
               }
             },
-            "at": {
-              "lg": {
-                "padding": {
-                  "$value": 16,
-                  "$type": "number",
-                  "$unit": "px"
-                }
-              },
-              "md": {
-                "padding": {
-                  "$value": 12,
-                  "$type": "number",
-                  "$unit": "px"
+            "padding": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "at": {
+                  "lg": {
+                    "padding": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "padding": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
                 }
               }
             }
           }
+        },
+        "$meta": {
+          "description": "Stack used for main app containers or layouts"
+        }
+      },
+      "default": {
+        "lg": {
+          "root": {
+            "gap": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "at": {
+                  "lg": {
+                    "padding": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "padding": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "padding": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "at": {
+                  "lg": {
+                    "padding": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "padding": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "$meta": {
+          "description": "Stack used for components/elements"
         }
       }
     },

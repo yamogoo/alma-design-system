@@ -10,6 +10,9 @@ import svgLoader from "vite-svg-loader";
 import lightningcss from "vite-plugin-lightningcss";
 import dts from "vite-plugin-dts";
 
+import config from "./src/tokens/src/config.json";
+const PREFIX = config.namespace?.$value || "al-";
+
 import {
   ColorsGeneratorPlugin,
   TokensParserPlugin,
@@ -18,6 +21,7 @@ import {
 } from "@alma/tokens-worker";
 
 const ANALYZE = process.env.ANALYZE === "1";
+const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 export default () => {
   return defineConfig({
@@ -51,22 +55,29 @@ export default () => {
       svgLoader({ defaultImport: "component" }),
       // Deign System: Tokens and SCSS generation
       ColorsGeneratorPlugin({
+        enforce: "pre",
+        apply: "build",
         source: "./src/tokens/src/baseColors.json",
         outDir: "./src/tokens/src/colors.json",
         step: 40,
       }),
       TokensParserPlugin({
+        enforce: "pre",
+        apply: "build",
         source: "./src/tokens/.cache",
         build: "./src/tokens/output",
         outDir: "./src/assets/scss/abstracts",
         entryFilePath: "./src/tokens/index.ts",
         paths: ["./src/tokens/src/", "./src/tokens/.cache"],
         mapOptions: {
+          prefix: "",
           convertCase: true,
           includeFileName: true,
-          includeServiceFields: true,
+          includeServiceFields: ["value", "respond"],
+          scssUseDefaultFlag: true,
         },
         cssVarOptions: {
+          prefix: PREFIX,
           convertToCSSVariables: false,
           includeFileNameToCSSVariables: false,
           excludeCSSVariables: ["./src/tokens/.cache/themes.json"],
@@ -84,13 +95,17 @@ export default () => {
         useFileStructureLookup: false,
         isModulesMergedIntoEntry: true,
       }),
+
       VitePluginTokenLinter({
         source: "./src/tokens/src",
       }),
-      VitePluginFigmaTokensParser({
-        source: "./src/tokens/output",
-        outDir: "./src/tokens/.figma",
-      }),
+      !IS_PRODUCTION &&
+        VitePluginFigmaTokensParser({
+          enforce: "post",
+          apply: "build",
+          source: "./src/tokens/output",
+          outDir: "./src/tokens/.figma",
+        }),
       lightningcss({
         browserslist: [">0.2%", "not dead"],
         minify: true,

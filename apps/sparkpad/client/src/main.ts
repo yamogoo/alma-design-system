@@ -7,6 +7,7 @@ import { router } from "./router";
 // import { createI18n } from "vue-i18n";
 
 import "@alma/design-system/style.css";
+import "@alma/design-system/styles.runtime.css";
 import "@alma/design-system/global.styles.scss";
 
 // const i18n = createI18n({});

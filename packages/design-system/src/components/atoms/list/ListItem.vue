@@ -371,12 +371,12 @@ $prefix: getPrefix($tokenName);
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include where(".#{$prefix}__container") {
     display: flex;
     flex-direction: row;
-    @extend %base-transition;
+    @include useThemeTransition();
   }
 
   @include where(".#{$prefix}__content") {

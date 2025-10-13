@@ -96,14 +96,50 @@ export const useTheme = (
     onUpdateSystemTheme();
   });
 
+  let timerId: ReturnType<typeof setTimeout> | null = null;
+
   watch(
     theme,
     (newTheme, prevTheme) => {
-      const htmlEl = document.querySelector(selector);
+      const el = document.querySelector(selector);
 
-      if (htmlEl && !(prevTheme === newTheme)) {
-        htmlEl.classList.remove(`${prefix}${prevTheme}`);
-        htmlEl.classList.add(`${prefix}${newTheme}`);
+      if (el && !(prevTheme === newTheme)) {
+        if (timerId) {
+          clearTimeout(timerId);
+          timerId = null;
+        }
+
+        // pre-compile:
+        el.classList.remove(`${prefix}${prevTheme}`);
+        el.classList.add(`${prefix}${newTheme}`);
+
+        // runtime:
+        el.setAttribute(`data-theme-switching`, "");
+        el.setAttribute("data-theme", `${newTheme}`);
+
+        const css = getComputedStyle(el);
+
+        const parse = (value: string) =>
+          value
+            .split(",")
+            .map((str) => str.trim())
+            .map((str) =>
+              str.endsWith("ms") ? parseFloat(str) : parseFloat(str) * 1000
+            );
+        const durations = parse(css.transitionDuration || "0s");
+        const delays = parse(css.transitionDelay || "0s");
+        const maxDelay = Math.max(
+          0,
+          ...durations.map((value, i) => value + (delays[i] ?? 0))
+        );
+
+        const safetyDelay = 50;
+        const delay = Math.max(maxDelay + safetyDelay, 0);
+
+        timerId = setTimeout(() => {
+          el.removeAttribute(`data-theme-switching`);
+          timerId = null;
+        }, delay);
       }
     },
     { immediate: true }

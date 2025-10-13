@@ -48,7 +48,7 @@ withDefaults(defineProps<StorySlotCoverProps>(), {
   background-image: url("../../../../assets/images/storybook/cutting-pattern.svg");
   background-repeat: repeat;
   background-size: px2rem(get($tokens, "spacing.lg"));
-  @extend %base-transition;
+  @include useThemeTransition();
 
   .text {
     text-align: center;

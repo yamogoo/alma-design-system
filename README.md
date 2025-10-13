@@ -3,7 +3,8 @@
 # Alma Design System Monorepo
 
 **Token-centric architecture.**  
-All design decisions, from colors and motion to component spacing and interaction states, originate from relational design tokens compiled into consumable JSON, CSS, and SCSS artifacts. Components are secondary consumers — they simply express token logic through UI.
+All design decisions, from colors and motion to component spacing and interaction states, originate from relational design tokens compiled into consumable JSON, CSS, and SCSS artifacts. Components are secondary consumers — they simply express token logic through UI.  
+**New:** primitive mode management (`precompile`, `runtime`, `hybrid` placeholder) and runtime theme animations are driven directly by motion tokens. The system is moving toward a hybrid model today with a runtime-first model next.
 
 Code-first R&D space for UI systems: Vue components, design tokens, adapters, Storybook tooling, and consumer playground apps.
 
@@ -118,11 +119,12 @@ pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 
 ## Optimization Highlights
 
-- Reduced JS bundle: 1+ MB → 259.59 kB (gzip: 51.87 kB −76 %)
-- Reduced CSS bundle: 400 KB → 263.49 kB (gzip: 19.84 kB)
+- Reduced JS bundle: 1+ MB → 213.06 kB (gzip: 52.04 kB −76 %)
+- Reduced CSS bundle: 400 KB → 283.27 kB (gzip: 20.59 kB)
 - Improved dev-server startup: 50 s → 7 s (−86 %)
 - Built runtime token pipeline with a code-first single source of truth
 - Established deterministic theming across light/dark and five facets (variant/size/mode/tone/state)
+- Added motion tokens (`duration`, `easing`) that power theme-transition animations in runtime mode and laid the groundwork for hybrid → runtime execution flows.
 
 ### R&D Notes — Abandoned Experiments
 

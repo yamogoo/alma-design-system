@@ -55,7 +55,7 @@ onMounted(() => {
   @include box(100vw, 100dvh);
   overflow: hidden;
 
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include themify($themes) {
     background-color: themed(

@@ -101,7 +101,7 @@ $prefix: getPrefix("icon");
   @include box(auto, inherit);
   line-height: 0;
   fill: inherit;
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include defineSizes();
   @include defineThemes();
@@ -109,11 +109,11 @@ $prefix: getPrefix("icon");
   svg {
     @include box(auto, inherit);
     fill: inherit;
-    @extend %base-transition;
+    @include useThemeTransition();
 
     path {
       fill: inherit;
-      @extend %base-transition;
+      @include useThemeTransition();
     }
   }
 

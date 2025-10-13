@@ -1,6 +1,6 @@
 {
   "name": "@alma/design-system",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Alma design system (Vue 3, Vite library build)",
   "license": "MIT",
   "type": "module",
@@ -57,6 +57,7 @@
     "./global.styles.scss": "./src/assets/scss/app.global.styles.scss"
   },
   "scripts": {
+    "prepare": "vite build --mode=prepare",
     "lint": "eslint 'src/**/*.{ts,tsx,vue}'",
     "build": "vite build",
     "build:analyze": "ANALYZE=1 vite build",

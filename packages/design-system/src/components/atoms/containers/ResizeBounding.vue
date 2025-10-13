@@ -151,7 +151,7 @@ $prefix: getPrefix($tokenName);
   }
 
   &__splitter {
-    @extend %base-transition;
+    @include useThemeTransition();
   }
 }
 </style>

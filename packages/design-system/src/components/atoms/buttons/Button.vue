@@ -302,7 +302,7 @@ $prefix: getPrefix($tokenName);
   border: none;
   cursor: pointer;
   user-select: none;
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include defineButtonSizes($prefix);
   @include defineThemes();
@@ -317,7 +317,7 @@ $prefix: getPrefix($tokenName);
   }
 
   &__label {
-    @extend %base-transition;
+    @include useThemeTransition();
   }
 
   &__skeleton {

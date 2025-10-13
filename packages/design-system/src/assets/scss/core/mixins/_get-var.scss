@@ -1,0 +1,45 @@
+@use "sass:string";
+
+@use "../../abstracts/config" as *;
+@use ".././mixins/map-get" as *;
+@use ".././mixins/strip-quotes" as *;
+
+/// Normalize config mode to unquoted, lowercase keyword
+@function _normalize-mode($mode) {
+  @if $mode == null {
+    @return null;
+  }
+  $s: #{$mode};
+  @return string.to-lower-case(string.unquote($s));
+}
+
+/// Resolve effective mode: prefer explicit, else config.motion.mode, else config.mode
+@function _resolve-mode($explicit: null) {
+  $mode: $explicit;
+  @if $mode == null {
+    $mode: get($config, "motion.mode");
+    @if $mode == null {
+      $mode: get($config, "mode");
+    }
+  }
+  @return _normalize-mode($mode);
+}
+
+// Returns CSS var with proper fallback depending on mode.
+@function get-var($name, $fallback, $mode: null) {
+  $fallback-value: strip-quotes($fallback);
+  $namespace: get($config, "namespace");
+
+  @if $namespace == null or $namespace == "" {
+    @return $fallback-value;
+  }
+
+  $effective-mode: _resolve-mode($mode);
+
+  @if $effective-mode == precompile or $effective-mode == "precompile" {
+    @return $fallback-value;
+  }
+
+  // runtime/hybrid
+  @return var(--#{$namespace}-#{$name}, #{$fallback-value});
+}

@@ -26,7 +26,8 @@ const componentTag = props.as;
       `${GROUP_PREFIX}_${UIFACETS.SIZE}-${size}`,
       {
         [`${GROUP_PREFIX}_${UIMODIFIERS.DIRECTION}-${direction}`]: !!direction,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`]: !!orientation,
+        [`${GROUP_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`]:
+          !!orientation,
         [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-vertical-${verticalAlignment}`]:
           !!verticalAlignment,
         [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal-${horizontalAlignment}`]:
@@ -42,7 +43,6 @@ const componentTag = props.as;
     :role="role"
     :aria-label="ariaLabel"
     :border-sides="bordered ? 'rtlb' : undefined"
-    :style="{ gap: gapY ? gapY : undefined }"
     data-testid="group"
   >
     <slot></slot>
@@ -88,7 +88,6 @@ $prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   display: flex;
-  @extend %base-transition;
 
   @include defineSizes();
 
@@ -125,16 +124,6 @@ $prefix: getPrefix($tokenName);
 
     &.#{$prefix}_orientation-vertical {
       border-bottom-style: solid;
-    }
-  }
-
-  @each $variant, $sizes in get($components, "molecules.#{$tokenName}") {
-    @each $size, $val in $sizes {
-      &_variant-#{$variant} {
-        &.#{$prefix}_size-#{$size} {
-          gap: px2rem(get($val, "root.gap"));
-        }
-      }
     }
   }
 }

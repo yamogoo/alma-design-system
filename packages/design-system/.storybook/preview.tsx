@@ -5,10 +5,13 @@ import { createPinia } from "pinia";
 import { initialize, mswLoader } from "msw-storybook-addon";
 
 import "./storybook.theme.scss";
-import "../src/app.runtime.scss";
+
+import "@/app.runtime.scss";
 
 import "@/assets/scss/app.global.styles.scss";
 import "@/assets/fonts/_fonts.scss";
+
+import motion from "@/tokens/src/motion/theme.json";
 
 initialize({ onUnhandledRequest: "bypass" });
 export const decorators = [mswLoader];
@@ -19,11 +22,36 @@ setup((app: App) => {
   app.use(pinia);
 });
 
+let timerId: ReturnType<typeof setTimeout> | null = null;
+
 const withTheme = (Story: any, context: any) => {
   const theme = context.globals.theme || "light";
 
-  document.body.classList.remove("t-light", "t-dark");
-  document.body.classList.add(`t-${theme}`);
+  const selector = "body";
+  const el = document.querySelector(selector);
+
+  if (el) {
+    if (timerId) {
+      clearTimeout(timerId);
+      timerId = null;
+    }
+
+    // pre-compile:
+    el.classList.remove("t-light", "t-dark");
+    el.classList.add(`t-${theme}`);
+
+    // runtime:
+    el.setAttribute(`data-theme-switching`, "");
+    el.setAttribute("data-theme", `${theme}`);
+
+    const safetyDelay = 175;
+    const delay = motion.duration.$value + safetyDelay;
+
+    timerId = setTimeout(() => {
+      el.removeAttribute(`data-theme-switching`);
+      timerId = null;
+    }, delay);
+  }
 
   return Story();
 };

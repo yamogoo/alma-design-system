@@ -1,5 +1,4 @@
-// vite-plugin-figma-tokens-parser.ts
-// Vite plugin to run FigmaTokensParser on build start and watch changes in dev.
+// Portions of this file were developed with the assistance of AI tools.
 
 import type { Plugin } from 'vite';
 import path from 'node:path';
@@ -15,6 +14,10 @@ export interface ViteFigmaTokensParserOptions extends FigmaTokensParserOptions {
   runOnBuildStart?: boolean;
   /** Re-run on file change in dev (default: true) */
   watch?: boolean;
+  /** Controls plugin execution priority (Vite/Rollup standard) */
+  enforce?: 'pre' | 'post';
+  /** Controls when plugin is applied (build/serve/both or function) */
+  apply?: 'build' | 'serve' | ((config: any, env: any) => boolean);
 }
 
 function listJsonFilesSync(rootDir: string, opts: ViteFigmaTokensParserOptions): string[] {
@@ -27,6 +30,7 @@ function listJsonFilesSync(rootDir: string, opts: ViteFigmaTokensParserOptions):
   };
   while (stack.length) {
     const dir = stack.pop()!;
+    if (!fs.existsSync(dir)) continue; // 🔹 safe check
     const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const e of entries) {
       if (shouldSkip(e.name)) continue;
@@ -52,7 +56,8 @@ export function VitePluginFigmaTokensParser(options: ViteFigmaTokensParserOption
 
   return {
     name: 'vite-plugin-figma-tokens-parser',
-    enforce: 'pre',
+    enforce: opts.enforce ?? 'post',
+    apply: opts.apply ?? 'build',
 
     async buildStart() {
       if (opts.runOnBuildStart) {
@@ -63,6 +68,11 @@ export function VitePluginFigmaTokensParser(options: ViteFigmaTokensParserOption
 
     configureServer(server) {
       if (!opts.watch) return;
+
+      if (!fs.existsSync(sourceAbs)) {
+        console.warn(`[FigmaTokensParser] Source directory not found: ${sourceAbs}`);
+        return;
+      }
 
       const initialFiles = listJsonFilesSync(sourceAbs, opts);
       server.watcher.add(initialFiles);

@@ -493,8 +493,9 @@ $prefix: getPrefix($tokenName);
     span,
     .#{$prefix}__expand-icon,
     .#{$prefix}__reset-icon,
-    .#{$prefix}__current-value {
-      @extend %base-transition;
+    .#{$prefix}__current-value,
+    .#{$prefix}__options {
+      @include useThemeTransition();
     }
   }
 
@@ -538,15 +539,6 @@ $prefix: getPrefix($tokenName);
     &__content {
       overflow: hidden;
     }
-  }
-
-  .#{$prefix}__current-value,
-  .#{$prefix}__options {
-    @include transition(
-      color background background-color fill stroke opacity,
-      150ms,
-      ease-out
-    );
   }
 }
 </style>

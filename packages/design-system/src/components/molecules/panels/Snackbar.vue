@@ -159,7 +159,7 @@ $prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   display: flex;
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include defineSizes();
   @include defineThemes();

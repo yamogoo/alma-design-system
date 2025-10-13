@@ -44,6 +44,6 @@ const onResetValue = (): void => {
   @include border("neutral", "primary");
   border-width: 1px;
   border-style: solid;
-  @extend %base-transition;
+  @include useThemeTransition();
 }
 </style>

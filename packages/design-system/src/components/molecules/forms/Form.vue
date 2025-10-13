@@ -87,7 +87,7 @@ $prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   width: 100%;
-  @extend %base-transition;
+  @include useThemeTransition();
 
   @include defineSizes();
 

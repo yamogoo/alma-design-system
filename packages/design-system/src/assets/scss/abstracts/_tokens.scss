@@ -5,174 +5,112 @@ $tokens:(
   elevation: (
   lg: (
   offset-x: (
-  value: 0px,
-  type: "number",
-  unit: "px"
+  value: 0px
 ),
   offset-y: (
-  value: 32px,
-  type: "number",
-  unit: "px"
+  value: 32px
 ),
   blur: (
-  value: 64px,
-  type: "number",
-  unit: "px"
+  value: 64px
 )
 )
 ),
   gap: (
   xxs: (
-  value: 4px,
-  type: "number",
-  unit: "px"
+  value: 4px
 ),
   xs: (
-  value: 10px,
-  type: "number",
-  unit: "px"
+  value: 10px
 ),
   sm: (
-  value: 12px,
-  type: "number",
-  unit: "px"
+  value: 12px
 ),
   md: (
-  value: 14px,
-  type: "number",
-  unit: "px"
+  value: 14px
 ),
   lg: (
-  value: 24px,
-  type: "number",
-  unit: "px"
+  value: 24px
 ),
   xl: (
-  value: 32px,
-  type: "number",
-  unit: "px"
+  value: 32px
 )
 ),
   outline: (
-  value: 1px,
-  type: "number",
-  unit: "px"
+  value: 1px
 ),
   roundness: (
   xxs: (
-  value: 4px,
-  type: "number",
-  unit: "px"
+  value: 4px
 ),
   xs: (
-  value: 8px,
-  type: "number",
-  unit: "px"
+  value: 8px
 ),
   sm: (
-  value: 12px,
-  type: "number",
-  unit: "px"
+  value: 12px
 ),
   md: (
-  value: 16px,
-  type: "number",
-  unit: "px"
+  value: 16px
 ),
   lg: (
-  value: 20px,
-  type: "number",
-  unit: "px"
+  value: 20px
 ),
   xl: (
-  value: 24px,
-  type: "number",
-  unit: "px"
+  value: 24px
 ),
   xxl: (
-  value: 32px,
-  type: "number",
-  unit: "px"
+  value: 32px
 ),
   infinity: (
-  value: 9999px,
-  type: "number",
-  unit: "px"
+  value: 9999px
 )
 ),
   spacing: (
   xxs: (
-  value: 4px,
-  type: "number",
-  unit: "px"
+  value: 4px
 ),
   xs: (
-  value: 8px,
-  type: "number",
-  unit: "px"
+  value: 8px
 ),
   sm: (
-  value: 12px,
-  type: "number",
-  unit: "px"
+  value: 12px
 ),
   md: (
-  value: 16px,
-  type: "number",
-  unit: "px"
+  value: 16px
 ),
   lg: (
-  value: 24px,
-  type: "number",
-  unit: "px"
+  value: 24px
 ),
   xl: (
-  value: 32px,
-  type: "number",
-  unit: "px"
+  value: 32px
 ),
   xxl: (
-  value: 48px,
-  type: "number",
-  unit: "px"
+  value: 48px
 )
 ),
   stroke: (
   sm: (
-  value: 1px,
-  type: "number",
-  unit: "px"
+  value: 1px
 ),
   md: (
-  value: 2px,
-  type: "number",
-  unit: "px"
+  value: 2px
 ),
   lg: (
-  value: 3px,
-  type: "number",
-  unit: "px"
+  value: 3px
 ),
   xl: (
-  value: 4px,
-  type: "number",
-  unit: "px"
+  value: 4px
 )
 ),
   touch-area: (
   md: (
   size: (
-  value: 36px,
-  type: "number",
-  unit: "px"
+  value: 36px
 )
 ),
   sm: (
   size: (
-  value: 24px,
-  type: "number",
-  unit: "px"
+  value: 24px
 )
 )
 )
-);
+) !default;

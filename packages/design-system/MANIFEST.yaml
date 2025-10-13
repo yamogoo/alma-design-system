@@ -90,8 +90,10 @@ modules:
       baseColors.json: canonical base palette
       breakpoints.json: responsive breakpoints
       colors.json: resolved relational color map
+      motion:
+        theme.json: motion tokens for theme transitions (duration, easing, mode placeholders)
       components: per-component tokens (atoms, molecules, organisms, templates)
-      config.json: token pipeline configuration
+      config.json: token pipeline configuration (namespace, mode switches, runtime flags)
       themes: light, dark, and experimental themes
       typography: text styles and type scale
       tokens: spacing, stroke, roundness, gap, touchArea

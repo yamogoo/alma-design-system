@@ -1,0 +1,10 @@
+@use "sass:meta";
+@use "sass:string";
+
+@function strip-quotes($value) {
+  @if meta.type-of($value) == "string" {
+    @return string.unquote($value);
+  }
+
+  @return $value;
+}

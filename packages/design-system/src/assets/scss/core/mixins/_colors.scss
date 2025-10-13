@@ -2,7 +2,6 @@
 
 @mixin defineColors($map: colors.$base, $prop: background-color) {
   @each $k, $color in $map {
-    @debug &__#{$k};
     &.__#{$k} {
       #{$prop}: $color;
     }

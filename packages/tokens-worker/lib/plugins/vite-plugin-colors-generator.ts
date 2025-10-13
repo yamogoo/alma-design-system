@@ -1,28 +1,42 @@
-// Portions of this file were developed with the assistance of AI tools (ChatGPT).
+// Portions of this file were developed with the assistance of AI tools.
 
-import { Plugin } from "vite";
-import path from "node:path";
-import fs from "node:fs";
+import { PluginOption } from 'vite';
+import path from 'node:path';
+import fs from 'node:fs';
 
-import { generateColorsFromFile } from "../parsers/ColorsGenerator.js";
+import { generateColorsFromFile } from '../parsers/ColorsGenerator.js';
 
 interface ColorsGeneratorPluginOptions {
   source: string;
   outDir: string;
   step?: number;
   comment?: string;
+  /**
+   * Vite lifecycle application mode:
+   * - 'serve' — dev only
+   * - 'build' — build only
+   * - 'both'  — explicitly run in both
+   */
+  apply?: 'serve' | 'build' | 'both';
+
+  /**
+   * Vite plugin execution order:
+   * - 'pre' | 'post' | undefined
+   */
+  enforce?: 'pre' | 'post';
 }
 
-export default function ColorsGeneratorPlugin(
-  options: ColorsGeneratorPluginOptions
-): Plugin {
+export default function ColorsGeneratorPlugin(options: ColorsGeneratorPluginOptions): PluginOption {
   const absSource = path.resolve(options.source);
   const absOutDir = path.resolve(options.outDir);
 
+  const applyMode = options.apply === 'both' ? undefined : (options.apply ?? 'serve');
+  const enforceMode = options.enforce ?? 'pre';
+
   return {
-    name: "vite-plugin-colors-generator",
-    apply: "serve",
-    enforce: "pre",
+    name: 'vite-plugin-colors-generator',
+    apply: applyMode,
+    enforce: enforceMode,
 
     configResolved() {
       console.log(`[colors-generator] Watching: ${absSource}`);
@@ -42,9 +56,7 @@ export default function ColorsGeneratorPlugin(
 
     handleHotUpdate(ctx) {
       if (ctx.file === absSource) {
-        console.log(
-          `[colors-generator] Regenerating due to change in ${ctx.file}`
-        );
+        console.log(`[colors-generator] Regenerating due to change in ${ctx.file}`);
         try {
           generateColorsFromFile({
             ...options,

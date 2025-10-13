@@ -1,0 +1,28 @@
+{
+  "duration": {
+    "$value": 225,
+    "$type": "number",
+    "$unit": "ms",
+    "$meta": {
+      "build": {
+        "web": {
+          "exportAsVar": true,
+          "status": "active"
+        }
+      }
+    }
+  },
+  "easing": {
+    "$value": "ease-out",
+    "$type": "string",
+    "$unit": "alias",
+    "$meta": {
+      "build": {
+        "web": {
+          "exportAsVar": true,
+          "status": "active"
+        }
+      }
+    }
+  }
+}

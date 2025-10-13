@@ -120,7 +120,7 @@ $prefix: getPrefix($tokenName);
     position: absolute;
     inset: 0;
     z-index: 0;
-    @extend %base-transition;
+    @include useThemeTransition();
   }
 }
 </style>

@@ -7,7 +7,7 @@
     "url": "https://github.com/yamogoo"
   },
   "private": false,
-  "version": "0.1.0",
+  "version": "0.3.0",
   "license": "MIT",
   "type": "module",
   "keywords": [],
@@ -20,7 +20,9 @@
   "scripts": {
     "lint": "eslint 'lib/**/*.{ts,tsx}'",
     "lint:fix": "eslint 'lib/**/*.{ts,tsx}' --fix",
-    "build": "tsc -p tsconfig.json"
+    "test": "vitest",
+    "test:unit": "vitest run",
+    "build": "tsc -p tsconfig.json && vite build"
   },
   "dependencies": {
     "color": "^5.0.2",
@@ -38,7 +40,9 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-prettier": "^5.5.4",
+    "jest": "^30.2.0",
     "prettier": "^3.6.2",
+    "ts-jest": "^29.4.5",
     "tsx": "^4.20.6",
     "typescript": "~5.8.3",
     "vite": "^6.3.6",

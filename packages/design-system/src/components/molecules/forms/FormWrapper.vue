@@ -75,7 +75,6 @@ $prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   overflow: hidden;
-  @extend %base-transition;
 
   @include defineSizes();
 }

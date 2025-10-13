@@ -73,7 +73,7 @@ $prefix: getPrefix($tokenName);
                 "components.templates.#{$tokenName}.#{$tone}.#{$mode}.root.border.normal"
               );
           }
-          @extend %base-transition;
+          @include useThemeTransition();
         }
       }
     }

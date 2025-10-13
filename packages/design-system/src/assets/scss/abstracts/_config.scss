@@ -3,89 +3,29 @@
 
 $config:(
   namespace: (
-  value: "al-",
-  type: "string",
-  unit: "alias",
-  meta: (
-  description: "Global component prefix",
-  category: "config"
-)
+  value: "al-"
 ),
-  is-theme-transitions-enabled: (
-  value: true,
-  type: "boolean",
-  unit: "",
-  meta: (
-  description: "Enable transitions while theme changing",
-  category: "config"
-)
+  mode: (
+  value: "runtime"
 ),
-  is-full-runtime: (
-  value: true,
-  type: "boolean",
-  unit: "",
-  meta: (
-  description: "Switch between hybrid and full runtime modes",
-  category: "config"
+  motion: (
+  mode: (
+  value: "runtime"
+),
+  enable-theme: (
+  value: true
 )
 ),
   scale-factor: (
-  value: 1,
-  type: "number",
-  unit: "",
-  meta: (
-  description: "Global font scale factor to unify font sizes across platforms. Implementation for mobile platforms is not active yet",
-  category: "config",
-  build: (
-  web: (
-  exportAsVar: "true",
-  varName: "--scale-factor"
-),
-  ios: (
-  applyMultiplier: "true",
-  status: "unused"
-),
-  android: (
-  applyMultiplier: "true",
-  status: "unused"
-)
-)
-)
+  value: 1
 ),
   density-space: (
-  value: 1px,
-  type: "number",
-  meta: (
-  build: (
-  web: (
-  exportAsVar: "true",
-  varName: "--density-space"
-)
-)
-)
+  value: 1px
 ),
   density-line: (
-  value: 1.35px,
-  type: "number",
-  meta: (
-  build: (
-  web: (
-  exportAsVar: "true",
-  varName: "--density-line"
-)
-)
-)
+  value: 1.35px
 ),
   density-target: (
-  value: 40px,
-  type: "number",
-  meta: (
-  build: (
-  web: (
-  exportAsVar: "true",
-  varName: "--density-target"
+  value: 40px
 )
-)
-)
-)
-);
+) !default;

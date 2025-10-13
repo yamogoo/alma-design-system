@@ -87,7 +87,7 @@ $prefix: getPrefix($tokenName);
 
       :where(&.#{$prefix}_variant-#{$variant}.#{$prefix}_size-#{$size}) {
         --#{$prefix}-radius: #{$radius};
-        --#{$prefix}-b-width: #{$bwidth};
+        --#{$prefix}-border-width: #{$bwidth};
       }
     }
   }
@@ -131,7 +131,8 @@ $prefix: getPrefix($tokenName);
   display: block;
   border-style: solid;
   border-width: 0;
-  @extend %base-transition;
+  overflow: hidden;
+  @include useThemeTransition();
 
   @include defineSizes();
   @include defineThemes();
@@ -156,16 +157,16 @@ $prefix: getPrefix($tokenName);
 
   &_border {
     &-l {
-      border-left-width: var(--#{$prefix}-b-width);
+      border-left-width: var(--#{$prefix}-border-width);
     }
     &-r {
-      border-right-width: var(--#{$prefix}-b-width);
+      border-right-width: var(--#{$prefix}-border-width);
     }
     &-t {
-      border-top-width: var(--#{$prefix}-b-width);
+      border-top-width: var(--#{$prefix}-border-width);
     }
     &-b {
-      border-bottom-width: var(--#{$prefix}-b-width);
+      border-bottom-width: var(--#{$prefix}-border-width);
     }
   }
 }

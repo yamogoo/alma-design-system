@@ -44,17 +44,22 @@ export interface IMap extends TokenObj {
 
 export type Value<T> = string | number | List<T> | T | IMap;
 
+export type ServiceField = 'value' | 'type' | 'unit' | 'meta' | 'respond';
+export type IncludeServiceFields = ('*' | 'all' | 'none' | 'core' | ServiceField)[] | boolean;
+
 export interface ParseValueOptions {
+  prefix?: string;
   convertPxToRem: boolean;
   convertCase?: boolean;
   includeFileName?: boolean;
+  scssUseDefaultFlag?: boolean;
   convertToCSSVariables?: boolean;
   includeFileNameToCSSVariables?: boolean;
   excludeCSSVariables?: string[];
   fileName?: string;
   key?: string;
   unit?: string;
-  includeServiceFields?: boolean;
+  includeServiceFields?: IncludeServiceFields;
   includeSymbolsInServiceFields?: boolean;
 }
 
@@ -67,6 +72,7 @@ export interface JSONToSCSSOptions {
 }
 
 export interface CssVarOptions {
+  prefix?: string;
   convertToCSSVariables?: boolean;
   includeFileNameToCSSVariables?: boolean;
   excludeCSSVariables?: string[];
@@ -112,6 +118,16 @@ abstract class Parser {
 
 export class SCSSParser extends Parser {
   private tokensParser: TokensParser;
+
+  private applyCssVarPrefix(name: string, prefix?: string): string {
+    if (!prefix) return name;
+    if (name.startsWith('--')) {
+      const rest = name.slice(2);
+      return `--${prefix}-${rest}`;
+    }
+    return `${prefix}-${name}`;
+  }
+
   // Tracks CSS variable values for deduplication and predictable overrides.
   private collectedCssVars: Map<string, string> = new Map();
 
@@ -204,7 +220,12 @@ export class SCSSParser extends Parser {
           .join(', ');
         return `${k}: (\n    ${arr}\n  )`;
       } else {
-        return `${k}: "${String(v)}"`;
+        const normalized = this.normalizeValue(v, _opts);
+        const out =
+          typeof normalized === 'string' && /^".*"$/.test(normalized)
+            ? normalized
+            : `"${String(normalized)}"`;
+        return `${k}: ${out}`;
       }
     });
 
@@ -279,9 +300,11 @@ export class SCSSParser extends Parser {
       const tokenObj = obj as IMap;
 
       // Determines whether to emit $-prefixed service fields in the SCSS map.
-      const serviceMode =
-        Boolean(this.tokensParser.opts?.mapOptions?.includeServiceFields ?? false) ||
-        Boolean(opts.includeServiceFields);
+      const includeCfg = this.tokensParser.resolveIncludeServiceFields(opts);
+      const want = (name: 'value' | 'type' | 'unit' | 'meta' | 'respond') =>
+        includeCfg.includeAll || includeCfg.set.has(name);
+
+      const serviceMode = includeCfg.includeAll || includeCfg.set.size > 0;
 
       const serviceSymbols =
         (opts.includeSymbolsInServiceFields ??
@@ -323,7 +346,14 @@ export class SCSSParser extends Parser {
           Boolean(globalMapFlag));
 
       if (shouldExportAsVar && valueVal !== undefined) {
-        const explicitVarName = metaVal?.build?.web?.varName;
+        let explicitVarName = metaVal?.build?.web?.varName;
+        if (typeof explicitVarName === 'string' && explicitVarName.includes('{')) {
+          const resolved = this.tokensParser.parseNestedValue(
+            explicitVarName,
+            this.tokensParser.defaultParseOptions,
+          );
+          explicitVarName = String(resolved);
+        }
         const pathPart = path.filter(Boolean).join('-');
         const filePart = opts.fileName
           ? opts.convertCase
@@ -346,10 +376,27 @@ export class SCSSParser extends Parser {
           }
         }
 
-        const varName =
+        let varName =
           computedNameSource && computedNameSource.startsWith('--')
             ? computedNameSource
             : `--${computedNameSource || opts.fileName || 'token'}`;
+
+        // prefix priority: local (opts.prefix / mapOptions) -> global (cssVarOptions.prefix)
+        const effectivePrefix =
+          (opts.prefix && opts.prefix.length ? opts.prefix : undefined) ??
+          (this.tokensParser.opts.mapOptions?.prefix &&
+          this.tokensParser.opts.mapOptions?.prefix !== ''
+            ? this.tokensParser.opts.mapOptions?.prefix
+            : undefined) ??
+          (this.tokensParser.opts.cssVarOptions?.prefix &&
+          this.tokensParser.opts.cssVarOptions?.prefix !== ''
+            ? this.tokensParser.opts.cssVarOptions?.prefix
+            : undefined) ??
+          '';
+
+        if (effectivePrefix) {
+          varName = this.applyCssVarPrefix(varName, effectivePrefix);
+        }
 
         const localOptsForVar: ParseValueOptions = {
           ...opts,
@@ -391,11 +438,16 @@ export class SCSSParser extends Parser {
           this.tokensParser.hasTokenField(tokenObj, 'unit') && typeof unitVal === 'string'
             ? (unitVal as string)
             : opts.unit,
-        includeServiceFields: serviceMode,
+        includeServiceFields: opts.includeServiceFields,
       };
 
       // Serializes a token value into the service-field map structure ($value, $type, $unit).
-      const serializeServiceToken = (val: any, tVal: any, uVal: any, pth: string[]) => {
+      const serializeServiceToken = (
+        val: any,
+        tVal: any,
+        uVal: any,
+        pth: string[],
+      ): string | null => {
         const normalized = this.normalizeValue(val, {
           ...localOpts,
           key: typeof tVal === 'string' ? tVal : localOpts.key,
@@ -408,16 +460,24 @@ export class SCSSParser extends Parser {
             : `"${String(normalized)}"`;
         }
 
-        const items: string[] = [`${svc('value')}: ${rendered}`];
-        if (tVal !== undefined) items.push(`${svc('type')}: "${this.normalizeValue(tVal, opts)}"`);
-        if (uVal !== undefined) items.push(`${svc('unit')}: "${this.normalizeValue(uVal, opts)}"`);
+        const items: string[] = [];
+
+        if (want('value')) items.push(`${svc('value')}: ${rendered}`);
+        if (tVal !== undefined && want('type'))
+          items.push(`${svc('type')}: "${this.normalizeValue(tVal, opts)}"`);
+        if (uVal !== undefined && want('unit'))
+          items.push(`${svc('unit')}: "${this.normalizeValue(uVal, opts)}"`);
+
+        if (items.length === 0) return null;
+
         return `(\n  ${items.join(',\n  ')}\n)`;
       };
 
-      // Recursively serializes respond trees with nested token support.
       const serializeRespond = (resp: any, pth: string[]): string => {
         if (!_.isPlainObject(resp)) return '()';
+
         const entries: string[] = [];
+
         for (const [rk, rv] of Object.entries(resp)) {
           const key = opts.convertCase ? this.tokensParser.toKebabCase(rk) : rk;
 
@@ -425,28 +485,43 @@ export class SCSSParser extends Parser {
             const t = this.tokensParser.getTokenField(rv, 'type');
             const u = this.tokensParser.getTokenField(rv, 'unit');
             const v = this.tokensParser.getTokenField(rv, 'value');
-            entries.push(`${key}: ${serializeServiceToken(v, t, u, [...pth, key])}`);
-          } else if (_.isPlainObject(rv)) {
+
+            const tokenMap = serializeServiceToken(v, t, u, [...pth, key]);
+            if (tokenMap) entries.push(`${key}: ${tokenMap}`);
+            continue;
+          }
+
+          if (_.isPlainObject(rv)) {
             const innerParts: string[] = [];
+
             for (const [ik, iv] of Object.entries(rv as Record<string, unknown>)) {
               const ikb = opts.convertCase ? this.tokensParser.toKebabCase(ik) : ik;
+
               if (_.isPlainObject(iv) && this.tokensParser.hasTokenField(iv, 'value')) {
                 const t = this.tokensParser.getTokenField(iv, 'type');
                 const u = this.tokensParser.getTokenField(iv, 'unit');
                 const v = this.tokensParser.getTokenField(iv, 'value');
-                innerParts.push(`${ikb}: ${serializeServiceToken(v, t, u, [...pth, key, ikb])}`);
+
+                const tokenMap = serializeServiceToken(v, t, u, [...pth, key, ikb]);
+                if (tokenMap) innerParts.push(`${ikb}: ${tokenMap}`);
               } else {
                 const sub = serializeRespond(iv, [...pth, key, ikb]);
-                innerParts.push(`${ikb}: ${sub}`);
+                if (sub !== '(\n  \n)') innerParts.push(`${ikb}: ${sub}`);
               }
             }
-            entries.push(`${key}: (\n  ${innerParts.join(',\n  ')}\n)`);
-          } else {
-            const prim = this.normalizeValue(rv, localOpts);
-            const val = String(prim);
-            entries.push(`${key}: ${/^".*"$/.test(val) ? val : `"${val}"`}`);
+
+            if (innerParts.length > 0) {
+              entries.push(`${key}: (\n  ${innerParts.join(',\n  ')}\n)`);
+            }
+            continue;
           }
+
+          const prim = this.normalizeValue(rv, localOpts);
+          const val = String(prim);
+          entries.push(`${key}: ${/^".*"$/.test(val) ? val : `"${val}"`}`);
         }
+
+        if (entries.length === 0) return '(\n  \n)';
         return `(\n  ${entries.join(',\n  ')}\n)`;
       };
 
@@ -454,22 +529,27 @@ export class SCSSParser extends Parser {
       if (serviceMode) {
         const parts: string[] = [];
 
-        if (valueVal !== undefined) {
+        if (valueVal !== undefined && want('value')) {
           let out = this.normalizeValue(valueVal, localOpts);
           if (String(typeVal) === 'string') {
             out = /^".*"$/.test(String(out)) ? String(out) : `"${String(out)}"`;
           }
           parts.push(`${svc('value')}: ${out}`);
         }
-        if (typeVal !== undefined)
+        if (typeVal !== undefined && want('type')) {
           parts.push(`${svc('type')}: "${this.normalizeValue(typeVal, opts)}"`);
-        if (unitVal !== undefined)
+        }
+        if (unitVal !== undefined && want('unit')) {
           parts.push(`${svc('unit')}: "${this.normalizeValue(unitVal, opts)}"`);
-        if (metaVal !== undefined) parts.push(`${svc('meta')}: ${serializeMeta(metaVal)}`);
-        if (respondVal !== undefined)
+        }
+        if (metaVal !== undefined && want('meta')) {
+          parts.push(`${svc('meta')}: ${serializeMeta(metaVal)}`);
+        }
+        if (respondVal !== undefined && want('respond')) {
           parts.push(
             `${svc('respond')}: ${serializeRespond(respondVal, [...path, svc('respond')])}`,
           );
+        }
 
         // Includes additional non-service keys for completeness.
         const excluded = new Set([
@@ -609,16 +689,19 @@ export class TokensParser {
       isModulesMergedIntoEntry: opts.isModulesMergedIntoEntry ?? true,
 
       mapOptions: {
+        prefix: opts.mapOptions?.prefix ?? '',
+        scssUseDefaultFlag: opts.mapOptions?.scssUseDefaultFlag ?? true,
         convertCase: opts.mapOptions?.convertCase ?? false,
         includeFileName: opts.mapOptions?.includeFileName ?? true,
         convertToCSSVariables: opts.mapOptions?.convertToCSSVariables ?? false, // Legacy fallback for older builds.
         includeFileNameToCSSVariables: opts.mapOptions?.includeFileNameToCSSVariables ?? false, // Legacy fallback for older builds.
         excludeCSSVariables: opts.mapOptions?.excludeCSSVariables ?? [], // Legacy fallback for older builds.
-        includeServiceFields: opts.mapOptions?.includeServiceFields ?? false,
+        includeServiceFields: opts.mapOptions?.includeServiceFields ?? [],
         includeSymbolsInServiceFields: opts.mapOptions?.includeSymbolsInServiceFields ?? false,
       },
 
       cssVarOptions: {
+        prefix: opts.cssVarOptions?.prefix ?? opts.mapOptions?.prefix ?? '',
         convertToCSSVariables:
           opts.cssVarOptions?.convertToCSSVariables ??
           opts.mapOptions?.convertToCSSVariables ??
@@ -642,6 +725,12 @@ export class TokensParser {
       },
     };
 
+    const fallbackBuild = nodePath.resolve(process.cwd(), 'build');
+    this.opts.build =
+      typeof this.opts.build === 'string' && this.opts.build.trim().length > 0
+        ? this.opts.build
+        : fallbackBuild;
+
     this.parser = new SCSSParser(this);
 
     this.defaultParseOptions = {
@@ -655,7 +744,47 @@ export class TokensParser {
     this.defaultMapOptions = {
       ...this.defaultParseOptions,
       ...opts.mapOptions,
+      prefix: opts.mapOptions?.prefix ?? '',
     };
+  }
+
+  private _normalizeIncludeServiceFields(raw?: IncludeServiceFields): {
+    includeAll: boolean;
+    set: Set<ServiceField>;
+  } {
+    if (raw === true) return { includeAll: true, set: new Set<ServiceField>() };
+    if (raw === false || raw == null) return { includeAll: false, set: new Set<ServiceField>() };
+
+    if (Array.isArray(raw)) {
+      if (raw.includes('*') || raw.includes('all')) {
+        return { includeAll: true, set: new Set<ServiceField>() };
+      }
+      if (raw.includes('none')) {
+        return { includeAll: false, set: new Set<ServiceField>() };
+      }
+      if (raw.includes('core')) {
+        return { includeAll: false, set: new Set<ServiceField>(['value', 'type', 'unit']) };
+      }
+      const valid: ServiceField[] = ['value', 'type', 'unit', 'meta', 'respond'];
+      const set = new Set<ServiceField>(
+        raw.filter((x): x is ServiceField => valid.includes(x as ServiceField)),
+      );
+      return { includeAll: false, set };
+    }
+
+    return { includeAll: false, set: new Set<ServiceField>() };
+  }
+
+  public resolveIncludeServiceFields(opts: ParseValueOptions): {
+    includeAll: boolean;
+    set: Set<ServiceField>;
+  } {
+    const local = this._normalizeIncludeServiceFields(opts.includeServiceFields);
+
+    if (local.includeAll || local.set.size > 0) return local;
+
+    const globalRaw = this.opts.mapOptions?.includeServiceFields;
+    return this._normalizeIncludeServiceFields(globalRaw);
   }
 
   /* * * Universal getters for variable fields with $-aliasa support * * */
@@ -693,12 +822,13 @@ export class TokensParser {
     const builder = new JSONBuilder(this.opts.builder!);
     await builder.build();
 
+    await this.ensureDirExists(this.opts.build);
+
     if (this.opts.source && this.opts.outDir) {
       await this.listDir(this.opts.source, this.opts.outDir);
     }
 
     await this.generateEntryFile();
-
     /* * * THEMES * * */
     if (this.opts.themesDir && this.opts.themesOutFile) {
       const includeRequired = this.opts.themesIncludeRequired ?? false;
@@ -752,6 +882,15 @@ export class TokensParser {
     }
 
     return opts?.convertPxToRem ? this.valuePxToRem(value) : `${value}px`;
+  }
+
+  private async ensureDirExists(dir?: string) {
+    if (!dir) return;
+    try {
+      await fs.mkdir(dir, { recursive: true });
+    } catch {
+      /* no-op */
+    }
   }
 
   /* * * Color helpers * * */
@@ -1588,7 +1727,16 @@ export class TokensParser {
           const exportAsVar = meta?.build?.web?.exportAsVar ?? false;
 
           if (!includeRequired || exportAsVar) {
-            const cssVarName = `--${[...prefixPath, ...path].join('-')}`;
+            const pathName = [...prefixPath, ...path].join('-');
+            const pfx =
+              (this.opts.mapOptions?.prefix && this.opts.mapOptions?.prefix !== ''
+                ? this.opts.mapOptions?.prefix
+                : undefined) ??
+              (this.opts.cssVarOptions?.prefix && this.opts.cssVarOptions?.prefix !== ''
+                ? this.opts.cssVarOptions?.prefix
+                : undefined) ??
+              '';
+            const cssVarName = pfx ? `--${pfx}-${pathName}` : `--${pathName}`;
             const rawVal = this.getTokenField(obj, 'value');
             vars.push(
               `${cssVarName}: ${(this.parser.parseValue as any)(rawVal, this.defaultParseOptions)}`,
@@ -1714,7 +1862,12 @@ export class TokensParser {
               : [];
 
         const mapStr = this.parser.parseMap(map, parseMapOptions, initialPath);
-        const str = `${keyLine}${mapStr};`;
+        const useDefault =
+          (parseMapOptions.scssUseDefaultFlag ??
+            this.opts.mapOptions?.scssUseDefaultFlag ??
+            true) === true;
+
+        const str = `${keyLine}${mapStr}${useDefault ? ' !default' : ''};`;
         content += `${str}\n`;
       }
 
@@ -1754,13 +1907,13 @@ export class TokensParser {
   /* * * listDir * * */
   private async listDir(source: string, output: string) {
     try {
+      await this.ensureDirExists(this.opts.build);
+
       const fileNames = await fs.readdir(source);
       for (const fileName of fileNames) {
         if (/^(?=.).*.json$/.test(fileName)) {
-          // Resolves references and writes the resolved JSON into the build directory.
           await this.resolveAndSaveJson(`${source}/${fileName}`, fileName);
 
-          // Generates SCSS from the resolved JSON within the build directory.
           if (!this.opts.build) continue;
           await this.JSONToSCSS(
             `${this.opts.build}/${fileName}`,
@@ -1878,6 +2031,8 @@ export class TokensParser {
       });
 
       const buildDir = this.opts.build!;
+      await this.ensureDirExists(buildDir);
+
       const exists = await fs
         .access(buildDir)
         .then(() => true)
@@ -1902,9 +2057,28 @@ export class TokensParser {
     if (!build || !entryFilePath) return;
 
     try {
-      const files = await fs.readdir(build);
-      const jsonFiles = files.filter((f: string) => f.endsWith('.json')).sort();
+      await this.ensureDirExists(build);
+      const entryDir = nodePath.dirname(entryFilePath);
+      await this.ensureDirExists(entryDir);
+
+      const exists = await fs
+        .access(build)
+        .then(() => true)
+        .catch(() => false);
+      if (!exists) {
+        await fs.mkdir(build, { recursive: true });
+      }
+
+      const files = await fs.readdir(build).catch(() => []);
+      const jsonFiles = (files || []).filter((f: string) => f.endsWith('.json')).sort();
       const moduleKeys = jsonFiles.map((file: string) => file.replace('.json', ''));
+
+      if (jsonFiles.length === 0) {
+        const emptyContent = `export default {};\n`;
+        await fs.writeFile(entryFilePath, emptyContent, 'utf-8');
+        console.log(`ℹ️ No JSON files in "${build}". Empty entry generated at ${entryFilePath}`);
+        return;
+      }
 
       const relativeImportPath = nodePath.relative(nodePath.dirname(entryFilePath), build);
 
@@ -1919,8 +2093,8 @@ export class TokensParser {
         .join('\n');
 
       const moduleBody = this.opts.isModulesMergedIntoEntry
-        ? moduleKeys.join(',\n  ') // 1. { baseColors, breakpoints, ... }
-        : moduleKeys.map((name) => `...${name}`).join(',\n  '); // 2. { ...baseColors, ...breakpoints, ... }
+        ? moduleKeys.join(',\n  ')
+        : moduleKeys.map((name) => `...${name}`).join(',\n  ');
 
       const content = `${imports}
 
@@ -1931,8 +2105,6 @@ const module = {
 export default module;
 `;
 
-      const entryDir = nodePath.dirname(entryFilePath);
-      await fs.mkdir(entryDir, { recursive: true });
       await fs.writeFile(entryFilePath, content, 'utf-8');
       console.log(`✅ TypeScript entry file generated at ${entryFilePath}`);
     } catch (err) {
