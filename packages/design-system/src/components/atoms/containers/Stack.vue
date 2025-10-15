@@ -7,22 +7,17 @@ import { useEdgeSpacingClasses } from "@/composables/local";
 
 import { STACK_PREFIX, type StackProps } from "./Stack";
 
-defineOptions({
-  inheritAttrs: false,
-});
-
 const props = withDefaults(defineProps<StackProps>(), {
   as: "div",
 });
 
 const { paddingClasses, marginClasses } = useEdgeSpacingClasses(
-  { padding: props.padding, margin: props.margin, gap: props.gap },
+  { padding: props.padding, margin: props.margin },
   {
     prefix: STACK_PREFIX,
     modifiers: {
       padding: UIMODIFIERS.PADDING,
       margin: UIMODIFIERS.MARGIN,
-      gap: UIMODIFIERS.GAP,
     },
   }
 );
@@ -39,6 +34,7 @@ const { classes: facetClasses } = useFacetsClasses({
     UIMODIFIERS.STRETCH,
     UIMODIFIERS.WRAP,
     UIMODIFIERS.DIVIDER,
+    UIMODIFIERS.BORDERED,
   ],
 });
 </script>
@@ -89,39 +85,33 @@ $prefix: getPrefix($tokenName);
   display: flex;
   flex-direction: column;
   gap: var(--#{$prefix}-gap, 1rem);
-  @include box(100%);
-
   @include defineSizes();
 
-  &_padding {
-    &-left {
-      padding-inline-start: var(--#{$prefix}-padding-inline, 0);
-    }
-
-    &-right {
-      padding-inline-end: var(--#{$prefix}-padding-inline, 0);
-    }
-
-    &-top {
-      padding-block-start: var(--#{$prefix}-padding-block, 0);
-    }
-
-    &-bottom {
-      padding-block-end: var(--#{$prefix}-padding-block, 0);
-    }
-  }
-
   &_divider {
-    .#{$prefix}_orientation-horizontal {
+    &.#{$prefix}_orientation-horizontal {
       padding-right: var(--#{$prefix}-gap, 0);
       border-right-style: solid;
     }
   }
   &_divider {
-    .#{$prefix}_orientation-vertical {
+    &.#{$prefix}_orientation-vertical {
       padding-bottom: var(--#{$prefix}-gap, 0);
       border-bottom-style: solid;
     }
+  }
+
+  &_padding {
+    @include usePadding(
+      var(--#{$prefix}-padding-inline, 0),
+      var(--#{$prefix}-padding-block, 0)
+    );
+  }
+
+  &_margin {
+    @include useMargin(
+      var(--#{$prefix}-padding-inline, 0),
+      var(--#{$prefix}-padding-block, 0)
+    );
   }
 
   &_orientation {

@@ -1,0 +1,48 @@
+@mixin set-padding(
+  $prop-name: padding,
+  $l: null,
+  $t: null,
+  $r: null,
+  $b: null
+) {
+  @if $t == null and $r == null and $b == null and $l != null {
+    $t: $l;
+    $r: $l;
+    $b: $l;
+  }
+  @if $t != null and $b == null {
+    $b: $t;
+  }
+  @if $l != null and $r == null {
+    $r: $l;
+  }
+
+  @if $l != null {
+    &-left {
+      #{$prop-name}-inline-start: $l;
+    }
+  }
+  @if $r != null {
+    &-right {
+      #{$prop-name}-inline-end: $r;
+    }
+  }
+  @if $t != null {
+    &-top {
+      #{$prop-name}-block-start: $t;
+    }
+  }
+  @if $b != null {
+    &-bottom {
+      #{$prop-name}-block-end: $b;
+    }
+  }
+}
+
+@mixin usePadding($l: null, $t: null, $r: null, $b: null) {
+  @include set-padding(padding, $l, $t, $r, $b);
+}
+
+@mixin usePaddingLogical($inline: null, $block: null) {
+  @include set-padding(padding, $inline, $block, null, null);
+}

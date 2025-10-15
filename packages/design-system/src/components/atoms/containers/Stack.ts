@@ -15,8 +15,6 @@ import {
   type UIElementStylingModifiers,
 } from "@/typings";
 
-export type SurfaceStretch = UIElementStretch;
-
 export type AbstractSpacing = AbstractBreakpoint;
 
 export type StackOrientation = UIElementOrientation;
@@ -40,9 +38,6 @@ export interface StackProps
     UIElementEdgeSpacing | UIElementShortPosition | UIElementShortPositionAlias
   >;
   margin?: Array<
-    UIElementEdgeSpacing | UIElementShortPosition | UIElementShortPositionAlias
-  >;
-  gap?: Array<
     UIElementEdgeSpacing | UIElementShortPosition | UIElementShortPositionAlias
   >;
   role?: string;
