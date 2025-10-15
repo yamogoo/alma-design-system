@@ -3,7 +3,12 @@ import { Components } from "@alma/design-system";
 </script>
 
 <template>
-  <div class="editor-view">
+  <Components.Atoms.Stack
+    class="editor-view"
+    :variant="'default'"
+    :size="'lg'"
+    :padding="['l', 'v']"
+  >
     <Components.Atoms.Surface
       class="editor-view__content"
       :as="'div'"
@@ -17,7 +22,7 @@ import { Components } from "@alma/design-system";
         {{ "Notes" }}
       </Components.Atoms.Text>
     </Components.Atoms.Surface>
-  </div>
+  </Components.Atoms.Stack>
 </template>
 
 <style lang="scss">

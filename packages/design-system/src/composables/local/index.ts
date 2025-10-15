@@ -1,8 +1,10 @@
+export * from "./actions";
+
+export * from "./components";
+
 export * from "./seo";
 
 export * from "./pages";
-
-export * from "./actions";
 
 export * from "./drag-and-drop";
 

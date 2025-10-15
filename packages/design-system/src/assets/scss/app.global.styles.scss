@@ -4,6 +4,8 @@
 @use "./app.core.scss" as *;
 @use "./app.abstracts.scss" as *;
 
+@layer tokens, components, states, utilities;
+
 /* width */
 ::-webkit-scrollbar {
   width: get($components, "atoms.scrollbar.default.thumb.width");

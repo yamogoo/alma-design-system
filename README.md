@@ -115,12 +115,11 @@ pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 
 - Token path linter and contrast validation for relational contracts.
 - Matrix stories covering role × tone × state permutations.
-- Continued refinement of tone naming (base ± N system).
 
 ## Optimization Highlights
 
-- Reduced JS bundle: 1+ MB → 213.06 kB (gzip: 52.04 kB −76 %)
-- Reduced CSS bundle: 400 KB → 283.27 kB (gzip: 20.59 kB)
+- Reduced JS bundle: 1+ MB → 215.42 kB (gzip: 52.77 kB −76 %)
+- Reduced CSS bundle: 400 KB → 300.06 kB (gzip: 25.70 kB)
 - Improved dev-server startup: 50 s → 7 s (−86 %)
 - Built runtime token pipeline with a code-first single source of truth
 - Established deterministic theming across light/dark and five facets (variant/size/mode/tone/state)

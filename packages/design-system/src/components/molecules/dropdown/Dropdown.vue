@@ -80,7 +80,7 @@ const optionsId = `${DROPDOWN_PREFIX}_options-${idSuffix}`;
 const getIcon = (): HTMLDivElement | null => {
   if (!refRoot.value) return null;
   return refRoot.value.getElementsByClassName(
-    "dropdown__current-value-icon"
+    `${DROPDOWN_PREFIX}__current-value-icon`
   )[0] as HTMLDivElement;
 };
 
@@ -171,7 +171,7 @@ const onOptionsKeydown = async (event: KeyboardEvent) => {
 <template>
   <div
     ref="root"
-    data-testid="dropdown"
+    :data-testid="DROPDOWN_PREFIX"
     :class="[
       DROPDOWN_PREFIX,
       {

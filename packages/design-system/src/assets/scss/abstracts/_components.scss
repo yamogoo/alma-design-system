@@ -874,7 +874,7 @@ $components:(
   value: 24px
 )
 ),
-  at: (
+  between: (
   lg: (
   padding: (
   value: 16px
@@ -888,7 +888,7 @@ $components:(
 )
 )
 ),
-  padding: (
+  padding-block: (
   value: 16px,
   respond: (
   above: (
@@ -896,14 +896,36 @@ $components:(
   value: 24px
 )
 ),
-  at: (
+  between: (
   lg: (
-  padding: (
+  padding-block: (
   value: 16px
 )
 ),
   md: (
-  padding: (
+  padding-block: (
+  value: 12px
+)
+)
+)
+)
+),
+  padding-inline: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 24px
+)
+),
+  between: (
+  lg: (
+  padding-inline: (
+  value: 16px
+)
+),
+  md: (
+  padding-inline: (
   value: 12px
 )
 )
@@ -924,7 +946,7 @@ $components:(
   value: 24px
 )
 ),
-  at: (
+  between: (
   lg: (
   padding: (
   value: 16px
@@ -938,7 +960,7 @@ $components:(
 )
 )
 ),
-  padding: (
+  padding-block: (
   value: 16px,
   respond: (
   above: (
@@ -946,14 +968,36 @@ $components:(
   value: 24px
 )
 ),
-  at: (
+  between: (
   lg: (
-  padding: (
+  padding-block: (
   value: 16px
 )
 ),
   md: (
-  padding: (
+  padding-block: (
+  value: 12px
+)
+)
+)
+)
+),
+  padding-inline: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 24px
+)
+),
+  between: (
+  lg: (
+  padding-inline: (
+  value: 16px
+)
+),
+  md: (
+  padding-inline: (
   value: 12px
 )
 )

@@ -11,5 +11,8 @@ export { default as Page } from "./Page.vue";
 export * from "./ResizeBounding";
 export { default as ResizeBounding } from "./ResizeBounding.vue";
 
+export * from "./Stack";
+export { default as Stack } from "./Stack.vue";
+
 export * from "./Surface";
 export { default as Surface } from "./Surface.vue";

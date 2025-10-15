@@ -49,6 +49,10 @@ export const UIMODIFIERS = {
   JOINED: "joined",
   // follow the cursor:
   FLOATING: "floating",
+  // dimensions:
+  PADDING: "padding",
+  MARGIN: "margin",
+  GAP: "gap",
 } as const;
 export type UIModifier = (typeof UIMODIFIERS)[keyof typeof UIMODIFIERS];
 

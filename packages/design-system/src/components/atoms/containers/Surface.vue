@@ -10,8 +10,8 @@ import {
   type SurfaceProps,
 } from "./Surface";
 import type {
-  UIElementShortPositionAliases,
-  UIElementShortPositions,
+  UIElementShortPosition,
+  UIElementShortPositionAlias,
 } from "@/typings";
 
 const props = withDefaults(defineProps<SurfaceProps>(), {
@@ -25,8 +25,8 @@ const props = withDefaults(defineProps<SurfaceProps>(), {
 const root = useTemplateRef("root");
 
 const getDirectionAlias = (
-  d: UIElementShortPositions
-): UIElementShortPositionAliases => {
+  d: UIElementShortPosition
+): UIElementShortPositionAlias => {
   if (d === SurfaceBorderPositions.LEFT || d === SurfaceBorderPositions.RIGHT)
     return SurfaceBorderPositionAliases.HORIZONTAL;
   return SurfaceBorderPositionAliases.VERTICAL;
@@ -131,7 +131,6 @@ $prefix: getPrefix($tokenName);
   display: block;
   border-style: solid;
   border-width: 0;
-  overflow: hidden;
   @include useThemeTransition();
 
   @include defineSizes();

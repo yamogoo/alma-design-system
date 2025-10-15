@@ -38,17 +38,26 @@ export type UIElementAxisDirection = (typeof UIElementAxisDirections)[number];
 export const UIElementPositions = ["left", "top", "bottom", "right"] as const;
 export type UIElementPosition = (typeof UIElementPositions)[number];
 
-export enum UIElementShortPositions {
-  RIGHT = "r",
-  LEFT = "l",
-  TOP = "t",
-  BOTTOM = "b",
-}
+export const UIElementShortPositions = {
+  RIGHT: "r",
+  LEFT: "l",
+  TOP: "t",
+  BOTTOM: "b",
+} as const;
+export type UIElementShortPosition =
+  (typeof UIElementShortPositions)[keyof typeof UIElementShortPositions];
 
-export enum UIElementShortPositionAliases {
-  HORIZONTAL = "h",
-  VERTICAL = "v",
-}
+export const UIElementShortPositionAliases = {
+  HORIZONTAL: "h",
+  VERTICAL: "v",
+} as const;
+
+export type UIElementShortPositionAlias =
+  (typeof UIElementShortPositionAliases)[keyof typeof UIElementShortPositionAliases];
+
+export type UIElementEdgeSpacing =
+  | UIElementShortPosition
+  | UIElementShortPositionAlias;
 
 export const UIElementOrientations = ["horizontal", "vertical"] as const;
 export type UIElementOrientation = (typeof UIElementOrientations)[number];
