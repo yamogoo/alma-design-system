@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { UIFACETS } from "@/constants/ui";
 
+import { useFacetsClasses } from "@/composables/local/components/useFacetsClasses";
+
 import {
   FORM_WRAPPER_PREFIX,
   type FormWrapperProps,
@@ -8,24 +10,24 @@ import {
 import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
 import Surface from "@/components/atoms/containers/Surface.vue";
 
-withDefaults(defineProps<FormWrapperProps>(), {
+const props = withDefaults(defineProps<FormWrapperProps>(), {
   variant: "default",
   size: "lg",
   mode: "neutral",
   tone: "canvas",
   bordered: false,
 });
+
+const { classes: facetClasses } = useFacetsClasses({
+  prefix: FORM_WRAPPER_PREFIX,
+  props: props,
+  facets: [UIFACETS.VARIANT, UIFACETS.SIZE],
+});
 </script>
 
 <template>
   <Surface
-    :class="[
-      FORM_WRAPPER_PREFIX,
-      {
-        [`${FORM_WRAPPER_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
-        [`${FORM_WRAPPER_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
-      },
-    ]"
+    :class="[facetClasses]"
     :variant="variant"
     :size="size"
     :mode="mode"

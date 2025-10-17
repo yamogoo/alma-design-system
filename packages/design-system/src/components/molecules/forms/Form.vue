@@ -3,10 +3,12 @@ import { useId } from "vue";
 
 import { UIFACETS } from "@/constants/ui";
 
+import { useFacetsClasses } from "@/composables/local/components/useFacetsClasses";
+
 import { FORM_PREFIX, type FormProps } from "@/components/molecules/forms/Form";
 import Text from "@/components/atoms/typography/Text.vue";
 
-withDefaults(defineProps<FormProps>(), {
+const props = withDefaults(defineProps<FormProps>(), {
   variant: "default",
   size: "md",
   mode: "neutral",
@@ -14,18 +16,16 @@ withDefaults(defineProps<FormProps>(), {
 });
 
 const id = useId();
+
+const { classes: facetClasses } = useFacetsClasses({
+  prefix: FORM_PREFIX,
+  props: props,
+  facets: [UIFACETS.VARIANT, UIFACETS.SIZE],
+});
 </script>
 
 <template>
-  <form
-    :id
-    :class="[
-      FORM_PREFIX,
-      { [`${FORM_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant },
-      { [`${FORM_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size },
-    ]"
-    @submit.prevent
-  >
+  <form :id :class="[facetClasses]" @submit.prevent>
     <div :class="`${FORM_PREFIX}__container`">
       <div
         v-if="$slots.header || title"

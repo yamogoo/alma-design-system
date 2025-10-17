@@ -11,6 +11,8 @@ import {
 
 import { UIFACETS, UISTATES } from "@/constants/ui";
 
+import { useFacetsClasses } from "@/composables/local/components/useFacetsClasses";
+
 import { useClickOutside } from "@/composables/local/actions/useClickOutside";
 
 import Icon from "@/components/atoms/icons/Icon.vue";
@@ -40,6 +42,12 @@ const refTrigger = useTemplateRef<HTMLButtonElement | null>("trigger");
 const refOptions = useTemplateRef<HTMLDivElement | null>("options");
 
 const isExpanded = ref(false);
+
+const { classes: facetClasses } = useFacetsClasses({
+  prefix: DROPDOWN_PREFIX,
+  props: props,
+  facets: [UIFACETS.VARIANT, UIFACETS.SIZE, UIFACETS.MODE, UIFACETS.TONE],
+});
 
 useClickOutside(refRoot, () => {
   if (!isExpanded.value) return;
@@ -173,13 +181,7 @@ const onOptionsKeydown = async (event: KeyboardEvent) => {
     ref="root"
     :data-testid="DROPDOWN_PREFIX"
     :class="[
-      DROPDOWN_PREFIX,
-      {
-        [`${DROPDOWN_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
-        [`${DROPDOWN_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
-        [`${DROPDOWN_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
-        [`${DROPDOWN_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
-      },
+      facetClasses,
       `${DROPDOWN_PREFIX}_${UIFACETS.STATE}-${isExpanded ? UISTATES.EXPANDED : UISTATES.NORMAL}`,
     ]"
   >

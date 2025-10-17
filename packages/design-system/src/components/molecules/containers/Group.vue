@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+import {
+  UIFACETS,
+  UIMODIFIERS,
+  UIMODIFIERS_ALIGNMENT_MAP,
+} from "@/constants/ui";
+
+import { useFacetsClasses } from "@/composables/local/components/useFacetsClasses";
 
 import { GROUP_PREFIX, type GroupProps } from "./Group";
 import Surface from "@/components/atoms/containers/Surface.vue";
@@ -15,28 +21,30 @@ const props = withDefaults(defineProps<GroupProps>(), {
 });
 
 const componentTag = props.as;
+
+const { classes: facetClasses } = useFacetsClasses({
+  prefix: GROUP_PREFIX,
+  props: props,
+  facets: [UIFACETS.VARIANT, UIFACETS.SIZE],
+  modifiers: [
+    UIMODIFIERS.DIRECTION,
+    UIMODIFIERS.ORIENTATION,
+    UIMODIFIERS.HORIZONTAL_ALIGNMENT,
+    UIMODIFIERS.VERTICAL_ALIGNMENT,
+    UIMODIFIERS.STRETCH,
+    UIMODIFIERS.WRAP,
+    UIMODIFIERS.ROUNDED,
+    UIMODIFIERS.DIVIDER,
+    UIMODIFIERS.BORDERED,
+  ],
+  map: { ...UIMODIFIERS_ALIGNMENT_MAP },
+});
 </script>
 
 <template>
   <Surface
     :as="componentTag"
-    :class="[
-      GROUP_PREFIX,
-      `${GROUP_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
-      `${GROUP_PREFIX}_${UIFACETS.SIZE}-${size}`,
-      {
-        [`${GROUP_PREFIX}_${UIMODIFIERS.DIRECTION}-${direction}`]: !!direction,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`]:
-          !!orientation,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-vertical-${alignVertical}`]:
-          !!alignVertical,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal-${alignHorizontal}`]:
-          !!alignHorizontal,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.STRETCH}-${stretch}`]: !!stretch,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.WRAP}`]: wrap,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.DIVIDER}`]: divider,
-      },
-    ]"
+    :class="[facetClasses]"
     :mode="mode"
     :tone="tone"
     :stretch="stretch"
