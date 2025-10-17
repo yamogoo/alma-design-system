@@ -14,16 +14,16 @@
         },
         "padding": {
           "$value": [
-            "{tokens.spacing.xs.$value}",
-            "{tokens.spacing.md.$value}",
-            "{tokens.spacing.xs.$value}",
-            "{tokens.spacing.md.$value}"
+            "{tokens.spacing.xs}",
+            "{tokens.spacing.md}",
+            "{tokens.spacing.xs}",
+            "{tokens.spacing.md}"
           ],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         }
@@ -35,7 +35,7 @@
           "$unit": "alias"
         },
         "padding-top": {
-          "$value": "{tokens.spacing.xxs.$value}",
+          "$value": "{tokens.spacing.xxs}",
           "$type": "number",
           "$unit": "px"
         }
@@ -54,12 +54,7 @@
           "$unit": "alias"
         },
         "padding": {
-          "$value": [
-            0,
-            "{tokens.spacing.md.$value}",
-            0,
-            "{tokens.spacing.md.$value}"
-          ],
+          "$value": [0, "{tokens.spacing.md}", 0, "{tokens.spacing.md}"],
           "$type": "number",
           "$unit": "px"
         }
@@ -78,15 +73,12 @@
           "$unit": "px"
         },
         "padding": {
-          "$value": [
-            "{tokens.spacing.xs.$value}",
-            "{tokens.spacing.md.$value}"
-          ],
+          "$value": ["{tokens.spacing.xs}", "{tokens.spacing.md}"],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.sm.$value}",
+          "$value": "{tokens.roundness.sm}",
           "$type": "number",
           "$unit": "px"
         }
@@ -98,7 +90,7 @@
           "$unit": "alias"
         },
         "paddingTop": {
-          "$value": "{tokens.spacing.xxs.$value}",
+          "$value": "{tokens.spacing.xxs}",
           "$type": "number",
           "$unit": "px"
         }
@@ -117,12 +109,7 @@
           "$unit": "alias"
         },
         "padding": {
-          "$value": [
-            0,
-            "{tokens.spacing.md.$value}",
-            0,
-            "{tokens.spacing.md.$value}"
-          ],
+          "$value": [0, "{tokens.spacing.md}", 0, "{tokens.spacing.md}"],
           "$type": "number",
           "$unit": "px"
         }

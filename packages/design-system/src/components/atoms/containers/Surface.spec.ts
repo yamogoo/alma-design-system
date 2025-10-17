@@ -7,8 +7,6 @@ import Surface from "./Surface.vue";
 
 const Classes = {
   ROOT_CLASS: SURFACE_PREFIX,
-  VARIANT: `${SURFACE_PREFIX}_${UIFACETS.VARIANT}`,
-  SIZE: `${SURFACE_PREFIX}_${UIFACETS.SIZE}`,
   MODE: `${SURFACE_PREFIX}_${UIFACETS.MODE}`,
   TONE: `${SURFACE_PREFIX}_${UIFACETS.TONE}`,
   ELEVATED: `${SURFACE_PREFIX}_${UIMODIFIERS.ELEVATED}`,
@@ -24,20 +22,16 @@ describe("Surface", () => {
         mode: "neutral",
         tone: "primary",
         elevated: true,
-        borderSides: "r",
+        border: "r",
       };
 
       const wrapper = mount(Surface, { props });
 
-      expect(wrapper.classes()).toContain(
-        `${Classes.VARIANT}-${props.variant}`
-      );
-      expect(wrapper.classes()).toContain(`${Classes.SIZE}-${props.size}`);
       expect(wrapper.classes()).toContain(`${Classes.MODE}-${props.mode}`);
       expect(wrapper.classes()).toContain(`${Classes.TONE}-${props.tone}`);
       expect(wrapper.classes()).toContain(`${Classes.ELEVATED}`);
       expect(wrapper.classes()).toContain(
-        `${Classes.BORDER_SIDES}-${props.borderSides}`
+        `${Classes.BORDER_SIDES}-${props.border}`
       );
     });
   });

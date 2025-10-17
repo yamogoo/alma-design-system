@@ -6,7 +6,7 @@ import type { SurfaceProps } from "@/components/atoms/containers/Surface";
 
 export interface ActionSheetProps extends SurfaceProps {
   containerId?: OverlayId;
-  isActive: boolean;
+  isOpen: boolean;
 }
 
 export const ACTION_SHEET_PREFIX = `${NAMESPACE}action-sheet`;

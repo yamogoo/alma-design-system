@@ -3,10 +3,7 @@
     "lg": {
       "header": {
         "padding": {
-          "$value": [
-            "{tokens.spacing.lg.$value}",
-            "{tokens.spacing.lg.$value}"
-          ],
+          "$value": ["{tokens.spacing.lg}", "{tokens.spacing.lg}"],
           "$type": "number",
           "$unit": "px"
         }
@@ -15,10 +12,7 @@
     "md": {
       "header": {
         "padding": {
-          "$value": [
-            "{tokens.spacing.md.$value}",
-            "{tokens.spacing.md.$value}"
-          ],
+          "$value": ["{tokens.spacing.md}", "{tokens.spacing.md}"],
           "$type": "number",
           "$unit": "px"
         }

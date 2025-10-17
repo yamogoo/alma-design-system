@@ -8,21 +8,21 @@
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.md.$value}",
+          "$value": "{tokens.roundness.md}",
           "$type": "number",
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.xl.$value}",
+          "$value": "{tokens.spacing.xl}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
           "$value": [
-            "{tokens.spacing.xxl.$value}",
-            "{tokens.spacing.lg.$value}",
-            "{tokens.spacing.lg.$value}",
-            "{tokens.spacing.lg.$value}"
+            "{tokens.spacing.xxl}",
+            "{tokens.spacing.lg}",
+            "{tokens.spacing.lg}",
+            "{tokens.spacing.lg}"
           ],
           "$type": "number",
           "$unit": "px"
@@ -30,7 +30,7 @@
       },
       "button": {
         "offset": {
-          "$value": "{tokens.spacing.lg.$value}",
+          "$value": "{tokens.spacing.lg}",
           "$type": "number",
           "$unit": "px"
         }
@@ -44,27 +44,24 @@
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.md.$value}",
+          "$value": "{tokens.roundness.md}",
           "$type": "number",
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": [
-            "{tokens.spacing.lg.$value}",
-            "{tokens.spacing.lg.$value}"
-          ],
+          "$value": ["{tokens.spacing.lg}", "{tokens.spacing.lg}"],
           "$type": "number",
           "$unit": "px"
         }
       },
       "button": {
         "offset": {
-          "$value": "{tokens.spacing.lg.$value}",
+          "$value": "{tokens.spacing.lg}",
           "$type": "number",
           "$unit": "px"
         }

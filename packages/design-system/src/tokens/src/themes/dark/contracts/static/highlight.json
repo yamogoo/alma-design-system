@@ -1,7 +1,7 @@
 {
   "accent": {
     "normal": {
-      "$value": "{themes.dark.contracts.rel.highlight.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.highlight.accent.base}",
       "$type": "color",
       "$unit": "hex"
     }

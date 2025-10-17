@@ -3,34 +3,49 @@ import { NAMESPACE } from "@/constants";
 import type { GroupVariant, GroupSize } from "@/adapters/molecules/group";
 
 import type {
-  UIElementAlignment,
+  UIElementAlignmentProps,
   UIElementAxisDirection,
   UIElementBlockTag,
+  UIElementBorderedProps,
+  UIElementDirectionProps,
+  UIElementDividerProps,
+  UIElementMarginProps,
   UIElementOrientation,
+  UIElementOrientationProps,
+  UIElementPaddingProps,
+  UIElementRoundedProps,
   UIElementStretch,
+  UIElementStretchProps,
   UIElementStylingModifiers,
+  UIElementWrapProps,
 } from "@/typings";
 import type { SurfaceMode, SurfaceTone } from "@/adapters/atoms/surface";
 
 export type GroupOrientation = UIElementOrientation;
 export type GroupDirection = UIElementAxisDirection;
-export type GroupAlignment = UIElementAlignment;
 export type GroupStretch = UIElementStretch;
 export type GroupAsTag = UIElementBlockTag;
 
 export interface GroupProps
   extends Partial<
-    UIElementStylingModifiers<GroupVariant, GroupSize, SurfaceMode, SurfaceTone>
-  > {
+      UIElementStylingModifiers<
+        GroupVariant,
+        GroupSize,
+        SurfaceMode,
+        SurfaceTone
+      >
+    >,
+    UIElementAlignmentProps,
+    UIElementDirectionProps,
+    UIElementOrientationProps,
+    UIElementStretchProps,
+    UIElementWrapProps,
+    UIElementBorderedProps,
+    UIElementDividerProps,
+    UIElementPaddingProps,
+    UIElementMarginProps,
+    UIElementRoundedProps {
   as?: GroupAsTag;
-  orientation?: GroupOrientation;
-  direction?: GroupDirection;
-  verticalAlignment?: GroupAlignment;
-  horizontalAlignment?: GroupAlignment;
-  stretch?: GroupStretch;
-  wrap?: boolean;
-  divider?: boolean;
-  bordered?: boolean;
   role?: string;
   ariaLabel?: string;
 }

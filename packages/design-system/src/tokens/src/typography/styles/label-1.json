@@ -1,6 +1,6 @@
 {
   "fontFamily": {
-    "$value": "{typography.tokens.fontFamily.primary.$value}",
+    "$value": "{typography.tokens.fontFamily.primary}",
     "$type": "fontFamily",
     "$unit": ""
   },
@@ -15,7 +15,7 @@
     "$unit": ""
   },
   "fontWeight": {
-    "$value": "{typography.tokens.fontWeight.regular.$value}",
+    "$value": "{typography.tokens.fontWeight.regular}",
     "$type": "fontWeight",
     "$unit": ""
   },

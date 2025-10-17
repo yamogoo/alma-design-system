@@ -13,12 +13,12 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.gap.xs.$value}",
+          "$value": "{tokens.gap.xs}",
           "$type": "number",
           "$unit": "px"
         },
         "touchArea": {
-          "$value": "{tokens.touchArea.md.size.$value}",
+          "$value": "{tokens.touchArea.md.size}",
           "$type": "number",
           "$unit": "px"
         }
@@ -48,7 +48,7 @@
           "$unit": "px"
         },
         "height": {
-          "$value": "{components.atoms.switch.default.lg.root.height.$value}",
+          "$value": "{components.atoms.switch.default.lg.root.height}",
           "$type": "number",
           "$unit": "px"
         }
@@ -67,12 +67,12 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.gap.xs.$value}",
+          "$value": "{tokens.gap.xs}",
           "$type": "number",
           "$unit": "px"
         },
         "touchArea": {
-          "$value": "{tokens.touchArea.md.size.$value}",
+          "$value": "{tokens.touchArea.md.size}",
           "$type": "number",
           "$unit": "px"
         }
@@ -103,7 +103,7 @@
           "$unit": "px"
         },
         "height": {
-          "$value": "{components.atoms.switch.default.md.root.height.$value}",
+          "$value": "{components.atoms.switch.default.md.root.height}",
           "$type": "number",
           "$unit": "px"
         }
@@ -122,12 +122,12 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.gap.xs.$value}",
+          "$value": "{tokens.gap.xs}",
           "$type": "number",
           "$unit": "px"
         },
         "touchArea": {
-          "$value": "{tokens.touchArea.sm.size.$value}",
+          "$value": "{tokens.touchArea.sm.size}",
           "$type": "number",
           "$unit": "px"
         }
@@ -157,7 +157,7 @@
           "$unit": "px"
         },
         "height": {
-          "$value": "{components.atoms.switch.default.sm.root.height.$value}",
+          "$value": "{components.atoms.switch.default.sm.root.height}",
           "$type": "number",
           "$unit": "px"
         }

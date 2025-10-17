@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { computed, useTemplateRef } from "vue";
+import { computed, ref } from "vue";
 
 import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+
+import { useFacetsClasses } from "@/composables/local/components/useFacetsClasses";
+
+import type {
+  UIElementShortPosition,
+  UIElementShortPositionAlias,
+} from "@/typings";
 
 import {
   SURFACE_PREFIX,
@@ -9,20 +16,24 @@ import {
   SurfaceBorderPositions,
   type SurfaceProps,
 } from "./Surface";
-import type {
-  UIElementShortPosition,
-  UIElementShortPositionAlias,
-} from "@/typings";
+import Stack from "./Stack.vue";
 
 const props = withDefaults(defineProps<SurfaceProps>(), {
   as: "div",
   stretch: "fill",
-  borderSides: "",
+  border: "",
   elevated: false,
   rounded: false,
 });
 
-const root = useTemplateRef("root");
+const root = ref<InstanceType<typeof Stack> | null>(null);
+
+const { classes: facetClasses } = useFacetsClasses({
+  prefix: SURFACE_PREFIX,
+  props: props,
+  facets: [UIFACETS.MODE, UIFACETS.TONE],
+  modifiers: [UIMODIFIERS.ELEVATED, UIMODIFIERS.BORDER],
+});
 
 const getDirectionAlias = (
   d: UIElementShortPosition
@@ -32,8 +43,8 @@ const getDirectionAlias = (
   return SurfaceBorderPositionAliases.VERTICAL;
 };
 
-const computedBorderClass = computed(() => {
-  const sides = props.borderSides;
+const borderClass = computed(() => {
+  const sides = props.border;
 
   return Object.values(SurfaceBorderPositions).map((position) => {
     const isPosition =
@@ -53,45 +64,30 @@ defineExpose({
 </script>
 
 <template>
-  <component
-    :is="as"
+  <Stack
+    :as="as"
     ref="root"
-    :class="[
-      SURFACE_PREFIX,
-      {
-        [`${SURFACE_PREFIX}_${UIFACETS.VARIANT}-${variant}`]: !!variant,
-        [`${SURFACE_PREFIX}_${UIFACETS.SIZE}-${size}`]: !!size,
-        [`${SURFACE_PREFIX}_${UIFACETS.MODE}-${mode}`]: !!mode,
-        [`${SURFACE_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
-        [`${SURFACE_PREFIX}_${UIMODIFIERS.STRETCH}-${stretch}`]: !!stretch,
-        [`${SURFACE_PREFIX}_${UIMODIFIERS.ROUNDED}`]: !!rounded,
-        [`${SURFACE_PREFIX}_${UIMODIFIERS.ELEVATED}`]: !!elevated,
-      },
-      computedBorderClass,
-    ]"
+    :class="[facetClasses, borderClass]"
+    :variant="variant"
+    :size="size"
+    :align-horizontal="alignHorizontal"
+    :align-vertical="alignVertical"
+    :orientation="orientation"
+    :direction="direction"
+    :stretch="stretch"
+    :wrap="wrap"
+    :bordered="bordered"
+    :divider="divider"
+    :rounded="rounded"
     data-testid="surface"
   >
     <slot></slot>
-  </component>
+  </Stack>
 </template>
 
 <style lang="scss">
 $tokenName: "surface";
 $prefix: getPrefix($tokenName);
-
-@mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
-  @each $variant, $sizes in $map {
-    @each $size, $val in $sizes {
-      $radius: px2rem(get($val, "root.border-radius"));
-      $bwidth: px2rem(get($val, "root.border-width"));
-
-      :where(&.#{$prefix}_variant-#{$variant}.#{$prefix}_size-#{$size}) {
-        --#{$prefix}-radius: #{$radius};
-        --#{$prefix}-border-width: #{$bwidth};
-      }
-    }
-  }
-}
 
 @mixin defineThemes(
   $map: get($themes, "light.contracts.interactive.#{$tokenName}")
@@ -127,24 +123,9 @@ $prefix: getPrefix($tokenName);
 }
 
 .#{$prefix} {
-  position: relative;
-  display: block;
-  border-style: solid;
-  border-width: 0;
   @include useThemeTransition();
 
-  @include defineSizes();
   @include defineThemes();
-
-  &_stretch {
-    &-fill {
-      @include box(100%);
-    }
-
-    &-auto {
-      @include box(max-content);
-    }
-  }
 
   &_elevated {
     @include useElevation();

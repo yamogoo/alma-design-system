@@ -28,10 +28,10 @@ const componentTag = props.as;
         [`${GROUP_PREFIX}_${UIMODIFIERS.DIRECTION}-${direction}`]: !!direction,
         [`${GROUP_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`]:
           !!orientation,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-vertical-${verticalAlignment}`]:
-          !!verticalAlignment,
-        [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal-${horizontalAlignment}`]:
-          !!horizontalAlignment,
+        [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-vertical-${alignVertical}`]:
+          !!alignVertical,
+        [`${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal-${alignHorizontal}`]:
+          !!alignHorizontal,
         [`${GROUP_PREFIX}_${UIMODIFIERS.STRETCH}-${stretch}`]: !!stretch,
         [`${GROUP_PREFIX}_${UIMODIFIERS.WRAP}`]: wrap,
         [`${GROUP_PREFIX}_${UIMODIFIERS.DIVIDER}`]: divider,
@@ -42,7 +42,7 @@ const componentTag = props.as;
     :stretch="stretch"
     :role="role"
     :aria-label="ariaLabel"
-    :border-sides="bordered ? 'rtlb' : undefined"
+    :border="bordered ? 'rtlb' : undefined"
     data-testid="group"
   >
     <slot></slot>
@@ -100,7 +100,7 @@ $prefix: getPrefix($tokenName);
   }
 
   &_align {
-    @include useAlign();
+    @include useAlign($prefix);
   }
 
   &_stretch {

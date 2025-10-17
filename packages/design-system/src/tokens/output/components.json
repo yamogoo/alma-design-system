@@ -479,11 +479,7 @@
           },
           "icon": {
             "size": {
-              "$value": {
-                "$value": 18,
-                "$type": "number",
-                "$unit": "px"
-              },
+              "$value": 18,
               "$type": "alias",
               "unit": ""
             }
@@ -1279,107 +1275,8 @@
       }
     },
     "stack": {
-      "main": {
-        "lg": {
-          "root": {
-            "gap": {
-              "$value": 16,
-              "$type": "number",
-              "$unit": "px",
-              "$respond": {
-                "above": {
-                  "lg": {
-                    "$value": 24,
-                    "$type": "number",
-                    "$unit": "px"
-                  }
-                },
-                "between": {
-                  "lg": {
-                    "padding": {
-                      "$value": 16,
-                      "$type": "number",
-                      "$unit": "px"
-                    }
-                  },
-                  "md": {
-                    "padding": {
-                      "$value": 12,
-                      "$type": "number",
-                      "$unit": "px"
-                    }
-                  }
-                }
-              }
-            },
-            "paddingBlock": {
-              "$value": 16,
-              "$type": "number",
-              "$unit": "px",
-              "$respond": {
-                "above": {
-                  "lg": {
-                    "$value": 24,
-                    "$type": "number",
-                    "$unit": "px"
-                  }
-                },
-                "between": {
-                  "lg": {
-                    "paddingBlock": {
-                      "$value": 16,
-                      "$type": "number",
-                      "$unit": "px"
-                    }
-                  },
-                  "md": {
-                    "paddingBlock": {
-                      "$value": 12,
-                      "$type": "number",
-                      "$unit": "px"
-                    }
-                  }
-                }
-              }
-            },
-            "paddingInline": {
-              "$value": 16,
-              "$type": "number",
-              "$unit": "px",
-              "$respond": {
-                "above": {
-                  "lg": {
-                    "$value": 24,
-                    "$type": "number",
-                    "$unit": "px"
-                  }
-                },
-                "between": {
-                  "lg": {
-                    "paddingInline": {
-                      "$value": 16,
-                      "$type": "number",
-                      "$unit": "px"
-                    }
-                  },
-                  "md": {
-                    "paddingInline": {
-                      "$value": 12,
-                      "$type": "number",
-                      "$unit": "px"
-                    }
-                  }
-                }
-              }
-            },
-            "$meta": {
-              "description": "Stack used for main app containers or layouts"
-            }
-          }
-        }
-      },
       "default": {
-        "lg": {
+        "xl": {
           "root": {
             "gap": {
               "$value": 16,
@@ -1395,14 +1292,14 @@
                 },
                 "between": {
                   "lg": {
-                    "padding": {
+                    "gap": {
                       "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
                   "md": {
-                    "padding": {
+                    "gap": {
                       "$value": 12,
                       "$type": "number",
                       "$unit": "px"
@@ -1410,6 +1307,16 @@
                   }
                 }
               }
+            },
+            "marginBlock": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "marginInline": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
             },
             "paddingBlock": {
               "$value": 16,
@@ -1470,10 +1377,371 @@
                   }
                 }
               }
+            },
+            "borderRadius": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
             }
           },
           "$meta": {
             "description": "Stack used for main app containers or layouts"
+          }
+        },
+        "lg": {
+          "root": {
+            "gap": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "gap": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "gap": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "marginBlock": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "marginInline": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "paddingBlock": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "paddingBlock": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "paddingBlock": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "paddingInline": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "paddingInline": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "paddingInline": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "borderRadius": {
+              "$value": 20,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "$meta": {
+            "description": "Stack used for main app containers or layouts"
+          }
+        },
+        "md": {
+          "root": {
+            "gap": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "gap": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "gap": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "marginBlock": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "marginInline": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "paddingBlock": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "paddingBlock": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "paddingBlock": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "paddingInline": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 24,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "paddingInline": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "paddingInline": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "borderRadius": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "$meta": {
+            "description": "Stack used for main app containers or layouts"
+          }
+        },
+        "sm": {
+          "root": {
+            "gap": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 12,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "gap": {
+                      "$value": 8,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "gap": {
+                      "$value": 8,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "marginBlock": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "marginInline": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "paddingBlock": {
+              "$value": 12,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 12,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "paddingBlock": {
+                      "$value": 16,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "paddingBlock": {
+                      "$value": 12,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "paddingInline": {
+              "$value": 12,
+              "$type": "number",
+              "$unit": "px",
+              "$respond": {
+                "above": {
+                  "lg": {
+                    "$value": 12,
+                    "$type": "number",
+                    "$unit": "px"
+                  }
+                },
+                "between": {
+                  "lg": {
+                    "paddingInline": {
+                      "$value": 8,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  },
+                  "md": {
+                    "paddingInline": {
+                      "$value": 8,
+                      "$type": "number",
+                      "$unit": "px"
+                    }
+                  }
+                }
+              }
+            },
+            "borderRadius": {
+              "$value": 20,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "$meta": {
+              "description": "Stack used for main app containers or layouts"
+            }
           }
         }
       }
@@ -1833,10 +2101,15 @@
       "default": {
         "lg": {
           "root": {
-            "minHeight": {
-              "$value": 32,
+            "minWidth": {
+              "$value": 70,
               "$type": "number",
-              "$unit": "px"
+              "$unit": "%"
+            },
+            "minHeight": {
+              "$value": 60,
+              "$type": "number",
+              "$unit": "%"
             },
             "borderRadius": {
               "$value": 16,
@@ -1857,10 +2130,15 @@
         },
         "md": {
           "root": {
-            "minHeight": {
-              "$value": 32,
+            "minWidth": {
+              "$value": 50,
               "$type": "number",
-              "$unit": "px"
+              "$unit": "%"
+            },
+            "minHeight": {
+              "$value": 30,
+              "$type": "number",
+              "$unit": "%"
             },
             "borderRadius": {
               "$value": 12,

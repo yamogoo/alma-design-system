@@ -2,57 +2,57 @@
   "neutral": {
     "primary": {
       "root": {
-        "highlight": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
+        "highlight": "{themes.dark.contracts.static.highlight.accent.normal}",
         "$type": "color",
         "$unit": "hex"
       },
       "track": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "knob": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "label": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -62,57 +62,57 @@
   "accent": {
     "primary": {
       "root": {
-        "highlight": "{themes.dark.contracts.static.highlight.accent.normal.$value}",
+        "highlight": "{themes.dark.contracts.static.highlight.accent.normal}",
         "$type": "color",
         "$unit": "hex"
       },
       "track": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "knob": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "label": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }

@@ -1,5 +1,5 @@
 {
-  "$value": "{tokens.stroke.sm.$value}",
+  "$value": "{tokens.stroke.sm}",
   "$type": "number",
   "$unit": "px"
 }

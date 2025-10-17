@@ -10,8 +10,8 @@ import FormWrapper from "./FormWrapper.vue";
 const Classes = {
   ROOT_CLASS: FORM_WRAPPER_PREFIX,
   BASE_CLASS_NAME: SURFACE_PREFIX,
-  VARIANT: `${SURFACE_PREFIX}_${UIFACETS.VARIANT}`,
-  SIZE: `${SURFACE_PREFIX}_${UIFACETS.SIZE}`,
+  VARIANT: `${FORM_WRAPPER_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${FORM_WRAPPER_PREFIX}_${UIFACETS.SIZE}`,
 };
 
 const getSurface = <T>(wrapper: VueWrapper<T>) => {
@@ -37,7 +37,7 @@ describe("FormWrapper", () => {
         size: "lg",
         mode: "accent",
         tone: "canvas",
-        borderSides: "r",
+        border: "r",
       };
 
       const wrapper = mount(FormWrapper, {

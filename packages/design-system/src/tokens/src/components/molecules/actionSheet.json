@@ -2,22 +2,27 @@
   "default": {
     "lg": {
       "root": {
-        "minHeight": {
-          "$value": 32,
+        "minWidth": {
+          "$value": 70,
           "$type": "number",
-          "$unit": "px"
+          "$unit": "%"
+        },
+        "minHeight": {
+          "$value": 60,
+          "$type": "number",
+          "$unit": "%"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.md.$value}",
+          "$value": "{tokens.roundness.md}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
           "$value": [
-            "{tokens.spacing.xxl.$value}",
-            "{tokens.spacing.lg.$value}",
-            "{tokens.spacing.lg.$value}",
-            "{tokens.spacing.lg.$value}"
+            "{tokens.spacing.xxl}",
+            "{tokens.spacing.lg}",
+            "{tokens.spacing.lg}",
+            "{tokens.spacing.lg}"
           ],
           "$type": "number",
           "$unit": "px"
@@ -26,21 +31,23 @@
     },
     "md": {
       "root": {
-        "minHeight": {
-          "$value": 32,
+        "minWidth": {
+          "$value": 50,
           "$type": "number",
-          "$unit": "px"
+          "$unit": "%"
+        },
+        "minHeight": {
+          "$value": 30,
+          "$type": "number",
+          "$unit": "%"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.sm.$value}",
+          "$value": "{tokens.roundness.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": [
-            "{tokens.spacing.lg.$value}",
-            "{tokens.spacing.lg.$value}"
-          ],
+          "$value": ["{tokens.spacing.lg}", "{tokens.spacing.lg}"],
           "$type": "number",
           "$unit": "px"
         }

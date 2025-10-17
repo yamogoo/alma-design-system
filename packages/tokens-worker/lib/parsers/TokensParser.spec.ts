@@ -1,3 +1,5 @@
+// Portions of this file were developed with the assistance of AI tools.
+//
 // @ts-nocheck
 
 import fs from 'node:fs';

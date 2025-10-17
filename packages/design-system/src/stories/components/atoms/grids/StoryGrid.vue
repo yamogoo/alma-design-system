@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { OVERLAY_IDS } from "@/constants/ui";
+
 import type { StoryGridProps } from "./StoryGrid";
 
 withDefaults(defineProps<StoryGridProps>(), {
@@ -7,7 +9,11 @@ withDefaults(defineProps<StoryGridProps>(), {
 </script>
 
 <template>
-  <div class="sb-story-grid" :style="{ '--story-grid-cols': columns }">
+  <div
+    :id="OVERLAY_IDS.MAIN"
+    class="sb-story-grid"
+    :style="{ '--story-grid-cols': columns }"
+  >
     <slot></slot>
   </div>
 </template>

@@ -17,17 +17,17 @@
               "unit": "hex"
             },
             "hovered": {
-              "$value": "{themes.dark.contracts.interactive.surface.accent.primary.hovered.$value}",
+              "$value": "{themes.dark.contracts.interactive.surface.accent.primary.hovered}",
               "$type": "color",
               "unit": "hex"
             },
             "pressed": {
-              "$value": "{themes.dark.contracts.interactive.surface.accent.primary.pressed.$value}",
+              "$value": "{themes.dark.contracts.interactive.surface.accent.primary.pressed}",
               "$type": "color",
               "unit": "hex"
             },
             "selected": {
-              "$value": "{themes.dark.contracts.interactive.surface.accent.primary.hovered.$value}",
+              "$value": "{themes.dark.contracts.interactive.surface.accent.primary.hovered}",
               "$type": "color",
               "unit": "hex"
             }
@@ -36,22 +36,22 @@
         "label": {
           "color": {
             "normal": {
-              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal.$value}",
+              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal}",
               "$type": "color",
               "unit": "hex"
             },
             "hovered": {
-              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.hovered.$value}",
+              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.hovered}",
               "$type": "color",
               "unit": "hex"
             },
             "pressed": {
-              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.pressed.$value}",
+              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.pressed}",
               "$type": "color",
               "unit": "hex"
             },
             "selected": {
-              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.selected.$value}",
+              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.selected}",
               "$type": "color",
               "unit": "hex"
             }
@@ -60,22 +60,22 @@
         "caret": {
           "color": {
             "normal": {
-              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal.$value}",
+              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal}",
               "$type": "color",
               "unit": "hex"
             },
             "hovered": {
-              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.hovered.$value}",
+              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.hovered}",
               "$type": "color",
               "unit": "hex"
             },
             "pressed": {
-              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.pressed.$value}",
+              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.pressed}",
               "$type": "color",
               "unit": "hex"
             },
             "selected": {
-              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.selected.$value}",
+              "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.selected}",
               "$type": "color",
               "unit": "hex"
             }

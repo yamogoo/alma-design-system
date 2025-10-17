@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { storeToRefs } from "pinia";
 
 import { Constants } from "@/constants";
@@ -7,6 +8,7 @@ import { useSettingsStore, useEditorLayout } from "@/stores";
 
 import { Components } from "@alma/design-system";
 
+import Settings from "@/components/organisms/menues/Settings.vue";
 import { EditorView, SidebarMenu, Explorer } from "@/components/organisms";
 
 const settings = useSettingsStore();
@@ -17,9 +19,23 @@ const layout = useEditorLayout();
 const { navigatorWidth, isNavigatorShown } = storeToRefs(layout);
 const { setNavigatorWidth } = layout;
 
-const onUpdateWidth = (width: number) => {
-  setNavigatorWidth(width);
-};
+const localIsOpen = computed({
+  get: () => {
+    return isSettingsOpen.value;
+  },
+  set: (isOpen: boolean) => {
+    setIsOpen(isOpen);
+  },
+});
+
+const localNavigatorWidth = computed({
+  get: () => {
+    return navigatorWidth.value;
+  },
+  set: (width: number) => {
+    setNavigatorWidth(width);
+  },
+});
 
 const onOpenSettings = (): void => {
   setIsOpen(true);
@@ -27,39 +43,19 @@ const onOpenSettings = (): void => {
 </script>
 
 <template>
-  <Components.Atoms.Page class="editor-main-page" orientation="horizontal">
+  <Components.Atoms.Page orientation="horizontal">
     <SidebarMenu @open:settings="onOpenSettings"></SidebarMenu>
     <Components.Atoms.ResizeBounding
       v-if="isNavigatorShown"
-      class="editor-view__navigator"
       data-test="editor-navigator"
-      directions="'r'"
-      :width="navigatorWidth"
+      directions="r"
+      v-model:width="localNavigatorWidth"
       :min-width="Constants.DEFAULT_NAVIGATOR_MIN_WIDTH"
       :max-width="Constants.DEFAULT_NAVIGATOR_MAX_WIDTH"
-      @update:width="onUpdateWidth"
     >
       <Explorer></Explorer>
     </Components.Atoms.ResizeBounding>
     <EditorView></EditorView>
   </Components.Atoms.Page>
-  <Components.Molecules.Overlay
-    :is-open="isSettingsOpen"
-    :variant="'container'"
-    :mode="'neutral'"
-    :tone="'primary'"
-  >
-    <Components.Atoms.Surface bordered>
-      <Components.Atoms.Text>
-        {{ "Settings" }}
-      </Components.Atoms.Text>
-    </Components.Atoms.Surface>
-  </Components.Molecules.Overlay>
+  <Settings v-model:is-open="localIsOpen"></Settings>
 </template>
-
-<style lang="scss">
-.editor-main-page {
-  box-sizing: border-box;
-  position: relative;
-}
-</style>

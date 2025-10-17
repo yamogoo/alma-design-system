@@ -3,7 +3,7 @@
     "primary": {
       "root": {
         "border": {
-          "$value": "{themes.dark.contracts.interactive.border.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.border.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -12,7 +12,7 @@
     "secondary": {
       "root": {
         "border": {
-          "$value": "{themes.dark.contracts.interactive.border.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.border.neutral.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         }

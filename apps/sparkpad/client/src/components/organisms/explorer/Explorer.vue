@@ -20,7 +20,10 @@ const onResetValue = (): void => {
     :size="'lg'"
     :mode="'neutral'"
     :tone="'canvas'"
-    :border-sides="'hv'"
+    :orientation="'vertical'"
+    :align-horizontal="'start'"
+    :align-vertical="'start'"
+    :border="'hv'"
     :rounded="true"
   >
     <Components.Atoms.SearchInput

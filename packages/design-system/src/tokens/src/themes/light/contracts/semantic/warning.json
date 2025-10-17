@@ -1,157 +1,157 @@
 {
   "canvas": {
     "border": {
-      "$value": "{themes.light.contracts.rel.border.warning.base-down-3.$value}",
+      "$value": "{themes.light.contracts.rel.border.warning.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.light.contracts.rel.stroke.warning.base-down-3.$value}",
+      "$value": "{themes.light.contracts.rel.stroke.warning.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.light.contracts.rel.label.warning.base-down-3.$value}",
+      "$value": "{themes.light.contracts.rel.label.warning.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.light.contracts.rel.onSurface.warning.base-down-3.$value}",
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.light.contracts.rel.surface.warning.base-down-3.$value}",
+      "$value": "{themes.light.contracts.rel.surface.warning.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "primary": {
     "border": {
-      "$value": "{themes.light.contracts.rel.border.warning.base-down-2.$value}",
+      "$value": "{themes.light.contracts.rel.border.warning.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.light.contracts.rel.stroke.warning.base-down-2.$value}",
+      "$value": "{themes.light.contracts.rel.stroke.warning.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.light.contracts.rel.label.warning.base-down-2.$value}",
+      "$value": "{themes.light.contracts.rel.label.warning.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.light.contracts.rel.onSurface.warning.base-down-2.$value}",
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.light.contracts.rel.surface.warning.base-down-2.$value}",
+      "$value": "{themes.light.contracts.rel.surface.warning.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "secondary": {
     "border": {
-      "$value": "{themes.light.contracts.rel.border.warning.base-down-1.$value}",
+      "$value": "{themes.light.contracts.rel.border.warning.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.light.contracts.rel.stroke.warning.base-down-1.$value}",
+      "$value": "{themes.light.contracts.rel.stroke.warning.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.light.contracts.rel.label.warning.base-down-1.$value}",
+      "$value": "{themes.light.contracts.rel.label.warning.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.light.contracts.rel.onSurface.warning.base-down-1.$value}",
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.light.contracts.rel.surface.warning.base-down-1.$value}",
+      "$value": "{themes.light.contracts.rel.surface.warning.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "tertiary": {
     "border": {
-      "$value": "{themes.light.contracts.rel.border.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.border.warning.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.light.contracts.rel.stroke.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.stroke.warning.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.light.contracts.rel.label.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.label.warning.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.light.contracts.rel.onSurface.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.light.contracts.rel.surface.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.surface.warning.base}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "quaternary": {
     "border": {
-      "$value": "{themes.light.contracts.rel.border.warning.base-up-3.$value}",
+      "$value": "{themes.light.contracts.rel.border.warning.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.light.contracts.rel.stroke.warning.base-up-3.$value}",
+      "$value": "{themes.light.contracts.rel.stroke.warning.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.light.contracts.rel.label.warning.base-up-3.$value}",
+      "$value": "{themes.light.contracts.rel.label.warning.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.light.contracts.rel.onSurface.warning.base-up-3.$value}",
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.light.contracts.rel.surface.warning.base-up-3.$value}",
+      "$value": "{themes.light.contracts.rel.surface.warning.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "outline": {
     "border": {
-      "$value": "{themes.light.contracts.rel.border.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.border.warning.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.light.contracts.rel.stroke.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.stroke.warning.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.light.contracts.rel.label.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.label.warning.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.light.contracts.rel.onSurface.warning.base.$value}",
+      "$value": "{themes.light.contracts.rel.onSurface.warning.base}",
       "$type": "color",
       "$unit": "hex"
     },

@@ -1,78 +1,141 @@
 <script setup lang="ts">
-import { nextTick, ref, useTemplateRef, watch } from "vue";
+import { nextTick, ref, watch } from "vue";
 import gsap from "gsap";
 
-import { UIFACETS } from "@/constants/ui";
+import { useFacetsClasses } from "@/composables/local/components/useFacetsClasses";
 
-import { Constants } from "@/constants";
+import { UIFACETS, OVERLAY_IDS } from "@/constants/ui";
 
 import { ACTION_SHEET_PREFIX, type ActionSheetProps } from "./ActionSheet";
 import { Surface } from "@/components/atoms/containers";
+import { Overlay } from "@/components/molecules/containers";
+
+const MODAL_ANIM_DURATION_IN = 0.25,
+  MODAL_ANIM_DURATION_OUT = 0.25;
 
 const props = withDefaults(defineProps<ActionSheetProps>(), {
+  containerId: OVERLAY_IDS.MAIN,
   variant: "default",
-  containerId: Constants.OVERLAY_IDS.MAIN,
   size: "md",
+  mode: "neutral",
+  tone: "primary",
+  rounded: true,
+  alignHorizontal: "center",
+  alignVertical: "center",
+  stretch: "auto",
 });
 
 const emit = defineEmits<{
+  (e: "update:is-open", isOpen: boolean): void;
   (e: "close"): void;
 }>();
 
-const refRoot = useTemplateRef<HTMLDivElement | null>("root");
-
+const localIsOpen = ref(props.isOpen);
+const isModalMounted = ref(false);
 const isRendered = ref(false);
+
+const { classes: facetClasses } = useFacetsClasses({
+  prefix: ACTION_SHEET_PREFIX,
+  props: props,
+  facets: [UIFACETS.VARIANT, UIFACETS.SIZE],
+});
+
+const onClose = (): void => {
+  isRendered.value = false;
+  emit("close");
+};
+
+const onRequestClose = (): void => {
+  if (!localIsOpen.value) return;
+  localIsOpen.value = false;
+};
+
+watch(
+  () => props.isOpen,
+  async (newValue) => {
+    localIsOpen.value = newValue;
+
+    await nextTick();
+    isModalMounted.value = newValue;
+  },
+  { immediate: true }
+);
 
 /* * * Animations * * */
 
-watch(
-  () => props.isActive,
-  async (active) => {
-    if (active) {
-      isRendered.value = true;
-      await nextTick();
+watch(localIsOpen, async (isOpen) => {
+  if (isOpen) isRendered.value = true;
+  emit("update:is-open", isOpen);
 
-      gsap.fromTo(
-        refRoot.value,
-        { y: "100%", opacity: 0 },
-        { y: "0%", opacity: 1, duration: 0.35, ease: "power4.out" }
-      );
-    } else {
-      if (!refRoot.value) return;
+  await nextTick();
+  isModalMounted.value = isOpen;
+});
 
-      gsap.to(refRoot.value, {
-        y: "100%",
-        opacity: 0,
-        duration: 0.25,
-        ease: "power4.in",
-        onComplete: () => {
-          isRendered.value = false;
-          emit("close");
-        },
-      });
+const getOffsetY = (el: Element): number => {
+  return el.clientHeight / 4;
+};
+
+const onAnimEnter = (el: Element, done: () => void): void => {
+  const y = getOffsetY(el);
+
+  gsap.fromTo(
+    el,
+    {
+      y: y,
+      opacity: 0,
+    },
+    {
+      y: "0%",
+      opacity: 1,
+      duration: MODAL_ANIM_DURATION_IN,
+      ease: "power4.out",
+      onComplete: done,
     }
-  }
-);
+  );
+};
+
+const onAnimLeave = (el: Element, done: () => void): void => {
+  const y = getOffsetY(el);
+
+  gsap.to(el, {
+    y,
+    opacity: 0,
+    duration: MODAL_ANIM_DURATION_OUT,
+    ease: "power4.out",
+    onComplete: () => {
+      onClose();
+      done();
+    },
+  });
+};
 </script>
 
 <template>
-  <Teleport :to="containerId">
-    <Surface
-      v-if="isRendered"
-      ref="root"
-      :class="[
-        ACTION_SHEET_PREFIX,
-        `${ACTION_SHEET_PREFIX}_${UIFACETS.VARIANT}-${variant}`,
-        `${ACTION_SHEET_PREFIX}_${UIFACETS.SIZE}-${size}`,
-      ]"
-      :variant="variant"
-      :size="size"
-      :mode="mode"
-      :tone="tone"
-    >
-      <slot></slot>
-    </Surface>
-  </Teleport>
+  <Overlay
+    :container-id="containerId"
+    :is-open="isRendered"
+    @close="onRequestClose"
+  >
+    <Transition :css="false" @enter="onAnimEnter" @leave="onAnimLeave">
+      <Surface
+        v-if="isModalMounted"
+        :class="[facetClasses]"
+        :mode="mode"
+        :tone="tone"
+        :direction="direction"
+        :orientation="orientation"
+        :align-vertical="alignVertical"
+        :align-horizontal="alignHorizontal"
+        :stretch="stretch"
+        :wrap="wrap"
+        :border="border"
+        :bordered="bordered"
+        :rounded="rounded"
+      >
+        <slot></slot>
+      </Surface>
+    </Transition>
+  </Overlay>
 </template>
 
 <style lang="scss">
@@ -84,13 +147,15 @@ $prefix: getPrefix($tokenName);
 @mixin defineSizes($map: get($components, "molecules.#{$tokenName}")) {
   @each $variant, $sizes in $map {
     @each $size, $val in $sizes {
-      $min-height: px2rem(get($val, "root.min-height"));
-      $border-radius: px2rem(get($val, "root.border-radius"));
-
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
-          min-height: $min-height;
-          border-radius: $border-radius $border-radius 0 0;
+          $min-width: #{get($val, "root.min-width")};
+          $min-height: #{get($val, "root.min-height")};
+          $border-radius: #{px2rem(get($val, "root.border-radius"))};
+
+          --#{$prefix}-min-width: #{$min-width};
+          --#{$prefix}-min-height: #{$min-height};
+          --#{$prefix}-border-radius: #{$border-radius};
         }
       }
     }
@@ -98,11 +163,10 @@ $prefix: getPrefix($tokenName);
 }
 
 .#{$prefix} {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  @include minBox(
+    var(--#{$prefix}-min-width, 100%),
+    var(--#{$prefix}-min-height, 100%)
+  );
   overflow: auto;
 
   @include defineSizes();

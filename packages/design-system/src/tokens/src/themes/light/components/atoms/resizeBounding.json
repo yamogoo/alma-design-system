@@ -3,24 +3,24 @@
     "primary": {
       "splitter": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.surface.accent.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.light.contracts.interactive.surface.accent.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "knob": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.surface.accent.quaternary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.quaternary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.light.contracts.interactive.surface.accent.quaternary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.quaternary.selected}",
           "$type": "color",
           "$unit": "hex"
         }

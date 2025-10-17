@@ -8,7 +8,7 @@
           "unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "unit": "px"
         }
@@ -16,7 +16,7 @@
       "item": {
         "root": {
           "gap": {
-            "$value": "{tokens.spacing.sm.$value}",
+            "$value": "{tokens.spacing.sm}",
             "$type": "number",
             "unit": "px",
             "meta": {
@@ -24,7 +24,7 @@
             }
           },
           "indent": {
-            "$value": "{tokens.spacing.md.$value}",
+            "$value": "{tokens.spacing.md}",
             "$type": "number",
             "unit": "px",
             "meta": {
@@ -32,7 +32,7 @@
             }
           },
           "padding": {
-            "$value": "{tokens.spacing.sm.$value}",
+            "$value": "{tokens.spacing.sm}",
             "$type": "number",
             "unit": "px",
             "meta": {
@@ -40,7 +40,7 @@
             }
           },
           "border-radius": {
-            "$value": "{tokens.roundness.xs.$value}",
+            "$value": "{tokens.roundness.xs}",
             "$type": "number",
             "unit": "px",
             "meta": {
@@ -60,7 +60,7 @@
         },
         "caret": {
           "size": {
-            "$value": "{components.atoms.icon.default.xs.root.size.$value}",
+            "$value": "{components.atoms.icon.default.xs.root.size}",
             "$type": "number",
             "unit": "px",
             "meta": {

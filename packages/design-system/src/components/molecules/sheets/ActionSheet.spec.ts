@@ -34,7 +34,7 @@ describe("ActionSheet.vue", () => {
 
   test("renders nothing when inactive initially", () => {
     const wrapper = mount(ActionSheet, {
-      props: { containerId: "#app", isActive: false },
+      props: { containerId: "#app", isOpen: false },
     });
 
     expect(getActionSheet(wrapper).exists()).toBe(false);
@@ -43,7 +43,7 @@ describe("ActionSheet.vue", () => {
   test("applies size and color classes", async () => {
     const props: ActionSheetProps = {
       containerId: "#app",
-      isActive: false,
+      isOpen: false,
       variant: "default",
       size: "md",
       mode: "neutral",
@@ -55,7 +55,7 @@ describe("ActionSheet.vue", () => {
       attachTo: document.body,
     });
 
-    await wrapper.setProps({ isActive: true });
+    await wrapper.setProps({ isOpen: true });
     await nextTick();
     await nextTick();
 

@@ -10,6 +10,8 @@
 
 // Service field helpers.
 
+$_correction: -0.02px;
+
 @function _svc-alternates($key) {
   @if string.slice($key, 1, 1) == "$" {
     @return ($key, string.slice($key, 2));
@@ -40,6 +42,7 @@
 
   @for $i from 1 through $length {
     $ch: string.slice($string, $i, $i);
+
     @if $ch == $delimiter {
       $result: list.append($result, $current);
       $current: "";
@@ -103,6 +106,7 @@
 
 @function _bp-raw($name) {
   $raw: map.get($breakpoints, $name);
+
   @if $raw == null {
     @error "Breakpoint '#{$name}' not found in $breakpoints.";
   }
@@ -117,6 +121,7 @@
 @function bp-next($name) {
   $keys: map.keys($breakpoints);
   $idx: list.index($keys, $name);
+
   @if $idx == null {
     @error "bp-next(): '#{$name}' not found in $breakpoints.";
   }
@@ -135,7 +140,8 @@
 }
 
 @mixin respond-below($bp) {
-  $max: bp-value($bp) - 0.02px;
+  $max: bp-value($bp) - $_correction;
+
   @media (max-width: $max) {
     @content;
   }
@@ -144,12 +150,14 @@
 @mixin respond-at($bp) {
   $min: bp-value($bp);
   $next: bp-next($bp);
+
   @if $next == null {
     @media (min-width: $min) {
       @content;
     }
   } @else {
-    $max: bp-value($next) - 0.02px;
+    $max: bp-value($next) - $_correction;
+
     @media (min-width: $min) and (max-width: $max) {
       @content;
     }
@@ -158,17 +166,17 @@
 
 @mixin respond-between($from, $to) {
   $min: bp-value($from);
-  $max: bp-value($to) - 0.02px;
+  $max: bp-value($to) - $_correction;
+
   @media (min-width: $min) and (max-width: $max) {
     @content;
   }
 }
 
-// Value helpers.
-
 @function _unwrap($maybe) {
   @if meta.type-of($maybe) == "map" {
     $v: map-get-svc($maybe, "value");
+
     @return if($v != null, $v, $maybe);
   }
   @return $maybe;
@@ -193,7 +201,6 @@
 // Universal mixin with auto-respond support.
 
 @mixin apply-token($tokens, $css-prop, $path) {
-  // Base property
   #{$css-prop}: get($tokens, $path);
 
   $node: get-value($tokens, $path);
@@ -206,8 +213,8 @@
     @content;
   }
 
-  // At mode applies styles within a specific range window.
   $at: map.get($respond, at);
+
   @if $at != null and meta.type-of($at) == "map" {
     @each $bp, $block in $at {
       $val: _prop-from-node($block, $css-prop);
@@ -217,8 +224,8 @@
     }
   }
 
-  // Above mode applies from the breakpoint and up.
   $above: map.get($respond, above);
+
   @if $above != null and meta.type-of($above) == "map" {
     @each $bp, $block in $above {
       $val: _prop-from-node($block, $css-prop);
@@ -228,8 +235,8 @@
     }
   }
 
-  // Below mode applies below the breakpoint.
   $below: map.get($respond, below);
+
   @if $below != null and meta.type-of($below) == "map" {
     @each $bp, $block in $below {
       $val: _prop-from-node($block, $css-prop);
@@ -239,8 +246,8 @@
     }
   }
 
-  // Between mode applies between two breakpoints.
   $between: map.get($respond, between);
+
   @if $between != null and meta.type-of($between) == "map" {
     @each $range, $block in $between {
       $dash: string.index($range, "-");

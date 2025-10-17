@@ -3,22 +3,22 @@
     "primary": {
       "label": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.selected.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.selected}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -27,22 +27,22 @@
     "secondary": {
       "label": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.disabled.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.hovered.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.selected.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.selected}",
           "$type": "color",
           "$unit": "hex"
         }

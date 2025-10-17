@@ -1,6 +1,6 @@
 {
   "fontFamily": {
-    "$value": "{typography.tokens.fontFamily.primary.$value}",
+    "$value": "{typography.tokens.fontFamily.primary}",
     "$type": "fontFamily",
     "$unit": ""
   },
@@ -15,7 +15,7 @@
     "$unit": ""
   },
   "fontWeight": {
-    "$value": "{typography.tokens.fontWeight.semibold.$value}",
+    "$value": "{typography.tokens.fontWeight.semibold}",
     "$type": "fontWeight",
     "$unit": ""
   },
@@ -30,7 +30,7 @@
     "$unit": "px"
   },
   "marginBottom": {
-    "$value": "{tokens.spacing.xs.$value}",
+    "$value": "{tokens.spacing.xs}",
     "$type": "number",
     "$unit": "px"
   }

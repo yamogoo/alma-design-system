@@ -21,7 +21,7 @@
   },
   "motion": {
     "mode": {
-      "$value": "{config.mode.$value}",
+      "$value": "{config.mode}",
       "$type": "string",
       "$unit": "alias",
       "$meta": {

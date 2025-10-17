@@ -1,7 +1,7 @@
 {
   "neutral": {
     "base-down-3": {
-      "$value": "{baseColors.white.$value}",
+      "$value": "{baseColors.white}",
       "$type": "color",
       "$unit": "hex"
     },

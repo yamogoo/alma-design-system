@@ -4,59 +4,59 @@
       "root": {
         "background": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.normal}",
             "$type": "color",
             "unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.hovered}",
             "$type": "color",
             "unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.pressed.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.pressed}",
             "$type": "color",
             "unit": "hex"
           },
           "selected": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.tertiary.selected.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.tertiary.selected}",
             "$type": "color",
             "unit": "hex"
           }
         },
         "border": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.stroke.neutral.canvas.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.stroke.neutral.canvas.normal}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.contracts.interactive.stroke.neutral.canvas.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.stroke.neutral.canvas.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.hovered}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.pressed.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.pressed}",
             "$type": "color",
             "$unit": "hex"
           },
           "selected": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.tertiary.selected.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.tertiary.selected}",
             "$type": "color",
             "$unit": "hex"
           },
           "highlight": {
-            "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
+            "$value": "{themes.light.contracts.static.highlight.accent.normal}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -65,7 +65,7 @@
       "divider": {
         "border": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.border.neutral.canvas.selected.$value}",
+            "$value": "{themes.light.contracts.interactive.border.neutral.canvas.selected}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -73,66 +73,66 @@
       },
       "title": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.selected}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "description": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "chevron": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.selected}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -142,59 +142,59 @@
       "root": {
         "background": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal}",
             "$type": "color",
             "unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.contracts.interactive.surface.neutral.primary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.neutral.primary.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.hovered}",
             "$type": "color",
             "unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.pressed.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.pressed}",
             "$type": "color",
             "unit": "hex"
           },
           "selected": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.tertiary.selected.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.tertiary.selected}",
             "$type": "color",
             "unit": "hex"
           }
         },
         "border": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.stroke.neutral.primary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.stroke.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.light.contracts.interactive.stroke.neutral.primary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.stroke.neutral.primary.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.hovered.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.hovered}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.pressed.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.secondary.pressed}",
             "$type": "color",
             "$unit": "hex"
           },
           "selected": {
-            "$value": "{themes.light.contracts.interactive.surface.accent.tertiary.selected.$value}",
+            "$value": "{themes.light.contracts.interactive.surface.accent.tertiary.selected}",
             "$type": "color",
             "$unit": "hex"
           },
           "highlight": {
-            "$value": "{themes.light.contracts.static.highlight.accent.normal.$value}",
+            "$value": "{themes.light.contracts.static.highlight.accent.normal}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -203,7 +203,7 @@
       "divider": {
         "border": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.border.neutral.primary.selected.$value}",
+            "$value": "{themes.light.contracts.interactive.border.neutral.primary.selected}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -211,66 +211,66 @@
       },
       "title": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.selected}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "description": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "chevron": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.selected}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected.$value}",
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected}",
           "$type": "color",
           "$unit": "hex"
         }

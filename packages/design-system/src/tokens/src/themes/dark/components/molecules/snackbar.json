@@ -3,18 +3,18 @@
     "primary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "title": {
-        "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal.$value}",
+        "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal}",
         "$type": "color",
         "$unit": "hex"
       },
       "description": {
-        "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal.$value}",
+        "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal}",
         "$type": "color",
         "$unit": "hex"
       },
@@ -34,18 +34,18 @@
     "quaternary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "title": {
-        "$value": "{themes.dark.contracts.interactive.onSurface.neutral.quaternary.normal.$value}",
+        "$value": "{themes.dark.contracts.interactive.onSurface.neutral.quaternary.normal}",
         "$type": "color",
         "$unit": "hex"
       },
       "description": {
-        "$value": "{themes.dark.contracts.interactive.onSurface.neutral.quaternary.normal.$value}",
+        "$value": "{themes.dark.contracts.interactive.onSurface.neutral.quaternary.normal}",
         "$type": "color",
         "$unit": "hex"
       },
@@ -67,18 +67,18 @@
     "primary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.contracts.interactive.surface.accent.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.accent.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "title": {
-        "$value": "{themes.dark.contracts.interactive.onSurface.accent.primary.normal.$value}",
+        "$value": "{themes.dark.contracts.interactive.onSurface.accent.primary.normal}",
         "$type": "color",
         "$unit": "hex"
       },
       "description": {
-        "$value": "{themes.dark.contracts.interactive.onSurface.accent.primary.normal.$value}",
+        "$value": "{themes.dark.contracts.interactive.onSurface.accent.primary.normal}",
         "$type": "color",
         "$unit": "hex"
       },
@@ -98,18 +98,18 @@
     "quaternary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.contracts.interactive.surface.accent.quaternary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.surface.accent.quaternary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "title": {
-        "$value": "{themes.dark.contracts.interactive.onSurface.accent.quaternary.normal.$value}",
+        "$value": "{themes.dark.contracts.interactive.onSurface.accent.quaternary.normal}",
         "$type": "color",
         "$unit": "hex"
       },
       "description": {
-        "$value": "{themes.dark.contracts.interactive.onSurface.accent.quaternary.normal.$value}",
+        "$value": "{themes.dark.contracts.interactive.onSurface.accent.quaternary.normal}",
         "$type": "color",
         "$unit": "hex"
       },

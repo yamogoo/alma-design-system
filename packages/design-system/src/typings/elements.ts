@@ -143,3 +143,61 @@ export interface UIElementStylingModifiers<
   tone: T;
   state: ST;
 }
+
+/* * * Props * * */
+
+export interface UIElementAlignmentProps<
+  H = UIElementAlignment,
+  V = UIElementAlignment,
+> {
+  alignHorizontal?: H;
+  alignVertical?: V;
+}
+
+export interface UIElementDirectionProps<D = UIElementAxisDirection> {
+  direction?: D;
+}
+
+export interface UIElementOrientationProps<O = UIElementOrientation> {
+  orientation?: O;
+}
+
+export interface UIElementStretchProps<S = UIElementStretch> {
+  stretch?: S;
+}
+
+export interface UIElementWrapProps {
+  wrap?: boolean;
+}
+
+export interface UIElementBorderedProps {
+  bordered?: boolean;
+}
+
+export interface UIElementDividerProps {
+  divider?: boolean;
+}
+
+export interface UIElementPaddingProps {
+  padding?: Array<
+    UIElementEdgeSpacing | UIElementShortPosition | UIElementShortPositionAlias
+  >;
+}
+
+export interface UIElementMarginProps {
+  margin?: Array<
+    UIElementEdgeSpacing | UIElementShortPosition | UIElementShortPositionAlias
+  >;
+}
+
+export interface UIElementRoundedProps {
+  rounded?: boolean;
+}
+
+export interface UIElementElevatedProps {
+  elevated?: boolean;
+}
+
+export interface UIElementBorderProps {
+  border?: string;
+}

@@ -1,6 +1,6 @@
 {
   "fontFamily": {
-    "$value": "{typography.tokens.fontFamily.secondary.$value}",
+    "$value": "{typography.tokens.fontFamily.secondary}",
     "$type": "fontFamily",
     "$unit": ""
   },
@@ -15,7 +15,7 @@
     "$unit": ""
   },
   "fontWeight": {
-    "$value": "{typography.tokens.fontWeight.bold.$value}",
+    "$value": "{typography.tokens.fontWeight.bold}",
     "$type": "fontWeight",
     "$unit": ""
   },

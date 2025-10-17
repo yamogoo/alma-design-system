@@ -3,10 +3,10 @@
     "xl": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.xl.$value}"
+          "$value": "{tokens.roundness.xl}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         }
@@ -15,10 +15,10 @@
     "lg": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.lg.$value}"
+          "$value": "{tokens.roundness.lg}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         }
@@ -27,10 +27,10 @@
     "md": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.md.$value}"
+          "$value": "{tokens.roundness.md}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         }
@@ -39,10 +39,10 @@
     "sm": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.sm.$value}"
+          "$value": "{tokens.roundness.sm}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         }
@@ -51,10 +51,10 @@
     "xs": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.xs.$value}"
+          "$value": "{tokens.roundness.xs}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         }
@@ -65,15 +65,15 @@
     "xl": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.xl.$value}"
+          "$value": "{tokens.roundness.xl}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.xl.$value}",
+          "$value": "{tokens.spacing.xl}",
           "$type": "number",
           "$unit": "px"
         }
@@ -82,15 +82,15 @@
     "lg": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.lg.$value}"
+          "$value": "{tokens.roundness.lg}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.xl.$value}",
+          "$value": "{tokens.spacing.xl}",
           "$type": "number",
           "$unit": "px"
         }
@@ -99,15 +99,15 @@
     "md": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.md.$value}"
+          "$value": "{tokens.roundness.md}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.lg.$value}",
+          "$value": "{tokens.spacing.lg}",
           "$type": "number",
           "$unit": "px"
         }
@@ -116,15 +116,15 @@
     "sm": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.sm.$value}"
+          "$value": "{tokens.roundness.sm}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         }
@@ -133,15 +133,15 @@
     "xs": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.xs.$value}"
+          "$value": "{tokens.roundness.xs}"
         },
         "borderWidth": {
-          "$value": "{components.atoms.divider.default.md.root.borderWidth.$value}",
+          "$value": "{components.atoms.divider.default.md.root.borderWidth}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         }

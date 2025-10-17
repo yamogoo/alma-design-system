@@ -3,7 +3,7 @@
     "lg": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
@@ -25,7 +25,7 @@
     "md": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },

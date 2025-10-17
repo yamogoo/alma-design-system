@@ -1,55 +1,42 @@
-import { mount, VueWrapper } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 
 import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
 
-import { GROUP_PREFIX, type GroupProps } from "./Group";
-import Group from "./Group.vue";
-
-const getSurface = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.findComponent({ name: "Surface" });
-};
+import { STACK_PREFIX, type StackProps } from "./Stack";
+import Stack from "./Stack.vue";
 
 const Classes = {
-  ROOT_CLASS: GROUP_PREFIX,
-  VARIANT: `${GROUP_PREFIX}_${UIFACETS.VARIANT}`,
-  SIZE: `${GROUP_PREFIX}_${UIFACETS.SIZE}`,
-  DIRECTION: `${GROUP_PREFIX}_${UIMODIFIERS.DIRECTION}`,
-  ORIENTATION: `${GROUP_PREFIX}_${UIMODIFIERS.ORIENTATION}`,
-  VERTICAL_ALIGNMENT: `${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-vertical`,
-  HORIZONTAL_ALIGNMENT: `${GROUP_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal`,
-  STRETCH: `${GROUP_PREFIX}_${UIMODIFIERS.STRETCH}`,
-  WRAP: `${GROUP_PREFIX}_${UIMODIFIERS.WRAP}`,
-  DIVIDER: `${GROUP_PREFIX}_${UIMODIFIERS.DIVIDER}`,
+  ROOT_CLASS: STACK_PREFIX,
+  VARIANT: `${STACK_PREFIX}_${UIFACETS.VARIANT}`,
+  SIZE: `${STACK_PREFIX}_${UIFACETS.SIZE}`,
+  DIRECTION: `${STACK_PREFIX}_${UIMODIFIERS.DIRECTION}`,
+  ORIENTATION: `${STACK_PREFIX}_${UIMODIFIERS.ORIENTATION}`,
+  VERTICAL_ALIGNMENT: `${STACK_PREFIX}_${UIMODIFIERS.ALIGN}-vertical`,
+  HORIZONTAL_ALIGNMENT: `${STACK_PREFIX}_${UIMODIFIERS.ALIGN}-horizontal`,
+  STRETCH: `${STACK_PREFIX}_${UIMODIFIERS.STRETCH}`,
+  WRAP: `${STACK_PREFIX}_${UIMODIFIERS.WRAP}`,
+  DIVIDER: `${STACK_PREFIX}_${UIMODIFIERS.DIVIDER}`,
+  BORDERED: `${STACK_PREFIX}_${UIMODIFIERS.BORDERED}`,
 } as const;
 
-describe("Group", () => {
-  describe("elements", () => {
-    test("should render Surface", () => {
-      const wrapper = mount(Group);
-
-      const surface = getSurface(wrapper);
-      const isSurfaceExists = surface.exists();
-
-      expect(isSurfaceExists).toBeTruthy();
-    });
-  });
-
+describe("Stack", () => {
   describe("classes", () => {
     test("should have props based classes (variant/size)", () => {
-      const props: GroupProps = {
+      const props: StackProps = {
         variant: "default",
         size: "md",
-        mode: "neutral",
         direction: "forward",
         orientation: "horizontal",
         alignVertical: "center",
         alignHorizontal: "center",
         stretch: "auto",
         wrap: true,
+        rounded: true,
         divider: true,
+        bordered: true,
       };
 
-      const wrapper = mount(Group, { props });
+      const wrapper = mount(Stack, { props });
 
       expect(wrapper.classes()).toContain(
         `${Classes.VARIANT}-${props.variant}`
@@ -72,6 +59,7 @@ describe("Group", () => {
       );
       expect(wrapper.classes()).toContain(`${Classes.WRAP}`);
       expect(wrapper.classes()).toContain(`${Classes.DIVIDER}`);
+      expect(wrapper.classes()).toContain(`${Classes.BORDERED}`);
     });
   });
 
@@ -80,7 +68,7 @@ describe("Group", () => {
       const slotContent = "Slot Content";
       const slot = `<p data-testid="slot">${slotContent}</p>`;
 
-      const wrapper = mount(Group, {
+      const wrapper = mount(Stack, {
         slots: { default: slot },
       });
 

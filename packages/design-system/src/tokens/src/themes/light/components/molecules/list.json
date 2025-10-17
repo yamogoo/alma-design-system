@@ -3,22 +3,22 @@
     "primary": {
       "label": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.pressed.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.pressed}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -27,22 +27,22 @@
     "secondary": {
       "label": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.hovered.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "pressed": {
-          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.pressed.$value}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.pressed}",
           "$type": "color",
           "$unit": "hex"
         }

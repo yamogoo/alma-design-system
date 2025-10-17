@@ -1,28 +1,28 @@
-@mixin useAlign() {
+@mixin useAlign($prefix) {
   &-horizontal {
     &-start {
-      &.group_orientation-horizontal {
+      &.#{$prefix}_orientation-horizontal {
         justify-content: flex-start;
       }
-      &.group_orientation-vertical {
+      &.#{$prefix}_orientation-vertical {
         align-items: flex-start;
       }
     }
 
     &-center {
-      &.group_orientation-horizontal {
+      &.#{$prefix}_orientation-horizontal {
         justify-content: center;
       }
-      &.group_orientation-vertical {
+      &.#{$prefix}_orientation-vertical {
         align-items: center;
       }
     }
 
     &-end {
-      &.group_orientation-horizontal {
+      &.#{$prefix}_orientation-horizontal {
         justify-content: flex-end;
       }
-      &.group_orientation-vertical {
+      &.#{$prefix}_orientation-vertical {
         align-items: flex-end;
       }
     }
@@ -30,28 +30,28 @@
 
   &-vertical {
     &-start {
-      &.group_orientation-horizontal {
+      &.#{$prefix}_orientation-horizontal {
         align-items: flex-start;
       }
-      &.group_orientation-vertical {
+      &.#{$prefix}_orientation-vertical {
         justify-content: flex-start;
       }
     }
 
     &-center {
-      &.group_orientation-horizontal {
+      &.#{$prefix}_orientation-horizontal {
         align-items: center;
       }
-      &.group_orientation-vertical {
+      &.#{$prefix}_orientation-vertical {
         justify-content: center;
       }
     }
 
     &-end {
-      &.group_orientation-horizontal {
+      &.#{$prefix}_orientation-horizontal {
         align-items: flex-end;
       }
-      &.group_orientation-vertical {
+      &.#{$prefix}_orientation-vertical {
         justify-content: flex-end;
       }
     }

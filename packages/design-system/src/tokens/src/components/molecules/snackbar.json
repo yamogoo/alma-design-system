@@ -3,22 +3,22 @@
     "lg": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "paddingH": {
-          "$value": "{tokens.spacing.lg.$value}",
+          "$value": "{tokens.spacing.lg}",
           "$type": "number",
           "$unit": "px"
         },
         "paddingV": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.sm.$value}",
+          "$value": "{tokens.roundness.sm}",
           "$type": "number",
           "$unit": "px"
         }
@@ -48,22 +48,22 @@
     "md": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         },
         "paddingH": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
         "paddingV": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.xs.$value}",
+          "$value": "{tokens.roundness.xs}",
           "$type": "number",
           "$unit": "px"
         }

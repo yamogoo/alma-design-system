@@ -14,7 +14,7 @@ const { isConnected } = storeToRefs(Stores.useConnectionStore());
     <RouterView></RouterView>
     <AppFooter></AppFooter>
     <Components.Molecules.ActionSheet
-      :is-active="!isConnected"
+      :is-open="!isConnected"
       :mode="'neutral'"
       :tone="'primary'"
     >

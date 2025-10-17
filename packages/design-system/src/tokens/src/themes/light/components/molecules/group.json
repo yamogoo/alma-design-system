@@ -3,12 +3,12 @@
     "canvas": {
       "root": {
         "background": {
-          "$value": "{themes.light.contracts.semantic.neutral.canvas.surface.$value}",
+          "$value": "{themes.light.contracts.semantic.neutral.canvas.surface}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.light.contracts.semantic.neutral.canvas.border.$value}",
+          "$value": "{themes.light.contracts.semantic.neutral.canvas.border}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -17,12 +17,12 @@
     "primary": {
       "root": {
         "background": {
-          "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -31,12 +31,12 @@
     "secondary": {
       "root": {
         "background": {
-          "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.neutral.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -50,7 +50,7 @@
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -61,12 +61,12 @@
     "canvas": {
       "root": {
         "background": {
-          "$value": "{themes.light.contracts.semantic.accent.canvas.surface.$value}",
+          "$value": "{themes.light.contracts.semantic.accent.canvas.surface}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.light.contracts.semantic.accent.canvas.border.$value}",
+          "$value": "{themes.light.contracts.semantic.accent.canvas.border}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -75,12 +75,12 @@
     "primary": {
       "root": {
         "background": {
-          "$value": "{themes.light.contracts.interactive.surface.accent.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -89,12 +89,12 @@
     "secondary": {
       "root": {
         "background": {
-          "$value": "{themes.light.contracts.interactive.surface.accent.secondary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.accent.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.light.contracts.interactive.border.neutral.secondary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.border.neutral.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -108,7 +108,7 @@
           "$unit": "hex"
         },
         "divider": {
-          "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal.$value}",
+          "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }

@@ -3,7 +3,7 @@
     "md": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         }

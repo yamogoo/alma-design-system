@@ -99,7 +99,7 @@ export default () => {
       VitePluginTokenLinter({
         source: "./src/tokens/src",
       }),
-      !IS_PRODUCTION &&
+      IS_PRODUCTION &&
         VitePluginFigmaTokensParser({
           enforce: "post",
           apply: "build",

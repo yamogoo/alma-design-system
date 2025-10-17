@@ -8,22 +8,17 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": [
-            0,
-            "{tokens.spacing.xl.$value}",
-            0,
-            "{tokens.spacing.xl.$value}"
-          ],
+          "$value": [0, "{tokens.spacing.xl}", 0, "{tokens.spacing.xl}"],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.infinity.$value}",
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }
@@ -37,7 +32,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.sm.root.size.$value}",
+          "$value": "{components.atoms.icon.default.sm.root.size}",
           "$type": "number",
           "$unit": "px"
         },
@@ -58,22 +53,17 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": [
-            0,
-            "{tokens.spacing.lg.$value}",
-            0,
-            "{tokens.spacing.lg.$value}"
-          ],
+          "$value": [0, "{tokens.spacing.lg}", 0, "{tokens.spacing.lg}"],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.infinity.$value}",
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }
@@ -87,7 +77,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
+          "$value": "{components.atoms.icon.default.xs.root.size}",
           "$type": "number",
           "$unit": "px"
         },
@@ -108,22 +98,17 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": [
-            0,
-            "{tokens.spacing.sm.$value}",
-            0,
-            "{tokens.spacing.sm.$value}"
-          ],
+          "$value": [0, "{tokens.spacing.sm}", 0, "{tokens.spacing.sm}"],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.infinity.$value}",
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }
@@ -137,7 +122,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
+          "$value": "{components.atoms.icon.default.xs.root.size}",
           "$type": "number",
           "$unit": "px"
         },
@@ -158,17 +143,17 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": [0, "{tokens.spacing.sm.$value}"],
+          "$value": [0, "{tokens.spacing.sm}"],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.infinity.$value}",
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }
@@ -182,7 +167,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
+          "$value": "{components.atoms.icon.default.xxs.root.size}",
           "$type": "number",
           "$unit": "px"
         },
@@ -205,7 +190,7 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
@@ -215,7 +200,7 @@
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.infinity.$value}",
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }
@@ -229,7 +214,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.sm.root.size.$value}",
+          "$value": "{components.atoms.icon.default.sm.root.size}",
           "$type": "number",
           "$unit": "px"
         },
@@ -250,7 +235,7 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
@@ -260,7 +245,7 @@
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.infinity.$value}",
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }
@@ -274,7 +259,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
+          "$value": "{components.atoms.icon.default.xs.root.size}",
           "$type": "number",
           "$unit": "px"
         },
@@ -295,22 +280,17 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": [
-            0,
-            "{tokens.spacing.lg.$value}",
-            0,
-            "{tokens.spacing.lg.$value}"
-          ],
+          "$value": [0, "{tokens.spacing.lg}", 0, "{tokens.spacing.lg}"],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.infinity.$value}",
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }
@@ -324,7 +304,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xs.root.size.$value}",
+          "$value": "{components.atoms.icon.default.xs.root.size}",
           "$type": "number",
           "$unit": "px"
         },
@@ -345,22 +325,17 @@
           "$unit": "px"
         },
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "padding": {
-          "$value": [
-            0,
-            "{tokens.spacing.lg.$value}",
-            0,
-            "{tokens.spacing.lg.$value}"
-          ],
+          "$value": [0, "{tokens.spacing.lg}", 0, "{tokens.spacing.lg}"],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.infinity.$value}",
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }
@@ -374,7 +349,7 @@
       },
       "icon": {
         "size": {
-          "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
+          "$value": "{components.atoms.icon.default.xxs.root.size}",
           "$type": "number",
           "$unit": "px"
         },

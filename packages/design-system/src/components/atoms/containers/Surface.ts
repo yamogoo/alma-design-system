@@ -1,14 +1,12 @@
 import { NAMESPACE } from "@/constants";
 
-import type {
-  SurfaceMode,
-  SurfaceSize,
-  SurfaceTone,
-  SurfaceVariant,
-} from "@/adapters/atoms/surface";
+import type { SurfaceMode, SurfaceTone } from "@/adapters/atoms/surface";
+import type { StackSize, StackVariant } from "@/adapters/atoms/stack";
 
 import type {
   UIElementBlockTag,
+  UIElementBorderProps,
+  UIElementElevatedProps,
   UIElementStretch,
   UIElementStylingModifiers,
 } from "@/typings";
@@ -16,28 +14,28 @@ import {
   UIElementShortPositionAliases,
   UIElementShortPositions,
 } from "@/typings";
+import type { StackContainerProps } from "./Stack";
 
 export const SurfaceBorderPositions = UIElementShortPositions;
 export const SurfaceBorderPositionAliases = UIElementShortPositionAliases;
 export type SurfaceStretch = UIElementStretch;
 
+export type LikeStackProps = StackContainerProps;
+
 export interface SurfaceProps
   extends Partial<
-    UIElementStylingModifiers<
-      SurfaceVariant,
-      SurfaceSize,
-      SurfaceMode,
-      SurfaceTone
-    >
-  > {
+      UIElementStylingModifiers<
+        StackVariant,
+        StackSize,
+        SurfaceMode,
+        SurfaceTone
+      >
+    >,
+    LikeStackProps,
+    UIElementElevatedProps,
+    UIElementBorderProps {
   as?: UIElementBlockTag;
   isContainer?: boolean;
-  stretch?: SurfaceStretch;
-  /** ltrb hv */
-  borderSides?: string;
-  elevated?: boolean;
-  rounded?: boolean;
-  divider?: string;
 }
 
 export const SURFACE_PREFIX = `${NAMESPACE}surface`;

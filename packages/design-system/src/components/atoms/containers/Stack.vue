@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+import { useTemplateRef } from "vue";
+import {
+  UIFACETS,
+  UIMODIFIERS,
+  UIMODIFIERS_ALIGNMENT_MAP,
+} from "@/constants/ui";
 
 import { useFacetsClasses } from "@/composables/local/components/useFacetsClasses";
 
@@ -9,7 +14,12 @@ import { STACK_PREFIX, type StackProps } from "./Stack";
 
 const props = withDefaults(defineProps<StackProps>(), {
   as: "div",
+  variant: "default",
+  size: "lg",
+  direction: "forward",
 });
+
+const root = useTemplateRef<HTMLElement | null>("root");
 
 const { paddingClasses, marginClasses } = useEdgeSpacingClasses(
   { padding: props.padding, margin: props.margin },
@@ -29,19 +39,26 @@ const { classes: facetClasses } = useFacetsClasses({
   modifiers: [
     UIMODIFIERS.DIRECTION,
     UIMODIFIERS.ORIENTATION,
-    `${UIMODIFIERS.ALIGN}-vertical`,
-    `${UIMODIFIERS.ALIGN}-horizontal`,
+    UIMODIFIERS.HORIZONTAL_ALIGNMENT,
+    UIMODIFIERS.VERTICAL_ALIGNMENT,
     UIMODIFIERS.STRETCH,
     UIMODIFIERS.WRAP,
+    UIMODIFIERS.ROUNDED,
     UIMODIFIERS.DIVIDER,
     UIMODIFIERS.BORDERED,
   ],
+  map: { ...UIMODIFIERS_ALIGNMENT_MAP },
+});
+
+defineExpose({
+  root,
 });
 </script>
 
 <template>
   <component
     :is="as"
+    ref="root"
     :class="[facetClasses, paddingClasses, marginClasses]"
     :role="role"
     :aria-label="ariaLabel"
@@ -52,12 +69,7 @@ const { classes: facetClasses } = useFacetsClasses({
 
 <style lang="scss">
 $tokenName: "stack";
-$prefix: getPrefix($tokenName);
-
-// @include core.generate_container_modifiers(
-//   $selector: $prefix,
-//   $defs: core.$containers
-// );
+$prefix: getPrefix("stack");
 
 @mixin defineSizes($map: get($components, "atoms.#{$tokenName}")) {
   @each $variant, $sizes in $map {
@@ -65,15 +77,28 @@ $prefix: getPrefix($tokenName);
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
           $gap: px2rem(get($val, "root.gap"));
-          $padding-block: px2rem(get($val, "root.padding-block"));
-          $padding-inline: px2rem(get($val, "root.padding-inline"));
+
+          // $respond-padding-block: px2rem(
+          //   get($val, "root.padding-block.respond")
+          // );
+          // $respond-padding-inline: px2rem(
+          //   get($val, "root.padding-inline.respond")
+          // );
 
           --#{$prefix}-gap: #{px2rem(get($val, "root.gap"))};
+          --#{$prefix}-border-radius: #{px2rem(
+              get($val, "root.border-radius")
+            )};
+          --#{$prefix}-border-width: #{px2rem(get($val, "root.border-width"))};
           --#{$prefix}-padding-block: #{px2rem(
               get($val, "root.padding-block")
             )};
           --#{$prefix}-padding-inline: #{px2rem(
               get($val, "root.padding-inline")
+            )};
+          --#{$prefix}-margin-block: #{px2rem(get($val, "root.margin-block"))};
+          --#{$prefix}-margin-inline: #{px2rem(
+              get($val, "root.margin-inline")
             )};
         }
       }
@@ -82,18 +107,20 @@ $prefix: getPrefix($tokenName);
 }
 
 .#{$prefix} {
-  display: flex;
-  flex-direction: column;
   gap: var(--#{$prefix}-gap, 1rem);
+
   @include defineSizes();
+
+  &_rounded {
+    border-radius: var(--#{$prefix}-border-radius, 0rem);
+  }
 
   &_divider {
     &.#{$prefix}_orientation-horizontal {
       padding-right: var(--#{$prefix}-gap, 0);
       border-right-style: solid;
     }
-  }
-  &_divider {
+
     &.#{$prefix}_orientation-vertical {
       padding-bottom: var(--#{$prefix}-gap, 0);
       border-bottom-style: solid;
@@ -109,9 +136,14 @@ $prefix: getPrefix($tokenName);
 
   &_margin {
     @include useMargin(
-      var(--#{$prefix}-padding-inline, 0),
-      var(--#{$prefix}-padding-block, 0)
+      var(--#{$prefix}-margin-inline, 0),
+      var(--#{$prefix}-margin-block, 0)
     );
+  }
+
+  &_bordered {
+    border-style: solid;
+    border-width: var(--#{$prefix}-border-width, 0);
   }
 
   &_orientation {
@@ -123,7 +155,7 @@ $prefix: getPrefix($tokenName);
   }
 
   &_align {
-    @include useAlign();
+    @include useAlign($prefix);
   }
 
   &_stretch {

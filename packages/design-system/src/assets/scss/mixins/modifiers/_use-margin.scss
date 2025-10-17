@@ -3,6 +3,7 @@
 @mixin useMargin($l: null, $t: null, $r: null, $b: null) {
   @include set-padding(margin, $l, $t, $r, $b);
 }
+
 @mixin useMarginLogical($inline: null, $block: null) {
   @include useMargin(margin, $inline, $block, null, null);
 }

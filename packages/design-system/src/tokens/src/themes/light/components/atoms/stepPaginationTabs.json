@@ -4,12 +4,12 @@
       "item": {
         "label": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "active": {
-            "$value": "{themes.light.contracts.interactive.label.neutral.primary.normal.$value}",
+            "$value": "{themes.light.contracts.interactive.label.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           }

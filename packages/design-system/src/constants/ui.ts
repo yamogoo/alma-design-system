@@ -1,4 +1,7 @@
+import type { UIElementAlignmentProps } from "@/typings";
+
 export const OVERLAY_IDS = {
+  BODY: "body",
   MAIN: "#app",
   NOTIFICATIONS: "#notifications-overlay",
 } as const;
@@ -35,6 +38,8 @@ export const UIMODIFIERS = {
   DIRECTION: "direction",
   ORIENTATION: "orientation",
   ALIGN: "align",
+  HORIZONTAL_ALIGNMENT: "alignHorizontal",
+  VERTICAL_ALIGNMENT: "alignVertical",
   STRETCH: "stretch",
   WRAP: "wrap",
   BORDER: "border",
@@ -55,6 +60,22 @@ export const UIMODIFIERS = {
   GAP: "gap",
 } as const;
 export type UIModifier = (typeof UIMODIFIERS)[keyof typeof UIMODIFIERS];
+
+type AlignmentMapEntry = {
+  prop: keyof UIElementAlignmentProps;
+  class: string;
+};
+
+export const UIMODIFIERS_ALIGNMENT_MAP: Record<string, AlignmentMapEntry> = {
+  [UIMODIFIERS.HORIZONTAL_ALIGNMENT]: {
+    prop: "alignHorizontal",
+    class: "align-horizontal",
+  },
+  [UIMODIFIERS.VERTICAL_ALIGNMENT]: {
+    prop: "alignVertical",
+    class: "align-vertical",
+  },
+};
 
 export const FACETS = Object.values(UIFACETS);
 export const STATES = Object.values(UISTATES);

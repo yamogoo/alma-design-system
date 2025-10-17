@@ -3,7 +3,7 @@
     "lg": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
@@ -13,46 +13,46 @@
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         },
         "touchArea": {
-          "$value": "{tokens.touchArea.md.size.$value}",
+          "$value": "{tokens.touchArea.md.size}",
           "$type": "number",
           "$unit": "px"
         }
       },
       "track": {
         "height": {
-          "$value": "{tokens.spacing.lg.$value}",
+          "$value": "{tokens.spacing.lg}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.lg.$value}",
+          "$value": "{tokens.roundness.lg}",
           "$type": "number",
           "$unit": "px"
         }
       },
       "knob": {
         "width": {
-          "$value": "{tokens.spacing.lg.$value}",
+          "$value": "{tokens.spacing.lg}",
           "$type": "number",
           "$unit": "px"
         },
         "height": {
-          "$value": "{tokens.spacing.lg.$value}",
+          "$value": "{tokens.spacing.lg}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.lg.$value}",
+          "$value": "{tokens.roundness.lg}",
           "$type": "number",
           "$unit": "px"
         },
         "borderWidth": {
-          "$value": "{tokens.stroke.md.$value}",
+          "$value": "{tokens.stroke.md}",
           "$type": "number",
           "$unit": "px"
         }
@@ -68,7 +68,7 @@
     "md": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         },
@@ -78,46 +78,46 @@
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         },
         "touchArea": {
-          "$value": "{tokens.touchArea.md.size.$value}",
+          "$value": "{tokens.touchArea.md.size}",
           "$type": "number",
           "$unit": "px"
         }
       },
       "track": {
         "height": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.md.$value}",
+          "$value": "{tokens.roundness.md}",
           "$type": "number",
           "$unit": "px"
         }
       },
       "knob": {
         "width": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
         "height": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.md.$value}",
+          "$value": "{tokens.roundness.md}",
           "$type": "number",
           "$unit": "px"
         },
         "borderWidth": {
-          "$value": "{tokens.stroke.md.$value}",
+          "$value": "{tokens.stroke.md}",
           "$type": "number",
           "$unit": "px"
         }
@@ -133,7 +133,7 @@
     "sm": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         },
@@ -143,46 +143,46 @@
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         },
         "touchArea": {
-          "$value": "{tokens.touchArea.md.size.$value}",
+          "$value": "{tokens.touchArea.md.size}",
           "$type": "number",
           "$unit": "px"
         }
       },
       "track": {
         "height": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.sm.$value}",
+          "$value": "{tokens.roundness.sm}",
           "$type": "number",
           "$unit": "px"
         }
       },
       "knob": {
         "width": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "height": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.sm.$value}",
+          "$value": "{tokens.roundness.sm}",
           "$type": "number",
           "$unit": "px"
         },
         "borderWidth": {
-          "$value": "{tokens.stroke.sm.$value}",
+          "$value": "{tokens.stroke.sm}",
           "$type": "number",
           "$unit": "px"
         }

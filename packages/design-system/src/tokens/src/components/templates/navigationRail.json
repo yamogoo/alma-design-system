@@ -3,7 +3,7 @@
     "lg": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
@@ -13,7 +13,7 @@
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         }
@@ -22,7 +22,7 @@
     "md": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px"
         },
@@ -32,7 +32,7 @@
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         }
@@ -41,7 +41,7 @@
     "sm": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
@@ -51,7 +51,7 @@
           "$unit": "px"
         },
         "padding": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         }

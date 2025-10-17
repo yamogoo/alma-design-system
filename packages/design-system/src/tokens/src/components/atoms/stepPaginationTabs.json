@@ -8,7 +8,7 @@
           "$unit": ""
         },
         "padding": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         }
@@ -22,7 +22,7 @@
           "$unit": ""
         },
         "padding": {
-          "$value": "{tokens.spacing.xs.$value}",
+          "$value": "{tokens.spacing.xs}",
           "$type": "number",
           "$unit": "px"
         }

@@ -4,14 +4,14 @@
       "root": {
         "background": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           }
         },
         "border": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.border.neutral.primary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.border.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -19,14 +19,14 @@
       },
       "label": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.secondary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "icon": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -36,14 +36,14 @@
       "root": {
         "background": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal}",
             "$type": "color",
             "$unit": "hex"
           }
         },
         "border": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.border.neutral.quaternary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.border.neutral.quaternary.normal}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -51,14 +51,14 @@
       },
       "label": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.quaternary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.quaternary.normal}",
           "$type": "color",
           "$unit": "hex"
         }
       },
       "icon": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.label.neutral.quaternary.normal.$value}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.quaternary.normal}",
           "$type": "color",
           "$unit": "hex"
         }

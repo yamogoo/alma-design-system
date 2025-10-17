@@ -748,6 +748,18 @@ export class TokensParser {
     };
   }
 
+  private coerceTokenObjectToScalar(maybeTokenObj: any): any {
+    if (_.isPlainObject(maybeTokenObj)) {
+      const hasPlain = Object.prototype.hasOwnProperty.call(maybeTokenObj, 'value');
+      const hasDollar = Object.prototype.hasOwnProperty.call(maybeTokenObj, '$value');
+      if (hasPlain || hasDollar) {
+        const raw = hasPlain ? maybeTokenObj.value : maybeTokenObj.$value;
+        return raw;
+      }
+    }
+    return maybeTokenObj;
+  }
+
   private _normalizeIncludeServiceFields(raw?: IncludeServiceFields): {
     includeAll: boolean;
     set: Set<ServiceField>;
@@ -1658,6 +1670,8 @@ export class TokensParser {
         continue;
       }
 
+      nestedValue = this.coerceTokenObjectToScalar(nestedValue);
+
       if (typeof nestedValue === 'string' && nestedValue.startsWith('{')) {
         nestedValue = this.parseNestedValue(nestedValue, opts, depth + 1, visited);
       }
@@ -1991,6 +2005,8 @@ export class TokensParser {
               }
 
               let nestedValue = pathParts.reduce((acc, key) => acc?.[key], jsonFile);
+              nestedValue = this.coerceTokenObjectToScalar(nestedValue);
+
               if (nestedValue === undefined) {
                 if (this.opts.useFileStructureLookup) {
                   const resolved = this.resolveTokenPathRecursiveSync(pathStr);

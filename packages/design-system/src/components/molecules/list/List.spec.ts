@@ -63,8 +63,8 @@ describe("List", () => {
         mode: "neutral",
         direction: "forward",
         orientation: "horizontal",
-        verticalAlignment: "center",
-        horizontalAlignment: "center",
+        alignHorizontal: "center",
+        alignVertical: "center",
         stretch: "auto",
         wrap: true,
         divider: true,
@@ -83,10 +83,10 @@ describe("List", () => {
         `${Classes.ORIENTATION}-${props.orientation}`
       );
       expect(group.classes()).toContain(
-        `${Classes.VERTICAL_ALIGNMENT}-${props.verticalAlignment}`
+        `${Classes.VERTICAL_ALIGNMENT}-${props.alignHorizontal}`
       );
       expect(group.classes()).toContain(
-        `${Classes.HORIZONTAL_ALIGNMENT}-${props.horizontalAlignment}`
+        `${Classes.HORIZONTAL_ALIGNMENT}-${props.alignVertical}`
       );
       expect(group.classes()).toContain(`${Classes.STRETCH}-${props.stretch}`);
     });

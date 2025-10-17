@@ -305,7 +305,7 @@ $components:(
 ),
   icon: (
   size: (
-  value: 18px
+  value: 18
 )
 )
 )
@@ -863,79 +863,89 @@ $components:(
 )
 ),
   stack: (
-  main: (
-  lg: (
-  root: (
-  gap: (
-  value: 16px,
-  respond: (
-  above: (
-  lg: (
-  value: 24px
-)
-),
-  between: (
-  lg: (
-  padding: (
-  value: 16px
-)
-),
-  md: (
-  padding: (
-  value: 12px
-)
-)
-)
-)
-),
-  padding-block: (
-  value: 16px,
-  respond: (
-  above: (
-  lg: (
-  value: 24px
-)
-),
-  between: (
-  lg: (
-  padding-block: (
-  value: 16px
-)
-),
-  md: (
-  padding-block: (
-  value: 12px
-)
-)
-)
-)
-),
-  padding-inline: (
-  value: 16px,
-  respond: (
-  above: (
-  lg: (
-  value: 24px
-)
-),
-  between: (
-  lg: (
-  padding-inline: (
-  value: 16px
-)
-),
-  md: (
-  padding-inline: (
-  value: 12px
-)
-)
-)
-)
-)
-)
-)
-),
   default: (
+  xl: (
+  root: (
+  gap: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 24px
+)
+),
+  between: (
+  lg: (
+  gap: (
+  value: 16px
+)
+),
+  md: (
+  gap: (
+  value: 12px
+)
+)
+)
+)
+),
+  margin-block: (
+  value: 16px
+),
+  margin-inline: (
+  value: 16px
+),
+  padding-block: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 24px
+)
+),
+  between: (
+  lg: (
+  padding-block: (
+  value: 16px
+)
+),
+  md: (
+  padding-block: (
+  value: 12px
+)
+)
+)
+)
+),
+  padding-inline: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 24px
+)
+),
+  between: (
+  lg: (
+  padding-inline: (
+  value: 16px
+)
+),
+  md: (
+  padding-inline: (
+  value: 12px
+)
+)
+)
+)
+),
+  border-radius: (
+  value: 24px
+),
+  border-width: (
+  value: 1px
+)
+)
+),
   lg: (
   root: (
   gap: (
@@ -948,17 +958,23 @@ $components:(
 ),
   between: (
   lg: (
-  padding: (
+  gap: (
   value: 16px
 )
 ),
   md: (
-  padding: (
+  gap: (
   value: 12px
 )
 )
 )
 )
+),
+  margin-block: (
+  value: 16px
+),
+  margin-inline: (
+  value: 16px
 ),
   padding-block: (
   value: 16px,
@@ -1003,6 +1019,176 @@ $components:(
 )
 )
 )
+),
+  border-radius: (
+  value: 20px
+),
+  border-width: (
+  value: 1px
+)
+)
+),
+  md: (
+  root: (
+  gap: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 24px
+)
+),
+  between: (
+  lg: (
+  gap: (
+  value: 16px
+)
+),
+  md: (
+  gap: (
+  value: 12px
+)
+)
+)
+)
+),
+  margin-block: (
+  value: 16px
+),
+  margin-inline: (
+  value: 16px
+),
+  padding-block: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 24px
+)
+),
+  between: (
+  lg: (
+  padding-block: (
+  value: 16px
+)
+),
+  md: (
+  padding-block: (
+  value: 12px
+)
+)
+)
+)
+),
+  padding-inline: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 24px
+)
+),
+  between: (
+  lg: (
+  padding-inline: (
+  value: 16px
+)
+),
+  md: (
+  padding-inline: (
+  value: 12px
+)
+)
+)
+)
+),
+  border-radius: (
+  value: 16px
+),
+  border-width: (
+  value: 1px
+)
+)
+),
+  sm: (
+  root: (
+  gap: (
+  value: 16px,
+  respond: (
+  above: (
+  lg: (
+  value: 12px
+)
+),
+  between: (
+  lg: (
+  gap: (
+  value: 8px
+)
+),
+  md: (
+  gap: (
+  value: 8px
+)
+)
+)
+)
+),
+  margin-block: (
+  value: 16px
+),
+  margin-inline: (
+  value: 16px
+),
+  padding-block: (
+  value: 12px,
+  respond: (
+  above: (
+  lg: (
+  value: 12px
+)
+),
+  between: (
+  lg: (
+  padding-block: (
+  value: 16px
+)
+),
+  md: (
+  padding-block: (
+  value: 12px
+)
+)
+)
+)
+),
+  padding-inline: (
+  value: 12px,
+  respond: (
+  above: (
+  lg: (
+  value: 12px
+)
+),
+  between: (
+  lg: (
+  padding-inline: (
+  value: 8px
+)
+),
+  md: (
+  padding-inline: (
+  value: 8px
+)
+)
+)
+)
+),
+  border-radius: (
+  value: 20px
+),
+  border-width: (
+  value: 1px
 )
 )
 )
@@ -1274,8 +1460,11 @@ $components:(
   default: (
   lg: (
   root: (
+  min-width: (
+  value: 70%
+),
   min-height: (
-  value: 32px
+  value: 60%
 ),
   border-radius: (
   value: 16px
@@ -1287,8 +1476,11 @@ $components:(
 ),
   md: (
   root: (
+  min-width: (
+  value: 50%
+),
   min-height: (
-  value: 32px
+  value: 30%
 ),
   border-radius: (
   value: 12px

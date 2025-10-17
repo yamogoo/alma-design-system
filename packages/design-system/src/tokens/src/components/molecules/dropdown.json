@@ -13,7 +13,7 @@
           "$unit": "px"
         },
         "borderWidth": {
-          "$value": "{tokens.outline.$value}",
+          "$value": "{tokens.outline}",
           "$type": "number",
           "$unit": "px"
         }
@@ -21,17 +21,17 @@
       "currentValue": {
         "root": {
           "gap": {
-            "$value": "{tokens.spacing.xs.$value}",
+            "$value": "{tokens.spacing.xs}",
             "$type": "number",
             "$unit": "px"
           },
           "padding": {
-            "$value": "{components.molecules.dropdown.default.lg.tokens.padding.$value}",
+            "$value": "{components.molecules.dropdown.default.lg.tokens.padding}",
             "$type": "number",
             "$unit": "px"
           },
           "borderRadius": {
-            "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.$value}",
+            "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius}",
             "$type": "number",
             "$unit": "px"
           }
@@ -45,7 +45,7 @@
         },
         "icon": {
           "size": {
-            "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
+            "$value": "{components.atoms.icon.default.xxs.root.size}",
             "$type": "number",
             "$unit": "px"
           }
@@ -53,12 +53,12 @@
       },
       "options": {
         "padding": {
-          "$value": "{components.molecules.dropdown.default.lg.tokens.padding.$value}",
+          "$value": "{components.molecules.dropdown.default.lg.tokens.padding}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.$value}",
+          "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius}",
           "$type": "number",
           "$unit": "px"
         }
@@ -66,16 +66,16 @@
       "tokens": {
         "padding": {
           "$value": [
-            "{tokens.spacing.xs.$value}",
-            "{tokens.spacing.sm.$value}",
-            "{tokens.spacing.xs.$value}",
-            "{tokens.spacing.sm.$value}"
+            "{tokens.spacing.xs}",
+            "{tokens.spacing.sm}",
+            "{tokens.spacing.xs}",
+            "{tokens.spacing.sm}"
           ],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.xs.$value}",
+          "$value": "{tokens.roundness.xs}",
           "$type": "number",
           "$unit": "px"
         }
@@ -94,7 +94,7 @@
           "$unit": "px"
         },
         "borderWidth": {
-          "$value": "{tokens.outline.$value}",
+          "$value": "{tokens.outline}",
           "$type": "number",
           "$unit": "px"
         }
@@ -102,17 +102,17 @@
       "currentValue": {
         "root": {
           "gap": {
-            "$value": "{tokens.spacing.xs.$value}",
+            "$value": "{tokens.spacing.xs}",
             "$type": "number",
             "$unit": "px"
           },
           "padding": {
-            "$value": "{components.molecules.dropdown.default.lg.tokens.padding.$value}",
+            "$value": "{components.molecules.dropdown.default.lg.tokens.padding}",
             "$type": "number",
             "$unit": "px"
           },
           "borderRadius": {
-            "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.$value}",
+            "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius}",
             "$type": "number",
             "$unit": "px"
           }
@@ -126,7 +126,7 @@
         },
         "icon": {
           "size": {
-            "$value": "{components.atoms.icon.default.xxs.root.size.$value}",
+            "$value": "{components.atoms.icon.default.xxs.root.size}",
             "$type": "number",
             "$unit": "px"
           }
@@ -134,12 +134,12 @@
       },
       "options": {
         "padding": {
-          "$value": "{components.molecules.dropdown.default.lg.tokens.padding.$value}",
+          "$value": "{components.molecules.dropdown.default.lg.tokens.padding}",
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius.$value}",
+          "$value": "{components.molecules.dropdown.default.lg.tokens.borderRadius}",
           "$type": "number",
           "$unit": "px"
         }
@@ -147,16 +147,16 @@
       "tokens": {
         "padding": {
           "$value": [
-            "{tokens.spacing.xs.$value}",
-            "{tokens.spacing.sm.$value}",
-            "{tokens.spacing.xs.$value}",
-            "{tokens.spacing.sm.$value}"
+            "{tokens.spacing.xs}",
+            "{tokens.spacing.sm}",
+            "{tokens.spacing.xs}",
+            "{tokens.spacing.sm}"
           ],
           "$type": "number",
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.xs.$value}",
+          "$value": "{tokens.roundness.xs}",
           "$type": "number",
           "$unit": "px"
         }

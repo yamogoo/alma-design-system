@@ -3,7 +3,7 @@
     "lg": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.sm.$value}",
+          "$value": "{tokens.spacing.sm}",
           "$unit": "px",
           "$type": "spacing"
         },
@@ -18,20 +18,17 @@
           "$type": "spacing"
         },
         "padding": {
-          "$value": [
-            "{tokens.spacing.xs.$value}",
-            "{tokens.spacing.sm.$value}"
-          ],
+          "$value": ["{tokens.spacing.xs}", "{tokens.spacing.sm}"],
           "$unit": "px",
           "$type": "spacing"
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.xs.$value}",
+          "$value": "{tokens.roundness.xs}",
           "$unit": "px",
           "$type": "radius"
         },
         "borderWidth": {
-          "$value": "{tokens.stroke.sm.$value}",
+          "$value": "{tokens.stroke.sm}",
           "$unit": "px",
           "$type": "radius"
         }

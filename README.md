@@ -10,6 +10,8 @@ Code-first R&D space for UI systems: Vue components, design tokens, adapters, St
 
 – Live docs: https://alma-design-system.netlify.app
 
+- Case: https://dribbble.com/shots/26609294-Alma-Design-System
+
 ## Results & Impact
 
 - Unified components, tokens, adapters, and tooling into a single monorepo with reproducible installs (`pnpm workspace`).

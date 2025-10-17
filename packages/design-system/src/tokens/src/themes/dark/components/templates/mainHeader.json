@@ -4,14 +4,14 @@
       "root": {
         "background": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           }
         },
         "border": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.border.neutral.primary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.border.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -24,14 +24,14 @@
       "root": {
         "background": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           }
         },
         "border": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.border.neutral.primary.normal.$value}",
+            "$value": "{themes.dark.contracts.interactive.border.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           }

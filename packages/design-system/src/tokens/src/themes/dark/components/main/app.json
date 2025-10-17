@@ -3,7 +3,7 @@
     "primary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.contracts.semantic.neutral.canvas.surface.$value}",
+          "$value": "{themes.dark.contracts.semantic.neutral.canvas.surface}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -12,7 +12,7 @@
     "secondary": {
       "root": {
         "background": {
-          "$value": "{themes.dark.contracts.semantic.neutral.primary.surface.$value}",
+          "$value": "{themes.dark.contracts.semantic.neutral.primary.surface}",
           "$type": "color",
           "$unit": "hex"
         }

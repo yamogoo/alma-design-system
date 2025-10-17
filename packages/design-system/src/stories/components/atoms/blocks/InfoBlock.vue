@@ -47,7 +47,9 @@ withDefaults(defineProps<InfoBlockProps>(), {
 </template>
 
 <style lang="scss">
-.sb-info-block {
+$prefix: "sb-info-block";
+
+.#{$prefix} {
   display: flex;
   gap: px2rem(get($tokens, "spacing.md"));
 
@@ -56,7 +58,7 @@ withDefaults(defineProps<InfoBlockProps>(), {
   }
 
   &_align {
-    @include useAlign();
+    @include useAlign($prefix);
   }
 }
 </style>

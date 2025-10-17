@@ -1,157 +1,157 @@
 {
   "canvas": {
     "border": {
-      "$value": "{themes.dark.contracts.rel.border.accent.base-down-3.$value}",
+      "$value": "{themes.dark.contracts.rel.border.accent.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.dark.contracts.rel.stroke.accent.base-down-3.$value}",
+      "$value": "{themes.dark.contracts.rel.stroke.accent.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.dark.contracts.rel.label.accent.base-down-3.$value}",
+      "$value": "{themes.dark.contracts.rel.label.accent.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.dark.contracts.rel.onSurface.accent.base-down-3.$value}",
+      "$value": "{themes.dark.contracts.rel.onSurface.accent.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.dark.contracts.rel.surface.accent.base-down-3.$value}",
+      "$value": "{themes.dark.contracts.rel.surface.accent.base-down-3}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "primary": {
     "border": {
-      "$value": "{themes.dark.contracts.rel.border.accent.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.border.accent.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.dark.contracts.rel.stroke.accent.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.stroke.accent.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.dark.contracts.rel.label.accent.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.label.accent.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.dark.contracts.rel.onSurface.accent.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.onSurface.accent.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.dark.contracts.rel.surface.accent.base-down-2.$value}",
+      "$value": "{themes.dark.contracts.rel.surface.accent.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "secondary": {
     "border": {
-      "$value": "{themes.dark.contracts.rel.border.accent.base-down-1.$value}",
+      "$value": "{themes.dark.contracts.rel.border.accent.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.dark.contracts.rel.stroke.accent.base-down-1.$value}",
+      "$value": "{themes.dark.contracts.rel.stroke.accent.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.dark.contracts.rel.label.accent.base-down-1.$value}",
+      "$value": "{themes.dark.contracts.rel.label.accent.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.dark.contracts.rel.onSurface.accent.base-down-1.$value}",
+      "$value": "{themes.dark.contracts.rel.onSurface.accent.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.dark.contracts.rel.surface.accent.base-down-1.$value}",
+      "$value": "{themes.dark.contracts.rel.surface.accent.base-down-1}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "tertiary": {
     "border": {
-      "$value": "{themes.dark.contracts.rel.border.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.border.accent.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.dark.contracts.rel.stroke.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.stroke.accent.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.dark.contracts.rel.label.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.label.accent.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.dark.contracts.rel.onSurface.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.onSurface.accent.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.dark.contracts.rel.surface.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.surface.accent.base}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "quaternary": {
     "border": {
-      "$value": "{themes.dark.contracts.rel.border.accent.base-up-3.$value}",
+      "$value": "{themes.dark.contracts.rel.border.accent.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.dark.contracts.rel.stroke.accent.base-up-3.$value}",
+      "$value": "{themes.dark.contracts.rel.stroke.accent.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.dark.contracts.rel.label.accent.base-up-3.$value}",
+      "$value": "{themes.dark.contracts.rel.label.accent.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.dark.contracts.rel.onSurface.accent.base-up-3.$value}",
+      "$value": "{themes.dark.contracts.rel.onSurface.accent.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     },
     "surface": {
-      "$value": "{themes.dark.contracts.rel.surface.accent.base-up-3.$value}",
+      "$value": "{themes.dark.contracts.rel.surface.accent.base-up-3}",
       "$type": "color",
       "$unit": "hex"
     }
   },
   "outline": {
     "border": {
-      "$value": "{themes.dark.contracts.rel.border.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.border.accent.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "stroke": {
-      "$value": "{themes.dark.contracts.rel.stroke.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.stroke.accent.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "label": {
-      "$value": "{themes.dark.contracts.rel.label.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.label.accent.base}",
       "$type": "color",
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.dark.contracts.rel.onSurface.accent.base.$value}",
+      "$value": "{themes.dark.contracts.rel.onSurface.accent.base}",
       "$type": "color",
       "$unit": "hex"
     },

@@ -1,129 +1,30 @@
 {
-  "main": {
-    "lg": {
-      "root": {
-        "gap": {
-          "$value": "{tokens.spacing.md.$value}",
-          "$type": "number",
-          "$unit": "px",
-          "$respond": {
-            "above": {
-              "lg": {
-                "$value": "{tokens.spacing.lg.$value}",
-                "$type": "number",
-                "$unit": "px"
-              }
-            },
-            "between": {
-              "lg": {
-                "padding": {
-                  "$value": "{tokens.spacing.md.$value}",
-                  "$type": "number",
-                  "$unit": "px"
-                }
-              },
-              "md": {
-                "padding": {
-                  "$value": "{tokens.spacing.sm.$value}",
-                  "$type": "number",
-                  "$unit": "px"
-                }
-              }
-            }
-          }
-        },
-        "paddingBlock": {
-          "$value": "{tokens.spacing.md.$value}",
-          "$type": "number",
-          "$unit": "px",
-          "$respond": {
-            "above": {
-              "lg": {
-                "$value": "{tokens.spacing.lg.$value}",
-                "$type": "number",
-                "$unit": "px"
-              }
-            },
-            "between": {
-              "lg": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.md.$value}",
-                  "$type": "number",
-                  "$unit": "px"
-                }
-              },
-              "md": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.sm.$value}",
-                  "$type": "number",
-                  "$unit": "px"
-                }
-              }
-            }
-          }
-        },
-        "paddingInline": {
-          "$value": "{tokens.spacing.md.$value}",
-          "$type": "number",
-          "$unit": "px",
-          "$respond": {
-            "above": {
-              "lg": {
-                "$value": "{tokens.spacing.lg.$value}",
-                "$type": "number",
-                "$unit": "px"
-              }
-            },
-            "between": {
-              "lg": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.md.$value}",
-                  "$type": "number",
-                  "$unit": "px"
-                }
-              },
-              "md": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.sm.$value}",
-                  "$type": "number",
-                  "$unit": "px"
-                }
-              }
-            }
-          }
-        },
-        "$meta": {
-          "description": "Stack used for main app containers or layouts"
-        }
-      }
-    }
-  },
   "default": {
-    "lg": {
+    "xl": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px",
           "$respond": {
             "above": {
               "lg": {
-                "$value": "{tokens.spacing.lg.$value}",
+                "$value": "{tokens.spacing.lg}",
                 "$type": "number",
                 "$unit": "px"
               }
             },
             "between": {
               "lg": {
-                "padding": {
-                  "$value": "{tokens.spacing.md.$value}",
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
               "md": {
-                "padding": {
-                  "$value": "{tokens.spacing.sm.$value}",
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -131,14 +32,24 @@
             }
           }
         },
+        "marginBlock": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "marginInline": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
         "paddingBlock": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px",
           "$respond": {
             "above": {
               "lg": {
-                "$value": "{tokens.spacing.lg.$value}",
+                "$value": "{tokens.spacing.lg}",
                 "$type": "number",
                 "$unit": "px"
               }
@@ -146,14 +57,14 @@
             "between": {
               "lg": {
                 "paddingBlock": {
-                  "$value": "{tokens.spacing.md.$value}",
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
               "md": {
                 "paddingBlock": {
-                  "$value": "{tokens.spacing.sm.$value}",
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -162,13 +73,13 @@
           }
         },
         "paddingInline": {
-          "$value": "{tokens.spacing.md.$value}",
+          "$value": "{tokens.spacing.md}",
           "$type": "number",
           "$unit": "px",
           "$respond": {
             "above": {
               "lg": {
-                "$value": "{tokens.spacing.lg.$value}",
+                "$value": "{tokens.spacing.lg}",
                 "$type": "number",
                 "$unit": "px"
               }
@@ -176,24 +87,385 @@
             "between": {
               "lg": {
                 "paddingInline": {
-                  "$value": "{tokens.spacing.md.$value}",
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
               "md": {
                 "paddingInline": {
-                  "$value": "{tokens.spacing.sm.$value}",
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               }
             }
           }
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.xl}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm}",
+          "$type": "number",
+          "$unit": "px"
         }
       },
       "$meta": {
         "description": "Stack used for main app containers or layouts"
+      }
+    },
+    "lg": {
+      "root": {
+        "gap": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "marginBlock": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "marginInline": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "paddingBlock": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "paddingBlock": {
+                  "$value": "{tokens.spacing.md}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "paddingBlock": {
+                  "$value": "{tokens.spacing.sm}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "paddingInline": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "paddingInline": {
+                  "$value": "{tokens.spacing.md}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "paddingInline": {
+                  "$value": "{tokens.spacing.sm}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.lg}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "$meta": {
+        "description": "Stack used for main app containers or layouts"
+      }
+    },
+    "md": {
+      "root": {
+        "gap": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "marginBlock": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "marginInline": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "paddingBlock": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "paddingBlock": {
+                  "$value": "{tokens.spacing.md}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "paddingBlock": {
+                  "$value": "{tokens.spacing.sm}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "paddingInline": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.lg}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "paddingInline": {
+                  "$value": "{tokens.spacing.md}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "paddingInline": {
+                  "$value": "{tokens.spacing.sm}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "$meta": {
+        "description": "Stack used for main app containers or layouts"
+      }
+    },
+    "sm": {
+      "root": {
+        "gap": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.sm}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.xs}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "gap": {
+                  "$value": "{tokens.spacing.xs}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "marginBlock": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "marginInline": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "paddingBlock": {
+          "$value": "{tokens.spacing.sm}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.sm}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "paddingBlock": {
+                  "$value": "{tokens.spacing.md}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "paddingBlock": {
+                  "$value": "{tokens.spacing.sm}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "paddingInline": {
+          "$value": "{tokens.spacing.sm}",
+          "$type": "number",
+          "$unit": "px",
+          "$respond": {
+            "above": {
+              "lg": {
+                "$value": "{tokens.spacing.sm}",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "between": {
+              "lg": {
+                "paddingInline": {
+                  "$value": "{tokens.spacing.xs}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              },
+              "md": {
+                "paddingInline": {
+                  "$value": "{tokens.spacing.xs}",
+                  "$type": "number",
+                  "$unit": "px"
+                }
+              }
+            }
+          }
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.lg}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "$meta": {
+          "description": "Stack used for main app containers or layouts"
+        }
       }
     }
   }
