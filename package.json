@@ -18,8 +18,9 @@
   ],
   "scripts": {
     "install:all": "pnpm install",
+    "tokens-worker:test:unit": "pnpm --filter tokens-worker test:unit",
     "tokens-worker:build": "pnpm --filter tokens-worker build",
-    "prepare": "pnpm tokens-worker:build",
+    "prepare": "pnpm tokens-worker:test && pnpm tokens-worker:build",
     "sparkpad:client:dev": "pnpm --filter sparkpad-client dev",
     "sparkpad:client:build": "pnpm --filter sparkpad-client build",
     "sparkpad:client:test:unit": "pnpm --filter sparkpad-client test:unit",

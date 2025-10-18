@@ -68,7 +68,7 @@ export class TokensParser {
       parseNestedValue: this.resolver.parseNestedValue.bind(this.resolver),
       resolveIncludeServiceFields: this.resolver.resolveIncludeServiceFields.bind(this.resolver),
       toKebabCase: this.toKebabCase.bind(this),
-      isKeyValid: this.isKeyValidated.bind(this),
+      isKeyValid: this.isKeyValid.bind(this),
       verbose: withDefaults.verbose ?? false,
     });
 
@@ -155,8 +155,9 @@ export class TokensParser {
 
     await this.files.ensureDirExists(this.opts.build);
 
-    if (this.opts.source && this.opts.outDir) {
-      await this.files.listDir(this.opts.source, this.opts.outDir);
+    const outputDir = this.opts.outDir ?? this.opts.builder?.outDir;
+    if (this.opts.source && outputDir) {
+      await this.files.listDir(this.opts.source, outputDir);
     }
 
     await this.files.generateEntryFile();
@@ -206,7 +207,7 @@ export class TokensParser {
     return opts?.convertPxToRem ? this.valuePxToRem(value) : `${value}px`;
   }
 
-  public isKeyValidated(key: string): boolean {
+  public isKeyValid(key: string): boolean {
     return /^[^$:].*/.test(key);
   }
 

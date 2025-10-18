@@ -4,7 +4,7 @@ import os from 'node:os';
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-vi.mock('../lib/parsers/tokens/colors/generator.js', async () =>
+vi.mock('../lib/tools/colors/index.js', async () =>
   import('../lib/parsers/tokens/colors/generator.ts')
 );
 
