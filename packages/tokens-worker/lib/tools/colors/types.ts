@@ -4,6 +4,7 @@ export interface ColorsGeneratorOptions {
   step?: number;
   comment?: string;
   writeMarkdownFiles?: boolean;
+  suffixGrid?: number;
 }
 
 export interface MainColor {
@@ -24,5 +25,7 @@ export interface DerivativeColor {
   lightness: number;
   isLight: boolean;
 }
+
+export type TokenValue = { $value: string; $type: 'color'; $unit: 'hex' };
 
 export type DerivativeColors = DerivativeColor[];

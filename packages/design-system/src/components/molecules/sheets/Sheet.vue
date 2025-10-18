@@ -4,7 +4,7 @@ import { SHEET_PREFIX, type SheetProps } from "./Sheet";
 import Surface from "@/components/atoms/containers/Surface.vue";
 
 withDefaults(defineProps<SheetProps>(), {
-  variant: "container",
+  variant: "default",
   size: "md",
   isOpen: false,
   isDialog: false,

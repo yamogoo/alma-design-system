@@ -284,7 +284,7 @@ function getAllJsonFiles(dir: string): string[] {
 
 /* * * Vite Plugin * * */
 
-export function VitePluginTokenLinter(options?: { source?: string }): Plugin {
+export function VitePluginTokensLinter(options?: { source?: string }): Plugin {
   const sourcePath = options?.source || path.resolve(process.cwd(), 'tokens');
 
   const runForFile = (file: string) => {

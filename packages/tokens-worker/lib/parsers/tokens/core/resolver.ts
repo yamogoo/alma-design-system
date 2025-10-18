@@ -1,4 +1,4 @@
-// Portions of this file were developed with the assistance of AI tools.
+// This file were developed with the assistance of AI tools.
 //
 import { readFileSync, statSync } from 'node:fs';
 import nodePath from 'node:path';

@@ -1,0 +1,21 @@
+{
+  "engine": {
+    "failOnError": false,
+    "maxWarnings": 999999,
+    "output": "stylish"
+  },
+  "allowedUnits": {
+    "fontFamily": ["font", ""],
+    "color": ["", "hex"]
+  },
+  "references": {
+    "stripPrefixes": ["typography.", "tokens."],
+    "debugUnresolved": true,
+    "allowCssLengthStringsForNumeric": false
+  },
+  "rules": {
+    "reference-resolves": "warn",
+    "reference-type-compatible": "warn",
+    "no-cyclic-references": "off"
+  }
+}

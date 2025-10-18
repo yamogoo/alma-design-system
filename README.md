@@ -82,7 +82,7 @@ Detailed architecture lives in:
 These apps depend on the local packages via pnpm workspaces.
 
 > Files that include contributions generated or assisted by AI are explicitly annotated at the top with:
-> // Portions of this file were developed with the assistance of AI tools.
+> // This file were developed with the assistance of AI tools.
 
 ## Getting Started
 

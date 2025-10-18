@@ -16,7 +16,7 @@ const PREFIX = config.namespace?.$value || "al-";
 import {
   ColorsGeneratorPlugin,
   TokensParserPlugin,
-  VitePluginTokenLinter,
+  VitePluginTokensLinter,
   VitePluginFigmaTokensParser,
 } from "@alma/tokens-worker";
 
@@ -96,7 +96,7 @@ export default () => {
         isModulesMergedIntoEntry: true,
       }),
 
-      VitePluginTokenLinter({
+      VitePluginTokensLinter({
         source: "./src/tokens/src",
       }),
       IS_PRODUCTION &&
