@@ -4,7 +4,7 @@ import { PluginOption } from 'vite';
 import path from 'node:path';
 import fs from 'node:fs';
 
-import { generateColorsFromFile } from '../parsers/ColorsGenerator.js';
+import { generateColorsFromFile } from '../parsers/tokens/colors/generator.js';
 
 interface ColorsGeneratorPluginOptions {
   source: string;

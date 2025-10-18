@@ -31,11 +31,9 @@ watch(localIsOpen, (newValue) => {
     mode="neutral"
     tone="primary"
     orientation="vertical"
-    vertical-alignment="center"
-    horizontal-alignment="center"
   >
     <Components.Atoms.Text variant="body-2">
-      {{ "Settings 2" }}
+      {{ "Settings" }}
     </Components.Atoms.Text>
   </Components.Molecules.ActionSheet>
 </template>

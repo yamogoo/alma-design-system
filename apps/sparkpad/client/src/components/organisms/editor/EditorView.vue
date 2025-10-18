@@ -5,18 +5,21 @@ import { Components } from "@alma/design-system";
 <template>
   <Components.Atoms.Stack
     class="editor-view"
-    :variant="'default'"
-    :size="'lg'"
+    variant="default"
+    size="lg"
     :padding="['l', 'v']"
   >
     <Components.Atoms.Surface
       class="editor-view__content"
-      :as="'div'"
+      as="div"
       bordered
-      :variant="'default'"
-      :size="'lg'"
-      :mode="'neutral'"
-      :tone="'canvas'"
+      variant="default"
+      size="lg"
+      mode="neutral"
+      tone="canvas"
+      orientation="horizontal"
+      align-horizontal="center"
+      align-vertical="center"
     >
       <Components.Atoms.Text :variant="'body-2'">
         {{ "Notes" }}

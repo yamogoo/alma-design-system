@@ -15,14 +15,13 @@ const onResetValue = (): void => {
 <template>
   <Components.Atoms.Surface
     class="explorer"
-    :as="'div'"
-    :variant="'default'"
-    :size="'lg'"
-    :mode="'neutral'"
-    :tone="'canvas'"
-    :orientation="'vertical'"
-    :align-horizontal="'start'"
-    :align-vertical="'start'"
+    as="div"
+    variant="default"
+    size="lg"
+    mode="neutral"
+    tone="canvas"
+    orientation="vertical"
+    direction="forward"
     :border="'hv'"
     :rounded="true"
   >
