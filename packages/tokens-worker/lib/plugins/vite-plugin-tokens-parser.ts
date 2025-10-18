@@ -2,7 +2,8 @@
 
 import type { Plugin } from 'vite';
 import chokidar from 'chokidar';
-import { TokensParser, type TokensParserOptions } from '../parsers/TokensParser.js';
+import { TokensParser } from '../parsers/TokensParser.js';
+import { type TokensParserOptions } from '../parsers/tokens/types.js';
 
 export interface ViteTokensPluginOptions extends TokensParserOptions {
   /** Controls when plugin is applied (e.g. "build", "serve", or "both") */
@@ -12,35 +13,42 @@ export interface ViteTokensPluginOptions extends TokensParserOptions {
 }
 
 export function TokensParserPlugin(options: ViteTokensPluginOptions): Plugin {
+  const { enforce, apply, ...rawParserOptions } = options;
+  const parserOptions = rawParserOptions as TokensParserOptions;
+
   let parser: TokensParser;
+
+  const runParser = async () => {
+    parser = new TokensParser(parserOptions);
+    await parser.buildAndParse();
+  };
 
   return {
     name: 'vite-plugin-tokens-parser',
-    enforce: options.enforce ?? 'pre',
-    apply: options.apply ?? 'build',
+    enforce: enforce ?? 'pre',
+    apply: apply ?? 'build',
 
     async buildStart() {
-      parser = new TokensParser(options);
-      await parser.buildAndParse();
+      await runParser();
     },
 
     configureServer(server) {
       const watchPaths =
-        options.paths?.length && options.paths.length > 0
-          ? options.paths.map((p) => `${p}/**/*.json`)
+        parserOptions.paths?.length && parserOptions.paths.length > 0
+          ? parserOptions.paths.map((p) => `${p}/**/*.json`)
           : ['**/*.json'];
 
       const watcher = chokidar.watch(watchPaths, {
         ignoreInitial: true,
       });
 
+      const entryFile = parserOptions.entryFilePath ?? 'tokens';
+
       watcher.on('change', async (file) => {
         console.log(`[tokens-parser] 🔁 File changed: ${file}`);
 
-        parser = new TokensParser(options);
-        await parser.buildAndParse();
+        await runParser();
 
-        const entryFile = options.entryFilePath ?? 'tokens';
         const mod = server.moduleGraph.getModuleById(entryFile);
 
         if (mod) {
@@ -60,6 +68,12 @@ export function TokensParserPlugin(options: ViteTokensPluginOptions): Plugin {
         } else {
           console.warn(`[tokens-parser] ⚠️ Could not find module ${entryFile} in Vite graph`);
         }
+      });
+
+      server.httpServer?.once('close', () => {
+        watcher.close().catch(() => {
+          /* swallow */
+        });
       });
     },
   };
