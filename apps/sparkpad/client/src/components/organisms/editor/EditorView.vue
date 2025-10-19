@@ -21,7 +21,7 @@ import { Components } from "@alma/design-system";
       align-horizontal="center"
       align-vertical="center"
     >
-      <Components.Atoms.Text :variant="'body-2'">
+      <Components.Atoms.Text variant="body-2" mode="neutral" tone="primary">
         {{ "Notes" }}
       </Components.Atoms.Text>
     </Components.Atoms.Surface>

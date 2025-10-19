@@ -11,6 +11,7 @@ import lightningcss from "vite-plugin-lightningcss";
 import dts from "vite-plugin-dts";
 
 import config from "./src/tokens/src/config.json";
+
 const PREFIX = config.namespace?.$value || "al-";
 
 import {
@@ -47,7 +48,6 @@ export default () => {
           filename: "stats-flamegraph.html",
           template: "flamegraph",
         }) as PluginOption),
-      // visualizer({ filename: "stats.html", gzipSize: true }),
       vueJsx({
         transformOn: true,
         mergeProps: true,
@@ -55,56 +55,81 @@ export default () => {
       svgLoader({ defaultImport: "component" }),
       // Deign System: Tokens and SCSS generation
       ColorsGeneratorPlugin({
-        enforce: "pre",
-        apply: "build",
-        source: "./src/tokens/src/baseColors.json",
-        outDir: "./src/tokens/src/colors.json",
-        step: 40,
+        mode: {
+          enforce: "pre",
+          apply: "build",
+        },
+        paths: {
+          input: "./src/tokens/src/baseColors.json",
+          output: "./src/tokens/src/colors.json",
+        },
+        generator: {
+          levels: 40,
+        },
       }),
       TokensParserPlugin({
-        enforce: "pre",
-        apply: "build",
-        source: "./src/tokens/.cache",
-        build: "./src/tokens/output",
-        outDir: "./src/assets/scss/abstracts",
-        entryFilePath: "./src/tokens/index.ts",
-        paths: ["./src/tokens/src/", "./src/tokens/.cache"],
-        mapOptions: {
+        mode: {
+          enforce: "pre",
+          apply: "build",
+        },
+        paths: {
+          src: "./src/tokens/src",
+          cache: "./src/tokens/.cache",
+          out: "./src/tokens/output",
+          entry: "./src/tokens/index.ts",
+          scssOut: "./src/assets/scss/abstracts",
+        },
+        include: [
+          "./src/tokens/src/**/*.json",
+          "./src/tokens/.cache/**/*.json",
+        ],
+        naming: {
           prefix: "",
-          convertCase: true,
+          caseTransform: true,
           includeFileName: true,
-          includeServiceFields: ["value", "respond"],
-          scssUseDefaultFlag: true,
         },
-        cssVarOptions: {
-          prefix: PREFIX,
-          convertToCSSVariables: false,
-          includeFileNameToCSSVariables: false,
-          excludeCSSVariables: ["./src/tokens/.cache/themes.json"],
-          useSeparateFile: true,
-          fileNamePrefix: "_runtime.",
+        fields: {
+          include: ["value", "respond"],
         },
-        themesDir: "./src/tokens/output/themes.json",
-        themesOutFile: "./src/assets/scss/abstracts/_runtime_themes.scss",
-        themesIncludeRequired: true,
+        targets: {
+          scssMap: {
+            useDefaultFlag: true,
+          },
+          cssVars: {
+            enabled: false,
+            prefix: PREFIX,
+            includeFileName: false,
+            exclude: ["./src/tokens/.cache/themes.json"],
+            separateFile: true,
+            fileNamePrefix: "_runtime.",
+          },
+          themes: {
+            enabled: true,
+            input: "./src/tokens/output/themes.json",
+            output: "./src/assets/scss/abstracts/_runtime_themes.scss",
+            requireAll: true,
+          },
+        },
         builder: {
           format: "json",
-          paths: ["./src/tokens/src"],
-          includeRootDirName: false,
+          roots: ["./src/tokens/src"],
+          includeRootDir: false,
         },
-        useFileStructureLookup: false,
-        isModulesMergedIntoEntry: true,
+        resolver: {
+          fileLookup: false,
+          mergeIntoEntry: true,
+        },
       }),
-
       VitePluginTokensLinter({
         source: "./src/tokens/src",
       }),
       IS_PRODUCTION &&
         VitePluginFigmaTokensParser({
-          enforce: "post",
-          apply: "build",
-          source: "./src/tokens/output",
-          outDir: "./src/tokens/.figma",
+          mode: { enforce: "post", apply: "build" },
+          paths: {
+            input: "./src/tokens/output",
+            output: "./src/tokens/.figma",
+          },
         }),
       lightningcss({
         browserslist: [">0.2%", "not dead"],
@@ -132,6 +157,18 @@ export default () => {
     },
     build: {
       lib: {
+        // entry: {
+        //   index: path.resolve(__dirname, "src/index.ts"),
+        //   adapters: path.resolve(__dirname, "src/adapters/index.ts"),
+        //   assets: path.resolve(__dirname, "src/assets/index.ts"),
+        //   components: path.resolve(__dirname, "src/components/index.ts"),
+        //   composables: path.resolve(__dirname, "src/composables/index.ts"),
+        //   constants: path.resolve(__dirname, "src/constants/index.ts"),
+        //   stores: path.resolve(__dirname, "src/stores/index.ts"),
+        //   tokens: path.resolve(__dirname, "src/tokens/index.ts"),
+        //   typings: path.resolve(__dirname, "src/typings/index.ts"),
+        //   utils: path.resolve(__dirname, "src/utils/index.ts"),
+        // },
         entry: path.resolve(__dirname, "src/index.ts"),
         name: "AlmaDesignSystem",
         formats: ["es", "cjs"],
@@ -148,6 +185,8 @@ export default () => {
           "vue3-lottie",
         ],
         output: {
+          // chunkFileNames: "[name].[hash].cjs",
+          // entryFileNames: "[name].cjs",
           preserveModules: false,
           preserveModulesRoot: "src",
           globals: { vue: "Vue" },

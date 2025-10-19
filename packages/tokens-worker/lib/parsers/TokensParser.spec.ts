@@ -7,6 +7,10 @@ import os from 'node:os';
 import path from 'node:path';
 
 import { TokensParser, SCSSParser } from './TokensParser';
+import {
+  normalizeTokensParserConfig,
+  type TokensParserConfig,
+} from '../config/tokens-options';
 
 const BASE_PARSE_OPTIONS = {
   convertPxToRem: false,
@@ -48,6 +52,55 @@ afterAll(() => {
   }
 });
 
+describe('TokensParser modern config', () => {
+  it('normalizes declarative config to legacy parser options', () => {
+    const normalized = normalizeTokensParserConfig({
+      paths: {
+        src: './tokens/src',
+        scssOut: './scss/out',
+      },
+    });
+
+    expect(normalized.parserOptions.outDir).toBe('./scss/out');
+    expect(normalized.parserOptions.paths).toEqual(expect.arrayContaining(['./tokens/src']));
+    expect(normalized.watchGlobs).toEqual(['./tokens/src/**/*.json']);
+    expect(normalized.parserOptions.cssVarOptions?.convertToCSSVariables).toBe(false);
+  });
+
+  it('allows TokensParser constructor to consume declarative config', () => {
+    const root = makeTempDir();
+    const srcDir = path.join(root, 'src');
+    const cacheDir = path.join(root, 'cache');
+    const outDir = path.join(root, 'out');
+    const scssDir = path.join(root, 'scss');
+    fs.mkdirSync(srcDir, { recursive: true });
+    fs.mkdirSync(cacheDir, { recursive: true });
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.mkdirSync(scssDir, { recursive: true });
+
+    const modernConfig: TokensParserConfig = {
+      paths: {
+        src: srcDir,
+        cache: cacheDir,
+        out: outDir,
+        entry: path.join(root, 'entry.ts'),
+        scssOut: scssDir,
+      },
+      targets: {
+        cssVars: { enabled: false },
+      },
+    };
+
+    const parser = new TokensParser(modernConfig);
+
+    const normalizePath = (p: string) => p.replace(/\\/g, '/');
+    expect(normalizePath(parser.opts.outDir!)).toBe(normalizePath(scssDir));
+    expect(parser.opts.paths).toEqual(
+      expect.arrayContaining([normalizePath(srcDir), normalizePath(cacheDir)]),
+    );
+  });
+});
+
 const createExportableToken = (value: any, extraMeta: Record<string, any> = {}) => ({
   value,
   type: 'number',
@@ -60,6 +113,62 @@ const createExportableToken = (value: any, extraMeta: Record<string, any> = {}) 
       },
     },
   },
+});
+
+describe('TokensParser helper methods', () => {
+  it('formats px values to px2rem string', () => {
+    const parser = createParser();
+    expect(parser.valuePxToRem(24)).toBe('px2rem(24px)');
+  });
+
+  it('returns em units for font-related keys', () => {
+    const parser = createParser();
+    expect(parser.convertNumberByKey(14, 'font-size')).toBe('14em');
+    expect(parser.convertNumberByKey(18, 'line-height')).toBe('18em');
+  });
+
+  it('validates keys against reserved prefixes', () => {
+    const parser = createParser();
+    expect(parser.isKeyValid('background')).toBe(true);
+    expect(parser.isKeyValid('$value')).toBe(false);
+    expect(parser.isKeyValid(':hover')).toBe(false);
+  });
+
+  it('converts camelCase to kebab-case', () => {
+    const parser = createParser();
+    expect(parser.toKebabCase('borderRadius')).toBe('border-radius');
+    expect(parser.toKebabCase('SurfaceRootPadding')).toBe('surface-root-padding');
+  });
+
+  it('parses colors respecting requested unit', () => {
+    const parser = createParser();
+    expect(parser.tryParseColor('#FFAA00')).toBe('#ffaa00');
+    expect(parser.tryParseColor('rgba(255, 0, 0, 0.5)', 'rgba')).toBe('rgba(255, 0, 0, 0.5)');
+    expect(parser.tryParseColor('not-a-color')).toBeNull();
+  });
+
+  it('resolves include service fields with local and global configuration', () => {
+    const parser = createParser({
+      mapOptions: {
+        includeServiceFields: ['core'],
+      },
+    });
+
+    const local = parser.resolveIncludeServiceFields({
+      includeServiceFields: ['meta', 'respond'],
+    } as any);
+    expect(local.includeAll).toBe(false);
+    expect(Array.from(local.set)).toEqual(expect.arrayContaining(['meta', 'respond']));
+
+    const fallback = parser.resolveIncludeServiceFields({} as any);
+    expect(fallback.includeAll).toBe(false);
+    expect(Array.from(fallback.set)).toEqual(expect.arrayContaining(['value', 'type', 'unit']));
+
+    const includeAll = parser.resolveIncludeServiceFields({
+      includeServiceFields: true,
+    } as any);
+    expect(includeAll.includeAll).toBe(true);
+  });
 });
 
 describe('TokensParser / SCSSParser options matrix', () => {
@@ -542,5 +651,96 @@ describe('TokensParser integration', () => {
     const themeCSS = fs.readFileSync(themesOutFile, 'utf-8');
     expect(themeCSS).toContain('[data-theme="light"]');
     expect(themeCSS).toContain('--ds-surface-neutral');
+  });
+
+  it('builds themes when themesDir is a directory', async () => {
+    const tempDir = makeTempDir();
+    const srcDir = path.join(tempDir, 'tokens-src');
+    const cacheDir = path.join(tempDir, '.cache');
+    const buildDir = path.join(tempDir, 'build');
+    const scssDir = path.join(tempDir, 'scss');
+    const cssDir = path.join(tempDir, 'css');
+    const entryFile = path.join(tempDir, 'entry.ts');
+    const themesDir = path.join(tempDir, 'themes');
+    const themesOutFile = path.join(tempDir, 'themes', 'index.css');
+
+    writeJSON(path.join(srcDir, 'base.json'), {
+      size: {
+        base: {
+          value: 4,
+          type: 'dimension',
+          unit: 'px',
+        },
+      },
+    });
+
+    writeJSON(path.join(themesDir, 'light.json'), {
+      surface: {
+        base: {
+          value: '#ffffff',
+          type: 'color',
+          meta: {
+            build: {
+              web: {
+                exportAsVar: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    writeJSON(path.join(themesDir, 'dark.json'), {
+      surface: {
+        base: {
+          value: '#111111',
+          type: 'color',
+          meta: {
+            build: {
+              web: {
+                exportAsVar: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const parser = new TokensParser({
+      source: srcDir,
+      build: buildDir,
+      outDir: scssDir,
+      cssVarsOutDir: cssDir,
+      entryFilePath: entryFile,
+      paths: [srcDir],
+      mapOptions: {
+        prefix: 'ds',
+      },
+      cssVarOptions: {
+        prefix: 'ds',
+        convertToCSSVariables: true,
+        useSeparateFile: true,
+      },
+      parseOptions: {
+        convertPxToRem: false,
+      },
+      builder: {
+        format: 'json',
+        outDir: cacheDir,
+        paths: [srcDir],
+        includeRootDirName: false,
+      },
+      themesDir,
+      themesOutFile,
+      themesIncludeRequired: true,
+    });
+
+    await parser.buildAndParse();
+
+    const css = fs.readFileSync(themesOutFile, 'utf-8');
+    expect(css).toContain('[data-theme="light"]');
+    expect(css).toContain('[data-theme="dark"]');
+    expect(css).toMatch(/--ds-surface-base:\s*#ffffff/);
+    expect(css).toMatch(/--ds-surface-base:\s*#111111/);
   });
 });

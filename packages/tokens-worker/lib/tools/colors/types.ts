@@ -3,6 +3,13 @@ export interface ColorsGeneratorOptions {
   outDir: string;
   step?: number;
   comment?: string;
+  mode?: {
+    colorspace?: string;
+    strategy?: string;
+    gamutClamp?: boolean;
+    round?: { decimals?: number };
+    keys?: { prefix?: string; separator?: string };
+  };
   writeMarkdownFiles?: boolean;
   suffixGrid?: number;
 }

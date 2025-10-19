@@ -1,37 +1,73 @@
 // Portions of this file were developed with the assistance of AI tools.
 
-import { PluginOption } from 'vite';
+import type { PluginOption } from 'vite';
 import path from 'node:path';
 import fs from 'node:fs';
 
 import { generateColorsFromFile } from '../tools/colors/index.js';
+import type { ColorsGeneratorOptions } from '../tools/colors/types.js';
 
-interface ColorsGeneratorPluginOptions {
-  source: string;
-  outDir: string;
-  step?: number;
-  comment?: string;
-  /**
-   * Vite lifecycle application mode:
-   * - 'serve' — dev only
-   * - 'build' — build only
-   * - 'both'  — explicitly run in both
-   */
-  apply?: 'serve' | 'build' | 'both';
-
-  /**
-   * Vite plugin execution order:
-   * - 'pre' | 'post' | undefined
-   */
+type ModeConfig = {
   enforce?: 'pre' | 'post';
+  apply?: 'build' | 'serve' | 'both';
+};
+
+type PathsConfig = {
+  input: string;
+  output: string;
+};
+
+type GeneratorConfig = {
+  levels?: number;
+  comment?: string;
+  // Future extensions:
+  // colorspace?: string;
+  // strategy?: string;
+  // gamutClamp?: boolean;
+  // round?: { decimals?: number };
+  // keys?: { prefix?: string; separator?: string };
+};
+
+export interface ColorsGeneratorPluginOptions {
+  mode?: ModeConfig;
+  paths: PathsConfig;
+  generator?: GeneratorConfig;
 }
 
-export default function ColorsGeneratorPlugin(options: ColorsGeneratorPluginOptions): PluginOption {
-  const absSource = path.resolve(options.source);
-  const absOutDir = path.resolve(options.outDir);
+const toAbsolutePath = (filePath: string): string => path.resolve(filePath);
 
-  const applyMode = options.apply === 'both' ? undefined : (options.apply ?? 'serve');
-  const enforceMode = options.enforce ?? 'pre';
+export default function ColorsGeneratorPlugin(options: ColorsGeneratorPluginOptions): PluginOption {
+  if (!options.paths?.input) {
+    throw new Error('[colors-generator] paths.input is required');
+  }
+  if (!options.paths?.output) {
+    throw new Error('[colors-generator] paths.output is required');
+  }
+
+  const absInput = toAbsolutePath(options.paths.input);
+  const absOutput = toAbsolutePath(options.paths.output);
+
+  const mode = options.mode ?? {};
+  const applyMode = mode.apply === 'both' ? undefined : (mode.apply ?? 'build');
+  const enforceMode = mode.enforce ?? 'pre';
+
+  const generator = options.generator ?? {};
+  const levels = generator.levels ?? 40;
+
+  const buildTask = () => {
+    if (!fs.existsSync(absInput)) {
+      throw new Error(`[colors-generator] Source file not found: ${absInput}`);
+    }
+
+    const generatorOptions: ColorsGeneratorOptions = {
+      source: absInput,
+      outDir: absOutput,
+      step: levels,
+      comment: generator.comment,
+    };
+
+    generateColorsFromFile(generatorOptions);
+  };
 
   return {
     name: 'vite-plugin-colors-generator',
@@ -39,33 +75,25 @@ export default function ColorsGeneratorPlugin(options: ColorsGeneratorPluginOpti
     enforce: enforceMode,
 
     configResolved() {
-      console.log(`[colors-generator] Watching: ${absSource}`);
+      console.log(`[colors-generator] Watching: ${absInput}`);
     },
 
     buildStart() {
-      if (!fs.existsSync(absSource)) {
-        this.error(`[colors-generator] Source file not found: ${absSource}`);
+      try {
+        buildTask();
+      } catch (err) {
+        this.error(err instanceof Error ? err.message : String(err));
       }
-
-      generateColorsFromFile({
-        ...options,
-        source: absSource,
-        outDir: absOutDir,
-      });
     },
 
     handleHotUpdate(ctx) {
-      if (ctx.file === absSource) {
+      if (ctx.file === absInput) {
         console.log(`[colors-generator] Regenerating due to change in ${ctx.file}`);
         try {
-          generateColorsFromFile({
-            ...options,
-            source: absSource,
-            outDir: absOutDir,
-          });
-          console.log(`[colors-generator] ✅ Updated`);
+          buildTask();
+          console.log('[colors-generator] ✅ Updated');
         } catch (err) {
-          console.error(`[colors-generator] ❌ Error:`, err);
+          console.error('[colors-generator] ❌ Error:', err);
         }
       }
     },

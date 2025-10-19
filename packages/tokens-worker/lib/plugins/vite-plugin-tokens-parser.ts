@@ -2,43 +2,51 @@
 
 import type { Plugin } from 'vite';
 import chokidar from 'chokidar';
-import { TokensParser } from '../parsers/TokensParser.js';
-import { type TokensParserOptions } from '../parsers/tokens/types.js';
 
-export interface ViteTokensPluginOptions extends TokensParserOptions {
-  /** Controls when plugin is applied (e.g. "build", "serve", or "both") */
-  apply?: 'build' | 'serve' | ((config: any, env: any) => boolean);
-  /** Controls plugin execution priority (Vite/Rollup standard) */
+import { TokensParser } from '../parsers/TokensParser.js';
+import {
+  normalizeTokensParserConfig,
+  type TokensParserConfig,
+} from '../config/tokens-options.js';
+
+type ModeConfig = {
   enforce?: 'pre' | 'post';
+  apply?: 'build' | 'serve' | ((config: any, env: any) => boolean);
+};
+
+export interface ViteTokensPluginOptions extends TokensParserConfig {
+  mode?: ModeConfig;
 }
 
 export function TokensParserPlugin(options: ViteTokensPluginOptions): Plugin {
-  const { enforce, apply, ...rawParserOptions } = options;
-  const parserOptions = rawParserOptions as TokensParserOptions;
+  const { mode, ...parserConfig } = options;
+  const { parserOptions, watchGlobs } = normalizeTokensParserConfig(parserConfig);
+
+  const enforceMode = mode?.enforce ?? 'pre';
+  const applyMode = mode?.apply ?? 'build';
 
   let parser: TokensParser;
 
   const runParser = async () => {
+    if (parserOptions.verbose) {
+      console.log('[tokens-parser] resolver paths:', parserOptions.paths);
+    }
+
     parser = new TokensParser(parserOptions);
     await parser.buildAndParse();
   };
 
   return {
     name: 'vite-plugin-tokens-parser',
-    enforce: enforce ?? 'pre',
-    apply: apply ?? 'build',
+    enforce: enforceMode,
+    apply: applyMode,
 
     async buildStart() {
       await runParser();
     },
 
     configureServer(server) {
-      const watchPaths =
-        parserOptions.paths?.length && parserOptions.paths.length > 0
-          ? parserOptions.paths.map((p) => `${p}/**/*.json`)
-          : ['**/*.json'];
-
-      const watcher = chokidar.watch(watchPaths, {
+      const watcher = chokidar.watch(watchGlobs, {
         ignoreInitial: true,
       });
 

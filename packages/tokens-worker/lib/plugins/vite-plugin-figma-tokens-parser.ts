@@ -3,95 +3,95 @@
 import type { Plugin } from 'vite';
 import path from 'node:path';
 import fs from 'node:fs';
+
 import {
-  runFigmaTokensParser,
-  transformFile,
-  type FigmaTokensParserOptions,
-} from '../parsers/FigmaTokensParser.js';
+  normalizeFigmaTokensParserConfig,
+  type FigmaTokensParserConfig,
+} from '../config/figma-options.js';
+import { runFigmaTokensParser, transformFile } from '../parsers/FigmaTokensParser.js';
 
-export interface ViteFigmaTokensParserOptions extends FigmaTokensParserOptions {
-  /** Run once at build start (default: true) */
-  runOnBuildStart?: boolean;
-  /** Re-run on file change in dev (default: true) */
-  watch?: boolean;
-  /** Controls plugin execution priority (Vite/Rollup standard) */
-  enforce?: 'pre' | 'post';
-  /** Controls when plugin is applied (build/serve/both or function) */
-  apply?: 'build' | 'serve' | ((config: any, env: any) => boolean);
-}
+const toAbsoluteGlob = (rootDir: string, pattern: string): string => {
+  const normalized = pattern.replace(/\\/g, '/');
+  const segments = normalized.split('/');
+  return path.join(rootDir, ...segments);
+};
 
-function listJsonFilesSync(rootDir: string, opts: ViteFigmaTokensParserOptions): string[] {
-  const out: string[] = [];
-  const stack = [rootDir];
-  const shouldSkip = (name: string) => {
-    if ((opts.ignoreDotfiles ?? true) && name.startsWith('.')) return true;
-    if ((opts.ignoreUnderscored ?? true) && name.startsWith('_')) return true;
-    return false;
-  };
-  while (stack.length) {
-    const dir = stack.pop()!;
-    if (!fs.existsSync(dir)) continue; // 🔹 safe check
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    for (const e of entries) {
-      if (shouldSkip(e.name)) continue;
-      const full = path.join(dir, e.name);
-      if (e.isDirectory()) stack.push(full);
-      else if (e.isFile() && e.name.toLowerCase().endsWith('.json')) out.push(full);
-    }
+function ensureDirExists(dir: string) {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
-  return out;
 }
 
-export function VitePluginFigmaTokensParser(options: ViteFigmaTokensParserOptions): Plugin {
-  const opts: ViteFigmaTokensParserOptions = {
-    runOnBuildStart: true,
-    watch: true,
-    ignoreDotfiles: true,
-    ignoreUnderscored: true,
-    ...options,
-  };
+export interface VitePluginFigmaTokensParserOptions
+  extends Omit<FigmaTokensParserConfig, 'mode'> {
+  mode?: FigmaTokensParserConfig['mode'];
+}
 
-  const sourceAbs = path.resolve(opts.source);
-  const outAbs = path.resolve(opts.outDir);
+export function VitePluginFigmaTokensParser(
+  config: VitePluginFigmaTokensParserOptions,
+): Plugin {
+  const normalized = normalizeFigmaTokensParserConfig(config);
+  const { parserOptions, watchGlobs, mode, watch, runOnBuildStart } = normalized;
+
+  const sourceAbs = path.resolve(parserOptions.source);
+  const outAbs = path.resolve(parserOptions.outDir);
+
+  const applyMode = mode.apply === 'both' ? undefined : (mode.apply ?? 'build');
+  const enforceMode = mode.enforce ?? 'post';
+
+  const runParser = async () => {
+    ensureDirExists(outAbs);
+    await runFigmaTokensParser({ ...parserOptions, source: sourceAbs, outDir: outAbs });
+  };
 
   return {
     name: 'vite-plugin-figma-tokens-parser',
-    enforce: opts.enforce ?? 'post',
-    apply: opts.apply ?? 'build',
+    apply: applyMode,
+    enforce: enforceMode,
 
     async buildStart() {
-      if (opts.runOnBuildStart) {
-        console.log(`[FigmaTokensParser] Parsing "${sourceAbs}" -> "${outAbs}" ...`);
-        await runFigmaTokensParser({ ...opts, source: sourceAbs, outDir: outAbs });
+      if (runOnBuildStart) {
+        await runParser();
       }
     },
 
     configureServer(server) {
-      if (!opts.watch) return;
+      if (!watch) return;
 
       if (!fs.existsSync(sourceAbs)) {
         console.warn(`[FigmaTokensParser] Source directory not found: ${sourceAbs}`);
         return;
       }
 
-      const initialFiles = listJsonFilesSync(sourceAbs, opts);
-      server.watcher.add(initialFiles);
+      const absoluteGlobs = watchGlobs.map((pattern) =>
+        toAbsoluteGlob(sourceAbs, pattern),
+      );
 
-      const onChange = async (file: string) => {
+      server.watcher.add(absoluteGlobs);
+
+      const handleChange = async (file: string) => {
         if (!file.toLowerCase().endsWith('.json')) return;
         if (!file.startsWith(sourceAbs)) return;
 
         try {
-          await transformFile(file, { ...opts, source: sourceAbs, outDir: outAbs });
+          await transformFile(file, {
+            ...parserOptions,
+            source: sourceAbs,
+            outDir: outAbs,
+          });
           server.ws.send({ type: 'full-reload' });
-          console.log(`[FigmaTokensParser] Updated: ${path.relative(sourceAbs, file)}`);
-        } catch (e) {
-          console.warn(`[FigmaTokensParser] Failed to update ${file}: ${e}`);
+          if (parserOptions.verbose) {
+            console.log(
+              `[FigmaTokensParser] Updated: ${path.relative(sourceAbs, file)}`,
+            );
+          }
+        } catch (err) {
+          console.warn(`[FigmaTokensParser] Failed to update ${file}:`, err);
         }
       };
 
-      server.watcher.on('add', onChange);
-      server.watcher.on('change', onChange);
+      server.watcher.on('change', handleChange);
+      server.watcher.on('add', handleChange);
     },
   };
 }

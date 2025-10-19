@@ -9,6 +9,10 @@ import { ColorToolkit } from './tokens/core/color.js';
 import { TokenFileManager } from './tokens/io/fs.js';
 import { ThemeGenerator } from './tokens/themes.js';
 import type { ParseValueOptions, TokensParserOptions } from './tokens/types.js';
+import {
+  normalizeTokensParserConfig,
+  type TokensParserConfig,
+} from '../config/tokens-options.js';
 
 export { SCSSParser } from './tokens/emit/scss.js';
 
@@ -24,8 +28,28 @@ export class TokensParser {
   private readonly files: TokenFileManager;
   private readonly themes: ThemeGenerator;
 
-  constructor(opts: TokensParserOptions) {
-    const withDefaults = this.applyDefaults(opts);
+  private normalizeOptions(
+    opts: TokensParserOptions | TokensParserConfig,
+  ): TokensParserOptions {
+    const maybeConfig: any = opts;
+    const rawPaths = maybeConfig?.paths;
+
+    if (
+      rawPaths &&
+      !Array.isArray(rawPaths) &&
+      typeof rawPaths === 'object' &&
+      rawPaths.src &&
+      rawPaths.scssOut
+    ) {
+      return normalizeTokensParserConfig(maybeConfig as TokensParserConfig).parserOptions;
+    }
+
+    return opts as TokensParserOptions;
+  }
+
+  constructor(opts: TokensParserOptions | TokensParserConfig) {
+    const baseOptions = this.normalizeOptions(opts);
+    const withDefaults = this.applyDefaults(baseOptions);
 
     this.opts = withDefaults;
 

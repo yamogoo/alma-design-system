@@ -3,10 +3,33 @@
 import fs from 'node:fs/promises';
 import fssync from 'node:fs';
 import path from 'node:path';
+import { minimatch } from 'minimatch';
+
+import {
+  normalizeFigmaTokensParserConfig,
+  type FigmaTokensParserConfig,
+} from '../config/figma-options.js';
+import type { FigmaTokensParserOptions } from './figma/types.js';
 
 /* * * padding expansion core * * */
 
 type AnyObject = Record<string, any>;
+
+const toPosix = (value: string): string => value.replace(/\\/g, '/');
+
+const deepClone = <T>(value: T): T => JSON.parse(JSON.stringify(value));
+
+const matchesPatterns = (
+  relativePath: string,
+  include: string[] = ['**/*.json'],
+  exclude: string[] = [],
+): boolean => {
+  const relPosix = toPosix(relativePath);
+  const included = include.some((pattern) => minimatch(relPosix, pattern, { dot: true }));
+  if (!included) return false;
+  const excluded = exclude.some((pattern) => minimatch(relPosix, pattern, { dot: true }));
+  return !excluded;
+};
 
 const hasAltField = (obj: AnyObject, key: string) =>
   obj &&
@@ -44,6 +67,8 @@ function isPaddingArray(v: any): v is any[] {
 }
 
 const PADDING_PROPS = ['paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft'] as const;
+
+const RE_REFERENCE = /^\{([^}]+)\}$/;
 
 function expandPaddingEntry(target: AnyObject, key: string, raw: any): AnyObject {
   // raw can be an array, or a token-like object with value/$value array
@@ -110,14 +135,75 @@ export function expandPaddingInObject<T extends AnyObject>(input: T): T {
   return walk(root) as T;
 }
 
-/* * * directory walker + IO * * */
+const collectTokenValues = (node: AnyObject, pathAcc: string[], map: Map<string, any>) => {
+  if (!node || typeof node !== 'object') return;
 
-export interface FigmaTokensParserOptions {
-  source: string; // directory to read .json files from (recursive)
-  outDir: string; // directory to write transformed .json files into (mirrors structure)
-  ignoreUnderscored?: boolean; // skip files/dirs starting with "_" (default: true)
-  ignoreDotfiles?: boolean; // skip files/dirs starting with "." (default: true)
-}
+  if (hasAltField(node, 'value')) {
+    const key = pathAcc.join('.');
+    if (key) {
+      map.set(key, getAltField(node, 'value'));
+    }
+  }
+
+  for (const [key, value] of Object.entries(node)) {
+    if (key.startsWith('$')) continue;
+    if (value && typeof value === 'object') {
+      collectTokenValues(value as AnyObject, [...pathAcc, key], map);
+    }
+  }
+};
+
+const resolveReferencesInObject = (root: AnyObject, opts: FigmaTokensParserOptions): AnyObject => {
+  if (!opts.resolveReferences) return root;
+
+  const valueMap = new Map<string, any>();
+  collectTokenValues(root, [], valueMap);
+
+  const resolveString = (val: string): any => {
+    const match = RE_REFERENCE.exec(val.trim());
+    if (!match) return val;
+    const tokenPath = match[1];
+    if (valueMap.has(tokenPath)) {
+      return valueMap.get(tokenPath);
+    }
+    return val;
+  };
+
+  const walk = (node: any): any => {
+    if (typeof node === 'string') return resolveString(node);
+    if (Array.isArray(node)) return node.map((item) => walk(item));
+    if (node && typeof node === 'object') {
+      const out: AnyObject = {};
+      for (const [key, value] of Object.entries(node)) {
+        out[key] = walk(value);
+      }
+      return out;
+    }
+    return node;
+  };
+
+  return walk(root);
+};
+
+const stripServiceFields = (node: any, keep: boolean): any => {
+  if (keep || node == null) return node;
+  if (Array.isArray(node)) return node.map((item) => stripServiceFields(item, keep));
+  if (typeof node !== 'object') return node;
+
+  const out: AnyObject = {};
+  for (const [key, value] of Object.entries(node)) {
+    if (key.startsWith('$')) {
+      if (key === '$value') {
+        out.value = stripServiceFields(value, keep);
+      }
+      continue;
+    }
+    out[key] = stripServiceFields(value, keep);
+  }
+  return out;
+};
+
+/* * * directory walker + IO * * */
 
 function shouldSkip(
   name: string,
@@ -147,7 +233,16 @@ async function listJsonFiles(rootDir: string, opts: FigmaTokensParserOptions): P
         continue;
       }
       if (e.isFile() && e.name.toLowerCase().endsWith('.json')) {
-        out.push(full);
+        const rel = path.relative(rootDir, full);
+        if (
+          matchesPatterns(
+            rel,
+            opts.includeGlobs ?? ['**/*.json'],
+            opts.excludeGlobs ?? [],
+          )
+        ) {
+          out.push(full);
+        }
       }
     }
   }
@@ -161,6 +256,8 @@ export async function transformFile(
   opts: FigmaTokensParserOptions,
 ): Promise<void> {
   const rel = path.relative(opts.source, filePath);
+  if (!matchesPatterns(rel, opts.includeGlobs, opts.excludeGlobs)) return;
+
   const outPath = path.join(opts.outDir, rel);
 
   const raw = await fs.readFile(filePath, 'utf-8');
@@ -172,22 +269,37 @@ export async function transformFile(
     return;
   }
 
-  const transformed = expandPaddingInObject(json);
+  let transformed = expandPaddingInObject(json);
+  transformed = resolveReferencesInObject(deepClone(transformed), opts);
+  transformed = stripServiceFields(transformed, opts.keepServiceFields ?? false);
 
   await ensureDir(path.dirname(outPath));
-  await fs.writeFile(outPath, JSON.stringify(transformed, null, 2), 'utf-8');
-  console.log(`✅ Parsed: ${rel}`);
+  const spacing = opts.pretty === false ? undefined : 2;
+  await fs.writeFile(outPath, JSON.stringify(transformed, null, spacing), 'utf-8');
+  if (opts.verbose) {
+    console.log(`✅ Parsed: ${rel}`);
+  }
 }
 
 /** Main entry: parse all .json files from source and output to outDir */
-export async function runFigmaTokensParser(opts: FigmaTokensParserOptions): Promise<void> {
-  const sourceAbs = path.resolve(opts.source);
-  const outAbs = path.resolve(opts.outDir);
+export async function runFigmaTokensParser(
+  config: FigmaTokensParserOptions | FigmaTokensParserConfig,
+): Promise<void> {
+  const normalized = 'paths' in config
+    ? normalizeFigmaTokensParserConfig(config as FigmaTokensParserConfig).parserOptions
+    : (config as FigmaTokensParserOptions);
+
+  const sourceAbs = path.resolve(normalized.source);
+  const outAbs = path.resolve(normalized.outDir);
 
   await ensureDir(outAbs);
-  const files = await listJsonFiles(sourceAbs, opts);
+  const files = await listJsonFiles(sourceAbs, normalized);
   await Promise.all(
-    files.map((f) => transformFile(f, { ...opts, source: sourceAbs, outDir: outAbs })),
+    files.map((f) =>
+      transformFile(f, { ...normalized, source: sourceAbs, outDir: outAbs }),
+    ),
   );
-  console.log(`✅ Done. Processed ${files.length} file(s)`);
+  if (normalized.verbose) {
+    console.log(`✅ Done. Processed ${files.length} file(s)`);
+  }
 }

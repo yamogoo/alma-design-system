@@ -32,7 +32,7 @@ watch(localIsOpen, (newValue) => {
     tone="primary"
     orientation="vertical"
   >
-    <Components.Atoms.Text variant="body-2">
+    <Components.Atoms.Text variant="body-2" mode="neutral" tone="primary">
       {{ "Settings" }}
     </Components.Atoms.Text>
   </Components.Molecules.ActionSheet>
