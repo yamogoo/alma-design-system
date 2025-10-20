@@ -55,7 +55,7 @@ const meta = {
       options: ["fill", "auto"],
       table: { category: "Layout" },
     },
-    contentDirection: {
+    direction: {
       control: "radio",
       options: ["ltr", "rtl"],
       table: { category: "I18n" },

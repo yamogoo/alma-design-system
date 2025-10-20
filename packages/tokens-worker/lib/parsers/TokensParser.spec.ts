@@ -7,10 +7,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 import { TokensParser, SCSSParser } from './TokensParser';
-import {
-  normalizeTokensParserConfig,
-  type TokensParserConfig,
-} from '../config/tokens-options';
+import { normalizeTokensParserConfig, type TokensParserConfig } from '../config/tokens-options';
 
 const BASE_PARSE_OPTIONS = {
   convertPxToRem: false,
@@ -583,6 +580,7 @@ describe('TokensParser integration', () => {
 
     const parser = new TokensParser({
       source: srcDir,
+      cacheDir,
       build: buildDir,
       outDir: scssDir,
       cssVarsOutDir: cssDir,
@@ -607,18 +605,16 @@ describe('TokensParser integration', () => {
         convertCase: false,
         includeFileName: false,
       },
-      builder: {
-        format: 'json',
-        outDir: cacheDir,
-        paths: [srcDir],
-        includeRootDirName: false,
-      },
       themesDir: themesFile,
       themesOutFile,
       themesIncludeRequired: true,
     });
 
     await parser.buildAndParse();
+
+    const cachedAliases = JSON.parse(fs.readFileSync(path.join(cacheDir, 'aliases.json'), 'utf-8'));
+    expect(cachedAliases.spacing.md.value).toBe(8);
+    expect(cachedAliases.spacing.md.respond.md.value).toBe(12);
 
     const resolvedAliases = JSON.parse(
       fs.readFileSync(path.join(buildDir, 'aliases.json'), 'utf-8'),
@@ -708,6 +704,7 @@ describe('TokensParser integration', () => {
 
     const parser = new TokensParser({
       source: srcDir,
+      cacheDir,
       build: buildDir,
       outDir: scssDir,
       cssVarsOutDir: cssDir,
@@ -723,12 +720,6 @@ describe('TokensParser integration', () => {
       },
       parseOptions: {
         convertPxToRem: false,
-      },
-      builder: {
-        format: 'json',
-        outDir: cacheDir,
-        paths: [srcDir],
-        includeRootDirName: false,
       },
       themesDir,
       themesOutFile,

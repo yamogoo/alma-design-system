@@ -34,7 +34,12 @@ const splitterWidth = componentToken.splitter.width.$value;
 
 <template>
   <Resizer
-    v-bind="props"
+    :width="width"
+    :min-width="minWidth"
+    :max-width="maxWidth"
+    :height="height"
+    :min-height="minHeight"
+    :max-height="maxHeight"
     :data-testid="RESIZE_BOUNDING_PREFIX"
     :class="[
       `${RESIZE_BOUNDING_PREFIX}_${UIFACETS.VARIANT}-${variant}`,

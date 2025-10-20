@@ -29,6 +29,9 @@
     "ds:lint": "pnpm --filter design-system lint",
     "ds:test:unit": "pnpm --filter design-system test:unit",
     "ds:build": "pnpm --filter design-system build",
+    "ds:tokens:cache": "pnpm --filter design-system run tokens:cache",
+    "ds:tokens:clean": "pnpm --filter design-system run tokens:cache:clean",
+    "ds:tokens:verify": "pnpm --filter design-system run tokens:cache:verify",
     "ds:docs:dev": "pnpm --filter design-system prepare && pnpm --filter design-system docs:dev",
     "ds:docs:build": "pnpm --filter design-system docs:build",
     "ds:docs:preview": "pnpm --filter design-system docs:preview"

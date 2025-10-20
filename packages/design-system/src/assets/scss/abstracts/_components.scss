@@ -872,10 +872,10 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
+  md-lg: (
   gap: 16px
 ),
-  md: (
+  sm-md: (
   gap: 12px
 )
 )
@@ -894,11 +894,11 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
-  padding-block: 16px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  padding-block: 12px
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -910,11 +910,11 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
-  padding-inline: 16px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  padding-inline: 12px
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -936,11 +936,11 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
-  gap: 16px
-),
-  md: (
+  sm-md: (
   gap: 12px
+),
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -958,11 +958,11 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
-  padding-block: 16px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  padding-block: 12px
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -974,11 +974,11 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
-  padding-inline: 16px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  padding-inline: 12px
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -1000,11 +1000,11 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
-  gap: 16px
-),
-  md: (
+  sm-md: (
   gap: 12px
+),
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -1022,11 +1022,11 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
-  padding-block: 16px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  padding-block: 12px
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -1038,11 +1038,11 @@ $components: (
   lg: 24px
 ),
   between: (
-  lg: (
-  padding-inline: 16px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  padding-inline: 12px
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -1064,11 +1064,11 @@ $components: (
   lg: 12px
 ),
   between: (
-  lg: (
-  gap: 8px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  gap: 8px
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -1086,11 +1086,11 @@ $components: (
   lg: 12px
 ),
   between: (
-  lg: (
-  padding-block: 16px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  padding-block: 12px
+  md-lg: (
+  gap: 16px
 )
 )
 )
@@ -1102,11 +1102,11 @@ $components: (
   lg: 12px
 ),
   between: (
-  lg: (
-  padding-inline: 8px
+  sm-md: (
+  gap: 12px
 ),
-  md: (
-  padding-inline: 8px
+  md-lg: (
+  gap: 16px
 )
 )
 )

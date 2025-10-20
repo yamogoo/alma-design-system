@@ -6,6 +6,7 @@ import { useFacetsClasses } from "@/composables/local/components/useFacetsClasse
 
 import { UIFACETS, OVERLAY_IDS } from "@/constants/ui";
 
+import ActionSheetSidebar from "./ActionSheetSidebar.vue";
 import { ACTION_SHEET_PREFIX, type ActionSheetProps } from "./ActionSheet";
 import { Surface } from "@/components/atoms/containers";
 import { Overlay } from "@/components/molecules/containers";
@@ -132,7 +133,9 @@ const onAnimLeave = (el: Element, done: () => void): void => {
         :bordered="bordered"
         :rounded="rounded"
       >
-        <slot></slot>
+        <slot>
+          <ActionSheetSidebar></ActionSheetSidebar>
+        </slot>
       </Surface>
     </Transition>
   </Overlay>

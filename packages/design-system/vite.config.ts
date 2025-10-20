@@ -10,9 +10,12 @@ import svgLoader from "vite-svg-loader";
 import lightningcss from "vite-plugin-lightningcss";
 import dts from "vite-plugin-dts";
 
-import config from "./src/tokens/src/config.json";
+import { colorsGeneratorConfig, tokensParserConfig } from "./tokens.config.js";
 
-const PREFIX = config.namespace?.$value || "al-";
+const clone = <T>(value: T): T =>
+  typeof structuredClone === "function"
+    ? structuredClone(value)
+    : JSON.parse(JSON.stringify(value)) as T;
 
 import {
   ColorsGeneratorPlugin,
@@ -59,66 +62,15 @@ export default () => {
           enforce: "pre",
           apply: "build",
         },
-        paths: {
-          input: "./src/tokens/src/baseColors.json",
-          output: "./src/tokens/src/colors.json",
-        },
-        generator: {
-          levels: 40,
-        },
+        paths: { ...colorsGeneratorConfig.paths },
+        generator: { ...colorsGeneratorConfig.generator },
       }),
       TokensParserPlugin({
         mode: {
           enforce: "pre",
           apply: "build",
         },
-        paths: {
-          src: "./src/tokens/src",
-          cache: "./src/tokens/.cache",
-          out: "./src/tokens/output",
-          entry: "./src/tokens/index.ts",
-          scssOut: "./src/assets/scss/abstracts",
-        },
-        include: [
-          "./src/tokens/src/**/*.json",
-          "./src/tokens/.cache/**/*.json",
-        ],
-        naming: {
-          prefix: "",
-          caseTransform: true,
-          includeFileName: true,
-        },
-        fields: {
-          include: ["value", "respond"],
-        },
-        targets: {
-          scssMap: {
-            useDefaultFlag: true,
-          },
-          cssVars: {
-            enabled: false,
-            prefix: PREFIX,
-            includeFileName: false,
-            exclude: ["./src/tokens/.cache/themes.json"],
-            separateFile: true,
-            fileNamePrefix: "_runtime.",
-          },
-          themes: {
-            enabled: true,
-            input: "./src/tokens/output/themes.json",
-            output: "./src/assets/scss/abstracts/_runtime_themes.scss",
-            requireAll: true,
-          },
-        },
-        builder: {
-          format: "json",
-          roots: ["./src/tokens/src"],
-          includeRootDir: false,
-        },
-        resolver: {
-          fileLookup: false,
-          mergeIntoEntry: true,
-        },
+        ...clone(tokensParserConfig),
       }),
       VitePluginTokensLinter({
         source: "./src/tokens/src",
@@ -146,9 +98,16 @@ export default () => {
       }),
     ],
     resolve: {
-      alias: {
-        "@": fileURLToPath(new URL("./src", import.meta.url)),
-      },
+      alias: [
+        {
+          find: "@/tokens/src",
+          replacement: fileURLToPath(new URL("./src/tokens/.cache", import.meta.url)),
+        },
+        {
+          find: "@",
+          replacement: fileURLToPath(new URL("./src", import.meta.url)),
+        },
+      ],
       dedupe: ["vue"],
     },
     optimizeDeps: {

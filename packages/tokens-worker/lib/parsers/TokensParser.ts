@@ -1,18 +1,13 @@
 // This file were developed with the assistance of AI tools.
 
 import nodePath from 'node:path';
-
-import { JSONBuilder, type JSONBuilderOptions } from './JSONBuilder.js';
 import { SCSSParser } from './tokens/emit/scss.js';
 import { TokenResolver } from './tokens/core/resolver.js';
 import { ColorToolkit } from './tokens/core/color.js';
 import { TokenFileManager } from './tokens/io/fs.js';
 import { ThemeGenerator } from './tokens/themes.js';
 import type { ParseValueOptions, TokensParserOptions } from './tokens/types.js';
-import {
-  normalizeTokensParserConfig,
-  type TokensParserConfig,
-} from '../config/tokens-options.js';
+import { normalizeTokensParserConfig, type TokensParserConfig } from '../config/tokens-options.js';
 
 export { SCSSParser } from './tokens/emit/scss.js';
 
@@ -28,9 +23,7 @@ export class TokensParser {
   private readonly files: TokenFileManager;
   private readonly themes: ThemeGenerator;
 
-  private normalizeOptions(
-    opts: TokensParserOptions | TokensParserConfig,
-  ): TokensParserOptions {
+  private normalizeOptions(opts: TokensParserOptions | TokensParserConfig): TokensParserOptions {
     const maybeConfig: any = opts;
     const rawPaths = maybeConfig?.paths;
 
@@ -104,8 +97,6 @@ export class TokensParser {
       scssParser: this.parser,
       colors: this.colors,
       fileCache: this.fileCache,
-      valuePxToRem: this.valuePxToRem.bind(this),
-      convertNumberByKey: this.convertNumberByKey.bind(this),
       toKebabCase: this.toKebabCase.bind(this),
       verbose: withDefaults.verbose ?? false,
     });
@@ -120,13 +111,15 @@ export class TokensParser {
   }
 
   private applyDefaults(options: TokensParserOptions): TokensParserOptions {
-    const builderDefaults: JSONBuilderOptions = {
-      format: 'json',
-      outDir: options.builder?.outDir ?? options.source,
+    const builderDefaults = {
+      format: options.builder?.format ?? 'json',
+      outDir: options.builder?.outDir ?? options.cacheDir ?? options.source,
       paths: options.builder?.paths ?? options.paths ?? ['.'],
       includeRootDirName: options.builder?.includeRootDirName ?? false,
       useTokensInSeparateFiles: options.builder?.useTokensInSeparateFiles ?? true,
     };
+
+    const resolvedCacheDir = options.cacheDir ?? builderDefaults.outDir ?? options.source;
 
     const mapDefaults = {
       prefix: options.mapOptions?.prefix ?? '',
@@ -163,6 +156,7 @@ export class TokensParser {
       verbose: options.verbose ?? false,
       cssVarsPrefer: options.cssVarsPrefer ?? 'last',
       isModulesMergedIntoEntry: options.isModulesMergedIntoEntry ?? true,
+      cacheDir: resolvedCacheDir,
       mapOptions: mapDefaults,
       cssVarOptions: cssVarDefaults,
       builder: builderDefaults,
@@ -174,14 +168,27 @@ export class TokensParser {
   }
 
   async buildAndParse(): Promise<void> {
-    const builder = new JSONBuilder(this.opts.builder!);
-    await builder.build();
+    const sourceDir = this.opts.source ?? this.opts.cacheDir;
+    if (!sourceDir) {
+      throw new Error('[tokens-parser] source directory is required');
+    }
 
-    await this.files.ensureDirExists(this.opts.build);
+    const cacheDir = this.opts.cacheDir ?? sourceDir;
+    const buildDir = this.opts.build;
+    const scssDir = this.opts.outDir;
 
-    const outputDir = this.opts.outDir ?? this.opts.builder?.outDir;
-    if (this.opts.source && outputDir) {
-      await this.files.listDir(this.opts.source, outputDir);
+    const { issues } = await this.files.buildArtifacts({
+      sourceDir,
+      cacheDir,
+      buildDir,
+      scssDir,
+    });
+
+    if (issues.length && this.opts.verbose) {
+      const logHint = nodePath.join(cacheDir, 'unresolved-tokens.log');
+      console.warn(
+        `[tokens-parser] ${issues.length} unresolved reference(s) detected. See ${logHint} for details.`,
+      );
     }
 
     await this.files.generateEntryFile();

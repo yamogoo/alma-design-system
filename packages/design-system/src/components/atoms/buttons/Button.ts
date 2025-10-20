@@ -32,7 +32,7 @@ export interface ButtonProps extends Partial<ButtonRequiredProps> {
   as?: keyof HTMLElementTagNameMap;
 
   label?: string;
-  contentDirection?: ButtonContentDirection;
+  direction?: ButtonContentDirection;
   iconSize?: IconSize;
   prependIconName?: IconName;
   prependIconStyle?: IconStyle;

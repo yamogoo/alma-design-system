@@ -22,7 +22,7 @@ import Icon from "@/components/atoms/icons/Icon.vue";
 const props = withDefaults(defineProps<ButtonProps>(), {
   variant: "default",
   as: "button",
-  contentDirection: "forward",
+  direction: "forward",
   prependIconStyle: "outline",
   prependIconWeight: "500",
   appendIconStyle: "outline",
@@ -120,8 +120,7 @@ const onKeyup = (e: KeyboardEvent) => {
             : UISTATES.NORMAL
       }`,
       {
-        [`${BUTTON_PREFIX}_${UIMODIFIERS.DIRECTION}-${contentDirection}`]:
-          !!contentDirection,
+        [`${BUTTON_PREFIX}_${UIMODIFIERS.DIRECTION}-${direction}`]: !!direction,
         [`${BUTTON_PREFIX}_${UIMODIFIERS.STRETCH}-${stretch}`]: !!stretch,
         [`${BUTTON_PREFIX}_${UIFACETS.STATE}-${UISTATES.DISABLED}`]: isDisabled,
         [`${BUTTON_PREFIX}_${UIMODIFIERS.BORDERED}`]: bordered,

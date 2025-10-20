@@ -15,14 +15,14 @@
               }
             },
             "between": {
-              "lg": {
+              "md-lg": {
                 "gap": {
                   "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
+              "sm-md": {
                 "gap": {
                   "$value": "{tokens.spacing.sm}",
                   "$type": "number",
@@ -55,16 +55,16 @@
               }
             },
             "between": {
-              "lg": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.md}",
+              "sm-md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.sm}",
+              "md-lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -85,16 +85,16 @@
               }
             },
             "between": {
-              "lg": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.md}",
+              "sm-md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.sm}",
+              "md-lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -132,16 +132,16 @@
               }
             },
             "between": {
-              "lg": {
+              "sm-md": {
                 "gap": {
-                  "$value": "{tokens.spacing.md}",
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
+              "md-lg": {
                 "gap": {
-                  "$value": "{tokens.spacing.sm}",
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -172,16 +172,16 @@
               }
             },
             "between": {
-              "lg": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.md}",
+              "sm-md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.sm}",
+              "md-lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -202,16 +202,16 @@
               }
             },
             "between": {
-              "lg": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.md}",
+              "sm-md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.sm}",
+              "md-lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -249,16 +249,16 @@
               }
             },
             "between": {
-              "lg": {
+              "sm-md": {
                 "gap": {
-                  "$value": "{tokens.spacing.md}",
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
+              "md-lg": {
                 "gap": {
-                  "$value": "{tokens.spacing.sm}",
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -289,16 +289,16 @@
               }
             },
             "between": {
-              "lg": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.md}",
+              "sm-md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.sm}",
+              "md-lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -319,16 +319,16 @@
               }
             },
             "between": {
-              "lg": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.md}",
+              "sm-md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.sm}",
+              "md-lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -366,16 +366,16 @@
               }
             },
             "between": {
-              "lg": {
+              "sm-md": {
                 "gap": {
-                  "$value": "{tokens.spacing.xs}",
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
+              "md-lg": {
                 "gap": {
-                  "$value": "{tokens.spacing.xs}",
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -406,16 +406,16 @@
               }
             },
             "between": {
-              "lg": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.md}",
+              "sm-md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
-                "paddingBlock": {
-                  "$value": "{tokens.spacing.sm}",
+              "md-lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }
@@ -436,16 +436,16 @@
               }
             },
             "between": {
-              "lg": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.xs}",
+              "sm-md": {
+                "gap": {
+                  "$value": "{tokens.spacing.sm}",
                   "$type": "number",
                   "$unit": "px"
                 }
               },
-              "md": {
-                "paddingInline": {
-                  "$value": "{tokens.spacing.xs}",
+              "md-lg": {
+                "gap": {
+                  "$value": "{tokens.spacing.md}",
                   "$type": "number",
                   "$unit": "px"
                 }

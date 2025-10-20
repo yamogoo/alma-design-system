@@ -41,7 +41,7 @@ const meta = {
     mode: enumOptions(buttonModes),
     tone: enumOptions(buttonTones),
     variant: enumOptions(["rounded"]),
-    contentDirection: enumOptions(["ltr", "rtl"]),
+    direction: enumOptions(["ltr", "rtl"]),
     iconName: enumOptions(iconNames),
     iconStyle: enumOptions(iconStyles),
     iconWeight: enumOptions(iconWeights),

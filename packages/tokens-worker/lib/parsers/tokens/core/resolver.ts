@@ -210,7 +210,10 @@ export class TokenResolver {
       if (!fileFound && this.useFileStructureLookup) {
         const resolved = this.resolveTokenPathRecursiveSync(pathStr);
         if (resolved !== undefined) {
-          result = result.replace(fullMatch, resolved as any);
+          const scalar = this.normalizeResolvedValue(resolved, opts, depth, visited, pathStr);
+          if (value === fullMatch) return scalar;
+          result = result.replace(fullMatch, scalar as any);
+          regex.lastIndex = 0;
           madeAnyReplacement = true;
           visited.delete(pathStr);
           continue;
@@ -234,6 +237,18 @@ export class TokenResolver {
             `⚠️ [parseNestedValue] path "${pathStr}" not found inside "${fileName}.json"`,
           );
         }
+        if (this.useFileStructureLookup) {
+          const resolved = this.resolveTokenPathRecursiveSync(pathStr);
+          if (resolved !== undefined) {
+            const scalar = this.normalizeResolvedValue(resolved, opts, depth, visited, pathStr);
+            if (value === fullMatch) return scalar;
+            result = result.replace(fullMatch, scalar as any);
+            regex.lastIndex = 0;
+            madeAnyReplacement = true;
+            visited.delete(pathStr);
+            continue;
+          }
+        }
         visited.delete(pathStr);
         continue;
       }
@@ -244,7 +259,13 @@ export class TokenResolver {
         nestedValue = this.parseNestedValue(nestedValue, opts, depth + 1, visited);
       }
 
+      if (value === fullMatch) {
+        visited.delete(pathStr);
+        return nestedValue;
+      }
+
       result = result.replace(fullMatch, nestedValue);
+      regex.lastIndex = 0;
       madeAnyReplacement = true;
       visited.delete(pathStr);
     }
@@ -306,6 +327,30 @@ export class TokenResolver {
     }
 
     return undefined;
+  }
+
+  private normalizeResolvedValue(
+    raw: any,
+    opts: ParseValueOptions,
+    depth: number,
+    visited: Set<string>,
+    traceKey: string,
+  ): any {
+    let scalar = this.coerceTokenObjectToScalar(raw);
+    if (typeof scalar === 'string' && scalar.startsWith('{')) {
+      scalar = this.parseNestedValue(scalar, opts, depth + 1, visited);
+    } else if (scalar && typeof scalar === 'object') {
+      // Deep clone objects resolved via structural lookup to avoid inline mutations.
+      scalar = JSON.parse(JSON.stringify(scalar));
+    }
+
+    if (scalar === undefined && this.verbose) {
+      console.warn(
+        `⚠️ [parseNestedValue] structural lookup returned undefined for {${traceKey}}`,
+      );
+    }
+
+    return scalar;
   }
 
   /* helpers ------------------------------------------------------------------------------ */

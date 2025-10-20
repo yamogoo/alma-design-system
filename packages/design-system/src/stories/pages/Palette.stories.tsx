@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
-import abstractColors from "@/tokens/output/colors.json";
+import abstractColors from "@/tokens/src/colors.json";
 
 import { type ColorBlockProps } from "@/stories/components/atoms/blocks/ColorBlock";
 import ColorBlock from "@/stories/components/atoms/blocks/ColorBlock.vue";

@@ -72,14 +72,16 @@ Defines the minimal IO contract. `src` and `scssOut` are required.
 | ------- | ------ | -------- | ----------------------------------------------- |
 | src     | string | ✅       | Authoring directory with token JSON             |
 | scssOut | string | ✅       | Directory for generated SCSS maps               |
-| cache   | string |          | Legacy “source” directory (resolved JSON cache) |
+| cache   | string |          | Resolved JSON cache mirroring `paths.src`       |
 | out     | string |          | Destination for resolved JSON bundles           |
 | entry   | string |          | TypeScript entry file to regenerate             |
+
+> When `paths.cache` is configured the parser writes fully resolved tokens there and reuses the cache for SCSS/JSON emission without re-resolving references.
 
 ### `include`
 
 Array of glob patterns that trigger rebuilds. If omitted, the parser watches
-`paths.src/**/*.json` and `paths.cache/**/*.json` (if cache is provided).
+`paths.src/**/*.json` and `paths.cache/**/*.json` (when cache is provided).
 
 ### `naming`
 

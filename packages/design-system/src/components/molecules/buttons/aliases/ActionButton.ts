@@ -25,7 +25,7 @@ export interface ActionButtonProps
       >
     >,
     Partial<
-      Pick<ButtonProps, "contentDirection" | "label" | "isDisabled" | "stretch">
+      Pick<ButtonProps, "direction" | "label" | "isDisabled" | "stretch">
     > {
   iconName?: IconName;
   iconStyle?: IconStyle;

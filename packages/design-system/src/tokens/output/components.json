@@ -1291,14 +1291,14 @@
                   }
                 },
                 "between": {
-                  "lg": {
+                  "md-lg": {
                     "gap": {
                       "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
+                  "sm-md": {
                     "gap": {
                       "$value": 12,
                       "$type": "number",
@@ -1331,16 +1331,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
-                    "paddingBlock": {
-                      "$value": 16,
+                  "sm-md": {
+                    "gap": {
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
-                    "paddingBlock": {
-                      "$value": 12,
+                  "md-lg": {
+                    "gap": {
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1361,16 +1361,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
-                    "paddingInline": {
-                      "$value": 16,
+                  "sm-md": {
+                    "gap": {
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
-                    "paddingInline": {
-                      "$value": 12,
+                  "md-lg": {
+                    "gap": {
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1408,16 +1408,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
+                  "sm-md": {
                     "gap": {
-                      "$value": 16,
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
+                  "md-lg": {
                     "gap": {
-                      "$value": 12,
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1448,16 +1448,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
-                    "paddingBlock": {
-                      "$value": 16,
+                  "sm-md": {
+                    "gap": {
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
-                    "paddingBlock": {
-                      "$value": 12,
+                  "md-lg": {
+                    "gap": {
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1478,16 +1478,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
-                    "paddingInline": {
-                      "$value": 16,
+                  "sm-md": {
+                    "gap": {
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
-                    "paddingInline": {
-                      "$value": 12,
+                  "md-lg": {
+                    "gap": {
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1525,16 +1525,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
+                  "sm-md": {
                     "gap": {
-                      "$value": 16,
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
+                  "md-lg": {
                     "gap": {
-                      "$value": 12,
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1565,16 +1565,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
-                    "paddingBlock": {
-                      "$value": 16,
+                  "sm-md": {
+                    "gap": {
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
-                    "paddingBlock": {
-                      "$value": 12,
+                  "md-lg": {
+                    "gap": {
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1595,16 +1595,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
-                    "paddingInline": {
-                      "$value": 16,
+                  "sm-md": {
+                    "gap": {
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
-                    "paddingInline": {
-                      "$value": 12,
+                  "md-lg": {
+                    "gap": {
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1642,16 +1642,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
+                  "sm-md": {
                     "gap": {
-                      "$value": 8,
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
+                  "md-lg": {
                     "gap": {
-                      "$value": 8,
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1682,16 +1682,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
-                    "paddingBlock": {
-                      "$value": 16,
+                  "sm-md": {
+                    "gap": {
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
-                    "paddingBlock": {
-                      "$value": 12,
+                  "md-lg": {
+                    "gap": {
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }
@@ -1712,16 +1712,16 @@
                   }
                 },
                 "between": {
-                  "lg": {
-                    "paddingInline": {
-                      "$value": 8,
+                  "sm-md": {
+                    "gap": {
+                      "$value": 12,
                       "$type": "number",
                       "$unit": "px"
                     }
                   },
-                  "md": {
-                    "paddingInline": {
-                      "$value": 8,
+                  "md-lg": {
+                    "gap": {
+                      "$value": 16,
                       "$type": "number",
                       "$unit": "px"
                     }

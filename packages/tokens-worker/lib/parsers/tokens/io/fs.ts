@@ -1,5 +1,5 @@
 // This file were developed with the assistance of AI tools.
-//
+
 import fs from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
 import nodePath from 'node:path';
@@ -19,11 +19,40 @@ interface FileManagerConfig {
   scssParser: SCSSParser;
   colors: ColorToolkit;
   fileCache: Record<string, any>;
-  valuePxToRem(value: number): string;
-  convertNumberByKey(value: number, key?: string, opts?: ParseValueOptions): string;
   toKebabCase(value: string): string;
   verbose: boolean;
 }
+
+type ResolveIssue = {
+  reference: string;
+  fromFile: string;
+  reason: string;
+  trace?: string;
+};
+
+type WalkParams = {
+  sourceDir: string;
+  cacheDir: string;
+  issues: ResolveIssue[];
+  relativeDir?: string;
+};
+
+type ResolveJsonOptions = {
+  absolutePath: string;
+  relativePath: string;
+};
+
+type ResolveResult = {
+  data: any;
+  issues: ResolveIssue[];
+};
+
+const isJsonFile = (name: string): boolean => name.endsWith('.json') && !name.startsWith('.');
+
+const sortDirents = <T extends { name: string }>(entries: T[]): T[] =>
+  entries.sort((a, b) => a.name.localeCompare(b.name, 'en'));
+
+const toPosix = (value: string): string => value.split(nodePath.sep).join('/');
 
 export class TokenFileManager {
   private readonly opts: TokensParserOptions;
@@ -33,14 +62,9 @@ export class TokenFileManager {
   private readonly scssParser: SCSSParser;
   private readonly colors: ColorToolkit;
   private readonly fileCache: Record<string, any>;
-  private readonly valuePxToRemFn: (value: number) => string;
-  private readonly convertNumberByKeyFn: (
-    value: number,
-    key?: string,
-    opts?: ParseValueOptions,
-  ) => string;
   private readonly toKebabCaseFn: (value: string) => string;
   private readonly verbose: boolean;
+  private readonly unresolvedLogFile = 'unresolved-tokens.log';
 
   constructor(config: FileManagerConfig) {
     this.opts = config.opts;
@@ -50,10 +74,14 @@ export class TokenFileManager {
     this.scssParser = config.scssParser;
     this.colors = config.colors;
     this.fileCache = config.fileCache;
-    this.valuePxToRemFn = config.valuePxToRem;
-    this.convertNumberByKeyFn = config.convertNumberByKey;
     this.toKebabCaseFn = config.toKebabCase;
     this.verbose = config.verbose;
+  }
+
+  private async resetDir(dir?: string) {
+    if (!dir) return;
+    await fs.rm(dir, { recursive: true, force: true });
+    await fs.mkdir(dir, { recursive: true });
   }
 
   async ensureDirExists(dir?: string) {
@@ -70,152 +98,280 @@ export class TokenFileManager {
     await fs.writeFile(filePath, cssContent, 'utf-8');
   }
 
-  async listDir(source: string, output: string) {
-    try {
-      await this.ensureDirExists(this.opts.build);
+  async buildArtifacts(options: {
+    sourceDir: string;
+    cacheDir: string;
+    buildDir?: string;
+    scssDir?: string;
+  }): Promise<{ issues: ResolveIssue[] }> {
+    const { sourceDir, cacheDir, buildDir, scssDir } = options;
 
-      const fileNames = await fs.readdir(source);
-      for (const fileName of fileNames) {
-        if (/^(?=.).*.json$/.test(fileName)) {
-          await this.resolveAndSaveJson(`${source}/${fileName}`, fileName);
+    const issues: ResolveIssue[] = [];
 
-          if (!this.opts.build) continue;
-          await this.JSONToSCSS(
-            `${this.opts.build}/${fileName}`,
-            `${output}`,
-            `_${fileName.replace('.json', '.scss')}`,
-            {
-              options: {
-                ...this.defaultParseOptions,
-                fileName: fileName.replace(/\.json$/, ''),
-              },
-              mapOptions: this.defaultMapOptions,
-              name: fileName.replace('.json', ''),
-            },
-          );
-        }
+    if (!sourceDir || !cacheDir) {
+      return { issues };
+    }
+
+    Object.keys(this.fileCache).forEach((key) => delete this.fileCache[key]);
+
+    await this.resetDir(cacheDir);
+    if (buildDir) await this.resetDir(buildDir);
+
+    await this.walkSourceDirectory({ sourceDir, cacheDir, issues });
+
+    await this.writeResolveLog(cacheDir, issues);
+
+    if (buildDir) {
+      await this.emitBuildArtifacts({ cacheDir, buildDir, scssDir });
+    }
+
+    return { issues };
+  }
+
+  private async walkSourceDirectory({ sourceDir, cacheDir, issues, relativeDir }: WalkParams) {
+    const absSourceDir = relativeDir
+      ? nodePath.join(sourceDir, relativeDir)
+      : sourceDir;
+
+    let entries = await fs.readdir(absSourceDir, { withFileTypes: true });
+    entries = sortDirents(entries).filter((entry) => !entry.name.startsWith('.'));
+
+    for (const entry of entries) {
+      const relPath = relativeDir ? nodePath.join(relativeDir, entry.name) : entry.name;
+      const absPath = nodePath.join(absSourceDir, entry.name);
+
+      if (entry.isDirectory()) {
+        await fs.mkdir(nodePath.join(cacheDir, relPath), { recursive: true });
+        await this.walkSourceDirectory({
+          sourceDir,
+          cacheDir,
+          issues,
+          relativeDir: relPath,
+        });
+        continue;
       }
-    } catch (err) {
-      console.error(err);
+
+      if (!entry.isFile() || !isJsonFile(entry.name)) continue;
+
+      try {
+        const result = await this.resolveJsonFile({
+          absolutePath: absPath,
+          relativePath: toPosix(relPath),
+        });
+
+        if (result.issues.length > 0) {
+          issues.push(...result.issues);
+          continue;
+        }
+
+        const targetPath = nodePath.join(cacheDir, relPath);
+        await fs.mkdir(nodePath.dirname(targetPath), { recursive: true });
+        await fs.writeFile(targetPath, JSON.stringify(result.data, null, 2), 'utf-8');
+      } catch (err) {
+        if (this.verbose) console.error('Failed to resolve token file', relPath, err);
+        issues.push({
+          reference: '<file>',
+          fromFile: toPosix(relPath),
+          reason: 'JSON parse error',
+        });
+      }
     }
   }
 
-  async resolveAndSaveJson(inputPath: string, fileName: string): Promise<void> {
-    if (!this.opts.build) return;
-    const unresolvedTokens: string[] = [];
-    try {
-      const jsonRaw = await fs.readFile(inputPath, 'utf-8');
-      const json = JSON.parse(jsonRaw);
+  private async resolveJsonFile(options: ResolveJsonOptions): Promise<ResolveResult> {
+    const { absolutePath, relativePath } = options;
+    const issues: ResolveIssue[] = [];
+    const issueSet = new Set<string>();
 
-      const resolveRecursive = (obj: any, opts: ParseValueOptions, depth = 0): any => {
-        if (_.isString(obj)) {
-          const regex = /{([^}]+)}/g;
-          let result: any = obj;
-          let match: RegExpExecArray | null;
-          while ((match = regex.exec(obj)) !== null) {
-            const fullMatch = match[0];
-            const pathStr = match[1];
-            const pathParts = pathStr.split('.');
-            const fName = pathParts.shift();
-            if (!fName) continue;
+    const raw = await fs.readFile(absolutePath, 'utf-8');
+    const json = JSON.parse(raw);
 
-            try {
-              let jsonFile: any;
+    const parseOptions: ParseValueOptions = {
+      ...this.defaultParseOptions,
+      fileName: relativePath.replace(/\.json$/i, ''),
+    };
 
-              if (this.fileCache[fName]) {
-                jsonFile = this.fileCache[fName];
-              } else {
-                const paths = this.opts.paths ?? ['.'];
-                let fileFound = false;
+    const resolveRecursive = (
+      value: any,
+      opts: ParseValueOptions,
+      pathStack: string[] = [],
+      depth = 0,
+    ): any => {
+      if (depth > 100) return value;
 
-                for (const p of paths) {
-                  const filePath = `${p}/${fName}.json`;
-                  try {
-                    const file = readFileSync(filePath, 'utf-8');
-                    jsonFile = JSON.parse(file);
-                    this.fileCache[fName] = jsonFile;
-                    fileFound = true;
-                    break;
-                  } catch {
-                    continue;
-                  }
-                }
+      if (_.isString(value)) {
+        let parsed = this.resolver.parseNestedValue(value, opts);
 
-                if (!fileFound && this.opts.useFileStructureLookup) {
-                  const resolved = this.resolver.resolveTokenPathRecursiveSync(pathStr);
-                  if (resolved !== undefined) {
-                    result = result.replace(fullMatch, resolved as any);
-                    continue;
-                  }
-                }
-
-                if (!fileFound) {
-                  unresolvedTokens.push(fullMatch);
-                  continue;
-                }
-              }
-
-              let nestedValue = pathParts.reduce((acc, key) => acc?.[key], jsonFile);
-              nestedValue = this.resolver.coerceTokenObjectToScalar(nestedValue);
-
-              if (nestedValue === undefined) {
-                if (this.opts.useFileStructureLookup) {
-                  const resolved = this.resolver.resolveTokenPathRecursiveSync(pathStr);
-                  if (resolved !== undefined) {
-                    result = result.replace(fullMatch, resolved as any);
-                    continue;
-                  }
-                }
-                unresolvedTokens.push(fullMatch);
-                continue;
-              }
-
-              nestedValue = resolveRecursive(nestedValue, opts, depth + 1);
-              if (obj === fullMatch) return nestedValue;
-
-              result = result.replace(fullMatch, nestedValue);
-            } catch {
-              unresolvedTokens.push(fullMatch);
-            }
-          }
-
-          const colorMaybe = this.colors.tryParseColor(String(result), opts.unit);
-          return colorMaybe ?? result;
+        if (!_.isString(parsed)) {
+          return resolveRecursive(parsed, opts, pathStack, depth + 1);
         }
 
-        if (_.isArray(obj)) return obj.map((v) => resolveRecursive(v, opts, depth));
-        if (_.isPlainObject(obj))
-          return Object.fromEntries(
-            Object.entries(obj).map(([k, v]) => [k, resolveRecursive(v, opts, depth)]),
-          );
-        return obj;
-      };
+        let normalized = parsed;
+        let safety = 0;
+        while (typeof normalized === 'string' && normalized.includes('{') && safety < 20) {
+          const next = this.resolver.parseNestedValue(normalized, opts);
+          if (next === normalized) break;
+          normalized = next;
+          safety += 1;
+          if (!_.isString(normalized)) {
+            return resolveRecursive(normalized, opts, pathStack, depth + 1);
+          }
+        }
 
-      const resolvedJson = resolveRecursive(json, {
-        ...this.defaultParseOptions,
-        fileName: fileName.replace(/\.json$/, ''),
-      });
+        const finalValue = this.colors.tryParseColor(normalized, opts.unit) ?? normalized;
 
-      const buildDir = this.opts.build!;
-      await this.ensureDirExists(buildDir);
+        const unresolved = finalValue.match(/{([^}]+)}/g) ?? [];
+        for (const raw of unresolved) {
+          this.addIssue(issues, issueSet, {
+            reference: raw,
+            fromFile: relativePath,
+            reason: 'Unresolved reference',
+            trace: this.buildTrace(pathStack, raw.slice(1, -1)),
+          });
+        }
 
-      const exists = await fs
-        .access(buildDir)
-        .then(() => true)
-        .catch(() => false);
-      if (!exists) await fs.mkdir(buildDir, { recursive: true });
-      const buildPath = `${buildDir}/${fileName}`;
-      await fs.writeFile(buildPath, JSON.stringify(resolvedJson, null, 2), 'utf-8');
-
-      if (unresolvedTokens.length > 0) {
-        const logPath = `${buildDir}/unresolved-tokens.log`;
-        const uniqueTokens = [...new Set(unresolvedTokens)];
-        await fs.writeFile(logPath, uniqueTokens.join('\n'), 'utf-8');
-        if (this.verbose) console.warn('Unresolved tokens saved to', logPath);
+        return finalValue;
       }
-    } catch (err) {
-      console.error(err);
+
+      if (_.isArray(value)) {
+        return value.map((item, index) =>
+          resolveRecursive(item, opts, [...pathStack, String(index)], depth + 1),
+        );
+      }
+
+      if (_.isPlainObject(value)) {
+        return Object.fromEntries(
+          Object.entries(value).map(([key, val]) => [
+            key,
+            resolveRecursive(val, opts, [...pathStack, key], depth + 1),
+          ]),
+        );
+      }
+
+      return value;
+    };
+
+    const data = resolveRecursive(json, parseOptions);
+
+    return { data, issues };
+  }
+
+  private addIssue(issues: ResolveIssue[], seen: Set<string>, issue: ResolveIssue) {
+    const key = `${issue.fromFile}|${issue.reference}|${issue.reason}|${issue.trace ?? ''}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    issues.push(issue);
+  }
+
+  private buildTrace(pathStack: string[], refPath: string): string | undefined {
+    const current = pathStack.length ? pathStack.join('.') : '';
+    return current ? `${current} -> ${refPath}` : refPath;
+  }
+
+  private async writeResolveLog(baseDir: string, issues: ResolveIssue[]): Promise<void> {
+    const logPath = nodePath.join(baseDir, this.unresolvedLogFile);
+
+    if (!issues.length) {
+      await fs.rm(logPath, { force: true });
+      return;
     }
+
+    const grouped = new Map<string, ResolveIssue[]>();
+    for (const issue of issues) {
+      if (!grouped.has(issue.fromFile)) grouped.set(issue.fromFile, []);
+      grouped.get(issue.fromFile)!.push(issue);
+    }
+
+    const chunks: string[] = [];
+    for (const [file, fileIssues] of grouped.entries()) {
+      chunks.push(`[${file}]`);
+      for (const item of fileIssues) {
+        const trace = item.trace ? ` @ ${item.trace}` : '';
+        chunks.push(`- ${item.reference} (${item.reason})${trace}`);
+      }
+      chunks.push('');
+    }
+
+    await fs.writeFile(logPath, chunks.join('\n').trimEnd() + '\n', 'utf-8');
+
+    if (this.verbose) console.warn('Unresolved tokens saved to', logPath);
+  }
+
+  private async emitBuildArtifacts(options: {
+    cacheDir: string;
+    buildDir: string;
+    scssDir?: string;
+  }): Promise<void> {
+    const { cacheDir, buildDir, scssDir } = options;
+
+    let entries = await fs.readdir(cacheDir, { withFileTypes: true });
+    entries = sortDirents(entries).filter((entry) => !entry.name.startsWith('.'));
+
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        const aggregated = await this.buildCacheTree(nodePath.join(cacheDir, entry.name));
+        const baseName = entry.name;
+        const outPath = nodePath.join(buildDir, `${baseName}.json`);
+        await fs.writeFile(outPath, JSON.stringify(aggregated, null, 2), 'utf-8');
+
+        if (scssDir) {
+          await this.JSONToSCSS(outPath, scssDir, `_${baseName}.scss`, {
+            options: {
+              ...this.defaultParseOptions,
+              fileName: baseName,
+            },
+            mapOptions: this.defaultMapOptions,
+            name: baseName,
+          });
+        }
+
+        continue;
+      }
+
+      if (!entry.isFile() || !isJsonFile(entry.name)) continue;
+      const baseName = entry.name.replace(/\.json$/i, '');
+      const sourcePath = nodePath.join(cacheDir, entry.name);
+      const destPath = nodePath.join(buildDir, entry.name);
+
+      await fs.mkdir(nodePath.dirname(destPath), { recursive: true });
+      const data = await fs.readFile(sourcePath, 'utf-8');
+      await fs.writeFile(destPath, data, 'utf-8');
+
+      if (scssDir) {
+        await this.JSONToSCSS(destPath, scssDir, `_${baseName}.scss`, {
+          options: {
+            ...this.defaultParseOptions,
+            fileName: baseName,
+          },
+          mapOptions: this.defaultMapOptions,
+          name: baseName,
+        });
+      }
+    }
+  }
+
+  private async buildCacheTree(dir: string): Promise<Record<string, any>> {
+    let entries = await fs.readdir(dir, { withFileTypes: true });
+    entries = sortDirents(entries).filter((entry) => !entry.name.startsWith('.'));
+
+    const result: Record<string, any> = {};
+
+    for (const entry of entries) {
+      const absPath = nodePath.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        result[entry.name] = await this.buildCacheTree(absPath);
+        continue;
+      }
+
+      if (!entry.isFile() || !isJsonFile(entry.name)) continue;
+
+      const key = entry.name.replace(/\.json$/i, '');
+      const raw = await fs.readFile(absPath, 'utf-8');
+      result[key] = JSON.parse(raw);
+    }
+
+    return result;
   }
 
   async JSONToSCSS(

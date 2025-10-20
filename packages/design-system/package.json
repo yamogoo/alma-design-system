@@ -67,7 +67,10 @@
     "test:ui": "vitest --ui",
     "docs:dev": "storybook dev -p 6006",
     "docs:build": "storybook build",
-    "docs:preview": "serve storybook-static"
+    "docs:preview": "serve storybook-static",
+    "tokens:cache": "node ./scripts/build-cache.mjs",
+    "tokens:cache:clean": "node ./scripts/clean-cache.mjs",
+    "tokens:cache:verify": "node ./scripts/verify-cache.mjs"
   },
   "packageManager": "pnpm@9.12.3",
   "peerDependencies": {

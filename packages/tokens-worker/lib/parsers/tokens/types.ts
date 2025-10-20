@@ -79,6 +79,7 @@ export interface CssVarOptions {
 export interface TokensParserOptions {
   builder?: JSONBuilderOptions;
   source?: string;
+  cacheDir?: string;
   paths?: string[];
   outDir: string;
   cssVarsOutDir?: string;

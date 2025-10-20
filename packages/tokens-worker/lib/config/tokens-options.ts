@@ -202,7 +202,8 @@ export function normalizeTokensParserConfig(
     themesTarget.output ?? `${normalizedPaths.scssOut}/_runtime_themes.scss`;
 
   const parserOptions: TokensParserOptions = {
-    source: normalizedPaths.cache ?? normalizedPaths.src,
+    source: normalizedPaths.src,
+    cacheDir: builderOutDir,
     outDir: normalizedPaths.scssOut,
     build: normalizedPaths.out,
     entryFilePath: normalizedPaths.entry,

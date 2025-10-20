@@ -70,7 +70,7 @@ See [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml) for the co
 - `components/` — Vue SFCs grouped as atoms, molecules, organisms, templates.
 - `adapters/` — thin wrappers that bridge components into host environments.
 - `composables/` — global and local composition utilities.
-- `tokens/` — token source (`src/`) and generated outputs (`output/`).
+- `tokens/` — token source (`src/`), resolved cache (`.cache/`), and generated outputs (`output/`).
 - `assets/` — fonts, icons, animations, SCSS core.
 - `stories/` — Storybook stories, decorators, utilities.
 - `stores/` — Pinia stores such as `useConnectionStore`.
@@ -80,9 +80,15 @@ See [MANIFEST.md](./MANIFEST.md) and [MANIFEST.yaml](./MANIFEST.yaml) for the co
 ## Tokens Workflow
 
 1. Edit JSON contracts under `src/tokens/src`.
-2. Run the workspace prep step (`pnpm prepare`) or call the worker directly.
-3. Generated bundles land in `src/tokens/output` and are exported through `src/tokens/index.ts`.
-4. Storybook and runtime styles consume the same outputs to stay in sync.
+2. Rebuild the cache with `pnpm ds:tokens:cache` (or clean via `pnpm ds:tokens:clean`).
+3. `.cache/` mirrors the authored structure with fully resolved values; aggregated bundles land in `src/tokens/output` and are exported through `src/tokens/index.ts`.
+4. Dev imports like `@/tokens/src/**/*.json` now point to `.cache/**` so CSS-in-JS code consumes resolved data during development.
+
+Verify that `.cache` content matches the build output at any time via:
+
+```bash
+pnpm ds:tokens:verify
+```
 
 `@alma/tokens-worker` lives at `packages/tokens-worker` and can be used standalone for custom pipelines.
 
@@ -95,6 +101,9 @@ pnpm docs:build   # Storybook static build
 pnpm test:unit    # Vitest suite
 pnpm lint         # ESLint over src/**
 pnpm typecheck    # vue-tsc verification
+pnpm tokens:cache        # rebuild .cache and derived outputs
+pnpm tokens:cache:clean  # remove .cache/ and output/
+pnpm tokens:cache:verify # compare build artifacts against .cache
 ```
 
 Additional scripts can be found in [package.json](./package.json).

@@ -22,6 +22,7 @@
     "paths": {
       "~/*": ["./*"],
       "@/*": ["src/*"],
+      "@/tokens/src/*": ["src/tokens/.cache/*"],
       "@alma/tokens/*": ["src/tokens/*"]
     },
     "types": [

@@ -23,7 +23,7 @@ export interface ControlButtonProps
     Partial<
       Pick<
         ButtonProps,
-        "contentDirection" | "label" | "isDisabled" | "stretch" | "iconSize"
+        "direction" | "label" | "isDisabled" | "stretch" | "iconSize"
       >
     >,
     Omit<IconComponentProps, "iconSize"> {}

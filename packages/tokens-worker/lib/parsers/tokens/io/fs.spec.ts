@@ -90,8 +90,6 @@ const createFileManager = (opts: TokensParserOptions) => {
     scssParser,
     colors,
     fileCache: {},
-    valuePxToRem: (value: number) => `px2rem(${value}px)`,
-    convertNumberByKey,
     toKebabCase,
     verbose: false,
   });
@@ -106,6 +104,7 @@ describe('TokenFileManager', () => {
   it('resolves files, writes build outputs, and emits SCSS/CSS assets', async () => {
     const tempDir = makeTmpDir();
     const sourceDir = path.join(tempDir, 'tokens');
+    const cacheDir = path.join(tempDir, '.cache');
     const buildDir = path.join(tempDir, 'build');
     const scssDir = path.join(tempDir, 'scss');
     const cssDir = path.join(tempDir, 'css');
@@ -134,6 +133,7 @@ describe('TokenFileManager', () => {
 
     const opts: TokensParserOptions = {
       outDir: scssDir,
+      cacheDir,
       build: buildDir,
       source: sourceDir,
       cssVarsOutDir: cssDir,
@@ -155,8 +155,16 @@ describe('TokenFileManager', () => {
     };
 
     const fileManager = createFileManager(opts);
-    await fileManager.listDir(sourceDir, scssDir);
+    await fileManager.buildArtifacts({
+      sourceDir,
+      cacheDir,
+      buildDir,
+      scssDir,
+    });
     await fileManager.generateEntryFile();
+
+    const cached = JSON.parse(fs.readFileSync(path.join(cacheDir, 'aliases.json'), 'utf-8'));
+    expect(cached.spacing.md.value).toBe(8);
 
     const built = JSON.parse(fs.readFileSync(path.join(buildDir, 'aliases.json'), 'utf-8'));
     expect(built.spacing.md.value).toBe(8);
@@ -175,6 +183,7 @@ describe('TokenFileManager', () => {
   it('writes unresolved token log when references cannot be resolved', async () => {
     const tempDir = makeTmpDir();
     const sourceDir = path.join(tempDir, 'tokens');
+    const cacheDir = path.join(tempDir, '.cache');
     const buildDir = path.join(tempDir, 'build');
 
     writeJSON(path.join(sourceDir, 'broken.json'), {
@@ -187,6 +196,7 @@ describe('TokenFileManager', () => {
 
     const opts: TokensParserOptions = {
       outDir: path.join(tempDir, 'scss'),
+      cacheDir,
       build: buildDir,
       source: sourceDir,
       paths: [sourceDir],
@@ -195,9 +205,14 @@ describe('TokenFileManager', () => {
     };
 
     const manager = createFileManager(opts);
-    await manager.listDir(sourceDir, path.join(tempDir, 'scss'));
+    await manager.buildArtifacts({
+      sourceDir,
+      cacheDir,
+      buildDir,
+      scssDir: path.join(tempDir, 'scss'),
+    });
 
-    const logPath = path.join(buildDir, 'unresolved-tokens.log');
+    const logPath = path.join(cacheDir, 'unresolved-tokens.log');
     expect(fs.existsSync(logPath)).toBe(true);
     const logContent = fs.readFileSync(logPath, 'utf-8').trim();
     expect(logContent).toContain('{missing.color.value}');

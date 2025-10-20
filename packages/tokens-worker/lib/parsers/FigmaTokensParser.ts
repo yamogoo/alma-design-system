@@ -234,13 +234,7 @@ async function listJsonFiles(rootDir: string, opts: FigmaTokensParserOptions): P
       }
       if (e.isFile() && e.name.toLowerCase().endsWith('.json')) {
         const rel = path.relative(rootDir, full);
-        if (
-          matchesPatterns(
-            rel,
-            opts.includeGlobs ?? ['**/*.json'],
-            opts.excludeGlobs ?? [],
-          )
-        ) {
+        if (matchesPatterns(rel, opts.includeGlobs ?? ['**/*.json'], opts.excludeGlobs ?? [])) {
           out.push(full);
         }
       }
@@ -285,9 +279,10 @@ export async function transformFile(
 export async function runFigmaTokensParser(
   config: FigmaTokensParserOptions | FigmaTokensParserConfig,
 ): Promise<void> {
-  const normalized = 'paths' in config
-    ? normalizeFigmaTokensParserConfig(config as FigmaTokensParserConfig).parserOptions
-    : (config as FigmaTokensParserOptions);
+  const normalized =
+    'paths' in config
+      ? normalizeFigmaTokensParserConfig(config as FigmaTokensParserConfig).parserOptions
+      : (config as FigmaTokensParserOptions);
 
   const sourceAbs = path.resolve(normalized.source);
   const outAbs = path.resolve(normalized.outDir);
@@ -295,9 +290,7 @@ export async function runFigmaTokensParser(
   await ensureDir(outAbs);
   const files = await listJsonFiles(sourceAbs, normalized);
   await Promise.all(
-    files.map((f) =>
-      transformFile(f, { ...normalized, source: sourceAbs, outDir: outAbs }),
-    ),
+    files.map((f) => transformFile(f, { ...normalized, source: sourceAbs, outDir: outAbs })),
   );
   if (normalized.verbose) {
     console.log(`✅ Done. Processed ${files.length} file(s)`);
