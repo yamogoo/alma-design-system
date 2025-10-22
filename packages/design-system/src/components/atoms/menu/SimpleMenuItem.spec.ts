@@ -2,12 +2,12 @@ import { mount } from "@vue/test-utils";
 
 import { getTypedEmittedEvent } from "@/__tests__/utils";
 
-import { MenuItem } from ".";
+import { SimpleMenuItem } from ".";
 
-describe("MenuItem", () => {
+describe("SimpleMenuItem", () => {
   describe("events", () => {
     test("should emit 'select' event", async () => {
-      const wrapper = mount(MenuItem, {
+      const wrapper = mount(SimpleMenuItem, {
         props: {
           isActive: false,
         },

@@ -8,6 +8,7 @@ import type {
 } from "@/adapters/atoms/listItem";
 
 import type {
+  UIElementBorderedProps,
   UIElementMaybeListItemOrBlockTag,
   UIElementStylingModifiers,
 } from "@/typings";
@@ -33,7 +34,8 @@ export interface ListItemProps
         ListItemMode,
         ListItemTone
       >
-    > {
+    >,
+    UIElementBorderedProps {
   as?: UIElementMaybeListItemOrBlockTag;
   isActive?: boolean;
   isFocused?: boolean;

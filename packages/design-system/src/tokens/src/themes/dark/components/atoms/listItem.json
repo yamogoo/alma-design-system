@@ -95,12 +95,12 @@
       },
       "description": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.normal}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.disabled}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
@@ -110,7 +110,7 @@
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected}",
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.selected}",
           "$type": "color",
           "$unit": "hex"
         }

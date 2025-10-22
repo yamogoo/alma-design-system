@@ -110,7 +110,3 @@ Example:
 3. Pick a tone from Base-(down/up)-N.
 4. States are produced automatically from theme deltas.
 5. Run contrast checks and review the matrix in Storybook.
-
-## 🔹 Migration Notes
-
-- Add a token path/contrast linter and wire it into CI.

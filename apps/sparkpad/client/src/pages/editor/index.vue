@@ -6,9 +6,9 @@ import { Constants } from "@/constants";
 
 import { useSettingsStore, useEditorLayout } from "@/stores";
 
-import { Components } from "@alma/design-system";
+import { Page, ResizeBounding } from "@alma/design-system";
 
-import Settings from "@/components/organisms/menues/Settings.vue";
+import Settings from "@/components/organisms/menues/settings/Settings.vue";
 import { EditorView, SidebarMenu, Explorer } from "@/components/organisms";
 
 const settings = useSettingsStore();
@@ -43,9 +43,9 @@ const onOpenSettings = (): void => {
 </script>
 
 <template>
-  <Components.Atoms.Page orientation="horizontal">
+  <Page orientation="horizontal">
     <SidebarMenu @open:settings="onOpenSettings"></SidebarMenu>
-    <Components.Atoms.ResizeBounding
+    <ResizeBounding
       v-if="isNavigatorShown"
       data-test="editor-navigator"
       directions="r"
@@ -54,8 +54,8 @@ const onOpenSettings = (): void => {
       :max-width="Constants.DEFAULT_NAVIGATOR_MAX_WIDTH"
     >
       <Explorer></Explorer>
-    </Components.Atoms.ResizeBounding>
+    </ResizeBounding>
     <EditorView></EditorView>
-  </Components.Atoms.Page>
+  </Page>
   <Settings v-model:is-open="localIsOpen"></Settings>
 </template>

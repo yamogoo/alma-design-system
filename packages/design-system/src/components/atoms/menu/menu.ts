@@ -1,8 +1,8 @@
-export interface IMenuItem<T = string> {
+export interface ISimpleMenuItem<T = string> {
   id: number;
   label: string;
   value: T;
   [key: string]: unknown;
 }
 
-export type MenuItems<T = string> = Array<IMenuItem<T>>;
+export type SimpleMenuItems<T = string> = Array<ISimpleMenuItem<T>>;

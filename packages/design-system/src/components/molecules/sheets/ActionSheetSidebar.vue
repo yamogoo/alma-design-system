@@ -1,14 +1,25 @@
 <script setup lang="ts">
 import type { ActionSheetSidebarProps } from "./ActionSheetSidebar";
-import Surface from "@/components/atoms/containers/Surface.vue";
+import Sidebar from "@/components/molecules/panels/Sidebar.vue";
 
 withDefaults(defineProps<ActionSheetSidebarProps>(), {});
 </script>
 
 <template>
-  <Surface class="action-sheet-sidebar">
+  <Sidebar class="action-sheet-sidebar">
     <slot></slot>
-  </Surface>
+  </Sidebar>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+$tokenName: "action-sheet-sidebar";
+$prefix: getPrefix($tokenName);
+
+.#{$prefix} {
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  padding: 4px;
+}
+</style>

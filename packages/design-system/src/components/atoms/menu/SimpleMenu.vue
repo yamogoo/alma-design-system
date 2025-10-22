@@ -6,8 +6,8 @@ import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
 import { useMenuNavigation } from "@/composables/local/keyboard/useMenuNavigation";
 
 import { SIMPLE_MENU_PREFIX, type SimpleMenuProps } from "./SimpleMenu";
-import type { IMenuItem } from "./menu";
-import MenuItem from "./MenuItem.vue";
+import type { ISimpleMenuItem } from "./menu";
+import SimpleMenuItem from "./SimpleMenuItem.vue";
 import Text from "@/components/atoms/typography/Text.vue";
 
 const props = withDefaults(defineProps<SimpleMenuProps<T>>(), {
@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<SimpleMenuProps<T>>(), {
 });
 
 const emit = defineEmits<{
-  (e: "select", item: IMenuItem<T>): void;
+  (e: "select", item: ISimpleMenuItem<T>): void;
   (e: "update:selected-item-index", id: number): void;
 }>();
 
@@ -28,7 +28,7 @@ useMenuNavigation({
   orientation: props.orientation,
 });
 
-const onPress = (item: IMenuItem<T>): void => {
+const onPress = (item: ISimpleMenuItem<T>): void => {
   emit("select", item);
 
   const { id } = item;
@@ -49,7 +49,7 @@ const onPress = (item: IMenuItem<T>): void => {
     ]"
     :role="orientation === 'vertical' ? 'menu' : 'menubar'"
   >
-    <MenuItem
+    <SimpleMenuItem
       v-for="item in items"
       :key="item.id"
       v-memo="[item.id === selectedItemIndex]"
@@ -66,7 +66,7 @@ const onPress = (item: IMenuItem<T>): void => {
       >
         {{ item.label }}
       </Text>
-    </MenuItem>
+    </SimpleMenuItem>
   </div>
 </template>
 

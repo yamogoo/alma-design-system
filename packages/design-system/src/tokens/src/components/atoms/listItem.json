@@ -1,5 +1,5 @@
 {
-  "default": {
+  "list": {
     "md": {
       "root": {
         "minHeight": {
@@ -28,7 +28,7 @@
           "$type": "number"
         },
         "gap": {
-          "$value": "{tokens.stroke.sm}",
+          "$value": "{tokens.spacing.md}",
           "$unit": "px",
           "$type": "number"
         }
@@ -42,7 +42,7 @@
       },
       "title": {
         "fontStyle": {
-          "$value": "body-2",
+          "$value": "title-2",
           "$type": "string",
           "$unit": ""
         }
@@ -52,6 +52,84 @@
           "$value": "body-3",
           "$type": "string",
           "$unit": ""
+        }
+      },
+      "icon": {
+        "size": {
+          "$value": "{components.atoms.icon.default.sm.root.size}",
+          "$unit": "px",
+          "$type": "number"
+        }
+      },
+      "chevron": {
+        "size": {
+          "$value": "{components.atoms.icon.default.xs.root.size}",
+          "$unit": "px",
+          "$type": "number"
+        }
+      }
+    }
+  },
+  "menu": {
+    "md": {
+      "root": {
+        "minHeight": {
+          "$value": 44,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "paddingHorizontal": {
+          "$value": "{tokens.spacing.md}",
+          "$unit": "px",
+          "$type": "number"
+        },
+        "paddingVertical": {
+          "$value": "{tokens.spacing.sm}",
+          "$unit": "px",
+          "$type": "number"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.infinity}",
+          "$unit": "px",
+          "$type": "number"
+        },
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm}",
+          "$unit": "px",
+          "$type": "number"
+        },
+        "gap": {
+          "$value": "{tokens.spacing.md}",
+          "$unit": "px",
+          "$type": "number"
+        }
+      },
+      "divider": {
+        "borderWidth": {
+          "$value": "{tokens.stroke.sm}",
+          "$unit": "px",
+          "$type": "number"
+        }
+      },
+      "title": {
+        "fontStyle": {
+          "$value": "title-2",
+          "$type": "string",
+          "$unit": ""
+        }
+      },
+      "description": {
+        "fontStyle": {
+          "$value": "body-3",
+          "$type": "string",
+          "$unit": ""
+        }
+      },
+      "icon": {
+        "size": {
+          "$value": "{components.atoms.icon.default.sm.root.size}",
+          "$unit": "px",
+          "$type": "number"
         }
       },
       "chevron": {

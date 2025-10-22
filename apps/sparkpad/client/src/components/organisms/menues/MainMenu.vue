@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import { Components } from "@alma/design-system";
+import { SimpleMenu, type SimpleMenuItems } from "@alma/design-system";
 
 const selectedItemIndex = ref(0);
 
-const items: Components.Atoms.MenuItems<string> = [
+const items: SimpleMenuItems<string> = [
   {
     id: 0,
     label: "about",
@@ -20,8 +20,5 @@ const items: Components.Atoms.MenuItems<string> = [
 </script>
 
 <template>
-  <Components.Atoms.SimpleMenu
-    :selected-item-index="selectedItemIndex"
-    :items
-  ></Components.Atoms.SimpleMenu>
+  <SimpleMenu :selected-item-index="selectedItemIndex" :items></SimpleMenu>
 </template>

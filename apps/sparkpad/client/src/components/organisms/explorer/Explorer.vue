@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import { Components } from "@alma/design-system";
+import { Surface, SearchInput } from "@alma/design-system";
 
 import FilesNavigator from "./FilesNavigator.vue";
 
@@ -13,7 +13,7 @@ const onResetValue = (): void => {
 </script>
 
 <template>
-  <Components.Atoms.Surface
+  <Surface
     class="explorer"
     as="div"
     variant="default"
@@ -23,16 +23,16 @@ const onResetValue = (): void => {
     orientation="vertical"
     direction="forward"
     :border="'hv'"
-    :rounded="true"
+    rounded
   >
-    <Components.Atoms.SearchInput
+    <SearchInput
       v-model.trim="searchingPhrase"
       placeholder="Search"
       size="lg"
       @reset:value="onResetValue"
-    ></Components.Atoms.SearchInput>
+    ></SearchInput>
     <FilesNavigator></FilesNavigator>
-  </Components.Atoms.Surface>
+  </Surface>
 </template>
 
 <style lang="scss">

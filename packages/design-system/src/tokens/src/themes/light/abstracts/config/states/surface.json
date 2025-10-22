@@ -1,5 +1,42 @@
 {
   "delta": {
+    "overlay": {
+      "idle": {
+        "$value": 0.15,
+        "$type": "number",
+        "$unit": ""
+      },
+      "normal": {
+        "$value": 0.15,
+        "$type": "number",
+        "$unit": ""
+      },
+      "hovered": {
+        "$value": 0.15,
+        "$type": "number",
+        "$unit": ""
+      },
+      "pressed": {
+        "$value": 0.15,
+        "$type": "number",
+        "$unit": ""
+      },
+      "disabled": {
+        "$value": 0.15,
+        "$type": "number",
+        "$unit": ""
+      },
+      "selected": {
+        "$value": 0.15,
+        "$type": "number",
+        "$unit": ""
+      },
+      "focused": {
+        "$value": 0.15,
+        "$type": "number",
+        "$unit": ""
+      }
+    },
     "lightness": {
       "idle": {
         "$value": 0.0,

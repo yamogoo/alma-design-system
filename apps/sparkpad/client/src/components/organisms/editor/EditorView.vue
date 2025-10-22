@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import { Components } from "@alma/design-system";
+import { Stack, Surface, Text } from "@alma/design-system";
 </script>
 
 <template>
-  <Components.Atoms.Stack
-    class="editor-view"
-    variant="default"
-    size="lg"
-    :padding="['l', 'v']"
-  >
-    <Components.Atoms.Surface
+  <Stack class="editor-view" variant="default" size="lg" :padding="['l', 'v']">
+    <Surface
       class="editor-view__content"
       as="div"
       bordered
@@ -21,11 +16,11 @@ import { Components } from "@alma/design-system";
       align-horizontal="center"
       align-vertical="center"
     >
-      <Components.Atoms.Text variant="body-2" mode="neutral" tone="primary">
+      <Text variant="body-2" mode="neutral" tone="primary">
         {{ "Notes" }}
-      </Components.Atoms.Text>
-    </Components.Atoms.Surface>
-  </Components.Atoms.Stack>
+      </Text>
+    </Surface>
+  </Stack>
 </template>
 
 <style lang="scss">

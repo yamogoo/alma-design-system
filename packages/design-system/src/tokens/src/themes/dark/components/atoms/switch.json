@@ -8,12 +8,12 @@
       },
       "track": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.disabled}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
@@ -25,17 +25,17 @@
       },
       "knob": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.disabled}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.quaternary.normal}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -68,12 +68,12 @@
       },
       "track": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.normal}",
+          "$value": "{themes.dark.contracts.interactive.surface.accent.secondary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.secondary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
@@ -85,17 +85,17 @@
       },
       "knob": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.disabled}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.dark.contracts.interactive.surface.neutral.tertiary.normal}",
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
           "$type": "color",
           "$unit": "hex"
         }

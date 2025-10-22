@@ -3,7 +3,7 @@
     "xl": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.xl}"
+          "$value": "{tokens.roundness.xxl}"
         },
         "borderWidth": {
           "$value": "{components.atoms.divider.default.md.root.borderWidth}",
@@ -15,7 +15,7 @@
     "lg": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.lg}"
+          "$value": "{tokens.roundness.xxl}"
         },
         "borderWidth": {
           "$value": "{components.atoms.divider.default.md.root.borderWidth}",
@@ -27,7 +27,7 @@
     "md": {
       "root": {
         "borderRadius": {
-          "$value": "{tokens.roundness.md}"
+          "$value": "{tokens.roundness.xl}"
         },
         "borderWidth": {
           "$value": "{components.atoms.divider.default.md.root.borderWidth}",

@@ -14,9 +14,9 @@ describe("listItem adapter", () => {
     );
   });
 
-  test("exports sizes for variant default", () => {
+  test("exports sizes for variant 'list'", () => {
     expect(listItemSizes).toEqual(
-      Object.keys(tokens.components.atoms.listItem.default)
+      Object.keys(tokens.components.atoms.listItem.list)
     );
   });
 

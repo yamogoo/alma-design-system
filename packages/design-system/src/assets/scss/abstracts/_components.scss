@@ -503,7 +503,7 @@ $components: (
 )
 ),
   list-item: (
-  default: (
+  list: (
   md: (
   root: (
   min-height: (
@@ -522,7 +522,7 @@ $components: (
   value: 1px
 ),
   gap: (
-  value: 1px
+  value: 16px
 )
 ),
   divider: (
@@ -532,12 +532,66 @@ $components: (
 ),
   title: (
   font-style: (
-  value: "body-2"
+  value: "title-2"
 )
 ),
   description: (
   font-style: (
   value: "body-3"
+)
+),
+  icon: (
+  size: (
+  value: 18px
+)
+),
+  chevron: (
+  size: (
+  value: 16px
+)
+)
+)
+),
+  menu: (
+  md: (
+  root: (
+  min-height: (
+  value: 44px
+),
+  padding-horizontal: (
+  value: 16px
+),
+  padding-vertical: (
+  value: 12px
+),
+  border-radius: (
+  value: 9999px
+),
+  border-width: (
+  value: 1px
+),
+  gap: (
+  value: 16px
+)
+),
+  divider: (
+  border-width: (
+  value: 1px
+)
+),
+  title: (
+  font-style: (
+  value: "title-2"
+)
+),
+  description: (
+  font-style: (
+  value: "body-3"
+)
+),
+  icon: (
+  size: (
+  value: 18px
 )
 ),
   chevron: (
@@ -920,7 +974,7 @@ $components: (
 )
 ),
   border-radius: (
-  value: 24px
+  value: 32px
 ),
   border-width: (
   value: 1px
@@ -984,7 +1038,7 @@ $components: (
 )
 ),
   border-radius: (
-  value: 20px
+  value: 32px
 ),
   border-width: (
   value: 1px
@@ -1150,7 +1204,7 @@ $components: (
   xl: (
   root: (
   border-radius: (
-  value: 24px
+  value: 32px
 ),
   border-width: (
   value: 1px
@@ -1160,7 +1214,7 @@ $components: (
   lg: (
   root: (
   border-radius: (
-  value: 20px
+  value: 32px
 ),
   border-width: (
   value: 1px
@@ -1170,7 +1224,7 @@ $components: (
   md: (
   root: (
   border-radius: (
-  value: 16px
+  value: 24px
 ),
   border-width: (
   value: 1px
@@ -1388,13 +1442,19 @@ $components: (
   lg: (
   root: (
   min-width: (
-  value: 70%
+  value: 320px
+),
+  max-width: (
+  value: 860px
 ),
   min-height: (
-  value: 60%
+  value: 50%
+),
+  max-height: (
+  value: 540px
 ),
   border-radius: (
-  value: 16px
+  value: 32px
 ),
   padding: (
   value: 48px 24px 24px 24px
@@ -1404,13 +1464,19 @@ $components: (
   md: (
   root: (
   min-width: (
-  value: 50%
+  value: 320px
+),
+  max-width: (
+  value: 860px
 ),
   min-height: (
   value: 30%
 ),
+  max-height: (
+  value: 540px
+),
   border-radius: (
-  value: 12px
+  value: 24px
 ),
   padding: (
   value: 24px 24px
@@ -1823,6 +1889,28 @@ $components: (
   button: (
   offset: (
   value: 24px
+)
+)
+)
+)
+),
+  sidebar: (
+  default: (
+  lg: (
+  root: (
+  width: (
+  value: 320px
+),
+  padding: (
+  value: 4px
+)
+),
+  container: (
+  padding: (
+  value: 8px
+),
+  border-radius: (
+  value: 28px
 )
 )
 )

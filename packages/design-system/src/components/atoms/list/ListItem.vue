@@ -15,7 +15,7 @@ import Icon from "@/components/atoms/icons/Icon.vue";
 
 const props = withDefaults(defineProps<ListItemProps>(), {
   as: "div",
-  variant: "default",
+  variant: "list",
   size: "md",
   mode: "neutral",
   tone: "primary",
@@ -24,6 +24,7 @@ const props = withDefaults(defineProps<ListItemProps>(), {
   isJoined: true,
   isSelectOnRelease: true,
   isDisabled: false,
+  bordered: false,
 });
 
 const slots = useSlots();
@@ -65,6 +66,7 @@ const effectiveState = computed(() => {
 const cursor = computed(() => (isSelectable.value ? "pointer" : "auto"));
 
 const isSelectable = computed(() => Boolean(ctx?.isSelectable?.value));
+const isClickable = computed(() => Boolean(ctx?.isClickable?.value));
 const role = computed(() => (isSelectable.value ? "option" : "listitem"));
 
 const ariaSelected = computed(() =>
@@ -120,7 +122,10 @@ const onFocusPrev = (): void => {
         [`${LIST_ITEM_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
       },
       `${LIST_ITEM_PREFIX}_${UIFACETS.STATE}-${effectiveState}`,
-      { [`${LIST_ITEM_PREFIX}_${UIMODIFIERS.JOINED}`]: localIsJoined },
+      {
+        [`${LIST_ITEM_PREFIX}_${UIMODIFIERS.BORDERED}`]: bordered,
+        [`${LIST_ITEM_PREFIX}_${UIMODIFIERS.JOINED}`]: localIsJoined,
+      },
     ]"
     :style="{ cursor }"
     :role="role"
@@ -137,6 +142,7 @@ const onFocusPrev = (): void => {
       <slot name="prepend">
         <Icon
           v-if="iconName"
+          :class="`${LIST_ITEM_PREFIX}__icon`"
           :name="iconName"
           :appearance="iconStyle"
           :weight="iconWeight"
@@ -162,7 +168,10 @@ const onFocusPrev = (): void => {
           </Text>
         </div>
       </template>
-      <div :class="`${LIST_ITEM_PREFIX}__append`">
+      <div
+        v-if="$slots.append || isClickable"
+        :class="`${LIST_ITEM_PREFIX}__append`"
+      >
         <slot name="append">
           <Icon
             :class="`${LIST_ITEM_PREFIX}__chevron`"
@@ -255,8 +264,11 @@ $prefix: getPrefix($tokenName);
 
             &:not(.#{$prefix}_joined) {
               border-radius: $border-radius;
-              border-style: solid;
-              border-width: $container-border-width;
+
+              &.#{$prefix}_bordered {
+                border-style: solid;
+                border-width: $container-border-width;
+              }
             }
           }
 
@@ -306,6 +318,14 @@ $prefix: getPrefix($tokenName);
       @include themify($themes) {
         fill: themed(
           "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.chevron.#{$state}"
+        );
+      }
+    }
+
+    .#{$prefix}__icon {
+      @include themify($themes) {
+        fill: themed(
+          "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.title.#{$state}"
         );
       }
     }
@@ -391,7 +411,10 @@ $prefix: getPrefix($tokenName);
   }
 
   &__append {
-    align-content: center;
+    position: relative;
+    display: block;
+    width: 100%;
+    direction: rtl;
   }
 
   @include defineSizes();

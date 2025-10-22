@@ -62,7 +62,7 @@ const onChange = (e: Event): void => {
 
 // Custom
 watch(isPressed, (val) => {
-  if (!val && !props.useNative) {
+  if (!val && !props.useNative && !props.isDisabled) {
     localIsActive.value = !localIsActive.value;
 
     emit("update:is-active", localIsActive.value);
@@ -396,6 +396,7 @@ $prefix: getPrefix($tokenName);
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  direction: ltr;
   cursor: pointer;
   @include box(max-content);
 

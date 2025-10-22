@@ -472,6 +472,7 @@ $prefix: getPrefix($tokenName);
   box-sizing: border-box;
   position: relative;
   user-select: none;
+  direction: ltr;
 
   @include defineSizes();
   @include defineThemes();

@@ -10,7 +10,7 @@ import { SLIDER_PREFIX, type SliderProps } from "./Slider";
 
 const props = withDefaults(defineProps<SliderProps>(), {
   variant: "default",
-  size: "md",
+  size: "lg",
   mode: "accent",
   tone: "primary",
   min: 0,
@@ -385,6 +385,7 @@ $prefix: getPrefix($tokenName);
   display: flex;
   align-items: center;
   justify-content: center;
+  direction: ltr;
 
   @include defineSizes();
   @include defineThemes();

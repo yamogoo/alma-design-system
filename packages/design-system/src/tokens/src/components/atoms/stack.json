@@ -103,7 +103,7 @@
           }
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.xl}",
+          "$value": "{tokens.roundness.xxl}",
           "$type": "number",
           "$unit": "px"
         },
@@ -220,7 +220,7 @@
           }
         },
         "borderRadius": {
-          "$value": "{tokens.roundness.lg}",
+          "$value": "{tokens.roundness.xxl}",
           "$type": "number",
           "$unit": "px"
         },

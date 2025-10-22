@@ -6,7 +6,6 @@ import { useFacetsClasses } from "@/composables/local/components/useFacetsClasse
 
 import { UIFACETS, OVERLAY_IDS } from "@/constants/ui";
 
-import ActionSheetSidebar from "./ActionSheetSidebar.vue";
 import { ACTION_SHEET_PREFIX, type ActionSheetProps } from "./ActionSheet";
 import { Surface } from "@/components/atoms/containers";
 import { Overlay } from "@/components/molecules/containers";
@@ -133,9 +132,10 @@ const onAnimLeave = (el: Element, done: () => void): void => {
         :bordered="bordered"
         :rounded="rounded"
       >
-        <slot>
-          <ActionSheetSidebar></ActionSheetSidebar>
-        </slot>
+        <slot name="sidebar"></slot>
+        <div :class="[`${ACTION_SHEET_PREFIX}__content`]">
+          <slot> </slot>
+        </div>
       </Surface>
     </Transition>
   </Overlay>
@@ -153,11 +153,15 @@ $prefix: getPrefix($tokenName);
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
           $min-width: #{get($val, "root.min-width")};
+          $max-width: #{get($val, "root.max-width")};
           $min-height: #{get($val, "root.min-height")};
+          $max-height: #{get($val, "root.max-height")};
           $border-radius: #{px2rem(get($val, "root.border-radius"))};
 
           --#{$prefix}-min-width: #{$min-width};
+          --#{$prefix}-max-width: #{$max-width};
           --#{$prefix}-min-height: #{$min-height};
+          --#{$prefix}-max-height: #{$max-height};
           --#{$prefix}-border-radius: #{$border-radius};
         }
       }
@@ -166,12 +170,23 @@ $prefix: getPrefix($tokenName);
 }
 
 .#{$prefix} {
+  box-sizing: border-box;
+  height: var(--#{$prefix}-min-height, 100%);
   @include minBox(
     var(--#{$prefix}-min-width, 100%),
     var(--#{$prefix}-min-height, 100%)
   );
+  @include maxBox(
+    var(--#{$prefix}-max-width, 100%),
+    var(--#{$prefix}-max-height, 100%)
+  );
   overflow: auto;
 
   @include defineSizes();
+
+  &__content {
+    @include box(100%);
+    overflow: hidden;
+  }
 }
 </style>

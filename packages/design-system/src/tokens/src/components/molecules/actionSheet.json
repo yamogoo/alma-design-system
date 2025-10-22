@@ -3,17 +3,27 @@
     "lg": {
       "root": {
         "minWidth": {
-          "$value": 70,
+          "$value": 320,
           "$type": "number",
-          "$unit": "%"
+          "$unit": "px"
+        },
+        "maxWidth": {
+          "$value": 860,
+          "$type": "number",
+          "$unit": "px"
         },
         "minHeight": {
-          "$value": 60,
+          "$value": 50,
           "$type": "number",
           "$unit": "%"
         },
+        "maxHeight": {
+          "$value": 540,
+          "$type": "number",
+          "$unit": "px"
+        },
         "borderRadius": {
-          "$value": "{tokens.roundness.md}",
+          "$value": "{tokens.roundness.xxl}",
           "$type": "number",
           "$unit": "px"
         },
@@ -32,17 +42,27 @@
     "md": {
       "root": {
         "minWidth": {
-          "$value": 50,
+          "$value": 320,
           "$type": "number",
-          "$unit": "%"
+          "$unit": "px"
+        },
+        "maxWidth": {
+          "$value": 860,
+          "$type": "number",
+          "$unit": "px"
         },
         "minHeight": {
           "$value": 30,
           "$type": "number",
           "$unit": "%"
         },
+        "maxHeight": {
+          "$value": 540,
+          "$type": "number",
+          "$unit": "px"
+        },
         "borderRadius": {
-          "$value": "{tokens.roundness.sm}",
+          "$value": "{tokens.roundness.xl}",
           "$type": "number",
           "$unit": "px"
         },

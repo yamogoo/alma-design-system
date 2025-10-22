@@ -1,0 +1,9 @@
+{
+  "neutral": {
+    "base": {
+      "$value": "rgba({colors.gray-500}, 0.15)",
+      "$type": "color",
+      "$unit": "hex"
+    }
+  }
+}

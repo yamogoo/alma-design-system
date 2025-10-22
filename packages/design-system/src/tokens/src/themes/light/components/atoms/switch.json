@@ -37,7 +37,7 @@
           "$unit": "hex"
         },
         "active": {
-          "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal}",
+          "$value": "{themes.light.contracts.interactive.surface.neutral.canvas.normal}",
           "$type": "color",
           "$unit": "hex"
         }

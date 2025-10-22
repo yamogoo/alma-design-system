@@ -1,0 +1,30 @@
+{
+  "default": {
+    "lg": {
+      "root": {
+        "width": {
+          "$value": 320,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": ["{tokens.spacing.xxs}"],
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "container": {
+        "padding": {
+          "$value": ["{tokens.spacing.xs}"],
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.xxl} - {tokens.spacing.xxs}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    }
+  }
+}

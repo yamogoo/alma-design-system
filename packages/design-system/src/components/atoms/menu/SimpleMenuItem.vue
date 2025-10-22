@@ -3,9 +3,9 @@ import { useTemplateRef, watch } from "vue";
 
 import { usePressed } from "@/composables/local/actions/usePressed";
 
-import { MENU_ITEM_PREFIX, type MenuItemProps } from "./MenuItem";
+import { MENU_ITEM_PREFIX, type SimpleMenuItemProps } from "./SimpleMenuItem";
 
-withDefaults(defineProps<MenuItemProps>(), {
+withDefaults(defineProps<SimpleMenuItemProps>(), {
   isActive: false,
 });
 

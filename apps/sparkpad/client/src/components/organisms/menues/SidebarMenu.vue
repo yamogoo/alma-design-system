@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { Components } from "@alma/design-system";
+import {
+  NavigationRail,
+  Group,
+  Logo,
+  ControlButton,
+} from "@alma/design-system";
 
 const emit = defineEmits<{
   (e: "open:settings"): void;
 }>();
-
-const onLogin = (): void => {
-  emit("open:settings");
-};
 
 const onOpenSettings = (): void => {
   emit("open:settings");
@@ -15,34 +16,19 @@ const onOpenSettings = (): void => {
 </script>
 
 <template>
-  <Components.Organisms.NavigationRail
-    class="sidebar-menu"
-    :items="[]"
-    :selected-item-index="1"
-  >
+  <NavigationRail class="sidebar-menu" :items="[]" :selected-item-index="1">
     <template #header>
-      <Components.Atoms.Logo></Components.Atoms.Logo>
+      <Logo></Logo>
     </template>
     <template #footer>
-      <Components.Molecules.Group
+      <Group
         :variant="'block'"
         :mode="'neutral'"
         :tone="'canvas'"
         :size="'md'"
         :orientation="'vertical'"
       >
-        <Components.Molecules.ControlButton
-          :variant="'rounded'"
-          :size="'md'"
-          :mode="'neutral'"
-          tone="primary"
-          :icon-size="'lg'"
-          :icon-name="'userThumbnail'"
-          :icon-style="'outline'"
-          :icon-weight="'300'"
-          @press="onLogin"
-        ></Components.Molecules.ControlButton>
-        <Components.Molecules.ControlButton
+        <ControlButton
           :variant="'rounded'"
           :size="'md'"
           :mode="'neutral'"
@@ -52,10 +38,10 @@ const onOpenSettings = (): void => {
           :icon-style="'outline'"
           :icon-weight="'300'"
           @press="onOpenSettings"
-        ></Components.Molecules.ControlButton>
-      </Components.Molecules.Group>
+        ></ControlButton>
+      </Group>
     </template>
-  </Components.Organisms.NavigationRail>
+  </NavigationRail>
 </template>
 
 <style lang="scss">

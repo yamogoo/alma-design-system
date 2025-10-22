@@ -115,7 +115,6 @@ pnpm sparkpad:server:dev  # run Sparkpad API sandbox
 
 ## Roadmap Snapshots
 
-- Token path linter and contrast validation for relational contracts.
 - Matrix stories covering role × tone × state permutations.
 
 ## Optimization Highlights

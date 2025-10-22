@@ -55,22 +55,22 @@
       "knob": {
         "background": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.hovered}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.hovered}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.disabled}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.pressed}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.pressed}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -180,22 +180,22 @@
       "knob": {
         "background": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.hovered}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.hovered}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.disabled}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.pressed}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.pressed}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -305,22 +305,22 @@
       "knob": {
         "background": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.hovered}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.hovered}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.disabled}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.pressed}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.pressed}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -430,22 +430,22 @@
       "knob": {
         "background": {
           "normal": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
             "$type": "color",
             "$unit": "hex"
           },
           "hovered": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.hovered}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.hovered}",
             "$type": "color",
             "$unit": "hex"
           },
           "disabled": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.disabled}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.disabled}",
             "$type": "color",
             "$unit": "hex"
           },
           "pressed": {
-            "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.pressed}",
+            "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.pressed}",
             "$type": "color",
             "$unit": "hex"
           }

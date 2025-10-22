@@ -4,8 +4,6 @@ import gsap from "gsap";
 
 import { OVERLAY_PREFIX, type OverlayProps } from "./Overlay";
 
-import Surface from "@/components/atoms/containers/Surface.vue";
-
 const props = withDefaults(defineProps<OverlayProps>(), {
   containerId: "body",
   variant: "default",
@@ -69,26 +67,9 @@ const onLeave = (el: Element, done: () => void): void => {
 <template>
   <Teleport :to="containerId">
     <Transition :css="false" @enter="onEnter" @leave="onLeave">
-      <Surface
-        v-if="props.isOpen"
-        :class="[OVERLAY_PREFIX]"
-        :variant="variant"
-        :size="size"
-        :mode="mode"
-        :tone="tone"
-        :direction="direction"
-        :orientation="orientation"
-        :align-vertical="alignVertical"
-        :align-horizontal="alignHorizontal"
-        :stretch="stretch"
-        :wrap="wrap"
-        :border="border"
-        :bordered="bordered"
-        :rounded="rounded"
-        @click.self="onClose"
-      >
+      <div v-if="props.isOpen" :class="[OVERLAY_PREFIX]" @click.self="onClose">
         <slot></slot>
-      </Surface>
+      </div>
     </Transition>
   </Teleport>
 </template>
@@ -103,6 +84,9 @@ $prefix: getPrefix($tokenName);
   align-items: center;
   justify-content: center;
   inset: 0;
+  @include themify($themes) {
+    background: themed("contracts.rel.overlay.neutral.base");
+  }
 
   :where(&) {
     z-index: 1000;

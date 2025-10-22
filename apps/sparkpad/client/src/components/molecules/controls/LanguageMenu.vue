@@ -6,7 +6,7 @@ import { useLocaleStore } from "@/stores";
 import { Constants } from "@/constants";
 import type { Locale } from "@/typings";
 
-import { Components } from "@alma/design-system";
+import { Dropdown, Options } from "@alma/design-system";
 
 const { currentLocale } = storeToRefs(useLocaleStore());
 const { setLocale } = useLocaleStore();
@@ -17,14 +17,14 @@ const onSelectKey = (key: Locale) => {
 </script>
 
 <template>
-  <Components.Molecules.Dropdown
+  <Dropdown
     class="language-menu"
     :size="'md'"
     :color="'primary'"
     :value="currentLocale.toUpperCase()"
     :close-on-option-click="true"
   >
-    <Components.Molecules.Options
+    <Options
       :variant="'default'"
       :size="'md'"
       :mode="'neutral'"
@@ -36,8 +36,8 @@ const onSelectKey = (key: Locale) => {
       <template #default="{ value }">
         {{ `${value}`.toUpperCase() }}
       </template>
-    </Components.Molecules.Options>
-  </Components.Molecules.Dropdown>
+    </Options>
+  </Dropdown>
 </template>
 
 <style lang="scss">

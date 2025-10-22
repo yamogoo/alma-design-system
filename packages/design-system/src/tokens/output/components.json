@@ -770,7 +770,7 @@
       }
     },
     "listItem": {
-      "default": {
+      "list": {
         "md": {
           "root": {
             "minHeight": {
@@ -799,7 +799,7 @@
               "$type": "number"
             },
             "gap": {
-              "$value": 1,
+              "$value": 16,
               "$unit": "px",
               "$type": "number"
             }
@@ -813,7 +813,7 @@
           },
           "title": {
             "fontStyle": {
-              "$value": "body-2",
+              "$value": "title-2",
               "$type": "string",
               "$unit": ""
             }
@@ -823,6 +823,84 @@
               "$value": "body-3",
               "$type": "string",
               "$unit": ""
+            }
+          },
+          "icon": {
+            "size": {
+              "$value": 18,
+              "$unit": "px",
+              "$type": "number"
+            }
+          },
+          "chevron": {
+            "size": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": "number"
+            }
+          }
+        }
+      },
+      "menu": {
+        "md": {
+          "root": {
+            "minHeight": {
+              "$value": 44,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "paddingHorizontal": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "paddingVertical": {
+              "$value": 12,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "borderRadius": {
+              "$value": 9999,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "borderWidth": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": "number"
+            },
+            "gap": {
+              "$value": 16,
+              "$unit": "px",
+              "$type": "number"
+            }
+          },
+          "divider": {
+            "borderWidth": {
+              "$value": 1,
+              "$unit": "px",
+              "$type": "number"
+            }
+          },
+          "title": {
+            "fontStyle": {
+              "$value": "title-2",
+              "$type": "string",
+              "$unit": ""
+            }
+          },
+          "description": {
+            "fontStyle": {
+              "$value": "body-3",
+              "$type": "string",
+              "$unit": ""
+            }
+          },
+          "icon": {
+            "size": {
+              "$value": 18,
+              "$unit": "px",
+              "$type": "number"
             }
           },
           "chevron": {
@@ -1379,7 +1457,7 @@
               }
             },
             "borderRadius": {
-              "$value": 24,
+              "$value": 32,
               "$type": "number",
               "$unit": "px"
             },
@@ -1496,7 +1574,7 @@
               }
             },
             "borderRadius": {
-              "$value": 20,
+              "$value": 32,
               "$type": "number",
               "$unit": "px"
             },
@@ -1783,7 +1861,7 @@
         "xl": {
           "root": {
             "borderRadius": {
-              "$value": 24
+              "$value": 32
             },
             "borderWidth": {
               "$value": 1,
@@ -1795,7 +1873,7 @@
         "lg": {
           "root": {
             "borderRadius": {
-              "$value": 20
+              "$value": 32
             },
             "borderWidth": {
               "$value": 1,
@@ -1807,7 +1885,7 @@
         "md": {
           "root": {
             "borderRadius": {
-              "$value": 16
+              "$value": 24
             },
             "borderWidth": {
               "$value": 1,
@@ -2102,17 +2180,27 @@
         "lg": {
           "root": {
             "minWidth": {
-              "$value": 70,
+              "$value": 320,
               "$type": "number",
-              "$unit": "%"
+              "$unit": "px"
+            },
+            "maxWidth": {
+              "$value": 860,
+              "$type": "number",
+              "$unit": "px"
             },
             "minHeight": {
-              "$value": 60,
+              "$value": 50,
               "$type": "number",
               "$unit": "%"
             },
+            "maxHeight": {
+              "$value": 540,
+              "$type": "number",
+              "$unit": "px"
+            },
             "borderRadius": {
-              "$value": 16,
+              "$value": 32,
               "$type": "number",
               "$unit": "px"
             },
@@ -2131,17 +2219,27 @@
         "md": {
           "root": {
             "minWidth": {
-              "$value": 50,
+              "$value": 320,
               "$type": "number",
-              "$unit": "%"
+              "$unit": "px"
+            },
+            "maxWidth": {
+              "$value": 860,
+              "$type": "number",
+              "$unit": "px"
             },
             "minHeight": {
               "$value": 30,
               "$type": "number",
               "$unit": "%"
             },
+            "maxHeight": {
+              "$value": 540,
+              "$type": "number",
+              "$unit": "px"
+            },
             "borderRadius": {
-              "$value": 12,
+              "$value": 24,
               "$type": "number",
               "$unit": "px"
             },
@@ -2773,6 +2871,40 @@
           "button": {
             "offset": {
               "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        }
+      }
+    },
+    "sidebar": {
+      "default": {
+        "lg": {
+          "root": {
+            "width": {
+              "$value": 320,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": [
+                4
+              ],
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "container": {
+            "padding": {
+              "$value": [
+                8
+              ],
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 28,
               "$type": "number",
               "$unit": "px"
             }

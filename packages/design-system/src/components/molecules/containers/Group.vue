@@ -116,6 +116,10 @@ $prefix: getPrefix($tokenName);
       @include box(100%);
     }
 
+    &-row {
+      width: 100%;
+    }
+
     &-auto {
       @include box(max-content);
     }

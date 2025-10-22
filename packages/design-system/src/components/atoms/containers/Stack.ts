@@ -1,6 +1,5 @@
 import { NAMESPACE } from "@/constants";
 
-import type { AbstractBreakpoint } from "@/adapters/abstracts/breakpoints";
 import type { StackSize, StackVariant } from "@/adapters/atoms/stack";
 
 import {
@@ -20,8 +19,6 @@ import {
   type UIElementStylingModifiers,
   type UIElementWrapProps,
 } from "@/typings";
-
-export type AbstractSpacing = AbstractBreakpoint;
 
 export type StackOrientation = UIElementOrientation;
 export type StackDirection = UIElementAxisDirection;

@@ -16,7 +16,7 @@
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.light.contracts.rel.onSurface.neutral.base-down-3}",
+      "$value": "{themes.light.contracts.rel.onSurface.neutral.base}",
       "$type": "color",
       "$unit": "hex"
     },
@@ -43,7 +43,7 @@
       "$unit": "hex"
     },
     "onSurface": {
-      "$value": "{themes.light.contracts.rel.onSurface.neutral.base-down-1}",
+      "$value": "{themes.light.contracts.rel.onSurface.neutral.base}",
       "$type": "color",
       "$unit": "hex"
     },

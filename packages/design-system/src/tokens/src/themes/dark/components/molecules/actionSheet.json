@@ -1,3 +1,13 @@
 {
-  "primary": {}
+  "neutral": {
+    "canvas": {
+      "surface": {
+        "mode": {
+          "$value": "canvas",
+          "$type": "string",
+          "$unit": "alias"
+        }
+      }
+    }
+  }
 }

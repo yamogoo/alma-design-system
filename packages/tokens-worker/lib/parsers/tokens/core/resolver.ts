@@ -276,6 +276,11 @@ export class TokenResolver {
       );
     }
 
+    const evaluated = this.tryEvaluateMathExpression(result);
+    if (evaluated !== null) {
+      return evaluated as any;
+    }
+
     return result;
   }
 
@@ -373,5 +378,29 @@ export class TokenResolver {
 
   private getNestedValue(obj: any, keys: string[]): any {
     return keys.reduce((acc, k) => acc?.[k], obj);
+  }
+
+  private tryEvaluateMathExpression(raw: string): number | null {
+    if (typeof raw !== 'string') return null;
+
+    const trimmed = raw.trim();
+    if (trimmed.length === 0) return null;
+
+    const compact = trimmed.replace(/\s+/g, '');
+
+    if (!/[+\-*/]/.test(compact)) return null;
+    if (!/^[0-9+\-*/().]+$/.test(compact)) return null;
+
+    try {
+      // eslint-disable-next-line no-new-func
+      const evaluated = Function(`"use strict"; return (${compact});`)();
+      if (typeof evaluated === 'number' && Number.isFinite(evaluated)) {
+        return evaluated;
+      }
+    } catch {
+      // Swallow evaluation errors and fall back to the original string.
+    }
+
+    return null;
   }
 }

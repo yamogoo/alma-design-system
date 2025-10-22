@@ -1,0 +1,13 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.light.contracts.interactive.surface.neutral.primary.normal}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    }
+  }
+}

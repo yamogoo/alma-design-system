@@ -5,7 +5,13 @@ import { useRouter } from "vue-router";
 
 import { useAuthStore, useLocaleStore } from "@/stores";
 
-import { Components } from "@alma/design-system";
+import {
+  Form,
+  TextInput,
+  PasswordInput,
+  ActionButton,
+  Text,
+} from "@alma/design-system";
 
 withDefaults(defineProps<Props>(), {
   isError: false,
@@ -81,50 +87,46 @@ export interface Props {
 </script>
 
 <template>
-  <Components.Molecules.Form
+  <Form
     variant="default"
     :size="'md'"
     :mode="'neutral'"
     :tone="'primary'"
     :aria-label="'Login'"
   >
-    <Components.Molecules.TextInput
+    <TextInput
       v-model:value="localEmail"
       :placeholder="$t.auth.signin.form.userName"
       :type="'text'"
       :is-error="localIsError"
-    ></Components.Molecules.TextInput>
-    <Components.Molecules.PasswordInput
+    ></TextInput>
+    <PasswordInput
       v-model:value="localPassword"
       v-model:masked="localIsPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.signin.form.password"
       :is-error="localIsError"
-    ></Components.Molecules.PasswordInput>
-    <Components.Molecules.PasswordInput
+    ></PasswordInput>
+    <PasswordInput
       v-model:value="localRepeatedPassword"
       v-model:masked="localIsRepeatedPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.signin.form.repeatPassword"
       :is-error="localIsError"
-    ></Components.Molecules.PasswordInput>
-    <Components.Atoms.Text
-      :variant="'label-1'"
-      :mode="'neutral'"
-      :tone="'secondary'"
-    >
+    ></PasswordInput>
+    <Text :variant="'label-1'" :mode="'neutral'" :tone="'secondary'">
       {{ $t.auth.login.form.description }}
-    </Components.Atoms.Text>
-    <Components.Atoms.Text
+    </Text>
+    <Text
       v-if="localIsError"
       :data-testid="'auth-form-error'"
       :variant="'label-1'"
       :text-color="'error'"
     >
       {{ loginError }}
-    </Components.Atoms.Text>
+    </Text>
     <template #footer>
-      <Components.Molecules.ActionButton
+      <ActionButton
         :mode="'accent'"
         :tone="'tertiary'"
         :size="'md'"
@@ -133,7 +135,7 @@ export interface Props {
         :is-disabled="!isValid"
         @press="onSubmit"
         @key.enter="onSubmit"
-      ></Components.Molecules.ActionButton>
+      ></ActionButton>
     </template>
-  </Components.Molecules.Form>
+  </Form>
 </template>

@@ -17,6 +17,8 @@ export * from "./inputs";
 // List/Selectors: List component and selection logic
 export * from "./list";
 
+export * from "./menu";
+
 export * from "./options";
 
 // Panels: Snackbar, AlertDialog, etc.

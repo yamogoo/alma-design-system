@@ -65,7 +65,7 @@ export type UIElementOrientation = (typeof UIElementOrientations)[number];
 export const UIElementAlignments = ["start", "center", "end"] as const;
 export type UIElementAlignment = (typeof UIElementAlignments)[number];
 
-export const UIElementStretches = ["fill", "auto"] as const;
+export const UIElementStretches = ["fill", "auto", "row"] as const;
 export type UIElementStretch = (typeof UIElementStretches)[number];
 
 export type UIElementItemID<T = string> = {

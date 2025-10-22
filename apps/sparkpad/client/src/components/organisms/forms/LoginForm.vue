@@ -5,7 +5,15 @@ import { useRouter } from "vue-router";
 
 import { useAuthStore, useLocaleStore } from "@/stores";
 
-import { Components } from "@alma/design-system";
+import {
+  Form,
+  TextInput,
+  PasswordInput,
+  ActionButton,
+  Text,
+  Divider,
+  Group,
+} from "@alma/design-system";
 
 const MIN_PASSWORD_LENGTH =
   +import.meta.env.VITE__FORM_PASSWORD_MIN_LENGTH || 6;
@@ -87,43 +95,35 @@ export interface Props {
 </script>
 
 <template>
-  <Components.Molecules.Form
+  <Form
     variant="default"
     :size="'md'"
     :mode="'neutral'"
     :tone="'primary'"
     :aria-label="'Signin'"
   >
-    <Components.Molecules.TextInput
+    <TextInput
       v-model:value="localEmail"
       :placeholder="$t.auth.login.form.userName"
       :type="'text'"
       :is-error="!!emailError"
       :error-message="emailError"
-    ></Components.Molecules.TextInput>
-    <Components.Molecules.PasswordInput
+    ></TextInput>
+    <PasswordInput
       v-model:value="localPassword"
       v-model:masked="localIsPasswordMasked"
       :type="'password'"
       :placeholder="$t.auth.login.form.password"
       :is-error="!!passwordError"
       :error-message="passwordError"
-    ></Components.Molecules.PasswordInput>
-    <Components.Atoms.Text
-      :variant="'label-1'"
-      :mode="'neutral'"
-      :tone="'secondary'"
-    >
+    ></PasswordInput>
+    <Text :variant="'label-1'" :mode="'neutral'" :tone="'secondary'">
       {{ $t.auth.login.form.description }}
-    </Components.Atoms.Text>
+    </Text>
 
     <template #footer>
-      <Components.Molecules.Group
-        :orientation="'vertical'"
-        :size="'sm'"
-        :stretch="'fill'"
-      >
-        <Components.Molecules.ActionButton
+      <Group :orientation="'vertical'" :size="'sm'" :stretch="'fill'">
+        <ActionButton
           :mode="'accent'"
           :tone="'tertiary'"
           :size="'md'"
@@ -133,22 +133,22 @@ export interface Props {
           @press="onSubmit"
           @key.enter="onSubmit"
         >
-        </Components.Molecules.ActionButton>
-        <Components.Atoms.Divider
+        </ActionButton>
+        <Divider
           :orientation="'horizontal'"
           :size="'md'"
           :mode="'neutral'"
           :tone="'primary'"
-        ></Components.Atoms.Divider>
-        <Components.Molecules.ActionButton
+        ></Divider>
+        <ActionButton
           :mode="'neutral'"
           :tone="'primary'"
           :size="'md'"
           :stretch="'fill'"
           :label="$t.auth.login.form.skip"
           @press="onContinueAsGuest"
-        ></Components.Molecules.ActionButton>
-      </Components.Molecules.Group>
+        ></ActionButton>
+      </Group>
     </template>
-  </Components.Molecules.Form>
+  </Form>
 </template>

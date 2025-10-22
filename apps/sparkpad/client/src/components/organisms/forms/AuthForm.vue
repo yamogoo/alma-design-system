@@ -4,7 +4,12 @@ import { storeToRefs } from "pinia";
 
 import { useLocaleStore } from "@/stores";
 
-import { Components, Tokens } from "@alma/design-system";
+import {
+  StepPaginationTabs,
+  CarouselStack,
+  FormWrapper,
+  Tokens,
+} from "@alma/design-system";
 
 import LoginForm from "./LoginForm.vue";
 import SigninForm from "./SigninForm.vue";
@@ -41,7 +46,7 @@ const contentKey = computed(
 </script>
 
 <template>
-  <Components.Molecules.FormWrapper
+  <FormWrapper
     class="auth-form"
     variant="default"
     mode="neutral"
@@ -53,15 +58,15 @@ const contentKey = computed(
     :duration="FORM_ANIMATION_DURATION"
   >
     <template #header>
-      <Components.Atoms.StepPaginationTabs
+      <StepPaginationTabs
         :size="'lg'"
         :selected-item-index="selectedFormIndex"
         :items="formPaginationItems"
         @update:selected-item-index="onUpdateSelectedFormIndex"
       >
-      </Components.Atoms.StepPaginationTabs>
+      </StepPaginationTabs>
     </template>
-    <Components.Atoms.CarouselStack
+    <CarouselStack
       :selected-screen-id="selectedFormIndex"
       :screen-count="2"
       :orientation="'horizontal'"
@@ -82,8 +87,8 @@ const contentKey = computed(
           v-model:is-error="isSigninError"
         ></SigninForm>
       </template>
-    </Components.Atoms.CarouselStack>
-  </Components.Molecules.FormWrapper>
+    </CarouselStack>
+  </FormWrapper>
 </template>
 
 <style lang="scss">

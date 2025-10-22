@@ -16,11 +16,14 @@ import Group from "@/components/molecules/containers/Group.vue";
 
 const props = withDefaults(defineProps<ListProps>(), {
   as: "div",
-  stretch: "fill",
+  variant: "default",
+  size: "md",
+  stretch: "row",
   orientation: "vertical",
   isCurrentItemShown: false,
   isMultiple: false,
   isSelectable: true,
+  isClickable: false,
   isJoined: true,
 });
 
@@ -92,6 +95,7 @@ const effectiveVariant = computed(() =>
 
 const isCurrentItemShown = computed(() => !!props.isCurrentItemShown);
 const isSelectable = computed(() => !!props.isSelectable);
+const isClickable = computed(() => !!props.isClickable);
 const isJoined = computed(() => !!props.isJoined);
 
 provide<ListInjection>(ListInjectionKey, {
@@ -99,6 +103,7 @@ provide<ListInjection>(ListInjectionKey, {
   setSelectedItemIndexes,
   isCurrentItemShown,
   isSelectable,
+  isClickable,
   isJoined,
 });
 
@@ -192,6 +197,8 @@ const onKeydown = (e: KeyboardEvent) => {
           <ListItem
             :as="asTagForItem"
             :id="item.id"
+            :mode="'neutral'"
+            :tone="'canvas'"
             :title="item.title"
             :description="item.description"
             :is-active="isSelectedById(item.id)"

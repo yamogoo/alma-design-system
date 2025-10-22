@@ -5,10 +5,9 @@ export const listItemVariants = Object.keys(
   tokens.components.atoms.listItem
 ) as ListItemVariant[];
 
-export type ListItemSize =
-  keyof typeof tokens.components.atoms.listItem.default;
+export type ListItemSize = keyof typeof tokens.components.atoms.listItem.list;
 export const listItemSizes = Object.keys(
-  tokens.components.atoms.listItem.default
+  tokens.components.atoms.listItem.list
 ) as ListItemSize[];
 
 export type ListItemMode =
