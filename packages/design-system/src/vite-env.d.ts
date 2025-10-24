@@ -13,9 +13,8 @@ interface ImportMetaEnv {
   /* * * Environment Variables * * */
   readonly VITE_API_URL: string;
 
-  /* * * Config * * */
-  readonly VITE_APP_DEFAULT_THEME: string;
-  readonly VITE_APP_DEFAULT_PROTO_THEME: string;
+  /* * * Config (overrides) * * */
+  readonly VITE_UI_LOCAL_THEME: string;
   readonly VITE_APP_DEFAULT_LOCALE: string;
 
   /* * * Editor Layout * * */

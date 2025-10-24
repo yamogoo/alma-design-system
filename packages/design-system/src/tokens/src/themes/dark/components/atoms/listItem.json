@@ -95,22 +95,22 @@
       },
       "description": {
         "normal": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.normal}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.secondary.disabled}",
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered}",
+          "$value": "{themes.dark.contracts.interactive.label.accent.tertiary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.selected}",
+          "$value": "{themes.dark.contracts.interactive.label.accent.tertiary.selected}",
           "$type": "color",
           "$unit": "hex"
         }

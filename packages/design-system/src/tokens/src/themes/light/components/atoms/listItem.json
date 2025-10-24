@@ -65,7 +65,7 @@
       "divider": {
         "border": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.border.neutral.primary.selected}",
+            "$value": "{themes.light.contracts.interactive.stroke.neutral.canvas.normal}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -73,7 +73,7 @@
       },
       "title": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.selected}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.normal}",
           "$type": "color",
           "$unit": "hex"
         },
@@ -95,22 +95,22 @@
       },
       "description": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.secondary.normal}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal}",
           "$type": "color",
           "$unit": "hex"
         },
         "disabled": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.secondary.disabled}",
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled}",
           "$type": "color",
           "$unit": "hex"
         },
         "hovered": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered}",
+          "$value": "{themes.light.contracts.interactive.label.accent.tertiary.hovered}",
           "$type": "color",
           "$unit": "hex"
         },
         "selected": {
-          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.selected}",
+          "$value": "{themes.light.contracts.interactive.label.accent.tertiary.selected}",
           "$type": "color",
           "$unit": "hex"
         }
@@ -203,7 +203,7 @@
       "divider": {
         "border": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.border.neutral.canvas.selected}",
+            "$value": "{themes.light.contracts.interactive.border.neutral.canvas.normal}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -211,7 +211,7 @@
       },
       "title": {
         "normal": {
-          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.selected}",
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.normal}",
           "$type": "color",
           "$unit": "hex"
         },

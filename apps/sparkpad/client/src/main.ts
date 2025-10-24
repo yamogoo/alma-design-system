@@ -4,8 +4,11 @@ import App from "./App.vue";
 import { createPinia } from "pinia";
 import { router } from "./router";
 
+// eslint-disable-next-line no-restricted-imports
 import "@alma/design-system/style.css";
+// eslint-disable-next-line no-restricted-imports
 import "@alma/design-system/styles.runtime.css";
+// eslint-disable-next-line no-restricted-imports
 import "@alma/design-system/global.styles.scss";
 
 // import { createI18n } from "vue-i18n";

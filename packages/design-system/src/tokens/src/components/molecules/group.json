@@ -27,7 +27,7 @@
     "md": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.md}",
+          "$value": "{tokens.spacing.sm}",
           "$type": "number",
           "$unit": "px"
         },
@@ -51,7 +51,7 @@
     "sm": {
       "root": {
         "gap": {
-          "$value": "{tokens.spacing.sm}",
+          "$value": "{tokens.spacing.xxs}",
           "$type": "number",
           "$unit": "px"
         },

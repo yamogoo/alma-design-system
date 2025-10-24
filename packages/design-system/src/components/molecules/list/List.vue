@@ -23,6 +23,7 @@ const props = withDefaults(defineProps<ListProps>(), {
   isCurrentItemShown: false,
   isMultiple: false,
   isSelectable: true,
+  isRadioButton: false,
   isClickable: false,
   isJoined: true,
 });
@@ -38,22 +39,17 @@ const rootTag = computed(
     (props.isSelectable ? "div" : props.items?.length ? "ul" : "div")
 );
 
-const localSelectedItemIndexes = ref<
-  ListSelectedItemIndex | ListSelectedItemIndex[] | null
->(props.selectedItemIndexes ?? (props.isMultiple ? [] : null));
-
 const selectedItemIndexes = computed({
-  get: () => {
-    return props.selectedItemIndexes !== undefined
+  get: () =>
+    props.selectedItemIndexes !== undefined
       ? (props.selectedItemIndexes ?? null)
-      : localSelectedItemIndexes.value;
-  },
+      : localSelectedItemIndexes.value,
   set: (value) => {
-    // Update local state only when uncontrolled
     if (props.selectedItemIndexes === undefined)
       localSelectedItemIndexes.value = value;
   },
 });
+
 const commit = (
   val: ListSelectedItemIndex | ListSelectedItemIndex[] | null
 ) => {
@@ -63,31 +59,35 @@ const commit = (
 };
 
 const setSelectedItemIndexes = (id: ListSelectedItemIndex | null) => {
-  if (!props.isSelectable) return;
+  if (!isSelectable.value) return;
 
-  if (props.isMultiple) {
+  if (isMultipleEffective.value) {
     const current = (selectedItemIndexes.value ??
       []) as ListSelectedItemIndex[];
-    if (id == null) return commit([]);
 
+    if (id == null) return commit([]);
     const next = current.includes(id)
       ? current.filter((v) => v !== id)
       : [...current, id];
 
     return commit(next);
   } else {
-    const current = selectedItemIndexes.value as ListSelectedItemIndex | null;
-    const next = current === id ? null : id;
-    return commit(next);
+    // single-select
+    if (isRadioButton.value) {
+      if (id == null) return;
+      const current = selectedItemIndexes.value as ListSelectedItemIndex | null;
+      const next = id;
+
+      if (current === next) return;
+
+      return commit(next);
+    } else {
+      const current = selectedItemIndexes.value as ListSelectedItemIndex | null;
+      const next = current === id ? null : id;
+      return commit(next);
+    }
   }
 };
-
-watch(
-  () => props.selectedItemIndexes,
-  (v) => {
-    localSelectedItemIndexes.value = v ?? (props.isMultiple ? [] : null);
-  }
-);
 
 const effectiveVariant = computed(() =>
   props.isJoined ? "content" : (props.variant ?? "default")
@@ -95,17 +95,29 @@ const effectiveVariant = computed(() =>
 
 const isCurrentItemShown = computed(() => !!props.isCurrentItemShown);
 const isSelectable = computed(() => !!props.isSelectable);
+const isRadioButton = computed(() => !!props.isRadioButton);
 const isClickable = computed(() => !!props.isClickable);
 const isJoined = computed(() => !!props.isJoined);
 
-provide<ListInjection>(ListInjectionKey, {
-  selectedItemIndexes,
-  setSelectedItemIndexes,
-  isCurrentItemShown,
-  isSelectable,
-  isClickable,
-  isJoined,
+const isMultipleEffective = computed(
+  () => isSelectable.value && !isRadioButton.value && !!props.isMultiple
+);
+
+const rootRole = computed(() => {
+  if (!isSelectable.value) return "list";
+  return isRadioButton.value ? "radiogroup" : "listbox";
 });
+
+const localSelectedItemIndexes = ref<
+  ListSelectedItemIndex | ListSelectedItemIndex[] | null
+>(props.selectedItemIndexes ?? (props.isMultiple ? [] : null));
+
+watch(
+  () => props.selectedItemIndexes,
+  (newValue) => {
+    localSelectedItemIndexes.value = newValue ?? (props.isMultiple ? [] : null);
+  }
+);
 
 const normalizedItems = computed<IListItem[] | null>(() => {
   if (!props.items) return null;
@@ -115,8 +127,36 @@ const normalizedItems = computed<IListItem[] | null>(() => {
   if (typeof items[0] === "string") {
     return (items as string[]).map((title, idx) => ({ id: idx, title }));
   }
-
   return items as IListItem[];
+});
+
+watch(
+  [normalizedItems, isRadioButton, selectedItemIndexes],
+  () => {
+    if (!isSelectable.value || !isRadioButton.value) return;
+    const items = normalizedItems.value;
+    if (!items?.length) return;
+
+    const firstId = items[0].id;
+
+    const current = selectedItemIndexes.value as ListSelectedItemIndex | null;
+    const exists = current != null && items.some((it) => it.id === current);
+
+    if (exists) return;
+
+    commit(firstId);
+  },
+  { immediate: true }
+);
+
+provide<ListInjection>(ListInjectionKey, {
+  selectedItemIndexes,
+  setSelectedItemIndexes,
+  isCurrentItemShown,
+  isSelectable,
+  isRadioButton,
+  isClickable,
+  isJoined,
 });
 
 const isSelectedById = (id: ListSelectedItemIndex) =>
@@ -181,8 +221,8 @@ const onKeydown = (e: KeyboardEvent) => {
     :align-vertical="alignVertical"
     :align-horizontal="alignHorizontal"
     :stretch="stretch"
-    :role="isSelectable ? 'listbox' : 'list'"
-    :aria-multiselectable="isSelectable ? isMultiple : undefined"
+    :role="rootRole"
+    :aria-multiselectable="isSelectable ? isMultipleEffective : undefined"
     @keydown.stop.prevent="onKeydown"
   >
     <slot v-if="!normalizedItems" :selected-id="selectedItemIndexes"></slot>

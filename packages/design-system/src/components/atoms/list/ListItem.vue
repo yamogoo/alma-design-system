@@ -47,10 +47,6 @@ const hasUserContent = computed(() => {
 const { isHovered } = useHover(root);
 
 const isSelected = computed(() => {
-  // control selected state via props:
-  // if (props.isActive !== undefined) return props.isActive;
-
-  // control selected state via injected:
   if (!ctx?.selectedItemIndexes) return false;
   const sid = ctx.selectedItemIndexes.value;
   return Array.isArray(sid) ? sid.includes(props.id) : sid === props.id;
@@ -66,12 +62,23 @@ const effectiveState = computed(() => {
 const cursor = computed(() => (isSelectable.value ? "pointer" : "auto"));
 
 const isSelectable = computed(() => Boolean(ctx?.isSelectable?.value));
+const isRadioButton = computed(() => Boolean(ctx?.isRadioButton?.value));
 const isClickable = computed(() => Boolean(ctx?.isClickable?.value));
-const role = computed(() => (isSelectable.value ? "option" : "listitem"));
 
-const ariaSelected = computed(() =>
-  isSelectable.value ? String(isSelected.value) : undefined
-);
+const role = computed(() => {
+  if (!isSelectable.value) return "listitem";
+  return isRadioButton.value ? "radio" : "option";
+});
+
+const ariaSelected = computed(() => {
+  if (!isSelectable.value || isRadioButton.value) return undefined;
+  return String(isSelected.value);
+});
+
+const ariaChecked = computed(() => {
+  if (!(isSelectable.value && isRadioButton.value)) return undefined;
+  return String(isSelected.value);
+});
 
 const tabIndex = computed(() => (props.isFocused ? 0 : -1));
 
@@ -130,6 +137,7 @@ const onFocusPrev = (): void => {
     :style="{ cursor }"
     :role="role"
     :aria-selected="ariaSelected"
+    :aria-checked="ariaChecked"
     :tabindex="tabIndex"
     :aria-current="isCurrentItemShown && isSelected ? true : undefined"
     @pointerdown="(e: PointerEvent) => onPress(e, true)"
@@ -206,6 +214,7 @@ $prefix: getPrefix($tokenName);
 
           $title-font-style: get($val, "title.font-style");
           $description-font-style: get($val, "description.font-style");
+          $description-padding-top: get($val, "description.padding-top");
 
           $chevron-size: px2rem(get($val, "chevron.size"));
 
@@ -276,6 +285,7 @@ $prefix: getPrefix($tokenName);
             @extend %t__#{$title-font-style};
           }
           @include where(".#{$prefix}__description") {
+            padding-top: $description-padding-top;
             @extend %t__#{$description-font-style};
           }
           @include where(".#{$prefix}__chevron") {
@@ -389,6 +399,7 @@ $prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   box-sizing: border-box;
+  display: flex;
   width: 100%;
   overflow: hidden;
   @include useThemeTransition();
@@ -396,6 +407,7 @@ $prefix: getPrefix($tokenName);
   @include where(".#{$prefix}__container") {
     display: flex;
     flex-direction: row;
+    width: 100%;
     @include useThemeTransition();
   }
 

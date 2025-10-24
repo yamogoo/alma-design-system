@@ -500,6 +500,82 @@ $components: (
 )
 )
 )
+),
+  rounded: (
+  lg: (
+  root: (
+  height: (
+  value: 52px
+),
+  whole-height: (
+  value: 68px
+),
+  padding: (
+  value: 8px 16px 8px 16px
+),
+  border-radius: (
+  value: 9999px
+)
+),
+  label: (
+  font-style: (
+  value: "body-2"
+),
+  padding-top: (
+  value: 4px
+)
+),
+  placeholder: (
+  font-style: (
+  value: "body-2"
+)
+),
+  validation-message: (
+  font-style: (
+  value: "label-1"
+),
+  padding: (
+  value: 0px 16px 0px 16px
+)
+)
+),
+  md: (
+  root: (
+  height: (
+  value: 44px
+),
+  whole-height: (
+  value: 60px
+),
+  padding: (
+  value: 8px 16px
+),
+  border-radius: (
+  value: 9999px
+)
+),
+  label: (
+  font-style: (
+  value: "body-2"
+),
+  padding-top: (
+  value: 4px
+)
+),
+  placeholder: (
+  font-style: (
+  value: "body-2"
+)
+),
+  validation-message: (
+  font-style: (
+  value: "label-1"
+),
+  padding: (
+  value: 0px 16px 0px 16px
+)
+)
+)
 )
 ),
   list-item: (
@@ -538,6 +614,9 @@ $components: (
   description: (
   font-style: (
   value: "body-3"
+),
+  padding-top: (
+  value: 8px
 )
 ),
   icon: (
@@ -587,6 +666,9 @@ $components: (
   description: (
   font-style: (
   value: "body-3"
+),
+  padding-top: (
+  value: 8px
 )
 ),
   icon: (
@@ -1325,7 +1407,7 @@ $components: (
   lg: (
   root: (
   width: (
-  value: 64px
+  value: 54px
 ),
   height: (
   value: 20px
@@ -1442,13 +1524,13 @@ $components: (
   lg: (
   root: (
   min-width: (
-  value: 320px
+  value: 860px
 ),
   max-width: (
   value: 860px
 ),
   min-height: (
-  value: 50%
+  value: 540px
 ),
   max-height: (
   value: 540px
@@ -1470,7 +1552,7 @@ $components: (
   value: 860px
 ),
   min-height: (
-  value: 30%
+  value: 540px
 ),
   max-height: (
   value: 540px
@@ -1663,7 +1745,7 @@ $components: (
   md: (
   root: (
   gap: (
-  value: 16px
+  value: 12px
 ),
   padding: (
   value: 0px
@@ -1679,7 +1761,7 @@ $components: (
   sm: (
   root: (
   gap: (
-  value: 12px
+  value: 4px
 ),
   padding: (
   value: 0px
@@ -1798,7 +1880,9 @@ $components: (
   default: (
   lg: (
   root: (
-  
+  gap: (
+  value: 24px
+)
 ),
   item: (
   font-style: (
@@ -1811,7 +1895,9 @@ $components: (
 ),
   md: (
   root: (
-  
+  gap: (
+  value: 16px
+)
 ),
   item: (
   font-style: (

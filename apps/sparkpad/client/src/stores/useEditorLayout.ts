@@ -23,7 +23,8 @@ export const useEditorLayout = defineStore("editor-layout-store", () => {
   const setNavigatorWidth = (value: number) => (navigatorWidth.value = value);
 
   const reset = (): void => {
-    isNavigatorShown.value = Constants.DEFAULT_IS_NAVIGATOR_SHOWN;
+    setIsNavigatorShown(Constants.DEFAULT_IS_NAVIGATOR_SHOWN);
+    setNavigatorWidth(Constants.DEFAULT_NAVIGATOR_WIDTH);
   };
 
   return {

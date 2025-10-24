@@ -28,6 +28,7 @@ const onResetValue = (): void => {
     <SearchInput
       v-model.trim="searchingPhrase"
       placeholder="Search"
+      variant="rounded"
       size="lg"
       @reset:value="onResetValue"
     ></SearchInput>

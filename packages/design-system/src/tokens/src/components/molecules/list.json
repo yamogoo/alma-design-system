@@ -1,7 +1,13 @@
 {
   "default": {
     "lg": {
-      "root": {},
+      "root": {
+        "gap": {
+          "$value": "{tokens.spacing.lg}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
       "item": {
         "fontStyle": {
           "$value": "body-2",
@@ -16,7 +22,13 @@
       }
     },
     "md": {
-      "root": {},
+      "root": {
+        "gap": {
+          "$value": "{tokens.spacing.md}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
       "item": {
         "fontStyle": {
           "$value": "body-2",

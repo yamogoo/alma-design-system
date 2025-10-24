@@ -2,5 +2,4 @@
 
 <template>
   <RouterView></RouterView>
-  <!-- TODO: Use Teleport fro settings -->
 </template>

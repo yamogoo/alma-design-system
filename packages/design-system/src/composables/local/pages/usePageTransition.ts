@@ -19,9 +19,7 @@ export const usePageTransition = (opts: UsePageTransition) => {
   const transitionInType: Ref<TransitionType> = ref("fade");
   const transitionOutType: Ref<TransitionType> = ref("fade");
 
-  /**
-   * Transition direction
-   */
+  // Transition direction
   const resolveTransition = (
     prev: RouteMeta,
     current: RouteMeta,
@@ -95,7 +93,6 @@ export const usePageTransition = (opts: UsePageTransition) => {
       return { in: inType, out: outType };
     }
 
-    // Neutral transition (eg get rid did not change)
     return { in: "fade", out: "fade" };
   };
 
@@ -107,8 +104,16 @@ export const usePageTransition = (opts: UsePageTransition) => {
       const prevRouteValue = toValue(prevRoute);
       const currentRouteValue = toValue(currentRoute);
 
-      const prevPath = prevRouteValue?.fullPath || "";
-      const currentPath = currentRouteValue?.fullPath || "";
+      const prevPath = prevRouteValue?.path || "";
+      const currentPath = currentRouteValue?.path || "";
+
+      if (
+        prevRouteValue &&
+        currentRouteValue &&
+        prevRouteValue.path === currentRouteValue.path
+      ) {
+        return;
+      }
 
       const { in: inType, out: outType } = resolveTransition(
         prev,

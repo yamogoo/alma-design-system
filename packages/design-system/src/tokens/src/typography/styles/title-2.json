@@ -15,7 +15,7 @@
     "$unit": ""
   },
   "fontWeight": {
-    "$value": "{typography.tokens.fontWeight.semibold}",
+    "$value": "{typography.tokens.fontWeight.medium}",
     "$type": "fontWeight",
     "$unit": ""
   },

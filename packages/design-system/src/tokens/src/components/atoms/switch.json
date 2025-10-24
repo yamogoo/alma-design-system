@@ -3,7 +3,7 @@
     "lg": {
       "root": {
         "width": {
-          "$value": 64,
+          "$value": 54,
           "$type": "number",
           "$unit": "px"
         },

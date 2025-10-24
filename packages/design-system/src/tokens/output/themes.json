@@ -2662,22 +2662,22 @@
               },
               "description": {
                 "normal": {
-                  "$value": "#c5c9cc",
+                  "$value": "#666e74",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#fafbfb",
+                  "$value": "#818990",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#f7f9ff",
+                  "$value": "#436ffe",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#dbe3ff",
+                  "$value": "#3161fe",
                   "$type": "color",
                   "$unit": "hex"
                 }
@@ -13731,7 +13731,7 @@
               "divider": {
                 "border": {
                   "normal": {
-                    "$value": "#c2c4c6",
+                    "$value": "#efefef",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -13761,22 +13761,22 @@
               },
               "description": {
                 "normal": {
-                  "$value": "#1c1f20",
+                  "$value": "#848c93",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "disabled": {
-                  "$value": "#232728",
+                  "$value": "#a9afb4",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "hovered": {
-                  "$value": "#0139f4",
+                  "$value": "#0133da",
                   "$type": "color",
                   "$unit": "hex"
                 },
                 "selected": {
-                  "$value": "#0136e6",
+                  "$value": "#0130ce",
                   "$type": "color",
                   "$unit": "hex"
                 }

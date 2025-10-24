@@ -34,7 +34,7 @@ export const useTheme = (
     ...opts,
   } as Required<UseThemeOptions>;
 
-  const localTheme = useTypedLocalStorage(key, toValue(init));
+  const localTheme = useTypedLocalStorage<Theme>(key, toValue(init));
   const localSystemTheme: Ref<SystemTheme> = ref(localTheme.value);
   const isSystemThemeEnabled = useTypedLocalStorage(
     systemKey,

@@ -52,6 +52,11 @@
           "$value": "body-3",
           "$type": "string",
           "$unit": ""
+        },
+        "paddingTop": {
+          "$value": "{tokens.spacing.xs}",
+          "$unit": "px",
+          "$type": "number"
         }
       },
       "icon": {
@@ -123,6 +128,11 @@
           "$value": "body-3",
           "$type": "string",
           "$unit": ""
+        },
+        "paddingTop": {
+          "$value": "{tokens.spacing.xs}",
+          "$unit": "px",
+          "$type": "number"
         }
       },
       "icon": {

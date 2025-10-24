@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { nextTick, onBeforeUnmount, onMounted, ref } from "vue";
 import { storeToRefs } from "pinia";
 import { useResizeObserver, useTitle } from "@vueuse/core";
+import type { ResizeObserverCallback } from "@vueuse/core";
 
 import {
   useAuthStore,
@@ -13,6 +14,7 @@ import {
 import { Constants } from "@/constants";
 
 import { Composables } from "@alma/design-system";
+import { debounce } from "lodash-es";
 
 const { $t } = storeToRefs(useLocaleStore());
 
@@ -34,14 +36,29 @@ setLocale("en");
 
 const refApp = ref<HTMLDivElement | null>();
 
-useResizeObserver(refApp, (entries) => {
+const updateSize = debounce((entries: readonly ResizeObserverEntry[]) => {
   const entry = entries[0];
   const { width, height } = entry.contentRect;
   setAppSize({ width, height });
+}, 150);
+
+const stop = () =>
+  useResizeObserver(refApp, updateSize as unknown as ResizeObserverCallback);
+
+onMounted(async () => {
+  void initializeAuth();
+
+  await nextTick();
+  const el = refApp.value;
+  if (el) {
+    const { width, height } = el.getBoundingClientRect();
+    setAppSize({ width, height });
+  }
 });
 
-onMounted(() => {
-  void initializeAuth();
+onBeforeUnmount(() => {
+  stop();
+  updateSize.cancel();
 });
 </script>
 

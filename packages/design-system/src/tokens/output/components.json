@@ -767,6 +767,136 @@
             }
           }
         }
+      },
+      "rounded": {
+        "lg": {
+          "root": {
+            "height": {
+              "$value": 52,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "wholeHeight": {
+              "$value": 68,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": [
+                8,
+                16,
+                8,
+                16
+              ],
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 9999,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "label": {
+            "fontStyle": {
+              "$value": "body-2",
+              "$type": "string",
+              "$unit": "alias"
+            },
+            "padding-top": {
+              "$value": 4,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "placeholder": {
+            "fontStyle": {
+              "$value": "body-2",
+              "$type": "string",
+              "$unit": "alias"
+            }
+          },
+          "validationMessage": {
+            "fontStyle": {
+              "$value": "label-1",
+              "$type": "string",
+              "$unit": "alias"
+            },
+            "padding": {
+              "$value": [
+                0,
+                16,
+                0,
+                16
+              ],
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        },
+        "md": {
+          "root": {
+            "height": {
+              "$value": 44,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "wholeHeight": {
+              "$value": 60,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": [
+                8,
+                16
+              ],
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 9999,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "label": {
+            "fontStyle": {
+              "$value": "body-2",
+              "$type": "string",
+              "$unit": "alias"
+            },
+            "paddingTop": {
+              "$value": 4,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "placeholder": {
+            "fontStyle": {
+              "$value": "body-2",
+              "$type": "string",
+              "$unit": "alias"
+            }
+          },
+          "validationMessage": {
+            "fontStyle": {
+              "$value": "label-1",
+              "$type": "string",
+              "$unit": "alias"
+            },
+            "padding": {
+              "$value": [
+                0,
+                16,
+                0,
+                16
+              ],
+              "$type": "number",
+              "$unit": "px"
+            }
+          }
+        }
       }
     },
     "listItem": {
@@ -823,6 +953,11 @@
               "$value": "body-3",
               "$type": "string",
               "$unit": ""
+            },
+            "paddingTop": {
+              "$value": 8,
+              "$unit": "px",
+              "$type": "number"
             }
           },
           "icon": {
@@ -894,6 +1029,11 @@
               "$value": "body-3",
               "$type": "string",
               "$unit": ""
+            },
+            "paddingTop": {
+              "$value": 8,
+              "$unit": "px",
+              "$type": "number"
             }
           },
           "icon": {
@@ -2012,7 +2152,7 @@
         "lg": {
           "root": {
             "width": {
-              "$value": 64,
+              "$value": 54,
               "$type": "number",
               "$unit": "px"
             },
@@ -2180,7 +2320,7 @@
         "lg": {
           "root": {
             "minWidth": {
-              "$value": 320,
+              "$value": 860,
               "$type": "number",
               "$unit": "px"
             },
@@ -2190,9 +2330,9 @@
               "$unit": "px"
             },
             "minHeight": {
-              "$value": 50,
+              "$value": 540,
               "$type": "number",
-              "$unit": "%"
+              "$unit": "px"
             },
             "maxHeight": {
               "$value": 540,
@@ -2229,9 +2369,9 @@
               "$unit": "px"
             },
             "minHeight": {
-              "$value": 30,
+              "$value": 540,
               "$type": "number",
-              "$unit": "%"
+              "$unit": "px"
             },
             "maxHeight": {
               "$value": 540,
@@ -2543,7 +2683,7 @@
         "md": {
           "root": {
             "gap": {
-              "$value": 16,
+              "$value": 12,
               "$type": "number",
               "$unit": "px"
             },
@@ -2567,7 +2707,7 @@
         "sm": {
           "root": {
             "gap": {
-              "$value": 12,
+              "$value": 4,
               "$type": "number",
               "$unit": "px"
             },
@@ -2741,7 +2881,13 @@
     "list": {
       "default": {
         "lg": {
-          "root": {},
+          "root": {
+            "gap": {
+              "$value": 24,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
           "item": {
             "fontStyle": {
               "$value": "body-2",
@@ -2756,7 +2902,13 @@
           }
         },
         "md": {
-          "root": {},
+          "root": {
+            "gap": {
+              "$value": 16,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
           "item": {
             "fontStyle": {
               "$value": "body-2",

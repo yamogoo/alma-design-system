@@ -1,3 +1,1 @@
-export * from "./error-logger";
-
-export * from "./unitTesting";
+export * from "./tests";

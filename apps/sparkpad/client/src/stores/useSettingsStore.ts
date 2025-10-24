@@ -7,5 +7,9 @@ export const useSettingsStore = defineStore("settings-store", () => {
     return (isOpen.value = state);
   };
 
-  return { isOpen, setIsOpen };
+  const reset = (): void => {
+    setIsOpen(false);
+  };
+
+  return { isOpen, setIsOpen, reset };
 });

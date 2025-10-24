@@ -17,6 +17,7 @@ export interface ListProps extends Omit<GroupProps, "as"> {
   items?: ListItems;
   isCurrentItemShown?: boolean;
   isSelectable?: boolean;
+  isRadioButton?: boolean;
   isClickable?: boolean;
   isMultiple?: boolean;
   isJoined?: boolean;
@@ -29,6 +30,7 @@ export interface ListInjection {
   setSelectedItemIndexes: (id: IListItem["id"] | null) => void;
   isCurrentItemShown: import("vue").ComputedRef<boolean> | null;
   isSelectable: import("vue").ComputedRef<boolean> | null;
+  isRadioButton: import("vue").ComputedRef<boolean> | null;
   isClickable: import("vue").ComputedRef<boolean> | null;
   isJoined: import("vue").ComputedRef<boolean> | null;
 }

@@ -11,7 +11,7 @@ interface ImportMetaEnv {
   readonly VITE_APP_DEVICE_ID: string;
 
   /* * * Design Sytem config * * */
-  readonly VITE_APP_DEFAULT_THEME: string;
+  readonly VITE_UI_LOCAL_THEME: string;
   readonly VITE_IS_SYSTEM_THEME_ENABLE: string;
   readonly VITE_APP_DEFAULT_LOCALE: string;
 
@@ -27,6 +27,18 @@ interface ImportMetaEnv {
   readonly VITE_DEFAULT_NAVIGATOR_WIDTH: string;
   readonly VITE_DEFAULT_NAVIGATOR_MIN_WIDTH: string;
   readonly VITE_DEFAULT_NAVIGATOR_MAX_WIDTH: string;
+
+  readonly VITE_EDITOR_DEFAULT_FONT_SIZE: string;
+  readonly VITE_EDITOR_FONT_MIN_SIZE: string;
+  readonly VITE_EDITOR_FONT_MAX_SIZE: string;
+
+  readonly VITE_EDITOR_DEFAULT_TAB_IDENT_SIZE: string;
+  readonly VITE_EDITOR_MIN_TAB_IDENT_SIZE: string;
+  readonly VITE_EDITOR_MAX_TAB_IDENT_SIZE: string;
+
+  readonly VITE_EDITOR_DEFAULT_LINE_HEIGHT: string;
+  readonly VITE_EDITOR_MIN_LINE_HEIGHT: string;
+  readonly VITE_EDITOR_MAX_LINE_HEIGHT: string;
 }
 
 interface ImportMeta {

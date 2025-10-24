@@ -58,7 +58,9 @@ export default (opts: { mode: string }) => {
         transformOn: true,
         mergeProps: true,
       }),
-      vueRouter(),
+      vueRouter({
+        dts: "typed-router.d.ts",
+      }),
       VueRouterPlugin({
         dts: true,
       }),

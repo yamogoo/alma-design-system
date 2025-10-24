@@ -3,7 +3,7 @@
     "lg": {
       "root": {
         "minWidth": {
-          "$value": 320,
+          "$value": 860,
           "$type": "number",
           "$unit": "px"
         },
@@ -13,9 +13,9 @@
           "$unit": "px"
         },
         "minHeight": {
-          "$value": 50,
+          "$value": 540,
           "$type": "number",
-          "$unit": "%"
+          "$unit": "px"
         },
         "maxHeight": {
           "$value": 540,
@@ -52,9 +52,9 @@
           "$unit": "px"
         },
         "minHeight": {
-          "$value": 30,
+          "$value": 540,
           "$type": "number",
-          "$unit": "%"
+          "$unit": "px"
         },
         "maxHeight": {
           "$value": 540,

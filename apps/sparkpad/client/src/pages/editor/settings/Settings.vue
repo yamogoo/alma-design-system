@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { computed, ref, watch, type ComputedRef } from "vue";
+import { useRouter } from "vue-router";
 
-import type { SettingsProps } from "./Settings";
+import { sidebarItems, type AsyncComp, type SettingsProps } from "./Settings";
 
 import {
   ActionSheet,
@@ -12,46 +13,31 @@ import {
   type IMenuitem,
 } from "@alma/design-system";
 
-import Appearance from "./Appearance.vue";
-
 const props = defineProps<SettingsProps>();
 
 const emit = defineEmits<{
   (e: "update:is-open", isOpen: boolean): void;
 }>();
 
+const router = useRouter();
+
 const localIsOpen = ref(props.isOpen);
 
-const sidebarItems: Record<"top" | "bottom", IMenuitem[]> = {
-  top: [
-    {
-      id: "appearance",
-      label: "Appearance",
-      iconName: "colorPalette",
-      iconStyle: "outline",
-    },
-    {
-      id: "workspace",
-      label: "Workspace",
-      iconName: "console",
-      iconStyle: "outline",
-    },
-    {
-      id: "system",
-      label: "System",
-      iconName: "cog",
-      iconStyle: "outline",
-    },
-  ],
-  bottom: [
-    {
-      id: "account",
-      label: "Account",
-      iconName: "userThumbnail",
-      iconStyle: "outline",
-    },
-  ],
-};
+const selectedItemIndexes = ref(sidebarItems.top[0].id);
+
+const currentItem: ComputedRef<IMenuitem<AsyncComp> | null> = computed(() => {
+  const sid = selectedItemIndexes.value;
+
+  let currentItem: IMenuitem<AsyncComp> | null = null;
+
+  Object.values(sidebarItems).map((section) => {
+    section.find((item) => {
+      if (item.id === sid) currentItem = item;
+    });
+  });
+
+  return currentItem;
+});
 
 watch(
   () => props.isOpen,
@@ -60,8 +46,16 @@ watch(
   }
 );
 
-watch(localIsOpen, (newValue) => {
-  emit("update:is-open", newValue);
+watch(
+  localIsOpen,
+  (newValue) => {
+    emit("update:is-open", newValue);
+  },
+  { immediate: true }
+);
+
+watch(selectedItemIndexes, () => {
+  void router.replace({ query: { settings: currentItem.value?.id } });
 });
 </script>
 
@@ -78,22 +72,24 @@ watch(localIsOpen, (newValue) => {
     <template #sidebar>
       <ActionSheetSidebar>
         <List
-          :size="'sm'"
+          v-model:selected-item-indexes="selectedItemIndexes"
+          size="sm"
           stretch="fill"
           :is-selectable="true"
+          :is-radio-button="true"
           :is-joined="false"
         >
           <MenuItem
-            :id="item.id"
             v-for="item in sidebarItems.top"
+            :id="item.id"
             :is-active="true"
             :title="item.label"
             :icon-name="item.iconName"
           ></MenuItem>
           <Spacer></Spacer>
           <MenuItem
-            :id="item.id"
             v-for="item in sidebarItems.bottom"
+            :id="item.id"
             :is-active="true"
             :title="item.label"
             :icon-name="item.iconName"
@@ -101,6 +97,6 @@ watch(localIsOpen, (newValue) => {
         </List>
       </ActionSheetSidebar>
     </template>
-    <Appearance></Appearance>
+    <component :is="currentItem?.value"></component>
   </ActionSheet>
 </template>

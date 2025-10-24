@@ -23,7 +23,7 @@
           "$unit": "px"
         },
         "borderRadius": {
-          "$value": "{tokens.spacing.sm}",
+          "$value": "{tokens.roundness.sm}",
           "$type": "number",
           "$unit": "px"
         }
@@ -79,6 +79,123 @@
         },
         "borderRadius": {
           "$value": "{tokens.roundness.sm}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "label": {
+        "fontStyle": {
+          "$value": "body-2",
+          "$type": "string",
+          "$unit": "alias"
+        },
+        "paddingTop": {
+          "$value": "{tokens.spacing.xxs}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "placeholder": {
+        "fontStyle": {
+          "$value": "body-2",
+          "$type": "string",
+          "$unit": "alias"
+        }
+      },
+      "validationMessage": {
+        "fontStyle": {
+          "$value": "label-1",
+          "$type": "string",
+          "$unit": "alias"
+        },
+        "padding": {
+          "$value": [0, "{tokens.spacing.md}", 0, "{tokens.spacing.md}"],
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    }
+  },
+  "rounded": {
+    "lg": {
+      "root": {
+        "height": {
+          "$value": 52,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "wholeHeight": {
+          "$value": 68,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": [
+            "{tokens.spacing.xs}",
+            "{tokens.spacing.md}",
+            "{tokens.spacing.xs}",
+            "{tokens.spacing.md}"
+          ],
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.infinity}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "label": {
+        "fontStyle": {
+          "$value": "body-2",
+          "$type": "string",
+          "$unit": "alias"
+        },
+        "padding-top": {
+          "$value": "{tokens.spacing.xxs}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "placeholder": {
+        "fontStyle": {
+          "$value": "body-2",
+          "$type": "string",
+          "$unit": "alias"
+        }
+      },
+      "validationMessage": {
+        "fontStyle": {
+          "$value": "label-1",
+          "$type": "string",
+          "$unit": "alias"
+        },
+        "padding": {
+          "$value": [0, "{tokens.spacing.md}", 0, "{tokens.spacing.md}"],
+          "$type": "number",
+          "$unit": "px"
+        }
+      }
+    },
+    "md": {
+      "root": {
+        "height": {
+          "$value": 44,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "wholeHeight": {
+          "$value": 60,
+          "$type": "number",
+          "$unit": "px"
+        },
+        "padding": {
+          "$value": ["{tokens.spacing.xs}", "{tokens.spacing.md}"],
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.infinity}",
           "$type": "number",
           "$unit": "px"
         }

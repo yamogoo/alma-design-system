@@ -22,7 +22,7 @@
     "**/*.css"
   ],
   "scripts": {
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint": "eslint 'src/**/*.{ts,tsx,vue}'",
     "dev": "vite",
     "build": "vue-tsc -b tsconfig.app.json && vite build --mode production --config vite.config.ts",
     "preview": "vite preview",

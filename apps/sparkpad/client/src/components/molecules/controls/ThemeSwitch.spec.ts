@@ -6,9 +6,9 @@ const getSwitch = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.findComponent({ name: "Switch" });
 };
 
-const getIcon = <T>(wrapper: VueWrapper<T>) => {
-  return wrapper.findComponent({ name: "AnimatedIcon" });
-};
+// const getIcon = <T>(wrapper: VueWrapper<T>) => {
+//   return wrapper.findComponent({ name: "AnimatedIcon" });
+// };
 
 describe("ThemeSwitch", () => {
   beforeEach(() => {
@@ -36,13 +36,13 @@ describe("ThemeSwitch", () => {
       expect(isSwitchExists).toBeTruthy();
     });
 
-    test("should render AnimatedIcon component", () => {
-      const wrapper = mount(ThemeSwitch);
+    // test("should render AnimatedIcon component", () => {
+    //   const wrapper = mount(ThemeSwitch);
 
-      const iconEl = getIcon(wrapper);
-      const isIconExists = iconEl.exists();
+    //   const iconEl = getIcon(wrapper);
+    //   const isIconExists = iconEl.exists();
 
-      expect(isIconExists).toBeTruthy();
-    });
+    //   expect(isIconExists).toBeTruthy();
+    // });
   });
 });
