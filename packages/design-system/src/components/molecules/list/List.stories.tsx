@@ -98,7 +98,7 @@ export const Joined: Story = {
     setup() {
       return () => (
         <StoryGrid columns={1}>
-          <List isMultiple={false}>
+          <List isMultiple={false} isClickable={true}>
             {ITEMS.map((item) => (
               <ListItem id={item} title={item}></ListItem>
             ))}

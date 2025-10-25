@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<ListItemProps>(), {
   iconStyle: "outline",
   iconWeight: "400",
   isJoined: true,
+  isClickable: true,
   isSelectOnRelease: true,
   isDisabled: false,
   bordered: false,
@@ -63,7 +64,6 @@ const cursor = computed(() => (isSelectable.value ? "pointer" : "auto"));
 
 const isSelectable = computed(() => Boolean(ctx?.isSelectable?.value));
 const isRadioButton = computed(() => Boolean(ctx?.isRadioButton?.value));
-const isClickable = computed(() => Boolean(ctx?.isClickable?.value));
 
 const role = computed(() => {
   if (!isSelectable.value) return "listitem";
@@ -84,6 +84,10 @@ const tabIndex = computed(() => (props.isFocused ? 0 : -1));
 
 const localIsJoined = computed(() => {
   return ctx?.isJoined ? ctx.isJoined.value : props.isJoined;
+});
+
+const localIsclickable = computed(() => {
+  return ctx?.isClickable ? ctx.isClickable.value : props.isClickable;
 });
 
 const isCurrentItemShown = computed(() => {
@@ -177,9 +181,16 @@ const onFocusPrev = (): void => {
         </div>
       </template>
       <div
-        v-if="$slots.append || isClickable"
+        v-if="$slots.append || localIsclickable"
         :class="`${LIST_ITEM_PREFIX}__append`"
       >
+        <Text
+          v-if="value"
+          :class="`${LIST_ITEM_PREFIX}__value`"
+          :data-testid="`${LIST_ITEM_PREFIX}-value`"
+        >
+          {{ value }}
+        </Text>
         <slot name="append">
           <Icon
             :class="`${LIST_ITEM_PREFIX}__chevron`"
@@ -215,6 +226,8 @@ $prefix: getPrefix($tokenName);
           $title-font-style: get($val, "title.font-style");
           $description-font-style: get($val, "description.font-style");
           $description-padding-top: get($val, "description.padding-top");
+
+          $value-font-style: get($val, "value.font-style");
 
           $chevron-size: px2rem(get($val, "chevron.size"));
 
@@ -288,6 +301,9 @@ $prefix: getPrefix($tokenName);
             padding-top: $description-padding-top;
             @extend %t__#{$description-font-style};
           }
+          @include where(".#{$prefix}__value") {
+            @extend %t__#{$value-font-style};
+          }
           @include where(".#{$prefix}__chevron") {
             @include box($chevron-size);
           }
@@ -320,6 +336,14 @@ $prefix: getPrefix($tokenName);
       @include themify($themes) {
         color: themed(
           "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.description.#{$state}"
+        );
+      }
+    }
+
+    .#{$prefix}__value {
+      @include themify($themes) {
+        color: themed(
+          "components.atoms.#{$tokenName}.#{$mode}.#{$tone}.value.#{$state}"
         );
       }
     }

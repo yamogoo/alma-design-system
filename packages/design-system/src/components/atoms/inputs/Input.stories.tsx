@@ -79,9 +79,7 @@ export const Colors: Story = {
         <>
           <PageHeader
             title={"Input colors"}
-            description={
-              "Shows variant and size combinations with consistent mode and tone."
-            }
+            description={"Shows mode and tone."}
           ></PageHeader>
           <StoryGrid columns={2}>
             {inputModes.map((mode) =>

@@ -960,6 +960,13 @@
               "$type": "number"
             }
           },
+          "value": {
+            "fontStyle": {
+              "$value": "label-1",
+              "$type": "string",
+              "$unit": ""
+            }
+          },
           "icon": {
             "size": {
               "$value": 18,
@@ -1034,6 +1041,13 @@
               "$value": 8,
               "$unit": "px",
               "$type": "number"
+            }
+          },
+          "value": {
+            "fontStyle": {
+              "$value": "label-1",
+              "$type": "string",
+              "$unit": ""
             }
           },
           "icon": {

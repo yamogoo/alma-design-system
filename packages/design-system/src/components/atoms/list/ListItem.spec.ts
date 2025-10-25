@@ -59,7 +59,7 @@ describe("ListItem", () => {
     test("should have props-based classes and joined modifier", () => {
       const props: ListItemProps = {
         id: "x",
-        variant: "default",
+        variant: "list",
         size: "md",
         mode: "neutral",
         tone: "primary",

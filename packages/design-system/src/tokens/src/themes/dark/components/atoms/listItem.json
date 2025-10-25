@@ -115,6 +115,28 @@
           "$unit": "hex"
         }
       },
+      "value": {
+        "normal": {
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.normal}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.contracts.interactive.label.neutral.tertiary.disabled}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.dark.contracts.interactive.label.accent.tertiary.hovered}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.dark.contracts.interactive.label.accent.tertiary.selected}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
       "chevron": {
         "normal": {
           "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.selected}",
@@ -232,6 +254,28 @@
         }
       },
       "description": {
+        "normal": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.disabled}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "value": {
         "normal": {
           "$value": "{themes.dark.contracts.interactive.onSurface.neutral.primary.normal}",
           "$type": "color",

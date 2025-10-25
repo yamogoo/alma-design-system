@@ -59,6 +59,13 @@
           "$type": "number"
         }
       },
+      "value": {
+        "fontStyle": {
+          "$value": "label-1",
+          "$type": "string",
+          "$unit": ""
+        }
+      },
       "icon": {
         "size": {
           "$value": "{components.atoms.icon.default.sm.root.size}",
@@ -133,6 +140,13 @@
           "$value": "{tokens.spacing.xs}",
           "$unit": "px",
           "$type": "number"
+        }
+      },
+      "value": {
+        "fontStyle": {
+          "$value": "label-1",
+          "$type": "string",
+          "$unit": ""
         }
       },
       "icon": {

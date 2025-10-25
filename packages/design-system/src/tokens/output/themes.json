@@ -2682,6 +2682,28 @@
                   "$unit": "hex"
                 }
               },
+              "value": {
+                "normal": {
+                  "$value": "#666e74",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#818990",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#436ffe",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#3161fe",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
               "chevron": {
                 "normal": {
                   "$value": "#d2d5d7",
@@ -2799,6 +2821,28 @@
                 }
               },
               "description": {
+                "normal": {
+                  "$value": "#c5c9cc",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#fafbfb",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#f7f9ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "value": {
                 "normal": {
                   "$value": "#c5c9cc",
                   "$type": "color",
@@ -13781,6 +13825,28 @@
                   "$unit": "hex"
                 }
               },
+              "value": {
+                "normal": {
+                  "$value": "#848c93",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#a9afb4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0133da",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#0130ce",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
               "chevron": {
                 "normal": {
                   "$value": "#1c1f20",
@@ -13898,6 +13964,28 @@
                 }
               },
               "description": {
+                "normal": {
+                  "$value": "#1c1f20",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "disabled": {
+                  "$value": "#232728",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "hovered": {
+                  "$value": "#0139f4",
+                  "$type": "color",
+                  "$unit": "hex"
+                },
+                "selected": {
+                  "$value": "#dbe3ff",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              },
+              "value": {
                 "normal": {
                   "$value": "#1c1f20",
                   "$type": "color",

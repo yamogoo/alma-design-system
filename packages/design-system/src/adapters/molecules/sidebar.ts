@@ -14,11 +14,11 @@ export const sidebarSizes = Object.keys(
 export type SidebarMode =
   keyof typeof tokens.themes.light.components.molecules.sidebar;
 export const sidebarModes = Object.keys(
-  tokens.light.components.molecules.sidebar
+  tokens.themes.light.components.molecules.sidebar
 ) as SidebarMode[];
 
 export type SidebarTone =
   keyof typeof tokens.themes.light.components.molecules.sidebar.neutral;
 export const sidebarTones = Object.keys(
-  tokens.light.components.molecules.sidebar.neutral
+  tokens.themes.light.components.molecules.sidebar.neutral
 ) as SidebarTone[];

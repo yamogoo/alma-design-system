@@ -25,8 +25,6 @@ export const useElementFollowCursor = (
       parentRect.height - childRect.height
     );
 
-    console.log(clampedX, clampedY);
-
     childEl.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
   }
 

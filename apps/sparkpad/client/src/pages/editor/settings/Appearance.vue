@@ -64,12 +64,13 @@ const localLineHeight = computed({
 <template>
   <List :is-selectable="false">
     <ListItem
-      :id="'1'"
+      id="1"
       mode="neutral"
       tone="canvas"
       :is-disabled="localIsSystemThemeEnabled"
       :is-joined="true"
       :title="'Theme'"
+      :description="currentTheme"
     >
       <template #append>
         <Switch
@@ -82,7 +83,7 @@ const localLineHeight = computed({
       </template>
     </ListItem>
     <ListItem
-      :id="'2'"
+      id="2"
       mode="neutral"
       tone="canvas"
       :is-joined="true"
@@ -98,7 +99,7 @@ const localLineHeight = computed({
       </template>
     </ListItem>
     <ListItem
-      :id="'3'"
+      id="3"
       mode="neutral"
       tone="canvas"
       :is-joined="true"
@@ -111,7 +112,7 @@ const localLineHeight = computed({
   </List>
   <List :is-selectable="false">
     <ListItem
-      :id="'4'"
+      id="4"
       mode="neutral"
       tone="canvas"
       :is-joined="true"
@@ -123,7 +124,7 @@ const localLineHeight = computed({
       </template>
     </ListItem>
     <ListItem
-      :id="'5'"
+      id="5"
       mode="neutral"
       tone="canvas"
       :is-joined="true"
@@ -134,11 +135,12 @@ const localLineHeight = computed({
       </template>
     </ListItem>
     <ListItem
-      :id="'6'"
+      id="6"
       mode="neutral"
       tone="canvas"
       :is-joined="true"
       :title="'Font size'"
+      :description="`${Math.round(localFontSize)}px`"
     >
       <template #append>
         <Slider
@@ -146,16 +148,20 @@ const localLineHeight = computed({
           v-model:value="localFontSize"
           :min="Constants.EDITOR_FONT_MIN_SIZE"
           :max="Constants.EDITOR_FONT_MAX_SIZE"
+          :is-snap-to-step="true"
+          :snap-threshold="1"
+          :step="1"
         >
         </Slider>
       </template>
     </ListItem>
     <ListItem
-      :id="'7'"
+      id="7"
       mode="neutral"
       tone="canvas"
       :is-joined="true"
       :title="'Tab ident size'"
+      :description="`${Math.round(localTabIdentSize)}px`"
     >
       <template #append>
         <Slider
@@ -163,16 +169,20 @@ const localLineHeight = computed({
           v-model:value="localTabIdentSize"
           :min="Constants.EDITOR_MIN_TAB_IDENT_SIZE"
           :max="Constants.EDITOR_MAX_TAB_IDENT_SIZE"
+          :is-snap-to-step="true"
+          :snap-threshold="1"
+          :step="1"
         >
         </Slider>
       </template>
     </ListItem>
     <ListItem
-      :id="'8'"
+      id="8"
       mode="neutral"
       tone="canvas"
       :is-joined="true"
-      :title="'Line height'"
+      :title="`Line height`"
+      :description="`${Math.round(localLineHeight)}px`"
     >
       <template #append>
         <Slider
@@ -180,6 +190,9 @@ const localLineHeight = computed({
           v-model:value="localLineHeight"
           :min="Constants.EDITOR_MIN_LINE_HEIGHT"
           :max="Constants.EDITOR_MAX_LINE_HEIGHT"
+          :is-snap-to-step="true"
+          :snap-threshold="0.1"
+          :step="0.1"
         >
         </Slider>
       </template>

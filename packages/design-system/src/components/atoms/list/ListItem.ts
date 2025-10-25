@@ -19,8 +19,8 @@ export interface IListItem {
   id: string | number | symbol;
   title: string;
   description?: string;
+  value?: string;
   isJoined?: boolean;
-  divider?: boolean;
   isDisabled?: boolean;
 }
 
@@ -39,6 +39,7 @@ export interface ListItemProps
   as?: UIElementMaybeListItemOrBlockTag;
   isActive?: boolean;
   isFocused?: boolean;
+  isClickable?: boolean;
   isSelectOnRelease?: boolean;
 }
 

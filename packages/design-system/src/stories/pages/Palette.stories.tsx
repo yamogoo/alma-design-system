@@ -58,7 +58,7 @@ export const Variants: Story = {
                   <ColorBlock
                     {...args}
                     name={String(name)}
-                    colorValue={String(color)}
+                    colorValue={String(color.$value)}
                   ></ColorBlock>
                 </InfoBlock>
               );

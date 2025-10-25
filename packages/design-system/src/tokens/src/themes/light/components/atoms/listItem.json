@@ -115,6 +115,28 @@
           "$unit": "hex"
         }
       },
+      "value": {
+        "normal": {
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.normal}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.light.contracts.interactive.label.neutral.tertiary.disabled}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.light.contracts.interactive.label.accent.tertiary.hovered}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.light.contracts.interactive.label.accent.tertiary.selected}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
       "chevron": {
         "normal": {
           "$value": "{themes.light.contracts.interactive.onSurface.neutral.canvas.selected}",
@@ -203,7 +225,7 @@
       "divider": {
         "border": {
           "normal": {
-            "$value": "{themes.light.contracts.interactive.border.neutral.canvas.normal}",
+            "$value": "{themes.light.contracts.interactive.border.neutral.primary.normal}",
             "$type": "color",
             "$unit": "hex"
           }
@@ -232,6 +254,28 @@
         }
       },
       "description": {
+        "normal": {
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.normal}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "disabled": {
+          "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.disabled}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "hovered": {
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.secondary.hovered}",
+          "$type": "color",
+          "$unit": "hex"
+        },
+        "selected": {
+          "$value": "{themes.light.contracts.interactive.onSurface.accent.tertiary.selected}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "value": {
         "normal": {
           "$value": "{themes.light.contracts.interactive.onSurface.neutral.primary.normal}",
           "$type": "color",
