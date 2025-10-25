@@ -6,7 +6,7 @@
       "$unit": "hex"
     },
     "base-down-2": {
-      "$value": "shift_oklch({themes.light.contracts.rel.surface.neutral.base-down-2.$value}, {themes.light.abstracts.config.rel.border.delta.lightness.base-down-2.$value})",
+      "$value": "shift_oklch({themes.light.contracts.rel.surface.neutral.base-down-3.$value}, {themes.light.abstracts.config.rel.border.delta.lightness.base-down-3.$value})",
       "$type": "color",
       "$unit": "hex"
     },

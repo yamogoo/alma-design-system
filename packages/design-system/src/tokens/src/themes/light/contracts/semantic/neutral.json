@@ -28,7 +28,7 @@
   },
   "primary": {
     "border": {
-      "$value": "{themes.light.contracts.rel.border.neutral.base-down-1}",
+      "$value": "{themes.light.contracts.rel.border.neutral.base-down-2}",
       "$type": "color",
       "$unit": "hex"
     },
