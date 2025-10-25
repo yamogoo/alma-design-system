@@ -11,6 +11,9 @@ export { default as Page } from "./Page.vue";
 export * from "./ResizeBounding";
 export { default as ResizeBounding } from "./ResizeBounding.vue";
 
+export * from "./ScrollView";
+export { default as ScrollView } from "./ScrollView.vue";
+
 export * from "./Stack";
 export { default as Stack } from "./Stack.vue";
 

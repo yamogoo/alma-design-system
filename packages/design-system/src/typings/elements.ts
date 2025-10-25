@@ -201,3 +201,15 @@ export interface UIElementElevatedProps {
 export interface UIElementBorderProps {
   border?: string;
 }
+
+export interface UIElementTitleProps {
+  title: string;
+}
+
+export interface UIElementDescriptionProps {
+  description: string;
+}
+
+export interface UIElementValueProps {
+  value: string;
+}

@@ -22,7 +22,7 @@ Code-first R&D space for UI systems: Vue components, design tokens, adapters, St
 
 ## Why This Exists
 
-Alma Design System is a laboratory for testing component architecture, token pipelines, theming strategies, and design-to-code workflows. It is intentionally experimental and subject to breaking changes while ideas are validated. The ultimate goal — to evolve into a **production-ready DS toolkit** demonstrating enterprise-grade runtime theming and motion-token architecture.
+Alma Design System is a laboratory for testing component architecture, token pipelines, theming strategies, and design-to-code workflows. It is intentionally experimental and subject to breaking changes while ideas are validated.
 
 ## Monorepo Layout
 

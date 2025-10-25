@@ -1,0 +1,13 @@
+{
+  "neutral": {
+    "primary": {
+      "title": {
+        "color": {
+          "$value": "{themes.dark.contracts.interactive.label.neutral.primary.normal}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      }
+    }
+  }
+}

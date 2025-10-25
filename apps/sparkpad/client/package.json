@@ -27,8 +27,7 @@
     "build": "vue-tsc -b tsconfig.app.json && vite build --mode production --config vite.config.ts",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "test:ui": "vitest --ui",
-    "tokens:build": "node style-dictionary.config.js"
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@alma/design-system": "workspace:*",

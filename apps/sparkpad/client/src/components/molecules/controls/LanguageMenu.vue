@@ -4,7 +4,7 @@ import { storeToRefs } from "pinia";
 import { useLocaleStore } from "@/stores";
 
 import { Constants } from "@/constants";
-import type { Locale } from "@/typings";
+import type { Locale } from "@/typings/locale";
 
 import { Dropdown, Options } from "@alma/design-system";
 

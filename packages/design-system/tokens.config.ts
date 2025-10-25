@@ -1,9 +1,8 @@
-import { createRequire } from "node:module";
+import type { TokensParserConfig } from "@alma/tokens-worker";
 
-const require = createRequire(import.meta.url);
-const configJson = require("./src/tokens/src/config.json");
+import configJson from "./src/tokens/src/config.json";
 
-const PREFIX = configJson.namespace?.$value || "al-";
+const PREFIX: string = configJson.namespace?.$value || "al-";
 
 const TOKENS_SRC = "./src/tokens/src";
 const TOKENS_CACHE = "./src/tokens/.cache";
@@ -21,7 +20,7 @@ export const colorsGeneratorConfig = {
   },
 };
 
-export const tokensParserConfig = {
+export const tokensParserConfig: TokensParserConfig = {
   paths: {
     src: TOKENS_SRC,
     cache: TOKENS_CACHE,

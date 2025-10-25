@@ -425,7 +425,6 @@ $prefix: getPrefix($tokenName);
   box-sizing: border-box;
   display: flex;
   width: 100%;
-  overflow: hidden;
   @include useThemeTransition();
 
   @include where(".#{$prefix}__container") {

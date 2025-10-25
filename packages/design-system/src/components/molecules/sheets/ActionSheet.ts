@@ -1,10 +1,12 @@
 import { NAMESPACE } from "@/constants";
 
-import type { OverlayId } from "@/typings";
+import type { OverlayId, UIElementTitleProps } from "@/typings";
 
 import type { SurfaceProps } from "@/components/atoms/containers/Surface";
 
-export interface ActionSheetProps extends SurfaceProps {
+export interface ActionSheetProps
+  extends SurfaceProps,
+    Partial<UIElementTitleProps> {
   containerId?: OverlayId;
   isOpen: boolean;
 }

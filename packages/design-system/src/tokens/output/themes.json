@@ -4074,6 +4074,19 @@
             }
           }
         },
+        "sectionHeader": {
+          "neutral": {
+            "primary": {
+              "title": {
+                "color": {
+                  "$value": "#b2b7bb",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            }
+          }
+        },
         "sheet": {
           "primary": {}
         },
@@ -13935,7 +13948,7 @@
               "divider": {
                 "border": {
                   "normal": {
-                    "$value": "#ffffff",
+                    "$value": "#c2c4c6",
                     "$type": "color",
                     "$unit": "hex"
                   }
@@ -15211,6 +15224,19 @@
                   "$unit": "hex"
                 },
                 "selected": {
+                  "$value": "#393d41",
+                  "$type": "color",
+                  "$unit": "hex"
+                }
+              }
+            }
+          }
+        },
+        "sectionHeader": {
+          "neutral": {
+            "primary": {
+              "title": {
+                "color": {
                   "$value": "#393d41",
                   "$type": "color",
                   "$unit": "hex"

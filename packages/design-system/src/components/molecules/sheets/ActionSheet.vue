@@ -7,7 +7,8 @@ import { useFacetsClasses } from "@/composables/local/components/useFacetsClasse
 import { UIFACETS, OVERLAY_IDS } from "@/constants/ui";
 
 import { ACTION_SHEET_PREFIX, type ActionSheetProps } from "./ActionSheet";
-import { Surface } from "@/components/atoms/containers";
+import ActionSheetHeader from "./ActionSheetHeader.vue";
+import { ScrollView, Surface } from "@/components/atoms/containers";
 import { Overlay } from "@/components/molecules/containers";
 
 const MODAL_ANIM_DURATION_IN = 0.25,
@@ -131,10 +132,22 @@ const onAnimLeave = (el: Element, done: () => void): void => {
         :border="border"
         :bordered="bordered"
         :rounded="rounded"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby
       >
         <slot name="sidebar"></slot>
         <div :class="[`${ACTION_SHEET_PREFIX}__content`]">
-          <slot> </slot>
+          <slot name="header">
+            <ActionSheetHeader
+              :title="title"
+              :is-active="true"
+              @close="onRequestClose"
+            ></ActionSheetHeader>
+          </slot>
+          <ScrollView :class="[`${ACTION_SHEET_PREFIX}__body`]">
+            <slot> </slot>
+          </ScrollView>
         </div>
       </Surface>
     </Transition>
@@ -185,6 +198,8 @@ $prefix: getPrefix($tokenName);
   @include defineSizes();
 
   &__content {
+    display: flex;
+    flex-direction: column;
     @include box(100%);
     overflow: hidden;
   }

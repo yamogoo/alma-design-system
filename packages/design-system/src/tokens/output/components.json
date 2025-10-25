@@ -2970,6 +2970,36 @@
         }
       }
     },
+    "sectionHeader": {
+      "default": {
+        "md": {
+          "root": {
+            "height": {
+              "$value": 56,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "gap": {
+              "$value": 12,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "padding": {
+              "$value": 12,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "title": {
+            "font-style": {
+              "$value": "title-2",
+              "$type": "string",
+              "$unit": "alias"
+            }
+          }
+        }
+      }
+    },
     "sheet": {
       "default": {
         "lg": {

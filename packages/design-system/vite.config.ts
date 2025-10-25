@@ -10,12 +10,12 @@ import svgLoader from "vite-svg-loader";
 import lightningcss from "vite-plugin-lightningcss";
 import dts from "vite-plugin-dts";
 
-import { colorsGeneratorConfig, tokensParserConfig } from "./tokens.config.js";
+import { colorsGeneratorConfig, tokensParserConfig } from "./tokens.config.ts";
 
 const clone = <T>(value: T): T =>
   typeof structuredClone === "function"
     ? structuredClone(value)
-    : JSON.parse(JSON.stringify(value)) as T;
+    : (JSON.parse(JSON.stringify(value)) as T);
 
 import {
   ColorsGeneratorPlugin,
@@ -77,7 +77,10 @@ export default () => {
       }),
       IS_PRODUCTION &&
         VitePluginFigmaTokensParser({
-          mode: { enforce: "post", apply: "build" },
+          mode: {
+            enforce: "post",
+            apply: "build",
+          },
           paths: {
             input: "./src/tokens/output",
             output: "./src/tokens/.figma",
@@ -101,7 +104,9 @@ export default () => {
       alias: [
         {
           find: "@/tokens/src",
-          replacement: fileURLToPath(new URL("./src/tokens/.cache", import.meta.url)),
+          replacement: fileURLToPath(
+            new URL("./src/tokens/.cache", import.meta.url)
+          ),
         },
         {
           find: "@",

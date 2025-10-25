@@ -16,27 +16,27 @@ const onOpenSettings = (): void => {
 </script>
 
 <template>
-  <NavigationRail class="sidebar-menu" :items="[]" :selected-item-index="1">
+  <NavigationRail :items="[]" :selected-item-index="0" class="sidebar-menu">
     <template #header>
       <Logo></Logo>
     </template>
     <template #footer>
       <Group
-        :variant="'block'"
-        :mode="'neutral'"
-        :tone="'canvas'"
-        :size="'md'"
-        :orientation="'vertical'"
+        variant="block"
+        mode="neutral"
+        tone="canvas"
+        size="md"
+        orientation="vertical"
       >
         <ControlButton
-          :variant="'rounded'"
-          :size="'md'"
-          :mode="'neutral'"
+          variant="rounded"
+          size="md"
+          mode="neutral"
           tone="primary"
-          :icon-size="'lg'"
-          :icon-name="'cog'"
-          :icon-style="'outline'"
-          :icon-weight="'300'"
+          icon-size="lg"
+          icon-name="cog"
+          icon-style="outline"
+          icon-weight="300"
           @press="onOpenSettings"
         ></ControlButton>
       </Group>

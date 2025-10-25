@@ -17,13 +17,13 @@ import {
 } from "@/typings";
 
 import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
+import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
 // import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
 // import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
 
 import type { ActionSheetProps } from "./ActionSheet";
 import ActionSheet from "./ActionSheet.vue";
 import ActionButton from "@/components/molecules/buttons/aliases/ActionButton.vue";
-import Text from "@/components/atoms/typography/Text.vue";
 
 const meta = {
   title: "Molecules/Sheets/ActionSheet",
@@ -45,8 +45,8 @@ const meta = {
     size: enumOptions(actionSheetSizes),
     orientation: enumOptions(UIElementOrientations),
     direction: enumOptions(UIElementDirections),
-    verticalAlignment: enumOptions(UIElementAlignments),
-    horizontalAlignment: enumOptions(UIElementAlignments),
+    alignVertical: enumOptions(UIElementAlignments),
+    alignHorizontal: enumOptions(UIElementAlignments),
     stretch: enumOptions(UIElementStretches),
     wrap: booleanOptions(false),
     divider: booleanOptions(false),
@@ -55,6 +55,8 @@ const meta = {
     size: "md",
     mode: "neutral",
     tone: "canvas",
+    alignHorizontal: "start",
+    alignVertical: "start",
   },
 } satisfies Meta<typeof ActionSheet>;
 
@@ -81,9 +83,9 @@ export const Playground: Story = {
               size="md"
               mode="neutral"
               tone="primary"
-              onRelease={onOpenSheet}
               label="open sheet"
-              stretch="auto"
+              stretch="row"
+              onRelease={onOpenSheet}
             ></ActionButton>
             <ActionSheet
               {...args}
@@ -93,8 +95,9 @@ export const Playground: Story = {
               mode="neutral"
               tone="secondary"
               v-model:is-open={localIsOpen.value}
+              title="Header title"
             >
-              <Text variant="body-1">{"Action Sheet Content"}</Text>
+              <StorySlotCover style={{ height: "880px" }}></StorySlotCover>
             </ActionSheet>
           </StoryGrid>
         </>

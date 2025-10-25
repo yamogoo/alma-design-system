@@ -9,8 +9,7 @@ import type {
   UIElementOrientation,
   UIElementStylingModifiers,
 } from "@/typings";
-
-import type { ISimpleMenuItem } from "@/components/atoms/menu/menu";
+import type { SimpleMenuItems } from "./menu";
 
 export type SimpleMenuOrientation = UIElementOrientation;
 
@@ -30,7 +29,7 @@ export interface SimpleMenuProps
 
 export interface SimpleMenuProps<T = string> {
   selectedItemIndex: number;
-  items: ISimpleMenuItem<T>;
+  items: SimpleMenuItems<T>;
   orientation?: SimpleMenuOrientation;
 }
 
