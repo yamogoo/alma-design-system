@@ -89,7 +89,7 @@ const onLeave = (el: Element, done: () => void): void => {
       icon-name="cross"
       icon-style="outline"
       icon-weight="400"
-      @press="onClose"
+      @click="onClose"
     ></ControlButton>
   </component>
 </template>

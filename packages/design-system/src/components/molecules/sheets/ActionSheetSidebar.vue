@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import type { ActionSheetSidebarProps } from "./ActionSheetSidebar";
 import Sidebar from "@/components/molecules/panels/Sidebar.vue";
-
-withDefaults(defineProps<ActionSheetSidebarProps>(), {});
 </script>
 
 <template>

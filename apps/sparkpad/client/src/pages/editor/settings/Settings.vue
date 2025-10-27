@@ -2,14 +2,10 @@
 import { computed, ref, watch, type ComputedRef } from "vue";
 import { useRouter } from "vue-router";
 
-import { sidebarItems, type AsyncComp, type SettingsProps } from "./Settings";
+import { menuItems, type AsyncComp, type SettingsProps } from "./Settings";
 
 import {
-  ActionSheet,
-  ActionSheetSidebar,
-  List,
-  Spacer,
-  MenuItem,
+  ActionSheetSettingsTemplate,
   type IMenuitem,
 } from "@alma/design-system";
 
@@ -23,14 +19,14 @@ const router = useRouter();
 
 const localIsOpen = ref(props.isOpen);
 
-const selectedItemIndexes = ref(sidebarItems.top[0].id);
+const selectedItemIndexes = ref(menuItems.top[0].id);
 
 const currentItem: ComputedRef<IMenuitem<AsyncComp> | null> = computed(() => {
   const sid = selectedItemIndexes.value;
 
   let currentItem: IMenuitem<AsyncComp> | null = null;
 
-  Object.values(sidebarItems).map((section) => {
+  Object.values(menuItems).map((section) => {
     section.find((item) => {
       if (item.id === sid) currentItem = item;
     });
@@ -60,43 +56,11 @@ watch(selectedItemIndexes, () => {
 </script>
 
 <template>
-  <ActionSheet
+  <ActionSheetSettingsTemplate
     v-model:is-open="localIsOpen"
-    size="lg"
-    mode="neutral"
-    tone="canvas"
-    orientation="horizontal"
-    align-horizontal="start"
-    align-vertical="start"
+    v-model:selected-item-indexes="selectedItemIndexes"
+    :menu-items="menuItems"
   >
-    <template #sidebar>
-      <ActionSheetSidebar>
-        <List
-          v-model:selected-item-indexes="selectedItemIndexes"
-          size="sm"
-          stretch="fill"
-          :is-selectable="true"
-          :is-radio-button="true"
-          :is-joined="false"
-        >
-          <MenuItem
-            v-for="item in sidebarItems.top"
-            :id="item.id"
-            :is-active="true"
-            :title="item.label"
-            :icon-name="item.iconName"
-          ></MenuItem>
-          <Spacer></Spacer>
-          <MenuItem
-            v-for="item in sidebarItems.bottom"
-            :id="item.id"
-            :is-active="true"
-            :title="item.label"
-            :icon-name="item.iconName"
-          ></MenuItem>
-        </List>
-      </ActionSheetSidebar>
-    </template>
     <component :is="currentItem?.value"></component>
-  </ActionSheet>
+  </ActionSheetSettingsTemplate>
 </template>

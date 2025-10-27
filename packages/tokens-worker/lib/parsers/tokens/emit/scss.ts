@@ -268,6 +268,7 @@ export class SCSSParser extends Parser {
         const normalized = this.normalizeValue(val, {
           ...localOpts,
           key: typeof tVal === 'string' ? tVal : localOpts.key,
+          unit: typeof uVal === 'string' ? uVal : localOpts.unit,
         });
 
         let rendered = normalized;

@@ -4,7 +4,7 @@ import { getTypedEmittedEvent } from "@/__tests__/utils";
 
 import { UIFACETS } from "@/constants/ui";
 
-import { type MenuItems } from "@/components/atoms/menu/menu";
+import { type ISimpleMenuItem } from "@/components/atoms/menu/menu";
 import { SIMPLE_MENU_PREFIX } from "./SimpleMenu";
 import SimpleMenu from "@/components/atoms/menu/SimpleMenu.vue";
 
@@ -20,7 +20,7 @@ const getItems = <T>(wrapper: VueWrapper<T>) => {
   return wrapper.findAll(`[data-testid="${Classes.ROOT}__item"]`);
 };
 
-const items: MenuItems = [
+const items: ISimpleMenuItem[] = [
   {
     id: 0,
     label: "First",

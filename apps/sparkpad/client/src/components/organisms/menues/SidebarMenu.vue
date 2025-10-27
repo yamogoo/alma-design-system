@@ -37,7 +37,7 @@ const onOpenSettings = (): void => {
           icon-name="cog"
           icon-style="outline"
           icon-weight="300"
-          @press="onOpenSettings"
+          @click="onOpenSettings"
         ></ControlButton>
       </Group>
     </template>

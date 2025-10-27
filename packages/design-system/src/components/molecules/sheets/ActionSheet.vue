@@ -8,8 +8,9 @@ import { UIFACETS, OVERLAY_IDS } from "@/constants/ui";
 
 import { ACTION_SHEET_PREFIX, type ActionSheetProps } from "./ActionSheet";
 import ActionSheetHeader from "./ActionSheetHeader.vue";
-import { ScrollView, Surface } from "@/components/atoms/containers";
-import { Overlay } from "@/components/molecules/containers";
+import ScrollView from "@/components/atoms/containers/ScrollView.vue";
+import Surface from "@/components/atoms/containers/Surface.vue";
+import Overlay from "@/components/molecules/containers/Overlay.vue";
 
 const MODAL_ANIM_DURATION_IN = 0.25,
   MODAL_ANIM_DURATION_OUT = 0.25;
@@ -165,17 +166,9 @@ $prefix: getPrefix($tokenName);
     @each $size, $val in $sizes {
       &_variant-#{$variant} {
         &.#{$prefix}_size-#{$size} {
-          $min-width: #{get($val, "root.min-width")};
-          $max-width: #{get($val, "root.max-width")};
-          $min-height: #{get($val, "root.min-height")};
-          $max-height: #{get($val, "root.max-height")};
-          $border-radius: #{px2rem(get($val, "root.border-radius"))};
-
-          --#{$prefix}-min-width: #{$min-width};
-          --#{$prefix}-max-width: #{$max-width};
-          --#{$prefix}-min-height: #{$min-height};
-          --#{$prefix}-max-height: #{$max-height};
-          --#{$prefix}-border-radius: #{$border-radius};
+          @include apply-token($val, width, "root.width");
+          @include apply-token($val, height, "root.height");
+          @include apply-token($val, border-radius, "root.border-radius");
         }
       }
     }
@@ -184,15 +177,6 @@ $prefix: getPrefix($tokenName);
 
 .#{$prefix} {
   box-sizing: border-box;
-  height: var(--#{$prefix}-min-height, 100%);
-  @include minBox(
-    var(--#{$prefix}-min-width, 100%),
-    var(--#{$prefix}-min-height, 100%)
-  );
-  @include maxBox(
-    var(--#{$prefix}-max-width, 100%),
-    var(--#{$prefix}-max-height, 100%)
-  );
   overflow: auto;
 
   @include defineSizes();

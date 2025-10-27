@@ -4,7 +4,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 
 import { SCSSParser } from './scss.js';
 import type { SCSSParserContext } from './scss.js';
-import type { ParseValueOptions } from '../types.js';
+import type { ParseValueOptions, ServiceField } from '../types.js';
 
 const BASE_PARSE_OPTS: ParseValueOptions = {
   convertPxToRem: false,
@@ -41,7 +41,10 @@ const createContext = (override?: Partial<SCSSParserContext>): SCSSParserContext
     },
     tryParseColor: (value: string) => (value.startsWith('#') ? value : null),
     parseNestedValue: (value: string) => value.replace('{alias}', '#ffffff'),
-    resolveIncludeServiceFields: () => ({ includeAll: false, set: new Set(['value', 'meta']) }),
+    resolveIncludeServiceFields: () => ({
+      includeAll: false,
+      set: new Set<ServiceField>(['value', 'meta', 'respond']),
+    }),
     toKebabCase: (value: string) => value.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase(),
     isKeyValid: () => true,
     verbose: false,
@@ -117,5 +120,27 @@ describe('SCSSParser', () => {
     const out = parser.parseMap(data, { ...BASE_PARSE_OPTS, convertCase: true }, ['typography']);
 
     expect(out).toContain('header-style');
+  });
+
+  it('uses nested respond units when provided', () => {
+    const token = {
+      value: 540,
+      type: 'dimension',
+      unit: 'px',
+      respond: {
+        below: {
+          md: {
+            value: 100,
+            type: 'dimension',
+            unit: '%',
+          },
+        },
+      },
+    };
+
+    const out = parser.parseMap(token, BASE_PARSE_OPTS, ['components', 'card', 'height']);
+
+    expect(out).toContain('value: 540px');
+    expect(out).toContain('md: 100%');
   });
 });

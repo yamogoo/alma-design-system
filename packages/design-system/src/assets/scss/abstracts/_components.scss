@@ -1533,45 +1533,32 @@ $components: (
   default: (
   lg: (
   root: (
-  min-width: (
-  value: 860px
+  width: (
+  value: 860px,
+  respond: (
+  below: (
+  md: 100%
+)
+)
 ),
-  max-width: (
-  value: 860px
-),
-  min-height: (
-  value: 540px
-),
-  max-height: (
-  value: 540px
+  height: (
+  value: 540px,
+  respond: (
+  below: (
+  md: 100%
+)
+)
 ),
   border-radius: (
-  value: 32px
+  value: 32px,
+  respond: (
+  below: (
+  md: 0px
+)
+)
 ),
   padding: (
   value: 48px 24px 24px 24px
-)
-)
-),
-  md: (
-  root: (
-  min-width: (
-  value: 320px
-),
-  max-width: (
-  value: 860px
-),
-  min-height: (
-  value: 540px
-),
-  max-height: (
-  value: 540px
-),
-  border-radius: (
-  value: 24px
-),
-  padding: (
-  value: 24px 24px
 )
 )
 )

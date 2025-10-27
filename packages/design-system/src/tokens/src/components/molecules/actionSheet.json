@@ -2,30 +2,47 @@
   "default": {
     "lg": {
       "root": {
-        "minWidth": {
+        "width": {
           "$value": 860,
           "$type": "number",
-          "$unit": "px"
+          "$unit": "px",
+          "$respond": {
+            "below": {
+              "md": {
+                "$value": 100,
+                "$type": "number",
+                "$unit": "%"
+              }
+            }
+          }
         },
-        "maxWidth": {
-          "$value": 860,
-          "$type": "number",
-          "$unit": "px"
-        },
-        "minHeight": {
+        "height": {
           "$value": 540,
           "$type": "number",
-          "$unit": "px"
-        },
-        "maxHeight": {
-          "$value": 540,
-          "$type": "number",
-          "$unit": "px"
+          "$unit": "px",
+          "$respond": {
+            "below": {
+              "md": {
+                "$value": 100,
+                "$type": "number",
+                "$unit": "%"
+              }
+            }
+          }
         },
         "borderRadius": {
           "$value": "{tokens.roundness.xxl}",
           "$type": "number",
-          "$unit": "px"
+          "$unit": "px",
+          "$respond": {
+            "below": {
+              "md": {
+                "$value": 0,
+                "$type": "number",
+                "$unit": "px"
+              }
+            }
+          }
         },
         "padding": {
           "$value": [
@@ -34,40 +51,6 @@
             "{tokens.spacing.lg}",
             "{tokens.spacing.lg}"
           ],
-          "$type": "number",
-          "$unit": "px"
-        }
-      }
-    },
-    "md": {
-      "root": {
-        "minWidth": {
-          "$value": 320,
-          "$type": "number",
-          "$unit": "px"
-        },
-        "maxWidth": {
-          "$value": 860,
-          "$type": "number",
-          "$unit": "px"
-        },
-        "minHeight": {
-          "$value": 540,
-          "$type": "number",
-          "$unit": "px"
-        },
-        "maxHeight": {
-          "$value": 540,
-          "$type": "number",
-          "$unit": "px"
-        },
-        "borderRadius": {
-          "$value": "{tokens.roundness.xl}",
-          "$type": "number",
-          "$unit": "px"
-        },
-        "padding": {
-          "$value": ["{tokens.spacing.lg}", "{tokens.spacing.lg}"],
           "$type": "number",
           "$unit": "px"
         }

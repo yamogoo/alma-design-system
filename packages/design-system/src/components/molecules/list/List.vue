@@ -7,7 +7,6 @@ import {
   type ListInjection,
   type ListProps,
   type ListSelectedItemIndex,
-  type ListSelectedItemIndexes,
 } from "./List";
 
 import { type IListItem } from "@/components/atoms/list/ListItem";
@@ -29,8 +28,14 @@ const props = withDefaults(defineProps<ListProps>(), {
 });
 
 const emit = defineEmits<{
-  "update:selected-item-indexes": ListSelectedItemIndexes;
-  change: ListSelectedItemIndexes;
+  (
+    e: "update:selected-item-indexes",
+    selectedItemIndexes: ListSelectedItemIndex | ListSelectedItemIndex[] | null
+  ): void;
+  (
+    e: "change",
+    selectedItemIndexes: ListSelectedItemIndex | ListSelectedItemIndex[] | null
+  ): void;
 }>();
 
 const rootTag = computed(

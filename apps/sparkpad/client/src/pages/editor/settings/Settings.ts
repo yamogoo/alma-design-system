@@ -1,10 +1,10 @@
 import { defineAsyncComponent } from "vue";
 
-import { type IMenuitem } from "@alma/design-system";
+import { type ActionSheetSettingsTemplateMenuItems } from "@alma/design-system";
 
 export type AsyncComp = ReturnType<typeof defineAsyncComponent>;
 
-export const sidebarItems = {
+export const menuItems: ActionSheetSettingsTemplateMenuItems = {
   top: [
     {
       id: "appearance",
@@ -45,7 +45,7 @@ export const sidebarItems = {
       ) as AsyncComp,
     },
   ],
-} satisfies Record<"top" | "bottom", IMenuitem<AsyncComp>[]>;
+};
 
 export interface SettingsProps {
   isOpen: boolean;

@@ -1,3 +1,5 @@
+import type { defineAsyncComponent } from "vue";
+
 import type { TransitionType } from "@/typings";
 
 export interface RouteMeta {
@@ -6,3 +8,5 @@ export interface RouteMeta {
   transitionIn?: TransitionType;
   transitionOut?: TransitionType;
 }
+
+export type AsyncComp = ReturnType<typeof defineAsyncComponent>;

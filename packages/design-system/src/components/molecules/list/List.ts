@@ -13,7 +13,7 @@ export type ListItems = Array<IListItem> | Array<string>;
 
 export interface ListProps extends Omit<GroupProps, "as"> {
   as?: UIElementMaybeListOrBlockTag;
-  selectedItemIndexes?: IListItem["id"] | IListItem["id"][] | null;
+  selectedItemIndexes?: ListSelectedItemIndex | ListSelectedItemIndex[] | null;
   items?: ListItems;
   isCurrentItemShown?: boolean;
   isSelectable?: boolean;
