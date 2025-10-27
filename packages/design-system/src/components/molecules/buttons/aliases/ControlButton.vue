@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<ControlButtonProps>(), {
 const emit = defineEmits<{
   (e: "press", ev: PointerEvent): void;
   (e: "release", ev: PointerEvent): void;
+  (e: "click", ev: MouseEvent): void;
 }>();
 
 const onPointerUp = (e: PointerEvent): void => {
@@ -20,6 +21,11 @@ const onPointerUp = (e: PointerEvent): void => {
 const onPointerDown = (e: PointerEvent): void => {
   if (props.isDisabled) return;
   emit("press", e);
+};
+
+const onClick = (e: MouseEvent): void => {
+  if (props.isDisabled) return;
+  emit("click", e);
 };
 </script>
 
@@ -32,5 +38,6 @@ const onPointerDown = (e: PointerEvent): void => {
     :icon-size="iconSize"
     @pointerup="onPointerUp"
     @pointerdown="onPointerDown"
+    @click="onClick"
   ></Button>
 </template>

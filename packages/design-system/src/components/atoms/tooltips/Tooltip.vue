@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onUnmounted, ref, useId, useTemplateRef, watch } from "vue";
-import { useFocus } from "@vueuse/core";
 import gsap from "gsap";
+import { useFocus } from "@vueuse/core";
 
 import { UIMODIFIERS } from "@/constants/ui";
 
@@ -66,6 +66,11 @@ onUnmounted(() => {
 /* * * Animations * * */
 
 const onTooltipEnter = (el: Element, done: () => void): void => {
+  if (!gsap) {
+    done();
+    return;
+  }
+
   gsap.fromTo(
     el,
     {
@@ -83,6 +88,11 @@ const onTooltipEnter = (el: Element, done: () => void): void => {
 };
 
 const onTooltipLeave = (el: Element, done: () => void): void => {
+  if (!gsap) {
+    done();
+    return;
+  }
+
   gsap.to(el, {
     opacity: TOOLTIP_OPACITY_OUT,
     scale: TOOLTIP_SCALE_OUT,
@@ -114,6 +124,7 @@ const onTooltipLeave = (el: Element, done: () => void): void => {
         v-if="isTooltipShown"
         :class="`${TOOLTIP_PREFIX}__label`"
         :label="label"
+        :id="localTooltipId"
         role="tooltip"
       ></CharTooltipLabel>
     </Transition>

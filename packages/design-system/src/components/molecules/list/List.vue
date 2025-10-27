@@ -192,20 +192,25 @@ const onKeydown = (e: KeyboardEvent) => {
   switch (e.key) {
     case "ArrowDown":
     case "ArrowRight":
+      e.preventDefault();
       move(1);
       break;
     case "ArrowUp":
     case "ArrowLeft":
+      e.preventDefault();
       move(-1);
       break;
     case "Home":
+      e.preventDefault();
       focusIndex.value = 0;
       break;
     case "End":
+      e.preventDefault();
       focusIndex.value = normalizedItems.value.length - 1;
       break;
     case "Enter":
     case " ":
+      e.preventDefault();
       setSelectedItemIndexes(idAt(focusIndex.value));
       break;
   }
@@ -228,7 +233,7 @@ const onKeydown = (e: KeyboardEvent) => {
     :stretch="stretch"
     :role="rootRole"
     :aria-multiselectable="isSelectable ? isMultipleEffective : undefined"
-    @keydown.stop.prevent="onKeydown"
+    @keydown="onKeydown"
   >
     <slot v-if="!normalizedItems" :selected-id="selectedItemIndexes"></slot>
     <template v-else>

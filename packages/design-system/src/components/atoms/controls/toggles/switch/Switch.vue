@@ -100,11 +100,15 @@ const onAnimateKnob = (duration = 0.25): void => {
   if (refKnob.value) {
     const knobPosX = localIsActive.value ? offsetX : 0;
 
-    gsap.to(refKnob.value, {
-      x: knobPosX,
-      duration,
-      ease: "power4.out",
-    });
+    if (gsap) {
+      gsap.to(refKnob.value, {
+        x: knobPosX,
+        duration,
+        ease: "power4.out",
+      });
+    } else {
+      refKnob.value.style.transform = `translateX(${knobPosX}px)`;
+    }
   }
 };
 

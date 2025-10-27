@@ -68,7 +68,7 @@
   "densitySpace": {
     "$value": 1,
     "$type": "number",
-    "meta": {
+    "$meta": {
       "status": "deprecated",
       "build": {
         "web": {
@@ -81,7 +81,7 @@
   "densityLine": {
     "$value": 1.35,
     "$type": "number",
-    "meta": {
+    "$meta": {
       "status": "deprecated",
       "build": {
         "web": {
@@ -94,7 +94,7 @@
   "densityTarget": {
     "$value": 40,
     "$type": "number",
-    "meta": {
+    "$meta": {
       "status": "deprecated",
       "build": {
         "web": {

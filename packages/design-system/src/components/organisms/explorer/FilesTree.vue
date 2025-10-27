@@ -55,16 +55,23 @@ const setNodeDefaults = (items: TreeViewNode[]): void => {
 
 const resolveApiUrl = (path?: string): URL => {
   const api = path ?? "/api/tree";
-
-  const base =
-    typeof window !== "undefined"
-      ? window.parent?.location?.origin || window.location.origin
-      : "";
-
   if (api.startsWith("http")) return new URL(api);
 
+  if (typeof window === "undefined")
+    throw new Error(
+      "[FilesTree] Cannot resolve relative apiUrl when window is undefined"
+    );
+
+  const origin =
+    window.parent?.location?.origin || window.location?.origin || "";
   const normalized = api.startsWith("/") ? api : `/${api}`;
-  return new URL(normalized, base);
+
+  if (!origin)
+    throw new Error(
+      "[FilesTree] Unable to determine base origin for relative apiUrl"
+    );
+
+  return new URL(normalized, origin);
 };
 
 const fetchChildren = async (
@@ -75,6 +82,9 @@ const fetchChildren = async (
   if (parentId != null) url.searchParams.set("parentId", String(parentId));
 
   try {
+    if (typeof fetch !== "function")
+      throw new Error("[FilesTree] Fetch API is not available in this context");
+
     const res = await fetch(url.toString(), { headers: props.headers });
     if (!res.ok) throw new Error(`Request failed: ${res.status}`);
 

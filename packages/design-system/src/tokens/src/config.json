@@ -68,7 +68,7 @@
   "densitySpace": {
     "$value": 1,
     "$type": "number",
-    "meta": {
+    "$meta": {
       "status": "deprecated",
       "build": { "web": { "exportAsVar": true, "varName": "--density-space" } }
     }
@@ -76,7 +76,7 @@
   "densityLine": {
     "$value": 1.35,
     "$type": "number",
-    "meta": {
+    "$meta": {
       "status": "deprecated",
       "build": { "web": { "exportAsVar": true, "varName": "--density-line" } }
     }
@@ -84,7 +84,7 @@
   "densityTarget": {
     "$value": 40,
     "$type": "number",
-    "meta": {
+    "$meta": {
       "status": "deprecated",
       "build": { "web": { "exportAsVar": true, "varName": "--density-target" } }
     }

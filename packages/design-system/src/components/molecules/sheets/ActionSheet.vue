@@ -135,7 +135,7 @@ const onAnimLeave = (el: Element, done: () => void): void => {
         :rounded="rounded"
         role="dialog"
         aria-modal="true"
-        aria-labelledby
+        :aria-label="title"
       >
         <slot name="sidebar"></slot>
         <div :class="[`${ACTION_SHEET_PREFIX}__content`]">

@@ -9,15 +9,14 @@ import {
   onMounted,
   useTemplateRef,
 } from "vue";
-import { useFocus } from "@vueuse/core";
 import gsap from "gsap";
+import { useFocus } from "@vueuse/core";
 
 import { UIFACETS, UISTATES } from "@/constants/ui";
 
 import { sanitizeInput } from "@/utils/sanitize";
 
 import { INPUT_PREFIX, type InputProps } from "@/components/atoms/inputs/Input";
-
 import AnimatedWrapper from "@/components/atoms/containers/AnimatedWrapper.vue";
 import ControlButton from "@/components/molecules/buttons/aliases/ControlButton.vue";
 import Text from "@/components/atoms/typography/Text.vue";
@@ -109,8 +108,6 @@ const onReset = (): void => {
   localModelValue.value = "";
 
   emit("reset:value");
-  emit("update:value", localModelValue.value);
-  emit("change:value", localModelValue.value);
 };
 
 /* * * a11y * * */
@@ -131,7 +128,7 @@ const onAnimInputValue = (
     OPACITY_OUT = 0;
 
   if (input) {
-    gsap.to(input, {
+    gsap?.to(input, {
       opacity: isFocused ? OPACITY_IN : isEmpty ? OPACITY_OUT : OPACITY_IN,
       duration: 0.1 * durationFactor,
       ease: "power4.out",
@@ -158,7 +155,7 @@ const onAnimPlaceholder = (
     OPACITY_OUT = 0.65;
 
   if (placeholder)
-    gsap.to(placeholder, {
+    gsap?.to(placeholder, {
       y: isFocused ? OFFSET_OUT : isEmpty ? OFFSET_IN_INVERSED : OFFSET_OUT,
       top: isFocused ? OFFSET_OUT : isEmpty ? OFFSET_IN : OFFSET_OUT,
       scale: isFocused ? SCALE_OUT : isEmpty ? SCALE_IN : SCALE_OUT,
@@ -181,7 +178,7 @@ const onAnimErrorMessage = (
     POS_Y_OUT = messageHeight;
 
   if (message) {
-    gsap.to(message, {
+    gsap?.to(message, {
       opacity: isError ? OPACITY_IN : OPACITY_OUT,
       y: isError ? POS_Y_IN : POS_Y_OUT,
       duration: 0.1 * durationFactor,
@@ -216,6 +213,11 @@ onMounted(() => {
 // reset button
 
 const onAnimResetButtonEnter = (el: Element, done: () => void): void => {
+  if (!gsap) {
+    done();
+    return;
+  }
+
   gsap.fromTo(
     el,
     { scale: RESET_BUTTON_SCALE_OUT, opacity: 0 },
@@ -230,6 +232,11 @@ const onAnimResetButtonEnter = (el: Element, done: () => void): void => {
 };
 
 const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
+  if (!gsap) {
+    done();
+    return;
+  }
+
   gsap.to(el, {
     scale: RESET_BUTTON_SCALE_OUT,
     opacity: 0,
@@ -282,7 +289,7 @@ const onAnimResetButtonLeave = (el: Element, done: () => void): void => {
             :type
             :class="`${INPUT_PREFIX}__field-value`"
             :data-testid="`${INPUT_PREFIX}__value`"
-            :aria-placeholder="areaPlaceholder ?? placeholder"
+            :aria-placeholder="ariaPlaceholder ?? placeholder"
             :aria-invalid="isError"
             :aria-describedby="errorMessage ? validationId : undefined"
             :disabled="isDisabled"

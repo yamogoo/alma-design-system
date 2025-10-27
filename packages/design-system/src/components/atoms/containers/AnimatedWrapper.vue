@@ -26,6 +26,14 @@ watch(
 
     const { duration } = props;
 
+    if (!gsap) {
+      el.style.height = `${newHeight}px`;
+      void nextTick(() => {
+        el.style.height = "auto";
+      });
+      return;
+    }
+
     gsap.fromTo(
       el,
       { height: prevHeight },

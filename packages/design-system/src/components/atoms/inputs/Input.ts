@@ -23,7 +23,7 @@ export interface InputProps
   isFocused?: boolean;
   isDisabled?: boolean;
   isRestButtonEnabled?: boolean;
-  areaPlaceholder?: string;
+  ariaPlaceholder?: string;
   autocomplete?: string;
   type?: InputTypeHTMLAttribute;
   errorMessage?: string | null;

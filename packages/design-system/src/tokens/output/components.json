@@ -3220,12 +3220,12 @@
             "gap": {
               "$value": 0,
               "$type": "number",
-              "unit": "px"
+              "$unit": "px"
             },
             "padding": {
               "$value": 12,
               "$type": "number",
-              "unit": "px"
+              "$unit": "px"
             }
           },
           "item": {
@@ -3233,32 +3233,32 @@
               "gap": {
                 "$value": 12,
                 "$type": "number",
-                "unit": "px",
-                "meta": {
+                "$unit": "px",
+                "$meta": {
                   "category": "tree view item"
                 }
               },
               "indent": {
                 "$value": 16,
                 "$type": "number",
-                "unit": "px",
-                "meta": {
+                "$unit": "px",
+                "$meta": {
                   "category": "tree view item"
                 }
               },
               "padding": {
                 "$value": 12,
                 "$type": "number",
-                "unit": "px",
-                "meta": {
+                "$unit": "px",
+                "$meta": {
                   "category": "tree view item"
                 }
               },
               "border-radius": {
                 "$value": 8,
                 "$type": "number",
-                "unit": "px",
-                "meta": {
+                "$unit": "px",
+                "$meta": {
                   "category": "tree view item"
                 }
               }
@@ -3267,8 +3267,8 @@
               "fontStyle": {
                 "$value": "body-2",
                 "$type": "alias",
-                "unit": "",
-                "meta": {
+                "$unit": "",
+                "$meta": {
                   "category": "tree view item"
                 }
               }
@@ -3277,8 +3277,8 @@
               "size": {
                 "$value": 16,
                 "$type": "number",
-                "unit": "px",
-                "meta": {
+                "$unit": "px",
+                "$meta": {
                   "category": "tree view item"
                 }
               }

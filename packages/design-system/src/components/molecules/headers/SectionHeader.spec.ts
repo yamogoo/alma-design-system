@@ -107,11 +107,11 @@ describe("SectionHeader", () => {
   });
 
   describe("events", () => {
-    test("should emit close event when ControlButton fires press", () => {
+    test("should emit close event when ControlButton fires click", () => {
       const wrapper = mountSectionHeader();
 
       const button = wrapper.findComponent(ControlButton);
-      button.vm?.$emit("press");
+      button.vm?.$emit("click");
 
       expect(wrapper.emitted("close")).toBeTruthy();
       expect(wrapper.emitted("close")?.length).toBe(1);

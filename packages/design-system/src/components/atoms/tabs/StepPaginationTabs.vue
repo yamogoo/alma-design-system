@@ -59,6 +59,18 @@ const getItemState = (idx: number) => {
 /* * * Animations * * */
 
 const onAnimTrackAndItem = (id: number, duration = 0.55) => {
+  if (!gsap) {
+    const trackEl = refTrack.value as HTMLElement | null;
+    if (trackEl) {
+      trackEl.style.transform = `translateX(${(-itemWidth.value * id + itemWidth.value).toString()}%)`;
+    }
+    refsItems.value.forEach((el, idx) => {
+      if (!el) return;
+      el.style.transform = `scale(${idx === id ? 1 : 0.88})`;
+    });
+    return;
+  }
+
   const tl = gsap.timeline({ defaults: { duration, ease: "power4.out" } });
 
   if (refTrack.value) {

@@ -101,6 +101,7 @@ const clickStartTime = ref(0);
 const itemGap = computed(() => props.gap ?? 0);
 const containerGap = computed(() => `${px2rem(props.gap)}rem`);
 const itemFullSize = computed(() => (screenSize.value ?? 0) + itemGap.value);
+
 const trackOffset = (selectedScreenId: number) =>
   -selectedScreenId * itemFullSize.value +
   (screenSize.value ?? 0) / 2 -
@@ -112,12 +113,16 @@ const updateItemsScale = () => {
   const scale = props.isDruggable ? (props.editScale ?? 1) : 1;
 
   children.forEach((el) => {
-    gsap.to(el, {
-      scale,
-      duration: props.duration,
-      ease: "power4.out",
-      transformOrigin: "center center",
-    });
+    if (gsap) {
+      gsap.to(el, {
+        scale,
+        duration: props.duration,
+        ease: "power4.out",
+        transformOrigin: "center center",
+      });
+    } else {
+      el.style.transform = `scale(${scale})`;
+    }
   });
 };
 
@@ -140,9 +145,16 @@ const onPointerMove = (e: PointerEvent) => {
   delta.value = currentCoord - startCoord.value;
   const moveOffset = trackOffset(currentSid.value) + delta.value;
 
-  gsap.set(refTrack.value, {
-    [props.orientation === "vertical" ? "y" : "x"]: moveOffset,
-  });
+  if (gsap) {
+    gsap.set(refTrack.value, {
+      [props.orientation === "vertical" ? "y" : "x"]: moveOffset,
+    });
+  } else {
+    refTrack.value.style.transform =
+      props.orientation === "vertical"
+        ? `translateY(${moveOffset}px)`
+        : `translateX(${moveOffset}px)`;
+  }
 };
 
 const onPointerUp = () => {
@@ -182,11 +194,18 @@ const onAnimate = (idx: number, duration = props.duration): void => {
   const offset = -(screenSize.value ?? 0) * idx - props.gap * idx;
 
   if (el) {
-    gsap.to(el, {
-      ...(props.orientation === "vertical" ? { y: offset } : { x: offset }),
-      duration,
-      ease: "power4.out",
-    });
+    if (gsap) {
+      gsap.to(el, {
+        ...(props.orientation === "vertical" ? { y: offset } : { x: offset }),
+        duration,
+        ease: "power4.out",
+      });
+    } else {
+      el.style.transform =
+        props.orientation === "vertical"
+          ? `translateY(${offset}px)`
+          : `translateX(${offset}px)`;
+    }
   }
 };
 
@@ -243,7 +262,7 @@ onUnmounted(() => {
 /* * * Animations * * */
 
 const onEnter = (el: Element, done: () => void): void => {
-  gsap.fromTo(
+  gsap?.fromTo(
     el,
     {
       opacity: 0,
@@ -258,7 +277,7 @@ const onEnter = (el: Element, done: () => void): void => {
 };
 
 const onLeave = (el: Element, done: () => void): void => {
-  gsap.to(el, {
+  gsap?.to(el, {
     opacity: 0,
     ease: "power4.out",
     duration: ANIMATION_FADE_DURATION,

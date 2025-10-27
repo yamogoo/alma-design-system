@@ -38,6 +38,7 @@ defineOptions({
 const emit = defineEmits<{
   (e: "pointerdown", ev: PointerEvent): void;
   (e: "pointerup", ev: PointerEvent): void;
+  (e: "click", ev: MouseEvent): void;
 }>();
 
 const refRoot = useTemplateRef<HTMLButtonElement | null>("root");
@@ -59,11 +60,18 @@ const onDown = (e: PointerEvent) => {
   localIsPressed.value = true;
   emit("pointerdown", e);
 };
+
 const onUp = (e: PointerEvent) => {
   if (props.isDisabled) return;
 
   localIsPressed.value = false;
   emit("pointerup", e);
+};
+
+const onClick = (e: PointerEvent) => {
+  if (props.isDisabled) return;
+
+  emit("click", e);
 };
 
 /* * * Animations * * */
@@ -127,12 +135,13 @@ const onKeyup = (e: KeyboardEvent) => {
       },
     ]"
     :data-testid="BUTTON_PREFIX"
-    :aria-label="label || ariaLabel || 'button'"
+    :aria-label="ariaLabel ?? (label ? label : undefined)"
     :aria-disabled="isDisabled"
     :disabled="as === 'button' ? isDisabled : undefined"
     :tabindex="as !== 'button' ? (isDisabled ? -1 : 0) : undefined"
     @pointerdown="onDown"
     @pointerup="onUp"
+    @click="onClick"
     @pointerleave="localIsPressed = false"
     @pointercancel="localIsPressed = false"
     @lostpointercapture="localIsPressed = false"

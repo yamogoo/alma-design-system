@@ -20,7 +20,6 @@ const emit = defineEmits<{
     e: "update:selected-item-indexes",
     selectedItemIndexes: ListSelectedItemIndex | null
   ): void;
-  (e: "change", selectedItemIndexes: ListSelectedItemIndex | null): void;
   (e: "update:is-open", isOpen: boolean): void;
 }>();
 
@@ -39,11 +38,7 @@ watch(localIsOpen, (value) => {
 });
 
 const getInitSelectedItemIndex = (): ListSelectedItemIndex | null => {
-  if (
-    "top" in props.menuItems &&
-    typeof props.menuItems.top === "object" &&
-    props.menuItems.top.length > 0
-  )
+  if (Array.isArray(props.menuItems.top) && props.menuItems.top.length > 0)
     return props.menuItems.top[0].id;
 
   return null;
@@ -55,13 +50,16 @@ watch(
   () => props.selectedItemIndexes,
   (newValue) => {
     localSelectedItemIndexes.value = newValue;
+  },
+  {
+    immediate: true,
   }
 );
 
-const onUpdateSelecteditemIndexes = (
+const onUpdateSelectedItemIndexes = (
   selectedItemIndexes: ListSelectedItemIndex | ListSelectedItemIndex[] | null
 ): void => {
-  if (typeof selectedItemIndexes !== "object")
+  if (!Array.isArray(selectedItemIndexes))
     emit("update:selected-item-indexes", selectedItemIndexes);
 };
 </script>
@@ -85,7 +83,7 @@ const onUpdateSelecteditemIndexes = (
           :is-selectable="true"
           :is-radio-button="true"
           :is-joined="false"
-          @update:selected-item-indexes="onUpdateSelecteditemIndexes"
+          @update:selected-item-indexes="onUpdateSelectedItemIndexes"
         >
           <MenuItem
             v-if="'top' in menuItems"

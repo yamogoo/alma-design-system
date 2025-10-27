@@ -176,11 +176,17 @@ watch(isHovered, (state) => {
   const el = refKnob.value;
 
   if (el) {
-    gsap.to(el, {
-      scale: state ? props.knobAnimScaleActive : props.knobAnimScaleNormal,
-      duration: props.knobAnimDuration,
-      ease: "power4.out",
-    });
+    if (gsap) {
+      gsap.to(el, {
+        scale: state ? props.knobAnimScaleActive : props.knobAnimScaleNormal,
+        duration: props.knobAnimDuration,
+        ease: "power4.out",
+      });
+    } else {
+      el.style.transform = `scale(${
+        state ? props.knobAnimScaleActive : props.knobAnimScaleNormal
+      })`;
+    }
   }
 });
 

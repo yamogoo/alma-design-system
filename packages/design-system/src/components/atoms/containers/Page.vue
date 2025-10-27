@@ -63,13 +63,23 @@ const MOVE_DURATION_OUT = 0.65;
 const MOVE_DELAY_IN = 0.05;
 const MOVE_DELAY_OUT = 0.1;
 
-let tl: gsap.core.Timeline = gsap.timeline();
-
 const clearTimeline = (el: Element): void => {
+  if (!gsap) {
+    (el as HTMLElement).style.removeProperty("transform");
+    (el as HTMLElement).style.removeProperty("opacity");
+    return;
+  }
+
   gsap.set(el, { clearProps: "all" });
 };
 
 const onAnimEnter = (el: Element, done: () => void): void => {
+  if (!gsap) {
+    emit("anim-enter-completed");
+    done();
+    return;
+  }
+
   const { clientWidth: width, clientHeight: height } = el;
 
   switch (localTransitionInType.value) {
@@ -77,7 +87,9 @@ const onAnimEnter = (el: Element, done: () => void): void => {
       {
         clearTimeline(el);
 
-        tl.fromTo(
+        const timeline = gsap.timeline();
+
+        timeline.fromTo(
           el,
           {
             scale: 0.85,
@@ -101,7 +113,9 @@ const onAnimEnter = (el: Element, done: () => void): void => {
       {
         clearTimeline(el);
 
-        tl.fromTo(
+        const timeline = gsap.timeline();
+
+        timeline.fromTo(
           el,
           {
             scale: SCALE_OUT,
@@ -119,7 +133,7 @@ const onAnimEnter = (el: Element, done: () => void): void => {
           0
         );
 
-        tl.fromTo(
+        timeline.fromTo(
           el,
           {
             y: height,
@@ -140,7 +154,9 @@ const onAnimEnter = (el: Element, done: () => void): void => {
       {
         clearTimeline(el);
 
-        tl.fromTo(
+        const timeline = gsap.timeline();
+
+        timeline.fromTo(
           el,
           {
             scale: SCALE_OUT,
@@ -158,7 +174,7 @@ const onAnimEnter = (el: Element, done: () => void): void => {
           0
         );
 
-        tl.fromTo(
+        timeline.fromTo(
           el,
           {
             y: -height,
@@ -179,7 +195,9 @@ const onAnimEnter = (el: Element, done: () => void): void => {
       {
         clearTimeline(el);
 
-        tl.fromTo(
+        const timeline = gsap.timeline();
+
+        timeline.fromTo(
           el,
           {
             scale: SCALE_OUT,
@@ -197,7 +215,7 @@ const onAnimEnter = (el: Element, done: () => void): void => {
           0
         );
 
-        tl.fromTo(
+        timeline.fromTo(
           el,
           {
             x: -width,
@@ -219,7 +237,9 @@ const onAnimEnter = (el: Element, done: () => void): void => {
       {
         clearTimeline(el);
 
-        tl.fromTo(
+        const timeline = gsap.timeline();
+
+        timeline.fromTo(
           el,
           {
             scale: SCALE_OUT,
@@ -237,7 +257,7 @@ const onAnimEnter = (el: Element, done: () => void): void => {
           0
         );
 
-        tl.fromTo(
+        timeline.fromTo(
           el,
           {
             x: width,
@@ -258,6 +278,12 @@ const onAnimEnter = (el: Element, done: () => void): void => {
 };
 
 const onAnimLeave = (el: Element, done: () => void): void => {
+  if (!gsap) {
+    emit("anim-enter-completed");
+    done();
+    return;
+  }
+
   const { clientWidth: width, clientHeight: height } = el;
 
   switch (localTransitionOutType.value) {
@@ -265,7 +291,9 @@ const onAnimLeave = (el: Element, done: () => void): void => {
       {
         clearTimeline(el);
 
-        tl.to(el, {
+        const timeline = gsap.timeline();
+
+        timeline.to(el, {
           scale: 1.25,
           opacity: 0.0,
           ease: "power4.out",
@@ -279,9 +307,9 @@ const onAnimLeave = (el: Element, done: () => void): void => {
       break;
     case "top-to-bottom":
       {
-        const tl = gsap.timeline();
+        const timeline = gsap.timeline();
 
-        tl.to(
+        timeline.to(
           el,
           {
             scale: SCALE_OUT,
@@ -291,7 +319,7 @@ const onAnimLeave = (el: Element, done: () => void): void => {
           0
         );
 
-        tl.to(
+        timeline.to(
           el,
           {
             y: height,
@@ -310,9 +338,9 @@ const onAnimLeave = (el: Element, done: () => void): void => {
       break;
     case "bottom-to-top":
       {
-        const tl = gsap.timeline();
+        const timeline = gsap.timeline();
 
-        tl.to(
+        timeline.to(
           el,
           {
             scale: SCALE_OUT,
@@ -322,7 +350,7 @@ const onAnimLeave = (el: Element, done: () => void): void => {
           0
         );
 
-        tl.to(
+        timeline.to(
           el,
           {
             y: -height,
@@ -341,9 +369,9 @@ const onAnimLeave = (el: Element, done: () => void): void => {
       break;
     case "right-to-left":
       {
-        const tl = gsap.timeline();
+        const timeline = gsap.timeline();
 
-        tl.to(
+        timeline.to(
           el,
           {
             scale: SCALE_OUT,
@@ -353,7 +381,7 @@ const onAnimLeave = (el: Element, done: () => void): void => {
           0
         );
 
-        tl.to(
+        timeline.to(
           el,
           {
             x: -width,
@@ -372,9 +400,9 @@ const onAnimLeave = (el: Element, done: () => void): void => {
       break;
     case "left-to-right":
       {
-        const tl = gsap.timeline();
+        const timeline = gsap.timeline();
 
-        tl.to(
+        timeline.to(
           el,
           {
             scale: SCALE_OUT,
@@ -384,7 +412,7 @@ const onAnimLeave = (el: Element, done: () => void): void => {
           0
         );
 
-        tl.to(
+        timeline.to(
           el,
           {
             x: width,
@@ -407,6 +435,11 @@ const onAnimLeave = (el: Element, done: () => void): void => {
 const onFooterEnter = (el: Element, done: () => void): void => {
   const height = el.clientHeight;
 
+  if (!gsap) {
+    done();
+    return;
+  }
+
   gsap.fromTo(
     el,
     {
@@ -425,6 +458,11 @@ const onFooterEnter = (el: Element, done: () => void): void => {
 
 const onFooterLeave = (el: Element, done: () => void): void => {
   const height = el.clientHeight;
+
+  if (!gsap) {
+    done();
+    return;
+  }
 
   gsap.to(el, {
     y: height,
