@@ -34,4 +34,4 @@ export interface FilesTreeProps
   mapResponse?: (raw: unknown) => TreeViewNode[];
 }
 
-export const FILES_TREE_PREFIX = `${NAMESPACE}filsed-tree`;
+export const FILES_TREE_PREFIX = `${NAMESPACE}files-tree`;
