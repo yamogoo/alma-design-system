@@ -54,6 +54,18 @@
           "$type": "number",
           "$unit": "px"
         }
+      },
+      "surface": {
+        "variant": {
+          "$value": "default",
+          "$type": "string",
+          "$unit": "alias"
+        },
+        "size": {
+          "$value": "md",
+          "$type": "string",
+          "$unit": "alias"
+        }
       }
     }
   }

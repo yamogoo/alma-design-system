@@ -1,12 +1,28 @@
 import { NAMESPACE } from "@/constants";
 
-import type { OverlayId, UIElementTitleProps } from "@/typings";
+import type { ActionSheetSize, ActionSheetVariant } from "@/adapters";
 
-import type { SurfaceProps } from "@/components/atoms/containers/Surface";
+import type {
+  OverlayId,
+  UIElementStylingModifiers,
+  UIElementTitleProps,
+} from "@/typings";
+
+import type {
+  SurfaceFacetVariantsProps,
+  SurfaceProps,
+} from "@/components/atoms/containers/Surface";
 
 export interface ActionSheetProps
-  extends SurfaceProps,
+  extends Partial<
+      Pick<
+        UIElementStylingModifiers<ActionSheetVariant, ActionSheetSize>,
+        "variant" | "size"
+      >
+    >,
+    Omit<SurfaceProps, "variant" | "size">,
     Partial<UIElementTitleProps> {
+  surface?: Partial<SurfaceFacetVariantsProps>;
   containerId?: OverlayId;
   isOpen: boolean;
 }

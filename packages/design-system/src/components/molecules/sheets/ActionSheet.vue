@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { nextTick, ref, watch } from "vue";
+import { computed, nextTick, ref, watch, type ComputedRef } from "vue";
 import gsap from "gsap";
+
+import { actionSheetVariantFacets } from "@/adapters";
 
 import { useFacetsClasses } from "@/composables/local/components/useFacetsClasses";
 
 import { UIFACETS, OVERLAY_IDS } from "@/constants/ui";
+
+import type { SurfaceFacetVariantsProps } from "@/components/atoms/containers/Surface";
 
 import { ACTION_SHEET_PREFIX, type ActionSheetProps } from "./ActionSheet";
 import ActionSheetHeader from "./ActionSheetHeader.vue";
@@ -18,7 +22,7 @@ const MODAL_ANIM_DURATION_IN = 0.25,
 const props = withDefaults(defineProps<ActionSheetProps>(), {
   containerId: OVERLAY_IDS.MAIN,
   variant: "default",
-  size: "md",
+  size: "lg",
   mode: "neutral",
   tone: "primary",
   rounded: true,
@@ -40,6 +44,19 @@ const { classes: facetClasses } = useFacetsClasses({
   prefix: ACTION_SHEET_PREFIX,
   props: props,
   facets: [UIFACETS.VARIANT, UIFACETS.SIZE],
+});
+
+const surfaceFacets: ComputedRef<SurfaceFacetVariantsProps> = computed(() => {
+  const surface = actionSheetVariantFacets[props.variant][props.size].surface;
+
+  const variant = surface.variant
+    .$value as SurfaceFacetVariantsProps["variant"];
+  const size = surface.size.$value as SurfaceFacetVariantsProps["size"];
+
+  return {
+    variant,
+    size,
+  };
 });
 
 const onClose = (): void => {
@@ -124,6 +141,8 @@ const onAnimLeave = (el: Element, done: () => void): void => {
       <Surface
         v-if="isModalMounted"
         :class="[facetClasses]"
+        :variant="surfaceFacets.variant"
+        :size="surfaceFacets.size"
         :mode="mode"
         :tone="tone"
         :direction="direction"

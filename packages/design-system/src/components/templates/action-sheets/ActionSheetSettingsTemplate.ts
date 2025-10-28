@@ -6,11 +6,11 @@ import type { ListSelectedItemIndex } from "@/components/molecules/list/List";
 
 export type ActionSheetSettingsTemplateMenuItems = Record<
   "top" | "bottom",
-  IMenuitem<AsyncComp>[]
+  IMenuitem<AsyncComp | undefined>[]
 >;
 
 export interface ActionSheetSettingsTemplateProps
-  extends Pick<ActionSheetProps, "isOpen"> {
+  extends Pick<ActionSheetProps, "isOpen" | "containerId"> {
   menuItems: Partial<ActionSheetSettingsTemplateMenuItems>;
   selectedItemIndexes: ListSelectedItemIndex | null;
 }

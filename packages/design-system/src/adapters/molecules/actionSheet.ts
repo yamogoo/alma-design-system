@@ -1,5 +1,7 @@
 import tokens from "@/tokens";
 
+export const actionSheetVariantFacets = tokens.components.molecules.actionSheet;
+
 export type ActionSheetVariant =
   keyof typeof tokens.components.molecules.actionSheet;
 export const actionSheetVariants = Object.keys(

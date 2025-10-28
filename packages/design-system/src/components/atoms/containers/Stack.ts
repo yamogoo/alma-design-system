@@ -41,8 +41,13 @@ export interface StackStructureProps {
   isCloseButtonShown?: boolean;
 }
 
+export type StackFacetVariantsProps = UIElementStylingModifiers<
+  StackVariant,
+  StackSize
+>;
+
 export interface StackProps
-  extends Partial<UIElementStylingModifiers<StackVariant, StackSize>>,
+  extends Partial<StackFacetVariantsProps>,
     StackContainerProps,
     StackStructureProps {
   as?: UIElementBlockTag;

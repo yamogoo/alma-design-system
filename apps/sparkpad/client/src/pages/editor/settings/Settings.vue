@@ -21,19 +21,20 @@ const localIsOpen = ref(props.isOpen);
 
 const selectedItemIndexes = ref(menuItems.top[0].id);
 
-const currentItem: ComputedRef<IMenuitem<AsyncComp> | null> = computed(() => {
-  const sid = selectedItemIndexes.value;
+const currentItem: ComputedRef<IMenuitem<AsyncComp | undefined> | null> =
+  computed(() => {
+    const sid = selectedItemIndexes.value;
 
-  let currentItem: IMenuitem<AsyncComp> | null = null;
+    let currentItem: IMenuitem<AsyncComp | undefined> | null = null;
 
-  Object.values(menuItems).map((section) => {
-    section.find((item) => {
-      if (item.id === sid) currentItem = item;
+    Object.values(menuItems).map((section) => {
+      section.find((item) => {
+        if (item.id === sid) currentItem = item;
+      });
     });
-  });
 
-  return currentItem;
-});
+    return currentItem;
+  });
 
 watch(
   () => props.isOpen,

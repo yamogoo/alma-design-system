@@ -44,11 +44,6 @@
     "$type": "color",
     "$unit": "hex"
   },
-  "darkBlue": {
-    "$value": "#1a4ffe",
-    "$type": "color",
-    "$unit": "hex"
-  },
   "accent": {
     "$value": "#0fc558",
     "$type": "color",

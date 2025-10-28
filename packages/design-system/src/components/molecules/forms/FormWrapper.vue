@@ -32,7 +32,6 @@ const { classes: facetClasses } = useFacetsClasses({
     :size="size"
     :mode="mode"
     :tone="tone"
-    :state="state"
     align-horizontal="start"
     align-vertical="start"
     :border="border"

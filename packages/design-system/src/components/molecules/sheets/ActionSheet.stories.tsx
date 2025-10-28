@@ -18,8 +18,6 @@ import {
 
 import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
-// import PageHeader from "@/stories/components/atoms/headers/PageHeader.vue";
-// import InfoBlock from "@/stories/components/atoms/blocks/InfoBlock.vue";
 
 import type { ActionSheetProps } from "./ActionSheet";
 import ActionSheet from "./ActionSheet.vue";
@@ -52,7 +50,10 @@ const meta = {
     divider: booleanOptions(false),
   },
   args: {
-    size: "md",
+    surface: {
+      variant: "default",
+      size: "lg",
+    },
     mode: "neutral",
     tone: "canvas",
     alignHorizontal: "start",

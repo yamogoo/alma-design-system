@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 
+import { actionSheetVariantFacets } from "@/adapters";
+
+import { useLayoutStore } from "@/stores/useLayoutStore";
+
+import { useBreakpoints } from "@/composables/local/responsive/useBreakpoints";
+
 import ActionSheet from "@/components/molecules/sheets/ActionSheet.vue";
 import ActionSheetSidebar from "@/components/molecules/sheets/ActionSheetSidebar.vue";
 
@@ -8,10 +14,17 @@ import List from "@/components/molecules/list/List.vue";
 import MenuItem from "@/components/molecules/menu/MenuItem.vue";
 import Spacer from "@/components/atoms/containers/Spacer.vue";
 
+import type { ActionSheetProps } from "@/components/molecules/sheets/ActionSheet";
 import type { ActionSheetSettingsTemplateProps } from "./ActionSheetSettingsTemplate";
 import type { ListSelectedItemIndex } from "@/components/molecules/list/List";
 
+const DEFAULT_FACETS: Pick<ActionSheetProps, "variant" | "size"> = {
+  variant: "default",
+  size: "lg",
+};
+
 const props = withDefaults(defineProps<ActionSheetSettingsTemplateProps>(), {
+  containerId: "#app",
   isOpen: false,
 });
 
@@ -22,6 +35,9 @@ const emit = defineEmits<{
   ): void;
   (e: "update:is-open", isOpen: boolean): void;
 }>();
+
+const layoutStore = useLayoutStore();
+const { breakpoints } = layoutStore;
 
 const localIsOpen = ref(props.isOpen);
 
@@ -62,12 +78,33 @@ const onUpdateSelectedItemIndexes = (
   if (!Array.isArray(selectedItemIndexes))
     emit("update:selected-item-indexes", selectedItemIndexes);
 };
+
+/* * * Layout * * */
+
+const { up, raw } = useBreakpoints(breakpoints);
+
+const sidebarAtLeast = ((): keyof typeof raw => {
+  const below =
+    actionSheetVariantFacets.default.lg.root.width.$respond?.below ?? {};
+
+  const keys = Object.keys(below).filter(
+    (k) => k in raw
+  ) as (keyof typeof raw)[];
+
+  if (!keys.length) return "md";
+
+  return keys.sort((a, b) => raw[a].$value - raw[b].$value)[keys.length - 1];
+})();
+
+const isSidebarShownByToken = up(sidebarAtLeast);
 </script>
 
 <template>
   <ActionSheet
     v-model:is-open="localIsOpen"
-    size="lg"
+    :container-id="containerId"
+    :variant="DEFAULT_FACETS.variant"
+    :size="DEFAULT_FACETS.size"
     mode="neutral"
     tone="canvas"
     orientation="horizontal"
@@ -75,7 +112,7 @@ const onUpdateSelectedItemIndexes = (
     align-vertical="start"
   >
     <template #sidebar>
-      <ActionSheetSidebar>
+      <ActionSheetSidebar v-if="isSidebarShownByToken">
         <List
           v-model:selected-item-indexes="localSelectedItemIndexes"
           size="sm"

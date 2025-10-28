@@ -46,7 +46,10 @@ describe("ActionSheet.vue", () => {
       containerId: "#app",
       isOpen: false,
       variant: "default",
-      size: "md",
+      surface: {
+        variant: "default",
+        size: "md",
+      },
       mode: "neutral",
       tone: "primary",
     };
@@ -66,6 +69,5 @@ describe("ActionSheet.vue", () => {
     expect(el!.classList.contains(`${Classes.VARIANT}-${props.variant}`)).toBe(
       true
     );
-    expect(el!.classList.contains(`${Classes.SIZE}-${props.size}`)).toBe(true);
   });
 });

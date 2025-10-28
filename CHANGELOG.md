@@ -7,3 +7,9 @@
 ## [0.3.0] - 2025-10-13
 
 - Added: Motion modes (`precompile`, `runtime`, `hybrid`) and token-based motion control. The `hybrid` mode is reserved for future use.
+
+## [0.4.0] - 2025-10-28
+
+### Added
+
+- Responsive tokens: introduced `$respond` blocks for breakpoint-based value overrides (`above`, `below`, `between`), now supported in SCSS maps and `get-value()` resolver.

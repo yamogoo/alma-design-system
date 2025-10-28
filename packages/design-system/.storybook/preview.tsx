@@ -3,6 +3,7 @@ import { type App } from "vue";
 import { createPinia } from "pinia";
 
 import { initialize, mswLoader } from "msw-storybook-addon";
+import { useAppLayout } from "@/composables/global/useAppLayout";
 
 import "./storybook.theme.scss";
 
@@ -84,6 +85,11 @@ const preview: Preview = {
   decorators: [
     withTheme,
     () => ({
+      setup() {
+        useAppLayout(".sb-show-main");
+
+        return {};
+      },
       template: '<div class="storybook-main-container"><story/></div>',
     }),
   ],
