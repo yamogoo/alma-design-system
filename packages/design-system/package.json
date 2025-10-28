@@ -1,6 +1,6 @@
 {
   "name": "@alma/design-system",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Alma design system (Vue 3, Vite library build)",
   "license": "MIT",
   "type": "module",
