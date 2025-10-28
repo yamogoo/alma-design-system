@@ -16,8 +16,8 @@ import ScrollView from "@/components/atoms/containers/ScrollView.vue";
 import Surface from "@/components/atoms/containers/Surface.vue";
 import Overlay from "@/components/molecules/containers/Overlay.vue";
 
-const MODAL_ANIM_DURATION_IN = 0.25,
-  MODAL_ANIM_DURATION_OUT = 0.25;
+const MODAL_ANIM_DURATION_IN = 0.35,
+  MODAL_ANIM_DURATION_OUT = 0.35;
 
 const props = withDefaults(defineProps<ActionSheetProps>(), {
   containerId: OVERLAY_IDS.MAIN,

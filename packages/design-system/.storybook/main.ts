@@ -1,4 +1,11 @@
+import { mergeConfig } from "vite";
+import { fileURLToPath } from "node:url";
 import type { StorybookConfig } from "@storybook/vue3-vite";
+
+const srcDir = fileURLToPath(new URL("../src", import.meta.url));
+const tokensCacheDir = fileURLToPath(
+  new URL("../src/tokens/.cache", import.meta.url)
+);
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -12,5 +19,15 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ["../public"],
+  async viteFinal(baseConfig) {
+    return mergeConfig(baseConfig, {
+      resolve: {
+        alias: [
+          { find: "@", replacement: srcDir },
+          { find: "@/tokens/src", replacement: tokensCacheDir },
+        ],
+      },
+    });
+  },
 };
 export default config;
