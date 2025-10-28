@@ -20,6 +20,7 @@ const getActionSheet = <T>(wrapper: VueWrapper<T>) => {
 
 vi.mock("gsap", () => ({
   default: {
+    killTweensOf: vi.fn(),
     fromTo: vi.fn(),
     to: vi.fn(),
   },

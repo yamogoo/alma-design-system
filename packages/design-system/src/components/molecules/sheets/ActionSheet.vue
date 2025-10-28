@@ -80,6 +80,7 @@ const getOffsetY = (el: Element): number => {
 const onAnimEnter = (el: Element, done: () => void): void => {
   const y = getOffsetY(el);
 
+  gsap.killTweensOf?.(el);
   gsap.fromTo(
     el,
     {
@@ -99,6 +100,7 @@ const onAnimEnter = (el: Element, done: () => void): void => {
 const onAnimLeave = (el: Element, done: () => void): void => {
   const y = getOffsetY(el);
 
+  gsap.killTweensOf?.(el);
   gsap.to(el, {
     y,
     opacity: 0,

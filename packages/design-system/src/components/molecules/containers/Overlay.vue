@@ -34,6 +34,7 @@ const onClose = (): void => {
 const onEnter = (el: Element, done: () => void): void => {
   emit("enter:started");
 
+  gsap.killTweensOf?.(el);
   gsap.fromTo(
     el,
     {
@@ -52,6 +53,7 @@ const onEnter = (el: Element, done: () => void): void => {
 };
 
 const onLeave = (el: Element, done: () => void): void => {
+  gsap.killTweensOf?.(el);
   gsap.to(el, {
     opacity: 0,
     ease: "power4.out",
