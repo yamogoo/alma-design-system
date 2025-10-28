@@ -1,3 +1,0 @@
-@use "sass:map";
-@use "./packages/design-system/src/assets/scss/abstracts/components" as comps;
-@debug map.keys(map.get(comps.$components, atoms));
