@@ -5,15 +5,15 @@ import StoryGrid from "@/stories/components/atoms/grids/StoryGrid.vue";
 import StorySlotCover from "@/stories/components/molecules/covers/StorySlotCover.vue";
 
 import type {
-  ActionSheetSettingsTemplateMenuItems,
-  ActionSheetSettingsTemplateProps,
-} from "./ActionSheetSettingsTemplate";
-import ActionSheetSettingsTemplate from "./ActionSheetSettingsTemplate.vue";
+  ActionSheetSettingsMenuItems,
+  ActionSheetSettingsProps,
+} from "./ActionSheetSettings";
+import ActionSheetSettings from "./ActionSheetSettings.vue";
 import ActionButton from "@/components/molecules/buttons/aliases/ActionButton.vue";
 
 const meta = {
-  title: "Templates/Sheets/ActionSheetSettingsTemplate",
-  component: ActionSheetSettingsTemplate,
+  title: "Organisms/Sheets/ActionSheetSettings",
+  component: ActionSheetSettings,
   tags: ["autodocs"],
   parameters: {
     docs: {
@@ -45,12 +45,12 @@ const meta = {
     isOpen: false,
     containerId: "body",
   },
-} satisfies Meta<typeof ActionSheetSettingsTemplate>;
+} satisfies Meta<typeof ActionSheetSettings>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const menuItems: ActionSheetSettingsTemplateMenuItems = {
+const menuItems: ActionSheetSettingsMenuItems = {
   top: [
     {
       id: "appearance",
@@ -89,10 +89,10 @@ export const Playground: Story = {
   args: {
     containerId: "body",
     isOpen: false,
-    menuItems,
+
     selectedItemIndexes: menuItems.top[0].id,
   },
-  render: (args: ActionSheetSettingsTemplateProps) => ({
+  render: (args: ActionSheetSettingsProps) => ({
     setup() {
       const localIsOpen = ref(args.isOpen);
 
@@ -112,12 +112,13 @@ export const Playground: Story = {
               stretch="row"
               onRelease={onOpenSheet}
             ></ActionButton>
-            <ActionSheetSettingsTemplate
+            <ActionSheetSettings
               {...args}
               v-model:is-open={localIsOpen.value}
+              menuItems={menuItems}
             >
               <StorySlotCover style={{ height: "880px" }}></StorySlotCover>
-            </ActionSheetSettingsTemplate>
+            </ActionSheetSettings>
           </StoryGrid>
         </>
       );

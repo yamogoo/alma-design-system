@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Logo from "@/components/atoms/logos/Logo.vue";
 
-import SimpleMenu from "@/components/atoms/menu/SimpleMenu.vue";
+import SimpleMenu from "@/components/molecules/menu/SimpleMenu.vue";
 import Group from "@/components/molecules/containers/Group.vue";
 import ControlButton from "@/components/molecules/buttons/aliases/ControlButton.vue";
 import {

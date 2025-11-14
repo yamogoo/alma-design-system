@@ -134,8 +134,6 @@ onUnmounted(() => {
   padding: get($tokens, "spacing.lg");
   overflow: hidden;
 
-  /* &__content {} */
-
   .auth-form {
     margin: auto;
   }

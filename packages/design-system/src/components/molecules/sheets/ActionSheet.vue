@@ -170,6 +170,12 @@ const onAnimLeave = (el: Element, done: () => void): void => {
           <ScrollView :class="[`${ACTION_SHEET_PREFIX}__body`]">
             <slot> </slot>
           </ScrollView>
+          <footer
+            v-if="$slots.footer"
+            :class="[`${ACTION_SHEET_PREFIX}__footer`]"
+          >
+            <slot name="footer"></slot>
+          </footer>
         </div>
       </Surface>
     </Transition>

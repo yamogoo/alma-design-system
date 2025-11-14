@@ -1,10 +1,10 @@
 import { defineAsyncComponent } from "vue";
 
-import { type ActionSheetSettingsTemplateMenuItems } from "@alma/design-system";
+import { type ActionSheetSettingsMenuItems } from "@alma/design-system";
 
 export type AsyncComp = ReturnType<typeof defineAsyncComponent>;
 
-export const menuItems: ActionSheetSettingsTemplateMenuItems = {
+export const menuItems: ActionSheetSettingsMenuItems = {
   top: [
     {
       id: "appearance",

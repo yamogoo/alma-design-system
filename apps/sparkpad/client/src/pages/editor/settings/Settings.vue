@@ -4,10 +4,7 @@ import { useRouter } from "vue-router";
 
 import { menuItems, type AsyncComp, type SettingsProps } from "./Settings";
 
-import {
-  ActionSheetSettingsTemplate,
-  type IMenuitem,
-} from "@alma/design-system";
+import { ActionSheetSettings, type IMenuItem } from "@alma/design-system";
 
 const props = defineProps<SettingsProps>();
 
@@ -21,11 +18,11 @@ const localIsOpen = ref(props.isOpen);
 
 const selectedItemIndexes = ref(menuItems.top[0].id);
 
-const currentItem: ComputedRef<IMenuitem<AsyncComp | undefined> | null> =
+const currentItem: ComputedRef<IMenuItem<AsyncComp | undefined> | null> =
   computed(() => {
     const sid = selectedItemIndexes.value;
 
-    let currentItem: IMenuitem<AsyncComp | undefined> | null = null;
+    let currentItem: IMenuItem<AsyncComp | undefined> | null = null;
 
     Object.values(menuItems).map((section) => {
       section.find((item) => {
@@ -57,11 +54,11 @@ watch(selectedItemIndexes, () => {
 </script>
 
 <template>
-  <ActionSheetSettingsTemplate
+  <ActionSheetSettings
     v-model:is-open="localIsOpen"
     v-model:selected-item-indexes="selectedItemIndexes"
     :menu-items="menuItems"
   >
     <component :is="currentItem?.value"></component>
-  </ActionSheetSettingsTemplate>
+  </ActionSheetSettings>
 </template>

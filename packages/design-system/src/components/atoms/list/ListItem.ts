@@ -9,14 +9,14 @@ import type {
 
 import type {
   UIElementBorderedProps,
+  UIElementItemIndexProps,
   UIElementMaybeListItemOrBlockTag,
   UIElementStylingModifiers,
 } from "@/typings";
 
 import type { IconComponentProps } from "@/components/atoms/icons/Icon";
 
-export interface IListItem {
-  id: string | number | symbol;
+export interface IListItem extends UIElementItemIndexProps {
   title: string;
   description?: string;
   value?: string;

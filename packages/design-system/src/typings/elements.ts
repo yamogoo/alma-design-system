@@ -1,28 +1,5 @@
 export type UIElementBooleanish = "true" | "false";
 
-export type UIElementColor =
-  | `${"primary" | "secondary"}${"" | "-inversed" | "-transparental"}`
-  | `${"transclucent"}${"" | "-inversed"}`
-  | `${"tertiary"}${"" | "-inversed"}`
-  | "transparental"
-  | "accent"
-  | "accent-secondary"
-  | "accept"
-  | "disabled"
-  | "warning"
-  | "error"
-  | "info";
-
-export type UIElementSize =
-  | "xxxs"
-  | "xxs"
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "xxl";
-
 export type UISVGElementStrokeLineCap = "round" | "butt" | "square" | "inherit";
 
 export const UIElementCircularDirections = ["cw", "ccw"];
@@ -202,6 +179,10 @@ export interface UIElementBorderProps {
   border?: string;
 }
 
+export interface UIElementLabelProps {
+  label: string;
+}
+
 export interface UIElementTitleProps {
   title: string;
 }
@@ -212,4 +193,20 @@ export interface UIElementDescriptionProps {
 
 export interface UIElementValueProps {
   value: string;
+}
+
+/* * * Selected ID * * */
+
+export interface UIElementItemIndexProps {
+  id: string;
+}
+
+export type UIElementSelectedItemIndex = UIElementItemIndexProps["id"];
+
+export type UIElementSelectedItemIndexes =
+  | (UIElementSelectedItemIndex | UIElementSelectedItemIndex[])
+  | null;
+
+export interface UIElementSelectedItemIndexesProps {
+  selectedItemIndexes: UIElementSelectedItemIndexes;
 }

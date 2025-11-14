@@ -1,19 +1,22 @@
 import { NAMESPACE } from "@/constants";
 
-import type { UIElementMaybeListOrBlockTag } from "@/typings";
+import type {
+  UIElementMaybeListOrBlockTag,
+  UIElementSelectedItemIndexes,
+  UIElementSelectedItemIndexesProps,
+} from "@/typings";
 import type { IListItem } from "@/components/atoms/list/ListItem";
 import type { GroupProps } from "@/components/molecules/containers/Group";
 
 export type ListSelectedItemIndex = IListItem["id"];
-export type ListSelectedItemIndexes = [
-  (ListSelectedItemIndex | ListSelectedItemIndex[]) | null,
-];
+export type ListSelectedItemIndexes = UIElementSelectedItemIndexes;
 
 export type ListItems = Array<IListItem> | Array<string>;
 
-export interface ListProps extends Omit<GroupProps, "as"> {
+export interface ListProps
+  extends Omit<GroupProps, "as">,
+    Partial<UIElementSelectedItemIndexesProps> {
   as?: UIElementMaybeListOrBlockTag;
-  selectedItemIndexes?: ListSelectedItemIndex | ListSelectedItemIndex[] | null;
   items?: ListItems;
   isCurrentItemShown?: boolean;
   isSelectable?: boolean;
@@ -25,9 +28,9 @@ export interface ListProps extends Omit<GroupProps, "as"> {
 
 export interface ListInjection {
   selectedItemIndexes:
-    | import("vue").Ref<IListItem["id"] | IListItem["id"][] | null>
+    | import("vue").Ref<ListSelectedItemIndex | ListSelectedItemIndex[] | null>
     | null;
-  setSelectedItemIndexes: (id: IListItem["id"] | null) => void;
+  setSelectedItemIndexes: (id: ListSelectedItemIndex | null) => void;
   isCurrentItemShown: import("vue").ComputedRef<boolean> | null;
   isSelectable: import("vue").ComputedRef<boolean> | null;
   isRadioButton: import("vue").ComputedRef<boolean> | null;

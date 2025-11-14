@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from "vue-router/auto";
+import { createRouter, createWebHistory } from "vue-router";
 import { routes } from "vue-router/auto-routes";
 
 import { routes as extendedRoutes } from "./extendedRoutes";
 
 import { useAuthStore } from "@/stores";
 
-import { Composables } from "@alma/design-system";
+import { trackRouteHistory } from "@alma/design-system";
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +13,7 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  Composables.Local.trackRouteHistory(to, from);
+  trackRouteHistory(to, from);
 
   /* * * Auth * * */
 

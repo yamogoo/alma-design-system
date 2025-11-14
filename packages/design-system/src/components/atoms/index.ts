@@ -34,9 +34,6 @@ export * from "./controls/slider";
 // Switches: ToggleSwitch, Checkbox, Radio button and other controls
 export * from "./controls/toggles/switch";
 
-// Tabs/Navigation: StepPaginationTabs and other tab controls
-export * from "./tabs";
-
 // Tooltips: CharTooltipLabel, Tooltip, etc.
 export * from "./tooltips";
 

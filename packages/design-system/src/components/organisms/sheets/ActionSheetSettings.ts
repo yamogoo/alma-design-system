@@ -1,16 +1,16 @@
 import type { AsyncComp } from "@/typings/router";
-import type { IMenuitem } from "@/components/molecules/menu/MenuItem";
+import type { IMenuItem } from "@/components/molecules/menu/MenuItem";
 
 import type { ActionSheetProps } from "@/components/molecules/sheets/ActionSheet";
 import type { ListSelectedItemIndex } from "@/components/molecules/list/List";
 
-export type ActionSheetSettingsTemplateMenuItems = Record<
+export type ActionSheetSettingsMenuItems = Record<
   "top" | "bottom",
-  IMenuitem<AsyncComp | undefined>[]
+  IMenuItem<AsyncComp | undefined>[]
 >;
 
-export interface ActionSheetSettingsTemplateProps
+export interface ActionSheetSettingsProps
   extends Pick<ActionSheetProps, "isOpen" | "containerId"> {
-  menuItems: Partial<ActionSheetSettingsTemplateMenuItems>;
+  menuItems: Partial<ActionSheetSettingsMenuItems>;
   selectedItemIndexes: ListSelectedItemIndex | null;
 }

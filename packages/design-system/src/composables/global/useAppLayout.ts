@@ -24,6 +24,7 @@ export const useAppLayout = (selector: string) => {
   };
 
   onMounted(() => {
+    onResize();
     addEventListeners();
   });
 

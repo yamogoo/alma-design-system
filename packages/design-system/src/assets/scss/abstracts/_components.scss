@@ -2095,6 +2095,43 @@ $components: (
 )
 )
 ),
+  tabbar: (
+  default: (
+  lg: (
+  root: (
+  height: (
+  value: "auto"
+),
+  padding: (
+  value: 8px
+),
+  border-radius: (
+  value: 9999px
+)
+),
+  item: (
+  root: (
+  gap: (
+  value: 12px
+),
+  padding: (
+  value: 8px
+)
+),
+  label: (
+  font-style: (
+  value: caption-1
+)
+),
+  icon: (
+  size: (
+  value: 24px
+)
+)
+)
+)
+)
+),
   toolbar-group: (
   default: (
   lg: (

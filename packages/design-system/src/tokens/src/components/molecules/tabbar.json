@@ -1,0 +1,51 @@
+{
+  "default": {
+    "lg": {
+      "root": {
+        "height": {
+          "$value": "auto",
+          "$type": "string",
+          "$unit": ""
+        },
+        "padding": {
+          "$value": "{tokens.spacing.xs}",
+          "$type": "number",
+          "$unit": "px"
+        },
+        "borderRadius": {
+          "$value": "{tokens.roundness.infinity}",
+          "$type": "number",
+          "$unit": "px"
+        }
+      },
+      "item": {
+        "root": {
+          "gap": {
+            "$value": "{tokens.spacing.sm}",
+            "$type": "number",
+            "$unit": "px"
+          },
+          "padding": {
+            "$value": "{tokens.spacing.xs}",
+            "$type": "number",
+            "$unit": "px"
+          }
+        },
+        "label": {
+          "fontStyle": {
+            "$value": "caption-1",
+            "$type": "number",
+            "$unit": "px"
+          }
+        },
+        "icon": {
+          "size": {
+            "$value": "{components.atoms.icon.default.lg.root.size}",
+            "$type": "number",
+            "$unit": "px"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "neutral": {
+    "primary": {
+      "root": {
+        "background": {
+          "$value": "{themes.dark.contracts.interactive.surface.neutral.primary.normal}",
+          "$type": "color",
+          "$unit": "hex"
+        }
+      },
+      "item": {
+        "root": {
+          "background": {
+            "normal": {
+              "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.normal}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "disabled": {
+              "$value": "{themes.dark.contracts.interactive.surface.neutral.canvas.disabled}",
+              "$type": "color",
+              "$unit": "hex"
+            },
+            "hovered": {
+              "$value": "{themes.dark.contracts.interactive.surface.accent.secondary.hovered}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "pressed": {
+              "$value": "{themes.dark.contracts.interactive.surface.accent.secondary.pressed}",
+              "$type": "color",
+              "unit": "hex"
+            },
+            "selected": {
+              "$value": "{themes.dark.contracts.interactive.surface.accent.tertiary.selected}",
+              "$type": "color",
+              "unit": "hex"
+            }
+          }
+        },
+        "label": {
+          "normal": {
+            "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.selected}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "disabled": {
+            "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.disabled}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "selected": {
+            "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        },
+        "icon": {
+          "normal": {
+            "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.selected}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "disabled": {
+            "$value": "{themes.dark.contracts.interactive.onSurface.neutral.canvas.disabled}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "hovered": {
+            "$value": "{themes.dark.contracts.interactive.onSurface.accent.secondary.hovered}",
+            "$type": "color",
+            "$unit": "hex"
+          },
+          "selected": {
+            "$value": "{themes.dark.contracts.interactive.onSurface.accent.tertiary.selected}",
+            "$type": "color",
+            "$unit": "hex"
+          }
+        }
+      }
+    }
+  }
+}

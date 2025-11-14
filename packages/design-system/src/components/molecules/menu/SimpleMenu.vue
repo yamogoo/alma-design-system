@@ -7,7 +7,7 @@ import { useMenuNavigation } from "@/composables/local/keyboard/useMenuNavigatio
 
 import { SIMPLE_MENU_PREFIX, type SimpleMenuProps } from "./SimpleMenu";
 import type { ISimpleMenuItem } from "./menu";
-import SimpleMenuItem from "./SimpleMenuItem.vue";
+import SimpleMenuItem from "@/components/atoms/menu/SimpleMenuItem.vue";
 import Text from "@/components/atoms/typography/Text.vue";
 
 const props = withDefaults(defineProps<SimpleMenuProps<T>>(), {

@@ -1,32 +1,30 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import { useResizeObserver, useTitle } from "@vueuse/core";
-import type { ResizeObserverCallback } from "@vueuse/core";
+import { useTitle } from "@vueuse/core";
 
-import {
-  useAuthStore,
-  useConfigStore,
-  useLayoutStore,
-  useLocaleStore,
-} from "@/stores";
+import { useAuthStore, useConfigStore, useLocaleStore } from "@/stores";
 
 import { Constants } from "@/constants";
 
-import { Composables } from "@alma/design-system";
-import { debounce } from "lodash-es";
+import {
+  useAppLayout,
+  useMeta,
+  useTheme,
+  useConnection,
+} from "@alma/design-system";
 
 const { $t } = storeToRefs(useLocaleStore());
 
+useAppLayout("#app");
 useTitle($t.value.about.title);
-Composables.Global.useMeta("description", $t.value.about.description);
-Composables.Global.useMeta("author", Constants.APP_AUTHOR_NAME);
-Composables.Global.useTheme("light", {
+useMeta("description", $t.value.about.description);
+useMeta("author", Constants.APP_AUTHOR_NAME);
+useTheme("light", {
   selector: "html",
 });
-Composables.Global.useConnection();
+useConnection();
 
-const { setAppSize } = useLayoutStore();
 const { setLocale } = useLocaleStore();
 
 const { initializeAuth } = useAuthStore();
@@ -34,31 +32,12 @@ const { initializeAuth } = useAuthStore();
 useConfigStore();
 setLocale("en");
 
-const refApp = ref<HTMLDivElement | null>();
-
-const updateSize = debounce((entries: readonly ResizeObserverEntry[]) => {
-  const entry = entries[0];
-  const { width, height } = entry.contentRect;
-  setAppSize({ width, height });
-}, 150);
-
-const stop = () =>
-  useResizeObserver(refApp, updateSize as unknown as ResizeObserverCallback);
-
-onMounted(async () => {
+onMounted(() => {
   void initializeAuth();
-
-  await nextTick();
-  const el = refApp.value;
-  if (el) {
-    const { width, height } = el.getBoundingClientRect();
-    setAppSize({ width, height });
-  }
 });
 
 onBeforeUnmount(() => {
   stop();
-  updateSize.cancel();
 });
 </script>
 

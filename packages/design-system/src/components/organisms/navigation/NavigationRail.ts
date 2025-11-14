@@ -1,6 +1,6 @@
 import { NAMESPACE } from "@/constants";
 
-import type { SimpleMenuProps } from "@/components/atoms/menu/SimpleMenu";
+import type { SimpleMenuProps } from "@/components/molecules/menu/SimpleMenu";
 import type { NavigationRailTemplateProps } from "@/components/templates/navigation/NavigationRailTemplate";
 
 export interface NavigationRailProps

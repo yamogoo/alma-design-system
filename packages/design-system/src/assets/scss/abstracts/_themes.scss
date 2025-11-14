@@ -2837,6 +2837,66 @@ $themes: (
 )
 )
 ),
+  tabbar: (
+  neutral: (
+  primary: (
+  root: (
+  background: (
+  value: #282b2d
+)
+),
+  item: (
+  root: (
+  background: (
+  normal: (
+  value: #111213
+),
+  disabled: (
+  value: #151718
+),
+  hovered: (
+  value: #01218d
+),
+  pressed: (
+  value: #012291
+),
+  selected: (
+  value: #0136e6
+)
+)
+),
+  label: (
+  normal: (
+  value: #d2d5d7
+),
+  disabled: (
+  value: #ffffff
+),
+  hovered: (
+  value: #f7f9ff
+),
+  selected: (
+  value: #dbe3ff
+)
+),
+  icon: (
+  normal: (
+  value: #d2d5d7
+),
+  disabled: (
+  value: #ffffff
+),
+  hovered: (
+  value: #f7f9ff
+),
+  selected: (
+  value: #dbe3ff
+)
+)
+)
+)
+)
+),
   tree-view: (
   neutral: (
   primary: (
@@ -10074,6 +10134,66 @@ $themes: (
 ),
   mode: (
   value: "secondary"
+)
+)
+)
+)
+),
+  tabbar: (
+  neutral: (
+  primary: (
+  root: (
+  background: (
+  value: #dfe1e3
+)
+),
+  item: (
+  root: (
+  background: (
+  normal: (
+  value: #f9f9f9
+),
+  disabled: (
+  value: #ffffff
+),
+  hovered: (
+  value: #d0dbff
+),
+  pressed: (
+  value: #dde5ff
+),
+  selected: (
+  value: #013cfe
+)
+)
+),
+  label: (
+  normal: (
+  value: #1c1f20
+),
+  disabled: (
+  value: #232728
+),
+  hovered: (
+  value: #0139f4
+),
+  selected: (
+  value: #dbe3ff
+)
+),
+  icon: (
+  normal: (
+  value: #1c1f20
+),
+  disabled: (
+  value: #232728
+),
+  hovered: (
+  value: #0139f4
+),
+  selected: (
+  value: #dbe3ff
+)
 )
 )
 )

@@ -2,7 +2,7 @@
 import { computed, onMounted, onUnmounted, ref, useTemplateRef } from "vue";
 import gsap from "gsap";
 
-import { UIFACETS, UIMODIFIERS } from "@/constants/ui";
+import { UIMODIFIERS } from "@/constants/ui";
 
 import { createCustomEvent } from "@/utils/events";
 
@@ -11,13 +11,13 @@ import { usePageTransition } from "@/composables/local/pages/usePageTransition";
 import { PAGE_PREFIX, type PageProps } from "./Page";
 
 const props = withDefaults(defineProps<PageProps>(), {
+  tone: "primary",
+  orientation: "vertical",
   isFooterShown: true,
   isDragging: false,
   useGlobalTransition: true,
   transitionInType: "fade",
   transitionOutType: "fade",
-  tone: "primary",
-  orientation: "vertical",
 });
 
 const emit = defineEmits<{
@@ -499,7 +499,6 @@ onUnmounted(() => {
         {
           [`${PAGE_PREFIX}_${UIMODIFIERS.ORIENTATION}-${orientation}`]:
             !!orientation,
-          [`${PAGE_PREFIX}_${UIFACETS.TONE}-${tone}`]: !!tone,
         },
       ]"
       @pointerdown="onPointerDown"

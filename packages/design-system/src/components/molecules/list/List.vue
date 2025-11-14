@@ -130,7 +130,7 @@ const normalizedItems = computed<IListItem[] | null>(() => {
   const items = props.items;
 
   if (typeof items[0] === "string") {
-    return (items as string[]).map((title, idx) => ({ id: idx, title }));
+    return (items as string[]).map((title, idx) => ({ id: `${idx}`, title }));
   }
   return items as IListItem[];
 });

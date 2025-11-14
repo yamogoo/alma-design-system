@@ -1,12 +1,7 @@
 import { NAMESPACE } from "@/constants";
 
-import type {
-  TransitionType,
-  UIElementColor,
-  UIElementOrientation,
-} from "@/typings";
+import type { TransitionType, UIElementOrientation } from "@/typings";
 
-export type PageTone = Extract<UIElementColor, "primary" | "accent">;
 export type PageOrientations = UIElementOrientation;
 
 export interface PageProps {
@@ -15,7 +10,6 @@ export interface PageProps {
   useGlobalTransition?: boolean;
   transitionInType?: TransitionType;
   transitionOutType?: TransitionType;
-  tone?: PageTone;
   orientation?: PageOrientations;
 }
 

@@ -27,5 +27,8 @@ export * from "./panels";
 // Sheets: ActionSheet, Sheet, and their variations
 export * from "./sheets";
 
+// Tabs/Navigation: StepPaginationTabs and other tab controls
+export * from "./tabs";
+
 // Toolbars: ToolbarBlock, etc.
 export * from "./toolbars";

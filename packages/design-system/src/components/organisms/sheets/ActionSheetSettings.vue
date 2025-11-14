@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 
 import { actionSheetVariantFacets } from "@/adapters";
 
@@ -15,15 +15,16 @@ import MenuItem from "@/components/molecules/menu/MenuItem.vue";
 import Spacer from "@/components/atoms/containers/Spacer.vue";
 
 import type { ActionSheetProps } from "@/components/molecules/sheets/ActionSheet";
-import type { ActionSheetSettingsTemplateProps } from "./ActionSheetSettingsTemplate";
+import type { ActionSheetSettingsProps } from "./ActionSheetSettings";
 import type { ListSelectedItemIndex } from "@/components/molecules/list/List";
+import Tabbar from "@/components/molecules/tabs/Tabbar.vue";
 
 const DEFAULT_FACETS: Pick<ActionSheetProps, "variant" | "size"> = {
   variant: "default",
   size: "lg",
 };
 
-const props = withDefaults(defineProps<ActionSheetSettingsTemplateProps>(), {
+const props = withDefaults(defineProps<ActionSheetSettingsProps>(), {
   containerId: "#app",
   isOpen: false,
 });
@@ -40,6 +41,14 @@ const layoutStore = useLayoutStore();
 const { breakpoints } = layoutStore;
 
 const localIsOpen = ref(props.isOpen);
+
+const tebbarItems = computed(() => {
+  const items = Object.values(props.menuItems).reduce((acc, arr) => {
+    return acc.concat(arr);
+  }, []);
+
+  return items;
+});
 
 watch(
   () => props.isOpen,
@@ -143,5 +152,12 @@ const isSidebarShownByToken = up(sidebarAtLeast);
       </ActionSheetSidebar>
     </template>
     <slot></slot>
+    <template #footer>
+      <Tabbar
+        v-if="!isSidebarShownByToken"
+        v-model:selected-item-indexes="localSelectedItemIndexes"
+        :items="tebbarItems"
+      ></Tabbar>
+    </template>
   </ActionSheet>
 </template>

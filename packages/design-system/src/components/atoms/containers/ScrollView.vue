@@ -45,6 +45,7 @@ $scroll-thumb-radius: px2rem(
 
 .#{$prefix} {
   position: relative;
+  height: 100%;
   @include maxBox(100%);
   scrollbar-width: thin;
   @include useThemeTransition();

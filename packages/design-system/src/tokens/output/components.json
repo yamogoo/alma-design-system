@@ -3194,6 +3194,57 @@
         }
       }
     },
+    "tabbar": {
+      "default": {
+        "lg": {
+          "root": {
+            "height": {
+              "$value": "auto",
+              "$type": "string",
+              "$unit": ""
+            },
+            "padding": {
+              "$value": 8,
+              "$type": "number",
+              "$unit": "px"
+            },
+            "borderRadius": {
+              "$value": 9999,
+              "$type": "number",
+              "$unit": "px"
+            }
+          },
+          "item": {
+            "root": {
+              "gap": {
+                "$value": 12,
+                "$type": "number",
+                "$unit": "px"
+              },
+              "padding": {
+                "$value": 8,
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "label": {
+              "fontStyle": {
+                "$value": "caption-1",
+                "$type": "number",
+                "$unit": "px"
+              }
+            },
+            "icon": {
+              "size": {
+                "$value": 24,
+                "$type": "number",
+                "$unit": "px"
+              }
+            }
+          }
+        }
+      }
+    },
     "toolbarGroup": {
       "default": {
         "lg": {
